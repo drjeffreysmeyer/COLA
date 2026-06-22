@@ -9,8 +9,8 @@
 <!--******************************************-->
 <!--*  Authored with PreTeXt                 *-->
 <!--*  pretextbook.org                       *-->
-<!--*  Theme: default-modern                 *-->
-<!--*  Palette:                              *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette: ice-fire                     *-->
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -101,15 +101,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.19';
+eBookConfig.runestone_version = '8.1.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.998c9d9ee2a5e7ac.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/prefix-runtime.d1480f934b51d4ec.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.fa61545fa3ffbf2f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.87414d180ebeebd6.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
@@ -130,7 +130,11 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div>
 <span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="chapter1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter1.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chapter2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
-</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
+\newcommand{\Z}{\mathbb Z} 
+\newcommand{\Q}{\mathbb Q} 
+\newcommand{\R}{\mathbb R} 
+\newcommand{\vect}[1]{\mathbf{#1}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -146,18 +150,26 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="chapter2.html" class="internal"><span class="codenumber">2</span> <span class="title">Linear Combination</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec1.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Linear Combination as Mixture</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec1.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Linear Combinations as Mixture</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Algebraic Properties of Linear Combination</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec3.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Lines as Traveling Down a Path</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec4.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The Set of All Linear Combination</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec5.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Dependency</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec6.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Subsets That Contain Their Mixtures</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="chp1sec1"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vectors as Lists of Quantities</span>
+<span class="type">Lesson</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vectors as Lists of Quantities</span>
 </h2>
 <div class="para" id="chp1sec1-2">Welcome students! Before we can begin learning linear algebra, we need to establish the ontology of this book. In this book, I take the perspective that <dfn class="terminology">objects</dfn> and <dfn class="terminology">situations</dfn> exist external to us everywhere. These objects and situations possess many types of <dfn class="terminology">attributes</dfn>. An attribute, together with an agreed upon unit of measurement, is a <dfn class="terminology">quantity</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="chp1sec1-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<article class="example example-like" id="chp1sec1-3"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Object-Attribute-Quantity (OAQ) Analysis of a Glass of Water.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="chp1sec1-3-2">With my lunch, I am drinking a glass of water. This glass of water exists, external to me, sitting beside me on my table. The water has many attributes: size, mass, temperature, color, and many more. For the moment, I will focus on its size.  We could agree on many ways to measure size, for example by measuring its volume in liters, cups, ounces, or cubic inches. Let’s pick ounces. The volume of the water in my glass, measured in ounces, is a quantity.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h3>
+<div class="para" id="chp1sec1-3-2">With my lunch, I am drinking a glass of water. This glass of water exists, external to me, sitting beside me on my table. The water has many attributes: size, mass, temperature, color, and many more. For the moment, I will focus on its size.  We could agree on many ways to measure size, for example by measuring its volume in liters, cups, ounces, or cubic inches. Let’s pick ounces. The volume of the water in my glass, measured in ounces, is a quantity.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="chp1sec1-3-3">
 <ul class="disc" id="chp1sec1-3-3-1">
@@ -180,19 +192,21 @@ eBookConfig.enable_chatcodes =  false;
 <img src="external/images/water_glass.png" class="contained" alt="Water in a glass."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="chp1sec1-3-4-description"><div class="para" id="chp1sec1-3-4-2-1">Water in a glass.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-3-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></div></details>
 </div>
-<div class="autopermalink" data-description="Example 1.1.1: Object-Attribute-Quantity (OAQ) Analysis of a Glass of Water"><a href="#chp1sec1-3" title="Copy heading and permalink for Example 1.1.1: Object-Attribute-Quantity (OAQ) Analysis of a Glass of Water" aria-label="Copy heading and permalink for Example 1.1.1: Object-Attribute-Quantity (OAQ) Analysis of a Glass of Water">🔗</a></div></article></details><details id="chp1sec1-4" class="question example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<div class="autopermalink" data-description="Example 1.1.1: Object-Attribute-Quantity (OAQ) Analysis of a Glass of Water"><a href="#chp1sec1-3" title="Copy heading and permalink for Example 1.1.1: Object-Attribute-Quantity (OAQ) Analysis of a Glass of Water" aria-label="Copy heading and permalink for Example 1.1.1: Object-Attribute-Quantity (OAQ) Analysis of a Glass of Water">🔗</a></div></article><article class="question example-like" id="chp1sec1-4"><h3 class="heading">
 <span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">OAQ Analysis.</span>
-</h3></summary><article class="question example-like knowl__content"><div class="para" id="chp1sec1-4-2">With a group, take a few minutes to look around and identify some objects, some attributes they possess, and agree upon a way to measure them.  After a few minutes, share some of your findings with the class.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h3>
+<div class="para" id="chp1sec1-4-2">With a group, take a few minutes to look around and identify some objects, some attributes they possess, and agree upon a way to measure them.  After a few minutes, share some of your findings with the class.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Activity 1.1.2: OAQ Analysis"><a href="#chp1sec1-4" title="Copy heading and permalink for Activity 1.1.2: OAQ Analysis" aria-label="Copy heading and permalink for Activity 1.1.2: OAQ Analysis">🔗</a></div></article></details><div class="para" id="chp1sec1-5">If I want to measure the mass of my sandwich, then I put it on a scale, select units (e.g. grams, pounds, etc), and then read off the number. If I want to measure the distance I traveled in my car, then I look at my odometer, select units (miles or kilometers), and then read off the number. If I want to measure the temperature at my home, then I look at my thermometer, select my units (Fahrenheit or Celsius), and then read off the number.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Activity 1.1.2: OAQ Analysis"><a href="#chp1sec1-4" title="Copy heading and permalink for Activity 1.1.2: OAQ Analysis" aria-label="Copy heading and permalink for Activity 1.1.2: OAQ Analysis">🔗</a></div></article><div class="para" id="chp1sec1-5">If I want to measure the mass of my sandwich, then I put it on a scale, select units (e.g. grams, pounds, etc), and then read off the number. If I want to measure the distance I traveled in my car, then I look at my odometer, select units (miles or kilometers), and then read off the number. If I want to measure the temperature at my home, then I look at my thermometer, select my units (Fahrenheit or Celsius), and then read off the number.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="chp1sec1-6">When we measure a quantity, we obtain a <dfn class="terminology">real number</dfn>. For example, positive integers (e.g. 1, 2, 3, …), ratios of integers (e.g. <span class="process-math">\(\frac{1}{2},\frac{2}{3}\)</span>), square roots of positive integers (e.g. <span class="process-math">\(\sqrt{2}\)</span>), and transcendental numbers like <span class="process-math">\(\pi\)</span> and <span class="process-math">\(e\)</span> are all real numbers.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="chp1sec1-7">You do not need to know the value of a real number to reason about it. In Example , the volume of the water in my glass, measured in ounces is a number. We can reason about that volume of water without ever knowing its value. Sometimes I will <dfn class="terminology">name</dfn> a real number with an italicized lower case letter. For example, I might name the volume of water in my glass, measured in ounces, with the letter <span class="process-math">\(v\text{,}\)</span> for volume. I denote the collection of all real numbers as <span class="process-math">\(\R\)</span> and use the symbols <span class="process-math">\(a\in \R\)</span> to <em class="emphasis">mean</em> <span class="process-math">\(a\)</span> is a real number.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="chp1sec1-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<article class="example example-like" id="chp1sec1-8"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Quantities in my kitchen.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="chp1sec1-8-2">I walk into my kitchen to see what food I have to eat. As I look through my food, I suddenly realize that they are quite literally <em class="emphasis">covered</em> in lists of quantities! Pretty much every packaged food item has a box called “Nutrition Facts.” This box lists the masses of nutrients (either measured in grams g, milligrams mg, or micrograms mcg) contained within one serving size of the given food item. The box always lists the masses of the three most essential nutrients called <em class="emphasis">macronutrients</em>: total fat, total carbohydrates, and protein. Sometimes masses of other nutrients such as vitamin B, vitamin C, vitamin D, calcium, iron, and potassium are also listed.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h3>
+<div class="para" id="chp1sec1-8-2">I walk into my kitchen to see what food I have to eat. As I look through my food, I suddenly realize that they are quite literally <em class="emphasis">covered</em> in lists of quantities! Pretty much every packaged food item has a box called “Nutrition Facts.” This box lists the masses of nutrients (either measured in grams g, milligrams mg, or micrograms mcg) contained within one serving size of the given food item. The box always lists the masses of the three most essential nutrients called <em class="emphasis">macronutrients</em>: total fat, total carbohydrates, and protein. Sometimes masses of other nutrients such as vitamin B, vitamin C, vitamin D, calcium, iron, and potassium are also listed.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
 <img src="external/images/matrix_as_cereal.png" class="contained" alt="described in detail following the image" aria-describedby="chp1sec1-8-3-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="chp1sec1-8-3-description"><div class="para" id="chp1sec1-8-3-1-1">On the side of a box of cereal, we see the the "Nutrition Facts."<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-8-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -200,9 +214,10 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para" id="chp1sec1-8-4">For example, the “Nutrition Facts” on the side of my box of Sugar-Os cereal is depicted on the right of Figure.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-8-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 1.1.3: Quantities in my kitchen"><a href="#chp1sec1-8" title="Copy heading and permalink for Example 1.1.3: Quantities in my kitchen" aria-label="Copy heading and permalink for Example 1.1.3: Quantities in my kitchen">🔗</a></div></article></details><details id="chp1sec1-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<div class="autopermalink" data-description="Example 1.1.3: Quantities in my kitchen"><a href="#chp1sec1-8" title="Copy heading and permalink for Example 1.1.3: Quantities in my kitchen" aria-label="Copy heading and permalink for Example 1.1.3: Quantities in my kitchen">🔗</a></div></article><article class="example example-like" id="chp1sec1-9"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Quantities as I travel.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="chp1sec1-9-2">I am always driving where I need to go. Today I will drive to campus, to lunch, to the grocery store, and then home. Even if I know directions, I often use my GPS in case there is something like traffic or a road closure. As I put in my destinations today, I realize that I am staring at list of quantities! In a given trip, each step of the travel instructions is the distance I drive, either in miles or feet, on a given road, until I turn onto the next street.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h3>
+<div class="para" id="chp1sec1-9-2">I am always driving where I need to go. Today I will drive to campus, to lunch, to the grocery store, and then home. Even if I know directions, I often use my GPS in case there is something like traffic or a road closure. As I put in my destinations today, I realize that I am staring at list of quantities! In a given trip, each step of the travel instructions is the distance I drive, either in miles or feet, on a given road, until I turn onto the next street.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="chp1sec1-9-3">For example, in <a href="chp1sec1.html#figure-gps" class="xref" data-knowl="./knowl/xref/figure-gps.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.5">Figure 1.1.5</a>, are depicted the travel instructions to get from my home to the math department.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-9-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -224,9 +239,10 @@ eBookConfig.enable_chatcodes =  false;
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-9-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 1.1.4: Quantities as I travel"><a href="#chp1sec1-9" title="Copy heading and permalink for Example 1.1.4: Quantities as I travel" aria-label="Copy heading and permalink for Example 1.1.4: Quantities as I travel">🔗</a></div></article></details><details id="chp1sec1-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<div class="autopermalink" data-description="Example 1.1.4: Quantities as I travel"><a href="#chp1sec1-9" title="Copy heading and permalink for Example 1.1.4: Quantities as I travel" aria-label="Copy heading and permalink for Example 1.1.4: Quantities as I travel">🔗</a></div></article><article class="example example-like" id="chp1sec1-10"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Quantities outside.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="chp1sec1-10-2">I want to plan out my day tomorrow and I look at my phone to get the forecast for the day. It is then that I realize that the forecast is a list of quantities! At first I see the following table.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-10-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h3>
+<div class="para" id="chp1sec1-10-2">I want to plan out my day tomorrow and I look at my phone to get the forecast for the day. It is then that I realize that the forecast is a list of quantities! At first I see the following table.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-10-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="table table-like" id="chp1sec1-10-3"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Today’s Forcast<div class="autopermalink" data-description="Table 1.1.7: Today’s Forcast"><a href="#chp1sec1-10-3" title="Copy heading and permalink for Table 1.1.7: Today’s Forcast" aria-label="Copy heading and permalink for Table 1.1.7: Today’s Forcast">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
@@ -275,7 +291,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para" id="chp1sec1-10-7">I wonder, <em class="emphasis">what other lists of quantities are useful in describing the weather</em>?<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-10-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 1.1.6: Quantities outside"><a href="#chp1sec1-10" title="Copy heading and permalink for Example 1.1.6: Quantities outside" aria-label="Copy heading and permalink for Example 1.1.6: Quantities outside">🔗</a></div></article></details><div class="para" id="chp1sec1-11">Observe that in each quantitative situation above, we encountered many quantities, naturally grouped together, all at once. Lists of quantities are often united by a single object or situation.  When analyzing the world around us, these lists of quantities naturally emerge, so it use useful to have language to discuss them.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 1.1.6: Quantities outside"><a href="#chp1sec1-10" title="Copy heading and permalink for Example 1.1.6: Quantities outside" aria-label="Copy heading and permalink for Example 1.1.6: Quantities outside">🔗</a></div></article><div class="para" id="chp1sec1-11">Observe that in each quantitative situation above, we encountered many quantities, naturally grouped together, all at once. Lists of quantities are often united by a single object or situation.  When analyzing the world around us, these lists of quantities naturally emerge, so it use useful to have language to discuss them.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="def-list-length"><h3 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vectors and List-Length.</span>
@@ -283,165 +299,178 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="def-list-length-2-1">A <dfn class="terminology">vector</dfn> is an ordered list of quantities.   The number of entries in the list is its <dfn class="terminology">list-length</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-list-length-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Definition 1.1.9: Vectors and List-Length"><a href="#def-list-length" title="Copy heading and permalink for Definition 1.1.9: Vectors and List-Length" aria-label="Copy heading and permalink for Definition 1.1.9: Vectors and List-Length">🔗</a></div></article><div class="para" id="chp1sec1-13"><div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
-<details id="chp1sec1-14" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<article class="example example-like" id="chp1sec1-14"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Quantities in my kitchen - Revisited.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="chp1sec1-14-2">An <em class="emphasis">object</em> here is one serving size of cereal. An <em class="emphasis">attribute</em> of one serving size of cereal is nutrition. I can measure nutrition in many ways, for example: grams of fat, grams of carbs, grams of protein, etc. The <dfn class="terminology">list of macronutrients</dfn>, below, has list-length 3.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-14-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<ol class="decimal" id="chp1sec1-14-3">
-<li id="chp1sec1-14-3-1">
-<div class="para" id="p-derived-chp1sec1-14-3-1">Grams of fat in one serving size</div>
-<div class="autopermalink" data-description="Item 1"><a href="#chp1sec1-14-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</h3>
+<div class="para logical" id="chp1sec1-14-2">
+<div class="para">An <em class="emphasis">object</em> here is one serving size of cereal. An <em class="emphasis">attribute</em> of one serving size of cereal is nutrition. I can measure nutrition in many ways, for example: grams of fat, grams of carbs, grams of protein, etc. The <dfn class="terminology">list of macronutrients</dfn>, below, has list-length 3.</div>
+<ol class="decimal" id="chp1sec1-14-2-4">
+<li id="chp1sec1-14-2-4-1">
+<div class="para" id="p-derived-chp1sec1-14-2-4-1">Grams of fat in one serving size</div>
+<div class="autopermalink" data-description="Item 1"><a href="#chp1sec1-14-2-4-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
-<li id="chp1sec1-14-3-2">
-<div class="para" id="p-derived-chp1sec1-14-3-2">Grams of carbs in one serving size</div>
-<div class="autopermalink" data-description="Item 2"><a href="#chp1sec1-14-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<li id="chp1sec1-14-2-4-2">
+<div class="para" id="p-derived-chp1sec1-14-2-4-2">Grams of carbs in one serving size</div>
+<div class="autopermalink" data-description="Item 2"><a href="#chp1sec1-14-2-4-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
-<li id="chp1sec1-14-3-3">
-<div class="para" id="p-derived-chp1sec1-14-3-3">Grams of protein in one serving size</div>
-<div class="autopermalink" data-description="Item 3"><a href="#chp1sec1-14-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
-</li>
-</ol>
-<div class="para" id="chp1sec1-14-4">A different <em class="emphasis">attribute</em> is my daily consumption. I can quantify consumption in many ways, for example: the number of serving sizes I consume each day of the week. The list of servings consumed, below, is a list of list-length 7.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-14-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<ol class="decimal" id="chp1sec1-14-5">
-<li id="chp1sec1-14-5-1">
-<div class="para" id="p-derived-chp1sec1-14-5-1">Number of serving sizes consumed on Sunday,</div>
-<div class="autopermalink" data-description="Item 1"><a href="#chp1sec1-14-5-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
-</li>
-<li id="chp1sec1-14-5-2">
-<div class="para" id="p-derived-chp1sec1-14-5-2">Number of serving sizes consumed on Monday,</div>
-<div class="autopermalink" data-description="Item 2"><a href="#chp1sec1-14-5-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
-</li>
-<li id="chp1sec1-14-5-3">
-<div class="para" id="p-derived-chp1sec1-14-5-3">Number of serving sizes consumed on Tuesday,</div>
-<div class="autopermalink" data-description="Item 3"><a href="#chp1sec1-14-5-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
-</li>
-<li id="chp1sec1-14-5-4">
-<div class="para" id="p-derived-chp1sec1-14-5-4">Number of serving sizes consumed on Wednesday,</div>
-<div class="autopermalink" data-description="Item 4"><a href="#chp1sec1-14-5-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
-</li>
-<li id="chp1sec1-14-5-5">
-<div class="para" id="p-derived-chp1sec1-14-5-5">Number of serving sizes consumed on Thursday,</div>
-<div class="autopermalink" data-description="Item 5"><a href="#chp1sec1-14-5-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
-</li>
-<li id="chp1sec1-14-5-6">
-<div class="para" id="p-derived-chp1sec1-14-5-6">Number of serving sizes consumed on Friday,</div>
-<div class="autopermalink" data-description="Item 6"><a href="#chp1sec1-14-5-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
-</li>
-<li id="chp1sec1-14-5-7">
-<div class="para" id="p-derived-chp1sec1-14-5-7">Number of serving sizes consumed on Saturday,</div>
-<div class="autopermalink" data-description="Item 7"><a href="#chp1sec1-14-5-7" title="Copy heading and permalink for Item 7" aria-label="Copy heading and permalink for Item 7">🔗</a></div>
+<li id="chp1sec1-14-2-4-3">
+<div class="para" id="p-derived-chp1sec1-14-2-4-3">Grams of protein in one serving size</div>
+<div class="autopermalink" data-description="Item 3"><a href="#chp1sec1-14-2-4-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Example 1.1.10: Quantities in my kitchen - Revisited"><a href="#chp1sec1-14" title="Copy heading and permalink for Example 1.1.10: Quantities in my kitchen - Revisited" aria-label="Copy heading and permalink for Example 1.1.10: Quantities in my kitchen - Revisited">🔗</a></div></article></details><details id="chp1sec1-15" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-14-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chp1sec1-14-3">
+<div class="para">A different <em class="emphasis">attribute</em> is my daily consumption. I can quantify consumption in many ways, for example: the number of serving sizes I consume each day of the week. The list of servings consumed, below, is a list of list-length 7.</div>
+<ol class="decimal" id="chp1sec1-14-3-2">
+<li id="chp1sec1-14-3-2-1">
+<div class="para" id="p-derived-chp1sec1-14-3-2-1">Number of serving sizes consumed on Sunday,</div>
+<div class="autopermalink" data-description="Item 1"><a href="#chp1sec1-14-3-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="chp1sec1-14-3-2-2">
+<div class="para" id="p-derived-chp1sec1-14-3-2-2">Number of serving sizes consumed on Monday,</div>
+<div class="autopermalink" data-description="Item 2"><a href="#chp1sec1-14-3-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="chp1sec1-14-3-2-3">
+<div class="para" id="p-derived-chp1sec1-14-3-2-3">Number of serving sizes consumed on Tuesday,</div>
+<div class="autopermalink" data-description="Item 3"><a href="#chp1sec1-14-3-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="chp1sec1-14-3-2-4">
+<div class="para" id="p-derived-chp1sec1-14-3-2-4">Number of serving sizes consumed on Wednesday,</div>
+<div class="autopermalink" data-description="Item 4"><a href="#chp1sec1-14-3-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="chp1sec1-14-3-2-5">
+<div class="para" id="p-derived-chp1sec1-14-3-2-5">Number of serving sizes consumed on Thursday,</div>
+<div class="autopermalink" data-description="Item 5"><a href="#chp1sec1-14-3-2-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="chp1sec1-14-3-2-6">
+<div class="para" id="p-derived-chp1sec1-14-3-2-6">Number of serving sizes consumed on Friday,</div>
+<div class="autopermalink" data-description="Item 6"><a href="#chp1sec1-14-3-2-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+<li id="chp1sec1-14-3-2-7">
+<div class="para" id="p-derived-chp1sec1-14-3-2-7">Number of serving sizes consumed on Saturday,</div>
+<div class="autopermalink" data-description="Item 7"><a href="#chp1sec1-14-3-2-7" title="Copy heading and permalink for Item 7" aria-label="Copy heading and permalink for Item 7">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-14-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.1.10: Quantities in my kitchen - Revisited"><a href="#chp1sec1-14" title="Copy heading and permalink for Example 1.1.10: Quantities in my kitchen - Revisited" aria-label="Copy heading and permalink for Example 1.1.10: Quantities in my kitchen - Revisited">🔗</a></div></article><article class="example example-like" id="chp1sec1-15"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Quantities outside - Revisited.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="chp1sec1-15-2">An <em class="emphasis">object</em> is the air outside my home. An <em class="emphasis">attribute</em> of air is temperature. I can quantify temperature in many ways, for example measure the temperature in degrees Fahrenheit in 3 hour intervals throughout the day. The corresponding list of temperatures, below, has list-length 8.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<ol class="decimal" id="chp1sec1-15-3">
-<li id="chp1sec1-15-3-1">
-<div class="para" id="p-derived-chp1sec1-15-3-1">Degrees Fahrenheit at 12am,</div>
-<div class="autopermalink" data-description="Item 1"><a href="#chp1sec1-15-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</h3>
+<div class="para logical" id="chp1sec1-15-2">
+<div class="para">An <em class="emphasis">object</em> is the air outside my home. An <em class="emphasis">attribute</em> of air is temperature. I can quantify temperature in many ways, for example measure the temperature in degrees Fahrenheit in 3 hour intervals throughout the day. The corresponding list of temperatures, below, has list-length 8.</div>
+<ol class="decimal" id="chp1sec1-15-2-3">
+<li id="chp1sec1-15-2-3-1">
+<div class="para" id="p-derived-chp1sec1-15-2-3-1">Degrees Fahrenheit at 12am,</div>
+<div class="autopermalink" data-description="Item 1"><a href="#chp1sec1-15-2-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
-<li id="chp1sec1-15-3-2">
-<div class="para" id="p-derived-chp1sec1-15-3-2">Degrees Fahrenheit at 3am,</div>
-<div class="autopermalink" data-description="Item 2"><a href="#chp1sec1-15-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<li id="chp1sec1-15-2-3-2">
+<div class="para" id="p-derived-chp1sec1-15-2-3-2">Degrees Fahrenheit at 3am,</div>
+<div class="autopermalink" data-description="Item 2"><a href="#chp1sec1-15-2-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
-<li id="chp1sec1-15-3-3">
-<div class="para" id="p-derived-chp1sec1-15-3-3">Degrees Fahrenheit at 6am,</div>
-<div class="autopermalink" data-description="Item 3"><a href="#chp1sec1-15-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+<li id="chp1sec1-15-2-3-3">
+<div class="para" id="p-derived-chp1sec1-15-2-3-3">Degrees Fahrenheit at 6am,</div>
+<div class="autopermalink" data-description="Item 3"><a href="#chp1sec1-15-2-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
-<li id="chp1sec1-15-3-4">
-<div class="para" id="p-derived-chp1sec1-15-3-4">Degrees Fahrenheit at 9am</div>
-<div class="autopermalink" data-description="Item 4"><a href="#chp1sec1-15-3-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+<li id="chp1sec1-15-2-3-4">
+<div class="para" id="p-derived-chp1sec1-15-2-3-4">Degrees Fahrenheit at 9am</div>
+<div class="autopermalink" data-description="Item 4"><a href="#chp1sec1-15-2-3-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
 </li>
-<li id="chp1sec1-15-3-5">
-<div class="para" id="p-derived-chp1sec1-15-3-5">Degrees Fahrenheit at 12pm,</div>
-<div class="autopermalink" data-description="Item 5"><a href="#chp1sec1-15-3-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+<li id="chp1sec1-15-2-3-5">
+<div class="para" id="p-derived-chp1sec1-15-2-3-5">Degrees Fahrenheit at 12pm,</div>
+<div class="autopermalink" data-description="Item 5"><a href="#chp1sec1-15-2-3-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
 </li>
-<li id="chp1sec1-15-3-6">
-<div class="para" id="p-derived-chp1sec1-15-3-6">Degrees Fahrenheit at 3pm,</div>
-<div class="autopermalink" data-description="Item 6"><a href="#chp1sec1-15-3-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+<li id="chp1sec1-15-2-3-6">
+<div class="para" id="p-derived-chp1sec1-15-2-3-6">Degrees Fahrenheit at 3pm,</div>
+<div class="autopermalink" data-description="Item 6"><a href="#chp1sec1-15-2-3-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
 </li>
-<li id="chp1sec1-15-3-7">
-<div class="para" id="p-derived-chp1sec1-15-3-7">Degrees Fahrenheit at 6pm,</div>
-<div class="autopermalink" data-description="Item 7"><a href="#chp1sec1-15-3-7" title="Copy heading and permalink for Item 7" aria-label="Copy heading and permalink for Item 7">🔗</a></div>
+<li id="chp1sec1-15-2-3-7">
+<div class="para" id="p-derived-chp1sec1-15-2-3-7">Degrees Fahrenheit at 6pm,</div>
+<div class="autopermalink" data-description="Item 7"><a href="#chp1sec1-15-2-3-7" title="Copy heading and permalink for Item 7" aria-label="Copy heading and permalink for Item 7">🔗</a></div>
 </li>
-<li id="chp1sec1-15-3-8">
-<div class="para" id="p-derived-chp1sec1-15-3-8">Degrees Fahrenheit at 9pm.</div>
-<div class="autopermalink" data-description="Item 8"><a href="#chp1sec1-15-3-8" title="Copy heading and permalink for Item 8" aria-label="Copy heading and permalink for Item 8">🔗</a></div>
-</li>
-</ol>
-<div class="para" id="chp1sec1-15-4">A different <em class="emphasis">attribute</em> is humidity.  I can quantify humidity in many ways, for example measure the relative humidity (in percents) in 4 hour intervals throughout the day. The  corresponding list of humidities, below, has list-length 6.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-15-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<ol class="decimal" id="chp1sec1-15-5">
-<li id="chp1sec1-15-5-1">
-<div class="para" id="p-derived-chp1sec1-15-5-1">Percent humidity at 12am,</div>
-<div class="autopermalink" data-description="Item 1"><a href="#chp1sec1-15-5-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
-</li>
-<li id="chp1sec1-15-5-2">
-<div class="para" id="p-derived-chp1sec1-15-5-2">Percent humidity at 4am,</div>
-<div class="autopermalink" data-description="Item 2"><a href="#chp1sec1-15-5-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
-</li>
-<li id="chp1sec1-15-5-3">
-<div class="para" id="p-derived-chp1sec1-15-5-3">Percent humidity at 8am,</div>
-<div class="autopermalink" data-description="Item 3"><a href="#chp1sec1-15-5-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
-</li>
-<li id="chp1sec1-15-5-4">
-<div class="para" id="p-derived-chp1sec1-15-5-4">Percent humidity at 12pm,</div>
-<div class="autopermalink" data-description="Item 4"><a href="#chp1sec1-15-5-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
-</li>
-<li id="chp1sec1-15-5-5">
-<div class="para" id="p-derived-chp1sec1-15-5-5">Percent humidity at 4pm,</div>
-<div class="autopermalink" data-description="Item 5"><a href="#chp1sec1-15-5-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
-</li>
-<li id="chp1sec1-15-5-6">
-<div class="para" id="p-derived-chp1sec1-15-5-6">Percent humidity at 8pm,</div>
-<div class="autopermalink" data-description="Item 6"><a href="#chp1sec1-15-5-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+<li id="chp1sec1-15-2-3-8">
+<div class="para" id="p-derived-chp1sec1-15-2-3-8">Degrees Fahrenheit at 9pm.</div>
+<div class="autopermalink" data-description="Item 8"><a href="#chp1sec1-15-2-3-8" title="Copy heading and permalink for Item 8" aria-label="Copy heading and permalink for Item 8">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Example 1.1.11: Quantities outside - Revisited"><a href="#chp1sec1-15" title="Copy heading and permalink for Example 1.1.11: Quantities outside - Revisited" aria-label="Copy heading and permalink for Example 1.1.11: Quantities outside - Revisited">🔗</a></div></article></details><details id="chp1sec1-16" class="question example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chp1sec1-15-3">
+<div class="para">A different <em class="emphasis">attribute</em> is humidity.  I can quantify humidity in many ways, for example measure the relative humidity (in percents) in 4 hour intervals throughout the day. The  corresponding list of humidities, below, has list-length 6.</div>
+<ol class="decimal" id="chp1sec1-15-3-2">
+<li id="chp1sec1-15-3-2-1">
+<div class="para" id="p-derived-chp1sec1-15-3-2-1">Percent humidity at 12am,</div>
+<div class="autopermalink" data-description="Item 1"><a href="#chp1sec1-15-3-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="chp1sec1-15-3-2-2">
+<div class="para" id="p-derived-chp1sec1-15-3-2-2">Percent humidity at 4am,</div>
+<div class="autopermalink" data-description="Item 2"><a href="#chp1sec1-15-3-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="chp1sec1-15-3-2-3">
+<div class="para" id="p-derived-chp1sec1-15-3-2-3">Percent humidity at 8am,</div>
+<div class="autopermalink" data-description="Item 3"><a href="#chp1sec1-15-3-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="chp1sec1-15-3-2-4">
+<div class="para" id="p-derived-chp1sec1-15-3-2-4">Percent humidity at 12pm,</div>
+<div class="autopermalink" data-description="Item 4"><a href="#chp1sec1-15-3-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="chp1sec1-15-3-2-5">
+<div class="para" id="p-derived-chp1sec1-15-3-2-5">Percent humidity at 4pm,</div>
+<div class="autopermalink" data-description="Item 5"><a href="#chp1sec1-15-3-2-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="chp1sec1-15-3-2-6">
+<div class="para" id="p-derived-chp1sec1-15-3-2-6">Percent humidity at 8pm,</div>
+<div class="autopermalink" data-description="Item 6"><a href="#chp1sec1-15-3-2-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-15-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.1.11: Quantities outside - Revisited"><a href="#chp1sec1-15" title="Copy heading and permalink for Example 1.1.11: Quantities outside - Revisited" aria-label="Copy heading and permalink for Example 1.1.11: Quantities outside - Revisited">🔗</a></div></article><article class="question example-like" id="chp1sec1-16"><h3 class="heading">
 <span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Identifying Lists of Quantities.</span>
-</h3></summary><article class="question example-like knowl__content"><div class="para" id="chp1sec1-16-2">Consider each of the following situations.  With your group, write down several lists of quantities that might naturally come up when analyzing the situation. Be sure to clearly specify each quantity (include object, attribute, and agreed way to measure).   Note that these are intentionally vague and open-ended prompts.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<ol class="decimal" id="chp1sec1-16-3">
-<li id="chp1sec1-16-3-1">
-<div class="para" id="p-derived-chp1sec1-16-3-1">The most recent time you went grocery shopping.</div>
-<div class="autopermalink" data-description="Item 1"><a href="#chp1sec1-16-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</h3>
+<div class="para logical" id="chp1sec1-16-2">
+<div class="para">Consider each of the following situations.  With your group, write down several lists of quantities that might naturally come up when analyzing the situation. Be sure to clearly specify each quantity (include object, attribute, and agreed way to measure).   Note that these are intentionally vague and open-ended prompts.</div>
+<ol class="decimal" id="chp1sec1-16-2-1">
+<li id="chp1sec1-16-2-1-1">
+<div class="para" id="p-derived-chp1sec1-16-2-1-1">The most recent time you went grocery shopping.</div>
+<div class="autopermalink" data-description="Item 1"><a href="#chp1sec1-16-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
-<li id="chp1sec1-16-3-2">
-<div class="para" id="p-derived-chp1sec1-16-3-2">Your phone.</div>
-<div class="autopermalink" data-description="Item 2"><a href="#chp1sec1-16-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<li id="chp1sec1-16-2-1-2">
+<div class="para" id="p-derived-chp1sec1-16-2-1-2">Your phone.</div>
+<div class="autopermalink" data-description="Item 2"><a href="#chp1sec1-16-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
-<li id="chp1sec1-16-3-3">
-<div class="para" id="p-derived-chp1sec1-16-3-3">Your social media account.</div>
-<div class="autopermalink" data-description="Item 3"><a href="#chp1sec1-16-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+<li id="chp1sec1-16-2-1-3">
+<div class="para" id="p-derived-chp1sec1-16-2-1-3">Your social media account.</div>
+<div class="autopermalink" data-description="Item 3"><a href="#chp1sec1-16-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
-<li id="chp1sec1-16-3-4">
-<div class="para" id="p-derived-chp1sec1-16-3-4">The houses on your block.</div>
-<div class="autopermalink" data-description="Item 4"><a href="#chp1sec1-16-3-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+<li id="chp1sec1-16-2-1-4">
+<div class="para" id="p-derived-chp1sec1-16-2-1-4">The houses on your block.</div>
+<div class="autopermalink" data-description="Item 4"><a href="#chp1sec1-16-2-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
 </li>
-<li id="chp1sec1-16-3-5">
-<div class="para" id="p-derived-chp1sec1-16-3-5">A recording of a song by your favorite band.</div>
-<div class="autopermalink" data-description="Item 5"><a href="#chp1sec1-16-3-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+<li id="chp1sec1-16-2-1-5">
+<div class="para" id="p-derived-chp1sec1-16-2-1-5">A recording of a song by your favorite band.</div>
+<div class="autopermalink" data-description="Item 5"><a href="#chp1sec1-16-2-1-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
 </li>
-<li id="chp1sec1-16-3-6">
-<div class="para" id="p-derived-chp1sec1-16-3-6">The voting precincts in your region.</div>
-<div class="autopermalink" data-description="Item 6"><a href="#chp1sec1-16-3-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+<li id="chp1sec1-16-2-1-6">
+<div class="para" id="p-derived-chp1sec1-16-2-1-6">The voting precincts in your region.</div>
+<div class="autopermalink" data-description="Item 6"><a href="#chp1sec1-16-2-1-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
 </li>
-<li id="chp1sec1-16-3-7">
-<div class="para" id="p-derived-chp1sec1-16-3-7">A single website that is comprised of 17 distinct pages.</div>
-<div class="autopermalink" data-description="Item 7"><a href="#chp1sec1-16-3-7" title="Copy heading and permalink for Item 7" aria-label="Copy heading and permalink for Item 7">🔗</a></div>
+<li id="chp1sec1-16-2-1-7">
+<div class="para" id="p-derived-chp1sec1-16-2-1-7">A single website that is comprised of 17 distinct pages.</div>
+<div class="autopermalink" data-description="Item 7"><a href="#chp1sec1-16-2-1-7" title="Copy heading and permalink for Item 7" aria-label="Copy heading and permalink for Item 7">🔗</a></div>
 </li>
-<li id="chp1sec1-16-3-8">
-<div class="para" id="p-derived-chp1sec1-16-3-8">Your favorite sports team.</div>
-<div class="autopermalink" data-description="Item 8"><a href="#chp1sec1-16-3-8" title="Copy heading and permalink for Item 8" aria-label="Copy heading and permalink for Item 8">🔗</a></div>
+<li id="chp1sec1-16-2-1-8">
+<div class="para" id="p-derived-chp1sec1-16-2-1-8">Your favorite sports team.</div>
+<div class="autopermalink" data-description="Item 8"><a href="#chp1sec1-16-2-1-8" title="Copy heading and permalink for Item 8" aria-label="Copy heading and permalink for Item 8">🔗</a></div>
 </li>
-<li id="chp1sec1-16-3-9">
-<div class="para" id="p-derived-chp1sec1-16-3-9">Your favorite video game.</div>
-<div class="autopermalink" data-description="Item 9"><a href="#chp1sec1-16-3-9" title="Copy heading and permalink for Item 9" aria-label="Copy heading and permalink for Item 9">🔗</a></div>
+<li id="chp1sec1-16-2-1-9">
+<div class="para" id="p-derived-chp1sec1-16-2-1-9">Your favorite video game.</div>
+<div class="autopermalink" data-description="Item 9"><a href="#chp1sec1-16-2-1-9" title="Copy heading and permalink for Item 9" aria-label="Copy heading and permalink for Item 9">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Activity 1.1.12: Identifying Lists of Quantities"><a href="#chp1sec1-16" title="Copy heading and permalink for Activity 1.1.12: Identifying Lists of Quantities" aria-label="Copy heading and permalink for Activity 1.1.12: Identifying Lists of Quantities">🔗</a></div></article></details><div class="para" id="chp1sec1-17">Throughout our day, we are constantly coming across vectors: nutrition facts in cereal, prices of our groceries, populations in cities, temperatures outside, internet search rankings, and even the color data for the pixels on our electronic displays.  In fact, a single image on a 4K LCD display is encoded within a list of <span class="process-math">\(3\times 3840 \times 2160 = 24,883,200\)</span> many numbers!<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Activity 1.1.12: Identifying Lists of Quantities"><a href="#chp1sec1-16" title="Copy heading and permalink for Activity 1.1.12: Identifying Lists of Quantities" aria-label="Copy heading and permalink for Activity 1.1.12: Identifying Lists of Quantities">🔗</a></div></article><div class="para" id="chp1sec1-17">Throughout our day, we are constantly coming across vectors: nutrition facts in cereal, prices of our groceries, populations in cities, temperatures outside, internet search rankings, and even the color data for the pixels on our electronic displays.  In fact, a single image on a 4K LCD display is encoded within a list of <span class="process-math">\(3\times 3840 \times 2160 = 24,883,200\)</span> many numbers!<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="remark remark-like" id="chp1sec1-18"><h3 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Meaningful vectors can have large list-length!</span>
@@ -453,9 +482,10 @@ eBookConfig.enable_chatcodes =  false;
 </h3>
 <div class="para" id="chp1sec1-19-2">So far we have focused on what I call day-to-day vectors - vectors we all see in our day-to-day lives.  Of course, there are also countless disciplinary specific vectors - that is vectors that are unique to academic disciplines.  Vectors naturally arise in all quantitative disciplines, including: physics, chemistry, biology, computer science, economics, and business.  Throughout this course, I will introduce you to some disciplinary vectors.  However, there is simply no way for me to list every possible disciplinary vector here.  Rather, a major goal of this lesson is to get your mind prepared to see and reason about disciplinary vectors when you encounter them in your disciplinary contexts.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-19-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 1.1.14: Day-to-Day vs. Disciplinary Vectors"><a href="#chp1sec1-19" title="Copy heading and permalink for Remark 1.1.14: Day-to-Day vs. Disciplinary Vectors" aria-label="Copy heading and permalink for Remark 1.1.14: Day-to-Day vs. Disciplinary Vectors">🔗</a></div></article><details id="chp1sec1-20" class="question example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<div class="autopermalink" data-description="Remark 1.1.14: Day-to-Day vs. Disciplinary Vectors"><a href="#chp1sec1-19" title="Copy heading and permalink for Remark 1.1.14: Day-to-Day vs. Disciplinary Vectors" aria-label="Copy heading and permalink for Remark 1.1.14: Day-to-Day vs. Disciplinary Vectors">🔗</a></div></article><article class="question example-like" id="chp1sec1-20"><h3 class="heading">
 <span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.1.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Constructing Feature Vectors (Machine Learning).</span>
-</h3></summary><article class="question example-like knowl__content"><div class="para" id="chp1sec1-20-2">In the photo below is a photo of my very sweet cat. In a quick glance, I can recognize him.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-20-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h3>
+<div class="para" id="chp1sec1-20-2">In the photo below is a photo of my very sweet cat. In a quick glance, I can recognize him.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-20-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="chp1sec1-20-3"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;grid-template-columns:50% 50%;column-gap:0%;">
 <div class="sbspanel sbspanel--bottom bottom" style=""><div class="image-box"><img src="external/images/miyagi.jpg" class="contained"></div></div>
@@ -469,7 +499,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para" id="chp1sec1-20-7">When you are done, share with the class your feature vector.  What quantities comprise your feature vector?  What is its list-length?  Do you think that you have given the computer enough quantities that it should be able to distinguish pictures of cats from pictures of dogs by looking at their feature vectors? Feature vectors form the starting point for machine learning.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec1-20-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Activity 1.1.15: Constructing Feature Vectors (Machine Learning)"><a href="#chp1sec1-20" title="Copy heading and permalink for Activity 1.1.15: Constructing Feature Vectors (Machine Learning)" aria-label="Copy heading and permalink for Activity 1.1.15: Constructing Feature Vectors (Machine Learning)">🔗</a></div></article></details><div class="autopermalink" data-description="Section 1.1: Vectors as Lists of Quantities"><a href="#chp1sec1" title="Copy heading and permalink for Section 1.1: Vectors as Lists of Quantities" aria-label="Copy heading and permalink for Section 1.1: Vectors as Lists of Quantities">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Activity 1.1.15: Constructing Feature Vectors (Machine Learning)"><a href="#chp1sec1-20" title="Copy heading and permalink for Activity 1.1.15: Constructing Feature Vectors (Machine Learning)" aria-label="Copy heading and permalink for Activity 1.1.15: Constructing Feature Vectors (Machine Learning)">🔗</a></div></article><div class="autopermalink" data-description="Lesson 1.1: Vectors as Lists of Quantities"><a href="#chp1sec1" title="Copy heading and permalink for Lesson 1.1: Vectors as Lists of Quantities" aria-label="Copy heading and permalink for Lesson 1.1: Vectors as Lists of Quantities">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="chapter1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chapter2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
