@@ -187,17 +187,18 @@
 			An <em>attribute</em> of one serving size of cereal is nutrition.  
 			I can measure nutrition in many ways, for example: grams of fat, grams of carbs, grams of protein, etc.
 			The <term>list of macronutrients</term>, below, has list-length 3.
-		</p>
+		
 
 		<ol>
 			<li> Grams of fat in one serving size</li>
 			<li> Grams of carbs in one serving size</li>
 			<li> Grams of protein in one serving size</li>
 		</ol>
+		</p>
 
 		<p>
 			A different <em>attribute</em> is my daily consumption. I can quantify consumption in many ways, for example: the number of serving sizes I consume each day of the week. The list of servings consumed, below, is a list of list-length 7.
-		</p>
+		
 
 		<ol>
 			<li> Number of serving sizes consumed on Sunday, </li>
@@ -208,14 +209,15 @@
 			<li> Number of serving sizes consumed on Friday, </li>
 			<li> Number of serving sizes consumed on Saturday, </li>
 		</ol>
-		
+		</p>
+
 	</example>
 
 		<example>
 		<title>Quantities outside - Revisited</title>
 		<p>
 			An <em>object</em> is the air outside my home. An <em>attribute</em> of air is temperature. I can quantify temperature in many ways, for example measure the temperature in degrees Fahrenheit in 3 hour intervals throughout the day. The corresponding list of temperatures, below, has list-length 8.
-		</p>
+		
 
 		<ol>
 			<li> Degrees Fahrenheit at 12am, </li>
@@ -227,10 +229,11 @@
 			<li> Degrees Fahrenheit at 6pm, </li>
 			<li> Degrees Fahrenheit at 9pm. </li>
 		</ol>
+		</p>
 
 		<p>
 			A different <em>attribute</em> is humidity.  I can quantify humidity in many ways, for example measure the relative humidity (in percents) in 4 hour intervals throughout the day. The  corresponding list of humidities, below, has list-length 6.
-		</p>
+		
 		<ol>
 			<li> Percent humidity at 12am, </li>
 			<li> Percent humidity at 4am, </li>
@@ -239,6 +242,7 @@
 			<li> Percent humidity at 4pm, </li>
 			<li> Percent humidity at 8pm, </li>
 		</ol>
+		</p>
 		
 	</example>
 
@@ -246,7 +250,7 @@
 		<title>Identifying Lists of Quantities</title>
 		<p> 
 			Consider each of the following situations.  With your group, write down several lists of quantities that might naturally come up when analyzing the situation. Be sure to clearly specify each quantity (include object, attribute, and agreed way to measure).   Note that these are intentionally vague and open-ended prompts.
-		</p>	
+			
 		<ol>
 			<li>The most recent time you went grocery shopping.</li>
 			<li>Your phone.</li>
@@ -258,6 +262,8 @@
 			<li>Your favorite sports team.</li>
 			<li>Your favorite video game.</li>
 		</ol>
+		</p>
+		
 	</question>
 
 	<p>

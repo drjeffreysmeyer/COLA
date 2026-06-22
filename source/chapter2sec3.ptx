@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp2sec3" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Lines as Traveling Down a Path</title>
+    
+  
+
+  <p>
+    Visualize the planes (in parametric form) in <m>\R^2</m> at GeoGebra ID: 
+    <url href="https://www.geogebra.org/m/tk8s9eut" visual="">tk8s9eut</url>.
+  </p>
+
+  <remark>
+    <p>
+      In multivariable calculus, you will expand on the ideas introduced here to describe <em>parametrized surfaces</em> and their <em>tangent planes</em>.
+    </p>
+    <!--<figure xml:id="fig-tangent-plane">
+      <caption>Tangent plane to a sphere.</caption>
+      <p>[Image reference: Tangent plane to a sphere graph]</p>
+    </figure>-->
+    <p>Visualize tangent planes to surfaces in <m>\R^3</m> at GeoGebra ID: <url href="https://www.geogebra.org/m/mmkmzuqr" visual="">mmkmzuqr</url>.</p>
+  </remark>
+
+</section>

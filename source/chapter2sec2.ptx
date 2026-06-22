@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp2sec2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Algebraic Properties of Linear Combination</title>
+
+
+  <question>
+      <title>Baking Cookies</title>
+      <statement>
+        <p> I am a big fan of chocolate chip cookies.  </p>
+        <image source="images/ai_baking_cookies.png" width="100%">
+    		  <description> 
+            <p>
+              A cartoon depicting maxing ingredients to make cookies.
+            </p>
+          </description>
+        </image>
+          <p>
+            Below is the ingredient list for a chocolate chip cookie recipe that produces 60 cookies.
+            		<ul>
+                  <li> <m>2 \frac{1}{4}</m> cups of all-purpose flour\, </li>
+                  <li> 1 teaspoon of baking soda, </li>
+                  <li> 1 teaspoon of salt, </li>
+                  <li> 1 cup of butter </li>
+                  <li> <m>\frac{3}{4}</m> cup of granulated sugar, </li>
+                  <li> <m>\frac{3}{4}</m> cup of packed brown sugar, </li>
+                  <li> 1 teaspoon of vanilla extract, </li>
+                  <li> 2 large eggs,</li>
+                  <li> 2 cups of semi-sweet chocolate morsels. </li>
+                </ul>
+          </p>
+          <p>
+            One serving size of each ingredient is one unit of the given unit of measurement (i.e. one serving size of flour is one cup, one serving size of baking soda is one teaspoon, etc.). Let the symbols <m>\vect{i}_1</m>, <m>\ldots</m>, <m>\vect{i}_9</m> be the names of the nutrition fact vectors for one serving size of each of these nine ingredients. In groups, discuss each of the following and then share with the class.
+          <ol>
+              <li><p><alert>Symbolize.</alert> Using the names <m>\vect{i}_1</m>, <m>\ldots</m>, <m>\vect{i}_9</m> and the symbolism of linear combination, symbolize the nutrition facts for the totality of a single recipe of cookies.</p></li>
+              <li><p><alert>Reason.</alert> However I want to make a double recipe (120 cookies) so that all of my linear algebra students can eat several during class. <em>In what ways can I make a double recipe?</em> Try to come up with at least two distinct strategies for making a double recipe.</p></li>
+              <li><p><alert>Symbolize.</alert> I want to understand the nutrition facts vector for the totality of the cookies in my double recipe. Using the symbolism of linear combination, write down an algebraic <em>equation</em> for the two distinct ways you found for making double recipes.</p></li>
+              <li><p><alert>Repeated Reasoning.</alert> Repeat this reasoning for the following situation. Later at home, I want a single cookie. Come up with at least two distinct strategies for making a single cookie. Using the symbolism of linear combination, write down an algebraic <em>equation</em> for the nutrition facts for a single cookie.</p></li>
+              <li><p><alert>Generalize.</alert> In what ways can you generalize your algebraic equation to more situations? Describe both the situation and generalized algebraic equation.</p></li>
+          </ol>
+        </p>  
+      </statement>
+  </question>
+
+  <p>After some class discussion, we should settle on <em>two</em> distinct strategies for making a double recipe: I could make single recipe <em>twice</em>, or I could <em>double</em> each of my ingredients. I would have the same final collection of cookies, hence the same nutrition facts, either way. We symbolize this equivalence in the following way:</p>
+
+  <md>
+      <mrow>2\left(\tfrac{9}{4}\vect{i}_1+1\vect{i}_2+1\vect{i}_3+1\vect{i}_4+\tfrac{3}{4}\vect{i}_5+\tfrac{3}{4}\vect{i}_6+1\vect{i}_7+2\vect{i}_8+2\vect{i}_9\right)</mrow>
+      <mrow>= (2\cdot\tfrac{9}{4})\vect{i}_1+(2\cdot1)\vect{i}_2+(2\cdot1)\vect{i}_3+(2\cdot1)\vect{i}_4+(2\cdot\tfrac{3}{4})\vect{i}_5+(2\cdot\tfrac{3}{4})\vect{i}_6+(2\cdot1)\vect{i}_7+(2\cdot2)\vect{i}_8+(2\cdot2)\vect{i}_9.</mrow>
+  </md>
+
+  <p>Furthermore, this reasoning should generalize to any scaling factor <m>k\in \R</m> and any number of vectors. We have discovered and informally justified our first <alert>algebraic property</alert> of linear combinations.</p>
+
+  <proposition xml:id="prop-dist_across_comb">
+      <title>Distributivity of scaling across linear combination</title>
+      <statement>
+          <p>If <m>x_1,\ldots, x_n, k\in \R</m> and <m>\vect{v}_1,\ldots, \vect{v}_n\in\R^m</m>, then <me>k(x_1\vect{v}_1+\cdots+x_n\vect{v}_n) = (kx_1)\vect{v}_1+\cdots+(kx_n)\vect{v}_n.</me></p>
+      </statement>
+  </proposition>
+
+  <remark>
+      <title>What is an algebraic property?</title>
+      <p>When I say an algebraic property, I will mean a general <em>equivalence</em> of two objects, expressed as an equality of symbolical expressions. For example, we just saw that we can double a recipe in two ways, which resulted in an equality of two algebraic expressions. We generalized this algebraic property and state it in Proposition <xref ref="prop-dist_across_comb" />. Whenever we encounter a useful algebraic property, we will summarize it in a proposition for us to easily use in the future. Remember, algebraic properties encode meaningful relationships first and foremost, and are not just rules to push symbols around the page.</p>
+  </remark>
+
+  <p>Whenever we make a mathematical claim, it is incumbent upon us to justify that claim. The act of justification is a core mathematical action and comes in two varieties: informal and formal.</p>
+
+  <remark>
+      <title>Informal Justification</title>
+      <p>Informal justification is the act of explaining why a mathematical statement makes sense by appealing to meanings, such as those imbued by metaphors.</p>
+  </remark>
+
+  <p>The discussion of having two ways to double our recipe leveraged our mixture metaphor to provide an informal justification for Proposition <xref ref="prop-dist_across_comb" />.</p>
+
+  <remark>
+      <title>Formal Justification (a.k.a. Proving)</title>
+      <p>Formal justification (a.k.a proving) is the act of certifying the truth of a mathematical statement by weaving together a chain of definitions and previously proven conditional statements (e.g. a proposition). This should include exposition that explains how you are both <em>invoking</em> and <em>using</em> in context each definition and conditional statement.</p>
+  </remark>
+
+  <p>We have not yet proved a formal justification for Proposition <xref ref="prop-dist_across_comb" />. To provide a formal justification, we will need to first establish some starting assumptions and more basic principles. Formal justification is an exercise in deductive logic. As you progress through this book, you will have increasingly more exposure to, and opportunities to provide, formal justifications of mathematical statements.</p>
+
+  <p>Now that we have seen our first algebraic property, it is time to look a little more carefully at important algebraic properties we will use throughout this course. Formal justifications of algebraic properties of linear combinations rest upon the algebraic properties of real numbers. Going forward, we will <em>assume</em> the standard algebraic properties of real numbers: associativity, identity, inverses, commutativity, and distributivity, which I collect in Definition <xref ref="rem-assume_algebraic_props_of_reals" />.</p>
+
+  <definition xml:id="rem-assume_algebraic_props_of_reals">
+      <title>Algebraic Properties of Real Numbers</title>
+      <statement>
+          <p>Real numbers satisfy the following algebraic properties.</p>
+          <ol>
+              <li><p><alert>Addition and multiplication are associative:</alert> If <m>a,b,c \in \R</m>, then <m>(a+b)+c=a+(b+c)</m> and <m>(ab)c=a(bc)</m>.</p></li>
+              <li><p><alert>Additive and multiplicative identities:</alert> The element <m>0\in \R</m> satisfies the property: if <m>a\in \R</m>, then <m>0+a=a</m>. The element <m>1\in \R</m> satisfies the property: if <m>a\in \R</m>, then <m>1a=a</m>.</p></li>
+              <li><p><alert>There exist additive and multiplicative inverses:</alert> If <m>a\in \R</m>, then there exists an element <m>-a\in \R</m> such that <m>a+(-a)=0</m>. If <m>a\in \R-\{0\}</m>, then there exists an element <m>a^{-1}\in \R-\{0\}</m> such that <m>aa^{-1}=1</m>.</p></li>
+              <li><p><alert>Addition and multiplication are commutative:</alert> If <m>a,b \in \R</m>, then <m>a+b=b+a</m> and <m>ab=ba</m>.</p></li>
+              <li><p><alert>Addition and multiplication are tied together with distributivity:</alert> If <m>a,b,c \in \R</m>, then <m>a(b+c)=ab+ac</m>.</p></li>
+          </ol>
+      </statement>
+  </definition>
+
+  <p>You will find referencing these properties to be essential to formal justifications of mathematical statements in this book.</p>
+  <p>Here I collect some of the most import algebraic properties that we will use throughout this course.</p>
+
+  <proposition xml:id="prop_fundamental_vector_props">
+      <title>Fundamental Algebraic Properties of Linear Combination</title>
+      <statement>
+          <p>If <m>\vect{u}, \vect{v},\vect{w} \in \R^m</m> and <m>x,y\in\R</m>, then</p>
+          <ol>
+              <li><p><alert>(Associativity of addition)</alert> <m>(\vect{u}+\vect{v})+\vect{w}=\vect{u}+(\vect{v}+\vect{w})</m>;</p></li>
+              <li><p><alert>(Zero vector)</alert> <m>\vect{0}+\vect{v}=\vect{v}</m>, where <m>\vect{0}</m> is the vector of all zero entries;</p></li>
+              <li><p><alert>(Inverse vector)</alert> <m>\vect{-v}+\vect{v}=\vect{0}</m>, where <m>\vect{-v}</m> is the vector whose entries are the negative of the entries of <m>\vect{v}</m>;</p></li>
+              <li><p><alert>(Commutativity of addition)</alert> <m>\vect{v}+\vect{w}=\vect{w}+\vect{v}</m>;</p></li>
+              <li><p><alert>(Scaling by 1)</alert> <m>1\vect{v}=\vect{v}</m>;</p></li>
+              <li><p><alert>(Associativity of scaling)</alert> <m>(x(y\vect{v}))=(xy)\vect{v}</m>;</p></li>
+              <li><p><alert>(Distributivity of scalar sum)</alert> <m>(x+y)\vect{v}=x\vect{v}+y\vect{v}</m>;</p></li>
+              <li><p><alert>(Distributivity of scaling across vector sum)</alert> <m>x(\vect{v}+\vect{w})=x\vect{v}+x\vect{w}</m>.</p></li>
+          </ol>
+      </statement>
+  </proposition>
+
+  <proof>
+      <p>Each of these properties can be deduced from the algebraic properties of real numbers ( <xref ref="rem-assume_algebraic_props_of_reals" />), the definition of vector scaling ( <xref ref="Def-vector_scaling" />), and the definition of vector addition ( <xref ref="Def-vector_addition"/>). I now give a formal justification of <alert>(LC1)</alert>, associativity of addition, with symbolic equalities below.</p>
+      <p>
+          <md>
+              <mrow>(\vect{u}+\vect{v})+\vect{w} \amp =\left( \begin{bmatrix}u_1\\ \vdots\\ u_m\end{bmatrix} + \begin{bmatrix}v_1\\ \vdots\\ v_m\end{bmatrix}\right)+ \begin{bmatrix}w_1\\ \vdots\\ w_m\end{bmatrix} \amp\amp \text{Unpacking symbols}</mrow>
+              <mrow>\amp = \begin{bmatrix}u_1+v_1\\ \vdots\\ u_m+v_m\end{bmatrix}+ \begin{bmatrix}w_1\\ \vdots\\ w_m\end{bmatrix} \amp\amp \text{Addition of vectors, Definition \ref{Def-vector_addition}}</mrow>
+              <mrow>\amp = \begin{bmatrix}(u_1+v_1)+w_1\\ \vdots\\ (u_m+v_m)+w_m\end{bmatrix} \amp\amp \text{Addition of vectors, Definition \ref{Def-vector_addition}}</mrow>
+              <mrow>\amp = \begin{bmatrix}u_1+(v_1+w_1)\\ \vdots\\ u_m+(v_m+w_m)\end{bmatrix} \amp\amp \text{Associativity of addition in } \R, \text{Definition \ref{rem-assume_algebraic_props_of_reals}}</mrow>
+              <mrow>\amp = \begin{bmatrix}u_1\\ \vdots\\ u_m\end{bmatrix}+ \begin{bmatrix}v_1+w_1\\ \vdots\\ v_m+w_m\end{bmatrix} \amp\amp \text{Addition of vectors, Definition \ref{Def-vector_addition}}</mrow>
+              <mrow>\amp = \begin{bmatrix}u_1\\ \vdots\\ u_m\end{bmatrix} + \left( \begin{bmatrix}v_1\\ \vdots\\ v_m\end{bmatrix}+ \begin{bmatrix}w_1\\ \vdots\\ w_m\end{bmatrix}\right) \amp\amp \text{Addition of vectors, Definition \ref{Def-vector_addition}}</mrow>
+              <mrow>\amp = \vect{u}+(\vect{v}+\vect{w}) \amp\amp \text{Repacking symbols}.</mrow>
+          </md>
+      </p>
+  </proof>
+
+  <remark>
+      <title>A reflection upon our first formal justification.</title>
+      <p>Please look back at and reflect upon the formal justification I just gave for additive associativity of vectors in the proof of Proposition <xref ref="prop_fundamental_vector_props" />. Observe how I start and end with the linear combination <em>in terms of the names</em> of the vectors. Observe how in the middle, I unpack the vectors and use their entries and assumed properties of real numbers to find appropriate algebraically equivalent expressions. Observe how I clearly state each definition or proposition I use. Observe how it is a clear story from start to finish.</p>
+  </remark>
+
+  <question>
+      <title>Constructing Meanings of Algebraic Properties</title>
+      <statement>
+          <p>For each algebraic property in Proposition <xref ref="prop_fundamental_vector_props" />, pick an appropriate metaphor and provide a meaningful informal justification. Each group could be assigned a different algebraic property, and after some time preparing, groups can present to the class.</p>
+      </statement>
+  </question>
+
+  <question>
+      <title>Practicing Formal Justification</title>
+      <statement>
+          <p>In a similar way as I did for associativity of vector addition, provide formal justifications for the remaining algebraic properties of linear combination in Proposition <xref ref="prop_fundamental_vector_props" />.</p>
+      </statement>
+  </question>
+
+  <p>Mathematics builds upon itself. After we have established a solid foundation of assumptions and definitions, we build upon it, layer upon layer, to provide the formal justifications for ever more sophisticated mathematical statements.</p>
+
+  <question>
+      <title>Practicing Formal Justification</title>
+      <statement>
+          <p>Use Definition <xref ref="rem-assume_algebraic_props_of_reals" />, Definition <xref ref="Def-vector_scaling" />, Definition <xref ref="Def-vector_addition" />, and Proposition <xref ref="prop_fundamental_vector_props" /> to provide a formal justification for Proposition <xref ref="prop-dist_across_comb" />.</p>
+      </statement>
+  </question>
+
+  <proposition xml:id="prop-scalar_sum_across_comb">
+      <title>Distributivity of scalar sums across linear combination</title>
+      <statement>
+          <p>If <m>x_1,\ldots, x_n, y_1,\ldots, y_n\in \R</m> and <m>\vect{v}_1,\ldots, \vect{v}_n\in\R^m</m>, then <me>(x_1+y_1)\vect{v}_1+\cdots+(x_n+y_n)\vect{v}_n= (x_1\vect{v}_1+\cdots+x_n\vect{v}_n)+(y_1\vect{v}_1+\cdots+y_n\vect{v}_n).</me></p>
+      </statement>
+  </proposition>
+
+  <question>
+      <title>Practicing (In)formal Justification</title>
+      <statement>
+          <p>Pick an appropriate metaphor and provide a meaningful informal justification for Proposition <xref ref="prop-scalar_sum_across_comb" />. Use Definition <xref ref="rem-assume_algebraic_props_of_reals" />, Definition <xref ref="Def-vector_scaling" />, Definition <xref ref="Def-vector_addition" />, and Proposition <xref ref="prop_fundamental_vector_props" /> to provide a formal justification for Proposition <xref ref="prop-scalar_sum_across_comb" />.</p>
+      </statement>
+  </question>
+</section>

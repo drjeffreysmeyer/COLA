@@ -1,8 +1,357 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="chp2sec1" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Linear Combination as Mixture</title>
+  <title>Linear Combinations as Mixture</title>
+    
+  <p>In this lesson, we investigate, conceptualize, and formalize the notion of mixing vectors.</p>
 
-  <p> Text of section. </p>
+  <example xml:id="vig-pouring-cereal">
+    <title>Vignette: Pouring Cereal</title>
+    <p>I love cereal. It can be a great way to start the day. I have two cereal boxes on my shelf: Sugar-Os, which is very tasty (but not so nutritious), and Vitaflakes, which is very nutritious (but not so tasty). When I look at the side of their boxes, I see their nutrition facts.</p>
+    
+    <image source="images/ai_cereal_mix.png" width="100%">
+    		<description> 
+				<p>
+					A cartoon depicting mixing cereal from both a box of Sugar-O's and Vitaflakes.
+				</p>
+			</description>
+		</image>
+
+    <p>When I make my daily breakfast, I <em>mix</em> my cereals. Today, I mixed half a serving of Sugar-Os with a third of a serving of Vitaflakes. <em>What are the nutrition facts for my mixture?</em></p>
+    <p>I wonder, <em>how much nutrients is in my bowl?</em></p>
+  </example>
+
+  <example xml:id="vig-travel-instructions">
+    <title>Vignette: Travel Instructions</title>
+    <p>My neighborhood's streets are parallel and intersect at right angles, but they are not aligned with the north-south and east-west cardinal directions. My neighborhood map is depicted below, where the distance between each adjacent gridline is 100ft. The blue streets go from the southwest to the northeast, and each blue block measures 300ft east and 400ft north. The red streets travel from the northeast to the southeast, and each red block measures 400ft east and 300ft south.</p>
+    
+    <p></p>
+
+    <p>My GPS tells me that my grocery store is 500ft east of me and 1500ft north of me, but of course, I can not get there traveling 500ft due east and 1500ft due north, as that would require I cut straight through other people's homes. Instead, I see I can travel 3 blue blocks northeast and 1 red block northwest, I get to the grocery store. <em>Could I have gotten there another way?</em></p>
+    <p>I need to go to my bank. My bank is not too far away, and in fact my GPS tells me it is only 2300ft east and 1400ft north of me. I wonder, <em>how can I describe my path there in terms of blue blocks and red blocks?</em></p>
+  </example>
+
+  <example xml:id="vig-averaging-temperature">
+    <title>Vignette: Averaging Temperature</title>
+    <p>I want to plan out my clothing for the week so pull up the weather app on my phone. I see the forecasts for each of the next two days, with temperatures measured in degrees Fahrenheit, is:</p>
+    
+    		<table>
+			<title>Today's Forcast</title>
+			<tabular halign="center">
+				<row header="yes" bottom="minor" >
+				<cell>Hours after midnight </cell>
+				<cell>Temperature Today in Fahrenheit (&#176;F)</cell>
+        <cell>Temperature Tomorrow in Fahrenheit (&#176;F)</cell>
+				</row>
+				<row>
+				<cell>0</cell>
+				<cell>42&#176;F</cell>
+        <cell>44&#176;F</cell>
+				</row>
+				<row>
+				<cell>3</cell>
+				<cell>39&#176;F</cell>
+        <cell>41&#176;F</cell>
+				</row>
+				<row>
+				<cell>6</cell>
+				<cell>38&#176;F</cell>
+        <cell>40&#176;F</cell>
+				</row>
+				<row>
+				<cell>9</cell>
+				<cell>48&#176;F</cell>
+        <cell>52&#176;F</cell>
+				</row>
+				<row>
+				<cell>12</cell>
+				<cell>56&#176;F</cell>
+        <cell>64&#176;F</cell>
+				</row>
+				<row>
+				<cell>15</cell>
+				<cell>59&#176;F</cell>
+        <cell>67&#176;F</cell>
+				</row>
+				<row>
+				<cell>18</cell>
+				<cell>53&#176;F</cell>
+        <cell>61&#176;F</cell>
+				</row>
+				<row>
+				<cell>21</cell>
+				<cell>46&#176;F</cell>
+        <cell>50&#176;F</cell>
+				</row>
+			</tabular>
+
+			</table>
+
+    <p>Interesting! Tomorrow will be a warmer day. The app then gives the average forecast over the next two days:</p>
+
+    <p>The weather app plots the forecast for today, tomorrow, and the 2-day average below.</p>
+    <p></p>
+  </example>
+
+  <p>A core mathematical act is to create and use symbols to organize our thoughts and communicate our reasoning. One of the most fundamental ideas associated to (lists of) quantities is <em>mixing</em> (lists of) quantities.</p>
+
+  <example xml:id="ex-mixing-vignettes">
+    <title>Where we saw mixing in our vignettes?</title>
+    <p>In Vignette 1, I <em>pour</em> some of one cereal and then some of another cereal.</p>
+    <p>In Vignette 2, I <em>travel</em> in one direction, and then in another direction.</p>
+    <p>In Vignette 3, I <em>average</em> each of my daily forecasts.</p>
+  </example>
+
+  <p>We observe two types of mixtures of quantities: those arising from a <em>physical</em> mixture of empirical objects (e.g. pouring cereals) and those arising from a <em>conceptual</em> mixture of quantities (e.g. averages of air temperatures). Mixture is a core idea that will be central to everything going forward.</p>
+
+  <activity xml:id="activity-seeing-mixing-around">
+    <title>Where else do you see mixing?</title>
+    <statement>
+      <p>Think back to all the different lists of quantities you found in the world around you. In which of those contexts was it meaningful to <em>mix</em> those vectors? Write down the contexts, lists of quantities, and what it means to mix them.</p>
+    </statement>
+  </activity>
+
+  <p>
+    The idea of mixing vectors is made mathematically precise through two natural operations: scaling and addition. To reason about them verbally, I will usually discuss them with the metaphor of servings of boxes of cereal, where a vector represents the nutrients of one serving size of a given cereal. However, sometimes I will draw upon other metaphors, such as travel. To visualize them, I will most frequently use the geometric representation. I am about to give our first formal mathematical definition.
+  </p>
+
+  <insight xml:id="psa-math-def">
+    <title>What is a mathematical definition?</title>
+    <p>
+      Mathematical definitions are our attempt to formalize some mathematical object or mathematical action. It introduces precise language and symbols that help us reason about and communicate mathematics. It is a pedagogical decision that I will always introduce a concept informally first, drawing on your experiences. Afterwards I will introduce formalism, with the hope that you will have a sense of their <em>informal meaning</em> and the <em>need for</em> the formalism. In what follows, you should seek to know both the precise formal statement of definitions as well as their informal meaning and the context for their applicability.
+    </p>
+  </insight>
+
+  <definition xml:id="Def-vector_scaling">
+    <title>Vector Scaling</title>
+    <statement>
+      <p>
+        If <m>k \in \R</m> and <m>\vect{v}=\begin{bmatrix}v_1\\v_2\\ \vdots \\ v_m\end{bmatrix}\in \R^m</m>, then <m>k\vect{v}=k \begin{bmatrix}v_1\\v_2\\ \vdots \\ v_m\end{bmatrix}=\begin{bmatrix}kv_1\\kv_2\\ \vdots \\ kv_m\end{bmatrix}</m> is the vector <m>\vect{v}</m> <term>scaled</term> by <m>k</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <note xml:id="meanings-vector_scaling">
+    <title>Meanings of Vector Scaling</title>
+    <p>
+      If <m>k\in \mathbb{R}</m> and <m>\vect{v}\in \mathbb{R}^m</m>, then the scaled vector <m>k\vect{v}</m> has each of the following meanings:
+
+      <ol>
+        <li><p><alert>Verbally.</alert> I fill my bowl with <m>k</m> many serving sizes of my cereal.</p></li>
+        <li><p><alert>Visually.</alert> Hold the arrow on both ends. Keep the tail (origin) fixed as you stretch the arrow by a scaling factor of <m>k</m>. See Figure below.</p></li>
+        <li><p><alert>Symbolically.</alert> The scaled vector has name <m>k\vect{v}</m> and when we unpack it, its entries are obtained by scaling each entry of <m>\vect{v}</m> by <m>k</m>.</p></li>
+      </ol>
+      </p>
+   <!--<figure xml:id="fig-vector-scaling">
+      <caption>Visualizing vector scaling as stretching.</caption>
+      <p></p>
+    </figure>-->
+    <figure xml:id="figure-geogebra-scaling">
+    <caption>Visualizing vector scaling via arrows</caption>
+    <interactive geogebra="D5ZYkYQq" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
+    <instructions>
+            <p>
+              An interactive GeoGebra window showing vector scaling via arrows. Move the vector by dragging its tip.  Use the slider to change the scalar.  Play with this.  What happens when the scalar is between 0 and 1?  What happens when the scalar is negative?
+            </p>
+     </instructions>
+        <static>
+            <image width="100%" source="images/2_1_geogebra_scaling.png"/>
+            <shortdescription>An image of a vector scaled by a factor of 2.5.</shortdescription>
+        </static>
+    </interactive>
+  </figure>
+  </note>
+
+  <exploration xml:id="exploration-geogebra-scaling">
+  <p>
+    Visualize vector scaling as:
+    <ol>
+      <li>stretching arrows at GeoGebra ID: <url href="https://www.geogebra.org/m/D5ZYkYQq" visual="">D5ZYkYQq</url></li>
+      <li>amplifying signals at GeoGebra ID: <url href="https://www.geogebra.org/m/cczk5gzj" visual="">cczk5gzj</url></li>
+      <li>adjusting the volume of a sound at GeoGebra ID: <url href="https://www.geogebra.org/m/awejqq5u" visual="">awejqq5u</url></li>
+    </ol>
+  </p>
+</exploration>
+
+  <insight xml:id="psa-absolute-relative-length">
+    <title>Absolute Length vs Relative Length</title>
+    <p>
+      When one thinks of a vector as an arrow, it is common to think of it as having both a <em>direction</em> and <em>absolute length</em>. At this time, we will not be using the notion of absolute length, rather this will be developed and made precise in later chapters. Scaling, on the other hand, encodes <em>relative length</em> - for example, if <m>\vect{w} = 2\vect{v}</m>, then <m>\vect{w}</m> is two times as long as <m>\vect{v}</m>. In the lessons to come, we will frequently measure vectors in units of other vectors via scaling.
+    </p>
+  </insight>
+
+  <definition xml:id="Def-vector_addition">
+    <title>Vector Addition</title>
+    <statement>
+      <p>
+        If <m>\vect{v}=\begin{bmatrix}v_1\\v_2\\ \vdots \\ v_m\end{bmatrix}, \vect{w}=\begin{bmatrix}w_1\\w_2\\ \vdots \\ w_m\end{bmatrix}\in \mathbb{R}^m</m>, then <m>\vect{v}+\vect{w}= \begin{bmatrix}v_1\\v_2\\ \vdots \\ v_m\end{bmatrix}+\begin{bmatrix}w_1\\w_2\\ \vdots \\ w_m\end{bmatrix} = \begin{bmatrix}v_1+w_1\\v_2+w_2\\ \vdots \\ v_m+w_m\end{bmatrix}</m> is their <term>vector sum</term>. 
+        The operation of forming their vector sum is <term>vector addition</term>.
+      </p>
+    </statement>
+  </definition>
+
+  <note xml:id="meanings-vector_addition">
+    <title>Meanings of Vector Addition</title>
+    <p>
+      If <m>\vect{v},\vect{w}\in \mathbb{R}^m</m>, then the vector sum <m>\vect{v}+\vect{w}</m> has each of the following meanings:
+    <ul>
+      <li><p><alert>Verbally.</alert> I fill my bowl with one serving size of each of my cereals.</p></li>
+      <li><p><alert>Visually.</alert> Translate the <m>\vect{w}</m>-arrow to start at the tip of <m>\vect{v}</m>-arrow. Similarly, translate the <m>\vect{v}</m>-arrow to start at the tip of the <m>\vect{w}</m>-arrow. This will form a <q>tip-to-tail</q> parallelogram and the arrow for <m>\vect{v}+\vect{w}</m> will be the diagonal of this parallelogram. We call this visualization <alert>tip-to-tail</alert> addition.</p></li>
+      <li><p><alert>Symbolically.</alert> The vectors sum has name <m>\vect{v}+\vect{w}</m> and when we unpack it, its entries are obtained by adding the entries in the corresponding positions, which we call entry-by-entry addition.</p></li>
+    </ul>
+  </p>
+  <!--  <figure xml:id="fig-vector-addition">
+      <caption>Visualizing vector addition via parallelogram.</caption>
+      <p></p>
+    </figure>-->
+      <figure xml:id="figure-geogebra-addition">
+    <caption>Visualizing vector addition via arrows</caption>
+    <interactive geogebra="ADsHPgV4" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
+    <instructions>
+            <p>
+              An interactive GeoGebra window showing vector addition via arrows. Move the vectors by dragging their tips.  Use the sliders to translate each vector to the tip of the other.  Play with this.  
+            </p>
+     </instructions>
+        <static>
+            <image width="100%" source="images/2_1_geogebra_addition.png"/>
+            <shortdescription>An image of the sum of two vector.</shortdescription>
+        </static>
+    </interactive>
+  </figure>  
+  </note>
+
+  <exploration xml:id="exploration-geogebra-addition">
+    <p>
+      Visualize vector addition via tip-to-tail parallelograms at GeoGebra ID: 
+      <url href="https://www.geogebra.org/m/ADsHPgV4" visual="">ADsHPgV4</url> and superposition of signals at GeoGebra ID: <url href="https://www.geogebra.org/m/ttny3hjk" visual="">ttny3hjk</url>.
+    </p>
+  </exploration>
+
+  <p>
+    Naturally, you will want to do both, scale and add vectors. Scaling, then adding, defines a fundamental mixing operation among vector quantities: linear combination.
+  </p>
+
+  <definition xml:id="def-linear_combination">
+    <title>Linear Combination</title>
+    <statement>
+      <p>
+        If <m>S=\{\vect{v}_1, \ldots, \vect{v}_n\}\subset \R^m</m> is a collection of vectors and <m>x_1,\ldots x_n\in \mathbb{R}</m> a collection of real numbers, then the vector <m>x_1\vect{v}_1+\dots +x_n\vect{v}_n</m> is a <alert>linear combination</alert> of the vectors in <m>S</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <insight xml:id="ex-mixture_parallelogram">
+    <title>The Mixture Parallelogram</title>
+    <p>If <m>\vect{v}, \vect{w}\in \mathbb{R}^2</m> and <m>r,s\in\mathbb{R}</m>, then the linear combination <m>r\vect{v}+s\vect{w}</m> may be visualized with its <term>mixture parallelogram</term> with sides determined by <m>r\vect{v}</m> and <m>s\vect{w}</m>.</p>
+    <p>For instance, the mixture of 2 servings of <m>\begin{bmatrix}2\\1\end{bmatrix}</m> and 1.5 servings of <m>\begin{bmatrix}-1\\1\end{bmatrix}</m> is encoded in the mixture parallelogram below.</p>
+    <!--<figure xml:id="fig-vector-lin-comb">
+      <caption>Visualizing linear combination of two vectors via the mixture parallelogram.</caption>
+      <p></p>
+    </figure>-->
+        <figure xml:id="figure-geogebra-mixture_parallelogram">
+    <caption>Visualizing linear combination via the mixture parallelogram.</caption>
+    <interactive geogebra="qAC4TXwy" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
+    <instructions>
+            <p>
+              An interactive GeoGebra window showing linear combination via the mixture parallelogram. Move the vectors by dragging their tips.  Use the sliders to change the scalar for each vector.  Play with this.  
+            </p>
+     </instructions>
+        <static>
+            <image width="100%" source="images/2_1_geogebra_mixture_parallelogram.png.png"/>
+            <shortdescription>A static image of a vector and a vector scaled by 2.5.</shortdescription>
+        </static>
+    </interactive>
+  </figure>
+  </insight>
+
+  <activity xml:id="geogebra_activity-lincomb">
+    <title>Explorations with The Mixture Parallelogram Tool</title>
+    <statement>
+      <p>
+        In this activity, you will engage with some of the core mixture questions of this course. Build intuition now and revisit later. You will use the <em>Mixture Parallelogram Tool</em> to visualize, explore, and understand mixtures of vectors in <m>\R^2</m>.
+      </p>
+      <p>
+        A pre-made version of the Mixture Parallelogram Tool can be found at GeoGebra ID: 
+        <url href="https://www.geogebra.org/m/qAC4TXwy" visual="">qAC4TXwy</url>.
+                      <ol>
+                    <li><p><alert>Finding serving sizes to create a given mixture.</alert> By playing with the sliders, find the serving sizes <m>r</m> and <m>s</m> so that <m>r\begin{bmatrix}3\\1\end{bmatrix}+s\begin{bmatrix}-1\\2\end{bmatrix}=\begin{bmatrix}3\\8\end{bmatrix}</m>.</p></li>
+                    <li><p><alert>Analyzing the set of all possible mixtures.</alert> Move the vectors <m>\vect{v}</m> and <m>\vect{w}</m>, and sliders <m>r</m> and <m>s</m>, to analyze the truth of each of the following claims. In complete sentences, and using your mixture parallelogram, justify why the claim seems true or seems false.</p>
+                    <ol>
+                        <li><p>Every vector in the plane is a linear combination of <m>\begin{bmatrix}1\\1\end{bmatrix}</m> and <m>\begin{bmatrix}-1\\1\end{bmatrix}</m>.</p></li>
+                        <li><p>Every vector in the plane is a linear combination of <m>\begin{bmatrix}1\\1\end{bmatrix}</m> and <m>\begin{bmatrix}2\\2\end{bmatrix}</m>.</p></li>
+                    </ol></li>
+                    <li><p><alert>Holding one slider constant.</alert> Slide <m>r</m> to <m>1</m> and keep it there for the moment. Look at the tip of your mixture vector. Right click on the point and select "trace" and then start sliding <m>s</m> around (while not changing <m>r</m>). What shape is created by the collection of tip points? Reset and try this again by fixing <m>s=1</m> and sliding <m>r</m>.</p></li>
+                </ol>
+
+      </p>
+    </statement>
+  </activity>
+
+
+  <question xml:id="activity-symbolizing">
+      <title>Symbolizing Linear Combinations</title>
+      <statement>
+          <p>In each of the following situations, identify and name the relevant vectors (including the appropriate list-length) and then write an algebraic expression representing the appropriate mixture.</p>
+          <ol>
+              <li><p>If every month, you record your monthly expenses by type (groceries, gas, utilities, tuition, etc.) in dollars, then symbolize your total expenses for the past year.</p></li>
+              <li><p>If again you record your monthly expenses, and given that annual inflation is currently roughly <m>7\%</m>, symbolize what you expect to be your monthly expenses in one year.</p></li>
+              <li><p>If I have two cereals such that 1.5 servings of the first cereal has the exact same nutrition facts as 0.75 servings of the second cereal, then symbolize an equation relating the two serving sizes.</p></li>
+          </ol>
+      </statement>
+  </question>
+
+  <question xml:id="activity-interpretting_symbolism">
+      <title>Practice Interpreting Symbolism</title>
+      <statement>
+          <p>Interpret the meaning of the symbolic expression in each of the following situations.</p>
+          <ol>
+              <li><p>You have a recipe for cookies that uses five ingredients. If <m>\vect{i}_1, \ldots, \vect{i}_5\in \R^8</m> are the nutrition facts for a single serving size of each of these five ingredient and the recipe calls for <m>x_1,\ldots, x_5\in \R</m> servings of each ingredient, respectively, then interpret the meaning of the linear combination <me>2x_1\vect{i}_1+2x_2\vect{i}_2+2x_3\vect{i}_3+2x_4\vect{i}_4+2x_5\vect{i}_5.</me></p></li>
+              <li><p>If <m>\vect{t}_i\in \R^{24}</m> is the vector of hourly temperatures in <m>{}^\circ F</m>, <m>i\in \{\mathrm{Su, Mo, Tu, We, Th, Fr, Sa}\}</m>, measured at your home on day <m>i</m> of last week, then interpret <me>\frac{1}{7}(\vect{t}_{\mathrm{Su}}+\vect{t}_{\mathrm{Mo}}+\vect{t}_{\mathrm{Tu}}+\vect{t}_{\mathrm{We}}+\vect{t}_{\mathrm{Th}}+\vect{t}_{\mathrm{Fr}}+\vect{t}_{\mathrm{Sa}}).</me></p></li>
+          </ol>
+      </statement>
+  </question>
+
+  <p>
+    Given a set of distinct vectors <m>S = \{\vect{v}_1,\ldots, \vect{v}_n\}\subset \R^m</m>, we may consider a linear combination <m>x_1\vect{v}_1+\cdots+x_n\vect{v}_n</m>. This linear combination is a mathematical object. We can ask how "big" this object is in units of each <m>\vect{v}_i\in S</m>. This is a mathematical attribute of the linear combination. Finally, we can agree to measure the linear combinations in units of <m>\vect{v}_i</m>, which is the value <m>x_i</m>. Collecting these quantities, we now associate to each such linear combination a new vector: its <em>servings vector</em>.
+  </p>
+
+  <definition xml:id="def-serving_size_vector">
+      <title>Servings Vector</title>
+      <statement>
+          <p>
+            If <m>S=\{\vect{v}_1,\ldots, \vect{v}_n\} \subset\R^m</m> are distinct vectors with a fixed order and <m>x_1,\ldots, x_n\in\R</m> are scalars, then the linear combination <me>x_1\vect{v}_1+\cdots + x_n\vect{v}_n</me> has <term>servings vector</term> <m>\vect{x}=\begin{bmatrix}x_1\\ \vdots \\ x_n\end{bmatrix}</m>.
+          </p>
+      </statement>
+  </definition>
+
+  <md>
+    \underbrace{\begin{bmatrix}\textcolor{blue}{x_1}\\ \vdots \\ \textcolor{blue}{x_n}\end{bmatrix}}_{\textcolor{blue}{\text{Servings Vector}}}
+    \hspace{1pc}
+    \Longleftrightarrow
+    \hspace{2pc}
+    \underbrace{\textcolor{blue}{x_1}\vect{v}_1+\cdots + \textcolor{blue}{x_n}\vect{v}_n}_{\textcolor{red}{\text{Mixture Vector}}}
+  </md>
+  
+  <p>
+    The list-length of a servings vector is the number of vectors <m>n</m> the collection <m>S</m>. Also, note that the order of elements in <m>S</m> matters! A different ordering of elements in <m>S</m> would result in a different servings vector.
+  </p>
+
+
+  <question>
+      <title>Practice Forming Servings Vectors</title>
+      <statement>
+          <ol>
+              <li><p>Form the servings vector for each of the following linear combinations:
+              <ol>
+                  <li><p><m>S_1 = \{\vect{a}, \vect{b}\}</m> <m>\quad</m> <m>2\vect{a}+3\vect{b}</m></p></li>
+                  <li><p><m>S_2 = \{\vect{p}, \vect{q}, \vect{r}\}</m> <m>\quad</m> <m>3\vect{p}+0\vect{q}-2\vect{r}</m></p></li>
+                  <li><p><m>S_3 = \{\vect{e}, \vect{f}\}</m> <m>\quad</m> <m>\vect{e}+4\vect{e}-7\vect{f}</m></p></li>
+                  <li><p><m>S_4 = \{\vect{m}, \vect{n}\}</m> <m>\quad</m> <m>5\vect{n}-7\vect{m}</m></p></li>
+              </ol></p></li>
+              <li><p>Did we need to know the list-length of the vectors above to form the servings vectors?</p></li>
+              <li><p>Suppose we are forming a linear combination of <m>S= \{\vect{s},\vect{t}, \vect{u},\vect{v}\}</m> that has servings vector <m>\begin{bmatrix}1\\2\\3\\4\end{bmatrix}</m>. What is the linear combination?</p></li>
+          </ol>
+      </statement>
+  </question>
 
 </section>

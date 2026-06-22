@@ -7,6 +7,8 @@
   <targets>
     <target name="web" format="html" />
     <target name="print" format="pdf" />
+    <target name="latex" format="latex"/>
+    <target name="braille" format="braille" braille-mode="emboss"/>
   </targets>
 </project>
 

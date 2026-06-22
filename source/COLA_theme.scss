@@ -1,0 +1,91 @@
+/* ==========================================================================
+   PreTeXt Custom Theme Starter Template
+   Save this file as 'custom-theme.scss' relative to your main document root.
+   ========================================================================== */
+
+// 1. BRANDING & CORE PALETTE
+$primary-color:       #1a5276 !default; // Main accent, header background, and banner accent
+$secondary-color:     #2e4053 !default; // Borders, active states, and sub-headings
+$background-light:    #fdfefe !default; // Main body page content area background
+$background-dark:     #1c2833 !default; // Dark mode background variant
+
+// 2. STRUCTURAL CONTENT BLOCKS
+// PreTeXt categorizes layout sections strictly by user context
+$color-fact:          #196f3d !default; // Expository content (Theorems, Lemmas, Axioms)
+$color-do:            #78288c !default; // Interactive content (Exercises, Worksheets, Tasks)
+$color-meta:          #b7950b !default; // Pedagogical meta-info (Objectives, Remarks, Goals)
+
+// 3. TYPOGRAPHY & FONT STACK
+$font-family-sans:   'Helvetica Neue', Arial, sans-serif !default; // Primary text
+$font-family-mono:   'JetBrains Mono', monospace !default;        // Verbatim code & programs
+$base-font-size:     16px !default;                               // Document base text sizing
+$line-height-base:   1.6 !default;                                // Optimal text readability
+
+// 4. NAVIGATION & LAYOUT DIMENSIONS
+$sidebar-width:      300px !default; // Width of the expandable Table of Contents sidebar
+$masthead-height:    60px !default;  // Height of the top navigation banner bar
+$content-max-width:  800px !default; // Prevents lines of text from stretching too wide
+
+/* ==========================================================================
+   CORE LAYOUT IMPLEMENTATION
+   Apply your variables cleanly across the native PreTeXt DOM classes.
+   ========================================================================== */
+
+// Base Document Styles
+body {
+    font-family: $font-family-sans;
+    font-size: $base-font-size;
+    line-height: $line-height-base;
+    background-color: $background-light;
+}
+
+// Top Navigation Banner Area
+.ptx-masthead {
+    height: $masthead-height;
+    background-color: $primary-color;
+    color: #ffffff;
+    
+    a {
+        color: #ffffff;
+        &:hover { color: darken(#ffffff, 15%); }
+    }
+}
+
+// Table of Contents (TOC) Sidebar Drawer
+.ptx-sidebar {
+    width: $sidebar-width;
+    border-right: 1px solid $secondary-color;
+    
+    // Focused/active section in layout
+    .active {
+        border-left: 4px solid $primary-color;
+        font-weight: bold;
+    }
+}
+
+// Central Book Content Grid Wrapper
+.ptx-content {
+    max-width: $content-max-width;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+// Structural Component Theme Injections
+// "Fact-like" environment boxes
+.theorem, .lemma, .definition {
+    border-left: 4px solid $color-fact;
+    background-color: scale-color($color-fact, $lightness: 90%);
+}
+
+// "Do-like" environment boxes
+.exercise, .project, .task {
+    border-left: 4px solid $color-do;
+    background-color: scale-color($color-do, $lightness: 90%);
+}
+
+// Inline & Block Code Elements
+code, pre, .program, .console {
+    font-family: $font-family-mono;
+    background-color: #f4f6f7;
+    border-radius: 4px;
+}
