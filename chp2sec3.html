@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.1.4';
+eBookConfig.runestone_version = '8.1.8';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.d1480f934b51d4ec.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.fa61545fa3ffbf2f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
+<script src="_static/prefix-runtime.917dfc3cfe0bb764.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.d40a1acc1751a0b6.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.87414d180ebeebd6.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -135,6 +135,48 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\Q}{\mathbb Q} 
 \newcommand{\R}{\mathbb R} 
 \newcommand{\vect}[1]{\mathbf{#1}}
+
+\DeclareMathOperator{\Aut}{Aut} \DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Mod}{Mod} \DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\SL}{SL} \DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\GL}{GL} \DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\Ort}{O} \DeclareMathOperator{\PO}{PO}
+\DeclareMathOperator{\GO}{GO} \DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\PSO}{PSO} \DeclareMathOperator{\Uni}{U}
+\DeclareMathOperator{\PU}{PU} \DeclareMathOperator{\GU}{GU}
+\DeclareMathOperator{\SU}{SU} \DeclareMathOperator{\PSU}{PSU}
+\DeclareMathOperator{\Sp}{Sp} \DeclareMathOperator{\GSp}{GSp}
+\DeclareMathOperator{\PSp}{PSp} \DeclareMathOperator{\Spin}{Spin}
+\DeclareMathOperator{\Pin}{Pin} \DeclareMathOperator{\Comm}{Comm}
+\DeclareMathOperator{\Sy}{S} \DeclareMathOperator{\Sol}{Sol}
+\DeclareMathOperator{\Nil}{Nil} \DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\ad}{ad} \DeclareMathOperator{\Mat}{M}
+\DeclareMathOperator{\Aff}{Aff} \DeclareMathOperator{\Sim}{Sim}
+\DeclareMathOperator{\Euc}{Euc} \DeclareMathOperator{\Semi}{Semi}
+\DeclareMathOperator{\FI}{FI}\DeclareMathOperator{\NFI}{NFI}
+\DeclareMathOperator{\Ave}{Ave}\DeclareMathOperator{\GCD}{gcd}
+\DeclareMathOperator{\lcm}{lcm}\DeclareMathOperator{\Eff}{Eff}
+\DeclareMathOperator{\Fix}{Fix}\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Isom}{Isom}\DeclareMathOperator{\Nor}{N}
+\DeclareMathOperator{\Rep}{R}\DeclareMathOperator{\Char}{X}
+\DeclareMathOperator{\Hom}{Hom}\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Sym}{Sym}\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Jac}{Jac}\DeclareMathOperator{\IR}{InRad}
+\DeclareMathOperator{\Vol}{Vol}\DeclareMathOperator{\Star}{Star}
+\DeclareMathOperator{\Id}{Id}\DeclareMathOperator{\Exc}{Exc}
+\DeclareMathOperator{\hd}{hd}\DeclareMathOperator{\cd}{cd}
+\DeclareMathOperator{\Fe}{F}\DeclareMathOperator{\Rank}{Rank}
+\DeclareMathOperator{\Br}{Br}\DeclareMathOperator{\Homeo}{Homeo}\DeclareMathOperator{\Orb}{Orb}\DeclareMathOperator{\Int}{Int}\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\spn}{Span}\DeclareMathOperator{\rref}{rref}
+\DeclareMathOperator{\col}{Col}\DeclareMathOperator{\Col}{Col}\DeclareMathOperator{\Null}{Null}
+\DeclareMathOperator{\Area}{Area}\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\asf}{asf}\DeclareMathOperator{\sasf}{sasf}
+\DeclareMathOperator{\vsf}{vsf}\DeclareMathOperator{\svsf}{svsf}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\round}{round}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\abssum}{abssum}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -145,15 +187,33 @@ eBookConfig.enable_chatcodes =  false;
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter0.html" class="internal"><span class="codenumber">0</span> <span class="title">Introduction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp0sec1.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Note to Students</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp0sec2.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Note to Teachers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="chapter1.html" class="internal"><span class="codenumber">1</span> <span class="title">Vectors</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="chp1sec1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vectors as Lists of Quantities</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp1sec1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vectors as Lists of Quantities</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp1sec2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Symbolizing Vectors</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp1sec3.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Visualizing Vectors</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="chapter2.html" class="internal"><span class="codenumber">2</span> <span class="title">Linear Combination</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec1.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Linear Combinations as Mixture</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Algebraic Properties of Linear Combination</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="chp2sec3.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Lines as Traveling Down a Path</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="chp2sec3.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Lines as Traveling Down a Path</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp2sec3.html#chp2sec3subsec1" class="internal"><span class="title">Lines in <span class="process-math">\(\R^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp2sec3.html#chp2sec3subsec2" class="internal"><span class="title">Lines in <span class="process-math">\(\R^m\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp2sec3.html#chp2sec3subsec3" class="internal"><span class="title">Planes in <span class="process-math">\(\R^m\)</span></span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec4.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The Set of All Linear Combination</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec5.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Dependency</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec6.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Subsets That Contain Their Mixtures</span></a></div></li>
@@ -164,16 +224,360 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="chp2sec3"><h2 class="heading hide-type">
 <span class="type">Lesson</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lines as Traveling Down a Path</span>
 </h2>
-<div class="para" id="chp2sec3-2">Visualize the planes (in parametric form) in <span class="process-math">\(\R^2\)</span> at GeoGebra ID: <a class="external" href="https://www.geogebra.org/m/tk8s9eut" target="_blank">tk8s9eut</a>.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="chp2sec3-2">In this lesson, we use our understanding of vectors and linear combination to inform how we think about lines in the plane, and then generalize to how we think about lines (and planes) in <span class="process-math">\(\R^m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="remark remark-like" id="chp2sec3-3"><h3 class="heading">
-<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+<img src="external/images/2.3_lines_in_r2.png" class="contained" alt="described in detail following the image" aria-describedby="chp2sec3-3-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="chp2sec3-3-description"><div class="para" id="chp2sec3-3-1-1">Lines in the plane.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<section class="subsection" id="chp2sec3subsec1"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lines in <span class="process-math">\(\R^2\)</span></span>
 </h3>
-<div class="para" id="chp2sec3-3-1">In multivariable calculus, you will expand on the ideas introduced here to describe <em class="emphasis">parametrized surfaces</em> and their <em class="emphasis">tangent planes</em>.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="chp2sec3subsec1-2">While I expect anyone taking this course to have seen lines before, it may be useful to remind you what they are and how we describe them. Lines are subsets of the plane satisfying certain geometric properties, and these subsets can be describe by certain equations.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="chp2sec3-3-2">Visualize tangent planes to surfaces in <span class="process-math">\(\R^3\)</span> at GeoGebra ID: <a class="external" href="https://www.geogebra.org/m/mmkmzuqr" target="_blank">mmkmzuqr</a>.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="definition definition-like" id="def-lines_r2"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lines in <span class="process-math">\(\R^2\)</span>.</span>
+</h4>
+<div class="para logical" id="def-lines_r2-2-1">
+<div class="para">A <dfn class="terminology">line</dfn> <span class="process-math">\(\ell\)</span> in the plane <span class="process-math">\(\R^2\)</span> is the set of all points <span class="process-math">\(\begin{bmatrix}x\\y\end{bmatrix}\in \R^2\)</span> that satisfy an algebraic equation of the form <span class="process-math">\(px+qy=r\text{.}\)</span> This is a <dfn class="terminology">normal equation</dfn> of a line. Using set builder notation, I may write</div>
+<div class="displaymath process-math" id="def-lines_r2-2-1-7">
+\begin{equation*}
+\ell = \left\{ \begin{bmatrix}x\\y\end{bmatrix} \in \R^2 \ \mid \ px+qy=r\right\}.
+\end{equation*}
 </div>
-<div class="autopermalink" data-description="Remark 2.3.1"><a href="#chp2sec3-3" title="Copy heading and permalink for Remark 2.3.1" aria-label="Copy heading and permalink for Remark 2.3.1">🔗</a></div></article><div class="autopermalink" data-description="Lesson 2.3: Lines as Traveling Down a Path"><a href="#chp2sec3" title="Copy heading and permalink for Lesson 2.3: Lines as Traveling Down a Path" aria-label="Copy heading and permalink for Lesson 2.3: Lines as Traveling Down a Path">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-lines_r2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.3.1: Lines in \R^2"><a href="#def-lines_r2" title="Copy heading and permalink for Definition 2.3.1: Lines in \R^2" aria-label="Copy heading and permalink for Definition 2.3.1: Lines in \R^2">🔗</a></div></article><div class="para logical" id="chp2sec3subsec1-4">
+<div class="para">Let’s take a moment to discuss the equations that describe the points on a line. Every line satisfies a normal equation. If the line is not vertical (i.e. <span class="process-math">\(q\ne 0\)</span>), then its points satisfy two other algebraically equivalent equations:</div>
+<ul class="disc" id="chp2sec3subsec1-4-2">
+<li id="chp2sec3subsec1-4-2-1">
+<div class="para" id="chp2sec3subsec1-4-2-1-1">
+<em class="alert">Slope-Intercept Equation</em> <span class="process-math">\(y=mx+b\text{,}\)</span> where the line has slope <span class="process-math">\(m\)</span> and <span class="process-math">\(y\)</span>-intercept <span class="process-math">\(b\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-4-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#chp2sec3subsec1-4-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chp2sec3subsec1-4-2-2">
+<div class="para" id="chp2sec3subsec1-4-2-2-1">
+<em class="alert">Point-Slope Equation</em> <span class="process-math">\(y=m(x-x_0)+y_0\text{,}\)</span> where the line goes through point <span class="process-math">\((x_0,y_0)\)</span> and has slope <span class="process-math">\(m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-4-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#chp2sec3subsec1-4-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">We can think of these equations as <em class="emphasis">constraints</em> that points in the plane must satisfy to lie on the given line.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp2sec3subsec1-5">Keep in mind, a line is a set of points, not one of the many equations that describe those points. Now recall that points in the plane may be understood as vectors. <em class="emphasis">Can we use vectors to formulate new and productive ways to describe the points that comprise a line?</em><div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-line_yint_to_parametric"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Finding vectors that describe a line.</span>
+</h4>
+<div class="para" id="ex-line_yint_to_parametric-2-1">Consider the line <span class="process-math">\(\ell\)</span> with slope-intercept equation <span class="process-math">\(y=3x-2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-line_yint_to_parametric-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="ex-line_yint_to_parametric-2-2">
+<div class="para">If <span class="process-math">\((x,y)\)</span> is the coordinate of a point on <span class="process-math">\(\ell\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="ex-line_yint_to_parametric-2-2-3">
+\begin{equation*}
+\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}x\\3x-2\end{bmatrix} = \begin{bmatrix}0\\-2\end{bmatrix} + x\begin{bmatrix}1 \\3\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-line_yint_to_parametric-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-line_yint_to_parametric-2-3">Name <span class="process-math">\(\vect{p}=\begin{bmatrix}0\\-2\end{bmatrix}\)</span> and <span class="process-math">\(\vect{v}=\begin{bmatrix}1\\3\end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-line_yint_to_parametric-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;grid-template-columns:70% 30%;column-gap:0%;">
+<div class="sbspanel sbspanel--top top" style=""><div class="para logical" id="ex-line_yint_to_parametric-2-4-1">
+<div class="para">Then I can think of this line <span class="process-math">\(\ell\)</span> via a metaphor of <em class="emphasis">traveling</em> along a <em class="emphasis">path</em> as follows:</div>
+<ol class="decimal" id="ex-line_yint_to_parametric-2-4-1-4">
+<li id="ex-line_yint_to_parametric-2-4-1-4-1">
+<div class="para" id="ex-line_yint_to_parametric-2-4-1-4-1-1">
+<span class="process-math">\(\vect{p}\)</span> is your starting <em class="emphasis">position</em>.<div class="autopermalink" data-description="Paragraph"><a href="#ex-line_yint_to_parametric-2-4-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#ex-line_yint_to_parametric-2-4-1-4-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-line_yint_to_parametric-2-4-1-4-2">
+<div class="para" id="ex-line_yint_to_parametric-2-4-1-4-2-1">
+<span class="process-math">\(\vect{v}\)</span> is the direction and distance you travel in 1 unit of time (i.e. <em class="emphasis">velocity</em>).<div class="autopermalink" data-description="Paragraph"><a href="#ex-line_yint_to_parametric-2-4-1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#ex-line_yint_to_parametric-2-4-1-4-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="ex-line_yint_to_parametric-2-4-1-4-3">
+<div class="para" id="ex-line_yint_to_parametric-2-4-1-4-3-1">
+<span class="process-math">\(x\)</span> is your elapsed time. When <span class="process-math">\(x\)</span> is positive, you can think of <span class="process-math">\(\vect{p} + x\vect{v}\)</span> as what your position on the path will be <span class="process-math">\(x\)</span> units of time in the future, and when <span class="process-math">\(x\)</span> is negative, you can think of <span class="process-math">\(\vect{p} + x\vect{v}\)</span> as what your position had been <span class="process-math">\(x\)</span> units of time in the past. Since <span class="process-math">\(x\)</span> here is conceptualized as time, we often replace the symbol <span class="process-math">\(x\)</span> with the symbol <span class="process-math">\(t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-line_yint_to_parametric-2-4-1-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#ex-line_yint_to_parametric-2-4-1-4-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="para">In symbols, the line can be expressed as the set of points <span class="process-math">\(\ell = \left\{\begin{bmatrix}0\\-2\end{bmatrix} + t\begin{bmatrix}1\\3\end{bmatrix} \ \bigg| \ t\in \R \right\}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-line_yint_to_parametric-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<div class="sbspanel sbspanel--top top" style=""><div class="image-box">
+<img src="external/images/2.3_lines_ex1.png" class="contained" alt="described in detail following the image" aria-describedby="ex-line_yint_to_parametric-2-4-2-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="ex-line_yint_to_parametric-2-4-2-description"><div class="para" id="ex-line_yint_to_parametric-2-4-2-1-1">The graph of the line with equation <span class="process-math">\(y=3x-2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-line_yint_to_parametric-2-4-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div></div>
+</div></div>
+<div class="autopermalink" data-description="Example 2.3.2: Finding vectors that describe a line"><a href="#ex-line_yint_to_parametric" title="Copy heading and permalink for Example 2.3.2: Finding vectors that describe a line" aria-label="Copy heading and permalink for Example 2.3.2: Finding vectors that describe a line">🔗</a></div></article><div class="para" id="chp2sec3subsec1-7">We can generalize our reasoning in <a href="chp2sec3.html#ex-line_yint_to_parametric" class="xref" data-knowl="./knowl/xref/ex-line_yint_to_parametric.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.3.2: Finding vectors that describe a line">Example 2.3.2</a> to any line in the plane.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-lines_r2_pvf"><h4 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Parametric Vector Form of Lines in <span class="process-math">\(\R^2\)</span>.</span>
+</h4>
+<div class="para" id="prop-lines_r2_pvf-2-1">If <span class="process-math">\(\ell\)</span> is a line in <span class="process-math">\(\R^2\text{,}\)</span> then there exists vectors <span class="process-math">\(\vect{v},\vect{p}\in \R^2\)</span> such that <span class="process-math">\(\ell = \{\vect{p}+t\vect{v} \ \big| \ t\in \R\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-lines_r2_pvf-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.3.3: Parametric Vector Form of Lines in \R^2"><a href="#prop-lines_r2_pvf" title="Copy heading and permalink for Proposition 2.3.3: Parametric Vector Form of Lines in \R^2" aria-label="Copy heading and permalink for Proposition 2.3.3: Parametric Vector Form of Lines in \R^2">🔗</a></div></article><details id="prop-lines_r2_pvf-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="prop-lines_r2_pvf-3-1">
+<div class="para">To begin, suppose <span class="process-math">\(\ell\)</span> is not vertical and has slope-intercept equation <span class="process-math">\(y=mx+b\text{.}\)</span> If <span class="process-math">\((x,y)\)</span> are the coordinates of a point on <span class="process-math">\(\ell\text{,}\)</span> then we may <em class="emphasis">substitute</em> for <span class="process-math">\(y\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="prop-lines_r2_pvf-3-1-7">
+\begin{equation*}
+\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}x\\mx+b\end{bmatrix} = \begin{bmatrix}0\\b\end{bmatrix} + x\begin{bmatrix}1 \\m\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Name <span class="process-math">\(\vect{p}=\begin{bmatrix}0\\b\end{bmatrix}\)</span> and <span class="process-math">\(\vect{v}=\begin{bmatrix}1 \\m\end{bmatrix}\text{.}\)</span> Then <span class="process-math">\(\begin{bmatrix}x\\y\end{bmatrix} = \vect{p}+x\vect{v}\text{.}\)</span> Since this is true for all <span class="process-math">\(x\in \R\text{,}\)</span> it follows that <span class="process-math">\(\ell = \{\vect{p}+t\vect{v} \ \big| \ t\in \R\}\text{.}\)</span> The case when <span class="process-math">\(\ell\)</span> is vertical is left as an exercise.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-lines_r2_pvf-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.3.3.1"><a href="#prop-lines_r2_pvf-3" title="Copy heading and permalink for Proof 2.3.3.1" aria-label="Copy heading and permalink for Proof 2.3.3.1">🔗</a></div></article></details><div class="para" id="chp2sec3subsec1-9">Observe the role substitution played in both  <a href="chp2sec3.html#ex-line_yint_to_parametric" class="xref" data-knowl="./knowl/xref/ex-line_yint_to_parametric.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.3.2: Finding vectors that describe a line">Example 2.3.2</a> and  <a href="chp2sec3.html#prop-lines_r2_pvf" class="xref" data-knowl="./knowl/xref/prop-lines_r2_pvf.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.3.3: Parametric Vector Form of Lines in \R^2">Proposition 2.3.3</a>. Using constraining equations and substituting in this way will be a reoccurring strategy throughout this course.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-line_parametric_to_yint"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Parametric to Slope-Intercept Conversion.</span>
+</h4>
+<div class="para" id="ex-line_parametric_to_yint-2-1">Consider the <em class="emphasis">path</em> with initial <em class="emphasis">position</em> <span class="process-math">\(\vect{p}=\begin{bmatrix} 3\\1\end{bmatrix}\)</span> and <em class="emphasis">travels</em> with velocity <span class="process-math">\(\vect{v}=\begin{bmatrix} -1\\2\end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-line_parametric_to_yint-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;grid-template-columns:50% 50%;column-gap:0%;">
+<div class="sbspanel sbspanel--top top" style=""><div class="para logical" id="ex-line_parametric_to_yint-2-2-1">
+<div class="para">Thinking of the scalar in front of <span class="process-math">\(\vect{v}\)</span> as <em class="emphasis">time</em>, I mark off units of <span class="process-math">\(\vect{v}\)</span> on the path, and I label the points at times <span class="process-math">\(-1\text{,}\)</span> 0, 1, 2, and 3. As we range over all time, the collection of <em class="emphasis">all</em> points on the path can be expressed as</div>
+<div class="displaymath process-math" id="ex-line_parametric_to_yint-2-2-1-6">
+\begin{equation*}
+\left\{\begin{bmatrix}3\\1\end{bmatrix}+t\begin{bmatrix} -1\\2\end{bmatrix}\ \bigg| \ t\in \R \right\}.
+\end{equation*}
+</div>
+<div class="para">In general, at time <span class="process-math">\(t\)</span> my position on the path has coordinate <span class="process-math">\((x,y) = (3-t, 1+2t)\text{.}\)</span> Since <span class="process-math">\(x=3-t\text{,}\)</span> then <span class="process-math">\(t=3-x\text{.}\)</span> Substituting this into the equation for <span class="process-math">\(y\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="ex-line_parametric_to_yint-2-2-1-12">
+\begin{equation*}
+y = 1+2(3-x) = -2x+7.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-line_parametric_to_yint-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<div class="sbspanel sbspanel--top top" style=""><div class="image-box">
+<img src="external/images/2.3_lines_ex2.png" class="contained" alt="described in detail following the image" aria-describedby="ex-line_parametric_to_yint-2-2-2-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="ex-line_parametric_to_yint-2-2-2-description"><div class="para" id="ex-line_parametric_to_yint-2-2-2-1-1">The graph of the line with equation <span class="process-math">\(y= -2x+7\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-line_parametric_to_yint-2-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div></div>
+</div></div>
+<div class="autopermalink" data-description="Example 2.3.4: Parametric to Slope-Intercept Conversion"><a href="#ex-line_parametric_to_yint" title="Copy heading and permalink for Example 2.3.4: Parametric to Slope-Intercept Conversion" aria-label="Copy heading and permalink for Example 2.3.4: Parametric to Slope-Intercept Conversion">🔗</a></div></article><div class="para" id="chp2sec3subsec1-11">Once again, we can generalize our reasoning in  <a href="chp2sec3.html#ex-line_parametric_to_yint" class="xref" data-knowl="./knowl/xref/ex-line_parametric_to_yint.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.3.4: Parametric to Slope-Intercept Conversion">Example 2.3.4</a> to any line in the plane.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="chp2sec3subsec1-12"><h4 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="chp2sec3subsec1-12-1-1">If <span class="process-math">\(\vect{v},\vect{p}\in \R^2\text{,}\)</span> then the set <span class="process-math">\(\ell = \{\vect{p}+t\vect{v} \ \big| \ t\in \R\}\)</span> is a line.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.3.5"><a href="#chp2sec3subsec1-12" title="Copy heading and permalink for Proposition 2.3.5" aria-label="Copy heading and permalink for Proposition 2.3.5">🔗</a></div></article><details id="chp2sec3subsec1-12-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="chp2sec3subsec1-12-2-1">
+<div class="para">To show that the set <span class="process-math">\(\ell\)</span> is a line, I need to verify the coordinates satisfy an equation of a line (  <a href="chp2sec3.html#def-lines_r2" class="xref" data-knowl="./knowl/xref/def-lines_r2.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 2.3.1: Lines in \R^2">Definition 2.3.1</a>). Unpacking entries, <span class="process-math">\(\ell = \left\{\begin{bmatrix}p_1\\p_2\end{bmatrix} + t\begin{bmatrix}v_1 \\v_2\end{bmatrix}\ \bigg| \ t\in \R\right\}\text{.}\)</span> If <span class="process-math">\((x,y)\)</span> is the coordinate of a point on <span class="process-math">\(\ell\text{,}\)</span> then <span class="process-math">\(x=p_1+tv_1\)</span> and <span class="process-math">\(y=p_2+tv_2\text{.}\)</span> If <span class="process-math">\(v_1\ne 0\text{,}\)</span> then the first equations can be rewritten as <span class="process-math">\(t=\frac{1}{v_1}(x-p_1)\text{,}\)</span> which can then be substituted into the second equation to get:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-lines_r2.html ./knowl/xref/def-lines_r2.html" id="chp2sec3subsec1-12-2-1-10">
+\begin{equation*}
+y= p_2+ \frac{1}{v_1}(x-p_1)v_2 = \frac{v_2}{v_1}x + (p_2-p_1\frac{v_2}{v_1}).
+\end{equation*}
+</div>
+<div class="para">This is the slope-intercept form of a line (  <a href="chp2sec3.html#def-lines_r2" class="xref" data-knowl="./knowl/xref/def-lines_r2.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 2.3.1: Lines in \R^2">Definition 2.3.1</a>). The case of <span class="process-math">\(v_1=0\)</span> is left as an exercise.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.3.5.1"><a href="#chp2sec3subsec1-12-2" title="Copy heading and permalink for Proof 2.3.5.1" aria-label="Copy heading and permalink for Proof 2.3.5.1">🔗</a></div></article></details><div class="para" id="chp2sec3subsec1-13">Revisit how in GeoGebra <a href="chp2sec1.html#geogebra_activity-lincomb" class="xref" data-knowl="./knowl/xref/geogebra_activity-lincomb.html" data-reveal-label="Reveal" data-close-label="Close" title="Activity 2.1.19: Explorations with The Mixture Parallelogram Tool">Activity 2.1.19</a>, Part 5, as you fix <span class="process-math">\(r=1\)</span> and slide <span class="process-math">\(s\text{,}\)</span> the tips of the vectors <span class="process-math">\(\begin{bmatrix}3\\1\end{bmatrix}+s \begin{bmatrix}-1\\2\end{bmatrix}\text{,}\)</span> <em class="emphasis">sweeps out a line</em> through <span class="process-math">\(\begin{bmatrix}3\\1\end{bmatrix}\)</span> and in the direction of <span class="process-math">\(\begin{bmatrix}-1\\2\end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="technology computation-like" id="exploration-geogebra-lines1"><h4 class="heading">
+<span class="type">Technology</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="exploration-geogebra-lines1-1">Visualize parametrized lines in <span class="process-math">\(\R^2\)</span> by playing with position vectors <span class="process-math">\(\vect{p}\)</span> and velocity vectors <span class="process-math">\(\vect{v}\)</span> at GeoGebra ID: <a class="external" href="https://www.geogebra.org/m/j2pnwgwz" target="_blank">j2pnwgwz</a>. Observe that a different vector <span class="process-math">\(\vect{v}'\)</span> in the direction of <span class="process-math">\(\vect{v}\)</span> will sweep out the same line, but will be at points at different "times." Move the vectors <span class="process-math">\(\vect{p}\)</span> and <span class="process-math">\(\vect{v}\)</span> and observe how the <span class="process-math">\(y\)</span>-intercept form of the line varies.<div class="autopermalink" data-description="Paragraph"><a href="#exploration-geogebra-lines1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Technology 2.3.6"><a href="#exploration-geogebra-lines1" title="Copy heading and permalink for Technology 2.3.6" aria-label="Copy heading and permalink for Technology 2.3.6">🔗</a></div></article><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+<img src="external/images/ai_walkingpath.png" class="contained" alt="described in detail following the image" aria-describedby="chp2sec3subsec1-15-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="chp2sec3subsec1-15-description"><div class="para" id="chp2sec3subsec1-15-1-1">A cartoon depicting walking down a linear path.  The initial position vector and velocity vector are clearly visible.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<div class="para logical" id="chp2sec3subsec1-16">
+<div class="para">To summarize, you should reconceptualize lines as the <em class="emphasis">collection of all points</em> in the plane reached by traveling along a path in the following way:</div>
+<ul class="disc" id="chp2sec3subsec1-16-2">
+<li id="chp2sec3subsec1-16-2-1">
+<div class="para" id="chp2sec3subsec1-16-2-1-1">Begin at a given starting point, symbolized as <span class="process-math">\(\vect{p}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-16-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#chp2sec3subsec1-16-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="chp2sec3subsec1-16-2-2">
+<div class="para" id="chp2sec3subsec1-16-2-2-1">Start traveling in a constant direction and constant speed, symbolized as <span class="process-math">\(\vect{v}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-16-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#chp2sec3subsec1-16-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">Your position on this path at time <span class="process-math">\(t\)</span> can be represented with the linear combination <span class="process-math">\(\vect{p}+t\vect{v}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="question example-like" id="chp2sec3subsec1-17"><h4 class="heading">
+<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Representing Lines.</span>
+</h4>
+<div class="para logical" id="chp2sec3subsec1-17-2-1">
+<div class="para">For each of the following lines in <span class="process-math">\(\R^2\text{,}\)</span>
+</div>
+<ol class="decimal" id="chp2sec3subsec1-17-2-1-2">
+<li id="chp2sec3subsec1-17-2-1-2-1">
+<div class="para" id="chp2sec3subsec1-17-2-1-2-1-1">Clearly <em class="alert">visually</em> sketch and label it,<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-17-2-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#chp2sec3subsec1-17-2-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="chp2sec3subsec1-17-2-1-2-2">
+<div class="para" id="chp2sec3subsec1-17-2-1-2-2-1">Find the <em class="alert">symbolic</em> form not given (i.e. slope-intercept or parametric vector form)<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-17-2-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#chp2sec3subsec1-17-2-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="chp2sec3subsec1-17-2-1-2-3">
+<div class="para" id="chp2sec3subsec1-17-2-1-2-3-1">
+<em class="alert">Verbally</em> write down, in complete sentences the meaning of the parametric equation in the language of position and steps per unit of time.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-17-2-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#chp2sec3subsec1-17-2-1-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="displaymath process-math" id="chp2sec3subsec1-17-2-1-3">
+\begin{equation*}
+\ell_1= \left\{\begin{bmatrix}x\\y\end{bmatrix} \ \big| \ y=\frac{1}{2}x-3\right\} \quad \ell_2= \left\{\begin{bmatrix}1\\1\end{bmatrix}+t\begin{bmatrix}-2\\1\end{bmatrix} \ \big| \ t\in \R\right\}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec1-17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Activity 2.3.7: Representing Lines"><a href="#chp2sec3subsec1-17" title="Copy heading and permalink for Activity 2.3.7: Representing Lines" aria-label="Copy heading and permalink for Activity 2.3.7: Representing Lines">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Lines in \R^2"><a href="#chp2sec3subsec1" title="Copy heading and permalink for Subsection: Lines in \R^2" aria-label="Copy heading and permalink for Subsection: Lines in \R^2">🔗</a></div></section><section class="subsection" id="chp2sec3subsec2"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lines in <span class="process-math">\(\R^m\)</span></span>
+</h3>
+<div class="para" id="chp2sec3subsec2-2">It is with this conceptualization of lines in the plane that we may <em class="emphasis">generalize</em> to reason about lines in <span class="process-math">\(\R^m\text{.}\)</span> We formalize this in the following definition.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-line"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lines in <span class="process-math">\(\R^m\)</span> and their Parametric Vector Form.</span>
+</h4>
+<div class="para" id="def-line-2-1">If <span class="process-math">\(\vect{p}, \vect{v}\in\R^m\)</span> and <span class="process-math">\(\vect{v}\)</span> is nonzero, then the set <span class="process-math">\(\ell:= \{\vect{p}+t\vect{v}\ \big| \ t\in \R\}\)</span> is a <em class="alert">line</em> in <span class="process-math">\(\R^m\text{,}\)</span> symbolized in <em class="alert">parametric vector form</em>. Here <span class="process-math">\(t\)</span> is a <em class="alert">parameter</em>. If <span class="process-math">\([a,b]\subset \R\)</span> is a closed interval, then <span class="process-math">\(s := \{\vect{p}+t\vect{v}\ \big| \ t\in [a,b]\}\)</span> is a <em class="alert">line segment</em> in <span class="process-math">\(\R^m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-line-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.3.8: Lines in \R^m and their Parametric Vector Form"><a href="#def-line" title="Copy heading and permalink for Definition 2.3.8: Lines in \R^m and their Parametric Vector Form" aria-label="Copy heading and permalink for Definition 2.3.8: Lines in \R^m and their Parametric Vector Form">🔗</a></div></article><article class="remark remark-like" id="chp2sec3subsec2-4"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lines as Paths of Travel.</span>
+</h4>
+<ol class="decimal" id="chp2sec3subsec2-4-2">
+<li id="chp2sec3subsec2-4-2-1">
+<div class="para" id="chp2sec3subsec2-4-2-1-1">
+<span class="process-math">\(\vect{p}\)</span> gives your starting <em class="emphasis">position</em>.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec2-4-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#chp2sec3subsec2-4-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="chp2sec3subsec2-4-2-2">
+<div class="para" id="chp2sec3subsec2-4-2-2-1">
+<span class="process-math">\(\vect{v}\)</span> gives the direction and distance travelled in 1 unit of time (i.e. <em class="emphasis">velocity</em>).<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec2-4-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#chp2sec3subsec2-4-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="chp2sec3subsec2-4-2-3">
+<div class="para" id="chp2sec3subsec2-4-2-3-1">
+<span class="process-math">\(t\)</span> gives you elapsed time. When <span class="process-math">\(t\)</span> is positive, you can think of <span class="process-math">\(\vect{p} + t\vect{v}\)</span> as what your position will be <span class="process-math">\(t\)</span> units of time in the future, and when <span class="process-math">\(x\)</span> is negative, you can think of <span class="process-math">\(\vect{p} + t\vect{v}\)</span> as what your position had been <span class="process-math">\(t\)</span> units of time in the past.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec2-4-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#chp2sec3subsec2-4-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Remark 2.3.9: Lines as Paths of Travel"><a href="#chp2sec3subsec2-4" title="Copy heading and permalink for Remark 2.3.9: Lines as Paths of Travel" aria-label="Copy heading and permalink for Remark 2.3.9: Lines as Paths of Travel">🔗</a></div></article><figure class="figure figure-like" id="fig-line_in_r3"><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Line in <span class="process-math">\(\R^3\)</span><div class="autopermalink" data-description="Figure 2.3.10"><a href="#fig-line_in_r3" title="Copy heading and permalink for Figure 2.3.10" aria-label="Copy heading and permalink for Figure 2.3.10">🔗</a></div></figcaption></figure><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+<img src="external/images/2.3_lines_in_r3.png" class="contained" alt="described in detail following the image" aria-describedby="chp2sec3subsec2-6-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="chp2sec3subsec2-6-description"><div class="para" id="chp2sec3subsec2-6-1-1">A line in <span class="process-math">\(\R^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec2-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<div class="para" id="chp2sec3subsec2-7">The line in  <a href="chp2sec3.html#fig-line_in_r3" class="xref" data-knowl="./knowl/xref/fig-line_in_r3.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.3.10">Figure 2.3.10</a> is given by parametric vector form <span class="process-math">\(\ell = \left\{\begin{bmatrix}2\\1\\1\end{bmatrix}+t\begin{bmatrix}-1\\-1\\1\end{bmatrix} \ \big| \ t\in \R \right\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="technology computation-like" id="exploration-geogebra-lines2"><h4 class="heading">
+<span class="type">Technology</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="exploration-geogebra-lines2-1">Visualize parametrized lines in <span class="process-math">\(\R^3\)</span> at GeoGebra ID: <a class="external" href="https://www.geogebra.org/m/nrp6wa5k" target="_blank">nrp6wa5k</a>. Move the vectors <span class="process-math">\(\vect{p}\)</span> and <span class="process-math">\(\vect{v}\)</span> and observe how the line visualization and line symbolization changes. Slide the parameter <span class="process-math">\(t\)</span> and observe how you "move" along the line.<div class="autopermalink" data-description="Paragraph"><a href="#exploration-geogebra-lines2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Technology 2.3.11"><a href="#exploration-geogebra-lines2" title="Copy heading and permalink for Technology 2.3.11" aria-label="Copy heading and permalink for Technology 2.3.11">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Lines in \R^m"><a href="#chp2sec3subsec2" title="Copy heading and permalink for Subsection: Lines in \R^m" aria-label="Copy heading and permalink for Subsection: Lines in \R^m">🔗</a></div></section><section class="subsection" id="chp2sec3subsec3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Planes in <span class="process-math">\(\R^m\)</span></span>
+</h3>
+<div class="para" id="chp2sec3subsec3-2">We now move on to generalize our reasoning to a new geometric object: a plane in <span class="process-math">\(\R^m\text{.}\)</span> While many have a sense of what a plane is when they see it, it is another matter to make sense of it mathematically. I will provide a geometric formulation. If points, <span class="process-math">\(\vect{p}\text{,}\)</span> <span class="process-math">\(\vect{a}\text{,}\)</span> and <span class="process-math">\(\vect{b}\)</span> in <span class="process-math">\(\R^m\)</span> do not all lie on the same line (in the language of geometry language, are <em class="alert">non-collinear</em>), then they form a triangle. Emanating from vertex <span class="process-math">\(\vect{p}\)</span> are sides <span class="process-math">\(\vect{v}:=\vect{a}-\vect{p}\)</span> and <span class="process-math">\(\vect{w}:=\vect{b}-\vect{p}\text{.}\)</span> The set of all points that I can reach by traveling with velocity vectors coming from the triangle’s sides is a plane. In a qualitative sense, <em class="emphasis">the plane a triangle determines is the unique flat slice of <span class="process-math">\(\R^m\)</span> that contains that triangle</em>.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-plane_in_r3"><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Plane in <span class="process-math">\(\R^3\)</span><div class="autopermalink" data-description="Figure 2.3.12"><a href="#fig-plane_in_r3" title="Copy heading and permalink for Figure 2.3.12" aria-label="Copy heading and permalink for Figure 2.3.12">🔗</a></div></figcaption></figure><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+<img src="external/images/2.3.3_planes1.png" class="contained" alt="described in detail following the image" aria-describedby="chp2sec3subsec3-4-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="chp2sec3subsec3-4-description"><div class="para" id="chp2sec3subsec3-4-1-1">A plane in <span class="process-math">\(\R^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec3-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<article class="remark remark-like" id="chp2sec3subsec3-5"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Plane through 3 non-collinear points.</span>
+</h4>
+<ol class="decimal" id="chp2sec3subsec3-5-2">
+<li id="chp2sec3subsec3-5-2-1">
+<div class="para" id="chp2sec3subsec3-5-2-1-1">Start at position <span class="process-math">\(\vect{p}\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec3-5-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#chp2sec3subsec3-5-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="chp2sec3subsec3-5-2-2">
+<div class="para" id="chp2sec3subsec3-5-2-2-1">Travel with constant direction and speed <span class="process-math">\(\vect{v}:=\vect{a}-\vect{p}\)</span> for <span class="process-math">\(s\)</span> units of time,<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec3-5-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#chp2sec3subsec3-5-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="chp2sec3subsec3-5-2-3">
+<div class="para" id="chp2sec3subsec3-5-2-3-1">Travel with constant direction and speed <span class="process-math">\(\vect{w}:=\vect{b}-\vect{p}\)</span> for <span class="process-math">\(t\)</span> units of time.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec3-5-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#chp2sec3subsec3-5-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Remark 2.3.13: Plane through 3 non-collinear points"><a href="#chp2sec3subsec3-5" title="Copy heading and permalink for Remark 2.3.13: Plane through 3 non-collinear points" aria-label="Copy heading and permalink for Remark 2.3.13: Plane through 3 non-collinear points">🔗</a></div></article><article class="definition definition-like" id="def-noncollinear"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Non-Collinear Vectors.</span>
+</h4>
+<div class="para" id="def-noncollinear-2-1">If <span class="process-math">\(\vect{v},\vect{w}\in \R^m\)</span> are nonzero vectors and lines <span class="process-math">\(\ell_\vect{v}=\{t\vect{v}\ \big| \ t\in \R\}\)</span> and <span class="process-math">\(\ell_\vect{w}=\{t\vect{w}\ \big| \ t\in \R\}\)</span> are not equal, then <span class="process-math">\(\vect{v}\)</span> and <span class="process-math">\(\vect{w}\)</span> are <em class="alert">non-collinear</em> vectors.<div class="autopermalink" data-description="Paragraph"><a href="#def-noncollinear-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.3.14: Non-Collinear Vectors"><a href="#def-noncollinear" title="Copy heading and permalink for Definition 2.3.14: Non-Collinear Vectors" aria-label="Copy heading and permalink for Definition 2.3.14: Non-Collinear Vectors">🔗</a></div></article><article class="definition definition-like" id="def-plane"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Planes in <span class="process-math">\(\R^m\)</span> and their Parametric Vector Form.</span>
+</h4>
+<div class="para logical" id="def-plane-2-1">
+<div class="para">If <span class="process-math">\(\vect{p},\vect{v},\vect{w}\in \R^m\)</span> such that <span class="process-math">\(\vect{v}\)</span> and <span class="process-math">\(\vect{w}\)</span> are non-collinear, then the set of points</div>
+<div class="displaymath process-math" id="def-plane-2-1-4">
+\begin{equation*}
+\rho=\left\{\vect{p}+s\vect{v}+t\vect{w} \ \big| \ s,t\in \R\right\},
+\end{equation*}
+</div>
+<div class="para">is a <em class="alert">plane</em>, symbolized in <em class="alert">parametric vector form</em>. Here <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> are <em class="alert">parameters</em>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-plane-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.3.15: Planes in \R^m and their Parametric Vector Form"><a href="#def-plane" title="Copy heading and permalink for Definition 2.3.15: Planes in \R^m and their Parametric Vector Form" aria-label="Copy heading and permalink for Definition 2.3.15: Planes in \R^m and their Parametric Vector Form">🔗</a></div></article><article class="example example-like" id="ex-plane"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Plane in <span class="process-math">\(\R^3\)</span>.</span>
+</h4>
+<div class="para logical" id="ex-plane-2-1">
+<div class="para">Below is an image of the plane <span class="process-math">\(\rho\)</span> in <span class="process-math">\(\R^3\)</span> with parametric vector form:</div>
+<div class="displaymath process-math" id="ex-plane-2-1-3">
+\begin{equation*}
+\rho=\left\{ \begin{bmatrix}5\\1\\2\end{bmatrix}+ s\begin{bmatrix}6\\6\\1\end{bmatrix}+ t\begin{bmatrix} -2\\3\\1\end{bmatrix}\ \bigg| \ s,t\in\R\right\}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-plane-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+<img src="external/images/2.3.3_planes2.png" class="contained" alt="described in detail following the image" aria-describedby="ex-plane-2-2-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="ex-plane-2-2-description"><div class="para" id="ex-plane-2-2-1-1">A plane in <span class="process-math">\(\R^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-plane-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div> <div class="para" id="ex-plane-2-3">Using the metaphor of travel, this plane is the collection of all points we can reach if we start at position <span class="process-math">\(\vect{p}=\begin{bmatrix}5\\1\\2\end{bmatrix}\text{,}\)</span> travel <span class="process-math">\(s\)</span> units of time with constant velocity <span class="process-math">\(\vect{v}=\begin{bmatrix}6\\6\\1\end{bmatrix}\text{,}\)</span> and then <span class="process-math">\(t\)</span> units of time with constant velocity <span class="process-math">\(\vect{w}=\begin{bmatrix} -2\\3\\1\end{bmatrix}\text{.}\)</span> For example, to reach the point <span class="process-math">\(\begin{bmatrix}4\\10\\4.5\end{bmatrix}\text{,}\)</span> we start at <span class="process-math">\(\vect{p}\text{,}\)</span> travel <span class="process-math">\(\frac{1}{2}\)</span> units of time with constant velocity <span class="process-math">\(\vect{v}\text{,}\)</span> and then <span class="process-math">\(2\)</span> units of time with constant velocity <span class="process-math">\(\vect{w}\text{.}\)</span> This path is depicted in orange.<div class="autopermalink" data-description="Paragraph"><a href="#ex-plane-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.3.16: Plane in \R^3"><a href="#ex-plane" title="Copy heading and permalink for Example 2.3.16: Plane in \R^3" aria-label="Copy heading and permalink for Example 2.3.16: Plane in \R^3">🔗</a></div></article><article class="technology computation-like" id="exploration-geogebra-planes"><h4 class="heading">
+<span class="type">Technology</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="exploration-geogebra-planes-1">Visualize a plane in <span class="process-math">\(\R^3\)</span> at GeoGebra ID: <a class="external" href="https://www.geogebra.org/m/qg2afdpt" target="_blank">qg2afdpt</a>. Move the vectors <span class="process-math">\(\vect{p}\text{,}\)</span> <span class="process-math">\(\vect{v}\text{,}\)</span> and <span class="process-math">\(\vect{w}\)</span> to move the plane. Adjust the parameters <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> to reach different points on the plane.<div class="autopermalink" data-description="Paragraph"><a href="#exploration-geogebra-planes-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Technology 2.3.17"><a href="#exploration-geogebra-planes" title="Copy heading and permalink for Technology 2.3.17" aria-label="Copy heading and permalink for Technology 2.3.17">🔗</a></div></article><article class="example example-like" id="chp2sec3subsec3-10"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Plane in <span class="process-math">\(\R^2\)</span>.</span>
+</h4>
+<div class="para logical" id="chp2sec3subsec3-10-2-1">
+<div class="para">Below is an image of the plane <span class="process-math">\(\mu\)</span> in <span class="process-math">\(\R^2\)</span> with parametric vector form:</div>
+<div class="displaymath process-math" id="chp2sec3subsec3-10-2-1-3">
+\begin{equation*}
+\mu = \left\{s\begin{bmatrix}3\\1\end{bmatrix}+t\begin{bmatrix}1\\2\end{bmatrix}\ \bigg| \ s,t\in\R\right\}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec3-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+<img src="external/images/2.3.3_planes3.png" class="contained" alt="described in detail following the image" aria-describedby="chp2sec3subsec3-10-2-2-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="chp2sec3subsec3-10-2-2-description"><div class="para" id="chp2sec3subsec3-10-2-2-1-1">A plane in <span class="process-math">\(\R^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec3-10-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div> <div class="para" id="chp2sec3subsec3-10-2-3">Using the metaphor of travel, <span class="process-math">\(\mu\)</span> is the collection of all points we can reach if we start at position <span class="process-math">\(\vect{p}=\begin{bmatrix}0\\0\end{bmatrix}\text{,}\)</span> travel <span class="process-math">\(s\)</span> units of time with constant velocity <span class="process-math">\(\vect{v}=\begin{bmatrix}3\\1\end{bmatrix}\text{,}\)</span> and then <span class="process-math">\(t\)</span> units of time with constant velocity <span class="process-math">\(\vect{w}=\begin{bmatrix}1\\2\end{bmatrix}\text{.}\)</span> Observe that <span class="process-math">\(\mu\)</span> fills up all of <span class="process-math">\(\R^2\)</span> - I can reach <em class="emphasis">any point</em> in <span class="process-math">\(\R^2\)</span> by traveling for the appropriate amounts of time with constant velocities <span class="process-math">\(\vect{v}\)</span> and <span class="process-math">\(\vect{w}\text{.}\)</span> For example, to reach the point <span class="process-math">\(\vect{u}=\begin{bmatrix}2\\2\end{bmatrix}\text{,}\)</span> we start at the origin <span class="process-math">\(\vect{0}\text{,}\)</span> travel <span class="process-math">\(0.4\)</span> units of time with constant velocity <span class="process-math">\(\vect{v}\text{,}\)</span> and then <span class="process-math">\(0.8\)</span> units of time with constant velocity <span class="process-math">\(\vect{w}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec3-10-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.3.18: Plane in \R^2"><a href="#chp2sec3subsec3-10" title="Copy heading and permalink for Example 2.3.18: Plane in \R^2" aria-label="Copy heading and permalink for Example 2.3.18: Plane in \R^2">🔗</a></div></article><div class="para" id="chp2sec3subsec3-11">Visualize the planes (in parametric form) in <span class="process-math">\(\R^2\)</span> at GeoGebra ID: <a class="external" href="https://www.geogebra.org/m/tk8s9eut" target="_blank">tk8s9eut</a>.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec3-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="remark remark-like" id="chp2sec3subsec3-12"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="chp2sec3subsec3-12-1">In multivariable calculus, you will expand on the ideas introduced here to describe <em class="emphasis">parametrized surfaces</em> and their <em class="emphasis">tangent planes</em>.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec3-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+<img src="external/images/2.3.3_planes4.png" class="contained" alt="described in detail following the image" aria-describedby="chp2sec3subsec3-12-2-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="chp2sec3subsec3-12-2-description"><div class="para" id="chp2sec3subsec3-12-2-1-1">A tangent plane to a sphere in <span class="process-math">\(\R^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec3-12-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<div class="para" id="chp2sec3subsec3-12-3">Visualize tangent planes to surfaces in <span class="process-math">\(\R^3\)</span> at GeoGebra ID: <a class="external" href="https://www.geogebra.org/m/mmkmzuqr" target="_blank">mmkmzuqr</a>.<div class="autopermalink" data-description="Paragraph"><a href="#chp2sec3subsec3-12-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.3.19"><a href="#chp2sec3subsec3-12" title="Copy heading and permalink for Remark 2.3.19" aria-label="Copy heading and permalink for Remark 2.3.19">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Planes in \R^m"><a href="#chp2sec3subsec3" title="Copy heading and permalink for Subsection: Planes in \R^m" aria-label="Copy heading and permalink for Subsection: Planes in \R^m">🔗</a></div></section><div class="autopermalink" data-description="Lesson 2.3: Lines as Traveling Down a Path"><a href="#chp2sec3" title="Copy heading and permalink for Lesson 2.3: Lines as Traveling Down a Path" aria-label="Copy heading and permalink for Lesson 2.3: Lines as Traveling Down a Path">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="chp2sec2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chp2sec4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

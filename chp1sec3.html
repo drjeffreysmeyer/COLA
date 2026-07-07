@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette: ice-fire                     *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Visualizing Vectors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Concepts of Linear Algebra">
+<meta property="book:author" content="Jeffrey S. Meyer">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.1.8';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.917dfc3cfe0bb764.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.d40a1acc1751a0b6.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.87414d180ebeebd6.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="COLA.html"><span class="title">Concepts of Linear Algebra</span> <span class="subtitle">A Meaningful and Hands-On Introduction</span></a></h1>
+<p class="byline">Jeffrey S. Meyer</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="chp1sec2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter1.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chapter2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
+\newcommand{\Z}{\mathbb Z} 
+\newcommand{\Q}{\mathbb Q} 
+\newcommand{\R}{\mathbb R} 
+\newcommand{\vect}[1]{\mathbf{#1}}
+
+\DeclareMathOperator{\Aut}{Aut} \DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Mod}{Mod} \DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\SL}{SL} \DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\GL}{GL} \DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\Ort}{O} \DeclareMathOperator{\PO}{PO}
+\DeclareMathOperator{\GO}{GO} \DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\PSO}{PSO} \DeclareMathOperator{\Uni}{U}
+\DeclareMathOperator{\PU}{PU} \DeclareMathOperator{\GU}{GU}
+\DeclareMathOperator{\SU}{SU} \DeclareMathOperator{\PSU}{PSU}
+\DeclareMathOperator{\Sp}{Sp} \DeclareMathOperator{\GSp}{GSp}
+\DeclareMathOperator{\PSp}{PSp} \DeclareMathOperator{\Spin}{Spin}
+\DeclareMathOperator{\Pin}{Pin} \DeclareMathOperator{\Comm}{Comm}
+\DeclareMathOperator{\Sy}{S} \DeclareMathOperator{\Sol}{Sol}
+\DeclareMathOperator{\Nil}{Nil} \DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\ad}{ad} \DeclareMathOperator{\Mat}{M}
+\DeclareMathOperator{\Aff}{Aff} \DeclareMathOperator{\Sim}{Sim}
+\DeclareMathOperator{\Euc}{Euc} \DeclareMathOperator{\Semi}{Semi}
+\DeclareMathOperator{\FI}{FI}\DeclareMathOperator{\NFI}{NFI}
+\DeclareMathOperator{\Ave}{Ave}\DeclareMathOperator{\GCD}{gcd}
+\DeclareMathOperator{\lcm}{lcm}\DeclareMathOperator{\Eff}{Eff}
+\DeclareMathOperator{\Fix}{Fix}\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Isom}{Isom}\DeclareMathOperator{\Nor}{N}
+\DeclareMathOperator{\Rep}{R}\DeclareMathOperator{\Char}{X}
+\DeclareMathOperator{\Hom}{Hom}\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Sym}{Sym}\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Jac}{Jac}\DeclareMathOperator{\IR}{InRad}
+\DeclareMathOperator{\Vol}{Vol}\DeclareMathOperator{\Star}{Star}
+\DeclareMathOperator{\Id}{Id}\DeclareMathOperator{\Exc}{Exc}
+\DeclareMathOperator{\hd}{hd}\DeclareMathOperator{\cd}{cd}
+\DeclareMathOperator{\Fe}{F}\DeclareMathOperator{\Rank}{Rank}
+\DeclareMathOperator{\Br}{Br}\DeclareMathOperator{\Homeo}{Homeo}\DeclareMathOperator{\Orb}{Orb}\DeclareMathOperator{\Int}{Int}\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\spn}{Span}\DeclareMathOperator{\rref}{rref}
+\DeclareMathOperator{\col}{Col}\DeclareMathOperator{\Col}{Col}\DeclareMathOperator{\Null}{Null}
+\DeclareMathOperator{\Area}{Area}\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\asf}{asf}\DeclareMathOperator{\sasf}{sasf}
+\DeclareMathOperator{\vsf}{vsf}\DeclareMathOperator{\svsf}{svsf}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\round}{round}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\abssum}{abssum}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter0.html" class="internal"><span class="codenumber">0</span> <span class="title">Introduction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp0sec1.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Note to Students</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp0sec2.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Note to Teachers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="chapter1.html" class="internal"><span class="codenumber">1</span> <span class="title">Vectors</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp1sec1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vectors as Lists of Quantities</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp1sec2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Symbolizing Vectors</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="chp1sec3.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Visualizing Vectors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter2.html" class="internal"><span class="codenumber">2</span> <span class="title">Linear Combination</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec1.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Linear Combinations as Mixture</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Algebraic Properties of Linear Combination</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chp2sec3.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Lines as Traveling Down a Path</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp2sec3.html#chp2sec3subsec1" class="internal"><span class="title">Lines in <span class="process-math">\(\R^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp2sec3.html#chp2sec3subsec2" class="internal"><span class="title">Lines in <span class="process-math">\(\R^m\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp2sec3.html#chp2sec3subsec3" class="internal"><span class="title">Planes in <span class="process-math">\(\R^m\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec4.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The Set of All Linear Combination</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec5.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Dependency</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec6.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Subsets That Contain Their Mixtures</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="chp1sec3"><h2 class="heading hide-type">
+<span class="type">Lesson</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Visualizing Vectors</span>
+</h2>
+<div class="para" id="chp1sec3-2">What images do you think of when you picture a serving size of cereal?  What images do you think of when you picture a vector?<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="note remark-like" id="mentalaction-visualizing"><h3 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Mental Action - Visualizing.</span>
+</h3>
+<div class="para" id="mentalaction-visualizing-2">
+<dfn class="terminology">Visualizing</dfn> is the act of associating a concept in our minds with images.  For example, the concept of five can be visualized with an image of 5 objects or with the image of 5 on the number line. Depending on the context, we choose the visualization that is most appropriate, that enables us to communicate, to reason, or to solve a specific problem.<div class="autopermalink" data-description="Paragraph"><a href="#mentalaction-visualizing-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Note 1.3.1: Mental Action - Visualizing"><a href="#mentalaction-visualizing" title="Copy heading and permalink for Note 1.3.1: Mental Action - Visualizing" aria-label="Copy heading and permalink for Note 1.3.1: Mental Action - Visualizing">🔗</a></div></article><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+<img src="external/images/ai_visualizing5.png" class="contained" alt="described in detail following the image" aria-describedby="chp1sec3-4-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="chp1sec3-4-description"><div class="para" id="chp1sec3-4-1-1">A cartoon depicting a learner realizing that the concept of five can be visualized in many ways: the symbol "5", five fingers, a group of five objects such as apples or sides of a polygon, or five units on a number line.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec3-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<div class="para" id="chp1sec3-5">Vectors are lists of quantities.  They do not inherently come with any particular geometry or visualization. However, there are a few powerful visualizations that I will explicitly identify now to help you in your reasoning and communication.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp1sec3-6">In geometric visualizations, we view the entries of a vector as <em class="emphasis">spatial</em> coordinates.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec3-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp1sec3-7">This representation is most easily seen for the <em class="alert">Cartesian plane</em> (a.k.a. <em class="alert">Cartesian 2-space</em>).  Here, a list of two numbers describes points on the plane, where the first number gives your horizontal position, and the second number gives your vertical position.  Given a vector <span class="process-math">\(\vect{v}\in\R^2\text{,}\)</span> sometimes it is productive to think of it as a <em class="alert">point</em> in the Cartesian plane, and sometimes it is productive to think of it as the <em class="alert">arrow</em> originating at the <em class="emphasis">origin</em> <span class="process-math">\((0,0)\)</span> (its <em class="emphasis">tail</em>) and going to the point (its <em class="emphasis">tip</em>).<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec3-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+<img src="external/images/1.3_visualizing_2d_arrows.png" class="contained" alt="described in detail following the image" aria-describedby="chp1sec3-8-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="chp1sec3-8-description"><div class="para" id="chp1sec3-8-1-1">Visualizing a list-length 2 vector in Cartesian 2-space in two ways:   <em class="alert">point</em> and <em class="alert">arrow</em>.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec3-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<div class="para" id="chp1sec3-9">Similarly, we may visualize list-length 3 vectors in <em class="alert">Cartesian 3-space</em>.  Here, a list of three numbers describes points in 3-space, where the first number gives your horizontal position, the second number gives your depth, and the third number gives your vertical position.  Once again, given a vector <span class="process-math">\(\vect{v}\in\R^3\text{,}\)</span> you may visualize it as a <em class="alert">point</em> in the Cartesian 3-space, and you may visualize it as an <em class="alert">arrow</em> originating at the <em class="emphasis">origin</em> <span class="process-math">\((0,0,0)\)</span> (its <em class="emphasis">tail</em>) and going to the point (its <em class="emphasis">tip</em>).<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec3-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+<img src="external/images/1.3_visualizing_3d_arrows.png" class="contained" alt="described in detail following the image" aria-describedby="chp1sec3-10-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="chp1sec3-10-description"><div class="para" id="chp1sec3-10-1-1">Visualizing a list-length 3 vector in Cartesian 3-space in two ways:   <em class="alert">point</em> and <em class="alert">arrow</em>.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec3-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<div class="para" id="chp1sec3-11">The <em class="alert">zero vector</em> <span class="process-math">\(\vect{0}\in \R^m\)</span> is the list of all zeros (of list-length <span class="process-math">\(m\)</span>). When visualized as a geometric point, it is the <em class="alert">origin</em>. If a vector is not the zero vector, it is a <em class="alert">nonzero</em> vector.  Note, nonzero vectors can have some zero entries, they just cannot have <em class="emphasis">all</em> zero entries.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec3-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp1sec3-12">In bar graph visualizations, we often view the entries of a vector as <em class="emphasis">temporal</em> measurements.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec3-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp1sec3-13">This visualization allows us to visualize lists of any length.  If <span class="process-math">\(\vect{v}\)</span> is a vector with list-length <span class="process-math">\(m\text{,}\)</span> then we can visualize <span class="process-math">\(\vect{v}\)</span> as a single <em class="alert">bar graph</em> (or signal) in the Cartesian plane, where for the <span class="process-math">\(i^{th}\)</span> entry, <span class="process-math">\(1\le i\le m\text{,}\)</span> plot the vertical segment from <span class="process-math">\((i,0)\)</span> to <span class="process-math">\((i,v_i)\text{.}\)</span> The bar graph is the entirety of all the vertical segments.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec3-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+<img src="external/images/1.3_visualizing_bar_graphs.png" class="contained" alt="described in detail following the image" aria-describedby="chp1sec3-14-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="chp1sec3-14-description"><div class="para" id="chp1sec3-14-1-1">Visualizing a list-length 5 vector in Cartesian 2-space as a <em class="alert">bar graph</em>.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec3-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div></details>
+</div>
+<div class="para" id="chp1sec3-15">For vectors where the entries represent quantities taken at different times, or quantities all measured with the same units, the bar graph representation is very useful.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec3-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp1sec3-16">In <a href="chp1sec1.html#ex-vignettes3" class="xref" data-knowl="./knowl/xref/ex-vignettes3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.1.6: Quantities outside">Example 1.1.6</a> we already saw bar graph representations come up naturally in temperature forecasts. We could also use bar graph representations for the macronutrients vector or for population by block. We shall see later many more important uses for this representation, such as in digital signal processing.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec3-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="figure-geogebra-arrow_vs_bar"><div class="interactive-iframe-container"><iframe src="https://www.geogebra.org/material/iframe/id/upnzznec/scaleContainerClass/interactive-iframe-container/width/800/height/640/allowUpscale/true/autoHeight/true/border/888888/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" id="figure-geogebra-arrow_vs_bar-2" style="width:540px; height:432px; display: block; "></iframe></div>
+<div class="instructions"><details id="figure-geogebra-arrow_vs_bar-2-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><div class="solution-like knowl__content">
+<div class="para" id="figure-geogebra-arrow_vs_bar-2-1-1">An interactive GeoGebra window visualizing side-by-side both arrow and bar graph visualizations for a list-length 2 vector.  Move the vector on the left to see how the tow visualizations simultaneously vary.<div class="autopermalink" data-description="Paragraph"><a href="#figure-geogebra-arrow_vs_bar-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Instructions"><a href="#figure-geogebra-arrow_vs_bar-2-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Comparing vector visualizations: arrow and bar graph<div class="autopermalink" data-description="Figure 1.3.2"><a href="#figure-geogebra-arrow_vs_bar" title="Copy heading and permalink for Figure 1.3.2" aria-label="Copy heading and permalink for Figure 1.3.2">🔗</a></div></figcaption></figure><article class="question example-like" id="activity-vectors-visualize"><h3 class="heading">
+<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discussion.</span>
+</h3>
+<div class="para logical" id="activity-vectors-visualize-2-1">
+<div class="para">Consider each of the following situations.  Which visual representation is most meaningful in that context? Draw and label each visualization.</div>
+<ol class="decimal" id="activity-vectors-visualize-2-1-1">
+<li id="activity-vectors-visualize-2-1-1-1">
+<div class="para" id="activity-vectors-visualize-2-1-1-1-1">
+<span class="process-math">\(\vect{p}=\begin{bmatrix}11\\3\end{bmatrix}\)</span> - The population of the major city Mathopolis and its adjacent suburb Vector Valley, measured in hundreds of thousands of people.<div class="autopermalink" data-description="Paragraph"><a href="#activity-vectors-visualize-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#activity-vectors-visualize-2-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="activity-vectors-visualize-2-1-1-2">
+<div class="para" id="activity-vectors-visualize-2-1-1-2-1">
+<span class="process-math">\(\vect{d}=\begin{bmatrix}11\\3\end{bmatrix}\)</span> - The distances east and north that the grocery store is from my home, measured in hundreds of feet.<div class="autopermalink" data-description="Paragraph"><a href="#activity-vectors-visualize-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#activity-vectors-visualize-2-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="activity-vectors-visualize-2-1-1-3">
+<div class="para" id="activity-vectors-visualize-2-1-1-3-1">
+<span class="process-math">\(\vect{c}=\begin{bmatrix}11\\3\end{bmatrix}\)</span> - The cost, in dollars, of a pack of chicken breasts and milk at the grocery store.<div class="autopermalink" data-description="Paragraph"><a href="#activity-vectors-visualize-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#activity-vectors-visualize-2-1-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#activity-vectors-visualize-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Activity 1.3.3: Discussion"><a href="#activity-vectors-visualize" title="Copy heading and permalink for Activity 1.3.3: Discussion" aria-label="Copy heading and permalink for Activity 1.3.3: Discussion">🔗</a></div></article><article class="question example-like" id="activity-vectors-interpret_visualization"><h3 class="heading">
+<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interpretation.</span>
+</h3>
+<div class="para logical" id="activity-vectors-interpret_visualization-2-1">
+<div class="para">Consider the vector <span class="process-math">\(\vect{v}=\begin{bmatrix}4\\1\\2\end{bmatrix}\text{.}\)</span>
+</div>
+<ol class="decimal" id="activity-vectors-interpret_visualization-2-1-2">
+<li id="activity-vectors-interpret_visualization-2-1-2-1">
+<div class="para" id="activity-vectors-interpret_visualization-2-1-2-1-1">In complete sentences, explain the meaning of this vector in the context of macronutrients (in grams) for a cereal.<div class="autopermalink" data-description="Paragraph"><a href="#activity-vectors-interpret_visualization-2-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#activity-vectors-interpret_visualization-2-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="activity-vectors-interpret_visualization-2-1-2-2">
+<div class="para" id="activity-vectors-interpret_visualization-2-1-2-2-1">In complete sentences, explain the meaning of this vector in the context of directions (in feet) to reach a book on your bookshelf.<div class="autopermalink" data-description="Paragraph"><a href="#activity-vectors-interpret_visualization-2-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#activity-vectors-interpret_visualization-2-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="activity-vectors-interpret_visualization-2-1-2-3">
+<div class="para" id="activity-vectors-interpret_visualization-2-1-2-3-1">Carefully sketch and label this vector as both a point and an arrow in Cartesian 3-space (see, for example, Figure \ref{figure:visualizing2}).<div class="autopermalink" data-description="Paragraph"><a href="#activity-vectors-interpret_visualization-2-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#activity-vectors-interpret_visualization-2-1-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="activity-vectors-interpret_visualization-2-1-2-4">
+<div class="para" id="activity-vectors-interpret_visualization-2-1-2-4-1">Carefully sketch and label this vector as a bar graph in Cartesian 2-space (see, for example, Figure \ref{figure:visualizing3}).<div class="autopermalink" data-description="Paragraph"><a href="#activity-vectors-interpret_visualization-2-1-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#activity-vectors-interpret_visualization-2-1-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#activity-vectors-interpret_visualization-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Activity 1.3.4: Interpretation"><a href="#activity-vectors-interpret_visualization" title="Copy heading and permalink for Activity 1.3.4: Interpretation" aria-label="Copy heading and permalink for Activity 1.3.4: Interpretation">🔗</a></div></article><div class="para" id="chp1sec3-20">To conclude this lesson, keep in mind that there are many productive visualizations (points, arrows, and bar graphs) and it is up to use to both decide to use the most appropriate one in your context.<div class="autopermalink" data-description="Paragraph"><a href="#chp1sec3-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lesson 1.3: Visualizing Vectors"><a href="#chp1sec3" title="Copy heading and permalink for Lesson 1.3: Visualizing Vectors" aria-label="Copy heading and permalink for Lesson 1.3: Visualizing Vectors">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="chp1sec2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chapter2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
