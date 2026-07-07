@@ -33,7 +33,7 @@
 	<question>
 		<title>OAQ Analysis</title>
 		<p>
-			With a group, take a few minutes to look around and identify some objects, some attributes they possess, and agree upon a way to measure them.  After a few minutes, share some of your findings with the class.
+			Take a few minutes to look around and identify some objects, some attributes they possess, and agree upon a way to measure them.  The first attributes that students often identify are things like length, volume, and mass of objects.  See if you can identify quantities that are not these.  You might be surprised by how many different types of quantities surround you at this very moment.   
 		</p>
 	</question>
 
@@ -49,7 +49,7 @@
 		You do not need to know the value of a real number to reason about it. In Example , the volume of the water in my glass, measured in ounces is a number. We can reason about that volume of water without ever knowing its value. Sometimes I will <term>name</term> a real number with an italicized lower case letter. For example, I might name the volume of water in my glass, measured in ounces, with the letter <m>v</m>, for volume. I denote the collection of all real numbers as <m>\R</m> and use the symbols <m>a\in \R</m> to <em>mean</em> <m>a</m> is a real number.
 	</p>
 
-	<example>
+	<example xml:id="ex-vignettes1">
 		<title>Quantities in my kitchen</title>
 		<p>
 			I walk into my kitchen to see what food I have to eat. As I look through my food, I suddenly realize that they are quite literally <em>covered</em> in lists of quantities! Pretty much every packaged food item has a box called <q>Nutrition Facts.</q> This box lists the masses of nutrients (either measured in grams g, milligrams mg, or micrograms mcg) contained within one serving size of the given food item. The box always lists the masses of the three most essential nutrients called <em>macronutrients</em>: total fat, total carbohydrates, and protein. Sometimes masses of other nutrients such as vitamin B, vitamin C, vitamin D, calcium, iron, and potassium are also listed.
@@ -64,12 +64,20 @@
 		</image>
 
 		<p>
-			For example, the <q>Nutrition Facts</q> on the side of my box of Sugar-Os cereal is depicted on the right of Figure.
+			For example, the <q>Nutrition Facts</q> on the side of my box of Sugar-Os cereal.
 		</p>		
+
+		<image source="images/ai_cereal_discovery.png" width="100%">
+    		<description> 
+				<p>
+					Discovering the macronutrients list of quantities on the side of a box of Sugar-O's.
+				</p>
+			</description>
+		</image>
 	</example>
 
 
-	<example>
+	<example xml:id="ex-vignettes2">
 		<title>Quantities as I travel</title>
 		<p>
 			I am always driving where I need to go. Today I will drive to campus, to lunch, to the grocery store, and then home. Even if I know directions, I often use my GPS in case there is something like traffic or a road closure. As I put in my destinations today, I realize that I am staring at list of quantities! In a given trip, each step of the travel instructions is the distance I drive, either in miles or feet, on a given road, until I turn onto the next street.
@@ -93,7 +101,7 @@
 
 	</example>
 
-	<example>
+	<example xml:id="ex-vignettes3">
 		<title>Quantities outside</title>
 		<p> 
 			I want to plan out my day tomorrow and I look at my phone to get the forecast for the day. It is then that I realize that the forecast is a list of quantities! At first I see the following table.

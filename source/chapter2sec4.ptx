@@ -3,6 +3,335 @@
 <section xml:id="chp2sec4" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>The Set of All Linear Combination</title>
   
-  <p> a </p> 
+  <p>
+    In this lesson, we are interested in conceptualizing and symbolizing the set of all linear combinations we can make with a predetermined, fixed collection of vectors.  
+    This set of linear combinations is useful to consider in all the contexts in which we encounter vectors and linear combination.
+    If I have 12 boxes of cereal on my shelf, <em>what are all the nutrition fact vectors I can make by mixing them?</em>
+    If my sound processor can make 400 digital pure tones, <em>what are all the sounds I can produce by mixing them?</em>  
+    More generally, if I have a fixed collection of vectors, <em>what are all the linear combinations I can make with them?</em>
+  </p>
+
+<example>
+<title>What can we make with one vector in the plane?</title>
+<statement>
+<sidebyside widths="45% 50%">
+<p>What can we make (using linear combinations) with <m>\vect{v}=\begin{bmatrix} 2\\1\end{bmatrix}</m>? <br/>
+Geometrically, we get the line with parametric vector form:
+<m>\left\{t\begin{bmatrix}2\\1\end{bmatrix} \ | \ t\in \R\right\}</m>. 
+Observe our starting position is the zero vector (i.e. the origin).</p>
+
+<image source="images/2.4_span1.png" width="100%">
+          <description> 
+            <p>
+              A line in <m>\R^2</m>.
+            </p>
+          </description>
+          </image>
+
+
+</sidebyside>
+</statement>
+</example>
+
+<example>
+<title>What can we make with two vectors in the plane?</title>
+<statement>
+<sidebyside widths="45% 50%">
+<p>What can we make (using linear combinations) with <m>\vect{v}=\begin{bmatrix} 3\\1\end{bmatrix}</m> and <m>\vect{w}=\begin{bmatrix} 1\\2\end{bmatrix}</m>? <br/>
+Algebraically, what vectors <m>s\begin{bmatrix}3\\1\end{bmatrix}+t\begin{bmatrix}1\\2\end{bmatrix}</m> do we make as we vary  <m>s,t\in\R</m>?<br/>
+We can make anything in the plane!</p>
+
+<image source="images/2.4_span2.png" width="100%">
+          <description> 
+            <p>
+              A plane in <m>\R^2</m>.
+            </p>
+          </description>
+          </image>
+
+</sidebyside>
+</statement>
+</example>
+
+<p>
+  The collection of all possible linear combinations which can be made with <m>S</m> is made precise by the notion of <em>span</em>.
+</p>
+
+<definition xml:id="def-span">
+  <title>Span (the noun)</title>
+  <statement>
+    <p>
+      If  <m>S = \{\vect{v}_1,\ldots,\vect{v}_n\} \subset \R^m</m>, then their <term>span</term> is the set of <em>all</em> linear combinations of <m>\vect{v}_1, \ldots, \vect{v}_n</m>.  Symbolically,
+       <me>\spn(S) = \spn(\vect{v}_1,\ldots, \vect{v}_n) = \{ x_1\vect{v}_1+\cdots+x_n\vect{v}_n \ | \ x_1,\ldots, x_n\in \R\}.</me>
+    </p>
+  </statement>
+</definition>
+
+<p>
+  The word <q>span</q> may seem unintuitive for you, so if you wish, via the metaphor of mixture, you can think of span as the <em>mixture set</em> of <m>S</m>. 
+  Note that even if <m>S</m> is small, <m>\spn{S}</m> is big!
+  In fact, as long as <m>S</m> contains a nonzero vector, <m>\spn(S)</m> is an <em>infinite</em> set.
+</p>
+
+<p>
+  Spans have very nice geometric interpretations.
+  The span of one nonzero vector <m>\vect{v}</m> is the <em>line</em>, starting at the origin, with velocity <m>\vect{v}</m>:
+  <m>\spn(\vect{v}) = \{t\vect{v}\ | \ t\in\R\}</m> 
+  (see <xref ref="def-line"/>).
+  The span of two nonzero, non-collinear vectors <m>\vect{v}</m> and <m>\vect{w}</m> is the <em>plane</em> going through their tips and the origin.  
+  In symbols, we write this plane in parametric vector form:  <m>\spn(\vect{v}, \vect{w}) = \{s\vect{v}+t\vect{w}\ | \ s,t\in\R\}</m>.
+</p>
+
+<question xml:id="activity-describing_span">
+  <title>Describing Span</title>
+  <statement>
+    <p>
+      For each of the following sets of vectors, describe geometrically the associated span.  Be sure to use geometric words.
+
+      <ol>
+        <li>
+          <p>
+            <m>S_1= \left\{ \begin{bmatrix} 1\\1\end{bmatrix}, \begin{bmatrix} -1\\1\end{bmatrix}\right\}</m>
+          </p>
+        </li>
+         <li>
+          <p>
+            <m>S_2= \left\{ \begin{bmatrix} 1\\1\end{bmatrix}, \begin{bmatrix} 2\\2\end{bmatrix}, \begin{bmatrix} 3\\3\end{bmatrix}\right\}</m>
+          </p>
+        </li>
+         <li>
+          <p>
+            <m>S_3= \left\{\begin{bmatrix} 0\\0\\0\\0\end{bmatrix}, \begin{bmatrix} 1\\2\\3\\4\end{bmatrix}\right\}</m>
+          </p>
+        </li>
+      </ol>
+  </p>
+  </statement>
+</question>
+
+<example>
+  <title>What can we make with two vectors in Cartesian 3-Space?</title>
+  <statement>
+    <sidebyside widths="45% 50%">
+    <p>
+      If <m>\vect{v}_1=\begin{bmatrix}1\\2\\3\end{bmatrix}</m>, 
+      <m>\vect{v}_2=\begin{bmatrix}2\\-1\\0\end{bmatrix}</m>, and
+      <m>S=\{\vect{v}_1,\vect{v}_2\}</m>, 
+      then <m>\spn(S)</m> is every possible mixture made with <m>\vect{v}_1</m> and <m>\vect{v}_2</m>, or using set notation, 
+      <me>\spn(S) =\left\{s\begin{bmatrix}1\\2\\3\end{bmatrix}+t\begin{bmatrix}2\\-1\\0\end{bmatrix}\ \bigg| \ s,t\in \R\right\}.</me>
+      Using the mixture parallelograms to visualize the mixtures, we see that <m>\spn(S)</m> will be the plane going through the three points: <m>(0,0,0)</m>, <m>(1,2,3)</m>, and <m>(2,-1,0)</m>,
+    </p>
+
+    <image source="images/2.4_span3.png" width="100%">
+          <description> 
+            <p>
+              A plane in <m>\R^2</m>.
+            </p>
+          </description>
+          </image>
+    </sidebyside>
+  </statement>
+</example>
+
+<p>Visualize the span of two vectors in <m>\R^3</m> at GeoGebra ID:
+<url href="https://www.geogebra.org/m/axm8hsyg">axm8hsyg</url>.</p>
+
+<p>
+  The algebraic notation of span is very compact and enables us to efficiently communicate our thoughts about linear combinations.   It is therefore important that you practice symbolizing your thoughts with this compact notation and then practice interpreting in plain language such symbolic expressions.
+</p>
+
+<question xml:id="activity-symbolizing_with_span">
+  <title>Symbolizing with Span</title>
+  <statement>
+  <p>Symbolize each complete sentence using span.</p>
+  <ol>
+  <li><p>Vector <m>\vect{w}</m> is a linear combination of vectors <m>\vect{a}</m> and <m>\vect{b}</m>.</p></li>
+  <li><p>There is no way to write vector <m>\vect{f}</m> as a linear combination of vectors  <m>\vect{x}</m>, <m>\vect{y}</m>, and <m>\vect{z}</m>.</p></li>
+  <li><p>Everything I can make with vectors <m>\vect{m}</m> and <m>\vect{n}</m>, I can also make with vectors <m>\vect{p}</m>,  <m>\vect{q}</m>, and <m>\vect{r}</m>.</p></li>
+  </ol>
+  </statement>
+</question>
+
+<question xml:id="activity-interpreting_the_symbolism_of_span">
+  <title>Interpreting the Symbolism of Span</title>
+  <statement>
+  <p>For each, use complete sentences, using the language of mixture, to interpret the meaning of each algebraic expression.</p>
+  <ol>
+  <li><p><m>\vect{w}\in \spn(\vect{v}_1,\vect{v}_2,\vect{v}_3)</m>.</p></li>
+  <li><p><m>\spn(\vect{v}_1,\vect{v}_2,\vect{v}_3)=\R^2</m>.</p></li>
+  <li><p><m>\vect{b}\notin \spn(\vect{v}_1,\vect{v}_2,\vect{v}_3)</m>.</p></li>
+  <li><p><m> \spn(S) \subsetneq \R^m</m>.</p></li>
+  </ol>
+  </statement>
+</question>
+
+<proposition xml:id="prop-span_has_subspace_properties">
+  <title>Algebraic Properties of Span</title>
+  <statement>
+  <p>If <m>S=\{\vect{v}_1,\ldots,\vect{v}_n\}\subset \R^m</m>, and </p>
+  <ol>
+  <li><p>(Non-empty.) if <m>\vect{0}\in \R^m</m> denotes the zero vector, then <m>\vect{0}\in \spn(S)</m>;</p></li>
+  <li><p>(Closed under addition.) if <m>\vect{u},\vect{w}\in \spn(S)</m>, then <m>\vect{u}+\vect{w}\in \spn(S)</m>;</p></li>
+  <li><p>(Closed under scaling.) if <m>\vect{w}\in \spn(S)</m> and <m>k\in \R</m>, then <m>k\vect{w}\in \spn(S)</m>.</p></li>
+  </ol>
+  </statement>
+</proposition>
+
+<proof>
+<p>We must provide formal justification for each of the three properties.</p>  
+
+<p>I will begin with the first property.
+To show that <m>\vect{0}\in \spn(S)</m>, I must show that the zero vector is a linear combination of the vectors in <m>S</m>.  
+This is easy to arrange, just take zero serving sizes of each vector! 
+In symbols:
+<me>\vect{0}=0\vect{v}_1+0\vect{v}_2+\cdots+ 0\vect{v}_n\in \spn(S).</me></p>
+
+<p>Next, I will justify the second property. 
+By assumption, there exists <m>x_1,\ldots, x_n\in \R</m> and <m>y_1,\ldots, y_n\in \R</m> such that 
+<m>\vect{u}=x_1\vect{v}_1+\cdots +x_n\vect{v}_n</m> and 
+<m>\vect{w}=y_1\vect{v}_1+\cdots +y_n\vect{v}_n</m>.
+So</p>
+
+<md>
+<mrow>\vect{u}+\vect{w} \amp =\left( x_1\vect{v}_1+\cdots +x_n\vect{v}_n \right)+ \left(y_1\vect{v}_1+\cdots +y_n\vect{v}_n\right) \amp \text{Definition of Span \ref{def-span}}</mrow>
+<mrow>\amp = ( x_1+y_1)\vect{v}_1+\cdots +(x_n+y_n)\vect{v}_n \amp \text{Algebraic Properties "prop-fundamental_vector_props" LC1 and LC7.}</mrow>
+</md>
+
+<p>From which we deduce <m>\vect{u}+\vect{w}\in \spn(S)</m>.</p>
+
+<p>All that is left justifying the third property.  
+This is left to you in Activity <xref ref="activity-justify_span_is_subspace"/>.</p>
+</proof>
+
+<question xml:id="activity-justify_span_is_subspace">
+<title>Practicing Formal Justification</title>
+<statement>
+<p>Carefully write down a formal justification for the third property of Proposition <xref ref="prop-span_has_subspace_properties"/>. 
+Be sure to carefully explain your reasoning and include references to all appropriate definitions and proven propositions.  
+When done, share with the class.</p>
+</statement>
+</question>
+
+<insight>
+<title>Algebraic Properties of Span as Mixture of Mixtures</title>
+<p>Using the metaphor of mixture, Proposition <xref ref="prop-span_has_subspace_properties"/> says that, if you fix a collection of ingredients, a <em>mixture of mixtures is still just a mixture</em> of the original ingredients.</p>
+</insight>
+
+<p>We now come to <em>makeability</em>. 
+Given a collection of vectors <m>S=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset \R^m</m> and another vector <m>\vect{b}\in\R^m</m>, we want to know if <m>\vect{b}</m> can be <q>made</q> by mixing vectors in <m>S</m>.   
+In symbols, we can make <m>\vect{b}</m> with <m>S</m> if there exists scalars <m>x_1,\ldots, x_n\in \R</m> such that <m>x_1\vect{v}_1+\cdots+x_n\vect{v}_n=\vect{b}</m>.  
+Put more compactly, <m>\vect{b}</m> is <em>makeable</em> with <m>S</m> if <m>\vect{b}\in \spn(S)</m>.
+There is no guarantee that <m>\vect{b}</m> is makeable, in which case no such scalars exist.</p>
+
+<p>Via the metaphor of cooking, given a certain collection of ingredients and a desired meal, makeability asks: <em>can we make the meal with our ingredients?</em></p>
+
+<p>When we view vectors geometrically, given a plane in <m>\R^3</m> and a point in <m>\R^3</m>, makeability asks: <em>does the point lie on the plane?</em></p>
+
+<p>If a vector is makeable with <m>S</m>, then we usually also want to know how, i.e. what scalars allow us to make that vector.</p>
+
+<question xml:id="activity-makeability1">
+<title>Exploring Makability</title>
+<statement>
+<p>In each of the following parts, explore how you can make <m>\vect{b}</m> from the given <m>S</m>.  Can you find a way to make <m>\vect{b}</m> from <m>S</m>?  If so, are there multiple ways or is it unique?  Explain.</p>
+<ol>
+<li><p>Consider <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix} 1\\0\end{bmatrix}, \begin{bmatrix} 0\\1\end{bmatrix}, \begin{bmatrix} 1\\1\end{bmatrix}\right\}</m> and <m>\vect{b}=\begin{bmatrix} 2\\3\end{bmatrix}</m>.</p></li>
+<li><p>Consider <m>S= \{\vect{w}_1,\vect{w}_2\} = \left\{ \begin{bmatrix} 1\\0\end{bmatrix}, \begin{bmatrix} 5\\0\end{bmatrix}\right\}</m> and <m>\vect{b}=\begin{bmatrix} 2\\3\end{bmatrix}</m>.</p></li>
+</ol>
+</statement>
+</question>
+
+<p>Observe that a way to make <m>\vect{b}</m> with S is precisely a servings vector (Definition <xref ref="def-serving_size_vector"/>).</p>
+
+<definition xml:id="def-solution_vectors">
+<title>Solution Vectors</title>
+<statement>
+<p>If <m>S=\{\vect{v}_1, \ldots, \vect{v}_n\}\subset \R^m</m>, <m>\vect{b}\in \R^m</m>, and <m>x_1,\ldots, x_n\in \R</m> are such that <m>x_1\vect{v}_1+\cdots+x_n\vect{v}_n=\vect{b}</m>, then the associated servings vector <m>\begin{bmatrix}x_1\\ \vdots\\ x_n\end{bmatrix}</m> is a <term>solution vector</term> for making <m>\vect{b}</m> with <m>S</m>.</p>
+</statement>
+</definition>
+
+<p>If <m>S</m> has <m>n</m> vectors, then a solution vector for making <m>\vect{b}</m> with <m>S</m> has list-length <m>n</m>.</p>
+
+<question xml:id="activity-exploring_makeability_geometrically">
+<title>Exploring Makeability Geometrically</title>
+<statement>
+<p>In this activity, you will use GeoGebra ID:
+<url href="https://www.geogebra.org/m/twf46ake">twf46ake</url> to visualize and investigate makeability in <m>\R^3</m>.
+Let <m>S= \{\vect{v}_1,\vect{v}_2\} = \left\{\begin{bmatrix}1\\2\\3\end{bmatrix}, \begin{bmatrix}2\\-1\\4\end{bmatrix}\right\}</m>, 
+<m>\vect{b}_1=\begin{bmatrix}3\\1\\7\end{bmatrix}</m>, and <m>\vect{b}_2=\begin{bmatrix}-4\\0\\3\end{bmatrix}</m>.</p>
+
+<sidebyside widths="45% 50%">
+<ol>
+<li><p><alert>Explore.</alert>  Use the visual representations provided to decide if <m>\vect{b}_1</m> and <m>\vect{b}_2</m> can be made with <m>S</m>.   
+Clearly explain the visual feature(s) you are using to make your determinations.</p></li>
+<li><p><alert>Symbolize.</alert>  For each makeable vector, write down the corresponding symbolic equation.   
+(Perform the associated computation to verify you have indeed found a solution vector.)</p></li>
+</ol>
+
+<image source="images/2.4_span4.png" width="100%">
+          <description> 
+            <p>
+              Solution set in <m>\R^3</m>.
+            </p>
+          </description>
+          </image>
+</sidebyside>
+</statement>
+</question>
+
+<p>Sometimes a single solution vector is sufficient.  However, sometimes we want to collect all of them into a single set.</p>
+
+<definition xml:id="def-solution_set">
+  <title>Solution Set</title>
+  <statement>
+    <p>
+      If <m>S=\{\vect{v}_1, \ldots, \vect{v}_n\}\subset \R^m</m> and <m>\vect{b}\in \R^m</m> then the set of all solution vectors for making <m>\vect{b}</m> with <m>S</m> can be identified with a subset of <m>\R^n</m> called the <term>solution set</term> for making <m>\vect{b}</m> with <m>S</m>.  In symbols,
+      <me>\Sol(S,\vect{b})=\left\{\begin{bmatrix}x_1\\ \vdots \\ x_n \end{bmatrix} \in \R^n \ \bigg| \  x_1\vect{v}_1+\cdots+x_n\vect{v}_n=\vect{b}\right\}.</me>
+    </p>
+  </statement>
+</definition>
+
+<p>
+  If <m>\vect{b}</m> is not makeable with <m>S</m>, then the solution set is <em>empty</em>, which we denote <m>\Sol(S,\vect{b})=\varnothing</m>.
+</p>
+
+<question xml:id="activity-symbolizing_with_solution_sets">
+  <title>Symbolizing with Solution Sets</title>
+  <statement>
+  <p>Symbolize each expression using solution sets and set notation.</p>
+  <ol>
+  <li><p><m>5\vect{a}+7\vect{b}+2\vect{c}=\vect{d}</m>.</p></li>
+  <li><p><m>3\vect{v}-\vect{w}\ne \vect{u}</m>.</p></li>
+  <li><p>There is no way to make <m>\vect{m}</m> with vectors <m>\vect{p}</m>, <m>\vect{q}</m>,  and <m>\vect{r}</m>.</p></li>
+  </ol>
+  </statement>
+</question>
+
+<question xml:id="activity-interpreting_the_symbolism_of_solution_sets">
+  <title>Interpreting the Symbolism of Solution Sets</title>
+  <statement>
+  <p>Use complete sentences and the language of mixture to interpret the meaning of each algebraic expression.</p>
+  <ol>
+  <li><p><m>\Sol(\{\vect{v},\vect{u}\},\vect{w})\ne \varnothing</m>.</p></li>
+  <li><p><m>\{\vect{0}\} \subset \Sol(\{\vect{p},\vect{q}\},\vect{0})</m>.</p></li>
+  <li><p><m>\begin{bmatrix}1\\-1 \end{bmatrix}  \notin \Sol(\{\vect{e},\vect{f}\},\vect{h})</m>.</p></li>
+  </ol>
+  </statement>
+</question>
+
+<p>
+  Solution sets are central objects in linear algebra and we will continue to deepen our understanding and develop tools for computing them in the lessons that come.
+</p>
+
+<insight xml:id="summary-span_summary">
+  <title>Span Summary</title>
+  <p>
+    If <m>S\subset \R^m</m>, then following are equivalent:
+  </p>
+  <ol>
+  <li><p>You can make <m>\vect{b}</m> from <m>S</m>,</p></li>
+  <li><p><m>\vect{b}\in \spn(S)</m>,</p></li>
+  <li><p><m>\Sol(S,\vect{b})</m> is nonempty.</p></li>
+  </ol>
+</insight>
   
 </section>

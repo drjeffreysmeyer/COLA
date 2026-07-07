@@ -4,10 +4,58 @@
   <title>Vectors</title>
 
   <introduction>
-    <p> Text before the first section. </p>
+    
+  <p>
+    In this chapter, we introduce central object of the course, <term>vectors</term>, as well as the mathematical mental actions we will engage in to construct and analyze vectors.  The pedagogical approach of this chapter is centered around quantitative reasoning.  This pedagogical perspective is valuable for everyone, but especially relevant for STEM majors, who largely populate courses such as these
+  </p>
+
+  <p>
+    <alert><xref ref="chp1sec1"/>.</alert>  Quantities are everywhere, but we need to prepare our minds to see them.  Once we see quantities, we may begin to see lists of quantities.  The concept of vector emerges from this.
+  </p>
+
+  <objectives>
+    <title>Lesson 1.1</title>
+      <ul>
+        <li><p>I understand the notions of quantity, of lists of quantities, and understand that these lists of quantities are everywhere.</p></li>
+        <li><p>I can identify relevant lists of quantities from an object or situation.</p></li>
+        <li><p>I understand that measurements of quantities are real numbers.</p></li>
+        <li><p>I understand there are numerous productive metaphors for vectors and can use metaphors to interpret and give meaning to vectors.</p></li>
+        <li><p>Given a vector, I can correctly interpret it and communicate my thoughts in context (e.g. cereal, travel instructions, and forecasts).</p></li>
+      </ul>
+  </objectives>
+
+
+  <p>
+    <alert><xref ref="chp1sec2"/>.</alert>  Now that we have internalized the mathematical concept of vector, we explore productive ways to symbolize vectors.  The act of symbolizing concepts in our minds is a central mathematical actions.  We go back and forth between concepts in our minds and symbols on the page.
+  </p>
+
+  <objectives>
+    <title>Lesson 1.2</title>
+      <ul >
+        <li><p>Given a situation, I can symbolize relevant vectors and relationships between.</p></li>
+        <li><p>Given a symbolic expression involving vectors, I can interpret that expression in the context of a situation.</p></li>
+        <li><p>I can clearly communicate my reasoning about vectors using their names.</p></li>
+      </ul>
+  </objectives>
+
+  <p>
+    <alert><xref ref="chp1sec3"/>.</alert>  Similar to the previous lesson, now that we have internalized the mathematical concept of vector, we explore productive ways to visualize vectors.  The act of visualizing concepts in our minds is a central mathematical actions.  There are many types of productive visualizations we will construct, including geometric and bar graph.
+  </p>
+
+  <objectives>
+    <title>Lesson 1.3</title>
+      <ul >
+        <li><p>I understand that there are numerous visualizations for vectors, and can choose appropriate ones for a given context.</p></li>
+        <li><p>I can visualize a vector with list-length 2 or 3 as a point or arrow in Cartesian 2-space or 3-space.</p></li>
+        <li><p>I can visualize a list-length <m>n</m> vector as a bar graph in Cartesian 2-space.</p></li>
+      </ul>
+  </objectives>
+
   </introduction>
 
   <!-- include sections -->
   <xi:include href="chapter1sec1.ptx" />
+  <xi:include href="chapter1sec2.ptx" />
+  <xi:include href="chapter1sec3.ptx" />
 
 </chapter>

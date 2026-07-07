@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp1sec3" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Visualizing Vectors</title>
+
+
+  <p>
+    What images do you think of when you picture a serving size of cereal?  What images do you think of when you picture a vector?
+  </p>
+
+  <note xml:id="mentalaction-visualizing">
+    <title>Mental Action - Visualizing</title>
+    <p> <term>Visualizing</term> is the act of associating a concept in our minds with images.  For example, the concept of five can be visualized with an image of 5 objects or with the image of 5 on the number line. Depending on the context, we choose the visualization that is most appropriate, that enables us to communicate, to reason, or to solve a specific problem.
+    </p>  
+  </note>
+
+  <image source="images/ai_visualizing5.png" width="100%">
+    <description> 
+      <p>
+        A cartoon depicting a learner realizing that the concept of five can be visualized in many ways: the symbol "5", five fingers, a group of five objects such as apples or sides of a polygon, or five units on a number line.
+      </p>
+    </description>
+  </image>
+
+  <p>
+    Vectors are lists of quantities.  They do not inherently come with any particular geometry or visualization. However, there are a few powerful visualizations that I will explicitly identify now to help you in your reasoning and communication.
+  </p>
+
+  <p>
+    In geometric visualizations, we view the entries of a vector as <em>spatial</em> coordinates.
+  </p>
+
+  <p>
+    This representation is most easily seen for the <alert>Cartesian plane</alert> (a.k.a. <alert>Cartesian 2-space</alert>).  Here, a list of two numbers describes points on the plane, where the first number gives your horizontal position, and the second number gives your vertical position.  Given a vector <m>\vect{v}\in\R^2</m>, sometimes it is productive to think of it as a <alert>point</alert> in the Cartesian plane, and sometimes it is productive to think of it as the <alert>arrow</alert> originating at the <em>origin</em> <m>(0,0)</m> (its <em>tail</em>) and going to the point (its <em>tip</em>).
+  </p>
+
+  <image source="images/1.3_visualizing_2d_arrows.png" width="100%">
+    <description> 
+      <p>
+        Visualizing a list-length 2 vector in Cartesian 2-space in two ways:   <alert>point</alert> and <alert>arrow</alert>.
+      </p>
+    </description>
+  </image>
+
+  <p>
+    Similarly, we may visualize list-length 3 vectors in <alert>Cartesian 3-space</alert>.  Here, a list of three numbers describes points in 3-space, where the first number gives your horizontal position, the second number gives your depth, and the third number gives your vertical position.  Once again, given a vector <m>\vect{v}\in\R^3</m>, you may visualize it as a <alert>point</alert> in the Cartesian 3-space, and you may visualize it as an <alert>arrow</alert> originating at the <em>origin</em> <m>(0,0,0)</m> (its <em>tail</em>) and going to the point (its <em>tip</em>).
+  </p>
+
+  <image source="images/1.3_visualizing_3d_arrows.png" width="100%">
+    <description> 
+      <p>
+        Visualizing a list-length 3 vector in Cartesian 3-space in two ways:   <alert>point</alert> and <alert>arrow</alert>.
+      </p>
+    </description>
+  </image>
+
+  <p>
+    The <alert>zero vector</alert> <m>\vect{0}\in \R^m</m> is the list of all zeros (of list-length <m>m</m>). When visualized as a geometric point, it is the <alert>origin</alert>. If a vector is not the zero vector, it is a <alert>nonzero</alert> vector.  Note, nonzero vectors can have <i>some</i> zero entries, they just cannot have <em>all</em> zero entries.
+  </p>
+
+  <p>
+    In bar graph visualizations, we often view the entries of a vector as <em>temporal</em> measurements.
+  </p>
+
+  <p>
+    This visualization allows us to visualize lists of any length.  If <m>\vect{v}</m> is a vector with list-length <m>m</m>, then we can visualize <m>\vect{v}</m> as a single <alert>bar graph</alert> (or signal) in the Cartesian plane, where for the <m>i^{th}</m> entry, <m>1\le i\le m</m>, plot the vertical segment from <m>(i,0)</m> to <m>(i,v_i)</m>. The bar graph is the entirety of all the vertical segments.
+  </p>
+
+  <image source="images/1.3_visualizing_bar_graphs.png" width="100%">
+    <description> 
+      <p>
+        Visualizing a list-length 5 vector in Cartesian 2-space as a <alert>bar graph</alert>.
+      </p>
+    </description>
+  </image>
+
+<!--  <p>
+  <image>
+  <latex-image>
+    \draw[color=geogebra_grey_light, xstep=1cm,ystep=1cm](\XMIN,\YMIN) grid (\XMAX,\YMAX);
+    \draw[color=black, line width=2pt] (\XMIN,0) - (\XMAX,0);
+    \draw[color=black, line width=2pt] (\XMIN,\YMIN) - (\XMIN,\YMAX);
+    \foreach \x in {1,..., 5}
+      \draw[shift={(\x,0)},color=black] (0pt,2pt) - (0pt,-2pt) node[below] {\footnotesize $\x$};
+    \foreach \y in {0, 1, ..., 6}
+      \draw[shift={(\XMIN,\y)},color=black] (2pt,0pt) - (-2pt,0pt) node[left] {\footnotesize $\y$};
+    \foreach \x/\y in \mymacro
+      \draw [line width=2pt,color=blue] (\x,0)-(\x,\y) node[above] {$\y$};
+    \draw[color=black] (-5,3) node[anchor = east] {\Large $\begin{bmatrix}1\\3\\5\\4\\2\end{bmatrix}$};
+    \path[ultra thick, black](-5,3) edge [postaction={decorate}]  node[above, sloped] {\Large Visualize  } node[below, color = blue] {Bar Graph} (0,3);
+  </latex-image>
+  </image>
+  </p>
+  -->
+
+  <p>
+    For vectors where the entries represent quantities taken at different times, or quantities all measured with the same units, the bar graph representation is very useful.
+  </p>
+
+  <p>
+    In <xref ref="ex-vignettes3"/> we already saw bar graph representations come up naturally in temperature forecasts. We could also use bar graph representations for the macronutrients vector or for population by block. We shall see later many more important uses for this representation, such as in digital signal processing.
+  </p>
+
+  <figure xml:id="figure-geogebra-arrow_vs_bar">
+    <caption>Comparing vector visualizations: arrow and bar graph</caption>
+    <interactive geogebra="upnzznec" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
+    <instructions>
+            <p>
+              An interactive GeoGebra window visualizing side-by-side both arrow and bar graph visualizations for a list-length 2 vector.  Move the vector on the left to see how the tow visualizations simultaneously vary.
+            </p>
+     </instructions>
+        <static>
+            <image width="100%" source="images/1.3_geogebra-arrow_vs_bar.png"/>
+            <shortdescription>Comparing vector visualizations for the vector <m>\vect{v}=\begin{bmatrix}2\\1\end{bmatrix}</m></shortdescription>
+        </static>
+    </interactive>
+  </figure>
+
+
+  <question xml:id="activity-vectors-visualize">
+  <title>Discussion</title>
+  <statement>
+    <p>
+      Consider each of the following situations.  Which visual representation is most meaningful in that context? Draw and label each visualization.
+      <ol>
+        <li>
+          <p>
+            <m>\vect{p}=\begin{bmatrix}11\\3\end{bmatrix}</m> - The population of the major city Mathopolis and its adjacent suburb Vector Valley, measured in hundreds of thousands of people.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vect{d}=\begin{bmatrix}11\\3\end{bmatrix}</m> - The distances east and north that the grocery store is from my home, measured in hundreds of feet. 
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vect{c}=\begin{bmatrix}11\\3\end{bmatrix}</m> - The cost, in dollars, of a pack of chicken breasts and milk at the grocery store.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  </question>
+
+  <question xml:id="activity-vectors-interpret_visualization">
+  <title>Interpretation</title>
+  <statement>
+  <p>Consider the vector <m>\vect{v}=\begin{bmatrix}4\\1\\2\end{bmatrix}</m>.
+    <ol>
+      <li>
+        <p>
+          In complete sentences, explain the meaning of this vector in the context of macronutrients (in grams) for a cereal.
+        </p>
+      </li>
+      <li>
+        <p>
+          In complete sentences, explain the meaning of this vector in the context of directions (in feet) to reach a book on your bookshelf.
+        </p>
+      </li>
+      <li>
+        <p>
+          Carefully sketch and label this vector as both a point and an arrow in Cartesian 3-space (see, for example, Figure \ref{figure:visualizing2}).
+        </p>
+      </li>
+      <li>
+        <p>
+          Carefully sketch and label this vector as a bar graph in Cartesian 2-space (see, for example, Figure \ref{figure:visualizing3}).
+        </p>
+      </li>
+    </ol>
+  </p>
+  </statement>
+  </question>
+
+  <p>
+    To conclude this lesson, keep in mind that there are many productive visualizations (points, arrows, and bar graphs) and it is up to use to both decide to use the most appropriate one in your context.
+  </p>
+
+
+
+</section>

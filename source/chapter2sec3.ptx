@@ -3,7 +3,319 @@
 <section xml:id="chp2sec3" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Lines as Traveling Down a Path</title>
     
+  <p>
+    In this lesson, we use our understanding of vectors and linear combination to inform how we think about lines in the plane, and then generalize to how we think about lines (and planes) in <m>\R^m</m>.
+  </p>
+
+  <image source="images/2.3_lines_in_r2.png" width="100%">
+    <description> 
+      <p>
+        Lines in the plane.
+      </p>
+    </description>
+  </image>
+
+  <subsection xml:id="chp2sec3subsec1">
+    <title>Lines in <m>\R^2</m></title>
+    
+    
+    <p>
+    While I expect anyone taking this course to have seen lines before, it may be useful to remind you what they are and how we describe them. Lines are subsets of the plane satisfying certain geometric properties, and these subsets can be describe by certain equations.
+  </p>
+
+  <definition xml:id="def-lines_r2">
+      <title>Lines in <m>\R^2</m></title>
+      <statement>
+          <p>A <term>line</term> <m>\ell</m> in the plane <m>\R^2</m> is the set of all points <m>\begin{bmatrix}x\\y\end{bmatrix}\in \R^2</m> that satisfy an algebraic equation of the form <m>px+qy=r</m>. This is a <term>normal equation</term> of a line. Using set builder notation, I may write <me>\ell = \left\{ \begin{bmatrix}x\\y\end{bmatrix} \in \R^2 \ \mid \ px+qy=r\right\}.</me></p>
+      </statement>
+  </definition>
+
+  <p>Let's take a moment to discuss the equations that describe the points on a line. Every line satisfies a normal equation. If the line is not vertical (i.e. <m>q\ne 0</m>), then its points satisfy two other algebraically equivalent equations:
+      <ul>
+          <li><p><alert>Slope-Intercept Equation</alert> <m>y=mx+b</m>, where the line has slope <m>m</m> and <m>y</m>-intercept <m>b</m>.</p></li>
+          <li><p><alert>Point-Slope Equation</alert> <m>y=m(x-x_0)+y_0</m>, where the line goes through point <m>(x_0,y_0)</m> and has slope <m>m</m>.</p></li>
+      </ul>
+      We can think of these equations as <em>constraints</em> that points in the plane must satisfy to lie on the given line.
+  </p>
+  <p>
+    Keep in mind, a line is a set of points, not one of the many equations that describe those points. Now recall that points in the plane may be understood as vectors. <em>Can we use vectors to formulate new and productive ways to describe the points that comprise a line?</em>
+  </p>
+
+  <example xml:id="ex-line_yint_to_parametric">
+      <title>Finding vectors that describe a line</title>
+      <statement>
+        
+          <p>Consider the line <m>\ell</m> with slope-intercept equation <m>y=3x-2</m>.</p>
+          <p>If <m>(x,y)</m> is the coordinate of a point on <m>\ell</m>, then <me>\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}x\\3x-2\end{bmatrix} = \begin{bmatrix}0\\-2\end{bmatrix} + x\begin{bmatrix}1 \\3\end{bmatrix}.</me></p>
+          <p>Name <m>\vect{p}=\begin{bmatrix}0\\-2\end{bmatrix}</m> and <m>\vect{v}=\begin{bmatrix}1\\3\end{bmatrix}</m>.</p>
+          <sidebyside widths="70% 30%" valign="top">
+          <p>Then I can think of this line <m>\ell</m> via a metaphor of <em>traveling</em> along a <em>path</em> as follows:
+              <ol>
+                  <li><p><m>\vect{p}</m> is your starting <em>position</em>.</p></li>
+                  <li><p><m>\vect{v}</m> is the direction and distance you travel in 1 unit of time (i.e. <em>velocity</em>).</p></li>
+                  <li><p><m>x</m> is your elapsed time. When <m>x</m> is positive, you can think of <m>\vect{p} + x\vect{v}</m> as what your position on the path will be <m>x</m> units of time in the future, and when <m>x</m> is negative, you can think of <m>\vect{p} + x\vect{v}</m> as what your position had been <m>x</m> units of time in the past. Since <m>x</m> here is conceptualized as time, we often replace the symbol <m>x</m> with the symbol <m>t</m>.</p></li>
+              </ol>
+          In symbols, the line can be expressed as the set of points <m>\ell = \left\{\begin{bmatrix}0\\-2\end{bmatrix} + t\begin{bmatrix}1\\3\end{bmatrix} \ \bigg| \ t\in \R \right\}</m>.</p>
+
+        <image source="images/2.3_lines_ex1.png" width="100%">
+          <description> 
+            <p>
+              The graph of the line with equation <m>y=3x-2</m>.
+            </p>
+          </description>
+        </image>
+      </sidebyside>
+      </statement>
+  </example>
+
+  <p>
+    We can generalize our reasoning in <xref ref="ex-line_yint_to_parametric" /> to any line in the plane.
+  </p>
+
+  <proposition xml:id="prop-lines_r2_pvf">
+    <title>Parametric Vector Form of Lines in <m>\R^2</m></title>
+    <statement>
+      <p>If <m>\ell</m> is a line in <m>\R^2</m>, then there exists vectors <m>\vect{v},\vect{p}\in \R^2</m> such that <m>\ell = \{\vect{p}+t\vect{v} \ \big| \ t\in \R\}</m>.</p>
+    </statement>
+    <proof>
+        <p>To begin, suppose <m>\ell</m> is not vertical and has slope-intercept equation <m>y=mx+b</m>. If <m>(x,y)</m> are the coordinates of a point on <m>\ell</m>, then we may <em>substitute</em> for <m>y</m>:
+            <me>\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}x\\mx+b\end{bmatrix} = \begin{bmatrix}0\\b\end{bmatrix} + x\begin{bmatrix}1 \\m\end{bmatrix}.</me>
+            Name <m>\vect{p}=\begin{bmatrix}0\\b\end{bmatrix}</m> and <m>\vect{v}=\begin{bmatrix}1 \\m\end{bmatrix}</m>. Then <m>\begin{bmatrix}x\\y\end{bmatrix} = \vect{p}+x\vect{v}</m>. Since this is true for all <m>x\in \R</m>, it follows that <m>\ell = \{\vect{p}+t\vect{v} \ \big| \ t\in \R\}</m>. The case when <m>\ell</m> is vertical is left as an exercise.</p>
+    </proof>
+  </proposition>
+
+  <p>
+    Observe the role substitution played in both  <xref ref="ex-line_yint_to_parametric" /> and  <xref ref="prop-lines_r2_pvf" />. Using constraining equations and substituting in this way will be a reoccurring strategy throughout this course.
+  </p>
+
+  <example xml:id="ex-line_parametric_to_yint">
+      <title>Parametric to Slope-Intercept Conversion</title>
+      <statement>
+          <p>Consider the <em>path</em> with initial <em>position</em> <m>\vect{p}=\begin{bmatrix} 3\\1\end{bmatrix}</m> and <em>travels</em> with velocity <m>\vect{v}=\begin{bmatrix} -1\\2\end{bmatrix}</m>.</p>
+          
+          <sidebyside widths="50% 50%" valign="top">
+          <p>Thinking of the scalar in front of <m>\vect{v}</m> as <em>time</em>, I mark off units of <m>\vect{v}</m> on the path, and I label the points at times <m>-1</m>, 0, 1, 2, and 3. As we range over all time, the collection of <em>all</em> points on the path can be expressed as <me>\left\{\begin{bmatrix}3\\1\end{bmatrix}+t\begin{bmatrix} -1\\2\end{bmatrix}\ \bigg| \ t\in \R \right\}.</me> In general, at time <m>t</m> my position on the path has coordinate <m>(x,y) = (3-t, 1+2t)</m>. Since <m>x=3-t</m>, then <m>t=3-x</m>. Substituting this into the equation for <m>y</m>, <me>y = 1+2(3-x) = -2x+7.</me></p>
+
+          <image source="images/2.3_lines_ex2.png" width="100%">
+          <description> 
+            <p>
+              The graph of the line with equation <m>y= -2x+7</m>.
+            </p>
+          </description>
+        </image>
+      </sidebyside>
+      </statement>
+  </example>
+
+  <p>
+    Once again, we can generalize our reasoning in  <xref ref="ex-line_parametric_to_yint" /> to any line in the plane.
+  </p>
+
+  <proposition>
+    <statement>
+        <p>If <m>\vect{v},\vect{p}\in \R^2</m>, then the set <m>\ell = \{\vect{p}+t\vect{v} \ \big| \ t\in \R\}</m> is a line.</p>
+    </statement>
+    <proof>
+        <p>
+          To show that the set <m>\ell</m> is a line, I need to verify the coordinates satisfy an equation of a line (  <xref ref="def-lines_r2" />). Unpacking entries, <m>\ell = \left\{\begin{bmatrix}p_1\\p_2\end{bmatrix} + t\begin{bmatrix}v_1 \\v_2\end{bmatrix}\ \bigg| \ t\in \R\right\}</m>. If <m>(x,y)</m> is the coordinate of a point on <m>\ell</m>, then <m>x=p_1+tv_1</m> and <m>y=p_2+tv_2</m>. If <m>v_1\ne 0</m>, then the first equations can be rewritten as <m>t=\frac{1}{v_1}(x-p_1)</m>, which can then be substituted into the second equation to get: <me>y= p_2+ \frac{1}{v_1}(x-p_1)v_2 = \frac{v_2}{v_1}x + (p_2-p_1\frac{v_2}{v_1}).</me> This is the slope-intercept form of a line (  <xref ref="def-lines_r2" />). The case of <m>v_1=0</m> is left as an exercise.
+        </p>
+      </proof>
+  </proposition>
+
+  <p>
+    Revisit how in GeoGebra <xref ref="geogebra_activity-lincomb" />, Part 5, as you fix <m>r=1</m> and slide <m>s</m>, the tips of the vectors <m>\begin{bmatrix}3\\1\end{bmatrix}+s \begin{bmatrix}-1\\2\end{bmatrix}</m>, <em>sweeps out a line</em> through <m>\begin{bmatrix}3\\1\end{bmatrix}</m> and in the direction of <m>\begin{bmatrix}-1\\2\end{bmatrix}</m>.
+  </p>
+
+  <technology xml:id="exploration-geogebra-lines1">
+    <p>
+      Visualize parametrized lines in <m>\R^2</m> by playing with position vectors <m>\vect{p}</m> and velocity vectors <m>\vect{v}</m> at GeoGebra ID: <url href="https://www.geogebra.org/m/j2pnwgwz">j2pnwgwz</url>. Observe that a different vector <m>\vect{v}'</m> in the direction of <m>\vect{v}</m> will sweep out the same line, but will be at points at different "times." Move the vectors <m>\vect{p}</m> and <m>\vect{v}</m> and observe how the <m>y</m>-intercept form of the line varies.
+    </p>
+  </technology>
+
+  <image source="images/ai_walkingpath.png" width="100%">
+    <description> 
+      <p>
+        A cartoon depicting walking down a linear path.  The initial position vector and velocity vector are clearly visible.
+      </p>
+    </description>
+  </image>
+
+  <p>
+    To summarize, you should reconceptualize lines as the <em>collection of all points</em> in the plane reached by traveling along a path in the following way:
+      <ul>
+        <li><p>Begin at a given starting point, symbolized as <m>\vect{p}</m>.</p></li>
+        <li><p>Start traveling in a constant direction and constant speed, symbolized as <m>\vect{v}</m>.</p></li>
+      </ul>
+      Your position on this path at time <m>t</m> can be represented with the linear combination <m>\vect{p}+t\vect{v}</m>.
+  </p>
+
+  <question>
+      <title>Representing Lines</title>
+      <statement>
+          <p>For each of the following lines in <m>\R^2</m>,
+              <ol>
+                  <li><p>Clearly <alert>visually</alert> sketch and label it,</p></li>
+                  <li><p>Find the <alert>symbolic</alert> form not given (i.e. slope-intercept or parametric vector form)</p></li>
+                  <li><p><alert>Verbally</alert> write down, in complete sentences the meaning of the parametric equation in the language of position and steps per unit of time.</p></li>
+              </ol>
+              <me>\ell_1= \left\{\begin{bmatrix}x\\y\end{bmatrix} \ \big| \ y=\frac{1}{2}x-3\right\} \quad \ell_2= \left\{\begin{bmatrix}1\\1\end{bmatrix}+t\begin{bmatrix}-2\\1\end{bmatrix} \ \big| \ t\in \R\right\}</me>
+          </p>
+      </statement>
+  </question>
+
+    </subsection>
+  <subsection xml:id="chp2sec3subsec2">
+    <title>Lines in <m>\R^m</m></title>
+    
+
+
+  <p>
+    It is with this conceptualization of lines in the plane that we may <em>generalize</em> to reason about lines in <m>\R^m</m>. We formalize this in the following definition.
+  </p>
+
+  <definition xml:id="def-line">
+      <title>Lines in <m>\R^m</m> and their Parametric Vector Form</title>
+      <statement>
+          <p>If <m>\vect{p}, \vect{v}\in\R^m</m> and <m>\vect{v}</m> is nonzero, then the set <m>\ell:= \{\vect{p}+t\vect{v}\ \big| \ t\in \R\}</m> is a <alert>line</alert> in <m>\R^m</m>, symbolized in <alert>parametric vector form</alert>. Here <m>t</m> is a <alert>parameter</alert>. If <m>[a,b]\subset \R</m> is a closed interval, then <m>s := \{\vect{p}+t\vect{v}\ \big| \ t\in [a,b]\}</m> is a <alert>line segment</alert> in <m>\R^m</m>.</p>
+      </statement>
+  </definition>
+
+  <remark>
+      <title>Lines as Paths of Travel</title>
+      <ol>
+          <li><p><m>\vect{p}</m> gives your starting <em>position</em>.</p></li>
+          <li><p><m>\vect{v}</m> gives the direction and distance travelled in 1 unit of time (i.e. <em>velocity</em>).</p></li>
+          <li><p><m>t</m> gives you elapsed time. When <m>t</m> is positive, you can think of <m>\vect{p} + t\vect{v}</m> as what your position will be <m>t</m> units of time in the future, and when <m>x</m> is negative, you can think of <m>\vect{p} + t\vect{v}</m> as what your position had been <m>t</m> units of time in the past.</p></li>
+      </ol>
+  </remark>
   
+  
+
+
+
+
+  <figure xml:id="fig-line_in_r3">
+      <caption>Line in <m>\R^3</m></caption>
+  </figure>
+
+  <image source="images/2.3_lines_in_r3.png" width="100%">
+    <description> 
+      <p>
+        A line in <m>\R^3</m>.
+      </p>
+    </description>
+  </image>
+
+
+  <p>
+    The line in  <xref ref="fig-line_in_r3" /> is given by parametric vector form <m>\ell = \left\{\begin{bmatrix}2\\1\\1\end{bmatrix}+t\begin{bmatrix}-1\\-1\\1\end{bmatrix} \ \big| \ t\in \R \right\}</m>.
+  </p>
+
+  <technology xml:id="exploration-geogebra-lines2">
+    <p>
+      Visualize parametrized lines in <m>\R^3</m> at GeoGebra ID: <url href="https://www.geogebra.org/m/nrp6wa5k">nrp6wa5k</url>. Move the vectors <m>\vect{p}</m> and <m>\vect{v}</m> and observe how the line visualization and line symbolization changes. Slide the parameter <m>t</m> and observe how you "move" along the line.
+    </p>
+  </technology>
+
+
+
+
+
+
+
+
+
+  </subsection>
+  <subsection xml:id="chp2sec3subsec3">
+    <title>Planes in <m>\R^m</m></title>
+  <p>
+    We now move on to generalize our reasoning to a new geometric object: a plane in <m>\R^m</m>. While many have a sense of what a plane is when they see it, it is another matter to make sense of it mathematically. I will provide a geometric formulation. If points, <m>\vect{p}</m>, <m>\vect{a}</m>, and <m>\vect{b}</m> in <m>\R^m</m> do not all lie on the same line (in the language of geometry language, are <alert>non-collinear</alert>), then they form a triangle. Emanating from vertex <m>\vect{p}</m> are sides <m>\vect{v}:=\vect{a}-\vect{p}</m> and <m>\vect{w}:=\vect{b}-\vect{p}</m>. The set of all points that I can reach by traveling with velocity vectors coming from the triangle's sides is a plane. In a qualitative sense, <em>the plane a triangle determines is the unique flat slice of <m>\R^m</m> that contains that triangle</em>.
+  </p>
+
+  <figure xml:id="fig-plane_in_r3">
+      <caption>Plane in <m>\R^3</m></caption>
+  </figure>
+
+    <image source="images/2.3.3_planes1.png" width="100%">
+    <description> 
+      <p>
+        A plane in <m>\R^3</m>.
+      </p>
+    </description>
+  </image>
+
+  <remark>
+      <title>Plane through 3 non-collinear points</title>
+      <ol>
+          <li><p>Start at position <m>\vect{p}</m>,</p></li>
+          <li><p>Travel with constant direction and speed <m>\vect{v}:=\vect{a}-\vect{p}</m> for <m>s</m> units of time,</p></li>
+          <li><p>Travel with constant direction and speed <m>\vect{w}:=\vect{b}-\vect{p}</m> for <m>t</m> units of time.</p></li>
+      </ol>
+  </remark>
+
+  <definition xml:id="def-noncollinear">
+      <title>Non-Collinear Vectors</title>
+      <statement>
+          <p>If <m>\vect{v},\vect{w}\in \R^m</m> are nonzero vectors and lines <m>\ell_\vect{v}=\{t\vect{v}\ \big| \ t\in \R\}</m> and <m>\ell_\vect{w}=\{t\vect{w}\ \big| \ t\in \R\}</m> are not equal, then <m>\vect{v}</m> and <m>\vect{w}</m> are <alert>non-collinear</alert> vectors.</p>
+      </statement>
+  </definition>
+
+  <definition xml:id="def-plane">
+      <title>Planes in <m>\R^m</m> and their Parametric Vector Form</title>
+      <statement>
+          <p>If <m>\vect{p},\vect{v},\vect{w}\in \R^m</m> such that <m>\vect{v}</m> and <m>\vect{w}</m> are non-collinear, then the set of points <me>\rho=\left\{\vect{p}+s\vect{v}+t\vect{w} \ \big| \ s,t\in \R\right\},</me> is a <alert>plane</alert>, symbolized in <alert>parametric vector form</alert>. Here <m>s</m> and <m>t</m> are <alert>parameters</alert>.</p>
+      </statement>
+  </definition>
+
+  <example xml:id="ex-plane">
+      <title>Plane in <m>\R^3</m></title>
+      <statement>
+          <p>
+            Below is an image of the plane <m>\rho</m> in <m>\R^3</m> with parametric vector form: <me>\rho=\left\{ \begin{bmatrix}5\\1\\2\end{bmatrix}+ s\begin{bmatrix}6\\6\\1\end{bmatrix}+ t\begin{bmatrix} -2\\3\\1\end{bmatrix}\ \bigg| \ s,t\in\R\right\}.</me>
+          </p>
+
+          <image source="images/2.3.3_planes2.png" width="100%">
+          <description> 
+            <p>
+              A plane in <m>\R^3</m>.
+            </p>
+          </description>
+          </image>
+
+          <p>
+            Using the metaphor of travel, this plane is the collection of all points we can reach if we start at position <m>\vect{p}=\begin{bmatrix}5\\1\\2\end{bmatrix}</m>, travel <m>s</m> units of time with constant velocity <m>\vect{v}=\begin{bmatrix}6\\6\\1\end{bmatrix}</m>, and then <m>t</m> units of time with constant velocity <m>\vect{w}=\begin{bmatrix} -2\\3\\1\end{bmatrix}</m>. For example, to reach the point <m>\begin{bmatrix}4\\10\\4.5\end{bmatrix}</m>, we start at <m>\vect{p}</m>, travel <m>\frac{1}{2}</m> units of time with constant velocity <m>\vect{v}</m>, and then <m>2</m> units of time with constant velocity <m>\vect{w}</m>. This path is depicted in orange.
+          </p>
+
+      </statement>
+  </example>
+
+  <technology xml:id="exploration-geogebra-planes">
+    <p>
+      Visualize a plane in <m>\R^3</m> at GeoGebra ID: <url href="https://www.geogebra.org/m/qg2afdpt">qg2afdpt</url>. Move the vectors <m>\vect{p}</m>, <m>\vect{v}</m>, and <m>\vect{w}</m> to move the plane. Adjust the parameters <m>s</m> and <m>t</m> to reach different points on the plane.
+    </p>
+  </technology>
+
+  <example>
+      <title>Plane in <m>\R^2</m></title>
+      <statement>
+          <p>
+            Below is an image of the plane <m>\mu</m> in <m>\R^2</m> with parametric vector form: <me>\mu = \left\{s\begin{bmatrix}3\\1\end{bmatrix}+t\begin{bmatrix}1\\2\end{bmatrix}\ \bigg| \ s,t\in\R\right\}.</me> 
+          </p>
+          
+          <image source="images/2.3.3_planes3.png" width="100%">
+          <description> 
+            <p>
+              A plane in <m>\R^2</m>.
+            </p>
+          </description>
+          </image>
+
+          <p>
+            Using the metaphor of travel, <m>\mu</m> is the collection of all points we can reach if we start at position <m>\vect{p}=\begin{bmatrix}0\\0\end{bmatrix}</m>, travel <m>s</m> units of time with constant velocity <m>\vect{v}=\begin{bmatrix}3\\1\end{bmatrix}</m>, and then <m>t</m> units of time with constant velocity <m>\vect{w}=\begin{bmatrix}1\\2\end{bmatrix}</m>. Observe that <m>\mu</m> fills up all of <m>\R^2</m> - I can reach <em>any point</em> in <m>\R^2</m> by traveling for the appropriate amounts of time with constant velocities <m>\vect{v}</m> and <m>\vect{w}</m>. For example, to reach the point <m>\vect{u}=\begin{bmatrix}2\\2\end{bmatrix}</m>, we start at the origin <m>\vect{0}</m>, travel <m>0.4</m> units of time with constant velocity <m>\vect{v}</m>, and then <m>0.8</m> units of time with constant velocity <m>\vect{w}</m>.
+          </p>
+      </statement>
+  </example>
+
 
   <p>
     Visualize the planes (in parametric form) in <m>\R^2</m> at GeoGebra ID: 
@@ -14,11 +326,22 @@
     <p>
       In multivariable calculus, you will expand on the ideas introduced here to describe <em>parametrized surfaces</em> and their <em>tangent planes</em>.
     </p>
+
+        <image source="images/2.3.3_planes4.png" width="100%">
+    <description> 
+      <p>
+        A tangent plane to a sphere in <m>\R^3</m>.
+      </p>
+    </description>
+  </image>
     <!--<figure xml:id="fig-tangent-plane">
       <caption>Tangent plane to a sphere.</caption>
       <p>[Image reference: Tangent plane to a sphere graph]</p>
     </figure>-->
-    <p>Visualize tangent planes to surfaces in <m>\R^3</m> at GeoGebra ID: <url href="https://www.geogebra.org/m/mmkmzuqr" visual="">mmkmzuqr</url>.</p>
+    
+    <p>
+      Visualize tangent planes to surfaces in <m>\R^3</m> at GeoGebra ID: <url href="https://www.geogebra.org/m/mmkmzuqr" visual="">mmkmzuqr</url>.
+    </p>
   </remark>
-
+    </subsection>
 </section>

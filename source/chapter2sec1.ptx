@@ -93,23 +93,27 @@
     <p></p>
   </example>
 
-  <p>A core mathematical act is to create and use symbols to organize our thoughts and communicate our reasoning. One of the most fundamental ideas associated to (lists of) quantities is <em>mixing</em> (lists of) quantities.</p>
+  <p>
+    One of the most fundamental ideas associated to (lists of) quantities is <em>mixing</em> (lists of) quantities.  In <xref ref="vig-pouring-cereal" />), I <em>pour</em> some of one cereal and then some of another cereal. In Vignette 2 (<xref ref="vig-travel-instructions" />), I <em>travel</em> in one direction, and then in another direction. In Vignette 3 (<xref ref="vig-averaging-temperature" />), I <em>average</em> each of my daily forecasts.
+  </p>
 
-  <example xml:id="ex-mixing-vignettes">
+<!--  <example xml:id="ex-mixing-vignettes">
     <title>Where we saw mixing in our vignettes?</title>
-    <p>In Vignette 1, I <em>pour</em> some of one cereal and then some of another cereal.</p>
-    <p>In Vignette 2, I <em>travel</em> in one direction, and then in another direction.</p>
-    <p>In Vignette 3, I <em>average</em> each of my daily forecasts.</p>
-  </example>
+    <p>In Vignette 1 (<xref ref="vig-pouring-cereal" />), I <em>pour</em> some of one cereal and then some of another cereal.</p>
+    <p>In Vignette 2 (<xref ref="vig-travel-instructions" />), I <em>travel</em> in one direction, and then in another direction.</p>
+    <p>In Vignette 3 (<xref ref="vig-averaging-temperature" />), I <em>average</em> each of my daily forecasts.</p>
+  </example>-->
 
-  <p>We observe two types of mixtures of quantities: those arising from a <em>physical</em> mixture of empirical objects (e.g. pouring cereals) and those arising from a <em>conceptual</em> mixture of quantities (e.g. averages of air temperatures). Mixture is a core idea that will be central to everything going forward.</p>
+  <p>
+    We observe two types of mixtures of quantities: those arising from a <em>physical</em> mixture of empirical objects (e.g. pouring cereals) and those arising from a <em>conceptual</em> mixture of quantities (e.g. averages of air temperatures). Mixture is a core idea that will be central to everything going forward
+  </p>
 
-  <activity xml:id="activity-seeing-mixing-around">
+  <question xml:id="activity-seeing-mixing-around">
     <title>Where else do you see mixing?</title>
     <statement>
       <p>Think back to all the different lists of quantities you found in the world around you. In which of those contexts was it meaningful to <em>mix</em> those vectors? Write down the contexts, lists of quantities, and what it means to mix them.</p>
     </statement>
-  </activity>
+  </question>
 
   <p>
     The idea of mixing vectors is made mathematically precise through two natural operations: scaling and addition. To reason about them verbally, I will usually discuss them with the metaphor of servings of boxes of cereal, where a vector represents the nutrients of one serving size of a given cereal. However, sometimes I will draw upon other metaphors, such as travel. To visualize them, I will most frequently use the geometric representation. I am about to give our first formal mathematical definition.
@@ -162,7 +166,7 @@
   </figure>
   </note>
 
-  <exploration xml:id="exploration-geogebra-scaling">
+  <technology xml:id="exploration-geogebra-scaling">
   <p>
     Visualize vector scaling as:
     <ol>
@@ -171,7 +175,7 @@
       <li>adjusting the volume of a sound at GeoGebra ID: <url href="https://www.geogebra.org/m/awejqq5u" visual="">awejqq5u</url></li>
     </ol>
   </p>
-</exploration>
+</technology>
 
   <insight xml:id="psa-absolute-relative-length">
     <title>Absolute Length vs Relative Length</title>
@@ -220,12 +224,12 @@
   </figure>  
   </note>
 
-  <exploration xml:id="exploration-geogebra-addition">
+  <technology xml:id="exploration-geogebra-addition">
     <p>
       Visualize vector addition via tip-to-tail parallelograms at GeoGebra ID: 
       <url href="https://www.geogebra.org/m/ADsHPgV4" visual="">ADsHPgV4</url> and superposition of signals at GeoGebra ID: <url href="https://www.geogebra.org/m/ttny3hjk" visual="">ttny3hjk</url>.
     </p>
-  </exploration>
+  </technology>
 
   <p>
     Naturally, you will want to do both, scale and add vectors. Scaling, then adding, defines a fundamental mixing operation among vector quantities: linear combination.
@@ -264,7 +268,7 @@
   </figure>
   </insight>
 
-  <activity xml:id="geogebra_activity-lincomb">
+  <question xml:id="geogebra_activity-lincomb">
     <title>Explorations with The Mixture Parallelogram Tool</title>
     <statement>
       <p>
@@ -285,7 +289,7 @@
 
       </p>
     </statement>
-  </activity>
+  </question>
 
 
   <question xml:id="activity-symbolizing">

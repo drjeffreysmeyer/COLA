@@ -26,6 +26,48 @@
     \newcommand{\R}{\mathbb R} 
     \newcommand{\vect}[1]{\mathbf{#1}}
 
+    \DeclareMathOperator{\Aut}{Aut} \DeclareMathOperator{\Out}{Out}
+    \DeclareMathOperator{\Mod}{Mod} \DeclareMathOperator{\Cl}{Cl}
+    \DeclareMathOperator{\SL}{SL} \DeclareMathOperator{\PSL}{PSL}
+    \DeclareMathOperator{\GL}{GL} \DeclareMathOperator{\PGL}{PGL}
+    \DeclareMathOperator{\Ort}{O} \DeclareMathOperator{\PO}{PO}
+    \DeclareMathOperator{\GO}{GO} \DeclareMathOperator{\SO}{SO}
+    \DeclareMathOperator{\PSO}{PSO} \DeclareMathOperator{\Uni}{U}
+    \DeclareMathOperator{\PU}{PU} \DeclareMathOperator{\GU}{GU}
+    \DeclareMathOperator{\SU}{SU} \DeclareMathOperator{\PSU}{PSU}
+    \DeclareMathOperator{\Sp}{Sp} \DeclareMathOperator{\GSp}{GSp}
+    \DeclareMathOperator{\PSp}{PSp} \DeclareMathOperator{\Spin}{Spin}
+    \DeclareMathOperator{\Pin}{Pin} \DeclareMathOperator{\Comm}{Comm}
+    \DeclareMathOperator{\Sy}{S} \DeclareMathOperator{\Sol}{Sol}
+    \DeclareMathOperator{\Nil}{Nil} \DeclareMathOperator{\Ad}{Ad}
+    \DeclareMathOperator{\ad}{ad} \DeclareMathOperator{\Mat}{M}
+    \DeclareMathOperator{\Aff}{Aff} \DeclareMathOperator{\Sim}{Sim}
+    \DeclareMathOperator{\Euc}{Euc} \DeclareMathOperator{\Semi}{Semi}
+    \DeclareMathOperator{\FI}{FI}\DeclareMathOperator{\NFI}{NFI}
+    \DeclareMathOperator{\Ave}{Ave}\DeclareMathOperator{\GCD}{gcd}
+    \DeclareMathOperator{\lcm}{lcm}\DeclareMathOperator{\Eff}{Eff}
+    \DeclareMathOperator{\Fix}{Fix}\DeclareMathOperator{\Gal}{Gal}
+    \DeclareMathOperator{\Isom}{Isom}\DeclareMathOperator{\Nor}{N}
+    \DeclareMathOperator{\Rep}{R}\DeclareMathOperator{\Char}{X}
+    \DeclareMathOperator{\Hom}{Hom}\DeclareMathOperator{\Res}{Res}
+    \DeclareMathOperator{\Sym}{Sym}\DeclareMathOperator{\Stab}{Stab}
+    \DeclareMathOperator{\Jac}{Jac}\DeclareMathOperator{\IR}{InRad}
+    \DeclareMathOperator{\Vol}{Vol}\DeclareMathOperator{\Star}{Star}
+    \DeclareMathOperator{\Id}{Id}\DeclareMathOperator{\Exc}{Exc}
+    \DeclareMathOperator{\hd}{hd}\DeclareMathOperator{\cd}{cd}
+    \DeclareMathOperator{\Fe}{F}\DeclareMathOperator{\Rank}{Rank}
+    \DeclareMathOperator{\Br}{Br}\DeclareMathOperator{\Homeo}{Homeo}\DeclareMathOperator{\Orb}{Orb}\DeclareMathOperator{\Int}{Int}\DeclareMathOperator{\arccosh}{arccosh}
+    \DeclareMathOperator{\spn}{Span}\DeclareMathOperator{\rref}{rref}
+    \DeclareMathOperator{\col}{Col}\DeclareMathOperator{\Col}{Col}\DeclareMathOperator{\Null}{Null}
+    \DeclareMathOperator{\Area}{Area}\DeclareMathOperator{\tr}{tr}
+    \DeclareMathOperator{\disc}{disc}
+    \DeclareMathOperator{\asf}{asf}\DeclareMathOperator{\sasf}{sasf}
+    \DeclareMathOperator{\vsf}{vsf}\DeclareMathOperator{\svsf}{svsf}
+    \DeclareMathOperator{\sgn}{sgn}
+    \DeclareMathOperator{\round}{round}
+    \DeclareMathOperator{\dist}{dist}
+    \DeclareMathOperator{\abssum}{abssum}
+
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->

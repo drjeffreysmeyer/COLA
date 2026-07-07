@@ -13,10 +13,8 @@
       <alert><xref ref="chp2sec1"/>.</alert> If the central <em>objects</em> of this course are vectors, then the central <em>action</em> of this course is linear combination. I encourage you to conceptualize linear combination as <em>mixture</em> of these lists of quantities. This mixing can come from mixing the physical objects themselves (e.g. mixing cereal in your bowl, mixing chemicals in your beaker) or can come from a conceptual mixture (e.g. summing or averaging).
     </p>
 
-        <objectives>
+    <objectives>
       <title>Lesson 2.1</title>
-      
-      
         <ul>
             <li><p>I see that in certain quantitative situations, it is meaningful to add and scale vectors.</p></li>
             <li><p>Given a quantitative situation, I can correctly identify vectors and <alert>symbolize</alert> their mixtures using the notation of linear combination.</p></li>
@@ -27,74 +25,82 @@
         </ul>
     </objectives>
 
+    <p>
+        <alert> <xref ref="chp2sec2" />.</alert> Upon reasoning about linear combinations in quantitative situations, certain meaningful algebraic properties emerge. These algebraic properties, summarized in Proposition <xref ref="prop-fundamental_vector_props" />, are central to how we will work with linear combinations vectors going forward. In particular, they will both be used for <em>justifying</em> future mathematical statements about linear combination as well as aid in <em>computation</em> of linear combinations. You should make sure you know each of them and can invoke them to justify your thinking.
+    </p>
+
+    <objectives>
+        <title>Lesson 2.2</title>
+        <ul>
+            <li><p>I understand that algebraic properties encode meaningful equivalencies between linear combinations.</p></li>
+            <li><p>I can symbolize and interpret algebraic properties in context.</p></li>
+            <li><p>I can informally justify algebraic properties using appropriate metaphors.</p></li>
+            <li><p>I can formally justify algebraic properties using properties of real numbers, vectors, and linear combination.</p></li>
+            <li><p>I can use the algebraic properties of linear combinations to correctly algebraically manipulate expressions involving vectors.</p></li>
+        </ul>
+    </objectives>
+
+    <p>
+        <alert><xref ref="chp2sec3" />.</alert> Lines are subsets of <em>points</em> that satisfy certain geometric properties. These points can be described in many ways, and linear combinations provide one productive way to do so. We explore the parametric vector form (PVF) of lines and generalize to planes.
+    </p>
+
+    <objectives>
+        <title>Lesson 2.3</title>
+        <ul>
+            <li><p>I understand that lines are made of point and these points can be described by vectors.</p></li>
+            <li><p>In <m>\R^2</m> I can symbolically move between slope-intercept form and parametric vector form of a line.</p></li>
+            <li><p>Given a symbolic expression for line in <m>\R^2</m> or <m>\R^3</m>, I can correctly visualize that line by sketching by hand and using technology like GeoGebra.</p></li>
+            <li><p>Given the parametric vector form of a line in <m>\R^m</m>, I can correctly interpret its meaning in terms of traveling down a path, using such terms as starting position, velocity, and time.</p></li>
+        </ul>
+    </objectives>
+
+    <p><alert> <xref ref="chp2sec4"/>.</alert> Having internalized a single linear combination, we may now start to reason about the set of <em>all</em> linear combinations. This set, which we call the span, plays an important roll going forward. We practice using and interpreting the symbolism of span, and then establish important properties it possesses.</p>
+
+    <objectives>
+        <title>Lesson 2.4</title>
+        <ul>
+            <li><p>I understand that span of <m>S</m> as the set of all linear combinations of <m>S</m>.</p></li>
+            <li><p>I can symbolize and interpret the symbolism of span and solution sets.</p></li>
+            <li><p>I understand the algebraic properties of span.</p></li>
+        </ul>
+    </objectives>
+
+    <p><alert> <xref ref="chp2sec5" />.</alert> When we can make the same vector with multiple distinct linear combinations, our vectors have a certain amount of redundancy. This is formalized with the concept of linear dependence. We explore this concept algebraically and geometrically.</p>
+
+    <objectives>
+        <title>Lesson 2.5</title>
+        <ul>
+            <li><p>I understand dependency, both via redundancy and via making the zero vector.</p></li>
+            <li><p>I understand forming the null space and solution set as collecting servings vectors.</p></li>
+            <li><p>I can symbolize and interpret the symbolism of null space.</p></li>
+            <li><p>I can use separability to determine if vectors are independent.</p></li>
+            <li><p>I understand independence as distinct directions.</p></li>
+            <li><p>I understand the parametric vector form of <m>k</m>-planes via travel instructions.</p></li>
+        </ul>
+    </objectives>
+
+    <p>
+        <alert> <xref ref="chp2sec6" />.</alert> In the previous lessons, several important sets emerged: lines and planes through the origin, spans, and null sets. They all share certain properties and it is useful to have a singe name to describe these sets: subspaces.
+    </p>
+
+    <objectives>
+        <title>Lesson 2.6</title>
+        <ul>
+            <li><p>I can justify and can use the algebraic properties of <m>\spn(S)</m> and <m>\Null(S)</m>.</p></li>
+            <li><p>I understand <m>\spn(S)</m> and <m>\Null(S)</m> are instances of subspaces.</p></li>
+            <li><p>I can identify subspaces in <m>\R^2</m> and <m>\R^3</m>.</p></li>
+        </ul>
+    </objectives>
+
   </introduction>
 
+  <!-- include sections-->
+    <xi:include href="chapter2sec1.ptx" />
+    <xi:include href="chapter2sec2.ptx" />
+    <xi:include href="chapter2sec3.ptx" />
+    <xi:include href="chapter2sec4.ptx" />
+    <xi:include href="chapter2sec5.ptx" />
+    <xi:include href="chapter2sec6.ptx" />
+   
 
-
-        <p><alert>Lesson <xref ref="chp2sec2" />.</alert> Upon reasoning about linear combinations in quantitative situations, certain meaningful algebraic properties emerge. These algebraic properties, summarized in Proposition <xref ref="prop_fundamental_vector_props" />, are central to how we will work with linear combinations vectors going forward. In particular, they will both be used for <em>justifying</em> future mathematical statements about linear combination as well as aid in <em>computation</em> of linear combinations. You should make sure you know each of them and can invoke them to justify your thinking.</p>
-
-        <objectives>
-            <ul>
-                <li><p>I understand that algebraic properties encode meaningful equivalencies between linear combinations.</p></li>
-                <li><p>I can symbolize and interpret algebraic properties in context.</p></li>
-                <li><p>I can informally justify algebraic properties using appropriate metaphors.</p></li>
-                <li><p>I can formally justify algebraic properties using properties of real numbers, vectors, and linear combination.</p></li>
-                <li><p>I can use the algebraic properties of linear combinations to correctly algebraically manipulate expressions involving vectors.</p></li>
-            </ul>
-        </objectives>
-
-        <p><alert>Lesson <xref ref="chp2sec3" />.</alert> Lines are subsets of <em>points</em> that satisfy certain geometric properties. These points can be described in many ways, and linear combinations provide one productive way to do so. We explore the parametric vector form (PVF) of lines and generalize to planes.</p>
-
-        <objectives>
-            <ul>
-                <li><p>I understand that lines are made of point and these points can be described by vectors.</p></li>
-                <li><p>In <m>\R^2</m> I can symbolically move between slope-intercept form and parametric vector form of a line.</p></li>
-                <li><p>Given a symbolic expression for line in <m>\R^2</m> or <m>\R^3</m>, I can correctly visualize that line by sketching by hand and using technology like GeoGebra.</p></li>
-                <li><p>Given the parametric vector form of a line in <m>\R^m</m>, I can correctly interpret its meaning in terms of traveling down a path, using such terms as starting position, velocity, and time.</p></li>
-            </ul>
-        </objectives>
-
-        <p><alert>Lesson <xref ref="chp2sec4"/>.</alert> Having internalized a single linear combination, we may now start to reason about the set of <em>all</em> linear combinations. This set, which we call the span, plays an important roll going forward. We practice using and interpreting the symbolism of span, and then establish important properties it possesses.</p>
-
-        <objectives>
-            <ul>
-                <li><p>I understand that span of <m>S</m> as the set of all linear combinations of <m>S</m>.</p></li>
-                <li><p>I can symbolize and interpret the symbolism of span and solution sets.</p></li>
-                <li><p>I understand the algebraic properties of span.</p></li>
-            </ul>
-        </objectives>
-
-        <p><alert>Lesson <xref ref="chp2sec5" />.</alert> When we can make the same vector with multiple distinct linear combinations, our vectors have a certain amount of redundancy. This is formalized with the concept of linear dependence. We explore this concept algebraically and geometrically.</p>
-
-        <objectives>
-            <ul>
-                <li><p>I understand dependency, both via redundancy and via making the zero vector.</p></li>
-                <li><p>I understand forming the null space and solution set as collecting servings vectors.</p></li>
-                <li><p>I can symbolize and interpret the symbolism of null space.</p></li>
-                <li><p>I can use separability to determine if vectors are independent.</p></li>
-                <li><p>I understand independence as distinct directions.</p></li>
-                <li><p>I understand the parametric vector form of <m>k</m>-planes via travel instructions.</p></li>
-            </ul>
-        </objectives>
-
-        <p><alert>Lesson <xref ref="chp2sec6" />.</alert> In the previous lessons, several important sets emerged: lines and planes through the origin, spans, and null sets. They all share certain properties and it is useful to have a singe name to describe these sets: subspaces.</p>
-
-        <objectives>
-            <ul>
-                <li><p>I can justify and can use the algebraic properties of <m>\spn(S)</m> and <m>\Null(S)</m>.</p></li>
-                <li><p>I understand <m>\spn(S)</m> and <m>\Null(S)</m> are instances of subspaces.</p></li>
-                <li><p>I can identify subspaces in <m>\R^2</m> and <m>\R^3</m>.</p></li>
-            </ul>
-        </objectives>
-
-        
-
-
-  <!-- include sections -->
-  <xi:include href="chapter2sec1.ptx" />
-  <xi:include href="chapter2sec2.ptx" />
-  <xi:include href="chapter2sec3.ptx" />
-  <xi:include href="chapter2sec4.ptx" />
-  <xi:include href="chapter2sec5.ptx" />
-  <xi:include href="chapter2sec6.ptx" />
 </chapter>

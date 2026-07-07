@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp1sec2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Symbolizing Vectors</title>
+
+
+  <p>
+    Let's begin this lesson by returning to cereal. In Figure \ref{figure:cereals_symbolize} are the nutrition facts for Sugar-Os.
+  </p>
+
+  <p><em>How can I efficiently communicate lists of quantities such as the nutrition facts for one serving size of cereal?</em> It is desirable to do so without writing having to write out long lists like those in  <xref ref="ex-vignettes1"/>?  
+  A core mathematical act is to create and use symbols to organize our thoughts and communicate our reasoning.</p>
+
+  <note xml:id="mentalaction-symbolizing">
+    <title>Mental Action - Symbolizing</title>
+    <p>
+      <term>Symbolizing</term> is the act of associating a concept in our minds with a symbol on the page. <em>Note that we first need a concept in our minds!</em>
+      For example, the concept of five can be symbolized 5, or V (Roman numerals), or 101 (binary). Depending on the context, we choose the symbolization that is most appropriate, that enables us to communicate, to reason, or to solve a specific problem.
+    </p>
+  </note>
+
+  <image source="images/ai_symbolizing5.png" width="100%">
+    <description> 
+      <p>
+        A cartoon depicting a learner realizing that the concept of five can be symbolized in many ways: the alphanumeric symbol "5", the Roman numeral "V", five dashes, or binary "101".
+      </p>
+    </description>
+  </image>  
+
+  <p>
+    Let's explore some productive ways to symbolize vectors by focusing first on the vector of nutrition facts for a single serving size of Sugar-Os.
+  </p>
+
+  <p>
+    To begin, we may concretely symbolize the nutrient facts with a vertical <alert>column</alert> of all the numbers associated with the quantities.
+  In column form, I typically do not write down the units, but I remember they are still there.  
+  Each number in the column is an <alert>entry</alert>
+  This way of symbolizing this vector is useful because I can efficiently see all the quantities and I can use this for numerical computations.</p>
+
+  <p>
+    However, columns can be cumbersome, and in certain situations, I may not need to know the nutrient values to reason about them or to talk about them.  
+  For example, I can talk to you about Sugar-Os without telling you explicitly the nutrient facts.
+  Just as we have a name for cereal, it is useful to also have a <alert>name</alert> for a vector.  
+  I will always name vectors with a single, lowercase bold letter.  In this case, I will choose <m>\vect{s}</m> to help me remember this vector comes from <alert>S</alert>ugar-Os.
+  The symbolizing just described is summarized in Figure \ref{figure:symbolizing}.
+</p>
+
+  <image source="images/1.2_symbolizing_cereal.png" width="100%">
+    <description> 
+      <p>
+        Symbolizing vectors in two ways: <alert>column</alert> and <alert>name</alert>.
+      </p>
+    </description>
+  </image>
+<!--
+  <p>
+  <image>
+  <latex-image>
+  \begin{tikzpicture}[scale=1, line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm,decoration={
+      markings,
+      mark=at position 1 with {\arrow{>}}}]
+    \draw [ultra thick, black] (2.5,0.5) edge[bend left=-20,looseness=0.8,postaction={decorate}]  node[above, sloped] {\Large Symbolize} node[below, sloped] {Column} (7.4,2);
+    \draw [ultra thick, black] (2.5,-0.5) edge[bend left=20,looseness=0.8,postaction={decorate}]  node[below, sloped] {\Large Symbolize} node[above, sloped] {Name} (7.4,-2);
+        \draw (0,0) node {\resizebox{0.3\textwidth}{!}{\sugaros}};
+        \draw (8,2) node {$\begin{bmatrix}1.6\\199\\31\\2.1\\1.3\\132\\6\\92\end{bmatrix}$};
+        \draw (8,-2) node {\Large$\vect{s}$};
+        \draw (0,4.2) node {\textsc{\Large  Sugar-Os}};
+        \end{tikzpicture}
+  </latex-image>
+  </image>
+  </p>
+-->
+
+  <p>
+    <ol>
+      <li><p><alert>Writing names.</alert> 
+      I will always name vectors with a single, lowercase bold letter.
+      When typing, please do the same.
+      When writing by hand, bold font is impractical, so please always use the notation of a right-pointing arrow over the symbol: <m>\vec{v}</m>.</p></li>
+
+      <li><p><alert>Relating the symbols for name and entries.</alert>
+      I will usually use the same letter for the vector name as for the vector entries, except entries will not be bold and will have subscripts to denote their position in the list.  
+      For example, if I want to write the entries of a list-length 3 vector named <m>\vect{v}</m>, I will usually write <m>\vect{v}=\begin{bmatrix}v_1\\v_2\\v_3\end{bmatrix}</m>.  
+      In Figure \ref{figure:symbolizing}, I denote entries of <m>\vect{s}</m>  by <m>s_i</m>, where <m>i\in \{1,2,\ldots, 8\}</m>, and for instance, since the third entry has value 31, I would write <m>s_3=31</m>.</p></li>
+        
+      <li><p><alert>Why a column and not a row?</alert>  
+      For reasons that will become clearer later when we discuss matrix multiplication as transformation in Lesson \ref{lesson:matrix_transformation}, it is best to write entries in a vertical column instead of in a horizontal row.</p></li>
+
+      <li><p><alert>Different Books, Different Notations.</alert> 
+      You may encounter contexts where people write their vector entries in different ways, for example horizontally, and maybe with parentheses or angle-brackets instead of brackets, 
+      e.g. <m>[v_1, v_2, v_3]</m>, <m>(v_1, v_2, v_3)</m>, or <m>\langle v_1, v_2, v_3\rangle</m>.
+      For your work with this text, please use vertical column notation when writing a vector with its entries.</p></li>
+
+      <li><p><alert>Consistency is important.</alert>  
+      Consistency of notation brings clarity to your writing.  Please follow the above notational guidelines and always be consistent with how you write your vector names and columns.</p></li>
+    </ol>
+  </p>
+
+  <p>
+    When we move between a vector's name and a vector's column of entries, I will say we are <alert>unpacking</alert> or <alert>repacking</alert> the vector.  
+    Think of the name as a <em>backpack</em>, and the entries as its <em>contents</em>.
+  </p>
+
+  <question xml:id="activity-vectors-name_and_column">
+    <title>Discussion</title>
+    <statement>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Suppose <m>\vect{v}=\begin{bmatrix}1\\2\\3\end{bmatrix}</m>.  When is it advantageous to work with its name <m>\vect{v}</m>? When is it advantageous to work with the column of its entries <m>\begin{bmatrix}1\\2\\3\end{bmatrix}</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            Suppose you have a vector with name <m>\vect{w}</m>, but you do not know its entries.  In what ways can you still work with <m>\vect{w}</m>?  In this context, what are the limitations on working with <m>\vect{w}</m>?
+          </p>
+        </li>
+      </ol>
+    </p>
+    </statement>
+  </question>
+
+  <p>
+    Let's return to the context of food. Each food has its own macronutrient list.  
+    As you think about all the different foods you encounter each day, imagine the thousands upon thousands of macronutrient lists that there must exist. It is useful for us to introduce symbols to denote the collection of all possible lists of a given list-length. We will do so using the language and notation of sets.
+  </p>
+
+  <p>
+    The language and notation of sets is foundational in mathematics. In the rest of this course, we will frequently use set notation to compactly represent our thoughts.A set is a collection of objects, which we call <alert>elements</alert> of that set.
+</p>
+
+  <p>
+    Just like vectors, we can symbolize sets with either their <alert>name</alert> or with the <alert>collection</alert> of its objects, which we group together with "curly brackets" <m>\{</m> and <m>\}</m>.  For example, in the RGB color model, the three primary colors are: red, green, and blue. I could denote this set of primary colors with the collection: \{red, green, blue\} or I could name it, say with the letter <m>C</m> (for color), in which case I would write
+    <me>C = \{\mbox{red, green, blue}\}.</me>
+  </p>
+
+  <p>
+    A standard way to write a set of all elements <m>P</m> satisfying some condition <m>Q</m> is <m>\{P \ | \ Q\}</m>.  
+    This is called <term>set-builder notation</term>.  The vertical bar here is understood to represent the words "such that" and I read this aloud as "the set of all elements <m>P</m> such that <m>Q</m>."  
+    This set notation is a particularly important way to symbolize sets that have infinitely many elements.
+  </p>
+
+  <definition xml:id="def-vector_space">
+    <title>Vector Space <m>\R^m</m></title>
+    <statement>
+      <p>If <m>m</m> is a positive integer, then the set of all list-length <m>m</m> vectors is the <term>vector space</term> <m>\R^m</m> (read "R  m").  
+      In symbols, using set notation, I write <m>\R^m</m> as 
+      <me>\R^m = \{ \vect{v} \ | \ \vect{v} \mbox{ is a vector with list-length } m \}.</me>
+      Read aloud, I say "R m is the set of all vectors v such that v is a vector of list-length m." The <m>\R</m> come from <m>\R</m>eal numbers, and reminds us that the entries of the lists are real numbers.</p>
+    </statement>
+  </definition>
+
+  <p>
+    I will frequently use two other set symbols: <m>\in</m> and <m>\subset</m>.
+  </p>
+
+  <p>
+    The symbol "<m>\in</m>" means <em>is an element of</em>.  
+    The symbol <m>\in</m> describes a relationship between a set and individual elements of that set.  
+    So the expression
+    <m>\vect{v}\in\R^{17}</m> means that <m>\vect{v}</m> is an element of the set of <m>\R^{17}</m>, and hence <m>\vect{v}</m> is a list-length 17 vector.
+    A slash through the symbol negates the symbol.  
+    So <m>\vect{w}\not\in\R^{34}</m> would mean that <m>\vect{w}</m> is <em>not</em> a list-length 34 vector.
+  </p>
+
+  <p>
+    The symbol "<m>\subset</m>" means <em>is a subset of</em>.  
+    The symbol <m>\subset</m> describes a relationship between a set and subsets of that set.  
+    So the expression
+    <m>S \subset \R^{17}</m> means that <m>S</m> is an subset of the set <m>\R^{17}</m>, and hence <m>S</m> is collection of list-length 17 vectors.
+    A slash through the symbol negates the symbol.  
+    So <m>T\not\subset\R^{34}</m> would mean that <m>T</m> is <em>not</em> a collection of list-length 34 vectors.
+  </p>
+
+  <p>
+    Throughout the course, I will use both <m>\in</m> and <m>\subset</m> frequently and move between them.  For example,
+  I may write either <m>\vect{v}_1,\ldots, \vect{v}_8\in \R^{12}</m>  or  <m>\{\vect{v}_1,\ldots, \vect{v}_8\} \subset \R^{12}</m> to say that 
+  <m>\vect{v}_1</m> through <m>\vect{v}_8</m> are list-length 12 vectors.
+  </p>
+
+  <note xml:id="mentalaction-interpreting_symbols">
+    <title>Mental Action - Interpreting Symbolism</title>
+    <p>
+      <term>Interpreting symbolism</term> is the act of taking a symbolic expression and understanding it in the context of a specific situation. This is a process that happens in our minds, but we often will need to then clearly communicate our interpretation to others.
+    </p>
+  </note>
+
+  <p>
+    Interpreting symbols is highly dependent upon the context in which we are working.
+    Consider for example, the symbols <m>5+3</m>.
+    In the context of number of people, this can be interpreted as: <em>the number of people when you combine a group of 5 people with a group of 3 people.</em>
+    In the context of minutes elapsed since lunch, this is interpreted as <em>5 minutes elapsed and then 3 more minutes elapsed.</em>
+  </p>
+
+  <question xml:id="activity-interpretting_vectors">
+    <title>Interpretation of Vectors in Context</title>
+    <statement>
+    <p>
+      Consider the vector <m>\vect{v}=\begin{bmatrix}3\\2\\1\end{bmatrix}</m>.
+      In each of the following contexts, explain in complete sentences a meaning of this vector. If there is ambiguity in the context, explain and provide potential clarification.
+      <ol>
+        <li>
+          <p>
+            Macronutrients (in grams) for a cereal.  (For a reminder about macronutrients, see Example <xref ref="ex-vignettes1"/>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            Directions (in feet) to reach a book on your bookshelf.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prices (in $) of grocery items.  In which of these contexts could the vector <m>\vect{w}=\begin{bmatrix}4\\3\\2\\1\end{bmatrix}</m> make sense?
+          </p>
+        </li>
+      </ol>
+    </p>
+    </statement>
+  </question>
+
+  <question xml:id="activity-interpretting_set_notation">
+    <title>Interpretation of Set Notation</title>
+    <statement>
+    <p>
+      Interpret each of the following expressions involving vector names ands set notations.  Explain their meaning.
+      <ol>
+        <li>
+          <p>
+            <m>\vect{b} \in \{\vect{a}, \vect{b}, \vect{c}\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{\vect{x}, \vect{y}, \vect{z}\}\subset \R^{23}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\begin{bmatrix}1\\0\end{bmatrix}\in  \R^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\begin{bmatrix}1\\0\end{bmatrix}\not\in  \R^3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>X  = \{\vect{v}\in \R^{19}| v_3 = 0\}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    </statement>
+  </question>
+
+  <p>
+    To conclude this lesson, keep in mind that symbols are meaningless without the associated concepts in our minds.  It was a pedagogical decision to first focus on constructing the concept of vectors in  <xref ref="chp1sec1"/> and then afterwards, introduce symbolism to help us reason about, and communicate our thinking about, vectors.  To be able to successfully communicate with others, you will need to both symbolize vectors (which other can then interpret) and interpret the symbolism of others.
+  </p>
+
+  <image source="images/ai_communication.png" width="100%">
+    <description> 
+      <p>
+        A cartoon depicting a the communication of an idea through the sequence of symbolizing and then interpreting.
+      </p>
+    </description>
+  </image>    
+
+
+</section>

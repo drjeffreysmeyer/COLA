@@ -70,7 +70,9 @@
       <p>Informal justification is the act of explaining why a mathematical statement makes sense by appealing to meanings, such as those imbued by metaphors.</p>
   </remark>
 
-  <p>The discussion of having two ways to double our recipe leveraged our mixture metaphor to provide an informal justification for Proposition <xref ref="prop-dist_across_comb" />.</p>
+  <p>
+    The discussion of having two ways to double our recipe leveraged our mixture metaphor to provide an informal justification for <xref ref="prop-dist_across_comb" />.
+    </p>
 
   <remark>
       <title>Formal Justification (a.k.a. Proving)</title>
@@ -98,7 +100,7 @@
   <p>You will find referencing these properties to be essential to formal justifications of mathematical statements in this book.</p>
   <p>Here I collect some of the most import algebraic properties that we will use throughout this course.</p>
 
-  <proposition xml:id="prop_fundamental_vector_props">
+  <proposition xml:id="prop-fundamental_vector_props">
       <title>Fundamental Algebraic Properties of Linear Combination</title>
       <statement>
           <p>If <m>\vect{u}, \vect{v},\vect{w} \in \R^m</m> and <m>x,y\in\R</m>, then</p>
@@ -132,20 +134,20 @@
 
   <remark>
       <title>A reflection upon our first formal justification.</title>
-      <p>Please look back at and reflect upon the formal justification I just gave for additive associativity of vectors in the proof of Proposition <xref ref="prop_fundamental_vector_props" />. Observe how I start and end with the linear combination <em>in terms of the names</em> of the vectors. Observe how in the middle, I unpack the vectors and use their entries and assumed properties of real numbers to find appropriate algebraically equivalent expressions. Observe how I clearly state each definition or proposition I use. Observe how it is a clear story from start to finish.</p>
+      <p>Please look back at and reflect upon the formal justification I just gave for additive associativity of vectors in the proof of Proposition <xref ref="prop-fundamental_vector_props" />. Observe how I start and end with the linear combination <em>in terms of the names</em> of the vectors. Observe how in the middle, I unpack the vectors and use their entries and assumed properties of real numbers to find appropriate algebraically equivalent expressions. Observe how I clearly state each definition or proposition I use. Observe how it is a clear story from start to finish.</p>
   </remark>
 
   <question>
       <title>Constructing Meanings of Algebraic Properties</title>
       <statement>
-          <p>For each algebraic property in Proposition <xref ref="prop_fundamental_vector_props" />, pick an appropriate metaphor and provide a meaningful informal justification. Each group could be assigned a different algebraic property, and after some time preparing, groups can present to the class.</p>
+          <p>For each algebraic property in Proposition <xref ref="prop-fundamental_vector_props" />, pick an appropriate metaphor and provide a meaningful informal justification. Each group could be assigned a different algebraic property, and after some time preparing, groups can present to the class.</p>
       </statement>
   </question>
 
   <question>
       <title>Practicing Formal Justification</title>
       <statement>
-          <p>In a similar way as I did for associativity of vector addition, provide formal justifications for the remaining algebraic properties of linear combination in Proposition <xref ref="prop_fundamental_vector_props" />.</p>
+          <p>In a similar way as I did for associativity of vector addition, provide formal justifications for the remaining algebraic properties of linear combination in Proposition <xref ref="prop-fundamental_vector_props" />.</p>
       </statement>
   </question>
 
@@ -154,7 +156,7 @@
   <question>
       <title>Practicing Formal Justification</title>
       <statement>
-          <p>Use Definition <xref ref="rem-assume_algebraic_props_of_reals" />, Definition <xref ref="Def-vector_scaling" />, Definition <xref ref="Def-vector_addition" />, and Proposition <xref ref="prop_fundamental_vector_props" /> to provide a formal justification for Proposition <xref ref="prop-dist_across_comb" />.</p>
+          <p>Use Definition <xref ref="rem-assume_algebraic_props_of_reals" />, Definition <xref ref="Def-vector_scaling" />, Definition <xref ref="Def-vector_addition" />, and Proposition <xref ref="prop-fundamental_vector_props" /> to provide a formal justification for Proposition <xref ref="prop-dist_across_comb" />.</p>
       </statement>
   </question>
 
@@ -168,7 +170,7 @@
   <question>
       <title>Practicing (In)formal Justification</title>
       <statement>
-          <p>Pick an appropriate metaphor and provide a meaningful informal justification for Proposition <xref ref="prop-scalar_sum_across_comb" />. Use Definition <xref ref="rem-assume_algebraic_props_of_reals" />, Definition <xref ref="Def-vector_scaling" />, Definition <xref ref="Def-vector_addition" />, and Proposition <xref ref="prop_fundamental_vector_props" /> to provide a formal justification for Proposition <xref ref="prop-scalar_sum_across_comb" />.</p>
+          <p>Pick an appropriate metaphor and provide a meaningful informal justification for Proposition <xref ref="prop-scalar_sum_across_comb" />. Use Definition <xref ref="rem-assume_algebraic_props_of_reals" />, Definition <xref ref="Def-vector_scaling" />, Definition <xref ref="Def-vector_addition" />, and Proposition <xref ref="prop-fundamental_vector_props" /> to provide a formal justification for Proposition <xref ref="prop-scalar_sum_across_comb" />.</p>
       </statement>
   </question>
 </section>
