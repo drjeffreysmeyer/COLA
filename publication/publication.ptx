@@ -158,6 +158,10 @@
              color-do="rgb(120, 40, 140)" 
              color-fact="rgb(2, 37, 214)" 
              color-meta="rgb(56, 214, 214)" />
+
+      <css>
+            <custom>custom.css</custom>
+        </css>
  
     <!-- See also                                              -->
     <!-- https://pretextbook.org/doc/guide/html/publication-file-online.html#online-style-options -->

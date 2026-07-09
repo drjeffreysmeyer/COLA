@@ -3,7 +3,168 @@
 <section xml:id="chp2sec6" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Subsets That Contain Their Mixtures</title>
     
-  <p> a </p>
+  <section xml:id="lesson-linear_combination_subspace">
+    <title>Subsets That Contain Their Mixtures</title>
+
+    <p>
+        The algebraic properties of span in <xref ref="prop-span_has_subspace_properties" /> and null space in <xref ref="prop-nullscalars_has_subspace_properties" /> are rather important. Mixture is the fundamental operation of linear algebra, and spans and null spaces have the property <em>that a mixture of elements within the set always stays within the set.</em> It is useful for us to identify and name this special property for when we encounter it again.
+    </p>
+
+    <definition xml:id="def-subspace">
+        <title>Subspace</title>
+        <statement>
+            <p>
+                If <m>W\subset \R^m</m> is a subset that satisfies the following three properties:
+            </p>
+            <ol marker="(S0)">
+                <li>
+                    <p><alert>Contains Zero.</alert> If <m>\vect{0}\in \R^m</m> denotes the zero vector, then <m>\vect{0}\in W</m>,</p>
+                </li>
+                <li>
+                    <p><alert>Closed Under Addition.</alert> If <m>\vect{u},\vect{w}\in W</m>, then <m>\vect{u}+\vect{w}\in W</m>,</p>
+                </li>
+                <li>
+                    <p><alert>Closed Under Scaling.</alert> If <m>\vect{w}\in W</m> and <m>k\in \R</m>, then <m>k\vect{w}\in W</m>,</p>
+                </li>
+              </ol>
+            <p>
+                then <m>W</m> is a <term>subspace</term>.
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        Subspaces are subsets which <em>contain their mixtures</em>. Such subsets are at the heart of linear algebra.
+    </p>
+
+    <p>
+        Observe that the whole space, <m>\R^m</m>, and the zero subset, <m>\{\vect{0}\}</m> satisfy these properties, and hence are subspaces. A consequence of  <xref ref="prop-span_has_subspace_properties" /> is that spans are always subspaces.
+    </p>
+
+    <proposition xml:id="prop-span_is_subspace">
+        <title>Spans are Subspaces</title>
+        <statement>
+            <p>
+                If <m>S\subset \R^m</m> and <m>W=\spn(S)</m>, then <m>W</m> is a subspace in <m>\R^m</m>.
+            </p>
+        </statement>
+    </proposition>
+
+    <proposition xml:id="prop-nullset_is_subspace">
+        <title>Null Spaces are Subspaces</title>
+        <statement>
+            <p>
+                If <m>S\subset \R^m</m> is a set of <m>n</m> vectors and <m>W=\Null(S)</m>, then <m>W</m> is a subspace in <m>\R^n</m>.
+            </p>
+        </statement>
+    </proposition>
+
+    <p>
+        When we view vectors geometrically, it is often useful to re-interpret the three properties of  <xref ref="def-subspace" /> in the following geometric way.
+    </p>
+
+    <insight xml:id="def-subspace_geometric">
+        <title>Subspace — Geometric Formulation</title>
+        <p>
+            If <m>W\subset \R^m</m> is a subspace, then:
+        </p>
+        <ol marker="(S0)">
+            <li>
+                <p><alert>Origin Containment.</alert> The origin is contained in <m>W</m>.</p>
+            </li>
+            <li>
+                <p><alert>Parallelogram Containment.</alert> If <m>\vect{v},\vect{w}\in W</m>, then the whole mixture parallelogram associated to <m>\vect{v}+\vect{w}</m> is contained in <m>W</m>.</p>
+            </li>
+            <li>
+                <p><alert>Line Containment.</alert> If <m>\vect{v}\in W</m>, then the whole line <m>\spn(\vect{v})</m> is contained in <m>W</m>.</p>
+            </li>
+          </ol>
+        </insight>
+
+    <technology xml:id="geogebra-subspaces_in_plane">
+        <title>Subspaces in the plane</title>
+        <statement>
+            <p>
+                <alert>Which subsets cannot be subspaces?</alert>
+                Using <xref ref="def-subspace_geometric" />, analyze the following subsets in the plane:
+                <ul>
+                    <li><p>line <m>\ell_1</m> (red),</p></li>
+                    <li><p>line <m>\ell_2</m> (blue),</p></li>
+                    <li><p>line <m>\ell_3</m> (violet),</p></li>
+                    <li><p>circle <m>c</m> (green),</p></li>
+                    <li><p>first quadrant (orange), and</p></li>
+                    <li><p>first quadrant and third quadrant (orange).</p></li>
+                </ul>
+                For each, determine if they satisfy origin containment, parallelogram containment, and line containment. Determine if they are subspaces. If one is a subspace, is it a span (i.e. can you find vectors such that the subspace is their span)?
+            </p>
+            <p>
+                To help your analysis, explore with the <alert>Subspace Tester</alert> at GeoGebra ID: <url href="https://www.geogebra.org/m/mzcfrvqh">mzcfrvqh</url>.
+            </p>
+            
+            <image source="images/2.6_subspaces2.png" width="100%">
+            <description> 
+              <p>
+                Subsets in <m>\R^2</m>.
+              </p>
+            </description>
+            </image>
+
+            <p>
+                <alert>Spans vs Subspaces.</alert> Recall that spans in <m>\R^2</m> are either the origin, lines through the origin, or the whole plane. Can you find a subspace in <m>\R^2</m> that is not a span? If yes, clearly describe this set and explain how it satisfies <xref ref="def-subspace_geometric" />. If not, explain why no such set can exist.
+            </p>
+        </statement>
+    </technology>
+
+    <p>
+        By <xref ref="prop-span_is_subspace" />, we have shown that all spans are subspaces. What about the other way around? <em>Is every subspace a span?</em>
+    </p>
+
+    <definition xml:id="def-span_relationship">
+        <title>Spans (the relationship)</title>
+        <statement>
+            <p>
+                If <m>W</m> is a subspace and <m>S = \{\vect{v}_1,\ldots,\vect{v}_n\} \subset \R^m</m>, then <m>S</m> <term>spans</term> <m>W</m> if <m>\spn(S)=W</m>.
+            </p>
+        </statement>
+    </definition>
+
+    <remark>
+        <title>Span (the noun) vs Spans (the relationship)</title>
+        <p>
+            Span (the noun) and spans (the relationship) are different, but related concepts. These concepts were named this way by the mathematical community decades ago and is out of my control. For this book, if you wish, you can reference span the noun as the mixture set.
+        </p>
+    </remark>
+
+    <technology>
+        <title>Visually Identifying Spans and Subspaces in <m>\R^3</m></title>
+        <statement>
+            <p>
+                Analyze the image below, which can also be viewed at GeoGebra ID: <url href="https://www.geogebra.org/m/xnnawvpr">xnnawvpr</url>, and then answer the following questions.
+            </p>
+
+            <image source="images/2.6_subspaces3.png" width="100%">
+            <description> 
+              <p>
+                Subsets in <m>\R^3</m>.
+              </p>
+            </description>
+            </image>
+
+            <ol label="a">
+                <li>
+                    <p>Describe all the subspaces depicted here.</p>
+                </li>
+                <li>
+                    <p>For each subspace you found, which collections of shown vectors span them? Be complete, if multiple collections of vectors span a given subspace, list each collection.</p>
+                </li>
+              </ol>
+        </statement>
+    </technology>
+
+    <p>
+        To conclude this lesson, keep in mind that subspaces are subsets that contain their own linear combinations. This includes spans, null spaces, and lines and planes through the origin. In linear algebra, we frequently work with these sets in the lessons to come.
+    </p>
+</section>
 
 
 </section>

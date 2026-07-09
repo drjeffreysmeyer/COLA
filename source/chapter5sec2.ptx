@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp5sec2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Containment in a Span</title>
+
+<p>
+  Recall that the span of a set of vectors <m>S\subset \mathbb{R}^m</m> is the set <m>\spn(S)</m> of all linear combinations that can be made from vectors in <m>S</m> (<xref ref="def-span" />). 
+  It is a core linear algebraic goal to understand containment in a span — to understand whether a given vector, a collection of vectors, or another span, lies within <m>\spn(S)</m>. 
+  In so doing, we will be able to determine when <m>\spn(S)=\mathbb{R}^m</m> itself.
+  In this lesson, we use the tools of <m>\rref</m> to concretely answer these questions of containment. 
+</p>
+
+<example xml:id="ex-vector-contained-plane">
+  <title>Is a given vector contained in a given plane?</title>
+  <statement>
+    <p>
+      Consider the collection <m>S = \{\vect{v}_1,\vect{v}_2\}\subset \mathbb{R}^3</m> where:
+    </p>
+    <sidebyside widths="55% 45%">
+      <p>
+        <m>\vect{v}_1=\begin{bmatrix}-1\\0\\1 \end{bmatrix}</m> and <m>\vect{v}_2=\begin{bmatrix}-1\\1\\-1\end{bmatrix}</m>.<br />
+        Geometrically, the span of <m>S</m> is the plane containing the three noncollinear points:<br />
+        <m>(0,0,0)</m>, <m>(-1,0,1)</m> and <m>(-1,1,-1)</m>.<br />
+        The plane can be written in parametric form:
+        <me>
+          \spn(S) = \left\{ s\begin{bmatrix}-1\\0\\1 \end{bmatrix} + t\begin{bmatrix}-1\\1\\-1\end{bmatrix} \ \bigg| \ s,t, \in \mathbb{R}\right \}.
+        </me>
+      </p>
+      <image source="images/spanplane.png" />
+    </sidebyside>
+    <p>
+      Consider the vector <m>\vect{b} = \begin{bmatrix}-3\\1\\1\end{bmatrix}</m> and observe that:
+      <me>
+        \left[\begin{array}{cc|c}-1\amp-1\amp3\\0\amp1\amp1\\1\amp-1\amp1 \end{array}\right] \sim \left[\begin{array}{cc|c}1\amp0\amp2\\0\amp1\amp1\\0\amp0\amp0 \end{array}\right].
+      </me>
+      Since <m>\begin{bmatrix}2\\1\end{bmatrix}</m> is a solution to <m>\begin{bmatrix}-1\amp-1\\0\amp1\\1\amp-1 \end{bmatrix}\vect{x}=\begin{bmatrix}-3\\1\\1\end{bmatrix}</m>, we conclude that <m>\vect{b}</m> lies in <m>\spn(S)</m>.
+    </p>
+  </statement>
+</example>
+
+<p>
+  Play with span in <m>\mathbb{R}^2</m> at GeoGebra ID: <url href="https://www.geogebra.org/m/zzupb6tg"><alert>zzupb6tg</alert></url>.
+</p>
+
+<p>
+  Play with span in <m>\mathbb{R}^3</m> at GeoGebra ID: <url href="https://www.geogebra.org/m/tr9g6hym"><alert>tr9g6hym</alert></url>.
+</p>
+
+<p>
+  If <m>S=\{\vect{v}_1,\vect{v}_2, \ldots, \vect{v}_n\}\subset \mathbb{R}^m</m> is a collection of vectors and <m>\vect{b}\in \mathbb{R}^m</m>, then <m>\vect{b}</m> <em>is contained in the span</em> of <m>S</m> if <m>\vect{b}</m> is a linear combination of the vectors in <m>S</m>, and hence if <em>there exists</em> a solution to the matrix equation <m>A_S\vect{x}=\vect{b}</m>. Leveraging <xref ref="interpretation-solution_sets" />, we have the following characterizations of being in the span.
+</p>
+
+<insight xml:id="summary-contained-in-span">
+  <title>Characterizations of Being Contained in <m>\spn(S)</m></title>
+  <p>
+    If <m>S=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset \mathbb{R}^m</m>, <m>\vect{b}\in \mathbb{R}^m</m>, and <m>A=[\vect{v}_1 \mid \cdots \mid \vect{v}_n]</m>, then the following are equivalent:
+  </p>
+  <ol>
+    <li>
+      <p><m>\vect{b}</m> is a linear combination of the vectors in <m>S</m>,</p>
+    </li>
+    <li>
+      <p><m>\vect{b}\in \spn(S)</m>,</p>
+    </li>
+    <li>
+      <p><em>There exists</em> a solution to the matrix equation <m>A\vect{x}=\vect{b}</m>,</p>
+    </li>
+    <li>
+      <p><m>\operatorname{Sol}(A,\vect{b})\neq \emptyset</m>,</p>
+    </li>
+    <li>
+      <p><m>\rref([A \mid \vect{b}])</m> does not have a zero-one row.</p>
+    </li>
+  </ol>
+</insight>
+
+<p>
+  We now understand how to quickly computationally check if a given vector lies in a span. We can do this for several vectors at once. Consider <m>T=\{\vect{w}_1,\ldots, \vect{w}_r\}</m> and suppose we want to know if <m>T\subset \spn(S)</m>. This means we want to check that, for each <m>i\in \{1,\ldots, r\}</m>, the matrix equation <m>A_S\vect{x}=\vect{w}_i</m> has a solution. Computationally, this is equivalent to checking that, for each <m>i\in \{1,\ldots, r\}</m>, <m>\rref([A_S \mid \vect{w}_i])</m> does not have a zero-one row. Since the computation of <m>\rref(A_S)</m> is the same every time, we can group these all together and compute:
+  <me>
+    \rref([A_S \mid \underbrace{\vect{w}_1 \mid \cdots \mid \vect{w}_r}_{B_T}]).
+  </me>
+</p>
+
+<p>
+  This motivates a new extended notation of an augmented matrix of two matrices <m>[A_S \mid B_T]</m>. The equals bar here lies in between the two matrices. A zero-one row in this context means a row of zeros to the left of the equals bar and a one at some point to the right of the equals bar. 
+</p>
+
+<p>
+  Using Dependency Analysis (<xref ref="insight-dependence" />), we analyze each column after the equals bar of <m>\rref([A_S \mid B_T])</m>. If we do not see a zero-one row, then each column of <m>\rref([A_S \mid B_T])</m> to the right of the equals bar gives the servings vectors for making the corresponding vector of <m>T</m> from the pivot columns of <m>A_S</m>. Conversely, if we see a zero-one row, then we know that vector of <m>T</m> corresponding to the column of that one is a vector outside of the span of <m>S</m>, and hence <m>T\not\subset \spn(S)</m>. 
+</p>
+
+<p>
+  Recall that span is a subspace, it is a set that contains its linear combinations (<xref ref="prop-span_has_subspace_properties" />). This fact can be restated as saying that, if <m>S\subset \mathbb{R}^m</m> and <m>T\subset \spn(S)</m>, then <m>\spn(T)\subset \spn(S)</m>. Putting this all together, we have the following useful computational tool for span containment.
+</p>
+
+<proposition xml:id="cqc-spanning_col">
+  <title>Computational Quick Check for Containment in <m>\spn(S)</m></title>
+  <statement>
+    <p>
+      If <m>S=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset \mathbb{R}^m</m> and <m>T=\{\vect{w}_1,\ldots, \vect{w}_r\}\subset \mathbb{R}^m</m>, then <m>\spn(T) \subset \spn(S)</m> (i.e., <m>\operatorname{Col}(B_T)\subset \operatorname{Col}(A_S)</m>) if and only if <m>\rref([A_S \mid B_T])</m> has no zero-one rows.
+    </p>
+  </statement>
+</proposition>
+
+<example xml:id="ex-plane-contained-plane">
+  <title>Is a given plane contained in another given plane?</title>
+  <statement>
+    <p>
+      Consider the planes <m>\rho_1 = \spn(\vect{a},\vect{b})</m> and <m>\rho_2 = \spn(\vect{c},\vect{d})</m> where:
+      <me>
+        \vect{a}=\begin{bmatrix}-1\\1\\-1\end{bmatrix}, \quad
+        \vect{b}=\begin{bmatrix}1\\2\\3\end{bmatrix}, \quad
+        \vect{c}=\begin{bmatrix}3\\0\\5\end{bmatrix}, \quad \text{and} \quad
+        \vect{d}=\begin{bmatrix}5\\1\\9\end{bmatrix}.
+      </me>
+      I can plot the planes, using say GeoGebra, and verify that these are in fact equal planes. However, I can now do this entirely algebraically using Span Containment (<xref ref="cqc-spanning_col" />).
+      Checking:
+      <me>
+        \rref\left(
+        \left[\begin{array}{cc|cc}-1\amp1\amp3\amp5\\1\amp2\amp0\amp1\\-1\amp3\amp5\amp9\end{array}\right]
+        \right)
+        = 
+        \left[\begin{array}{cc|cc}1\amp0\amp-2\amp-3\\0\amp1\amp1\amp2\\0\amp0\amp0\amp0\end{array}\right]
+      </me>
+      I deduce that <m>\rho_2\subset \rho_1</m>.
+      Similarly checking:
+      <me>
+        \rref\left(
+        \left[\begin{array}{cc|cc}3\amp5\amp-1\amp1\\0\amp1\amp1\amp2\\5\amp9\amp-1\amp3\end{array}\right]
+        \right)
+        = 
+        \left[\begin{array}{cc|cc}1\amp0\amp-2\amp-3\\0\amp1\amp1\amp2\\0\amp0\amp0\amp0\end{array}\right]
+      </me>
+      I deduce that <m>\rho_1\subset \rho_2</m>, and hence <m>\rho_1= \rho_2</m>.
+    </p>
+  </statement>
+</example>
+
+<p>
+  Take a moment to consider how powerful this kind of tool is. While it is powerful to leverage visualizations of lines and planes in our minds, it is not practical or even possible to explicitly plot all the spans we encounter. Nevertheless, we can still algebraically analyze and compare them. 
+</p>
+
+<p>
+  <em>How can we determine when two sets are equal?</em> A common strategy is to show <q>double containment,</q> that is to say, to show <m>X=Y</m>, we show <m>X\subset Y</m> and <m>Y\subset X</m>. If the vectors of <m>S</m> started out already in <m>\spn(T)</m>, then our containment analysis allows us to determine when <m>\spn(S)=\spn(T)</m>, i.e., when <m>S</m> spans <m>\spn(T)</m> (<xref ref="def-span_relationship" />).
+</p>
+
+<insight xml:id="summary-characterizations-spanning-relationship">
+  <title>Characterizations of Spans (the Relationship)</title>
+  <p>
+    If <m>T=\{\vect{w}_1,\ldots, \vect{w}_r\}\subset \mathbb{R}^m</m> and <m>S=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset \spn(T)</m>, then the following are equivalent:
+  </p>
+  <ol>
+    <li>
+      <p><m>S</m> spans <m>\spn(T)</m>,</p>
+    </li>
+    <li>
+      <p><m>\spn(S)=\spn(T)</m>,</p>
+    </li>
+    <li>
+      <p><em>For every</em> vector <m>\vect{b}\in \spn(T)</m>, there exists a solution to <m>A_S\vect{x}=\vect{b}</m>,</p>
+    </li>
+    <li>
+      <p><m>T\subset \spn(S)</m>,</p>
+    </li>
+    <li>
+      <p><m>\rref([A_S \mid B_T])</m> does not have a zero-one row.</p>
+    </li>
+  </ol>
+</insight>
+
+<p>
+  Only in special circumstances does <m>\spn(S)=\mathbb{R}^m</m>. There is one <q>standard</q> collection of vectors that we can quickly see does span <m>\mathbb{R}^m</m>. 
+</p>
+
+<example xml:id="ex-standard-spanning-vectors">
+  <title>The <q>Standard</q> Spanning Vectors</title>
+  <statement>
+    <p>
+      If <m>\vect{x}\in \mathbb{R}^m</m>, then:
+      <me>
+        \vect{x} = \begin{bmatrix}x_1\\x_2\\\vdots\\ x_m\end{bmatrix}
+        =
+        x_1 \begin{bmatrix}1\\0\\\vdots\\ 0\end{bmatrix} + 
+        x_2 \begin{bmatrix}0\\1\\\vdots\\ 0\end{bmatrix} + 
+        \cdots +
+        x_m \begin{bmatrix}0\\0\\\vdots\\ 1\end{bmatrix}
+      </me>
+      Let <m>\vect{e}_i</m> be the list-length <m>m</m> vector with 1 in spot <m>i</m> and zeros elsewhere.
+      Then <m>\vect{x}=x_1\vect{e}_1+x_2\vect{e}_2+\cdots+ x_m\vect{e}_m</m>. 
+      So if <m>T = \{\vect{e}_1,\vect{e}_2,\ldots, \vect{e}_m\}</m>, then <m>\spn(T)=\mathbb{R}^m</m>.
+      Furthermore observe that in this case, <m>B_T=I_m</m>, the <m>m\times m</m> identity matrix. Hence, we have also shown <m>\operatorname{Col}(I_m)=\mathbb{R}^m</m>.
+    </p>
+  </statement>
+</example>
+
+<p>
+  Using Comparing Spans (<xref ref="cqc-spanning_col" />) together with <xref ref="ex-standard-spanning-vectors" />, we get that <m>S</m> spans <m>\mathbb{R}^m</m> if and only if <m>\rref([A_S \mid I_m])</m> has no zero-one rows. This is a direct computational strategy for establishing spanning <m>\mathbb{R}^m</m>. 
+</p>
+
+<p>
+  I claim now this can be detected by simply looking at the last row of <m>\rref(A_S)</m>, more precisely whether or not it has a leading 1, or is a zero row.
+  If <m>\rref(A_S)</m> has a leading 1 in the last row, it has a leading 1 in every row, and hence <xref ref="interpretation-solution_sets" /> implies <m>A_S\vect{x}=\vect{b}</m> always has a solution.
+  On the other hand, if <m>\rref(A_S)</m> has a zero row, then consider the vector <m>\vect{e}_m=\begin{bmatrix}0\\ \vdots \\ 0\\1 \end{bmatrix}</m>, the vector in <m>\mathbb{R}^m</m> that is all zeros except a 1 in the last row.
+  Reversing the row operations used to get <m>\rref(A_S)</m>, the augmented matrix <m>[\rref(A_S) \mid \vect{e}_m] \sim [A_S \mid \vect{b}_0]</m> for some <m>\vect{b}_0</m>. 
+  By construction, <xref ref="interpretation-solution_sets" /> implies <m>A_S\vect{x}=\vect{b}_0</m> has no solution.
+  (To justify this last part, I used the fact that row operations are <em>reversible</em>, a fact that we will look at in much greater detail in <xref ref="chapter6" />.)
+</p>
+
+<proposition xml:id="cqc-spanning">
+  <title>Computational Quick Check For Spanning <m>\mathbb{R}^m</m></title>
+  <statement>
+    <p>
+      If <m>S=\{\vect{v}_1,\ldots \vect{v}_n\}\subset \mathbb{R}^m</m>, then <m>S</m> spans <m>\mathbb{R}^m</m> if and only if <m>\rref(A_S)</m> has a leading 1 in every row.
+    </p>
+  </statement>
+</proposition>
+
+<insight xml:id="summary-characterizations-spanning-rm">
+  <title>Characterizations of Spanning <m>\mathbb{R}^m</m></title>
+  <p>
+    If <m>S=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset \mathbb{R}^m</m> and <m>A=[\vect{v}_1 \mid \cdots \mid \vect{v}_n]</m>, then the following are equivalent:
+  </p>
+  <ol>
+    <li>
+      <p><m>S</m> spans all of <m>\mathbb{R}^m</m>.</p>
+    </li>
+    <li>
+      <p>For any <m>\vect{b}\in\mathbb{R}^m</m>, the matrix equation <m>A\vect{x}=\vect{b}</m> always has a solution.</p>
+    </li>
+    <li>
+      <p><m>\operatorname{Col}(A)=\mathbb{R}^m</m></p>
+    </li>
+    <li>
+      <p><m>\rref(A)</m> has a leading 1 in every row.</p>
+    </li>
+  </ol>
+</insight>
+
+<question xml:id="activity-comparison-vectors-to-list-length">
+  <title>Comparison of Number of Vectors to List-Length</title>
+    <p>
+      Let <m>S\subset \mathbb{R}^m</m> be a collection of <m>n</m> vectors.
+      Use <xref ref="cqc-spanning" /> to justify the statement:
+    </p>
+    <blockquote>
+      <p>
+        If <m>m&gt;n</m> (i.e., there are more rows than columns in <m>A_S</m>), then <m>S</m> <em>cannot span</em> <m>\mathbb{R}^m</m>.
+      </p>
+    </blockquote>
+    <p>
+      Since a statement and its contrapositive are logically equivalent, you have also shown:
+    </p>
+    <blockquote>
+      <p>
+        If <m>S</m> spans <m>\mathbb{R}^m</m>, then <m>m\le n</m>.
+      </p>
+    </blockquote>
+    <p>
+      Note that if <m>m\le n</m>, <m>S</m> may or may not span <m>\mathbb{R}^m</m>, you need to check!
+    </p>
+</question>
+
+<insight xml:id="summary-strategies-spanning">
+  <title>Strategies to Determine Spanning</title>
+  <p>
+    You now have several strategies to determine if a collection of vectors spans <m>\mathbb{R}^m</m>:
+  </p>
+  <dl>
+    <li>
+      <title>Deficient</title>
+      <p>If you see that all the vectors have zeros in the same entry, then you know the vectors do not span without needing to perform any computations.</p>
+    </li>
+    <li>
+      <title>Rows &gt; Columns</title>
+      <p>If you see that the number of vectors is greater than the list-length of vectors, then you know the vectors are dependent without needing to perform any computations.</p>
+    </li>
+    <li>
+      <title>Compute and Interpret <m>\rref(A)</m></title>
+      <p>Otherwise, you can perform Computational Quick Check <xref ref="cqc-spanning" /> to deduce if the vectors span <m>\mathbb{R}^m</m>.</p>
+    </li>
+  </dl>
+</insight>
+
+<p>
+  You will have many opportunities to practice this analysis on the OPS. 
+</p>
+
+<question xml:id="activity-spanning-check-3d">
+    <p>
+      Consider <m>S = \{\vect{v}_1,\vect{v}_2,\vect{v}_3\}\subset \mathbb{R}^3</m> where:
+      <me>
+        \vect{v}_1=\begin{bmatrix}1\\5\\6\end{bmatrix},\qquad
+        \vect{v}_2=\begin{bmatrix}2\\3\\1\end{bmatrix},\qquad
+        \vect{v}_3=\begin{bmatrix}-4\\1\\9\end{bmatrix}
+      </me>
+    </p>
+    <ol>
+      <li>
+        <p>Before performing any computations, do you expect these to span all of <m>\mathbb{R}^3</m>?</p>
+      </li>
+      <li>
+        <p>Use Computational Quick Check <xref ref="cqc-spanning" /> to verify.</p>
+      </li>
+    </ol>
+</question>
+
+<p>
+  To conclude this lesson, understanding the concept of spanning is a fundamental linear algebraic goal. Translating spanning into matrix equations, we leveraged the computational tools of Gaussian elimination and <m>\rref</m> to explicitly analyze Span Containment (<xref ref="cqc-spanning_col" />). Once again, I hope you are now seeing that, while <m>\rref</m> is a straightforward computation, it is how you interpret it <em>in context</em> that really matters.
+</p>
+
+
+</section>

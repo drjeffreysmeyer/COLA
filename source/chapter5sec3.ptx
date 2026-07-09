@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp5sec3" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Concepts of Basis</title>
+
+<p>
+  In the previous two lessons, we explored deeply dependencies and spans. In some sense, these two concepts are complementary, and in this lesson, we bring them together.
+</p>
+
+<p>
+  To begin, our first deep theorem relates independent vectors and span within subspaces.
+</p>
+
+<theorem xml:id="thm-indep_sets_spanning_sets">
+  <title>Independent Sets Are No Bigger Than Spanning Sets</title>
+  <statement>
+    <p>
+      If <m>W\subset \vect{R}^m</m> is a subspace, <m>S = \{\vect{v}_1,\ldots, \vect{v}_n\}\subset \vect{R}^m</m> such that <m>W=\spn(S)</m>, and <m>I = \{\vect{w}_1,\ldots, \vect{w}_r\}\subset W</m> is an independent collection, then <m>r\le n</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      In this proof, I outline an iterative process for one-by-one replacing the elements of <m>S</m> with elements of <m>I</m> while preserving the span, and in so doing, deduce that <m>r\le n</m>.
+    </p>
+    <p>
+      To begin, let <m>S_1' = \{\vect{w}_1\}\cup S = \{\vect{w}_1, \vect{v}_1,\ldots, \vect{v}_n\}</m>. 
+      By assumption, <m>vect{w}_1</m> lies in the span of <m>S</m>, hence <m>S_1'</m> is dependent.
+      It follows from Interpretation <xref ref="insight-dependence" /> that there exists a nonpivot column in <m>A_{S_1'}</m>, and we may toss out the first one we see and maintain the same span.
+      While I do not know which vector we tossed, I know it was not the first, <m>\vect{w}_1</m>.
+      Write <m>S_1</m> for this new collection. 
+      Since I included one vector and tossed out a vector, I know <m>S_1</m> has <m>n</m> vectors (and <m>W = \spn(S)=\spn(S_1)</m>).
+    </p>
+    <p>
+      Now iterate this process <m>r</m> times: 
+      For each <m>j\le r</m>, let <m>S_j' = \{\vect{w}_j\} \cup S_{j-1}</m>.
+      Since <m>\vect{w}_j\in W=\spn(S_{j-1})</m>, the collection <m>S_j'</m> is dependent. 
+      By removing the first nonpivot column of <m>A_{S_j'}</m>, we have a collection of <m>n</m> vectors <m>S_j</m> with the same span as <m>S_{j-1}</m>.
+      While I do not know which vector we tossed, I know it was not any of the first <m>j</m>, <m>\vect{w}_1, \vect{w}_2,\ldots, \vect{w}_j</m>, as those are all independent, and hence would all be pivot columns in <m>A_{S_j'}</m>.
+    </p>
+    <p>
+      We conclude that <m>S_r</m> is a set of <m>n</m> vectors whose span is <m>W</m> and <m>I\subset S_r</m>. Hence <m>r\le n</m>.
+    </p>
+  </proof>
+</theorem>
+
+<corollary xml:id="cor-basis_same_length">
+  <statement>
+    <p>
+      If <m>W\subset \vect{R}^m</m> is a subspace and <m>S</m> and <m>S'</m> are both independent collections of vectors that span <m>W</m>, then <m>S</m> and <m>S'</m> have the same number of vectors.
+    </p>
+  </statement>
+</corollary>
+
+<p>
+  This important result means that if I find a collection of <m>d</m> many independent vectors that spans <m>W</m>, then all other independent collections that span <m>W</m> also have size <m>d</m>.
+</p>
+
+<definition xml:id="def-dimension">
+  <title>Dimension</title>
+  <statement>
+    <p>
+      If <m>W\subset \vect{R}^m</m> is a subspace, and <m>S\subset W</m> is an independent collection that spans <m>W</m>, then the <term>dimension</term> of <m>W</m>, denoted <m>\dim W</m>, is the size of <m>S</m>.
+    </p>
+  </statement>
+</definition>
+
+<p>
+  You have seen that an independent collection is not too big. You have seen that a spanning collection is not too small. As I shall now explain, a basis is a Goldilocks collection — it is <em>just right</em>.
+</p>
+
+<definition xml:id="def-basis">
+  <title>Basis</title>
+  <statement>
+    <p>
+      If <m>W\subset \vect{R}^m</m> is a subspace and <m>\mathcal{B}=\{\vect{v}_1,\ldots \vect{v}_n\}\subset W</m> is a collection of linearly independent vectors that spans <m>W</m>, then <m>\mathcal{B}</m> is a <term>basis</term> for <m>W</m>.
+      An <term>ordered basis</term> is a basis where we fix once and for all the order in which we list them.
+    </p>
+  </statement>
+</definition>
+
+<p>
+  The plural of basis is <alert>bases</alert>.
+</p>
+
+<example xml:id="ex-standard_basis">
+  <title>Standard Basis of <m>\vect{R}^n</m></title>
+  <statement>
+    <p>
+      The columns of the <m>n\times n</m> identity matrix, <m>\mathcal{E}=\{\vect{e}_1,\ldots, \vect{e}_n\}</m>, is a basis for <m>\vect{R}^n</m>, which we call the <term>standard basis</term>. To see this, observe that if <m>\vect{v}\in \vect{R}^n</m>, then 
+      <me>
+        \vect{v} = \begin{bmatrix} v_1\\ v_2 \\ \vdots \\ v_n \end{bmatrix} = v_1\begin{bmatrix} 1\\ 0 \\ \vdots \\ 0 \end{bmatrix} + v_2 \begin{bmatrix} 0\\ 1 \\ \vdots \\ 0 \end{bmatrix} + \cdots + v_n \begin{bmatrix} 0\\ 0\\ \vdots \\ 1 \end{bmatrix} = v_1\vect{e}_1+v_2\vect{e}_2+\cdots + v_n\vect{e}_n
+      </me>
+      It also follows that <m>\vect{R}^n</m> has dimension <m>n</m>.
+    </p>
+  </statement>
+</example>
+
+<p>
+  We now come to the Fundamental Theorem of Bases, which guarantees that, if we have a basis, we can make every vector in <m>W</m> with no redundancy.
+</p>
+
+<theorem xml:id="thm-ftb">
+  <title>Fundamental Theorem of Bases</title>
+  <statement>
+    <p>
+      If <m>W\subset \vect{R}^m</m> is a subspace, <m>\mathcal{B}=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset W</m> is an ordered basis for <m>W</m>, and <m>\vect{w}\in W</m> is a vector, then there exists a unique collection of coefficients <m>x_1, x_2, \ldots, x_n\in \vect{R}</m> such that
+      <me>
+        \vect{w}=x_1\vect{v}_1+\cdots +x_n\vect{v}_n.
+      </me>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Since <m>\mathcal{B}</m> spans <m>W</m>, <m>\vect{w}\in \spn(\mathcal{B})</m>. Suppose now
+      <me>
+        \vect{w}=x_1\vect{v}_1+\cdots +x_n\vect{v}_n,
+      </me>
+      and
+      <me>
+        \vect{w}=y_1\vect{v}_1+\cdots +y_n\vect{v}_n,
+      </me>
+      for some <m>x_1,\ldots,x_n,y_1,\ldots,y_n\in\vect{R}</m>. Subtracting one from the other gives:
+      <me>
+        \vect{0}=(x_1-y_1)\vect{v}_1+\cdots +(x_n-y_n)\vect{v}_n.
+      </me>
+      The independence of <m>\mathcal{B}</m> (<xref ref="prop-dependence" />) implies each coefficient <m>x_i-y_i=0</m>, or in other words, <m>x_i=y_i</m>. We deduce that the coefficients are unique.
+    </p>
+  </proof>
+</theorem>
+
+<p>
+  If <m>A</m> is a matrix, then we know two important associated subspaces: its column space (<xref ref="def-columnspace" />) and its null space (<xref ref="def-nullspace" />). You should be able to find their bases.
+</p>
+
+<example xml:id="ex-basis_for_col_and_null">
+  <title>Basis for Column Space and Null Space</title>
+  <statement>
+    <p>
+      Suppose <m>A = [\vect{v}_1\mid\vect{v}_2\mid\vect{v}_3]</m> and <m>\rref\left(A\right) = \begin{bmatrix}1\amp0\amp-2\\0\amp1\amp-3\end{bmatrix}</m>.
+      This tells us <m>\vect{v}_1</m> and <m>\vect{v}_2</m> are independent, and <m>\vect{v}_3\in \spn(\vect{v}_1,\vect{v}_2)</m>. Hence a basis for <m>\Col(A)</m> is <m>\{\vect{v}_1,\vect{v}_2\}</m>.
+    </p>
+    <p>
+      If <m>\begin{bmatrix}x\\y\\z \end{bmatrix}\in \Null(A)</m>, then:
+      <me>
+        \begin{bmatrix}x\\y\\z \end{bmatrix} = \begin{bmatrix}2z\\3z\\z\end{bmatrix} = z\begin{bmatrix}2\\3\\1\end{bmatrix}.
+      </me>
+      So a basis for <m>\Null(A)</m> is <m>\left\{\begin{bmatrix}2\\3\\1\end{bmatrix} \right\}</m>.
+    </p>
+  </statement>
+</example>
+
+<question xml:id="activity-find-bases">
+    <p>
+      You start with an ordered list of five vectors, <m>S=\{\vect{v}_1, \ldots \vect{v}_5\}\subset \vect{R}^m</m>.
+      You compute <m>\rref(A_S)</m>. 
+      For each rref matrix below, find a basis for <m>\Col(A_S)</m> (in terms of the vectors of <m>S</m>) and find a basis for <m>\Null(A_S)</m>.
+      <me>
+        \begin{bmatrix} 1\amp0\amp5\amp1\amp2\\ 0\amp1\amp6\amp3\amp1 \end{bmatrix}, \qquad \begin{bmatrix} 1\amp4\amp0\amp3\amp0\\ 0\amp0\amp1\amp5\amp0\\ 0\amp0\amp0\amp0\amp1 \end{bmatrix}, \qquad \begin{bmatrix} 1\amp0\amp0\amp0\amp0\\ 0\amp1\amp0\amp0\amp0\\ 0\amp0\amp1\amp0\amp0\\ 0\amp0\amp0\amp1\amp0\\ 0\amp0\amp0\amp0\amp1\\ 0\amp0\amp0\amp0\amp0 \end{bmatrix}.
+      </me>
+    </p>
+</question>
+
+<p>
+  In general, dimension is an excellent way to measure the size of a subspace.
+</p>
+
+<definition xml:id="def-rank-nullity-terms">
+  <title>Rank and Nullity</title>
+  <statement>
+    <p>
+      If <m>A</m> is a matrix, then:
+    </p>
+    <ol>
+      <li>
+        <p>the dimension of its column space, <m>\Col(A)</m>, is the <term>column rank</term> of <m>A</m>, written <m>\rank(A)</m>, and</p>
+      </li>
+      <li>
+        <p>the dimension of its null space, <m>\Null(A)</m>, is the <term>nullity</term> of <m>A</m>, written <m>\nullity(A)</m>.</p>
+      </li>
+    </ol>
+  </statement>
+</definition>
+
+<p>
+  It follows from Interpretation <xref ref="insight-dependence" /> that <m>\rank(A)</m> is equal to the number of columns of <m>\rref(A)</m> with leading ones.
+  Meanwhile, it follows from Interpretation <xref ref="interpretation-solution_sets" /> that <m>\nullity(A)</m> is equal to the number of columns of <m>\rref(A)</m> without leading ones.
+  We deduce the following result.
+</p>
+
+<theorem xml:id="thm-rank-nullity">
+  <title>Rank-Nullity</title>
+  <statement>
+    <p>
+      If <m>A</m> is an <m>m\times n</m> matrix, then <m>\rank(A)+\nullity(A)=n</m>.
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  I conclude this lesson with a useful computational quick check for determining if a collection of vectors is a basis of <m>\vect{R}^m</m>.
+  It follows from Computational Quick Checks <xref ref="cqc-independence" /> and <xref ref="cqc-spanning" /> that, if <m>S=\{\vect{v}_1,\ldots \vect{v}_n\}\subset \vect{R}^m</m>, then <m>S</m> is a basis for <m>\vect{R}^m</m> if and only if:
+</p>
+<ul>
+  <li>
+    <p><m>\rref(A_S)</m> has a leading 1 in every column, AND</p>
+  </li>
+  <li>
+    <p><m>\rref(A_S)</m> has a leading 1 in every row.</p>
+  </li>
+</ul>
+
+<p>
+  If <m>\rref(A_S)</m> has a leading 1 in every row and every column, <m>A_S</m> must have the same number of rows as columns, and hence <m>m=n</m>.
+  So a basis in <m>\vect{R}^m</m> must have <m>m</m> many vectors.
+  Putting these observations together, we get the following quick check.
+</p>
+
+<algorithm xml:id="cqc-basis">
+  <title>Computational Quick Check For Basis of <m>\vect{R}^m</m></title>
+  <statement>
+    <p>
+      If <m>S=\{\vect{v}_1,\ldots \vect{v}_n\}\subset \vect{R}^m</m>, then <m>S</m> is a basis if and only if <m>\rref(A_S)=I</m>, the <m>m\times m</m> identity matrix.
+    </p>
+  </statement>
+</algorithm>
+
+
+</section>

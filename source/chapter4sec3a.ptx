@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp4sec3a" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Computing RREF</title>
+
+  <p>
+    Recall that we want to understand solution sets of matrix equations. 
+    Via <xref ref="meaning-mm3_int"/>, we can conceptualize solution sets as intersections.
+    In this lesson, we introduce three fundamental actions we can perform on the equations of the hyperplanes of a system in <m>\mathbb{R}^n</m> which do not change their intersection. 
+    Our goal is to successively use these three actions to create a new, simpler system with the same intersection from which we may readily read off the parametric vector form of a solution set.
+  </p>
+
+  <p>
+    You may very well already be familiar with the idea of manipulating the equations of a system of lines so that we can one-by-one <em>eliminate variables</em>.
+    For example, we may use elimination to find the intersection of the lines <m>x-y=1</m> and <m>x+y=5</m>.
+  </p>
+
+  <p>
+    <men xml:id="eq-elimination_system">
+      \begin{cases}
+      \textcolor{red}{x-y=1}\\
+      \textcolor{blue}{x+y=5}
+      \end{cases}
+      \hspace{0.4pc} \Rightarrow \hspace{0.4pc}
+      \begin{cases}
+      \textcolor{red}{x-y=1}\\
+      \hspace{1pc} \textcolor{green}{2y=4}
+      \end{cases}
+      \hspace{0.4pc} \Rightarrow \hspace{0.4pc}
+      \begin{cases}
+      \textcolor{red}{x-y=1}\\
+      \hspace{1.5pc}  \textcolor{green}{y=2}
+      \end{cases}
+      \hspace{0.4pc} \Rightarrow \hspace{0.4pc}
+      \begin{cases}
+      \textcolor{orange}{x\hspace{1.5pc} =3}\\
+      \hspace{1.5pc} \textcolor{green}{y=2}
+      \end{cases}
+    </men>
+  </p>
+
+  <figure xml:id="fig-elimination-lines">
+    <caption>Visualizing elimination as successive changes to a system of lines.</caption>
+    <sidebyside widths="32% 33.5% 32%">
+      <image source="images/4.3_elimination1.png" height="100%"/>  
+      <image source="images/4.3_elimination2.png" height="100%"/>  
+      <image source="images/4.3_elimination3.png" height="100%"/>  
+    </sidebyside>
+  </figure>
+
+  <p>
+    Observe that elimination in this context geometrically means <em>successively replace our current collection of lines with a new collection that is simpler but has the same intersection.</em>
+  </p>
+
+  <p>
+    Consider a system of two hyperplanes <m>\mathcal{H}=\{\textcolor{red}{H_1}, \textcolor{blue}{H_2}\}</m> in <m>\mathbb{R}^n</m>, with normal equations:
+  </p>
+
+  <p>
+    <me>
+      \begin{cases}
+      \textcolor{red}{H_1: a_1x_1+\cdots +a_nx_n=p}\\
+      \textcolor{blue}{H_2: b_1x_1+\cdots +b_nx_n=q}
+      \end{cases}
+    </me>
+  </p>
+
+  <ul xml:id="list-hyperplane-observations">
+    <li>
+      <title>Observation 1</title>
+      <p>
+        If we <em>re-order</em> (a.k.a. <em>permute</em>) the system <m>\mathcal{H}</m>, then the set of hyperplanes remains unchanged, and hence, so does its intersection. 
+        In symbols, both systems <m>\{\textcolor{red}{H_1}, \textcolor{blue}{H_2}\}</m> and <m>\{\textcolor{blue}{H_2}, \textcolor{red}{H_1}\}</m> are the <em>same set</em> of hyperplanes and hence have the exact same intersection.
+      </p>
+    </li>
+    <li>
+      <title>Observation 2</title>
+      <p>
+        If <m>\textcolor{orange}{k}\in \mathbb{R}</m> is nonzero, let <m>\textcolor{orange}{kH_1}</m> be the name of the hyperplane with normal equation <m>\textcolor{orange}{(ka_1)x_1+\cdots +(ka_n)x_n = kp}</m>. 
+        Since we can multiply by <m>k</m> and <m>k^{-1}</m>, a point <m>(x_1, x_2, \ldots, x_n)</m> satisfies <m>\textcolor{red}{a_1x_1+\cdots +a_nx_n = p}</m> if and only if it satisfies <m>\textcolor{orange}{(\textcolor{orange}{k}a_1)x_1+\cdots +(\textcolor{orange}{k}a_n)x_n = \textcolor{orange}{k}p}</m>. 
+        Scaling the equation does not change the hyperplane! In symbols, <m>\textcolor{orange}{kH_1}=\textcolor{red}{H_1}</m>.
+      </p>
+      <p>
+        Furthermore, the original and scaled equations are <em>both</em> normal equations for the same hyperplane.
+        If we <em>scale</em> a normal equation for a hyperplane in <m>\mathcal{H}</m>, then the set of hyperplanes remains unchanged, and hence, so does its intersection. 
+        In symbols, both systems <m>\{\textcolor{red}{H_1}, \textcolor{blue}{H_2}\}</m> and <m>\{\textcolor{orange}{kH_1}, \textcolor{blue}{H_2}\}</m> are the <em>same set</em> of hyperplanes and hence have the exact same intersection.
+      </p>
+    </li>
+  </ul>
+
+  <p>
+    Neither permuting nor scaling actually eliminates variables, rather they enable us to clean up the equations of our hyperplanes in preparation for the third and final action, which does eliminate variables: addition.
+  </p>
+
+  <ul>
+    <li>
+      <title>Observation 3</title>
+      <p>
+        Suppose <m>\vect{x} \in \textcolor{red}{H_1} \cap \textcolor{blue}{H_2}</m>. 
+        Then <m>\vect{x}</m> satisfies both normal equations <m>\textcolor{red}{a_1x_1+\cdots +a_nx_n = p}</m> and <m>\textcolor{blue}{b_1x_1+\cdots +b_nx_n=q}</m>. 
+        By scaling and adding these two expressions together,
+      </p>
+      <me>
+        \begin{array}{rrcrcrcc}
+        \rowcolor{red} \amp \textcolor{orange}{k}( a_1x_1 \amp + \amp \cdots \amp + \amp a_nx_n \amp = \amp p ) \\
+        \rowcolor{blue} + \amp b_1x_1 \amp + \amp \cdots \amp + \amp b_nx_n \amp = \amp q \\
+        \hline
+        \rowcolor{purple} \amp (b_1+ka_1)x_1 \amp + \amp \cdots \amp + \amp (b_n+ka_n)x_n \amp = \amp q+kp
+        \end{array}
+      </me>
+      <p>
+        we deduce <m>\vect{x}</m> must also satisfy the equation <m>\textcolor{purple}{(b_1+ka_1)x_1+\cdots +(b_n+ka_n)x_n = q+kp}</m>.
+        If <m>\textcolor{purple}{H_2+kH_1}</m> is the name of the hyperplane with normal equation <m>\textcolor{purple}{(b_1+ka_1)x_1+\cdots +(b_n+ka_n)x_n = q+kp}</m>, then <m>\vect{x} \in \textcolor{purple}{H_2+kH_1}</m>.
+      </p>
+      <p>
+        Conversely, if <m>\vect{x}\in \textcolor{red}{H_1} \cap \textcolor{purple}{H_2+kH_1}</m>, there is a symmetric justification for why <m>\vect{x} \in \textcolor{blue}{H_2}</m>. 
+        So, while <m>\textcolor{blue}{H_2}</m> and <m>\textcolor{purple}{H_2+kH_1}</m> are likely <em>different</em> hyperplanes, the intersections of the two systems <m>\{\textcolor{red}{H_1}, \textcolor{blue}{H_2}\}</m> and <m>\{\textcolor{red}{H_1}, \textcolor{purple}{H_2+kH_1}\}</m> are the <em>same</em>.
+      </p>
+    </li>
+  </ul>
+
+  <note xml:id="note-geogebra-link">
+    <p>
+      Observe how sliding the multiplier <q>rotates</q> line <m>L_1</m> around the axis formed at the intersection of lines <m>L_1</m> and <m>L_2</m> at GeoGebra ID:
+      <url href="https://www.geogebra.org/m/xc82hg6w" visual="geogebra.org/m/xc82hg6w"><alert>xc82hg6w</alert></url>.
+      Can you slide the multiplier until the new line is vertical? 
+      If so, then you have eliminated the <m>x</m>-variable!
+    </p>
+  </note>
+
+  <p>
+    Since each hyperplane is represented as a row in our system via normal equations, these actions take the form of manipulating the rows of our system.
+    As such, we call each a <em>row operation</em> on our system. 
+    The above actions are summarized and symbolized in <xref ref="Def-elementary_row_ops"/>.
+  </p>
+
+  <definition xml:id="Def-elementary_row_ops">
+    <title>Row Operations</title>
+    <statement>
+      <p>The three fundamental <term>row operations</term> are:</p>
+      <ol>
+        <li>
+          <p><alert>Permute</alert> rows <m>i</m> and <m>j</m>. We denote this by <m>r_i \leftrightarrow r_j</m>.</p>
+        </li>
+        <li>
+          <p><alert>Scale</alert> row <m>i</m> by nonzero scalar <m>k</m>. We denote this by <m>r_i \mapsto kr_i</m>.</p>
+        </li>
+        <li>
+          <p><alert>Add</alert> a scalar multiple of row <m>j</m> to row <m>i</m>. We denote this by <m>r_i \mapsto r_i+kr_j</m>.</p>
+        </li>
+      </ol>
+      <p>We read these as <q>Row <m>i</m> is replaced by...</q> or <q>Row <m>i</m> becomes...</q>.</p>
+    </statement>
+  </definition>
+
+  <remark>
+    <title>Augmented Matrix as Compact Notation of Matrix Equation</title>
+    <p>
+      The notation of a system of hyperplanes can be cumbersome, and we want to streamline things since our goal is to be able to analyze systems with hundreds of variables and hundreds of equations. 
+      Observe that at each step of elimination, the <m>x</m>'s, <m>y</m>'s, and <m>=</m>'s were all superfluous, all that mattered was the coefficients in the correct places. 
+      So, let's throw out these symbols and just record the coefficients in the correct places, placing a vertical line, the <alert>equals bar</alert>, where the equal signs should go. 
+      This gives us the <alert>augmented matrix</alert> associated to the system.
+    </p>
+    <p>
+      For example, <me>\begin{cases} x-y=1\\ x+y=5 \end{cases}</me> becomes 
+      <me>\left[\begin{array}{rr|r} 1 \amp -1 \amp 1 \\ 1 \amp 1 \amp 5 \end{array}\right]</me> 
+      and more generally <m>A\vect{x}=\vect{b}</m> becomes <m>[A|\vect{b}]</m>.
+    </p>
+  </remark>
+
+  <p>
+    The equals bar in an augmented matrix is there for our convenience, to remind us where the equals symbols should go when we reinterpret this augmented matrix as a system of equations. 
+    It can be, and often is, omitted. In such situations, it is your responsibility to remember where it goes.
+  </p>
+
+  <definition xml:id="def-row-equivalent">
+    <title>Row Equivalent</title>
+    <statement>
+      <p>
+        If there is a sequence of row operations turning one matrix into another matrix, then the matrices are <term>row equivalent</term>.
+        Symbolically, if <m>A</m> and <m>B</m> are row equivalent matrices, then we write <m>A \sim B</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Row equivalent augmented matrices always have equal solution sets! 
+    In symbols, if <m>[A|\vect{b}] \sim [B|\vect{c}]</m>, then <m>\operatorname{Sol}(A,\vect{b}) = \operatorname{Sol}(B,\vect{c})</m>. 
+    Since row operations do not affect a column of zeros (think this through to convince yourself), it follows that <m>A</m> and <m>B</m> are row equivalent if and only if <m>[A|\vect{0}]</m> and <m>[B|\vect{0}]</m> are row equivalent. 
+    In particular, if <m>A</m> and <m>B</m> are row equivalent, then <m>\operatorname{Null}(A)=\operatorname{Null}(B)</m>.
+  </p>
+
+  <p>
+    We now have efficient <em>notation</em> for writing systems and row operations.
+  </p>
+
+  <p>
+    <men xml:id="eq-elimination_augmatrix">
+      \left[\begin{array}{rr|r} 1 \amp -1 \amp 1 \\ 1 \amp 1 \amp 5 \end{array}\right]
+      \xrightarrow{r_2 \mapsto r_2 - r_1}
+      \left[\begin{array}{rr|r} 1 \amp -1 \amp 1 \\ 0 \amp 2 \amp 4 \end{array}\right] 
+      \xrightarrow{r_2 \mapsto \frac{1}{2}r_2}
+      \left[\begin{array}{rr|r} 1 \amp -1 \amp 1 \\ 0 \amp 1 \amp 2 \end{array}\right]
+      \xrightarrow{r_1 \mapsto r_1 + r_2}
+      \left[\begin{array}{rr|r} 1 \amp 0 \amp 3 \\ 0 \amp 1 \amp 2 \end{array}\right]
+    </men>
+  </p>
+
+  <p>
+    Observe how <xref ref="eq-elimination_system"/> and <xref ref="eq-elimination_augmatrix"/> encode the same information.
+  </p>
+
+  <p>
+    The question now becomes, what is our desired outcome of this simplification process? 
+    How do we know when we are done? 
+    The answer is <em>reduced row echelon form</em>.
+  </p>
+
+  <definition xml:id="def-rref">
+    <title>Reduced Row Echelon Form (rref)</title>
+    <statement>
+      <p>
+        A matrix is in <term>reduced row echelon form (rref)</term> if 
+      </p>
+      <ol label="(R1)">
+        <li>
+          <p>All zero rows are at the bottom,</p>
+        </li>
+        <li>
+          <p>Each nonzero row starts with a 1 (called a <term>leading 1</term> in the <term>pivot position</term>), and</p>
+        </li>
+        <li>
+          <p>A leading 1 is to the right of all leading 1's in above rows.</p>
+        </li>
+        <li>
+        <p>All entries in a column above a leading 1 are 0's.</p>
+        </li>
+      </ol>
+    </statement>
+  </definition>
+
+  <p>
+    Condition (R3) is sometimes called the staircase condition because it requires that the zeros form a staircase moving downward from the top left. 
+    Observe this staircase in each of the following examples of matrices in reduced row echelon form:
+  </p>
+
+  <p>
+    <me>
+      \begin{bmatrix} 1 \amp 0 \\ 0 \amp 1 \end{bmatrix} \quad
+      \begin{bmatrix} 1 \amp 0 \amp 3 \\ 0 \amp 1 \amp 2 \end{bmatrix} \quad
+      \begin{bmatrix} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{bmatrix} \quad
+      \begin{bmatrix} 1 \amp 2 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 0 \amp 1 \end{bmatrix} \quad
+      \begin{bmatrix} 1 \amp 0 \amp 7 \amp 8 \\ 0 \amp 1 \amp 4 \amp 3 \\ 0 \amp 0 \amp 0 \amp 0 \end{bmatrix} \quad
+      \begin{bmatrix} 1 \amp 0 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 0 \amp 1 \end{bmatrix}
+    </me>
+  </p>
+
+  <p>
+    In (R2), a pivot position of a matrix is the entry in which a leading 1 will appear in rref. 
+    So, for example, the matrix <m>\begin{bmatrix} 1 \amp -1 \amp 1 \\ 1 \amp 1 \amp 5 \end{bmatrix}</m> has pivot positions 1-1 and 2-2. 
+    Pivot positions play an important role in elimination and it is useful to have language to reference these positions.
+  </p>
+
+  <p>
+    Any matrix can be put into reduced row echelon form through a sequence of elementary row operations. 
+    If <m>A</m> is a matrix, then we denote its reduced row echelon form <m>\rref(A)</m>.
+  </p>
+
+
+<p>
+  Elimination can now be characterized as using row operations to put our augmented matrix into rref, from which we can then interpret the solution set.
+</p>
+
+<algorithm xml:id="algorithm-elimination">
+  <title>Gaussian Elimination</title>
+  <statement>
+    <p>
+      If <m>A</m> is a matrix, then the following sequence of row operations will produce <m>\rref(A)</m>.
+    </p>
+    <p>
+      <ol>
+        <li><p>Start at the top left. Make that a 1.</p></li>
+        <li><p>Use the pivot position to clear below.</p></li>
+        <li><p>Move right to next pivot position &amp; repeat.</p></li>
+        <li><p>Get echelon form.</p></li>
+        <li><p>Start at the bottom right.</p></li>
+        <li><p>Use the pivot position to clear above.</p></li>
+        <li><p>Move left to next pivot position &amp; repeat.</p></li>
+        <li><p>Finish with rref.</p></li>
+      </ol>
+    </p>
+  </statement>
+</algorithm>
+
+<p>
+  Take a moment to think about the different ways to compute the reduced row echelon form of the matrix 
+  <me>\left[\begin{array}{cc|c} 2 \amp 7 \amp -3 \\ 1 \amp 3 \amp -1 \end{array}\right]</me>
+  Observe that one way introduces fractions while another does not. 
+  Both ways will give you the same reduced row echelon form matrix, however you will likely find that the way that avoids fractions is simpler computationally (and less likely to produce computational errors). 
+  When computing rref by hand, I encourage you to think through your options and select the sequence of row operations that is computationally simplest. 
+</p>
+
+<question xml:id="activity-computing_interpreting_rref">
+  <title>Computing and Interpreting rref</title>
+  <statement>
+    <p>
+      For each augmented matrix below, do each part. 
+    </p>
+    <p>
+      <ol label="a">
+        <li>
+          <p><alert>Verbalize.</alert> Explain what it means geometrically in terms of intersecting hyperplanes.</p>
+        </li>
+        <li>
+          <p><alert>Expectations.</alert> Describe what you expect the solution set to be.</p>
+        </li>
+        <li>
+          <p><alert>Compute.</alert> Use the Gaussian Elimination strategy to put the matrix into rref by hand.</p>
+        </li>
+        <!--<li>
+          <p><alert>Interpret.</alert> Interpret the solution set, putting it into parametric vector form and compare to your expectations.</p>
+        </li>-->
+      </ol>
+    </p>
+    <me>
+      \left[\begin{array}{cc|c} 3 \amp 1 \amp 7 \\ 1 \amp 2 \amp 4 \end{array}\right] \quad
+      \left[\begin{array}{cccc|c} 2 \amp 1 \amp 5 \amp 7 \amp 9 \\ 3 \amp 2 \amp 5 \amp 6 \amp 7 \end{array}\right] \quad
+      \left[\begin{array}{ccc|c} 1 \amp 2 \amp 3 \amp 0 \\ 4 \amp 5 \amp 6 \amp 0 \\ 7 \amp 8 \amp 9 \amp 0 \end{array}\right]
+    </me>
+  </statement>
+</question>
+
+<p>
+  Many students come out of their linear algebra courses <em>just</em> knowing how to use row operations to put a matrix in reduced row echelon form. 
+  While this is important, as we shall shortly see, computers do this quite easily. 
+  It is far more valuable for you to be able to set up an augmented matrix and then interpreting the meaning of its associated reduced row echelon form.
+</p>
+
+<technology xml:id="activity-geogebra_rref">
+  <title>rref in GeoGebra</title>
+  <statement>
+    <p>
+      In this activity, you will symbolically find and interpret solution sets. 
+      The GeoGebra objects you should gain proficiency with are: <c>matrix</c> and <c>ReducedRowEchelon</c>. 
+      You will do so by revisiting the systems from GeoGebra  <xref ref="geoactivity_visualizingintersections"/>, in which you visually found the solution sets. 
+      Do each part for each system.
+    </p>
+    <p>
+      <ol label="a">
+        <li>
+          <p><alert>Compute.</alert> Using list notation, input the system as an augmented matrix. (Note that the equals bar cannot be input, so just remember where it goes.) Using <c>ReducedRowEchelon</c>, find the reduced row echelon form of the matrix.</p>
+        </li>
+        <li>
+          <p><alert><m>k</m>-Planes.</alert> Interpret the rref matrix to write the solution set to the system in parametric vector form.</p>
+        </li>
+        <li>
+          <p><alert>Compare.</alert> Reflect on if your solutions set agrees with the one you found via intersection tools in GeoGebra  <xref ref="geoactivity_visualizingintersections"/>.</p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</technology>
+
+<p>
+  Going forward, I expect you to be able to flexibly and correctly implement the Gaussian Elimination <xref ref="algorithm-elimination"/> by hand for <m>3 \times 3</m> matrices and smaller. 
+  There is nothing particularly different about performing Gaussian Elimination for larger matrices. 
+  Whether you have used Gaussian Elimination to compute the rref of <m>3 \times 3</m> or <m>300 \times 300</m> matrices, you have demonstrated the same understandings. 
+  You should be able to use technology such as GeoGebra to be able compute the rref for both small and large matrices. 
+</p>
+
+
+
+</section>

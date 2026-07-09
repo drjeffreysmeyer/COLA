@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp3sec2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Matrix Multiplication Sets</title>
+
+<p>
+    Recall in Chapter <xref ref="chapter2" />, I introduced three fundamental sets associated to linear combination: span, null space, and solution set. Since matrix multiplication is a symbolic compactification of linear combination, it should not come as a surprise that these three mixture sets become matrix multiplication sets.
+</p>
+
+<subsection>
+    <title>Span becomes Column Space</title>
+    <p>
+        The question of <em>span</em> concerns what all we can make with a fixed collection of ingredients. This notion is formalized with the concept of span (the noun) ( <xref ref="def-span" />). In symbols, if <m>S=\{\vect{v}_1, \ldots, \vect{v}_n\}\subset \R^m</m>, then <m>\spn(S) = \{ x_1\vect{v}_1+\cdots+x_n\vect{v}_n \ | \ x_1,\ldots, x_n\in \R\}.</m> If we use the definition of matrix multiplication (<xref ref="def_matrixmult" />) to compactify this expression and set <m>A=[\vect{v}_1 \ | \ \cdots \ | \ \vect{v}_n]</m>, then <m>\spn(S) = \{ A\vect{x} \ | \ \vect{x}\in \R^n\}.</m> We call this symbolic compactification the column space.
+    </p>
+
+    <definition xml:id="def-columnspace">
+        <title>Column Space</title>
+        <statement>
+            <p>
+                If <m>A=[\vect{v}_1 \ | \ \cdots \ | \ \vect{v}_n]</m> is an <m>m\times n</m> matrix, then the <term>column space</term> of <m>A</m> is the span of its columns. In symbols,
+            </p>
+            <me>\col(A) =  \spn(\vect{v}_1, \ldots, \vect{v}_n) = \{A\vect{x} \ | \ \vect{x} \in \R^n\}.</me>
+        </statement>
+    </definition>
+
+    <p>
+        <alert>A rose by any other name...</alert> Do not be scared of column space, it is just different language for span (the noun) - something you already know! You may then ask: <em>Why introduce two names for the same thing?</em> It is simply a matter of convenience: if we start with matrix whose columns are not already symbolized, then it is convenient to directly reference and reason about its column space without having to first symbolize its columns.
+    </p>
+
+    <p>
+        Column spaces are another instance of subspace (cf. <xref ref="def-subspace" />). Remember, subspaces play a central role in linear algebra and it is always useful to be aware of which subsets we are working with happen to be subspaces.
+    </p>
+
+    <p>
+        <alert>Column Space is a Subspace.</alert> If <m>A</m> is an <m>m\times n</m> matrix, then <m>\col(A)</m> is a subspace in <m>\R^m</m>.
+    </p>
+
+    <proof>
+        <p>
+            The justification of this proposition is a logical consequence of chaining together <xref ref="def-columnspace" /> and <xref ref="prop-span_is_subspace" />.
+        </p>
+    </proof>
+</subsection>
+
+<subsection>
+    <title>Dependency becomes Null Space</title>
+    <p>
+        The question of <em>redundancy</em> concerns whether a collection of vectors contains one vector that can be made from a linear combination of the other vectors in the collection. This notion is formalized with the concept of dependence (Definition <xref ref="def-dependence" />). Algebraically, this condition was reformulated as asking if the zero vector can be made as a linear combination in a nontrivial way (cf. <xref ref="prop-dependence" />). Symbolically, if <m>S=\{\vect{v}_1, \ldots, \vect{v}_n\}\subset \R^m</m>, then we want to know if there exists numbers <m>x_1,\ldots, x_n\in \R</m>, at least one of which is not zero, such that <m>x_1\vect{v}_1+\cdots+x_n\vect{v}_n=\vect{0}</m>. If we use the definition of matrix multiplication (<xref ref="def_matrixmult" />) to compactify this expression and set <m>A=[\vect{v}_1 \ | \ \cdots \ | \ \vect{v}_n]</m>, then we want to know if there exists a <em>nonzero</em> vector <m>\vect{x}\in \R^n</m> such that <m>A\vect{x}=\vect{0}</m>. We call this symbolic compactification the null space.
+    </p>
+
+    <definition xml:id="def-nullspace">
+        <title>Null Space</title>
+        <statement>
+            <p>
+                If <m>A=[\vect{v}_1 \ | \ \cdots \ | \ \vect{v}_n]</m> is an <m>m\times n</m> matrix, then the <term>null space</term> of <m>A</m> is the null space of its columns. In symbols,
+            </p>
+            <me>\Null(A) = \Null(\vect{v}_1, \ldots, \vect{v}_n) = \{\vect{x}\in \mathbb{R}^n\ | \ A\vect{x}=\vect{0}\}.</me>
+        </statement>
+    </definition>
+
+    <p>
+        <alert>Null Space is a Subspace.</alert> If <m>A</m> is an <m>m\times n</m> matrix, then <m>\Null(A)</m> is a subspace in <m>\R^n</m>.
+    </p>
+
+    <proof>
+        <p>
+            The justification of this proposition is primarily a logical consequence of chaining together <xref ref="def-nullspace" />, Definition <xref ref="def-subspace" />, and <xref ref="prop_fundamental_matrix_mult_props" />. Alternatively, consider <xref ref="prop-nullset_is_subspace" />. Fill in the details on your own.
+        </p>
+    </proof>
+
+    <p>
+        <alert>Null space records redundancy.</alert> Do not be scared of null space, it is simply the null space of the columns of the matrix - something you already know! The null space is the set of all ways we can make the zero vector with the columns of our matrix.
+    </p>
+
+    <p xml:id="prop-dependency_null_2">
+        <alert>Dependency as nontrivial null space.</alert> If <m>A</m> is an <m>m\times n</m> matrix, then <m>\Null(A)=\{\vect{0}\}</m> if and only if the columns of <m>A</m> are independent.
+    </p>
+
+    <proof>
+        <p>
+            For this formal justification, try to re-interpret Proposition <xref ref="prop-dependence" /> using the compact notation of matrices and null space.
+        </p>
+    </proof>
+
+    <example>
+        <title>Finding Column Space and Null Space</title>
+        <statement>
+            <p>
+                Suppose <m>A = \left[\begin{array}{rr}1 \amp 2\\2 \amp -1\\3 \amp 4\end{array}\right]</m> and I want to know its column space <m>\Col(A)</m> and null space <m>\Null(A)</m>.
+            </p>
+            <p>
+                To start, I begin by recalling the meanings of these terms. Column space is the span of the columns of <m>A</m> and null space is all the ways I can make zero with the columns of <m>A</m>. So I then identify and write down the columns of <m>A</m>: <m>S= \{\vect{v}_1,\vect{v}_2\} = \left\{\left[\begin{array}{r}1\\2\\3\end{array}\right], \left[\begin{array}{r}2\\-1\\4\end{array}\right]\right\}</m>. I can see (e.g. by plotting) that <m>\vect{v}_1</m> and <m>\vect{v}_2</m> are non-collinear. Therefore, their span is the plane in <m>\R^3</m> going through the points <m>(0,0,0)</m>, <m>(1,2,3)</m>, and <m>(2,-1,4)</m>. Furthermore, since <m>S</m> is non-collinear, it is independent, and hence the <em>only</em> way to make zero is the trivial way. Therefore the null space is the trivial (i.e. zero) subspace. In algebraic symbolism:
+            </p>
+            <md>
+                <mrow>\Col(A) \amp= \text{The plane in $\R^3$ with parametric vector form }\left\{x_1\left[\begin{array}{r}1\\2\\3\end{array}\right]+x_2\left[\begin{array}{r}2\\-1\\4\end{array}\right]\ \bigg |\ x_1,x_2\in \R\right\}.</mrow>
+                <mrow>\Null(A) \amp= \text{The trivial subspace }\{\vect{0}\}\subset\R^2.</mrow>
+            </md>
+        </statement>
+    </example>
+
+    <example>
+        <title>Finding Column Space and Null Space</title>
+        <statement>
+            <p>
+                Suppose <m>B = \left[\begin{array}{rrr}1 \amp -1 \amp 0\\1 \amp 1 \amp 2\end{array}\right]</m> and I want to know its column space <m>\Col(B)</m> and null space <m>\Null(B)</m>.
+            </p>
+            <p>
+                To start, I begin by recalling the meanings of these terms. Column space is the span of the columns of <m>B</m> and null space is all the ways I can make zero with the columns of <m>B</m>. So I then identify and write down the columns of <m>B</m>: <m>S= \{\vect{w}_1,\vect{w}_2,\vect{w}_3\} = \left\{\left[\begin{array}{r}1\\1\end{array}\right],\left[\begin{array}{r}-1\\1\end{array}\right], \left[\begin{array}{r}0\\2\end{array}\right]\right\}</m>. I can see (e.g. by plotting) that <m>\vect{w}_1</m> and <m>\vect{w}_2</m> are non-collinear. Therefore, their span is the whole plane in <m>\R^2</m>, and hence the span of <m>S</m> must also be all of <m>\R^2</m>. I can also see (e.g. by visual inspection), that <m>\vect{w}_1+\vect{w}_2=\vect{w}_3</m>, hence <m>\vect{w}_1+\vect{w}_2-\vect{w}_3=\vect{0}</m>, and thus I have null scalars <m>\{1,1,-1\}</m>. In algebraic symbolism:
+            </p>
+            <md>
+                <mrow>\Col(B) \amp= \spn(S) =\text{The whole plane }\R^2</mrow>
+                <mrow>\Null(B) \amp= \Null(S)=\text{The line in $\R^3$ with parametric vector form }\left\{t\left[\begin{array}{r}1\\1\\-1\end{array}\right] \ \bigg|\ t\in \R\right\}.</mrow>
+            </md>
+        </statement>
+    </example>
+
+    <question xml:id="activity-computing_col_null">
+        <title>Column Space and Null Space</title>
+        <statement>
+            <p>
+                For each of the following matrices, analyze their column space and null space. Describe them geometrically (i.e. trivial, line, plane, or more generally, a <m>k</m>-plane for appropriate <m>k</m>), use appropriate algebraic symbolism, and find their parametric vector forms.
+            </p>
+            <md>
+                <mrow>A \amp= \left[\begin{array}{rrr}3 \amp -2 \amp 5\\1 \amp 1 \amp 0\end{array}\right] \amp B \amp= \left[\begin{array}{rr}1 \amp 1\\0 \amp 2\\1 \amp 3\end{array}\right] \amp\amp C = \left[\begin{array}{rrrr}1 \amp 0 \amp -2 \amp -4\\0 \amp 1 \amp -3 \amp -5\end{array}\right]</mrow>
+            </md>
+        </statement>
+    </question>
+</subsection>
+
+<subsection>
+    <title>Makeability becomes Solution Set</title>
+    <p>
+        The question of <em>makeability</em> concerns whether a given vector <m>\vect{b}\in \R^m</m> can be made with the vectors in our collection, and if so, how. Symbolically, if <m>S=\{\vect{v}_1, \ldots, \vect{v}_n\}\subset \R^m</m>, then we want to know if there exists numbers <m>x_1,\ldots, x_n\in \R</m>, such that <m>x_1\vect{v}_1+\cdots+x_n\vect{v}_n=\vect{b}</m>. If we use the definition of matrix multiplication (<xref ref="def_matrixmult" />) to compactify this expression and set <m>A=[\vect{v}_1 \ | \ \cdots \ | \ \vect{v}_n]</m>, then we want to know if there exists a vector <m>\vect{x}\in \R^n</m> such that <m>A\vect{x}=\vect{b}</m>. We call this symbolic compactification the solution set of the matrix equation.
+    </p>
+
+    <definition xml:id="def-solutionset">
+        <title>Solution Set</title>
+        <statement>
+            <p>
+                If <m>A</m> is an <m>m\times n</m> matrix and <m>\vect{b}\in \R^m</m>, then the <term>solution set</term> to the matrix equation <m>A\vect{x}=\vect{b}</m> is the collection of <em>all</em> vectors <m>\vect{x}\in \R^n</m> such that <m>A\vect{x}=\vect{b}</m>. In symbols,
+            </p>
+            <me>\Sol(A,\vect{b}) = \{\vect{x}\in \R^n \ | \ A\vect{x}=\vect{b}\}.</me>
+        </statement>
+    </definition>
+
+    <p>
+        Solution sets to matrix equations are central to linear algebra, and we will revisit and look more deeply into them throughout the course.
+    </p>
+
+    <p>
+        Observe that <m>\Sol(A,\vect{0})=\Null(A)</m>, which is a subspace. On the other hand, if <m>\vect{b}\ne \vect{0}</m>, then <m>\Sol(A,\vect{b})</m> is never a subspace.
+    </p>
+</subsection>
+
+
+</section>

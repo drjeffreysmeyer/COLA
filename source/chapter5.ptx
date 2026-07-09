@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="chapter5" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Basis</title>
+
+  <introduction>
+
+    <p>
+      
+    </p>
+
+
+    <objectives>
+      <title>Lesson 3.1</title>
+        <ul>
+            <li><p>I see that in certain quantitative situations, it is meaningful to add and scale vectors.</p></li>
+        </ul>
+    </objectives>
+
+  </introduction>
+
+  <!-- include sections-->
+    <xi:include href="chapter5sec1.ptx" />
+    <xi:include href="chapter5sec2.ptx" />
+    <xi:include href="chapter5sec3.ptx" />
+    <xi:include href="chapter5sec4.ptx" />
+   
+
+</chapter>

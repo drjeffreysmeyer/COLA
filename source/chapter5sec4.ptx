@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp5sec4" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Basis as Coordinate System</title>
+
+<p>
+  A <term>coordinate system</term> is an agreed upon rule to describe where points are relative to us.
+  We care about ordered bases because they give us a new coordinate system to describe things.
+  As we will see later, problems that seem difficult when looking at them relative to the standard coordinates become simple when viewed relative to a different, well-chosen coordinate system.
+</p>
+
+<insight xml:id="mental_act-coordinatization">
+  <title>Coordinatization</title>
+  <p>
+    This book takes the perspective that objects exist external to, and independent of, us humans.
+    Objects do not come to us with grid lines.
+    Coordinatization is the mental act of imposing coordinates on objects to allow us to describe them, to analyze them, and to solve problems concerning them.
+    Coordinatization is fundamentally human.
+    We can and must <em>choose</em> coordinates.
+    At first, this may seem like an extra burden, however it is in fact a powerful tool.
+    When we confront a problem, we can and should reflect upon the situation and choose the coordinate system that enables us to most easily achieve our goals.
+    This is what we do in calculus when we decide if we wish to approach the problem with Cartesian coordinates, polar coordinates, or something else altogether.
+    This is the same thing we do in linear algebra.
+  </p>
+</insight>
+
+<figure xml:id="fig-coordinatize-earth">
+  <caption>The mental act of imposing coordinates on the Earth.</caption>
+  <image xml:id="img-coordinatize-earth">
+    <description>Diagram showing the transition from an unlined globe to a coordinate system of longitude and latitude.</description>
+
+  </image>
+</figure>
+
+<p>
+  In linear algebra, it is bases that give us coordinates on subspaces.
+</p>
+
+<definition xml:id="def-coordinate_vector">
+  <title>Coordinate Vector</title>
+  <statement>
+    <p>
+      If <m>W\subset \mathbb{R}^m</m> is a subspace, <m>\mathcal{B}=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset W</m> is a basis for <m>W</m>, <m>\vect{w}\in W</m>, and the collection of scalars <m>x_1,\ldots x_n\in \mathbb{R}</m> are the unique solution scalars for making <m>\vect{w}</m> with <m>\mathcal{B}</m>, then the <m>x_i</m> are the <term>coordinates of <m>\vect{w}</m> in the <m>\mathcal{B}</m>-coordinate system</term>, and
+      <me>
+        [\vect{w}]_{\mathcal{B}} = \begin{bmatrix}x_1\\ \vdots\\ \ x_n\end{bmatrix}
+      </me>
+      is the <term><m>\mathcal{B}</m>-coordinate vector</term> for <m>\vect{w}</m>.
+    </p>
+  </statement>
+</definition>
+
+<p>
+  The Fundamental Theorem of Bases (<xref ref="thm-ftb" />) implies that any vector <m>\vect{w}\in W</m> has a <em>unique</em> <m>\mathcal{B}</m>-label.
+</p>
+
+<example xml:id="ex-standard_coordinates">
+  <title>Standard Coordinates on <m>\mathbb{R}^n</m></title>
+  <statement>
+    <p>
+      The standard basis <m>\mathcal{E}=\{\vect{e}_1,\ldots, \vect{e}_n\}</m> gives the <term>standard coordinates</term> on <m>\mathbb{R}^n</m>. If <m>\vect{v}\in \mathbb{R}^n</m>, then
+      <me>
+        \vect{v} = \begin{bmatrix} v_1\\ v_2 \\ \vdots \\ v_n \end{bmatrix} = v_1\begin{bmatrix} 1\\ 0 \\ \vdots \\ 0 \end{bmatrix} + v_2 \begin{bmatrix} 0\\ 1 \\ \vdots \\ 0 \end{bmatrix} + \cdots + v_n \begin{bmatrix} 0\\ 0\\ \vdots \\ 1 \end{bmatrix} = v_1\vect{e}_1+v_2\vect{e}_2+\cdots + v_n\vect{e}_n
+      </me>
+      so <m>[\vect{v}]_{\mathcal{E}} = \vect{v}</m>.
+      The columns that we have been writing have been in standard coordinates this whole time!
+    </p>
+  </statement>
+</example>
+
+<p>
+  When conceptualizing column vectors as coordinates, or <q>labels,</q> the column <m>\vect{w}</m> and <m>[\vect{w}]_{\mathcal{B}}</m> are different labels we assign to a fixed vector. Moving between these labels is what I will call <term>change of coordinates</term> or <term>change of labels</term>.
+  If we write <m>P_{\mathcal{B}}=[\vect{v}_1 \mid \cdots \mid \vect{v}_n]</m>, then (using our understanding of Matrix Multiplication and Linear Combination), we see
+  <me>
+    \vect{w} = x_1\vect{v}_1+\cdots + x_n\vect{v}_n = \underbrace{[\vect{v}_1\mid\cdots\mid\vect{v}_n]}_{P_{\mathcal{B}}}\underbrace{\begin{bmatrix}x_1\\ \vdots \\ x_n\end{bmatrix}}_{[\vect{w}]_{\mathcal{B}}}.
+  </me>
+  <em>Multiplication by <m>P_{\mathcal{B}}</m> changes the <m>\mathcal{B}</m>-label to the standard label!!!</em>
+  We have previously conceptualized matrix multiplication as encoding (geometric) transformations and encoding row operations. Changing labels on a fixed vector is a fundamentally new and distinct conceptualization of matrix multiplication.
+</p>
+
+<definition xml:id="def-change_of_label_matrix">
+  <title>Coordinate Change Matrix</title>
+  <statement>
+    <p>
+      If <m>W\subset \mathbb{R}^m</m> is a subspace and <m>\mathcal{B}=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset W</m> is a basis, then <m>P_{\mathcal{B}}=[\vect{v}_1\mid\ldots\mid\vect{v}_n]</m> is the <term>coordinate change matrix</term>.
+    </p>
+  </statement>
+</definition>
+
+<remark>
+  <p>
+    While we usually use <m>A=A_S</m> to represent the matrix whose columns are <m>S</m>, when working in the context of bases, it is common to represent this matrix with <m>P=P_S</m>.
+  </p>
+</remark>
+
+<p>
+  Suppose <m>\mathcal{B}=\{\vect{v}_1,\vect{v}_2\}\subset \mathbb{R}^2</m> is a basis.
+  We will draw lines that help us visually measure vectors in units of <m>\vect{v}_1</m> and <m>\vect{v}_2</m>.
+  For any integer <m>n</m>, the <m>n^{\text{th}}</m> <alert>constant-<m>\vect{v}_1</m> line</alert> is the line with parametric vector form <m>\vect{r}_n(t)= n\vect{v}_1+t\vect{v}_2</m>.
+  Similarly, we have <alert>constant-<m>\vect{v}_2</m> lines</alert>, reversing the role of <m>n</m> and <m>t</m>.
+  The constant-<m>\vect{v}_1</m> lines and constant-<m>\vect{v}_2</m> lines fill up the plane and form the <alert><m>\mathcal{B}</m>-coordinate grid</alert>.
+  The <alert><m>\mathcal{B}</m>-unit square</alert> is then the parallelogram determined by <m>\vect{v}_1</m> and <m>\vect{v}_2</m>.
+</p>
+
+<question xml:id="activity-bcoord-grid-reading">
+    <p>
+      Using the image below, with basis <m>\mathcal{B}=\{\vect{v}_1, \vect{v}_2\}</m> as indicated in the image:
+    </p>
+    <ol>
+      <li>
+        <p>Identify and label the constant 0th, 1st, and 2nd constant-<m>\vect{v}_1</m> lines.</p>
+      </li>
+      <li>
+        <p>Identify and label the constant 0th, 1st, and 2nd constant-<m>\vect{v}_2</m> lines.</p>
+      </li>
+      <li>
+        <p>What are the standard and <m>\mathcal{B}</m>-coordinates of <m>\vect{w}</m>?</p>
+      </li>
+      <li>
+        <p>
+          Using what you know about the <m>\mathcal{B}</m>-grid lines, approximate the <m>\mathcal{B}</m>-coordinates of the vectors with standard coordinates <m>\begin{bmatrix}4\\2\end{bmatrix}</m>, <m>\begin{bmatrix}-3\\0\end{bmatrix}</m>, and <m>\begin{bmatrix}1\\3\end{bmatrix}</m>.
+        </p>
+      </li>
+    </ol>
+
+    <figure xml:id="fig-activity-grid">
+      <image xml:id="img-activity-grid-visual">
+
+      </image>
+    </figure>
+</question>
+
+<example xml:id="ex-coordinates-visualization">
+  <statement>
+    <p>
+      Let us return to the example of <m>\mathcal{B}=\{\vect{v}_1, \vect{v}_2\}=\left\{\begin{bmatrix}1\\1\end{bmatrix},\begin{bmatrix}-1\\1\end{bmatrix}\right\}</m> (Example <xref ref="ex-interpretsolutionset1" />).
+      Let <m>P_{\mathcal{B}}=[\vect{v}_1 \mid \vect{v}_2]</m>.
+      Since <m>\operatorname{rref}(P_{\mathcal{B}})=I</m>, Computational Quick Check <xref ref="cqc-basis" /> implies <m>\mathcal{B}</m> is a basis.
+    </p>
+    <p>
+      To draw the constant-<m>\vect{v}_1</m> lines, I draw the sequence of lines:
+      <me>
+        \vect{r}_0(t) = t\vect{v}_2, \quad \vect{r}_1(t) = \vect{v}_1+t\vect{v}_2, \quad \vect{r}_2(t) = 2\vect{v}_1+t\vect{v}_2, \quad \ldots, \quad \vect{r}_n(t) = n\vect{v}_1+t\vect{v}_2,
+      </me>
+      etc. for each integer <m>n</m>. In a similar way, I draw the sequence of constant-<m>\vect{v}_2</m> lines.
+    </p>
+
+    <sidebyside widths="50% 50%" valign="middle">
+      <p>
+        The <m>\mathcal{B}</m>-coordinate grid and <m>\mathcal{B}</m>-unit square are plotted to the right.
+        I have also plotted the vector <m>\vect{w}=\begin{bmatrix}1\\5\end{bmatrix}</m>. Observe, it lies on both the standard and <m>\mathcal{B}</m>-coordinate grids, and we can read off its coordinates. Make sure you can see that in <m>\mathcal{B}</m>-coordinates, <m>[\vect{w}]_{\mathcal{B}}=\begin{bmatrix}3\\2\end{bmatrix}</m>.
+        Our previous computations have shown,
+        <me>
+          \left[\begin{array}{cc|c}1\amp-1\amp1\\1\amp1\amp5\end{array}\right] \sim \left[\begin{array}{cc|c}1\amp0\amp3\\0\amp1\amp2\end{array}\right],
+        </me>
+        which symbolically corresponds to our visual observation above that <m>[\vect{w}]_{\mathcal{B}}=\begin{bmatrix}3\\2\end{bmatrix}</m>.
+      </p>
+      <image xml:id="img-example-grid-plot">
+
+      </image>
+    </sidebyside>
+  </statement>
+</example>
+
+<question xml:id="activity-coordinates-computation">
+    <p>
+      Consider the collection <m>\mathcal{B}=\{\vect{v}_1, \vect{v}_2\}=\left\{\begin{bmatrix}3\\1\end{bmatrix},\begin{bmatrix}1\\2\end{bmatrix}\right\}</m>.
+    </p>
+    <ol>
+      <li>
+        <p>Use Computational Quick Check <xref ref="cqc-basis" /> to verify <m>\mathcal{B}</m> is a basis.</p>
+      </li>
+      <li>
+        <p>Sketch by hand the <m>\mathcal{B}</m>-coordinate grid and the <m>\mathcal{B}</m>-unit square.</p>
+      </li>
+      <li>
+        <p>Consider the vectors <m>\vect{u}</m> and <m>\vect{w}</m> such that <m>[\vect{u}]_{\mathcal{B}}=\begin{bmatrix}3\\-2\end{bmatrix}</m> and <m>\vect{w}=\begin{bmatrix}4\\5\end{bmatrix}</m>.</p>
+      </li>
+      <li>
+        <p>Plot them on your grid, and approximate <m>\vect{u}</m> and <m>[\vect{w}]_{\mathcal{B}}</m>.</p>
+      </li>
+      <li>
+        <p>Use matrix equations involving <m>P_{\mathcal{B}}</m> to set up and find <m>\vect{u}</m> and <m>[\vect{w}]_{\mathcal{B}}</m> exactly.</p>
+      </li>
+    </ol>
+</question>
+
+<example xml:id="ex-coordinates-skew-grid">
+  <statement>
+    <p>
+      Next, consider the example of <m>\mathcal{B}=\{\vect{v}_1, \vect{v}_2\}=\left\{\begin{bmatrix}2\\1\end{bmatrix},\begin{bmatrix}-1\\1\end{bmatrix}\right\}</m>.
+      Let <m>P_{\mathcal{B}}=[\vect{v}_1 \mid \vect{v}_2]</m>. Again, since <m>\operatorname{rref}(P_{\mathcal{B}})=I</m>, <m>\mathcal{B}</m> is a basis.
+      Its associated <m>\mathcal{B}</m>-coordinate grid and <m>\mathcal{B}</m>-unit square are plotted below.
+    </p>
+    <p>
+      In the grid below, I have also plotted the vector <m>\vect{w}=\begin{bmatrix}3\\3\end{bmatrix}</m>.
+      Observe, it lies on both the standard and <m>\mathcal{B}</m>-coordinate grids, and we can read off its coordinates.
+      Make sure you can see that in <m>\mathcal{B}</m>-coordinates, <m>[\vect{w}]_{\mathcal{B}}=\begin{bmatrix}2\\1\end{bmatrix}</m>. This corresponds to the computation
+      <me>
+        \left[\begin{array}{cc|c}2\amp-1\amp3\\1\amp1\amp3\end{array}\right] \sim \left[\begin{array}{cc|c}1\amp0\amp2\\0\amp1\amp1\end{array}\right].
+      </me>
+    </p>
+
+    <figure xml:id="fig-skew-grid">
+      <image xml:id="img-skew-grid-visual">
+
+      </image>
+    </figure>
+  </statement>
+</example>
+
+<question xml:id="geogebra_activity-bcoord_grid">
+  <title>The <m>\mathcal{B}</m>-Coordinate Grid Tool</title>
+    <p>
+      In this activity, you will learn how to use GeoGebra to visualize the <m>\mathcal{B}</m>-coordinate grid and use it to compute <m>\mathcal{B}</m>-coordinates.
+      The GeoGebra functions you should gain proficiency with are: <c>Line</c>, <c>Sequence</c>, <c>Coordinate</c>, and <c>Element</c>.
+      In so doing, you will create the <sc>B-Coordinate Grid Tool</sc>, which you will frequently revisit for the remainder of the course.
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            <alert>Part 1: Creating your basis.</alert> Drop two moveable points <m>A</m> and <m>B</m> in the plane. Label the origin <m>O</m>. Use the <c>Vector</c> tool to draw the vector from <m>O</m> to <m>A</m> and then <m>O</m> to <m>B</m>. Name them <m>\vect{v}_1</m> and <m>\vect{v}_2</m>, respectively. Move <m>A</m> and <m>B</m> so that <m>\vect{v}_1</m> and <m>\vect{v}_2</m> are independent. You have now created your basis <m>\mathcal{B}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <alert>Part 2: Constructing grid lines part 1: One By One.</alert> The <c>Line(P,Q)</c> function creates a line going through the points <m>P</m> and <m>Q</m>. With that in mind, using the <c>Line</c> tool, create the first 3 constant-<m>\vect{v}_1</m> lines using the <c>Line</c> tool. (Think about what points will need to be input into <c>Line</c> and how do they relate to <m>A</m> and <m>B</m>.) Do the same for the first 3 constant-<m>\vect{v}_2</m> lines. You should now have a portion of your <m>\mathcal{B}</m>-grid!
+          </p>
+        </li>
+        <li>
+          <p>
+            <alert>Part 3: Constructing grid lines part 2: Sequence.</alert> When dealing with computers, whenever we encounter a thing we are doing over and over again, we want to <q>loop</q> that process so that the computer does all of the work in one line of code. GeoGebra does this with the <c>Sequence</c> function. More precisely you have to input 4 things: <c>Sequence(Object(n), n, lower, upper)</c>, an object (such as a line) in terms of some value <m>n</m> which you want to vary, and then the lower and upper bound on those ranges. Use the <c>Sequence</c> function, together with what you learned in the previous part, to have a single line of GeoGebra code construct the first 21 constant-<m>\vect{v}_1</m> lines (10 in each direction). Do a similar thing for the first 21 constant-<m>\vect{v}_2</m> lines.
+          </p>
+        </li>
+        <li>
+          <p>
+            <alert>Part 4: Visualizing and Computing <m>\mathcal{B}</m>-Coordinates</alert>
+          </p>
+        </li>
+      </ul>
+    </p>
+</question>
+
+</section>

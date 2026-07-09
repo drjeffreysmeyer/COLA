@@ -5,13 +5,11 @@
 
 
   <p>
-    A collection has <q>redundancy</q> if one of the vectors can be made from the others.  
-  Suppose I have on my cereal shelf two boxes of Sugar-Os and one box of Fiber Flakes.  
-  Even though I have three boxes, all I need to mix my breakfast is two of them - the second box of Sugar-Os does not enable me to make new mixtures - it is redundant.
+    A collection has <q>redundancy</q> if one of the vectors can be made from the others. Suppose I have on my cereal shelf two boxes of Sugar-Os and one box of Fiber Flakes.  Even though I have three boxes, all I need to mix my breakfast is two of them - the second box of Sugar-Os does not enable me to make new mixtures - it is redundant. 
   </p>
 
   <definition xml:id="def-dependence">
-    <title>Linear Dependence and Linear Independence</title>
+    <title>Linear (In)Dependence</title>
     <statement>
     <p>
       If <m>S\subset \R^m</m> is a (nonempty) finite subset of vectors such that one of its vectors can be written as a linear combination of its other vectors, then the subset <m>S</m> is <term>linearly dependent</term>. In symbols, <m>S=\{\vect{v}_1,\vect{v}_2, \ldots, \vect{v}_n\}</m> is dependent if there exists an <m>i\in \{1, \ldots , n\}</m> and, for each <m>j\in \{1,\ldots,n\} - \{i\}</m>, a number <m>x_j\in \R</m>, such that
@@ -34,7 +32,7 @@ A collection <m>S\subset \R^m</m> is <alert>dependent</alert> if there exists a 
 </p>
 
 <p>
-  Justify for yourself that if the zero vector lies in <m>S</m>, then Definition <xref ref="def-dependence"/> implies that <m>S</m> is dependent. For this reason, when we consider questions of dependence, we often begin by assuming our subset of vectors are all nonzero, which I may symbolize as <m>S\subset \R^m-\{\vect{0}\}</m>.
+  Justify for yourself that if the zero vector lies in <m>S</m>, then <xref ref="def-dependence"/> implies that <m>S</m> is dependent. For this reason, when we consider questions of dependence, we often begin by assuming our subset of vectors are all nonzero, which I may symbolize as <m>S\subset \R^m-\{\vect{0}\}</m>.
 </p>
 
 <p>
@@ -44,35 +42,57 @@ A collection <m>S\subset \R^m</m> is <alert>dependent</alert> if there exists a 
 <sidebyside widths="48% 48%">
 <p>If you have three or more vectors, dependency is more nuanced.  For example, both collections
 <md>
-<mrow>\left \{ \textcolor{g_red}{\begin{bmatrix}[r]3\\1\end{bmatrix}}, \textcolor{geogebra_blue2}{\begin{bmatrix}[r]1\\2\end{bmatrix}}, \textcolor{g_purple}{\begin{bmatrix}[r]6\\2\end{bmatrix}} \right\}</mrow>
-<mrow>\left \{ \textcolor{g_red}{\begin{bmatrix}[r]3\\ 1\end{bmatrix}}, \textcolor{geogebra_blue2}{\begin{bmatrix}[r]1\\2\end{bmatrix}}, \textcolor{g_green}{\begin{bmatrix}[r]4\\3\end{bmatrix}} \right\}</mrow>
+<mrow>\left \{ \textcolor{red}{\begin{bmatrix}3\\1\end{bmatrix}}, \textcolor{blue}{\begin{bmatrix}1\\2\end{bmatrix}}, \textcolor{purple}{\begin{bmatrix}6\\2\end{bmatrix}} \right\}</mrow>
+<mrow>\left \{ \textcolor{red}{\begin{bmatrix}3\\ 1\end{bmatrix}}, \textcolor{blue}{\begin{bmatrix}1\\2\end{bmatrix}}, \textcolor{green}{\begin{bmatrix}4\\3\end{bmatrix}} \right\}</mrow>
 </md>
 are dependent.
+</p>
 
-In the first collection, the third vector is a scalar multiple of the first vector, hence <m>\textcolor{g_purple}{\begin{bmatrix}[r]6\\2\end{bmatrix}}=2\textcolor{g_red}{\begin{bmatrix}[r]3\\1\end{bmatrix}}</m>.</p>
-
+<image source="images/2.5_dependent.svg" width="100%">
+<description> 
+  <p>
+    A line in <m>\R^2</m>.
+  </p>
+</description>
+</image>
 
 </sidebyside>
 
-<p>In the second collection,  no vector is a scalar multiple of the others, however, the third vector is a sum of the first two <m>\textcolor{g_green}{\begin{bmatrix}[r]4\\3\end{bmatrix}}=1\textcolor{g_red}{\begin{bmatrix}[r]3\\1\end{bmatrix}}+1\textcolor{geogebra_blue2}{\begin{bmatrix}[r]1\\2\end{bmatrix}}</m>.</p>
+<p>In the first collection, the third vector is a scalar multiple of the first vector, hence <m>\textcolor{purple}{\begin{bmatrix}6\\2\end{bmatrix}}=2\textcolor{red}{\begin{bmatrix}3\\1\end{bmatrix}}</m>.  In the second collection,  no vector is a scalar multiple of the others, however, the third vector is a sum of the first two <m>\textcolor{g_green}{\begin{bmatrix}4\\3\end{bmatrix}}=1\textcolor{red}{\begin{bmatrix}3\\1\end{bmatrix}}+1\textcolor{blue}{\begin{bmatrix}1\\2\end{bmatrix}}</m>.</p>
 
-<question xml:id="activity-identifying_and_removing_redundancy">
+<question xml:id="activity-identifying_and_removinredundancy">
 <title>Identifying and removing redundancy</title>
 <statement>
 <p>For each of the following sets of vectors, determine if it is dependent.  If it is dependent, what can you throw away while preserving span?
-<me>S_1= \left\{ \begin{bmatrix}[r] 1\\1\end{bmatrix}, \begin{bmatrix}[r] -1\\1\end{bmatrix}\right\}, \hspace{2pc} 
-S_2= \left\{ \begin{bmatrix}[r] 1\\1\end{bmatrix}, \begin{bmatrix}[r] 2\\2\end{bmatrix}, \begin{bmatrix}[r] 3\\3\end{bmatrix}\right\}, \hspace{2pc} 
-S_3=\left\{ \begin{bmatrix}[r] 1\\0\end{bmatrix}, \begin{bmatrix}[r] 0\\1\end{bmatrix}, \begin{bmatrix}[r] 1\\1\end{bmatrix}\right\}.</me></p>
+  <ol>
+    <li>
+      <p>
+        <m>S_1= \left\{ \begin{bmatrix} 1\\1\end{bmatrix}, \begin{bmatrix} -1\\1\end{bmatrix}\right\}</m>
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>S_2= \left\{ \begin{bmatrix} 1\\1\end{bmatrix}, \begin{bmatrix} 2\\2\end{bmatrix}, \begin{bmatrix} 3\\3\end{bmatrix}\right\}</m>
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>S_3=\left\{ \begin{bmatrix} 1\\0\end{bmatrix}, \begin{bmatrix} 0\\1\end{bmatrix}, \begin{bmatrix} 1\\1\end{bmatrix}\right\}.</m>
+      </p>
+    </li>
+  </ol>
+</p>
 </statement>
 </question>
 
 <insight>
 <title>Independence as Distinct Directions</title>
-<p>Geometrically, dependent means that one of the vectors lies in the span of the other vectors.   
-Conversely, if the collection is independent, every vector points in truly distinct directions.</p>
+<p>
+  Geometrically, dependent means that one of the vectors lies in the span of the other vectors.   Conversely, if the collection is independent, every vector points in truly distinct directions.
+</p>
 </insight>
 
-<p>The concept of independence allows us to generalize non-collinearity (Definition <xref ref="def-noncollinear"/>) and planes (Definition <xref ref="def-plane"/>).</p>
+<p>The concept of independence allows us to generalize non-collinearity ( <xref ref="def-noncollinear"/>) and planes ( <xref ref="def-plane"/>).</p>
 
 <definition xml:id="def-kplane">
   <title><m>k</m>-Planes in <m>\R^m</m> and their Parametric Vector Form</title>
@@ -123,7 +143,7 @@ Conversely, if the collection is independent, every vector points in truly disti
       Come up with an explanation as why each set below is independent:
     <me>S_4=\left\{ \begin{bmatrix}1\\0\end{bmatrix}, \begin{bmatrix}0\\  1\end{bmatrix} \right \}, \hspace{2pc} 
     S_5=\left\{ \begin{bmatrix}2\\1\\0\end{bmatrix}, \begin{bmatrix}5\\0\\  1\end{bmatrix} \right \}, \hspace{2pc}  
-    S_6=\left\{ \begin{bmatrix}3\\1\\0\\0\end{bmatrix}, \begin{bmatrix}[r]-1\\0\\  1\\0\end{bmatrix}, \begin{bmatrix}4\\0\\  0\\1\end{bmatrix} \right \}.</me>
+    S_6=\left\{ \begin{bmatrix}3\\1\\0\\0\end{bmatrix}, \begin{bmatrix}-1\\0\\  1\\0\end{bmatrix}, \begin{bmatrix}4\\0\\  0\\1\end{bmatrix} \right \}.</me>
     Can you summarize your argument with a single observation?
     </p>
   </statement>
@@ -173,23 +193,26 @@ Conversely, if the collection is independent, every vector points in truly disti
 </proposition>
 
 <proof>
-<p>This is an <q>if-and-only-if</q> proposition.  
-This means that I am claiming that the two statements are equivalent and to justify this proposition, I need to justify how each statement implies the other.</p>
+<p>
+  This is an <q>if-and-only-if</q> proposition.  This means that I am claiming that the two statements are equivalent.  To justify this proposition, I need to carefully show how each statement implies the other.
+</p>
 
-<p>To begin, Suppose the collection is dependent. 
-Then, by Definition <xref ref="def-dependence"/>, there exists an <m>i\in \{1, \ldots , n\}</m> and, for each <m>j\in \{1,\ldots,n\}-\{i\}</m>, a number <m>x_j\in \R</m>, such that</p>
-<me>\vect{v}_i=x_1\vect{v}_1+x_2\vect{v}_2+\cdots +x_{i-1}\vect{v}_{i-1}+x_{i+1}\vect{v}_{i+1}+\cdots +x_n\vect{v}_n.</me>
-<p>By moving <m>\vect{v}_i</m> to the other side of the equation, and setting <m>x_i=-1</m>, then I have produced an equation</p>  
-<me>x_1\vect{v}_1+\cdots+x_n\vect{v}_n=\vect{0}</me>
-<p>where by construction, at least one of the scalars is nonzero.   
-This completes this implication.</p>
+<p>
+  To begin, suppose the collection is dependent. 
+  Then, by <xref ref="def-dependence"/>, there exists an <m>i\in \{1, \ldots , n\}</m> and, for each <m>j\in \{1,\ldots,n\}-\{i\}</m>, a number <m>x_j\in \R</m>, such that</p>
+  <me>\vect{v}_i=x_1\vect{v}_1+x_2\vect{v}_2+\cdots +x_{i-1}\vect{v}_{i-1}+x_{i+1}\vect{v}_{i+1}+\cdots +x_n\vect{v}_n.</me>
+  <p>By moving <m>\vect{v}_i</m> to the other side of the equation, and setting <m>x_i=-1</m>, then I have produced an equation</p>  
+  <me>x_1\vect{v}_1+\cdots+x_n\vect{v}_n=\vect{0}</me>
+  <p>where by construction, at least one of the scalars is nonzero.   
+This completes this implication.
+</p>
 
-<p>Now suppose that there exists numbers <m>x_1,\ldots, x_n\in \R</m>, at least one of which is not zero, such that <m>x_1\vect{v}_1+\cdots+x_n\vect{v}_n=\vect{0}</m>.  
-By assumption, at least one of the scalars is nonzero.  
-Let <m>x_i</m> denote the first nonzero scalar.
-Since <m>x_i</m> is nonzero, so is <m>-x_i</m>.
-Then I may move <m>x_i\vect{v}_i</m> to the other side of the equation, and by dividing by <m>-x_i</m>, have produced an <m>i\in \{1, \ldots , n\}</m> and, for each <m>j\in \{1,\ldots,n\}-\{i\}</m>, a number <m>\frac{x_j}{-x_i}\in \R</m>, such that</p> 
-<me>\vect{v}_i=\frac{x_1}{-x_i}\vect{v}_1+\frac{x_2}{-x_i}\vect{v}_2+\cdots +\frac{x_{i-1}}{-x_i}\vect{v}_{i-1}+\frac{x_{i+1}}{-x_i}\vect{v}_{i+1}+\cdots +\frac{x_n}{-x_i}\vect{v}_n.</me>
+<p>
+  Now suppose that there exists scalars <m>x_1,\ldots, x_n\in \R</m>, at least one of which is not zero, such that <m>x_1\vect{v}_1+\cdots+x_n\vect{v}_n=\vect{0}</m>.  
+  Let <m>x_i</m> denote the first nonzero scalar.
+  Since <m>x_i</m> is nonzero, so is <m>-x_i</m>.
+  Then I may move <m>x_i\vect{v}_i</m> to the other side of the equation, and by dividing by <m>-x_i</m>, have produced an <m>i\in \{1, \ldots , n\}</m> and, for each <m>j\in \{1,\ldots,n\}-\{i\}</m>, a number <m>\frac{x_j}{-x_i}\in \R</m>, such that</p> 
+  <me>\vect{v}_i=\frac{x_1}{-x_i}\vect{v}_1+\frac{x_2}{-x_i}\vect{v}_2+\cdots +\frac{x_{i-1}}{-x_i}\vect{v}_{i-1}+\frac{x_{i+1}}{-x_i}\vect{v}_{i+1}+\cdots +\frac{x_n}{-x_i}\vect{v}_n.</me>
 <p>This completes this implication.</p>
 </proof>
 
@@ -198,11 +221,11 @@ They contain the same information, but for algebraic reasons, we will often focu
 These scalars contain important information about our subset, and, as it is useful to name objects that we wish to reason about, we form and name the associated servings vector.</p>
 
 <me>
-\underbrace{\textcolor{blue}{x_1}\vect{v}_1+\cdots + \textcolor{blue}{x_n}\vect{v}_n}_{\textcolor{red}{\text{\textbf{Zero Mixture}}}} =\vect{0}
+\underbrace{\textcolor{blue}{x_1}\vect{v}_1+\cdots + \textcolor{blue}{x_n}\vect{v}_n}_{\textcolor{red}{\text{Zero Mixture}}} =\vect{0}
 \hspace{2pc}
 \Longleftrightarrow
 \hspace{2pc}
-\underbrace{\begin{bmatrix}\textcolor{blue}{x_1}\\ \vdots \\ \textcolor{blue}{x_n}\end{bmatrix}}_{\textcolor{blue}{\text{\textbf{Null Vector}}}}
+\underbrace{\begin{bmatrix}\textcolor{blue}{x_1}\\ \vdots \\ \textcolor{blue}{x_n}\end{bmatrix}}_{\textcolor{blue}{\text{Null Vector}}}
 </me>
 
 <definition xml:id="def-null_scalars">
@@ -223,7 +246,7 @@ These scalars contain important information about our subset, and, as it is usef
   <statement>
     <p>
       Here I investigate null vectors for 
-      <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}[r]1\\-1\end{bmatrix}, \begin{bmatrix}[r]2\\2\end{bmatrix}, \begin{bmatrix}[r]-3\\1\end{bmatrix}\right\}.</m>
+      <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}1\\-1\end{bmatrix}, \begin{bmatrix}2\\2\end{bmatrix}, \begin{bmatrix}-3\\1\end{bmatrix}\right\}.</m>
 
       </p>
 
@@ -239,7 +262,7 @@ These scalars contain important information about our subset, and, as it is usef
 <p>
   In this activity, you will use GeoGebra ID:
 <url href="https://www.geogebra.org/m/nd6qasfy">nd6qasfy</url> to visualize and investigate null vectors for subsets of three vectors in <m>\R^2</m>.
-Begin with <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}[r]5\\1\end{bmatrix}, \begin{bmatrix}[r]1\\3\end{bmatrix}, \begin{bmatrix}[r]-2\\1\end{bmatrix}\right\}</m>.
+Begin with <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}5\\1\end{bmatrix}, \begin{bmatrix}1\\3\end{bmatrix}, \begin{bmatrix}-2\\1\end{bmatrix}\right\}</m>.
 </p>
 
 <ol>
@@ -247,7 +270,7 @@ Begin with <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}[
 <li><p><alert>Symbolize.</alert>  Write down the corresponding symbolic equation using a null vector you found and the columns of the vectors in <m>S</m>.  (Perform the associated computation to verify you have indeed found a null vector.)</p></li>
 <li><p><alert>Interpret.</alert> What do your findings say about the collection <m>S</m> in terms of redundancy?  Explain.</p></li>
 <li><p><alert>Explore.</alert> So far, you should have found one null vector with of nonzero integer entries.  Can you find more?  How?  (Hint: Consider the question at the end of Example <xref ref="ex-visualizing_nullscalars"/>.) </p></li>
-<li><p><alert>Repeated Reasoning.</alert> Repeat for the new set <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}[r]2\\1\end{bmatrix}, \begin{bmatrix}[r]1\\2\end{bmatrix}, \begin{bmatrix}[r]-1\\4\end{bmatrix}\right\}</m>.</p></li>
+<li><p><alert>Repeated Reasoning.</alert> Repeat for the new set <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}2\\1\end{bmatrix}, \begin{bmatrix}1\\2\end{bmatrix}, \begin{bmatrix}-1\\4\end{bmatrix}\right\}</m>.</p></li>
 <li><p><alert>Generalize.</alert> What happens when <m>S</m> has 4 vectors?  Using tip-to-tail visualization, what shape are we looking for to find a null vector? How about <m>n</m> many vectors?  Explain.</p></li>
 </ol>
 </statement>
@@ -270,7 +293,7 @@ Begin with <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}[
 
 <p>Much like span, the compact symbolism of null space is very efficient, but it is easy to get lost in the symbolism.  We must practice symbolizing our thoughts on terms of null space, and conversely, practice interpreting the symbolism of null space in context.</p>
 
-<p>For example, we can compactly summarize our observations in Example <xref ref="ex-visualizing_nullscalars"/> with: <me>\begin{bmatrix}2\\ \frac{1}{2}\\ 1\end{bmatrix}\in \Null \left( \begin{bmatrix}[r]1\\-1\end{bmatrix}, \begin{bmatrix}[r]2\\2\end{bmatrix}, \begin{bmatrix}[r]-3\\1\end{bmatrix}\right).</me></p>
+<p>For example, we can compactly summarize our observations in Example <xref ref="ex-visualizing_nullscalars"/> with: <me>\begin{bmatrix}2\\ \frac{1}{2}\\ 1\end{bmatrix}\in \Null \left( \begin{bmatrix}1\\-1\end{bmatrix}, \begin{bmatrix}2\\2\end{bmatrix}, \begin{bmatrix}-3\\1\end{bmatrix}\right).</me></p>
 
 
 <question xml:id="activity-symbolizing_with_null_space">
@@ -290,9 +313,9 @@ Begin with <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}[
 <statement>
 <p>Use complete sentences and the language of mixture to interpret the meaning of each algebraic expression.</p>
 <ol>
-<li><p><m>\begin{bmatrix}[r]1\\-1\\2\\-2 \end{bmatrix}  \in \Null(\vect{a},\vect{b},\vect{c},\vect{d})</m>.</p></li>
+<li><p><m>\begin{bmatrix}1\\-1\\2\\-2 \end{bmatrix}  \in \Null(\vect{a},\vect{b},\vect{c},\vect{d})</m>.</p></li>
 <li><p><m>\{\vect{0}\} \subsetneq \Null(\vect{p},\vect{q},\vect{r})</m>.</p></li>
-<li><p><m>\begin{bmatrix}[r]-3\\2\\1 \end{bmatrix}\notin \Null(\vect{v},\vect{u},\vect{w})</m>.</p></li>
+<li><p><m>\begin{bmatrix}-3\\2\\1 \end{bmatrix}\notin \Null(\vect{v},\vect{u},\vect{w})</m>.</p></li>
 </ol>
 </statement>
 </question>
@@ -333,7 +356,7 @@ Be prepared to algebraically work with redundancy as making zero in nontrivial w
 </proposition>
 
 <proof>
-  <p>The logical steps here are similar to those in the proof of Proposition <xref ref="prop-span_has_subspace_properties"/>.  
+  <p>The logical steps here are similar to those in the proof of  <xref ref="prop-span_has_subspace_properties"/>.  
   We must provide formal justification for each of the three properties.</p>  
 
   <p>1.  The non-empty property is verified with a direct computation: the zero servings vector will always give a zero mixture </p>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp6sec1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Reversing a Process</title>
+
+<definition xml:id="def-reversible">
+  <title>Reversible</title>
+  <statement>
+    <p>
+      A process <m>f</m> is <term>reversible</term> if there is some process <m>g</m> that undoes process <m>f</m>.
+    </p>
+    <p>
+      In other words, the composition of first process <m>f</m> and then process <m>g</m> results in the do-nothing process (i.e., for all inputs <m>\vect{x}</m>, <m>g(f(\vect{x}))=\vect{x}</m>).
+    </p>
+  </statement>
+</definition>
+
+<p>
+  Three fundamental processes associated with matrix multiplication we have encountered have been:
+</p>
+
+<ol>
+  <li>
+    <p>Transformations of the plane <m>T:\vect{x}\mapsto A\vect{x}</m>.</p>
+  </li>
+  <li>
+    <p>Row operations (i.e., multiplication by elementary matrices) <m>A\sim EA</m>.</p>
+  </li>
+  <li>
+    <p>Change of coordinates <m>\vect{w}=P_{\mathcal{B}}[\vect{w}]_{\mathcal{B}}</m>.</p>
+  </li>
+</ol>
+
+<p>
+  Are these reversible processes? If so, which processes reverse them?
+</p>
+
+<question xml:id="activity-reverse-transformations-of-plane">
+  <title>Reversing Transformations of the Plane</title>
+    <p>
+      For each matrix, describe how it transforms the plane. Reason about that transformation and whether or not such a transformation is reversible.
+    </p>
+    <me>
+      \begin{bmatrix} 2 \amp 0 \\ 0 \amp 3 \end{bmatrix}, \quad
+      \begin{bmatrix} 1 \amp 1 \\ 0 \amp 1 \end{bmatrix}, \quad
+      \begin{bmatrix} 0 \amp -1 \\ 1 \amp 0 \end{bmatrix}, \quad
+      \begin{bmatrix} 0 \amp 0 \\ 0 \amp 1 \end{bmatrix}, \quad
+      \begin{bmatrix} -1 \amp 0 \\ 0 \amp 1 \end{bmatrix}.
+    </me>
+    <p>
+      For the transformations that are reversible, can you reason through what that reverse process should be and then find the matrix associated with that process?
+    </p>
+</question>
+
+<p>
+  After having done the activity, you should have found that these matrices correspond to stretching, shearing, rotating, projecting, and reflecting, respectively, and that all but projection are reversible. The matrices that correspond to the reverse processes are then:
+</p>
+
+<me>
+  \begin{bmatrix} \frac{1}{2} \amp 0 \\ 0 \amp \frac{1}{3} \end{bmatrix}, \quad
+  \begin{bmatrix} 1 \amp -1 \\ 0 \amp 1 \end{bmatrix}, \quad
+  \begin{bmatrix} 0 \amp 1 \\ -1 \amp 0 \end{bmatrix}, \quad
+  \text{N/A}, \quad
+  \begin{bmatrix} -1 \amp 0 \\ 0 \amp 1 \end{bmatrix}.
+</me>
+
+<p>
+  Observe that since composition corresponds to matrix multiplication, the requirement that the composition is the do-nothing transformation means that <m>BA=I</m>.
+</p>
+
+<definition xml:id="def-inverse">
+  <title>Inverse Matrix</title>
+  <statement>
+    <p>
+      If <m>A</m> is an <m>n\times n</m> matrix and if there exists an <m>n\times n</m> matrix <m>B</m> such that <m>BA=I</m>, then <m>A</m> is <term>invertible</term> and <m>B</m> is an <term>inverse</term> of <m>A</m>.
+    </p>
+  </statement>
+</definition>
+
+<proposition xml:id="prop-inverse-columns-are-basis">
+  <title>The Columns of an Inverse are a Basis</title>
+  <statement>
+    <p>
+      If <m>A</m> and <m>B</m> are <m>n\times n</m> and <m>BA=I</m>, then the columns of <m>B</m> are a basis for <m>\mathbb{R}^n</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Write <m>A=[\vect{x}_1 \mid \cdots \mid \vect{x}_n]</m> and <m>I=[\vect{e}_1 \mid \cdots \mid \vect{e}_n]</m>, where <m>\mathcal{S}=\{\vect{e}_1, \ldots , \vect{e}_n\}</m> is the standard basis. By Definition <xref ref="Def-matrix_mult_matrices"/>, the matrix multiplication of matrices is <m>BA = [B\vect{x}_1 \mid \cdots \mid B\vect{x}_n]</m>. Therefore:
+    </p>
+    <me>
+      B\vect{x}_1 = \vect{e}_1, \quad \ldots, \quad B\vect{x}_n= \vect{e}_n.
+    </me>
+    <p>
+      In other words, the columns of <m>A</m> are precisely the mixing instructions to make each of the standard basis vectors out of the columns of <m>B</m>, hence <m>\mathcal{S}\subset \operatorname{col}(B)</m>. It follows that <m>\mathbb{R}^n=\operatorname{span}\{\mathcal{S}\}\subset \operatorname{col}(B)</m> and therefore the columns of <m>B</m> span all of <m>\mathbb{R}^n</m>. By Computational Quick Check <xref ref="cqc-spanning"/>, every row of <m>\rref(B)</m> has a leading 1 (i.e., no zero rows). Since there are the same number of rows as columns, every column of <m>\rref(B)</m> <em>also</em> has a leading one. By Computational Quick Check <xref ref="cqc-independence"/>, the columns of <m>B</m> are linearly independent. The conclusion follows from the definition of a basis.
+    </p>
+  </proof>
+</proposition>
+
+<p>
+  If you multiplied your above matrices in the opposite order, you might have noticed that if <m>B</m> reverses <m>A</m>, then <m>A</m> also reverses <m>B</m>. Amazingly, this is always true.
+</p>
+
+<proposition xml:id="prop-inverses-are-twosided">
+  <title>Inverses are Two-Sided</title>
+  <statement>
+    <p>
+      If <m>BA=I</m>, then <m>AB=I</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      By the associativity of matrix multiplication, <m>B(AB)=(BA)B=IB=B</m>, hence by distributivity, <m>B(AB-I)=0</m>. Write <m>AB-I=[\vect{y}_1 \mid \cdots \mid \vect{y}_n]</m>. Then looking at each column of <m>AB-I</m>, we have <m>B\vect{y}_i=\vect{0}</m>. Since the columns of <m>B</m> are a basis, <m>\operatorname{Null}(B)=\{\vect{0}\}</m>, so each <m>\vect{y}_i=\vect{0}</m>, and hence <m>AB-I=0</m>, and thus <m>AB=I</m>.
+    </p>
+  </proof>
+</proposition>
+
+<proposition xml:id="prop-inverses-are-unique">
+  <title>Inverses are Unique</title>
+  <statement>
+    <p>
+      If <m>BA=I</m> and <m>CA=I</m>, then <m>B=C</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We can verify <m>B=C</m> directly:
+    </p>
+    <md>
+      <mrow>C \amp = IC \amp\amp \text{by multiplication of the identity}</mrow>
+      <mrow>\amp = (BA)C \amp\amp \text{by assumption}</mrow>
+      <mrow>\amp = B(AC) \amp\amp \text{by associativity}</mrow>
+      <mrow>\amp = BI \amp\amp \text{by assumption and two-sidedness of inverses (Prop. } \xref ref="prop-inverses-are-twosided" \text{)}</mrow>
+      <mrow>\amp = B \amp\amp \text{by multiplication of the identity}</mrow>
+    </md>
+  </proof>
+</proposition>
+
+<remark xml:id="notation-inverse-matrix">
+  <title>Notation: Inverse Matrix</title>
+  <p>
+    If <m>A</m> is invertible, we denote its inverse with the symbol <m>A^{-1}</m>. Note that this does not mean <m>\frac{1}{A}</m>, which does not even make sense, or even the reciprocal of the entries.
+  </p>
+</remark>
+
+<p>
+  To reverse a composition of processes, you must reverse them in the opposite order you did them in. Consider putting on your socks, and then your shoes. To reverse this process, you must first take off your shoes, and then your socks.
+</p>
+
+<proposition xml:id="prop-socks-n-shoes">
+  <title>Socks and Shoes</title>
+  <statement>
+    <p>
+      If <m>A</m> and <m>B</m> are invertible, then <m>(AB)^{-1}=B^{-1}A^{-1}</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      To certify that a matrix is the inverse, we can just check that their product is the identity. Using associativity and the definitions of identity and inverse, observe that <m>(B^{-1}A^{-1})(AB) = B^{-1}(A^{-1}A)B=B^{-1}(I)B=B^{-1}B=I</m>.
+    </p>
+  </proof>
+</proposition>
+
+<insight xml:id="summary-being-invertible">
+  <title>Summary of Being Invertible</title>
+  <p>
+    If <m>S=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset \mathbb{R}^n</m> and <m>A=[\vect{v}_1 \mid \cdots \mid \vect{v}_n]</m>, then the following are equivalent:
+  </p>
+  <ol>
+    <li>
+      <p><m>A</m> is invertible.</p>
+    </li>
+    <li>
+      <p><m>S</m> is a basis for <m>\mathbb{R}^n</m>.</p>
+    </li>
+    <li>
+      <p><m>\rref(A)=I</m>.</p>
+    </li>
+  </ol>
+</insight>
+
+
+
+
+</section>

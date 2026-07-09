@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp3sec1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Matrix Multiplication as Mixture</title>
+
+	<p>
+		We now return to the core idea of linear combination as mixture. We write linear combinations <em>so often</em> that it is useful to introduce a new, efficient, and compact notation to symbolize this process. If <m>\vect{v}_1,\ldots, \vect{v}_n\in\R^m</m> and <m>x_1,\ldots, x_n\in\R</m> are scalars, then the linear combination:
+	</p>
+	<me>x_1\vect{v}_1+\cdots +x_n\vect{v}_n \hspace{2pc} \text{will be re-written as} \hspace{2pc} [\vect{v}_1 | \cdots | \vect{v}_n]\vect{x}</me>
+	<p>
+		where the vector <m>\vect{x}=\begin{bmatrix}x_1\\ \vdots \\ x_n\end{bmatrix}</m> is the <em>serving size vector</em> (see Definition ) for the mixture and the new object <m>[\vect{v}_1 | \cdots | \vect{v}_n]</m> obtained by <q>smashing together</q> the vectors is a <em>matrix</em>. Think of this matrix as your cereal boxes all lined up next to one another on a shelf.
+	</p>
+
+	<definition xml:id="def-matrix">
+		<title>Matrix</title>
+		<statement>
+			<p>
+				If <m>S = \{\vect{v}_1,\ldots, \vect{v}_n\}\subset \R^m</m>, then the associated <term>matrix</term> is <m>A_S= [\vect{v}_1 | \cdots | \vect{v}_n]</m>. The vectors of <m>S</m> are the <term>columns</term> of <m>A_S</m> and we say <m>\vect{v}_j</m> is the <m>j^{th}</m> column of <m>A_S</m>. When <m>S</m> is clear from context, we may just write <m>A</m>. The symbol <m>A</m> is the <term>name</term> of the matrix.
+			</p>
+		</statement>
+	</definition>
+
+	<p>
+		The plural of matrix is <alert>matrices</alert>.
+	</p>
+
+	<example xml:id="ex-forming_matrix">
+		<statement>
+			<p>
+				If 
+				<m>S= \left\{\begin{bmatrix}3\\2\end{bmatrix}, \begin{bmatrix}1\\5\end{bmatrix}\right\}\subset \R^2</m>, 
+				then the associated matrix is 
+				<m>A_S = \left[\begin{array}{c|c} 3\amp 1 \\ 2 \amp 5\end{array}\right]</m>. 
+				The vector <m>\begin{bmatrix}3\\2\end{bmatrix}</m> is the first column of <m>A_S</m> and the vector <m>\begin{bmatrix}1\\5\end{bmatrix}</m> is the second column of <m>A_S</m>.
+			</p>
+		</statement>
+	</example>
+
+	<p>
+		You can think of this as a sequence in two directions. (i.e., <m>A\in \Mat_{m\times n}(\R)</m>)
+	</p>
+
+	<remark>
+		<title>Vertical bars</title>
+		<p>
+			The vertical bars between column vectors help us <em>visually</em> organize a matrix, but do not serve a computational purpose. I will use them going forward only when they improve the clarity of exposition.
+		</p>
+	</remark>
+
+	<remark xml:id="rem-matrix_notation">
+		<title>Representing a matrix: name, column form, and entry form </title>
+		<p>
+			We currently have <em>three</em> distinct ways to represent a matrix. The most succinct way to denote a matrix is with its <em>name</em>, say
+		</p>
+
+		<me>A.</me>
+
+		<p>
+			If we want to unpack it into its <em>column vectors</em>, we can represent it as
+		</p>
+		<me>[\vect{v}_1|\cdots | \vect{v}_n].</me>
+		<p>
+			Furthermore, each of the columns is itself a list of numbers, which we can unpack to obtain a grid of numbers
+		</p>
+
+		<me>\underbrace{ 
+			\left[\begin{array}{c|c|c|c}
+				a_{11}\amp a_{12}\amp\cdots\amp a_{1n}\\ 
+				a_{21}\amp a_{22}\amp\cdots\amp a_{2n}\\ 
+				\vdots\amp\vdots\amp\ddots\amp \vdots\\ 
+				a_{m1}\amp a_{m2}\amp\cdots\amp a_{mn}\\ 
+			\end{array}\right]}_{n\ columns} \left.\begin{aligned}{}\\{}\\ \hspace{0pc}\end{aligned}\right\}{\scriptstyle m\ rows}.
+		</me>
+
+		<p>
+			The symbol <m>a_{ij}</m> denotes the <em>entry</em> in the <m>i^{th}</m> row and <m>j^{th}</m> column. The matrix is all of these: its <em>name</em>, its <em>column form</em>, and its <em>entry form</em>.
+		</p>	
+	</remark>
+
+	<p>
+		I will always use capital letters for matrix names, e.g. <m>A</m>, <m>B</m>, <m>C</m>, <m>P</m>, etc. I try to always denote entries of a matrix with the associated lower case letters, e.g. <m>A=[a_{ij}]</m>, <m>B=[b_{ij}]</m>, etc.
+	</p>
+
+	<p>
+		How do we decide which representation to use? We will move between these constantly, choosing the representation that best meets our needs at the moment. While the <em>entry form</em> is often best for arithmetic computations, the <em>name</em> and <em>column forms</em> are usually better for us to organize our thoughts and communicate our reasoning.
+	</p>
+
+	<definition xml:id="def_matrixmult">
+		<title>Matrix Multiplication (Matrix with Vector)</title>
+		<statement>
+			<p>
+				If <m>\vect{v}_1,\ldots, \vect{v}_n\in\R^m</m>, <m>A=[\vect{v}_1|\cdots | \vect{v}_n]</m> and <m>\vect{x}\in\R^n</m>, then <term>matrix multiplication</term> of <m>A</m> and <m>\vect{x}</m> is the linear combination of the columns of <m>A</m> with corresponding scalars <m>x_1, \ldots, x_n</m>. In symbols, <m>A\vect{x} = x_1\vect{v}_1+\cdots +x_n\vect{v}_n.</m>
+			</p>
+		</statement>
+	</definition>
+	
+	<p>
+		At the level of entries, Definition \ref{def_matrixmult} looks like:
+	</p>
+
+	<me>
+		x_1\underbrace{\begin{bmatrix}a_{11}\\a_{21}\\ \vdots \\ a_{m1}\end{bmatrix}}_{\vect{v}_1} + x_2\underbrace{\begin{bmatrix}a_{12}\\a_{22}\\ \vdots \\ a_{m2}\end{bmatrix}}_{\vect{v}_2} +\cdots+ x_n \underbrace{\begin{bmatrix}a_{1n}\\a_{2n}\\ \vdots \\ a_{mn}\end{bmatrix}}_{\vect{v}_n} 
+		= 
+		\underbrace{ \begin{bmatrix} a_{11}\amp a_{12}\amp\cdots\amp a_{1n}\\ a_{21}\amp a_{22}\amp\cdots\amp a_{2n}\\ \vdots\amp\vdots\amp\ddots\amp \vdots\\ a_{m1}\amp a_{m2}\amp\cdots\amp a_{mn}\\ \end{bmatrix} }_{A} \underbrace{ \begin{bmatrix}x_{1}\\x_{2}\\ \vdots \\ x_{n}\end{bmatrix} }_{\vect{x}}.
+	</me>
+
+
+	<insight xml:id="matrixmult_meaning1">
+			<p>
+		Matrix Multiplication Meaning #1: <m>A\vect{x}=\vect{b}</m> as Mixture: The matrix equation <m>A\vect{x}=\vect{b}</m> <em>means</em> <m>\vect{b}</m> is the mixture of the columns of <m>A</m> according to the serving sizes specified in <m>\vect{x}</m>.
+	</p>
+	</insight>
+
+
+	<example>
+		<statement>
+			<p>
+				Example \ref{ex:mixture_parallelogram} could have been written in this language as <m>\left[\begin{array}{r|r}2\amp-1\\1\amp1\end{array}\right]\begin{bmatrix}2\\1.5\end{bmatrix}=\begin{bmatrix}2.5\\3.5\end{bmatrix}</m>.
+			</p>
+		</statement>
+	</example>
+
+	<question>
+		<title>Symbolizing Linear Combination as Matrix Multiplication</title>
+		<statement>
+			<p>
+				For each of the following linear combinations, compactly symbolize it using matrix multiplication
+			</p>
+			<ol>
+				<li><m>2\vect{a}+3\vect{b}</m></li>
+				<li><m>3\vect{p}+\vect{q}-2\vect{r}=\vect{0}</m></li>
+				<li>There exists <m>x_1, x_2,x_3\in \R</m> such that <m>x_1\vect{v}_1+x_2\vect{v}_2+x_3\vect{v}_3=\vect{b}</m></li>
+				<li>There does not exist <m>y_1, y_2 \in \R</m> such that <m>y_1\vect{w}_1+y_2\vect{w}_2=\vect{c}</m></li>
+			</ol>
+		</statement>
+	</question>
+
+	<question>
+		<title>Interpreting Symbolism of Matrix Multiplication as Linear Combination</title>
+		<statement>
+			<p>
+				For each of the following expressions, (1) Clearly sketch and label its associated mixture parallelogram and (2) Use linear combinations to symbolically compute the corresponding mixture vector.
+			</p>
+			<me>
+				\left[\begin{array}{r|r}3\amp1\\-1\amp2\end{array}\right]\begin{bmatrix}1\\1\end{bmatrix}\, \hspace{2pc} 
+				\left[\begin{array}{r|r}1\amp-1\\1\amp1\end{array}\right]\begin{bmatrix}2\\1\end{bmatrix}, \hspace{2pc} 
+				\left[\begin{array}{r|r}2\amp2\\1\amp-1\end{array}\right]\begin{bmatrix}3\\2\end{bmatrix}.</me>
+		</statement>
+	</question>
+
+	<question xml:id="activity-symbolizing_with_matrices">
+		<statement>
+			<p>
+				If <m>S=\{\vect{v}_1, \ldots, \vect{v}_n\}\subset \R^m</m> and <m>A=[\vect{v}_1| \cdots |\vect{v}_n]</m>, then use matrix multiplication to compactly symbolize each of the following.
+			</p>
+			<ol>
+				<li>The <em>sum</em> of the vectors of <m>S</m>.</li>
+				<li>The <em>average</em> of the vectors of <m>S</m>.</li>
+				<li>Vector <m>\vect{v}_i</m>, where <m>i\in \{1,\ldots, n\}</m>.</li>
+			</ol>
+		</statement>
+	</question>
+
+	<p>
+		For the moment, there is no new concept here, just compact notation. Accordingly, matrix multiplication <em>acquires</em> all the meanings and algebraic properties we have previously established for linear combination.
+	</p>
+
+	<question>
+		<title>Compactifying Algebraic Properties of Linear Combination</title>
+		<statement>
+			<p>
+				Recall Proposition \ref{prop:dist_across_comb}, our <q>double cookie recipe</q> proposition, states: If <m>x_1,\ldots, x_n, k\in \R</m> and <m>\vect{v}_1,\ldots, \vect{v}_n\in\R^m</m>, then
+			</p>
+			<me>k(x_1\vect{v}_1+\cdots+x_n\vect{v}_n) = (kx_1)\vect{v}_1+\cdots+(kx_n)\vect{v}_n.</me>
+			<p>
+				Compactify this algebraic property using matrix multiplication.
+			</p>
+		</statement>
+	</question>
+
+	<p>
+    For the moment, there is no new concept here, just compact notation. Accordingly, matrix multiplication <em>acquires</em> all the meanings and algebraic properties we have previously established for linear combination.
+</p>
+
+<question>
+    <title>Compactifying Algebraic Properties of Linear Combination</title>
+    <statement>
+        <p>
+            Recall Proposition <xref ref="prop-dist_across_comb" />, our "double cookie recipe" proposition, states:
+        </p>
+        <p>
+            If <m>x_1,\ldots, x_n, k\in \R</m> and <m>\vect{v}_1,\ldots, \vect{v}_n\in\R^m</m>, then
+        </p>
+        <me>k(x_1\vect{v}_1+\cdots+x_n\vect{v}_n) = (kx_1)\vect{v}_1+\cdots+(kx_n)\vect{v}_n.</me>
+        <p>
+            Compactify this algebraic property using matrix multiplication.
+        </p>
+    </statement>
+</question>
+
+<p>
+    Matrix multiplication satisfies two fundamental algebraic properties that we will constantly use.
+</p>
+
+<proposition xml:id="prop_fundamental_matrix_mult_props">
+    <title>Linearity Properties of Matrix Multiplication.</title> 
+	<statement>
+		<p>
+			If <m>A</m> is an <m>m\times n</m> matrix, <m>\vect{x},\vect{y}\in\R^n</m>, and <m>k\in \R</m>, then
+			<ol>
+				<li>
+					<p><alert>(Distributes across vector sum)</alert> <m>A(\vect{x}+\vect{y})=A\vect{x}+A\vect{y},</m> and</p>
+				</li>
+				<li>
+					<p><alert>(Commutes with scaling)</alert> <m>A(k\vect{x})=k(A\vect{x}).</m></p>
+				</li>
+			</ol>
+		</p>
+	</statement>
+</proposition>
+
+<proof>
+    <p>
+        These can be verified algebraically from the definition of matrix multiplication (<xref ref="def_matrixmult" />), basic algebraic properties of real numbers (<xref ref="rem-assume_algebraic_props_of_reals" />), and basic algebraic properties of linear combination (<xref ref="prop-fundamental_vector_props" />).
+    </p>
+    <p>
+        Here I will give the careful justification of distributivity, with the symbolic movements on the left, and the justification for those symbolic movements on the right. If <m>A=[\vect{v}_1|\cdots|\vect{v}_n]</m>, then
+    </p>
+    <md>
+        <mrow>A(\vect{x}+\vect{y}) \amp= [\vect{v}_1|\cdots|\vect{v}_n] \left( \begin{bmatrix}x_1\\ \vdots\\ x_n\end{bmatrix} + \begin{bmatrix}y_1\\ \vdots\\ y_n\end{bmatrix}\right) \amp \mbox{Unpacking symbols}</mrow>
+        <mrow>\amp= [\vect{v}_1|\cdots|\vect{v}_n] \begin{bmatrix}x_1+y_1\\ \vdots\\ x_n+y_n\end{bmatrix} \amp \mbox{Definition \ref{Def-vector_addition} - vector addition}</mrow>
+        <mrow>\amp= (x_1+y_1)\vect{v}_1 + \cdots + (x_n+y_n)\vect{v}_n \amp \mbox{Definition \ref{def_matrixmult} - matrix multiplication}</mrow>
+        <mrow>\amp= (x_1\vect{v}_1 +  y_1\vect{v}_1)+\cdots+(x_n\vect{v}_n +  y_n\vect{v}_n) \amp \mbox{Proposition \ref{prop-fundamental_vector_props} - (LC7)}</mrow>
+        <mrow>\amp= (x_1\vect{v}_1 + \cdots + x_n\vect{v}_n)+(y_1\vect{v}_1 + \cdots + y_n\vect{v}_n) \amp \mbox{Proposition \ref{prop-fundamental_vector_props} - (LC1) \&amp; (LC4)}</mrow>
+        <mrow>\amp= \left([\vect{v}_1|\cdots|\vect{v}_n] \begin{bmatrix}x_1\\ \vdots\\ x_n\end{bmatrix}\right) + \left([\vect{v}_1|\cdots|\vect{v}_n] \begin{bmatrix}y_1\\ \vdots\\ y_n\end{bmatrix}\right) \amp \mbox{Definition \ref{def_matrixmult} - matrix multiplication}</mrow>
+        <mrow>\amp= A\vect{x}+A\vect{y} \amp \mbox{Repacking symbols}.</mrow>
+    </md>
+</proof>
+
+<p>
+    Matrix multiplication of a matrix with another matrix is simply a convenient way of organizing multiple mixtures all at once.
+</p>
+
+<definition xml:id="Def-matrix_mult_matrices">
+    <title>Matrix Multiplication (Matrix with Matrix)</title>
+    <statement>
+        <p>
+            If <m>A</m> is an <m>m\times n</m> matrix and <m>B=[\vect{w}_1| \cdots | \vect{w}_p]</m> is an <m>n\times p</m> matrix (i.e. <m>\vect{w}_1,\ldots, \vect{w}_p\in\R^n</m>), then the <term>matrix multiplication of matrices</term> <m>A</m> and <m>B</m> is
+        </p>
+        <men xml:id="eq-matrix_matrix_mullt_as_mixture">
+            AB = [\ A\vect{w}_1 \ | \cdots \ |   \ A \vect{w}_p\ ].
+        </men>
+        <p>
+            The resulting <m>m\times p</m> matrix is their <term>product</term>.
+        </p>
+    </statement>
+</definition>
+
+<p>
+    <alert>Columns of a Product.</alert> The columns of a product of two matrices are linear combinations of the columns of the <em>first</em> matrix, as read from left to right.
+</p>
+
+<example xml:id="ex-matrix_mult1">
+    <statement>
+        <md>
+            <mrow>\textcolor{red}{\left[\begin{array}{rr}1 \amp -1\\1 \amp 1\end{array}\right]} \textcolor{blue}{\left[\begin{array}{r|r}3 \amp 4\\2 \amp 1\end{array}\right]} \amp= \left[\textcolor{red}{\left[\begin{array}{rr}1 \amp -1\\1 \amp 1\end{array}\right]}\textcolor{blue}{\left[\begin{array}{rr}3\\2\end{array}\right]} \ \bigg| \ \textcolor{red}{\left[\begin{array}{rr}1 \amp -1\\1 \amp 1\end{array}\right]}\textcolor{blue}{\left[\begin{array}{rr}4\\1\end{array}\right]} \right]</mrow>
+            <mrow>\amp= \left[ \textcolor{blue}{3}\textcolor{red}{\left[\begin{array}{r}1\\1\end{array}\right]}+ \textcolor{blue}{2}\textcolor{red}{\left[\begin{array}{r}-1\\1\end{array}\right]} \ \bigg| \ \textcolor{blue}{4}\textcolor{red}{\left[\begin{array}{r}1\\1\end{array}\right]}+ \textcolor{blue}{1}\textcolor{red}{\left[\begin{array}{r}-1\\1\end{array}\right]} \right]</mrow>
+            <mrow>\amp= \left[\begin{array}{r|r} (\textcolor{red}{1})(\textcolor{blue}{3})+(\textcolor{red}{-1})(\textcolor{blue}{2}) \amp (\textcolor{red}{1})(\textcolor{blue}{4})+(\textcolor{red}{-1})(\textcolor{blue}{1})\\ (\textcolor{red}{1})(\textcolor{blue}{3})+(\textcolor{red}{1})(\textcolor{blue}{2}) \amp (\textcolor{red}{1})(\textcolor{blue}{4})+(\textcolor{red}{1})(\textcolor{blue}{1})\end{array}\right]</mrow>
+            <mrow>\amp= \left[\begin{array}{r|r}1 \amp 3\\5 \amp 5\end{array}\right]</mrow>
+        </md>
+    </statement>
+</example>
+
+<question xml:id="activity-pfshortcut_by_hand">
+    <title>Using Definition <xref ref="Def-matrix_mult_matrices" /></title>
+    <statement>
+        <p>
+            Let <m>A=\left[\begin{array}{rrr}2 \amp 3 \amp 0\\1 \amp 2 \amp 5\end{array}\right]</m> and <m>B=\left[\begin{array}{rr}3 \amp 2\\0 \amp 5\\1 \amp 3\end{array}\right]</m>.
+        </p>
+        <ol>
+            <li>
+                <p>On your own, use <xref ref="Def-matrix_mult_matrices" /> to compute <m>AB</m> and <m>BA</m>.</p>
+            </li>
+            <li>
+                <p>Compare your computations with your group.</p>
+            </li>
+            <li>
+                <p>What interesting observations can you make?</p>
+            </li>
+            <li>
+                <p>Generalize your observations. If <m>A</m> is <m>m\times n</m> and <m>B</m> is <m>n \times m</m> where <m>m\ne n</m>, then what do you observe about <m>AB</m> and <m>BA</m>. Explain your thinking interpreting these products using linear combinations.</p>
+            </li>
+        </ol>
+    </statement>
+</question>
+
+<proposition xml:id="prop_fundamental_matrix_mult_props2">
+    <title>Associativity of Matrix Multiplication.</title> 
+	<statement>
+		<p>
+			If <m>A</m> is an <m>m\times n</m> matrix, <m>B</m> is an <m>n\times p</m> matrix, and <m>\vect{x}\in\R^p</m>, then
+		</p>		
+			<me>A(B\vect{x})=(AB)\vect{x}.</me>		
+	</statement>
+</proposition>
+
+		<proof>
+    <p>
+        If <m>B=[\vect{w}_1| \cdots | \vect{w}_p]</m>, then
+    </p>
+    <md>
+        <mrow>A(B\vect{x}) \amp= A([\vect{w}_1|\cdots|\vect{w}_p]\vect{x}) \amp \mbox{Unpack } B</mrow>
+        <mrow>\amp= A(x_1\vect{w}_1+\cdots+x_p\vect{w}_p) \amp \mbox{Definition \ref{def_matrixmult} - matrix multiplication}</mrow>
+        <mrow>\amp= x_1(A\vect{w}_1)+\cdots+x_p(A\vect{w}_p) \amp \mbox{Proposition \ref{prop_fundamental_matrix_mult_props} - linearity properties}</mrow>
+        <mrow>\amp= [A\vect{w}_1|\cdots|A\vect{w}_p]\vect{x} \amp \mbox{Definition \ref{def_matrixmult} - matrix multiplication}</mrow>
+        <mrow>\amp= (AB)\vect{x}. \amp \mbox{Definition \ref{Def-matrix_mult_matrices} - matrix multiplication}</mrow>
+    </md>
+</proof>
+
+
+</section>

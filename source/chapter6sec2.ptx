@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp6sec2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Strategies for Computing an Inverse</title>
+
+  <p>
+    Suppose <m>A</m> is invertible. <em>How do we find the inverse?</em> We want to find the matrix <m>X</m> where <m>AX=I</m>. Write <m>X=[\vect{x}_1 \mid \cdots \mid \vect{x}_n]</m> and <m>I=[\vect{e}_1 \mid \cdots \mid \vect{e}_n]</m>. Then, fixing one column at a time, we want to find the solutions to the matrix equations <m>A\vect{x}_i=\vect{e}_i</m>. So we want to row reduce each of the following:
+  </p>
+
+  <me>
+    [A \mid \vect{e}_1], \quad [A \mid \vect{e}_2], \quad \ldots, \quad [A \mid \vect{e}_n].
+  </me>
+
+  <p>
+    Note that since each augmented matrix starts with the same matrix <m>A</m>, the row reduction process for each will use the exact same row operations, so we may as well group them together into a super augmented matrix and do them all at once.
+  </p>
+
+  <proposition xml:id="algorithm-inverse">
+    <title>The Inverse Algorithm</title>
+    <statement>
+      <p>
+        If <m>A</m> is invertible, then <m>\rref[A \mid I]=[I \mid A^{-1}].</m>
+      </p>
+    </statement>
+  </proposition>
+
+  <p>
+    You should be able to use the Inverse Algorithm to correctly compute the inverses for <m>2\times 2</m> matrices, and maybe even <m>3\times 3</m>; however, for larger matrices, you should know how to use technology to perform this algorithm for you.
+  </p>
+
+  <p>
+    You can use GeoGebra to perform this computation in two ways. First, you can simply input the super-augmented matrix <m>[A \mid I]</m>, use <c>ReducedRowEchelonForm</c>, and interpret. Alternatively, you may simply input the matrix <m>A</m>, and then use the <c>Invert</c> command.
+  </p>
+
+  <technology xml:id="tech-geogebra-inverse-computation">
+    <title>GeoGebra Activity</title>
+      <p>
+        For the matrix <m>A=\begin{bmatrix} 1 \amp 2 \\ 2 \amp 5 \end{bmatrix}</m>, compute <m>A^{-1}</m> in each of the following ways:
+      </p>
+      <ol>
+        <li>
+          <p>By hand, using the inverse algorithm</p>
+        </li>
+        <li>
+          <p>Using GeoGebra, using the <c>ReducedRowEchelonForm</c> command to perform the inverse algorithm,</p>
+        </li>
+        <li>
+          <p>Using GeoGebra, using the <c>Invert</c> command.</p>
+        </li>
+      </ol>
+      <p>
+        Make certain you obtain the same matrix each time.
+      </p>
+    </technology>
+
+    <p>
+      In general, there is no easy-to-remember rule for what inverses should look like; however, for <m>2\times 2</m> matrices, there is an easy rule.
+    </p>
+
+    <proposition xml:id="prop-2x2-inverse-formula">
+      <title><m>2\times 2</m> Inverse Formula</title>
+      <statement>
+        <p>
+          If <m> \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix} </m> is invertible, then <m> \begin{bmatrix} a \amp b \\ c \amp d \end{bmatrix}^{-1} = \frac{1}{ad-bc}\begin{bmatrix} d \amp -b \\ -c \amp a \end{bmatrix} </m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          This is a direct computation using the Inverse Algorithm (<xref ref="algorithm-inverse"/>). I will show the computation assuming <m>a\ne 0</m> and will leave the case <m>a=0</m> to you.
+        </p>
+        <md>
+          <mrow>
+            \left[\begin{array}{cc|cc} a \amp b \amp 1 \amp 0 \\ c \amp d \amp 0 \amp 1 \end{array}\right]
+            \amp
+			\rowS{1}{\frac{1}{a}} 
+			\left[\begin{array}{cc|cc} 1 \amp \frac{b}{a} \amp \frac{1}{a} \amp 0 \\ c \amp d \amp 0 \amp 1 \end{array}\right]
+            \amp\amp \text{ (since } a\ne 0)
+          </mrow>
+          <mrow>
+            \amp 
+			\rowA{2}{1}{-c}
+			\left[\begin{array}{cc|cc} 1 \amp \frac{b}{a} \amp \frac{1}{a} \amp 0 \\ 0 \amp d-\frac{bc}{a} \amp -\frac{c}{a} \amp 1 \end{array}\right]
+            \amp\amp \text{ where } d-\frac{bc}{a} = \frac{ad-bc}{a}
+          </mrow>
+          <mrow>
+            \amp 
+			\rowS{2}{\textstyle\frac{a}{ad-bc}} 
+			\left[\begin{array}{cc|cc} 1 \amp \frac{b}{a} \amp \frac{1}{a} \amp 0 \\ 0 \amp 1 \amp -\frac{c}{ad-bc} \amp \frac{a}{ad-bc} \end{array}\right]
+            \amp\amp \text{ since } \left(-\frac{c}{a}\right)\left(\frac{a}{ad-bc}\right) = -\frac{c}{ad-bc}
+          </mrow>
+          <mrow>
+            \amp 
+			\rowA{1}{2}{-\frac{b}{a}}
+			\left[\begin{array}{cc|cc} 1 \amp 0 \amp \frac{d}{ad-bc} \amp -\frac{b}{ad-bc} \\ 0 \amp 1 \amp -\frac{c}{ad-bc} \amp \frac{a}{ad-bc} \end{array}\right]
+            \amp\amp \text{ since } \frac{1}{a}+\left(\frac{bc}{a(ad-bc)}\right) = \frac{ad}{a(ad-bc)}
+          </mrow>
+        </md>
+      </proof>
+    </proposition>
+
+    <p>
+      Observe that the number <m>ad-bc</m> appears here, and we get an inverse precisely when this number is not zero. We will be looking at this important number and its meaning in the lessons to come.
+    </p>
+
+    <example xml:id="ex-geometric-inverses">
+      <title>Inverses of Simple Geometric Transformations</title>
+      <p>
+        Let us revisit the classes of matrices that correspond to the simple geometric transformations we know, and verify that the inverses we obtain via the Inverse Algorithm agree with those that represent the reverse geometric transformation (cf. <xref ref="activity-reverse-transformations-of-plane"/>).
+      </p>
+      <ol>
+        <li>
+          <p><m>\begin{bmatrix} a \amp 0 \\ 0 \amp d \end{bmatrix}^{-1} = \begin{bmatrix} \frac{1}{a} \amp 0 \\ 0 \amp \frac{1}{d} \end{bmatrix}</m> — i.e., compress back down</p>
+        </li>
+        <li>
+          <p><m>\begin{bmatrix} 1 \amp b \\ 0 \amp 1 \end{bmatrix}^{-1} = \begin{bmatrix} 1 \amp -b \\ 0 \amp 1 \end{bmatrix}</m> — i.e., shear back the original amount.</p>
+        </li>
+        <li>
+          <p><m>\begin{bmatrix} \cos\theta \amp -\sin\theta \\ \sin\theta \amp \cos\theta \end{bmatrix}^{-1} = \begin{bmatrix} \cos\theta \amp \sin\theta \\ -\sin\theta \amp \cos\theta \end{bmatrix}</m> — i.e., rotate in the opposite direction</p>
+        </li>
+        <li>
+          <p><m>\begin{bmatrix} -1 \amp 0 \\ 0 \amp 1 \end{bmatrix}^{-1} = \begin{bmatrix} -1 \amp 0 \\ 0 \amp 1 \end{bmatrix}</m> — i.e., reflect again</p>
+        </li>
+      </ol>
+    </example>
+
+    <example xml:id="ex-change-of-basis-inverse">
+      <p>
+        Consider again the basis <m>\mathcal{B}=\left\{\begin{bmatrix} 1 \\ 1 \end{bmatrix}, \begin{bmatrix} -1 \\ 1 \end{bmatrix}\right\}</m> and recall that <m>P_{\mathcal{B}}=\begin{bmatrix} 1 \amp -1 \\ 1 \amp 1 \end{bmatrix}</m> is the matrix that sends us from <m>\mathcal{B}</m>-coordinates into standard coordinates.
+      </p>
+      <p>
+        Applying either the Inverse Algorithm, or our <m>2\times 2</m> Inverse Formula, we get <m>P_{\mathcal{B}}^{-1}=\frac{1}{2}\begin{bmatrix} 1 \amp 1 \\ -1 \amp 1 \end{bmatrix}</m>, which is the matrix that sends us from standard coordinates into <m>\mathcal{B}</m>-coordinates.
+      </p>
+    </example>
+
+    <p>
+      Let us return to the matrix equation <m>A\vect{x}=\vect{b}</m> where <m>A</m> and <m>\vect{b}</m> are known and <m>\vect{x}</m> is unknown.
+    </p>
+
+    <p>
+      In <xref ref="chp4sec3b"/>, I showed that for any <m>m\times n</m> matrix <m>A</m>, we can find the solution set by computing and interpreting <m>\rref[A \mid \vect{b}]</m>.
+    </p>
+
+    <p>
+      If we are in the special case where <m>A</m> is <m>n\times n</m> and is <em>invertible</em>, and we know its inverse, then we can find <m>\vect{x}</m> by multiplying both sides of the matrix equation by <m>A^{-1}</m>:
+    </p>
+
+    <me>
+      A\vect{x} = \vect{b} \implies A^{-1}(A\vect{x})=A^{-1}\vect{b} \implies \vect{x}=(A^{-1}A)\vect{x}=A^{-1}\vect{b}.
+    </me>
+
+    <p>
+      This new method is a two-step process: (1) find the inverse and then (2) matrix multiply. Observe that if one uses the inverse algorithm, this involves first using elimination to find <m>\rref[A \mid I]</m> and then multiplying <m>A^{-1}\vect{b}</m>. Our previous method of just using elimination to find <m>\rref[A \mid \vect{b}]</m> has fewer steps (and does not require <m>A</m> to be invertible or square).
+    </p>
+
+    <p>
+      The point is this method is not always the most advantageous. However, it is useful when you expect to be solving multiple matrix equations with the same coefficient matrix (e.g., <m>A\vect{x}=\vect{b}_1, A\vect{x}=\vect{b}_2, \ldots</m>). Then, you just compute <m>A^{-1}</m> once and <em>save it</em>. In such cases, it is simpler to just keep multiplying <m>A^{-1}\vect{b}_i</m>. A common example of such a situation is when you fix an ordered basis <m>\mathcal{B}</m> and use <m>P_{\mathcal{B}}</m> and <m>P_{\mathcal{B}}^{-1}</m> to keep changing coordinates.
+    </p>
+
+    <example xml:id="ex-coordinate-computation">
+      <p>
+        Consider the ordered basis <m>\mathcal{B}=\left\{\begin{bmatrix} 3 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \end{bmatrix}\right\}</m> and the vector <m>\vect{w}=\begin{bmatrix} 8 \\ 6 \end{bmatrix}</m>. Suppose we want to find the <m>\mathcal{B}</m>-coordinates of <m>\vect{w}</m>, or in other words, the solution set to the matrix equation <m>P_{\mathcal{B}}[\vect{w}]_\mathcal{B}= \vect{w}</m>, where <m>P_{\mathcal{B}}=\begin{bmatrix} 3 \amp 1 \\ 1 \amp 2 \end{bmatrix}</m>.
+      </p>
+      <p>
+        As usual, we could compute and interpret:
+      </p>
+      <me>
+        \rref \left[\begin{array}{cc|c} 3 \amp 1 \amp 8 \\ 1 \amp 2 \amp 6 \end{array}\right] = \left[\begin{array}{cc|c} 1 \amp 0 \amp 2 \\ 0 \amp 1 \amp 2 \end{array}\right].
+      </me>
+      <p>
+        Alternatively, we can first find <m>P_{\mathcal{B}}^{-1}</m> by computing and interpreting:
+      </p>
+      <me>
+        \rref \left[\begin{array}{cc|cc} 3 \amp 1 \amp 1 \amp 0 \\ 1 \amp 2 \amp 0 \amp 1 \end{array}\right] = \left[\begin{array}{cc|cc} 1 \amp 0 \amp 2/5 \amp -1/5 \\ 0 \amp 1 \amp -1/5 \amp 3/5 \end{array}\right]
+      </me>
+      <p>
+        and then multiplying:
+      </p>
+      <me>
+        [\vect{w}]_\mathcal{B} = P_{\mathcal{B}}^{-1}\vect{w} = \frac{1}{5}\begin{bmatrix} 2 \amp -1 \\ -1 \amp 3 \end{bmatrix}\begin{bmatrix} 8 \\ 6 \end{bmatrix} = \begin{bmatrix} 2 \\ 2 \end{bmatrix}.
+      </me>
+    </example>
+</section>

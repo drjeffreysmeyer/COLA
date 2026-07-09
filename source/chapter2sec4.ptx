@@ -12,24 +12,21 @@
   </p>
 
 <example>
-<title>What can we make with one vector in the plane?</title>
+<title>What can we make with one nonzero vector in the plane?</title>
 <statement>
-<sidebyside widths="45% 50%">
 <p>What can we make (using linear combinations) with <m>\vect{v}=\begin{bmatrix} 2\\1\end{bmatrix}</m>? <br/>
 Geometrically, we get the line with parametric vector form:
 <m>\left\{t\begin{bmatrix}2\\1\end{bmatrix} \ | \ t\in \R\right\}</m>. 
 Observe our starting position is the zero vector (i.e. the origin).</p>
 
-<image source="images/2.4_span1.png" width="100%">
-          <description> 
-            <p>
-              A line in <m>\R^2</m>.
-            </p>
-          </description>
-          </image>
+<image source="images/2.4_span1.svg" width="100%">
+<description> 
+  <p>
+    A line in <m>\R^2</m>.
+  </p>
+</description>
+</image>
 
-
-</sidebyside>
 </statement>
 </example>
 

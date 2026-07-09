@@ -28,6 +28,7 @@
 
     \DeclareMathOperator{\Aut}{Aut} \DeclareMathOperator{\Out}{Out}
     \DeclareMathOperator{\Mod}{Mod} \DeclareMathOperator{\Cl}{Cl}
+    \DeclareMathOperator{\Mat}{Mat}
     \DeclareMathOperator{\SL}{SL} \DeclareMathOperator{\PSL}{PSL}
     \DeclareMathOperator{\GL}{GL} \DeclareMathOperator{\PGL}{PGL}
     \DeclareMathOperator{\Ort}{O} \DeclareMathOperator{\PO}{PO}
@@ -56,9 +57,12 @@
     \DeclareMathOperator{\Id}{Id}\DeclareMathOperator{\Exc}{Exc}
     \DeclareMathOperator{\hd}{hd}\DeclareMathOperator{\cd}{cd}
     \DeclareMathOperator{\Fe}{F}\DeclareMathOperator{\Rank}{Rank}
-    \DeclareMathOperator{\Br}{Br}\DeclareMathOperator{\Homeo}{Homeo}\DeclareMathOperator{\Orb}{Orb}\DeclareMathOperator{\Int}{Int}\DeclareMathOperator{\arccosh}{arccosh}
+    \DeclareMathOperator{\Br}{Br}\DeclareMathOperator{\Homeo}{Homeo}
+    \DeclareMathOperator{\Orb}{Orb}\DeclareMathOperator{\Int}{Int}
+    \DeclareMathOperator{\arccosh}{arccosh}
     \DeclareMathOperator{\spn}{Span}\DeclareMathOperator{\rref}{rref}
-    \DeclareMathOperator{\col}{Col}\DeclareMathOperator{\Col}{Col}\DeclareMathOperator{\Null}{Null}
+    \DeclareMathOperator{\col}{Col}\DeclareMathOperator{\Col}{Col}
+    \DeclareMathOperator{\Null}{Null}
     \DeclareMathOperator{\Area}{Area}\DeclareMathOperator{\tr}{tr}
     \DeclareMathOperator{\disc}{disc}
     \DeclareMathOperator{\asf}{asf}\DeclareMathOperator{\sasf}{sasf}
@@ -67,6 +71,34 @@
     \DeclareMathOperator{\round}{round}
     \DeclareMathOperator{\dist}{dist}
     \DeclareMathOperator{\abssum}{abssum}
+    \DeclareMathOperator{\nullity}{nullity}\DeclareMathOperator{\rank}{rank}
+
+    \newcommand{\widesim}{\ \sim\ }
+
+    \newcommand{\rowP}[2]{
+      \hspace{0.5pc}  
+      \overset
+      {r_{#1} \leftrightarrow r_{#2}}
+      {\widesim}
+      \hspace{0.5pc}
+    }
+    \newcommand{\rowS}[2]{
+      \hspace{0.5pc}  
+      \overset
+      {r_{#1} \mapsto #2r_{#1}}
+      {\widesim}
+      \hspace{0.5pc}
+    }
+    \newcommand{\rowA}[3]{
+      \hspace{0.5pc}  
+      \overset
+      {r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}}
+      {\widesim}
+      \hspace{0.5pc}
+    }
+    \newcommand{\RowA}[3]{
+      r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}
+    }
 
   </macros>
 

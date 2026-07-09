@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp4sec1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Solution Sets as Intersection</title>
+
+    <p>
+        In a variety of contexts, we have encountered matrix equations of the form <m>A\vect{x}=\vect{b}</m>, where up to this point, typically the matrix <m>A</m> and servings vector <m>\vect{x}</m> are <em>known</em> and we <em>find</em> the new mixture vector <m>\vect{b}</m>. We now focus our attention on the reverse situation where we <em>know</em> the matrix <m>A</m> and mixture vector <m>\vect{b}</m> and wish to find a servings vector <m>\vect{x}</m> that satisfies the matrix equation <m>A\vect{x}=\vect{b}</m>. We call such a vector a <term>solution vector</term> to the matrix equation and the set of all such vectors is its <term>solution set</term>, denoted <m>\text{Sol}(A,\vect{b})</m>. In this lesson we revisit and reconceptualize solution sets.
+    </p>
+
+    <p>
+        Before analyzing the general situation, we specialize and look at small matrices. For the moment, consider the matrix equation <m>A\vect{x}=\vect{b}</m> where <m>A=[\vect{v} \mid \vect{w}]=\begin{bmatrix}a\amp b\\c\amp d\end{bmatrix}</m> is a <m>2\times 2</m> matrix, <m>\vect{b}=\begin{bmatrix}p\\q\end{bmatrix}\in \mathbb{R}^2</m> is a <em>known</em> vector, and we want to <em>find</em> a solution <m>\vect{x}=\begin{bmatrix}x\\y\end{bmatrix}\in \mathbb{R}^2</m>.
+    </p>
+
+    <p>
+        In the context of our two meanings of matrix multiplication, this means a solution vector is:
+    </p>
+
+    <ol>
+        <li>
+            <p>A servings vector to make <m>\vect{b}</m> as a linear combination of vectors <m>\vect{v}</m> and <m>\vect{w}</m>.</p>
+        </li>
+        <li>
+            <p>A point that the transformation <m>\vect{x}\mapsto A\vect{x}</m> sends to <m>\vect{b}</m>.</p>
+        </li>
+    </ol>
+
+    <p>
+        It is time to introduce a third conceptualization that is productive in analyzing the solution set to a matrix equation. The expression <m>A\vect{x}=\vect{b}</m> can be expanded as <m>\begin{bmatrix} ax+by\\cx+dy\end{bmatrix} = \begin{bmatrix} p\\q\end{bmatrix}</m>. For these two vectors to be equal, each of the corresponding entries must be equal. This means <m>x</m> and <m>y</m> must satisfy <em>both</em> <m>ax+by=p</m> <em>and</em> <m>cx+dy=q</m>. Each equation imposes an algebraic <em>constraint</em> on the entries of a servings vector for it to be a solution set vector for the matrix equation.
+    </p>
+
+    <p>
+        Observe these algebraic constraints are the normal equations of lines! To satisfy one such equation is to say that the servings vector lies on the line, and hence, to satisfy both, is to say that the servings vector lies in their intersection. Hence a vector <m>\vect{x}</m> that satisfies <m>A\vect{x}=\vect{b}</m> is:
+    </p>
+
+    <ol>
+        <li marker="3">
+            <p>
+                A point in the <em>intersection</em> of the system of lines:
+                <me>\begin{cases} ax+by=p,\\ cx+dy=q. \end{cases}</me>
+            </p>
+        </li>
+    </ol>
+
+    <example xml:id="ex-3meaning">
+        <title>Three Meanings of Solution Set</title>
+        <statement>
+            <p>
+                A vector <m>\begin{bmatrix}x\\y\end{bmatrix}</m> that satisfies <m>\begin{bmatrix}1\amp -1\\1\amp 1\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}1\\5\end{bmatrix}</m> can be conceptualized as:
+            </p>
+            <ol>
+                <li>
+                    <p><alert>(Mixture)</alert> A servings vector to make <m>\begin{bmatrix}1\\5\end{bmatrix}</m> as a combination of <m>\begin{bmatrix}1\\1\end{bmatrix}</m> and <m>\begin{bmatrix}-1\\1\end{bmatrix}</m>.</p>
+                </li>
+                <li>
+                    <p><alert>(Transformation)</alert> A point that the transformation <m>\begin{bmatrix}x\\y\end{bmatrix}\mapsto\begin{bmatrix}1\amp -1\\1\amp 1\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}</m> sends to <m>\begin{bmatrix}1\\5\end{bmatrix}</m>.</p>
+                </li>
+                <li>
+                    <p><alert>(Intersection)</alert> A point in the intersection of the lines:
+                        <me>\begin{cases} x-y=1\\ x+y=5 \end{cases}</me>
+                    </p>
+                </li>
+            </ol>
+        </statement>
+    </example>
+
+    <example xml:id="ex-interpretsolutionset1">
+        <title>Interpretations Relative to the Three Meanings</title>
+        <statement>
+            <p>
+                Continuing <xref ref="ex-3meaning"/>, I now analyze the solution set to the equation <m>\begin{bmatrix}1\amp -1\\1\amp 1\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}1\\5\end{bmatrix}</m>. Observe that the two lines intersect at <m>x=3</m> and <m>y=2</m>. I now <em>interpret</em> this relative to each of our 3 meanings.
+            </p>
+
+			<p>
+				<alert>Meaning 1: Mixture.</alert> The servings necessary to write <m>\begin{bmatrix}1\\5\end{bmatrix}</m> as a linear combination of vectors <m>\begin{bmatrix}1\\1\end{bmatrix}</m> and <m>\begin{bmatrix}-1\\1\end{bmatrix}</m> are <m>3</m> and <m>2</m>, respectively.
+			</p>
+
+			<image source="images/4.1_solution_set_meaning1.png" width="100%">
+				<description> 
+				<p>
+					Solution set as finding unknown scalars.
+				</p>
+				</description>
+			</image>
+
+			<p>
+				<alert>Meaning 2: Transformation.</alert> The transformation of the plane <m>\begin{bmatrix}x\\y\end{bmatrix}\mapsto\begin{bmatrix}1\amp -1\\1\amp 1\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}</m> is a rotation of the plane by <m>45^\circ</m> counterclockwise, together with a uniform stretch by a factor of <m>\sqrt{2</m>} in all directions. The point that gets sent to <m>(1,5)</m> under this transformation is <m>(3,2)</m>.
+			</p>
+
+			<image source="images/4.1_solution_set_meaning2.png" width="100%">
+				<description> 
+				<p>
+					Solution set as finding the unknown input.
+				</p>
+				</description>
+			</image>
+		<p>
+			<alert>Meaning 3: Intersection.</alert> The lines <m>x+y=5</m> and <m>x-y=1</m> intersect at the point <m>(3,2)</m>.
+		</p>
+
+		<image source="images/4.1_solution_set_meaning3.png" width="100%">
+			<description> 
+			<p>
+				Solution set as intersecting lines in <m>\R^2</m>.
+			</p>
+			</description>
+		</image>
+
+		</statement>
+    </example>
+
+    <p>
+        Now consider the matrix equation <m>A\vect{x}=\vect{b}</m> where <m>A=\begin{bmatrix}a\amp b\amp c\\d\amp e\amp f\end{bmatrix}</m> is a <m>2\times 3</m> matrix, <m>\vect{b}=\begin{bmatrix}p\\q\end{bmatrix}\in \mathbb{R}^2</m> is a <em>known</em> vector, and we want to <em>find</em> a solution <m>\vect{x}=\begin{bmatrix}x\\y\\z\end{bmatrix}\in \mathbb{R}^3</m>.
+        The expression <m>A\vect{x}=\vect{b}</m> can be expanded as <m>\begin{bmatrix} ax+by+cz\\dx+ey+fz\end{bmatrix} = \begin{bmatrix} p\\q\end{bmatrix}</m>. For these two vectors to be equal, each of the corresponding entries must be equal. This means <m>x</m>, <m>y</m>, and <m>z</m> must satisfy <em>both</em> <m>ax+by+cz=p</m> <em>and</em> <m>dx+ey+fz=q</m>. Each equation imposes an algebraic <em>constraint</em> on the entries of a servings vector for it to be a solution set vector for the matrix equation.
+    </p>
+
+    <p>
+        Observe these algebraic constraints are the normal equations of <em>planes</em>! For a vector to satisfy one such equation is to say that it lies on the <em>plane</em>, and hence, to satisfy both, is to say that the vector lies in both planes at the same time. Hence a vector <m>\vect{x}</m> that satisfies <m>A\vect{x}=\vect{b}</m> is a point in the <em>intersection</em> of the system of <em>planes</em>:
+        <me>\begin{cases} ax+by+cz=p,\\ dx+ey+fz=q. \end{cases}</me>
+    </p>
+
+    <example xml:id="ex-3meaning2">
+        <title>Three Meanings of Solution Set</title>
+        <statement>
+            <p>
+                A vector <m>\begin{bmatrix}x\\y\\z\end{bmatrix}</m> that satisfies <m>\begin{bmatrix}1\amp 2\amp 3\\3\amp -1\amp 2\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}6\\4\end{bmatrix}</m> can be conceptualized as:
+            </p>
+            <ol>
+                <li>
+                    <p><alert>(Mixture)</alert> A servings vector to make <m>\begin{bmatrix}6\\4\end{bmatrix}</m> as a combination of <m>\begin{bmatrix}1\\3\end{bmatrix}</m>, <m>\begin{bmatrix}2\\-1\end{bmatrix}</m>, and <m>\begin{bmatrix}3\\2\end{bmatrix}</m>.</p>
+                </li>
+                <li>
+                    <p><alert>(Transformation)</alert> A point that the transformation <m>\begin{bmatrix}x\\y\\z\end{bmatrix}\mapsto\begin{bmatrix}1\amp 2\amp 3\\3\amp -1\amp 2\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}</m> sends to <m>\begin{bmatrix}6\\4\end{bmatrix}</m>.</p>
+                </li>
+                <li>
+                    <p><alert>(Intersection)</alert> A point in the intersection of the planes:
+                        <me>\begin{cases} x+2y+3z=6\\ 3x-y+2z=4 \end{cases}</me>
+                    </p>
+                </li>
+            </ol>
+        </statement>
+    </example>
+
+    <example xml:id="ex-interpretsolutionset2">
+        <title>Interpretations Relative to the Three Meanings</title>
+        <statement>
+            <p>
+                Meaning 3 allows us to find the solution set. Using GeoGebra, we can plot the planes and we can see that its intersection is a line. We can read off an initial position and velocity, and conclude it is the line <m>\ell\subset \mathbb{R}^3</m> with parametric vector form:
+                <me>\ell=\left\{\begin{bmatrix}0\\0\\2\end{bmatrix}+t \begin{bmatrix}1\\1\\-1\end{bmatrix}\ \bigg| \ t\in\mathbb{R}\right\}.</me>
+                Interpreting this solution relative to the three meanings:
+            </p>
+
+            <sidebyside widths="55% 40%" margins="auto">
+                <ol>
+                    <li>
+                        <p><alert>(Mixture)</alert> For any <m>t\in \mathbb{R}</m>, we mix: <me>t\begin{bmatrix}1\\3\end{bmatrix}+t\begin{bmatrix}2\\-1\end{bmatrix}+(2-t)\begin{bmatrix}3\\2\end{bmatrix}=\begin{bmatrix}6\\4\end{bmatrix}.</me></p>
+                    </li>
+                    <li>
+                        <p><alert>(Transformation)</alert> Under the transformation <m>T</m>, the whole line <m>\ell</m> is sent to <m>\begin{bmatrix}6\\4\end{bmatrix}</m>.</p>
+                    </li>
+                    <li>
+                        <p><alert>(Intersection)</alert> The line <m>\ell</m> is the intersection of the planes: <me>\begin{cases} x+2y+3z=6\\ 3x-y+2z=4 \end{cases}</me></p>
+                    </li>
+                </ol>
+                <image source="images/4.1_intersecting_planes.png">
+                    <description>GeoGebra rendering of two planes intersecting along a line in 3D space.</description>
+                </image>
+            </sidebyside>
+        </statement>
+    </example>
+
+    <p>
+        We now generalize to a matrix equation <m>A\vect{x}=\vect{b}</m> where <m>A</m> is <m>m \times n</m>. The matrix equation can be written using its entries as
+        <me>
+            \begin{bmatrix}
+            a_{11}\amp a_{12}\amp \cdots\amp a_{1n}\\
+            a_{21}\amp a_{22}\amp \cdots\amp a_{2n}\\
+            \vdots\amp \vdots\amp \ddots\amp \vdots\\
+            a_{m1}\amp a_{m2}\amp \cdots\amp a_{mn}
+            \end{bmatrix}
+            \begin{bmatrix}x_{1}\\x_{2}\\ \vdots \\ x_{n}\end{bmatrix}
+            =\begin{bmatrix}b_{1}\\b_{2}\\ \vdots \\ b_{m}\end{bmatrix},
+        </me>
+        which can be expanded to 
+        <me>
+            \begin{bmatrix}
+            a_{11}x_1+a_{12}x_2+\cdots+ a_{1n}x_n\\
+            a_{21}x_1+a_{22}x_2+\cdots+ a_{2n}x_n\\
+            \vdots \\
+            a_{m1}x_1+a_{m2}x_2+\cdots+ a_{mn}x_n
+            \end{bmatrix}
+            =\begin{bmatrix}b_{1}\\b_{2}\\ \vdots \\ b_{m}\end{bmatrix}.
+        </me>
+        Two vectors are equal if and only if their entries are equal and hence a solution vector must satisfy each of the following equations:
+        <me xml:id="eq-hyperplanes">
+            \begin{cases}
+            a_{11}x_1+a_{12}x_2+\cdots +a_{1n}x_n=b_1,\\ 
+            a_{21}x_1+a_{22}x_2+\cdots +a_{2n}x_n=b_2,\\ 
+            \hspace{5pc}\vdots\\
+            a_{m1}x_1+a_{m2}x_2+\cdots +a_{mn}x_n=b_m
+            \end{cases}
+        </me>
+    </p>
+
+    <p>
+        Observe that each equation places a <em>linear constraint</em> on solution vectors. The set of points that satisfy such a linear constraint are called hyperplanes.
+    </p>
+
+    <definition xml:id="def-hyperplane">
+        <title>Hyperplane</title>
+        <statement>
+            <p>
+                The set of points in <m>\mathbb{R}^n</m> that satisfy a linear constraint is a <term>hyperplane</term> in <m>\mathbb{R}^n</m>. In symbols, 
+                <me>H = \{\vect{x}\in\mathbb{R}^n \mid a_1x_1+a_2x_2+\cdots +a_nx_n=b \text{, where at least one } a_i\ne0\}.</me>
+                Such a linear constraint equation is a <term>normal equation</term> for that hyperplane.
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        A hyperplane in <m>\mathbb{R}^2</m> is a line and a hyperplane in <m>\mathbb{R}^3</m> is a plane.
+    </p>
+
+    <proposition xml:id="prop-hyperplane-is-kplane">
+        <statement>
+            <p>
+                A hyperplane is an <m>(n-1)</m>-plane.
+            </p>
+        </statement>
+    </proposition>
+
+    <p>
+        To prove this proposition, I will use the strategy first used in the proof of <xref ref="prop-lines_r2_pvf"/> where we first substitute in the constraining equation and then use linear combinations to split the vector apart.
+    </p>
+
+    <proof>
+        <p>
+            Let <m>H</m> be a hyperplane with normal equation <m>a_1x_1+ a_2x_2 + \cdots + a_nx_n = b</m>. At least one of the <m>a_i</m>'s is nonzero. I will prove the proposition when <m>a_1\ne0</m>, and leave for you the case where <m>a_1=0</m>. The normal equation is algebraically equivalent to 
+            <me>x_1 = \frac{b}{a_1}- \frac{a_2}{a_1}x_2 - \cdots - \frac{a_n}{a_1}x_n.</me>
+            Pick a point <m>\vect{x}\in H</m> and look at its column:
+            <me>
+                \begin{bmatrix}x_1\\x_2\\x_3\\ \vdots \\ x_n\end{bmatrix}
+                = \begin{bmatrix}\frac{b}{a_1}- \frac{a_2}{a_1}x_2 - \cdots - \frac{a_n}{a_1}x_n\\x_2\\x_3\\ \vdots \\ x_n\end{bmatrix}
+                = \begin{bmatrix}\frac{b}{a_1}\\0\\0\\ \vdots \\ 0\end{bmatrix} 
+                + x_2\begin{bmatrix}-\frac{a_2}{a_1}\\1\\0\\ \vdots \\ 0\end{bmatrix}
+                + x_3\begin{bmatrix}-\frac{a_3}{a_1}\\0\\1\\ \vdots \\ 0\end{bmatrix}
+                + \cdots 
+                + x_n\begin{bmatrix}-\frac{a_n}{a_1}\\0\\0\\ \vdots \\ 1\end{bmatrix}.
+            </me>
+            Observe that the last <m>(n-1)</m> vectors are separated, and hence independent (<xref ref="prop-sep_implies_indep"/>).
+        </p>
+    </proof>
+
+    <p>
+        In the definition of hyperplane, we require at least one of the <m>a_i</m>'s to be nonzero. If all the <m>a_i</m>'s are zero, we still get a constraining equation, but the set of all points that satisfy them are not hyperplanes. Let's quickly go over the two cases.
+    </p>
+
+    <p>
+        First, observe that the <alert>zero equation</alert>
+        <me>0x_1+0x_2+\cdots +0x_n=0</me>
+        places no meaningful constraint on vectors as <em>every</em> vector satisfies it, and hence
+        <me>\{\vect{x}\in\mathbb{R}^n \mid 0x_1+0x_2+\cdots +0x_n=0\} = \mathbb{R}^n.</me>
+        On the other hand, what I call a <alert>zero-one</alert> equation (here, one can be replaced by any nonzero number and the same conclusions hold)
+        <me>0x_1+0x_2+\cdots +0x_n=1</me>
+        places too alert of a constraint on vectors as <em>no</em> vector satisfies it, and hence
+        <me>\{\vect{x}\in\mathbb{R}^n \mid 0x_1+0x_2+\cdots +0x_n=1\} = \varnothing.</me>
+    </p>
+
+    <p>
+        When we have many hyperplanes, as we do when analyzing a solution set, we call this a system of hyperplanes.
+    </p>
+
+    <definition xml:id="def-hyperplane-system">
+        <title>Systems of Hyperplanes</title>
+        <statement>
+            <p>
+                A <term>system of <m>m</m> hyperplanes in <m>\mathbb{R}^n</m></term> is a collection of <m>m</m>-many hyperplanes, <m>H_1, H_2, \ldots, H_m</m>. If we have normal forms for the equations of each hyperplane, we can represent this collection with a <term>system of <m>m</m> linear equations in <m>n</m> variables</term> <m>x_1, \ldots, x_n</m>:
+                <me>
+                    \begin{cases}
+                    H_1: a_{11}x_1+a_{12}x_2+\cdots +a_{1n}x_n=b_1,\\ 
+                    H_2: a_{21}x_1+a_{22}x_2+\cdots +a_{2n}x_n=b_2,\\ 
+                    \hspace{5pc}\vdots\\
+                    H_m: a_{m1}x_1+a_{m2}x_2+\cdots +a_{mn}x_n=b_m
+                    \end{cases}
+                </me>
+                where <m>a_{ij}, b_i\in \mathbb{R}</m>.
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        Hyperplanes live in the set of servings vectors. A solution vector to <m>A\vect{x}=\vect{b}</m> must satisfy each of the constraints from <xref ref="eq-hyperplanes"/>, so it lies on each hyperplane.
+    </p>
+
+    <definition xml:id="def-intersection">
+        <title>Intersection</title>
+        <statement>
+            <p>
+                If <m>H_1, \ldots, H_m\subset \mathbb{R}^n</m> are hyperplanes, then a point <m>\vect{x}</m> lies in their <term>intersection</term> if it lies on each hyperplane <m>H_1, \ldots, H_m</m>. In symbols, we then write <m>\vect{x} \in (H_1\cap \cdots \cap H_m)</m>.
+            </p>
+        </statement>
+    </definition>
+
+    <question xml:id="act-describe-intersection">
+        <statement>
+            <p>
+                Describe the intersection of the system of three lines depicted below.
+            </p>
+            <image source="images/4.1_intersecting_lines.png" width="100%">
+				<description> 
+				<p>
+					A 2D coordinate system plotting three intersecting lines: a red line y = x - 1, a blue line y = 5 - x, and a green horizontal line y = 4.
+				</p>
+				</description>
+			</image>
+        </statement>
+    </question>
+
+    <insight xml:id="meaning-mm3_int">
+        <title>Solution Set Meaning #3: <m>A\vect{x}=\vect{b}</m> as Intersection</title>
+        <p>
+            If <m>A</m> is <m>m\times n</m>, then the matrix equation <m>A\vect{x}=\vect{b}</m> <em>means</em> that we are considering a system of <m>m</m>-many hyperplanes in <m>\mathbb{R}^n</m> and a solution to the matrix equation is a point in the intersection of the system. In symbols, if <m>A\vect{x}=\vect{b}</m> has associated hyperplanes <m>H_1, \ldots, H_m\subset \mathbb{R}^n</m>, then:
+            <me>\text{Sol}(A,\vect{b}) = (H_1\cap \cdots \cap H_m).</me>
+        </p>
+    </insight>
+
+    <p>
+        In <xref ref="chp4sec3a"/>, we will develop an efficient algorithm for finding these intersections.
+    </p>
+
+    <example xml:id="ex-r4-hyperplanes">
+        <statement>
+            <p>
+                Consider the matrix equation:
+                <me>
+                    \begin{bmatrix}
+                    1\amp 1\amp 1\amp 1\\
+                    1\amp 2\amp 3\amp 4\\
+                    5\amp 6\amp 7\amp 8
+                    \end{bmatrix}
+                    \begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}=\begin{bmatrix}2\\4\\12\end{bmatrix}.
+                </me>
+                Via Solution Set Meaning #3, the solution set is the collection of all points in <m>\mathbb{R}^4</m> that lie in the intersection of the 3 hyperplanes in <m>\mathbb{R}^4</m>:
+                <me>
+                    \begin{cases}
+                    x_1+x_2+x_3+x_4=2\\
+                    x_1+2x_2+3x_3+4x_4=4\\
+                    5x_1+6x_2+7x_3+8x_4=12
+                    \end{cases}
+                </me>
+            </p>
+        </statement>
+    </example>
+
+    <example xml:id="ex-general-meanings-summary">
+        <statement>
+            <p>
+                If 
+                <ul>
+                    <li>
+                        <p><m>A</m> is a <m>18\times 37</m> matrix which is <em>known</em>,</p>
+                    </li>
+                    <li>
+                        <p><m>\vect{b}\in \mathbb{R}^{18}</m> is <em>known</em>, and</p>
+                    </li>
+                    <li>
+                        <p><m>\vect{x}\in \mathbb{R}^{37}</m> is <em>unknown</em>,</p>
+                    </li>
+                </ul>
+                then the solution set, <m>\text{Sol}(A,\vect{b})</m>, for the matrix equation <m>A\vect{x}=\vect{b}</m> means:
+            </p>
+            <ol>
+                <li>
+                    <p><alert>(Mixture)</alert> The servings vectors in <m>\mathbb{R}^{37}</m> to make <m>\vect{b}</m> with the columns of <m>A</m>.</p>
+                </li>
+                <li>
+                    <p><alert>(Transformation)</alert> The points in <m>\mathbb{R}^{37}</m> that the transformation <m>T_A</m> sends to <m>\vect{b}</m>.</p>
+                </li>
+                <li>
+                    <p><alert>(Intersection)</alert> The intersection in <m>\mathbb{R}^{37}</m> of the system of 18 hyperplane rows of <m>A\vect{x}=\vect{b}</m>.</p>
+                </li>
+            </ol>
+        </statement>
+    </example>
+</section>

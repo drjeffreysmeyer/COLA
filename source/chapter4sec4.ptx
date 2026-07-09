@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp4sec4" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Elimination as Matrix Multiplication</title>
+
+<p>
+  We have seen mixture encoded as matrix multiplication. 
+  We have seen transformation encoded as matrix multiplication.
+  Many <em>important processes can be encoded as matrix multiplication</em>.
+  You will see this time after time in this text.
+  In this lesson, you will discover how elementary row operations can be encoded as matrix multiplication (on the left).
+</p>
+
+<definition xml:id="def-elementary_matrix">
+  <title>Elementary Matrix</title>
+  <statement>
+    <p>
+      An <term>elementary <m>m\times m</m> matrix</term> is a square matrix <m>E</m> such that, for any <m>m\times n</m> matrix <m>A</m>, <m>EA</m> is obtained from <m>A</m> via a single row operation. 
+      In other words, if you fix a row operation <m>R</m>, then for all <m>A</m>, <m>A \stackrel{R}{\sim} EA</m>.
+    </p>
+  </statement>
+</definition>
+
+<question xml:id="activity-discover_elementary_matrices">
+  <title>Discovering Elementary Matrices</title>
+    <p>
+      In this activity, you will explore row operations via transformations, and use this to try to classify elementary <m>2\times 2</m> matrices.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <alert>Part 1: From <m>2\times 1</m> row operation to transformation.</alert> 
+          For each of the below transformations of the plane (given to you <alert>symbolically</alert>), (1) <alert>visually</alert> sketch by hand, and clearly label, what it does to the unit square and (2) describe how it transforms the plane <alert>verbally</alert>, using complete sentences and geometric words.
+          <me>
+            T_1:\begin{bmatrix} x\\ y\end{bmatrix} \mapsto \begin{bmatrix} y\\ x\end{bmatrix} 
+            \qquad
+            T_2:\begin{bmatrix} x\\ y\end{bmatrix} \mapsto \begin{bmatrix} 2x\\ y\end{bmatrix} 
+            \qquad
+            T_3:\begin{bmatrix} x\\ y\end{bmatrix} \mapsto \begin{bmatrix} x+2y\\ y\end{bmatrix}.
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          <alert>Part 2: From transformation to matrix.</alert> 
+          For each of the above transformations, find the matrix the encodes it. Call those matrices <m>E_1</m>, <m>E_2</m>, and <m>E_3</m>, respectively.
+        </p>
+      </li>
+      <li>
+        <p>
+          <alert>Part 3: From matrix to row operation.</alert> 
+          Recall that if <m>A= [\vect{v}_1 \mid \cdots \mid \vect{v}_n]</m>, then <m>EA = [E\vect{v}_1 \mid \cdots \mid E\vect{v}_n]</m>. Find the elementary <m>2\times 2</m> matrix associated to each of the row operations: 
+          <me>
+            r_1 \leftrightarrow r_2, \qquad
+            r_1 \mapsto 2r_1, \qquad
+            r_1 \mapsto r_1 + 2r_2.
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          <alert>Part 4: Generalize.</alert> 
+          Now using your understanding of transformations and matrix multiplication of matrices, write down a complete classification of elementary matrices associated to row operations of <m>2\times n</m> matrices.
+        </p>
+      </li>
+    </ol>
+</question>
+
+<proposition xml:id="prop-classification_of_elementary_matrices">
+  <title>Classification of Elementary Matrices</title>
+  <statement>
+    <p>
+      If <m>E</m> is a <m>2\times 2</m> elementary matrix, then it is of one of the following types:
+      <ol marker="Type 1.">
+        <li>
+          <p>Permutes rows: <m>\begin{bmatrix}0\amp 1\\1\amp 0\end{bmatrix}</m>,</p>
+        </li>
+        <li>
+          <p>Scales a row: <m>\begin{bmatrix}a\amp 0\\0\amp 1\end{bmatrix}</m> or <m>\begin{bmatrix}1\amp 0\\0\amp a\end{bmatrix}</m>, <m>a\neq0</m>, and</p>
+        </li>
+        <li>
+          <p>Adds a multiple of a row to another: <m>\begin{bmatrix}1\amp b\\0\amp 1\end{bmatrix}</m> or <m>\begin{bmatrix}1\amp 0\\b\amp 1\end{bmatrix}</m>.</p>
+        </li>
+      </ol>
+      Elementary <m>n\times n</m> matrices also fall into one of the above types with appropriate modifications.
+    </p>
+  </statement>
+</proposition>
+
+<p>
+  Observe that each elementary <m>2\times 2</m> matrix has a very simple geometric interpretation. 
+  <alert>Type 1</alert> matrices reflect across the line <m>y=x</m>, 
+  <alert>Type 2</alert> matrices stretch a single direction by a factor of <m>|k|</m> (and if <m>k&lt;0</m> reflect in that direction as well), and 
+  <alert>Type 3</alert> matrices are a pure shear in a given direction.
+</p>
+<p>
+  We may now generalize this reasoning to larger matrices. I now introduce a useful <q>auxiliary</q> object to help us reason about <m>m\times m</m> elementary matrices - the <alert>column of rows vector</alert> <m>\vect{r}=\begin{bmatrix}r_1\\ r_2\\ \vdots \\ r_m\end{bmatrix}</m>, whose entries we may think of as generic rows of an <m>m\times n</m> matrix. We will act upon this row vector by both elementary matrices and elementary row operations, thereby helping us connect the row operations with elementary matrices.
+</p>
+
+<example xml:id="ex-elementary_matrix_E_to_op">
+  <title>Interpreting Elementary Matrices as Row Operations</title>
+  <statement>
+    <p>
+      If I tell you that the shear matrix 
+      <me>E = \begin{bmatrix} 1\amp 0\amp 4\\0\amp 1\amp 0\\0\amp 0\amp 1\end{bmatrix}</me> 
+      is an elementary matrix, how can you determine the elementary matrix to which it is associated?
+    </p>
+    <p>
+      Compute (either via linear combination or pointer finger shortcut) the matrix product
+      <me>
+        \begin{bmatrix} 1\amp 0\amp 4\\0\amp 1\amp 0\\0\amp 0\amp 1\end{bmatrix}
+        \begin{bmatrix} r_1\\r_2\\r_3\end{bmatrix}
+        = \begin{bmatrix} r_1+4r_3\\r_2\\r_3\end{bmatrix}.
+      </me>
+      So, multiplication by <m>E</m> tells us to <em>replace row 1 with row 1 plus 4 times row 3</em>, or in symbols, <m>\RowA{1}{3}{4}</m>.
+    </p>
+  </statement>
+</example>
+
+<question xml:id="activity-3x3_elementary_matrix_identification">
+  <title>3x3 Elementary Matrix Identification</title>
+    <p>
+      Each of the below matrices are elementary <m>3\times 3</m> matrices.
+      For each (1) using complete sentences, describe how the matrix transforms <m>\mathbb{R}^3</m>, and (2) what row operation of <m>3\times n</m> matrices does it encode (be precise!)?
+      <me>
+        \begin{bmatrix} 1\amp 0\amp 0\\0\amp -2\amp 0\\0\amp 0\amp 1\end{bmatrix}, \qquad
+        \begin{bmatrix} 1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 3\amp 1\end{bmatrix}, \qquad
+        \begin{bmatrix} 0\amp 0\amp 1\\0\amp 1\amp 0\\1\amp 0\amp 0\end{bmatrix}.
+      </me>
+    </p>
+</question>
+
+<p>
+  To determine the matrix associated to a row operation, there are several strategies. One such strategy is to write down the <q>new</q> column of rows, expand it as a linear combination of the original rows, and use matrix multiplication as linear combination to deduce the matrix. 
+</p>
+
+<example xml:id="ex-elementary_matrix_to_op_E">
+  <title>Encoding a Row Operation as an Elementary Matrix</title>
+  <statement>
+    <p>
+      What <m>3\times 3</m> elementary matrix encodes the row operation <em>replace row 3 with row 3 plus 2 times row 1</em>, or in symbols, <m>\RowA{3}{1}{2}</m>?
+    </p>
+    <p>
+      We want an unknown <m>3\times 3</m> matrix <m>E</m> satisfying
+      <me>
+        E \begin{bmatrix} r_1\\r_2\\r_3\end{bmatrix}
+        = \begin{bmatrix} r_1\\r_2\\r_3+2r_1\end{bmatrix}
+        = r_1\begin{bmatrix} 1\\0\\2\end{bmatrix} + r_2\begin{bmatrix} 0\\1\\0\end{bmatrix} + r_3\begin{bmatrix} 0\\0\\1\end{bmatrix}.
+      </me>
+      Via definition of matrix multiplication as linear combination, 
+      <me>E = \begin{bmatrix} 1\amp 0\amp 0\\0\amp 1\amp 0\\2\amp 0\amp 1\end{bmatrix}.</me>
+    </p>
+  </statement>
+</example>
+
+<p>
+  Now that we can encode a single row operation as multiplication by a single elementary matrix, it follows that a sequence of row operations can be encoded by a product of elementary matrices.
+  In particular, Gaussian elimination can be expressed via a product of elementary matrices!
+</p>
+<p>
+  Let us now revisit our example:
+  <me>
+    \left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 1 \amp  1 \amp  5 \end{array}\right]
+    \rowA{2}{1}{-1}
+    \left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 0 \amp  2 \amp  4 \end{array}\right] 
+    \rowS{2}{\frac{1}{2}}
+    \left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 0 \amp  1 \amp  2 \end{array}\right]
+    \rowA{1}{2}{1}
+    \left[\begin{array}{cc|c} 1 \amp  0 \amp  3 \\ 0 \amp  1 \amp  2 \end{array}\right].
+  </me>
+  In terms of elementary matrices, this can be re-written as:
+  <men xml:id="eq-elimination_elementary_matrix">
+    \begin{bmatrix} 1\amp 1\\0\amp 1\end{bmatrix}
+    \begin{bmatrix} 1\amp 0\\0\amp \frac{1}{2}\end{bmatrix} 
+    \begin{bmatrix} 1\amp 0\\-1\amp 1\end{bmatrix} 
+    \left[\begin{array}{cc|c} 1\amp -1\amp 1\\1\amp 1\amp 5\end{array}\right]   
+    = \left[\begin{array}{cc|c} 1\amp 0\amp 3\\0\amp 1\amp 2\end{array}\right].
+  </men>
+  Observe now how the system equation, the augmented matrix row reduction, and <xref ref="eq-elimination_elementary_matrix"/> encode the same information.
+</p>
+
+<question xml:id="activity-elimination_as_matrix_mult">
+  <title>Elimination as Matrix Multiplication</title>
+    <p>
+      Consider the matrix equation 
+      <me>\begin{bmatrix} 2\amp -2\\1\amp 1\end{bmatrix}\begin{bmatrix} x\\y\end{bmatrix}=\begin{bmatrix} -4\\8\end{bmatrix}.</me>
+    </p>
+    <ol>
+      <li>
+        <p>
+          <alert>Row operations.</alert>
+          Re-write this matrix equation as an augmented matrix and solve it via Gaussian elimination.
+        </p>
+      </li>
+      <li>
+        <p>
+          <alert>Elementary matrices.</alert>
+          Re-interpret your sequence of row operations as a single product of elementary matrices, as in <xref ref="eq-elimination_elementary_matrix" />.
+        </p>
+      </li>
+    </ol>
+</question>
+
+<p>
+  It will be useful in many situations to record sequences of row operations as multiplication by matrices. 
+</p>
+<p>
+  To conclude this lesson, I want to reiterate that matrix multiplication is a concept we already understand and will continue to develop more insights and tools throughout this course. Therefore, it is productive to be able to identify processes we encounter as coming from matrix multiplication, as we may then use the tools of matrix multiplication to analyze these processes. 
+  In this lesson, we encoded the process of row operation as matrix multiplication on the left by elementary matrices. 
+  We will revisit in future lessons both (1) elementary matrices and (2) the mental act of encoding new processes as matrix multiplication.
+</p>
+
+</section>

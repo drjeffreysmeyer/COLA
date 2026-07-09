@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="chapter3" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Matrix Multiplication</title>
+
+  <introduction>
+
+    <p>
+      In this chapter, we introduce compact notation for linear combination, from which matrices and matrix multiplication emerge.   We then analyze matrix multiplication, conceptualizing it as encoding transformations from servings vectors to mixture vectors.  This new perspective is highly valuable in STEM application.
+    </p>
+
+
+    <objectives>
+      <title>Lesson 3.1</title>
+        <ul>
+            <li>
+              <p>I see that in certain quantitative situations, it is meaningful to add and scale vectors.</p>
+            </li>
+        </ul>
+    </objectives>
+
+  </introduction>
+
+  <!-- include sections-->
+    <xi:include href="chapter3sec1.ptx" />
+    <xi:include href="chapter3sec2.ptx" />
+    <xi:include href="chapter3sec3.ptx" />
+    <xi:include href="chapter3sec4.ptx" />
+    <xi:include href="chapter3sec5.ptx" />
+  
+
+</chapter>

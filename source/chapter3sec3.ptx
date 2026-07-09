@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp3sec3" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Matrix Multiplication as Transformation</title>
+
+    <subsection xml:id="subsection-transforming_points_objects">
+        <title>Transforming Points and Objects</title>
+
+        <definition xml:id="def-matrix_transformation">
+            <title>Matrix Transformation</title>
+            <statement>
+                <p>
+                    If <m>A=[\vect{v}_1 \mid \cdots \mid \vect{v}_n]</m> is an <m>m\times n</m> matrix, then the rule where you <em>input</em> the serving size vector <m>\vect{x}\in \mathbb{R}^n</m> and <em>output</em> the mixture vector <m>A\vect{x}= x_1\vect{v}_1+\cdots +x_n\vect{v}_n\in \mathbb{R}^m</m> is a <term>matrix transformation</term> from <m>\mathbb{R}^n</m> to <m>\mathbb{R}^m</m>.
+                </p>
+                <p>
+                    If we give the transformation the <alert>name</alert> <m>T_A</m>, then we write <m>T_A:\mathbb{R}^n \to \mathbb{R}^m</m> such that <m>\vect{x}\mapsto A\vect{x}</m>, or equivalently, <m>T_A(\vect{x}):=A\vect{x}</m>.
+                </p>
+                <p>
+                    If <m>T_A(\vect{x})=\vect{b}</m>, then we say <alert><m>T_A</m> sends <m>\vect{x}</m> to <m>\vect{b}</m></alert>. When <m>A</m> is clear from context, we may write <m>T</m> instead of <m>T_A</m>.
+                </p>
+            </statement>
+        </definition>
+
+        <insight xml:id="matrixmult_meaning2">
+            <title>Matrix Multiplication Meaning #2: <m>A\vect{x}=\vect{b}</m> as Transformation</title>
+            <p>
+                The matrix equation <m>A\vect{x}=\vect{b}</m> <em>means</em> the transformation associated to multiplying by <m>A</m> <em>sends</em> the input serving size vector <m>\vect{x}</m> to the output mixture vector <m>\vect{b}</m>.
+            </p>
+        </insight>
+
+        <p>
+            Matrix transformations have very nice geometric properties and model all sorts of phenomena. For example, these transformations and their generalizations are the basis for tools in computer graphics, cryptography, and machine learning.
+        </p>
+
+        <example xml:id="ex-transforming_point">
+            <title>Transforming a Point</title>
+            <statement>
+                <p>
+                    Consider the matrix transformation <m>T_A:\mathbb{R}^2\to \mathbb{R}^2</m> associated to multiplication by <m>A=\begin{bmatrix} 1 \amp 2 \\ 3 \amp -1 \end{bmatrix}</m>.
+                </p>
+                <p>
+                    For any input vector <m>\vect{x}=\begin{bmatrix}x_1\\x_2\end{bmatrix}</m>, <m>T_A(\vect{x}) = A \vect{x} = x_1\begin{bmatrix} 1 \\ 3 \end{bmatrix} + x_2\begin{bmatrix} 2 \\ -1 \end{bmatrix}</m>. So, for example, <m>T_A\left(\begin{bmatrix} 1 \\ 2 \end{bmatrix}\right) = (1)\begin{bmatrix} 1 \\ 3 \end{bmatrix} + (2)\begin{bmatrix} 2 \\ -1 \end{bmatrix}= \begin{bmatrix} 5 \\ 1 \end{bmatrix}</m>. The transformation <m>T_A</m> <em>sends</em> vector <m>\begin{bmatrix} 1 \\ 2 \end{bmatrix}</m> to vector <m>\begin{bmatrix} 5 \\ 1 \end{bmatrix}</m>.
+                </p>
+                <sidebyside widths="40% 55%" valign="middle">
+                    <p>
+                        Let's visualize this transformation thinking of <em>vectors as points</em>.
+                        <br /><br />
+                        Observe how on the <em>same</em> plot, we draw both input and output. This allows us to <em>see</em> how <m>T_A</m> moves the points in the plane.
+                    </p>
+                    
+                </sidebyside>
+            </statement>
+        </example>
+
+        <remark xml:id="notation-t-vs-a">
+            <title>Notation: <m>T</m> vs <m>A</m></title>
+            <p>
+                Please take note of the following subtle but important point: <m>T</m> is the name of a <em>rule</em> of assignment, while <m>A</m> is the name of a <em>matrix</em>. Think by analogy in calculus when you looked at the function <m>f(x)=2x</m>. The function <m>f</m> is a <em>rule</em> that doubles the input, while <m>2</m> is just a <em>number</em>. While this rule and this number are related, they are distinct mathematical objects, just as <m>T</m> and <m>A</m> are distinct mathematical objects.
+            </p>
+        </remark>
+
+        <p>
+            Points make up objects. When you look at where a matrix transformation sends all the points of an object, you now have a <em>transformed object</em>!
+        </p>
+
+        <definition xml:id="def-transformed_set">
+            <title>Transformed Sets</title>
+            <statement>
+                <p>
+                    If <m>T:\mathbb{R}^n\to\mathbb{R}^m</m> is a matrix transformation and <m>X\subset \mathbb{R}^n</m> is a set of points, then the <term>transformed</term> set is the set of points in <m>\mathbb{R}^m</m> obtained by recording where <m>T</m> sends each point of <m>X</m>.
+                </p>
+                <p>
+                    In symbols <m>T(X) =  \{ T(\vect{x}) \mid \vect{x}\in X\}</m> and we say <m>T</m> <term>sends</term> <m>X</m> to <m>T(X)</m>. We may also say <m>T(X)</m> is the <term>image</term> of <m>X</m> under <m>T</m>.
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            We are interested in understanding where matrix transformations send all sorts of geometric objects, including: lines, line segments, squares, and parallelograms.
+        </p>
+
+        <example xml:id="ex-transforming_line">
+            <title>Transforming a Line</title>
+            <statement>
+                <p>
+                    Consider the matrix transformation <m>T:\mathbb{R}^2\to \mathbb{R}^2</m> associated to multiplication by <m>A=\begin{bmatrix} 1 \amp -1 \\ 1 \amp 1 \end{bmatrix}</m>, and the line <m>\ell = \left\{\begin{bmatrix} 3 \\ 1 \end{bmatrix}+ t\begin{bmatrix} -2 \\ 1 \end{bmatrix} \mid t\in \mathbb{R}\right\}</m>. For each <m>t\in \mathbb{R}</m>, and hence each point on <m>\ell</m>,
+                </p>
+                <p>
+                    <md>
+                        <mrow>T\left(\begin{bmatrix} 3 \\ 1 \end{bmatrix}+ t\begin{bmatrix} -2 \\ 1 \end{bmatrix}\right) \amp =\begin{bmatrix} 1 \amp -1 \\ 1 \amp 1 \end{bmatrix}\left(\begin{bmatrix} 3 \\ 1 \end{bmatrix}+ t\begin{bmatrix} -2 \\ 1 \end{bmatrix}\right) \amp \text{Definition \ref{def-matrix_transformation}}</mrow>
+                        <mrow>\amp =\begin{bmatrix} 1 \amp -1 \\ 1 \amp 1 \end{bmatrix}\begin{bmatrix} 3 \\ 1 \end{bmatrix}+ t\begin{bmatrix} 1 \amp -1 \\ 1 \amp 1 \end{bmatrix}\begin{bmatrix} -2 \\ 1 \end{bmatrix} \amp \text{Proposition \ref{prop_fundamental_matrix_mult_props}}</mrow>
+                        <mrow>\amp =\begin{bmatrix} 2 \\ 4 \end{bmatrix}+ t\begin{bmatrix} -3 \\ -1 \end{bmatrix} \amp \text{Computation}</mrow>
+                    </md>
+                </p>
+                <p>
+                    So <m>T</m> <em>sends</em> <m>\ell</m> to the new <em>line</em> <m>T(\ell) = \left\{\begin{bmatrix} 2 \\ 4 \end{bmatrix}+ t\begin{bmatrix} -3 \\ -1 \end{bmatrix} \mid t\in \mathbb{R}\right\}</m>.
+                </p>
+                <p>
+                    Again, let's visualize this transformation thinking of <em>vectors as points</em>. Lines are composed of points. Each value of parameter <m>t</m> determines a point on the line. Below, we show with the dashed purple curves where several points on <m>\ell</m> are sent to. By following where <m>T</m> sends points, we see that every point on the line <m>\ell</m> is sent to a point on the line <m>T(\ell)</m>.
+                </p>
+                
+            </statement>
+        </example>
+
+        <p>
+            Visualize how playing with the entries of a <m>2\times 2</m> matrix affects how the associated matrix transformation moves lines in the plane at GeoGebra ID: <url href="https://www.geogebra.org/m/abuf7abt">abuf7abt</url>.
+        </p>
+
+        <proposition xml:id="prop-matrices_transform_lines">
+            <title>Matrix transformations send lines to lines</title>
+            <statement>
+                <p>
+                    If <m>A</m> is an <m>m\times n</m> matrix, <m>T:\mathbb{R}^n\to \mathbb{R}^m</m> is the associated transformation <m>\vect{x}\mapsto A\vect{x}</m>, <m>\vect{p},\vect{v}\in \mathbb{R}^n</m>, <m>J\subset \mathbb{R}</m> denotes either a closed interval or all of <m>\mathbb{R}</m>, and <m>\ell = \{\vect{p}+t\vect{v} \mid t\in J\}</m> is a line (segment), then either:
+                </p>
+                <orderedlist>
+                    <item>
+                        <p>
+                            <m>A\vect{v}=\vect{0}</m>, in which case <m>T(\ell)=A\vect{p}</m> (i.e., the whole line is sent to one point), otherwise,
+                        </p>
+                    </item>
+                    <item>
+                        <p>
+                            the transformed line (segment) <m>T(\ell)</m> is also a line (segment) and has parametric vector form <m>\{A\vect{p}+tA\vect{v} \mid t\in J\}</m>.
+                        </p>
+                    </item>
+                </orderedlist>
+            </statement>
+            <proof>
+                <p>
+                    If <m>t\in J</m>, then <m>\vect{p}+t\vect{v}\in \ell</m> and:
+                    <md>
+                        <mrow>T(\vect{p}+t\vect{v}) \amp =A(\vect{p}+t\vect{v})</mrow>
+                        <mrow>\amp =(A\vect{p})+t(A\vect{v}) \amp \text{Proposition \ref{prop_fundamental_matrix_mult_props}}</mrow>
+                    </md>
+                    If <m>A\vect{v}=\vect{0}</m>, then <m>T(\vect{p}+t\vect{v})=A\vect{p}</m>. Otherwise if <m>A\vect{v}\ne\vect{0}</m> and <m>\ell' =  \{A\vect{p}+tA\vect{v} \mid t\in J\}</m>, then we have shown that for each <m>t\in J</m>, <m>T</m> identifies the point on <m>\ell</m> at time <m>t</m> with the point on <m>\ell'</m> at time <m>t</m>, and hence <m>T(\ell)=\ell'</m>.
+                </p>
+            </proof>
+        </proposition>
+
+        <proposition xml:id="prop-matrices_transform_zero">
+            <title>Matrix transformations send <m>\vect{0}</m> to <m>\vect{0}</m></title>
+            <statement>
+                <p>
+                    If <m>A</m> is an <m>m\times n</m> matrix and <m>T:\mathbb{R}^n\to \mathbb{R}^m</m> is the transformation <m>\vect{x}\mapsto A\vect{x}</m>, then <m>T(\vect{0})=\vect{0}</m>.
+                </p>
+            </statement>
+            <proof>
+                <p>
+                    This justification formalizes the intuition that mixing zero serving sizes of vectors results in the zero mixture. If <m>A=[\vect{v}_1 \mid \cdots \mid \vect{v}_n]</m>, then <m>T(\vect{0})=A\vect{0}=[\vect{v}_1 \mid \cdots \mid \vect{v}_n]\vect{0}=0\vect{v}_1+\cdots+0\vect{v}_n=\vect{0}</m>.
+                </p>
+            </proof>
+        </proposition>
+
+        <proposition xml:id="prop-matrices_transform_subspaces">
+            <title>Matrix transformations send subspaces to subspaces</title>
+            <statement>
+                <p>
+                    If <m>A</m> is an <m>m\times n</m> matrix, <m>T:\mathbb{R}^n\to \mathbb{R}^m</m> is the transformation <m>\vect{x}\mapsto A\vect{x}</m> and <m>W\subset \mathbb{R}^n</m> is a subspace, then the transformed subspace <m>T(W)\subset \mathbb{R}^m</m> is a subspace.
+                </p>
+            </statement>
+            <proof>
+                <p>
+                    This justification is an activity in reasoning about <em>properties</em>. Subspaces are defined by having three properties (Definition <xref ref="def-subspace" />). We <em>use</em> the assumption that <m>W</m> has these properties to deduce <m>T(W)</m> also has these properties. In this context, you want to show:
+                </p>
+                <ol>
+                    <li>
+                        <p><alert>Contains Zero.</alert> <m>\vect{0}\in T(W)</m>.</p>
+					</li>
+                    <li>
+                        <p><alert>Closed Under Addition.</alert> If <m>T(\vect{u}),T(\vect{w})\in T(W)</m>, then <m>T(\vect{u})+T(\vect{w})\in T(W)</m>.</p>
+                    </li>
+                    <li>
+                        <p><alert>Closed Under Scaling.</alert> If <m>T(\vect{w})\in T(W)</m> and <m>k\in \mathbb{R}</m>, then <m>kT(\vect{w})\in T(W)</m>.</p>
+                    </li>
+                </ol>
+                <p>
+                    The details of this justification are left as an activity. As a hint,  <xref ref="def-subspace" />,  <xref ref="def-transformed_set" />,  <xref ref="prop-matrices_transform_zero" />, and  <xref ref="prop_fundamental_matrix_mult_props" /> may be useful.
+                </p>
+            </proof>
+        </proposition>
+    </subsection>
+
+    <subsection xml:id="subsection-transformations_of_the_plane">
+        <title>Transformations of the Plane</title>
+
+        <p>
+            For the moment, we will restrict our focus to matrix transformations associated to <m>2\times 2</m> matrices. Such transformations are transformations of the plane. <em>What do matrix transformations do to the plane?</em> The plane is big (in fact infinite!), so it is useful to restrict our focus to well-chosen small subsets of the plane. Perhaps the most reasonable place to start is a square.
+        </p>
+
+        <remark xml:id="language-geometric_transformations">
+            <title>Geometric Words and Geometric Gestures</title>
+            <p>
+                Imagine a square is made out of elastic and you are holding it in your hands. What some clear geometric words and gestures you could use to instruct someone transform that elastic square?
+            </p>
+            <ol>
+                <li>
+                    <p>
+                        <alert>Stretch</alert> by a certain factor in a given direction.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <alert>Reflect</alert> across a given line.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <alert>Rotate</alert> by a certain number of degrees in a given direction.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <alert>Project</alert> onto a line (or origin).
+                    </p>
+                </li>
+				<li>
+                    <p>
+                        <alert>Shear</alert> a line (or vector) to another line while holding another line fixed.
+                    </p>
+                </li>
+                
+            </ol>
+			
+			<image source="images/ai_transforming_square.png" width="100%">
+    		<description> 
+				<p>
+					A cartoon depicting transforming the unit square.
+				</p>
+			</description>
+		</image>
+        </remark>
+
+        <p>
+            We usually visualize transformations of the plane by drawing both the input and output on the <em>same plane</em>. This gives us a sense of the <em>movement</em> of the transformation.
+        </p>
+
+        <definition xml:id="def-unit_square">
+            <title>(Standard) Unit Square</title>
+            <statement>
+                <sidebyside widths="60% 35%" valign="middle">
+                    <p>
+                        The <term>(standard) unit square</term> is the parallelogram <m>S</m> in the Euclidean plane with vertices: <m>O=(0,0)</m>, <m>P=(1,0)</m>, <m>Q=(1,1)</m>, and <m>R=(0,1)</m>.
+                    </p>
+                    
+					
+                </sidebyside>
+            </statement>
+        </definition>
+
+        <p>
+            As a consequence of  <xref ref="prop-matrices_transform_lines" /> and  <xref ref="prop-matrices_transform_zero" />, to see what <m>T</m> does to the unit square <m>S</m>, it suffices to follow the three vertices <m>P</m>, <m>Q</m>, and <m>R</m>. Note that it is always important to clearly follow and label each vertex, as otherwise the pictures could mislead you.
+        </p>
+
+        <example xml:id="ex-transforming_square1">
+            <title>Transforming a Square</title>
+            <statement>
+                <p>
+                    In this example, we walk through how to use matrix multiplication and the unit square <m>S</m> to <em>reason</em> about how <m>T(\vect{x})=\begin{bmatrix}2\amp 0\\0\amp 3\end{bmatrix}\vect{x}</m> transforms the plane.
+                </p>
+                <p>
+                    By the above remarks, it suffices to follow what <m>T</m> does to <m>P</m>, <m>Q</m>, and <m>R</m>. This amounts to the following three computations:
+                </p>
+                <sidebyside widths="60% 35%" valign="middle">
+                    <p>
+                        <md>
+                            <mrow>P'\amp=T\left(\begin{bmatrix}1\\0\end{bmatrix}\right) = \begin{bmatrix}2\amp 0\\0\amp 3\end{bmatrix}\begin{bmatrix}1\\0\end{bmatrix} = \begin{bmatrix}2\\0\end{bmatrix}</mrow>
+                            <mrow>Q'\amp=T\left(\begin{bmatrix}1\\1\end{bmatrix}\right) = \begin{bmatrix}2\amp 0\\0\amp 3\end{bmatrix}\begin{bmatrix}1\\1\end{bmatrix} = \begin{bmatrix}2\\3\end{bmatrix}</mrow>
+                            <mrow>R'\amp=T\left(\begin{bmatrix}0\\1\end{bmatrix}\right) = \begin{bmatrix}2\amp 0\\0\amp 3\end{bmatrix}\begin{bmatrix}0\\1\end{bmatrix} = \begin{bmatrix}0\\3\end{bmatrix}</mrow>
+                        </md>
+                        We plot these points, and since line segments are sent to line segments, we connect them up. We see we have drawn a rectangle.
+                    </p>
+                  </sidebyside>
+                <p>
+                    Now we think to ourselves, <em>if the unit square is made of elastic, and I am holding it within my hands, how can I describe what I would have to do to it to obtain the transformed square?</em> We see that we <em>stretch</em> the square by a factor of 2 in the <m>x</m>-direction and we <em>stretch</em> the square by a factor of 3 in the <m>y</m>-direction.
+                </p>
+                <p>
+                    We have now created visual and verbal representations of the transformation given by the symbolic expression <m>T(\vect{x})=\begin{bmatrix}2\amp 0\\0\amp 3\end{bmatrix}\vect{x}</m>.
+                </p>
+            </statement>
+        </example>
+
+        <question xml:id="activity-matrix-sketches">
+            <statement>
+                <ol>
+                    <item>
+                        <p>
+                            For each of the following matrices, use the type of analysis modeled in Example <xref ref="ex-transforming_square1" /> to:
+                        </p>
+                        <orderedlist label="a">
+                            <item><p>Clearly sketch and label how the matrix transforms the unit square (be sure to follow and label each vertex).</p></item>
+                            <item><p>In complete sentences, use geometric words to describe how the matrix transforms the plane. Be as clear and precise as possible.</p></item>
+                        </orderedlist>
+                        <p>
+                            <md>
+                                <mrow>A\amp=\begin{bmatrix}2\amp 0\\0\amp 3\end{bmatrix} \amp B\amp=\begin{bmatrix}0\amp -1\\1\amp 0\end{bmatrix} \amp C\amp=\begin{bmatrix}1\amp 2\\0\amp 1\end{bmatrix}</mrow>
+                                <mrow>D\amp=\begin{bmatrix}1\amp 0\\0\amp -1\end{bmatrix} \amp E\amp=\begin{bmatrix}0\amp 0\\0\amp 1\end{bmatrix} \amp F\amp=\begin{bmatrix}1\amp 0\\0\amp 1\end{bmatrix}</mrow>
+                            </md>
+                        </p>
+                    </item>
+                    <li>
+                        <p>Look at each matrix and associated transformed square. Can you make a conjecture relating the entries of your matrix to the vertices of the transformed square? How might you justify your conjecture?</p>
+                    </li>
+                    <li>
+                        <p>Look at the parallelogram, <m>Y</m>, depicted in the image below.</p>
+                        <ol label="a">
+                            <li><p>Find a matrix <m>G</m> so that <m>T_G(S)=Y</m>. Verify you are correct.</p></li>
+                            <li><p>Is your matrix the only one that sends the unit square to this parallelogram? Explain.</p></li>
+						</ol>
+                    </li>
+                </ol>
+            </statement>
+        </question>
+
+
+
+        <question xml:id="activity-translation-check">
+            <statement>
+                <p>
+                    A type of transformation we have not yet discussed is <strong>translation</strong>. Do you think translation is a matrix transformation?
+                </p>
+            </statement>
+        </question>
+
+        <technology xml:id="geogebra_TransformationVisualizer">
+            <title>The Transformation Visualizer Tool</title>
+            <statement>
+                <p>
+                    In this activity, you will use the <url href="https://www.geogebra.org/m/prKSK7EV">Transformation Visualizer Tool</url> to investigate and visualize how the entries of a <m>2\times 2</m> matrix affect the way the matrix transforms the unit square, and the plane more generally.
+                </p>
+                <ol>
+                    <li>
+                        <p>
+							<alert>Finding matrix entries to create a given transformation.</alert> 
+                            In this part, you will discover how the entries of the matrix affect the associated transformation. To begin, play with the sliders, one at a time, and then mixing them and see what transformations you get. Now go through systematically: How can you get stretches (vertically or horizontally), shears (horizontally or vertically), reflections across either axis, projections onto either axis, or rotations (counterclockwise or clockwise)? Clearly record your observations.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+							<alert>Creating visual and verbal representations from symbolic representations.</alert>
+                            For each of the following matrices (I) use your <url href="https://www.geogebra.org/m/prKSK7EV">Transformation Visualizer Tool</url> to clearly depict how to the unit square <m>S</m> is transformed and (II) within a text box, use <strong>geometric words</strong> and complete sentences to verbally describe how the
+                        </p>
+                    </li>
+                </ol>
+            </statement>
+        </technology>
+
+    </subsection>
+
+</section>

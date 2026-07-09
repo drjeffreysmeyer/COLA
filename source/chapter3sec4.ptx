@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp3sec4" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Composition</title>
+
+
+    <p>
+        If we have two transformations where the target of the first is the domain of the second, then we can <em>chain them together</em> and <em>the output of the first becomes the input of the second</em>.
+    </p>
+
+			<image source="images/ai_composition.png" width="100%">
+    		<description> 
+				<p>
+					A cartoon visualizing composition.
+				</p>
+			</description>
+		</image>
+
+    <definition xml:id="def-composition">
+        <title>Composition</title>
+        <statement>
+            <p>
+                If <m>T_A:\mathbb{R}^m\to \mathbb{R}^n</m> and <m>T_B:\mathbb{R}^n\to \mathbb{R}^p</m> are matrix transformations, then the <term>composition</term> of transformation <m>T_A</m> followed by transformation <m>T_B</m> is the new transformation
+                <me>\mathbb{R}^m \xrightarrow{T_A} \mathbb{R}^n \xrightarrow{T_B} \mathbb{R}^p, \hspace{2pc} \text{where }\hspace{2pc} \vect{x} \xrightarrow{T_A} A\vect{x} \xrightarrow{T_B} B(A\vect{x}).</me>
+                We denote this new rule <m>T_B\circ T_A : \mathbb{R}^m\to \mathbb{R}^p</m> and if <m>\vect{x}\in\mathbb{R}^m</m>, then <m>(T_B\circ T_A)(\vect{x}) =  T_B(T_A(\vect{x}))=B(A\vect{x})</m>.
+            </p>
+        </statement>
+    </definition>
+
+	<p>
+		Observe that, for composition to make sense, the list-length of the output of the first transformation must be equal to the list-length of inputs for the second matrix transformation.
+	</p>
+	    <warning>
+        <p>
+            In the notation above, <m>T_A</m> is <em>performed first</em>, and <m>T_B</m> is <em>performed second</em>. In other words, since we are using function notation, we read the transformation from <em>right to left</em>!
+        </p>
+    </warning>
+
+    <p>
+        Composition is a very general concept which extends far beyond linear algebra. You will see it in calculus, analysis, geometry, and algebra, just to name a few places. 
+		
+		However, if both <m>T_1</m> and <m>T_2</m> are matrix transformations, i.e., there exist matrices <m>A_1</m> and <m>A_2</m> such that <m>T_1(\vect{y})=A_1\vect{y}</m> and <m>T_2(\vect{x})=A_2\vect{x}</m>, then the composition is also a matrix transformation!
+    </p>
+
+    <proposition xml:id="prop-composition-matrix">
+        <title>The composition of matrix transformations is a matrix transformation</title>
+        <statement>
+            <p>
+                If <m>T_B(\vect{y})=B\vect{y}</m> and <m>T_A(\vect{x})=A\vect{x}</m>, then <m>(T_B\circ T_A)(\vect{x}) = (BA)\vect{x}</m>.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Since matrix multiplication is <em>associative</em> (Proposition <xref ref="prop_fundamental_matrix_mult_props2"/>)
+                <me>(T_B\circ T_A)(\vect{x})=T_B(T_A(\vect{x}))=B(A\vect{x})=(BA)\vect{x}.</me>
+            </p>
+        </proof>
+    </proposition>
+
+
+
+    <example xml:id="ex-composition-shear">
+        <statement>
+            <p>
+                The product <m>\begin{bmatrix}2\amp 6\\0\amp 3\end{bmatrix}=\begin{bmatrix}1\amp 2\\0\amp 1\end{bmatrix}\begin{bmatrix}2\amp 0\\0\amp 3\end{bmatrix}</m> <em>means</em> <strong>first</strong> stretch by a factor of 2 in the <m>x</m>-direction and factor of 3 in the <m>y</m>-direction, and <strong>next</strong> shear the <m>y</m>-axis in the <m>x</m>-direction to the line <m>y=\frac{1}{2}x</m>.
+            </p>
+            <figure xml:id="fig-transformation-plot">
+                
+            </figure>
+            <p>
+                Observe that if you performed the composition in the opposite order, you would get a different transformation!
+            </p>
+        </statement>
+    </example>
+
+    <p>
+        Visualize composition as the product of matrices at GeoGebra ID: <url href="https://www.geogebra.org/m/nq5kewqt"><strong>nq5kewqt</strong></url>.
+    </p>
+
+    <question xml:id="activity-ch2-composition">
+        <title>Symbolic to Verbal</title>
+        <statement>
+            <p>
+                Given the following product, give a step by step list of how it transforms the plane. Be sure to use complete sentences and geometric words.
+                <me>\begin{bmatrix}0\amp -1\\1\amp 0\end{bmatrix} \begin{bmatrix}1\amp 0\\0\amp -1\end{bmatrix} \begin{bmatrix}1\amp 3\\0\amp 1\end{bmatrix}</me>
+            </p>
+        </statement>
+    </question>
+
+    <question xml:id="activity-composition-verbal-to-symbolic">
+        <title>Verbal to Symbolic</title>
+        <statement>
+            <p>
+                Given the following list of transformations, give the associated matrix product:
+            </p>
+            <ol>
+                <li><p>Rotate <m>90^\circ</m> clockwise,</p></li>
+                <li><p>Reflect across the <m>x</m>-axis,</p></li>
+                <li><p>Stretch by a factor of 5 in the <m>x</m>-direction (and nothing in the <m>y</m>-direction).</p></li>
+            </ol>
+        </statement>
+    </question>
+
+    <question xml:id="geogebra-identifying-compositions">
+        <title>Identifying Compositions</title>
+        <statement>
+            <p>
+                In this activity, you will expand upon GeoGebra Activity <xref ref="geogebra_TransformationVisualizer"/>, looking more carefully at certain special classes of matrices which correspond to <em>compositions</em> of simple transformations.
+            </p>
+            <ol>
+                <li>
+                    <p>
+                        <strong>Setting it up again.</strong> Quickly rebuild your <smallcaps>Transformation Visualizer Tool</smallcaps>. This is good practice as this should only take a moment. This should include the unit square, a matrix <m>A</m>, and the transformed unit square.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Analyzing a new class of transformations.</strong> In this part, you will analyze the transformations given by the class of matrices of the form <m>A=\begin{bmatrix}a\amp -b\\b\amp a\end{bmatrix}</m>. Define two <c>sliders</c> <m>a</m> and <m>b</m>, and within the <strong>Algebra Window</strong>, insert them in the appropriate places to create the matrix <m>A</m>. Start analyzing the transformed unit square. Try a few specific values such at <m>a=1,b=-1</m> and <m>a=3,b=4</m>. What do you see? Now as you vary <m>a</m> and <m>b</m>, what types of transformations are you seeing? Can you identify these transformations as a composition of two simple geometric transformations (e.g., stretch, shear, reflect, rotate, and/or project)? Once you have some confidence in your description, carefully record it using geometric words in complete sentences.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <strong>Analyzing a new class of transformations.</strong> Repeat Part 2 for matrix <m>B=\begin{bmatrix}c\amp 1\\0\amp c\end{bmatrix}</m> and <c>slider</c> <m>c</m>. Start with values <m>c=1</m>, then <m>c=2</m>, and then go from there.
+                    </p>
+                </li>
+            </ol>
+        </statement>
+    </question>
+
+    <insight xml:id="insight-decomposition-strategy">
+        <title>Decomposition as a problem solving strategy</title>
+        <p>
+            A major goal of future lessons (see, for example, <xref ref="chapter8"/>) is to decompose a complicated matrix into a product of simpler matrices, thereby allowing us to identify its associated transformation as a composition of simple transformations.
+        </p>
+    </insight>
+</section>

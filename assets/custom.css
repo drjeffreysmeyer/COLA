@@ -1,0 +1,87 @@
+/* Custom Colors for PreTeXt Blocks */
+/* =========================================
+   1. COLOR PALETTES (LIGHT AND DARK)
+   ========================================= */
+
+/* Default / Light Mode Colors */
+:root {
+    /* Definition Colors - Blue */
+    --def-border: #0984e3;
+    --def-bg: #ebf6ff;
+    --def-text: #ffffff;
+
+    /* Proposition Colors - Red */
+    --prop-border: #ff0000;
+    --prop-bg: hsla(0, 100%, 50%, 0.2);
+    --prop-text: #ffffff;
+
+    /* Example Colors - Orange */
+    --ex-border: #FF8C00;
+    --ex-bg: #ffd5807f;
+    --ex-text: #ffffff;
+
+    /* Question Colors - Purple */
+    --question-border: #bf00ff;
+    --question-bg: #bf00ff18;
+    --question-text: #ffffff;
+}
+
+/* Definition - Blue Theme */
+article.definition {
+    border: 4px solid var(--def-border) !important;
+    background-color: var(--def-bg) !important;
+}
+article.definition .heading {
+    color: var(--def-text) !important;
+    background-color: var(--def-border) !important;
+}
+
+/* Proposition - Red Theme */
+article.proposition {
+    border: 4px solid var(--prop-border) !important;
+    background-color: var(--prop-bg) !important;
+}
+article.proposition .heading {
+    color: var(--prop-text) !important;
+    background-color: var(--prop-border) !important;
+}
+/* Theorem - Red Theme */
+article.theorem {
+    border: 4px solid var(--prop-border) !important;
+    background-color: var(--prop-bg) !important;
+}
+article.theorem .heading {
+    color: var(--prop-text) !important;
+    background-color: var(--prop-border) !important;
+}
+/* Corollary - Red Theme */
+article.corollary {
+    border: 4px solid var(--prop-border) !important;
+    background-color: var(--prop-bg) !important;
+}
+article.corollary .heading {
+    color: var(--prop-text) !important;
+    background-color: var(--prop-border) !important;
+}
+
+/* Example - Orange Theme */
+article.example {
+    border-left: 4px solid var(--ex-border) !important;
+    border-bottom: 4px solid var(--ex-border) !important;
+    background-color: var(--ex-bg) !important;
+}
+article.example .heading {
+    color: var(--ex-text) !important;
+    background-color: var(--ex-border) !important;
+}
+
+/* Example - Purple Theme */
+article.question {
+    border-left: 4px solid var(--question-border) !important;
+    border-bottom: 4px solid var(--question-border) !important;
+    background-color: var(--question-bg) !important;
+}
+article.question .heading {
+    color: var(--question-text) !important;
+    background-color:  var(--question-border) !important;
+}

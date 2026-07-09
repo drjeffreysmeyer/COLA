@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp4sec3b" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Interpreting RREF</title>
+
+
+  <p>
+    Before we go any further computationally putting a matrix in rref, let us spend time making sure you understand how to use an rref'ed augmented matrix to write down the solution set as a <m>k</m>-plane in parametric vector form. 
+    In so doing, you will see why rref is so useful.
+  </p>
+
+  <p>
+    Recall that row equivalent systems have the same solution sets and each row of the system gives a constraint on the solution vectors. 
+    The rows of <m>\rref\left([A|\vect{b}]\right)</m> give the <q>simplest</q> collection of constraining equations, in that you have eliminated as many variables as possible. 
+    These constraining equations can be easily rewritten and substituted onto the entries of a solution vector. 
+    The variables that will be constrained by the equations of <m>\rref\left([A|\vect{b}]\right)</m> are determined variables, while variables that are not constrained are free variables.
+  </p>
+
+  <definition xml:id="def-free_and_determined_variables">
+    <title>Determined and Free Variables</title>
+    <statement>
+      <p>
+        If <m>A \begin{bmatrix} x_1 \\ \vdots \\ x_n \end{bmatrix} = \vect{b}</m> is a matrix equation, <m>\rref\left([A|\vect{b}]\right) = [B | \vect{c}]</m>, and <m>i \in \{1,\ldots,n\}</m>, then <m>x_i</m> is a:
+      </p>
+      <ol>
+        <li>
+          <p><alert>determined variable</alert> if the <m>i^{\text{th}}</m> column of <m>B</m> has a leading 1, and</p>
+        </li>
+        <li>
+          <p><alert>free variable</alert> if the <m>i^{\text{th}}</m> column of <m>B</m> does not have a leading 1.</p>
+        </li>
+      </ol>
+    </statement>
+  </definition>
+
+  <p>
+    We now go over several examples of how to use the constraining equations of <m>\rref\left([A|\vect{b}]\right)</m> to determine the parametric vector form of <m>\operatorname{Sol}(A,\vect{b})</m>.
+  </p>
+
+  <example xml:id="ex-interpreting-rref-no-free">
+    <title>Interpreting rref with No Free Variables</title>
+    <statement>
+      <p>
+        Revisiting our previous computation, we have
+        <me>\rref\left(\begin{bmatrix} 1 \amp -1 \amp 1 \\ 1 \amp 1 \amp 5 \end{bmatrix}\right) = \begin{bmatrix} 1 \amp 0 \amp 3 \\ 0 \amp 1 \amp 2 \end{bmatrix},</me>
+        the latter being in rref. Each row is a constraint on solution vectors. These constraining equations are
+        <me>\begin{cases} x=3 \\ y=2 \end{cases}</me>
+        I pick a solution vector <m>\begin{bmatrix} x \\ y \end{bmatrix} \in \operatorname{Sol}\left(\begin{bmatrix} 1 \amp -1 \\ 1 \amp 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 5 \end{bmatrix}\right)</m> and substitute in the constraining equations:
+        <me>\begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 3 \\ 2 \end{bmatrix} \quad \text{which implies} \quad \operatorname{Sol}\left(\begin{bmatrix} 1 \amp -1 \\ 1 \amp 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 5 \end{bmatrix}\right) = \left\{\begin{bmatrix} 3 \\ 2 \end{bmatrix}\right\}.</me>
+      </p>
+    </statement>
+  </example>
+
+<example xml:id="ex_interpretting_free_variables">
+  <title>Interpreting rref with Free Variables</title>
+  <statement>
+    <p>
+      The following type of reduced row echelon matrix often confuses students, so let's look at it carefully:
+      <me>\rref\left([A \mid \vect{b}]\right) = \left[\begin{array}{ccc|c} 1 \amp 0 \amp -1 \amp 3 \\ 0 \amp 1 \amp 4 \amp 2 \end{array}\right].</me>
+      There are three columns left of the equals bar, hence we are working in <m>\mathbb{R}^3</m> and a hyperplane in this context is a plane.
+      Since there are two rows, this is a system of two planes. 
+      The solution set is the intersection of these two planes, which we see to be a line.  
+      As such, we should write our solution set using <term>parametric vector form of a line</term> in <m>\mathbb{R}^3</m>.
+    </p>
+    <p>
+      Each row is a constraint on solution vectors. These constraining equations are
+      <me>
+        \begin{cases} x-z=3 \\ y+4z= 2 \end{cases}
+        \quad \text{and therefore} \quad
+        \begin{cases} x=3+z \\ y= 2-4z \end{cases}.
+      </me>
+      Observe that <m>z</m> is a <term>free variable</term> and <m>x</m> and <m>y</m> are <term>determined</term> by <m>z</m>.   
+      I pick a solution vector <m>\begin{bmatrix} x \\ y \\ z \end{bmatrix} \in \operatorname{Sol}\left(A, \vect{b}\right)</m> and substitute in the constraining equations:
+      <me>
+        \begin{bmatrix} x \\ y \\ z \end{bmatrix} 
+        = \begin{bmatrix} 3+z \\ 2-4z \\ z \end{bmatrix} 
+        = \begin{bmatrix} 3 \\ 2 \\ 0 \end{bmatrix} + z \begin{bmatrix} 1 \\ -4 \\ 1 \end{bmatrix}
+        \quad \text{which implies} \quad
+        \operatorname{Sol}(A,\vect{b}) = \left\{ \begin{bmatrix} 3 \\ 2 \\ 0 \end{bmatrix} + z \begin{bmatrix} 1 \\ -4 \\ 1 \end{bmatrix} \,\,\middle|\,\, z \in \mathbb{R} \right\}.
+      </me>
+    </p>
+  </statement>
+</example>
+
+<example xml:id="ex-interpretting_zero_row">
+  <title>Interpreting rref with a Zero Row</title>
+  <statement>
+    <p>
+      Suppose
+      <me>
+        \rref\left([A \mid \vect{b}]\right) = 
+        \left[\begin{array}{ccc|c}
+        1 \amp 0 \amp -5 \amp 2 \\
+        0 \amp 1 \amp -2 \amp 3 \\
+        \color{red}{0} \amp \color{red}{0} \amp \color{red}{0} \amp \color{red}{0}
+        \end{array}\right] 
+        \quad \text{and} \quad
+        \rref\left([B \mid \vect{c}]\right) = 
+        \left[\begin{array}{ccc|c}
+        1 \amp 0 \amp -5 \amp 2 \\
+        0 \amp 1 \amp -2 \amp 3
+        \end{array}\right].
+      </me>
+      The third constraint of <m>\rref\left([A \mid \vect{b}]\right)</m> means that a solution vector <m>\begin{bmatrix} x \\ y \\ z \end{bmatrix} \in \operatorname{Sol}\left(A, \vect{b}\right)</m> must satisfy
+      <me>\color{red}{0x + 0y + 0z = 0}.</me>
+      All vectors satisfy this, so this is not a meaningful constraint.
+      So, even though <m>\rref\left([A \mid \vect{b}]\right) \neq \rref\left([B \mid \vect{c}]\right)</m>, their solution sets are equal, <m>\operatorname{Sol}(A,\vect{b}) = \operatorname{Sol}(B,\vect{c})</m>!
+    </p>
+  </statement>
+</example>
+
+<p>
+  In contrast to a zero row, I call a row of all zeros before the equals bar and a one after the equals bar a zero-one row.
+</p>
+
+<example xml:id="ex-interpretting_zero_one_row">
+  <title>Interpreting rref with a Zero-One Row</title>
+  <statement>
+    <p>
+      Suppose
+      <me>
+        \rref\left([A \mid \vect{b}]\right) = 
+        \left[\begin{array}{ccc|c}
+        1 \amp 0 \amp -5 \amp 2 \\
+        0 \amp 1 \amp -2 \amp 3 \\
+        \color{red}{0} \amp \color{red}{0} \amp \color{red}{0} \amp \color{red}{1}
+        \end{array}\right].
+      </me>
+      The third constraint of <m>\rref\left([A \mid \vect{b}]\right)</m> means that a solution vector <m>\begin{bmatrix} x \\ y \\ z \end{bmatrix} \in \operatorname{Sol}\left(A, \vect{b}\right)</m> must satisfy
+      <me>\color{red}{0x + 0y + 0z = 1}.</me>
+      No such vector exists! This constraint implies that the solution set is empty, <m>\operatorname{Sol}(A,\vect{b}) = \varnothing</m>!
+    </p>
+  </statement>
+</example>
+
+<insight xml:id="interpretation-solution_sets">
+  <title>Solution Sets as <m>k</m>-Planes in Parametric Vector Form</title>
+  <statement>
+    <p>
+      If we have <m>\rref\left([A \mid \vect{b}]\right) = [B \mid \vect{c}]</m>, how do we find the solution set?
+    </p>
+    <p>
+      <ol>
+        <li>
+          <p>
+            A zero-one row, a row which is zero to the left of the equals bar but is 1 to the right, means the solution set is empty. We may say the matrix equation has <term>no solution</term> or is <term>inconsistent</term>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Zero rows say nothing and can be ignored.
+          </p>
+        </li>
+        <li>
+          <p>
+            Each row that is not a zero-one row or zero row will contribute a constraint. Re-write each such equation to <em>solve for the determined variables in terms of the free variables</em>.
+          </p>
+        </li>
+        <li>
+          <p>
+            To find the parametric vector form of the solution set, write <m>\vect{x} \in \operatorname{Sol}(A,\vect{b})</m>, substitute in each constraining equation, and then split apart this vector into a linear combination revealing the parametric vector form of the solution set.
+          </p>
+        </li>
+        <li>
+          <p>
+            Each free variable will contribute a velocity vector, and the collection of these velocity vectors is separated and hence independent.
+          </p>
+        </li>
+        <li>
+          <p>
+            The solution set <m>\operatorname{Sol}(A,\vect{b})$</m> will be a <m>k</m>-plane where <m>k</m> is the number of free variables.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</insight>
+
+<activity xml:id="activity-practice_interpreting_rref">
+  <title>Practice Interpreting rref</title>
+  <statement>
+    <p>
+      In this activity, you will practice using the information of a row reduced augmented matrix <m>\rref\left([A \mid \vect{b}]\right)</m> to describe its solution set.
+      For each rref matrix below, clearly identify the free variables and then write the solution set, <m>\operatorname{Sol}(A,\vect{b})</m>, in parametric vector form.
+      <me>
+        \left[\begin{array}{cccc|c} 1 \amp 0 \amp -1 \amp 2 \amp 5 \\ 0 \amp 1 \amp -1 \amp 3 \amp 2 \end{array}\right], \quad
+        \left[\begin{array}{cc|c} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{array}\right], \quad
+        \left[\begin{array}{ccc|c} 1 \amp 0 \amp 0 \amp 2 \\ 0 \amp 1 \amp 0 \amp 3 \\ 0 \amp 0 \amp 1 \amp 1 \end{array}\right], \quad
+        \left[\begin{array}{ccc|c} 1 \amp 1 \amp 0 \amp 3 \\ 0 \amp 0 \amp 1 \amp 4 \end{array}\right]
+      </me>
+    </p>
+  </statement>
+</activity>
+
+<p>
+  As we conclude this lesson, keep in mind we introduced the concept of reduced row echelon form and focused on two associated mental actions: computing and interpreting (the parametric vector form of solution sets). 
+  The two go hand-in-hand and you should practice and be proficient with both.
+</p>
+
+</section>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="chapter9" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Determinant</title>
+
+  <introduction>
+
+    <p>
+      
+    </p>
+
+
+    <objectives>
+      <title>Lesson 3.1</title>
+        <ul>
+            <li><p>I see that in certain quantitative situations, it is meaningful to add and scale vectors.</p></li>
+        </ul>
+    </objectives>
+
+  </introduction>
+
+  <!-- include sections-->
+    <xi:include href="chapter9sec1.ptx" />
+    <xi:include href="chapter9sec2.ptx" />
+    <xi:include href="chapter9sec3.ptx" />
+   
+
+</chapter>

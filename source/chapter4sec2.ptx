@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp4sec2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Expectations for Intersections</title>
+
+<p>
+    Before we start symbolically solving for solution sets, we should develop our intuition so we have an <em>expectation</em> as to the form of the most likely solution set. This way of thinking is an important part of thinking like a mathematician and helps us be more than just symbol pushers.
+</p>
+
+<p>
+    In this lesson, we will think of solution sets as intersections (see <xref ref="meaning-mm3_int" />). More precisely, if <m>A</m> is an <m>m \times n</m> matrix and <m>A\vect{x}=\vect{b}</m>, then this matrix equation corresponds to a system of <m>m</m>-many hyperplanes in <m>\mathbb{R}^n</m> and <m>\Sol(A,\vect{b})</m> is its intersection. We will be guided by two motivating questions:
+</p>
+
+<ol>
+    <li>
+        <p>What are all the different <em>types of configurations</em> of <m>m</m>-many hyperplanes in <m>\mathbb{R}^n</m> and what do their intersections look like?</p>
+    </li>
+    <li>
+        <p>Are some of the types of configurations more likely to occur than others?</p>
+    </li>
+</ol>
+
+<p>
+    To start, think about two lines in the plane. There are three possible types of configurations:
+</p>
+
+<ol>
+    <li>
+        <title>Disjoint</title>
+        <p>Parallel, but not equal. In this case their intersection is empty.</p>
+    </li>
+    <li>
+        <title>Crossing</title>
+        <p>Intersecting, but not equal. In this case their intersection is a point.</p>
+    </li>
+    <li>
+        <title>Equal</title>
+        <p>Equal. In this case their intersection is that line (and hence infinite).</p>
+    </li>
+</ol>
+
+<figure xml:id="figure-two_lines_in_plane">
+    <caption>Types of configurations of two lines in the plane: disjoint, crossing, and equal.</caption>
+    <image source="images/4.2_intersecting_2lines.png" width="100%">
+			<description> 
+			<p>
+				Configurations of two intersecting lines in <m>\R^2</m>.
+			</p>
+			</description>
+		</image>
+</figure>
+
+<p>
+    Now let's think about <em>three</em> lines in the plane. Three lines can be formed by adding a line to our two-line configurations. If my third line is equal to either of the first two, then I do not get a new configuration - the picture will look the same. There are four possible new types of configurations:
+</p>
+
+<figure xml:id="figure-three_lines_in_plane">
+    <caption>New types of configurations of three lines in the plane.</caption>
+    
+	    <image source="images/4.2_intersecting_3lines.png" width="100%">
+			<description> 
+			<p>
+				Configurations of three intersecting lines in <m>\R^2</m>.
+			</p>
+			</description>
+		</image>
+
+</figure>
+
+<p>
+    Only the last configuration, where all lines go through a single point, has a nonempty intersection. Take a moment to reason through why all the others have an empty intersection.
+</p>
+
+<question xml:id="activity-intersections_random_lines">
+    <title>Intersections of Random Lines in 2-Space</title>
+        <p>
+            If you <em>randomly</em> toss two lines into 2-space, what do you <em>expect</em> their intersection to be? Are all configurations equally likely or perhaps would you expect one to happen more frequently than the others? In this activity, you will explore intersections of random lines in the plane using the <alert>Line Tossing Tool</alert> at GeoGebra ID: <url href="https://www.geogebra.org/m/r72dwnmr">r72dwnmr</url>.
+        </p>
+    <ol>
+        <li>
+            <alert>Sampling</alert>
+                <p>Show and then re-toss line 2 <em>10 times</em>. Count how many times line 1 and line 2 are disjoint, crossing, and equal. Record your findings.</p>
+        </li>
+        <li>
+            <alert>Conjecture and Informal Justification</alert>
+                <p>Do your findings suggest one of the types of configurations occur more often than the others? Make and clearly write down a conjecture. Try to provide an informal justification for your conjecture.</p>
+        </li>
+        <li>
+            <alert>Interpret</alert>
+                <p>What would your conjecture mean about how likely it would be you could make a random vector in <m>\mathbb{R}^2</m> with two random vectors in <m>\mathbb{R}^2</m>. (If necessary, revisit how to move from Meaning <xref ref="meaning-mm3_int" />: Intersection to Meaning <xref ref="matrixmult_meaning1" />: Mixture in <xref ref="chp3sec1" />.)</p>
+        </li>
+        <li>
+            <alert>Repeated Reasoning</alert>
+                <p>Repeat the above reasoning for a third line. Show and then re-toss line 3 <em>10 times</em>. Record the types of configurations are you observing. (Be sure to move the window and zoom in as necessary to investigate.) Make a conjecture as to which configurations occur most often and try to justify. (Hint for justification: focus on comparing line 3 with the intersection of the previous lines.)</p>
+        </li>
+        <li>
+            <alert>Interpret</alert>
+                <p>Interpret what your conjecture would mean about how likely it would be you could make a random vector in <m>\mathbb{R}^3</m> with two random vectors in <m>\mathbb{R}^3</m>.</p>
+        </li>
+        <li>
+            <alert>Generalize</alert>
+                <p>Generalize your conjecture to the expected intersection of <m>m</m>-many lines in the plane. Interpret this conjecture in terms of the makeability of a random vector with two random vectors in <m>\mathbb{R}^m</m>.</p>
+        </li>
+    </ol>
+</question>
+
+<p>
+    I will now provide some explanation for what you found.
+</p>
+
+<p>
+    Start by tossing in your first line. It has some slope <m>s_1</m>. Now let's toss in our second line. This second line could be <em>any</em> line, so its slope <m>s_2</m> could be any real number. What is the odds that this number is precisely <m>s_1</m>? This almost certainly will not happen. So, while there are exceptions, you should <em>expect</em> a random system of two lines in the plane to intersect at a single point.
+</p>
+
+<p>
+    What happens what you toss a third line into the plane? What do you <em>expect</em> their intersection to be? While there are many more possible configurations, remember, most likely the first two lines intersect at a single point, and almost certainly, the third line does not go through that point. So, while there are exceptions, you should <em>expect</em> a system of three lines in the plane to not share an intersection point, i.e. the associated solution set is empty.
+</p>
+
+<p>
+    More generally we have the following:
+</p>
+
+<insight xml:id="expectation-lines_in_r2">
+    <title>Expectation: Lines in 2-Space</title>
+    <p>
+        If <m>m</m> lines are randomly tossed into the plane, then we expect their intersection to be:
+    </p>
+    <orderedlist>
+        <item>
+            <p>A line if <m>m=1</m>,</p>
+        </item>
+        <item>
+            <p>A point if <m>m=2</m>,</p>
+        </item>
+        <item>
+            <p>Empty if <m>m \ge 3</m>.</p>
+        </item>
+    </orderedlist>
+</insight>
+
+<question xml:id="activity-expectations_planes_R3">
+    <title>Expectations of Planes in 3-Space</title>
+        <p>
+            If you <em>randomly</em> toss two planes into 3-space, what do you <em>expect</em> their intersection to be? Are all configurations equally likely or perhaps would you expect one to happen more frequently than the others? In this activity, you will explore intersections of random planes in 3-space using the <alert>Plane Tossing Tool</alert> at GeoGebra ID: <url href="https://www.geogebra.org/m/gvhnggvy">gvhnggvy</url>.
+        </p>
+    <ol>
+        <li>
+            <alert>Enumerate Configurations of 2 Planes</alert>
+                <p>To begin, consider 2 planes in 3-space. There are three possible types of configurations. Both sketch and describe in sentences each type of configuration. In each case, what does their intersection look like?</p>
+        </li>
+        <li>
+            <alert>Likelihood of Configurations of 2 Planes</alert>
+                <p>Using the <alert>Plane Tossing Tool</alert>, show and then re-toss plane 2 <em>10 times</em>. Count how many times plane 1 and plane 2 are in each of the above three types of configurations. Record your findings. Do your findings suggest one of the types of configurations occur more often than the others? Make and clearly write down a conjecture. Try to provide an informal justification for your conjecture.</p>
+        </li>
+        <li>
+            <alert>Interpret</alert>
+                <p>What would your conjecture mean about how likely it would be you could make a random vector in <m>\mathbb{R}^2</m> with three random vectors in <m>\mathbb{R}^2</m>. (If necessary, revisit how to move from Meaning <xref ref="meaning-mm3_int" />: Intersection to Meaning <xref ref="matrixmult_meaning1" />: Mixture in Lesson <xref ref="chp4sec1" />.)</p>
+        </li>
+        <li>
+            <alert>Repeated Reasoning - Configurations of 3 Planes</alert>
+                <p>Try to list all of the possible types of configurations of 3 planes. (Hint: build upon your list of configurations of 2 planes.) Using the <alert>Plane Tossing Tool</alert>, show and then re-toss plane 3 <em>10 times</em>. Count the number of times you observe the different types of configurations. Do your findings suggest one of the types of configurations occur more often than the others? Make and clearly write down a conjecture. Try to provide an informal justification for your conjecture. (Hint for justification: focus on comparing plane 3 with the intersection of the previous planes.)</p>
+        </li>
+        <li>
+            <alert>Repeated Reasoning - Configurations of 4 Planes</alert>
+                <p>Using the <alert>Plane Tossing Tool</alert>, show and then re-toss plane 4 <em>10 times</em>. Count the number of times you observe the different types of configurations. (Hint: If you find that your screen is getting too messy, then select <em>Show intersection of 3 planes</em> and deselect <em>Show Plane 1</em>, <em>Show Plane 2</em>, and <em>Show Plane 3</em>. That way, you can focus on comparing the intersection of the first three with plane 4.) Do your findings suggest one of the types of configurations occur more often than the others? Make and clearly write down a conjecture. Try to provide an informal justification for your conjecture. (Hint for justification: focus on comparing plane 4 with the intersection of the previous planes.)</p>
+        </li>
+        <li>
+            <alert>Generalize</alert>
+                <p>Generalize your conjecture to the expected intersection of <m>m</m>-many planes in 3-space. Interpret this conjecture in terms of the makeability of a random vector with three random vectors in <m>\mathbb{R}^m</m>.</p>
+        </li>
+    </ol>
+</question>
+
+<p>
+    After having gone through <xref ref="activity-expectations_planes_R3" />, you should have established the following expectations for the intersection of <m>m</m>-many planes in 3-space.
+</p>
+
+<insight xml:id="expectation-planes_in_r3">
+    <title>Expectation: Planes in 3-Space</title>
+    <p>
+        If <m>m</m> planes are randomly tossed into 3-space, then we expect their intersection to be:
+    </p>
+    <orderedlist>
+        <item>
+            <p>A plane if <m>m=1</m>,</p>
+        </item>
+        <item>
+            <p>A line if <m>m=2</m>,</p>
+        </item>
+        <item>
+            <p>A point if <m>m=3</m>,</p>
+        </item>
+        <item>
+            <p>Empty if <m>m \ge 4</m>.</p>
+        </item>
+    </orderedlist>
+</insight>
+
+<figure xml:id="figure-random_intersecting_planes">
+    <caption>Two planes in 3-space intersecting in a line.</caption>
+        <image source="images/4.2_intersecting_planes.png" width="100%">
+			<description> 
+			<p>
+				Configuration of two intersecting lines in <m>\R^3</m>.
+			</p>
+			</description>
+		</image>
+</figure>
+
+<p>
+    Now let's try to generalize to <m>n</m>-space, for <m>n \gt 3</m>. We know a single hyperplane is an <m>(n-1)</m>-plane (see <xref ref="def-kplane" />). From our observations in 2-space and 3-space, the following appears to be true: <em>if we intersect a <m>k</m>-plane with a random hyperplane, then we are most likely to get a <m>(k-1)</m>-plane.</em> This is in fact something we will be able to algebraically justify in future lessons.
+</p>
+
+<p>
+    Putting this together, we can generalize our thinking to the following expectations.
+</p>
+
+<insight xml:id="expectation-hyperplanes_in_rn">
+    <title>Expectation: Hyperplanes in <m>n</m>-Space</title>
+    <p>
+        If <m>m</m> hyperplanes are randomly tossed into <m>n</m>-space, then we expect their intersection to be:
+    </p>
+    <orderedlist>
+        <item>
+            <p>an <m>(n-m)</m>-plane if <m>m \le n</m>, (see <xref ref="def-kplane" />). In particular, when <m>m=n</m> we expect a point.</p>
+        </item>
+        <item>
+            <p>empty if <m>m \gt n</m>.</p>
+        </item>
+    </orderedlist>
+</insight>
+
+<question xml:id="geoactivity_visualizingintersections">
+    <title>Visualizing Intersections of Hyperplanes</title>
+        <p>
+            In this activity, you will reason about and visualize the intersections of hyperplanes in <m>\mathbb{R}^2</m> and <m>\mathbb{R}^3</m>. You will use these intersections to then reason about solution sets of matrix equations. The GeoGebra objects you should gain proficiency with are: <c>Line</c>, <c>Plane</c>, <c>Intersect</c>, and <c>Intersect Two Surfaces</c>. The four systems of hyperplanes you will be working with are below. Go through the parts for each one separately.
+        </p>
+
+        <p>
+            <me>
+                \text{System I: } \begin{cases} 2x + 3y = 13 \\ x + 4y = 14 \end{cases} \qquad \text{System II: } \begin{cases} x - 2y = 4 \\ x - y = 5 \\ 2y = 6 \end{cases}
+            </me>
+            <me>
+                \text{System III: } \begin{cases} x + 2y + 3z = 2 \\ 4x + 5y + 6z = 5 \end{cases} \qquad \text{System IV: } \begin{cases} x + 3y + 4z = 11 \\ 2x + y + 5z = 9 \\ 6x + z = 7 \end{cases}
+            </me>
+        </p>
+
+    <ol>
+        <li>
+            <p>
+                <alert>Verbalize.</alert>
+                <p>
+                    Before doing any computations or inputting anything into GeoGebra, verbally describe the situation in the context of hyperplanes. (Be sure to mention if we are in <m>\mathbb{R}^2</m> or <m>\mathbb{R}^3</m> and mention how many hyperplanes we are considering.)
+                </p>
+            </p>
+        </li>
+        <li>
+            <p>
+                <alert>Expectations.</alert>
+                <p>
+                    Before making any computations, do you <em>expect</em> the solution set to be empty, a single point, a line, or a plane? Explain.
+                </p>
+            </p>
+        </li>
+        <li>
+            <p>
+                <alert>Visualize.</alert>
+                <p>
+                    Input the system symbolically into the GeoGebra <em>Algebra Window</em> and look at the collection visually (either in the <em>Graphics Window</em> or <em>3D Graphics Window</em> depending if the system has 2 or 3 variables). Use the intersection tools to find their intersections.
+                </p>
+            </p>
+        </li>
+        <li>
+            <p>
+                <alert>Analyze.</alert>
+                <p>
+                    In complete sentences, describe the solution set you found using geometric words. Reflect on if this matches your expectations.
+                </p>
+            </p>
+        </li>
+        <li>
+            <p>
+                <alert>Interpret.</alert>
+                <p>
+                    In complete sentences, and using GeoGebra visualizations, interpret your solution set relative to Matrix Multiplication Meaning 1 and to Matrix Multiplication Meaning 2 (see <xref ref="ex-interpretsolutionset1" />).
+                </p>
+            </p>
+        </li>
+    </ol>
+</question>
+
+</section>
