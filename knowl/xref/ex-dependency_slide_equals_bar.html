@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette: ice-fire                     *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sliding the Equals Bar.</span>
+</h3>
+<div class="para logical">
+<div class="para">Returning to <a href="chp5sec1.html#ex-rref_reading_dependencies" class="xref" data-knowl="./knowl/xref/ex-rref_reading_dependencies.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.1.1: Extracting Dependency Equations from Null Space">Example 5.1.1</a>, we have each of the following:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-rref_reading_dependencies.html ./knowl/xref/ex-rref_reading_dependencies.html">
+\begin{equation*}
+\rref\left([A_S \mid \vect{0}]\right) = 
+\left[\begin{array}{ccccc|c} 
+1 \amp 5 \amp 0 \amp 0 \amp 2 \amp 0 \\ 
+0 \amp 0 \amp 1 \amp 0 \amp 3 \amp 0 \\ 
+0 \amp 0 \amp 0 \amp 1 \amp 4 \amp 0 
+\end{array}\right]
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-rref_reading_dependencies.html ./knowl/xref/ex-rref_reading_dependencies.html">
+\begin{equation*}
+\begin{cases}
+\rref\left([\vect{v}_1 \mid \vect{v}_2]\right) = \left[\begin{array}{c|c} 1 \amp 5 \\ 0 \amp 0 \\ 0 \amp 0 \end{array}\right] \implies \vect{v}_2=5\vect{v}_1 \\
+\rref\left([\vect{v}_1 \mid \vect{v}_3]\right) = \left[\begin{array}{c|c} 1 \amp 0 \\ 0 \amp 1 \\ 0 \amp 0 \end{array}\right] \implies \vect{v}_3\notin \spn(\vect{v}_1) \implies \{\vect{v}_1,\vect{v}_3\} \text{ is independent} \\
+\rref\left([\vect{v}_1 \mid \vect{v}_3 \mid \vect{v}_4]\right) = \left[\begin{array}{cc|c} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{array}\right] \implies \vect{v}_4\notin \spn(\vect{v}_1,\vect{v}_3) \implies \{\vect{v}_1,\vect{v}_3,\vect{v}_4\} \text{ is independent} \\
+\rref\left([\vect{v}_1 \mid \vect{v}_3 \mid \vect{v}_4 \mid \vect{v}_5]\right) = \left[\begin{array}{ccc|c} 1 \amp 0 \amp 0 \amp 2 \\ 0 \amp 1 \amp 0 \amp 3 \\ 0 \amp 0 \amp 1 \amp 4 \end{array}\right] \implies \vect{v}_5=2\vect{v}_1+3\vect{v}_3+4\vect{v}_4.
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Consistent with <a href="chp5sec1.html#ex-rref_reading_dependencies" class="xref" data-knowl="./knowl/xref/ex-rref_reading_dependencies.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.1.1: Extracting Dependency Equations from Null Space">Example 5.1.1</a>, we conclude:</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-dependency_slide_equals_bar-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ol class="decimal" id="ex-dependency_slide_equals_bar-2-2">
+<li>
+<div class="para">
+<span class="process-math">\(S_0 = \{\vect{v}_1, \vect{v}_3, \vect{v}_4\}\)</span> is independent,<div class="autopermalink" data-description="Paragraph"><a href="#ex-dependency_slide_equals_bar-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#ex-dependency_slide_equals_bar-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(\vect{v}_2=5\vect{v}_1\)</span> and <span class="process-math">\(\vect{v}_5=2\vect{v}_1+3\vect{v}_3+4\vect{v}_4\)</span> are dependency equations, and<div class="autopermalink" data-description="Paragraph"><a href="#ex-dependency_slide_equals_bar-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#ex-dependency_slide_equals_bar-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(\spn(\vect{v}_1, \vect{v}_3, \vect{v}_4)= \spn(S)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-dependency_slide_equals_bar-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#ex-dependency_slide_equals_bar-2-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Example 5.1.2: Sliding the Equals Bar"><a href="#ex-dependency_slide_equals_bar" title="Copy heading and permalink for Example 5.1.2: Sliding the Equals Bar" aria-label="Copy heading and permalink for Example 5.1.2: Sliding the Equals Bar">🔗</a></div></article><span class="incontext"><a class="internal" href="chp5sec1.html#ex-dependency_slide_equals_bar">in-context</a></span>
+</body>
+</html>

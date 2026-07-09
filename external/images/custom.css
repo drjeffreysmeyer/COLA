@@ -1,0 +1,28 @@
+/* Custom Colors for PreTeXt Blocks */
+
+/* Definition - Blue Theme */
+article.definition {
+    border-left: 4px solid #0984e3 !important;
+    background-color: #ebf6ff !important;
+}
+article.definition .heading {
+    color: #0984e3 !important;
+}
+
+/* Proposition - Purple Theme */
+article.proposition {
+    border-left: 4px solid #6c5ce7 !important;
+    background-color: #f3f0ff !important;
+}
+article.proposition .heading {
+    color: #6c5ce7 !important;
+}
+
+/* Example - Green Theme */
+article.example {
+    border-left: 4px solid #00b894 !important;
+    background-color: #e8fff8 !important;
+}
+article.example .heading {
+    color: #00b894 !important;
+}

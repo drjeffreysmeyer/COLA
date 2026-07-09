@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette: ice-fire                     *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Extracting Dependency Equations from Null Space.</span>
+</h3>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(S=\{\vect{v}_1, \ldots, \vect{v}_5\}\subset \mathbb{R}^3\)</span> and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/chp4sec3b.html">
+\begin{equation*}
+\rref\left([A_S \mid \vect{0}]\right) = 
+\left[\begin{array}{ccccc|c} 
+1 \amp 5 \amp 0 \amp 0 \amp 2 \amp 0 \\ 
+0 \amp 0 \amp 1 \amp 0 \amp 3 \amp 0 \\ 
+0 \amp 0 \amp 0 \amp 1 \amp 4 \amp 0 
+\end{array}\right].
+\end{equation*}
+</div>
+<div class="para">
+<em class="emphasis">What can we say about the dependencies of <span class="process-math">\(S\text{?}\)</span></em> Using the analysis of <a href="chp4sec3b.html" class="internal" title="Lesson 4.4: Interpreting RREF">Lesson 4.4</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/chp4sec3b.html">
+\begin{equation*}
+\Null(A_S) = \left\{ 
+x_2\begin{bmatrix}-5\\1\\0\\0\\0\end{bmatrix}
++
+x_5\begin{bmatrix}-2\\0\\-3\\-4\\1\end{bmatrix} \ \bigg| \ x_2,x_5\in \mathbb{R}
+\right\}.
+\end{equation*}
+</div>
+<div class="para">Observe that each of the velocity vectors of the parametric vector form of <span class="process-math">\(\Null(A_S)\)</span> is a servings vector to make zero, and hence is algebraically equivalent to a dependency equation:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/chp4sec3b.html">
+\begin{align*}
+\begin{bmatrix}-5\\1\\0\\0\\0\end{bmatrix} \in \Null(A_S) 
+\amp\implies -5\vect{v}_1 + \vect{v}_2 = \vect{0}
+\amp\implies \vect{v}_2 = 5\vect{v}_1. \\\\
+\begin{bmatrix}-2\\0\\-3\\-4\\1\end{bmatrix} \in \Null(A_S) 
+\amp\implies -2\vect{v}_1 - 3\vect{v}_3 -4\vect{v}_4 + \vect{v}_5 = \vect{0}
+\amp\implies \vect{v}_5 = 2\vect{v}_1 + 3\vect{v}_3 + 4\vect{v}_4.
+\end{align*}
+</div>
+<div class="para">All other dependencies are combinations of these, so we conclude <span class="process-math">\(\{\vect{v}_1, \vect{v}_3, \vect{v}_4\}\)</span> is independent. Furthermore, since <span class="process-math">\(\vect{v}_2,\vect{v}_5\in \spn(\vect{v}_1, \vect{v}_3, \vect{v}_4)\text{,}\)</span> we conclude <span class="process-math">\(\spn(\vect{v}_1, \vect{v}_3, \vect{v}_4)= \spn(S)\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-rref_reading_dependencies-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 5.1.1: Extracting Dependency Equations from Null Space"><a href="#ex-rref_reading_dependencies" title="Copy heading and permalink for Example 5.1.1: Extracting Dependency Equations from Null Space" aria-label="Copy heading and permalink for Example 5.1.1: Extracting Dependency Equations from Null Space">🔗</a></div></article><span class="incontext"><a class="internal" href="chp5sec1.html#ex-rref_reading_dependencies">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette: ice-fire                     *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Elimination as Matrix Multiplication</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="external/custom.css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Concepts of Linear Algebra">
+<meta property="book:author" content="Jeffrey S. Meyer">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.1.9';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.846a0d6fafaa99e0.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bbcfc02849ebc023.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.66fa8a682a32c0ac.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="COLA.html"><span class="title">Concepts of Linear Algebra</span> <span class="subtitle">A Meaningful and Hands-On Introduction</span></a></h1>
+<p class="byline">Jeffrey S. Meyer</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="chp4sec3b.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter4.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chapter5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
+\newcommand{\Z}{\mathbb Z} 
+\newcommand{\Q}{\mathbb Q} 
+\newcommand{\R}{\mathbb R} 
+\newcommand{\vect}[1]{\mathbf{#1}}
+
+\DeclareMathOperator{\Aut}{Aut} \DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Mod}{Mod} \DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL} \DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\GL}{GL} \DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\Ort}{O} \DeclareMathOperator{\PO}{PO}
+\DeclareMathOperator{\GO}{GO} \DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\PSO}{PSO} \DeclareMathOperator{\Uni}{U}
+\DeclareMathOperator{\PU}{PU} \DeclareMathOperator{\GU}{GU}
+\DeclareMathOperator{\SU}{SU} \DeclareMathOperator{\PSU}{PSU}
+\DeclareMathOperator{\Sp}{Sp} \DeclareMathOperator{\GSp}{GSp}
+\DeclareMathOperator{\PSp}{PSp} \DeclareMathOperator{\Spin}{Spin}
+\DeclareMathOperator{\Pin}{Pin} \DeclareMathOperator{\Comm}{Comm}
+\DeclareMathOperator{\Sy}{S} \DeclareMathOperator{\Sol}{Sol}
+\DeclareMathOperator{\Nil}{Nil} \DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\ad}{ad} \DeclareMathOperator{\Mat}{M}
+\DeclareMathOperator{\Aff}{Aff} \DeclareMathOperator{\Sim}{Sim}
+\DeclareMathOperator{\Euc}{Euc} \DeclareMathOperator{\Semi}{Semi}
+\DeclareMathOperator{\FI}{FI}\DeclareMathOperator{\NFI}{NFI}
+\DeclareMathOperator{\Ave}{Ave}\DeclareMathOperator{\GCD}{gcd}
+\DeclareMathOperator{\lcm}{lcm}\DeclareMathOperator{\Eff}{Eff}
+\DeclareMathOperator{\Fix}{Fix}\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Isom}{Isom}\DeclareMathOperator{\Nor}{N}
+\DeclareMathOperator{\Rep}{R}\DeclareMathOperator{\Char}{X}
+\DeclareMathOperator{\Hom}{Hom}\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Sym}{Sym}\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Jac}{Jac}\DeclareMathOperator{\IR}{InRad}
+\DeclareMathOperator{\Vol}{Vol}\DeclareMathOperator{\Star}{Star}
+\DeclareMathOperator{\Id}{Id}\DeclareMathOperator{\Exc}{Exc}
+\DeclareMathOperator{\hd}{hd}\DeclareMathOperator{\cd}{cd}
+\DeclareMathOperator{\Fe}{F}\DeclareMathOperator{\Rank}{Rank}
+\DeclareMathOperator{\Br}{Br}\DeclareMathOperator{\Homeo}{Homeo}
+\DeclareMathOperator{\Orb}{Orb}\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\spn}{Span}\DeclareMathOperator{\rref}{rref}
+\DeclareMathOperator{\col}{Col}\DeclareMathOperator{\Col}{Col}
+\DeclareMathOperator{\Null}{Null}
+\DeclareMathOperator{\Area}{Area}\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\asf}{asf}\DeclareMathOperator{\sasf}{sasf}
+\DeclareMathOperator{\vsf}{vsf}\DeclareMathOperator{\svsf}{svsf}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\round}{round}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\abssum}{abssum}
+\DeclareMathOperator{\nullity}{nullity}\DeclareMathOperator{\rank}{rank}
+
+\newcommand{\widesim}{\ \sim\ }
+
+\newcommand{\rowP}[2]{
+  \hspace{0.5pc}  
+  \overset
+  {r_{#1} \leftrightarrow r_{#2}}
+  {\widesim}
+  \hspace{0.5pc}
+}
+\newcommand{\rowS}[2]{
+  \hspace{0.5pc}  
+  \overset
+  {r_{#1} \mapsto #2r_{#1}}
+  {\widesim}
+  \hspace{0.5pc}
+}
+\newcommand{\rowA}[3]{
+  \hspace{0.5pc}  
+  \overset
+  {r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}}
+  {\widesim}
+  \hspace{0.5pc}
+}
+\newcommand{\RowA}[3]{
+  r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter0.html" class="internal"><span class="codenumber">0</span> <span class="title">Introduction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp0sec1.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Note to Students</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp0sec2.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Note to Teachers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter1.html" class="internal"><span class="codenumber">1</span> <span class="title">Vectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp1sec1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vectors as Lists of Quantities</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp1sec2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Symbolizing Vectors</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp1sec3.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Visualizing Vectors</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter2.html" class="internal"><span class="codenumber">2</span> <span class="title">Linear Combination</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec1.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Linear Combinations as Mixture</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Algebraic Properties of Linear Combination</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chp2sec3.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Lines as Traveling Down a Path</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp2sec3.html#chp2sec3subsec1" class="internal"><span class="title">Lines in <span class="process-math">\(\R^2\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp2sec3.html#chp2sec3subsec2" class="internal"><span class="title">Lines in <span class="process-math">\(\R^m\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp2sec3.html#chp2sec3subsec3" class="internal"><span class="title">Planes in <span class="process-math">\(\R^m\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec4.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The Set of All Linear Combination</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec5.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Dependency</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chp2sec6.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Subsets That Contain Their Mixtures</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec6.html#lesson-linear_combination_subspace" class="internal"><span class="title">Subsets That Contain Their Mixtures</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter3.html" class="internal"><span class="codenumber">3</span> <span class="title">Matrix Multiplication</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp3sec1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Matrix Multiplication as Mixture</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chp3sec2.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Matrix Multiplication Sets</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp3sec2.html#chp3sec2-3" class="internal"><span class="title">Span becomes Column Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp3sec2.html#chp3sec2-4" class="internal"><span class="title">Dependency becomes Null Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp3sec2.html#chp3sec2-5" class="internal"><span class="title">Makeability becomes Solution Set</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chp3sec3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Matrix Multiplication as Transformation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp3sec3.html#subsection-transforming_points_objects" class="internal"><span class="title">Transforming Points and Objects</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp3sec3.html#subsection-transformations_of_the_plane" class="internal"><span class="title">Transformations of the Plane</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp3sec4.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Composition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp3sec5.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Matrix Multiplication as Mixture</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="chapter4.html" class="internal"><span class="codenumber">4</span> <span class="title">Solution Sets</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp4sec1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Solution Sets as Intersection</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp4sec2.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Expectations for Intersections</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp4sec3a.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Computing RREF</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp4sec3b.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Interpreting RREF</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="chp4sec4.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Elimination as Matrix Multiplication</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter5.html" class="internal"><span class="codenumber">5</span> <span class="title">Basis</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec1.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Dependency Analysis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec2.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Containment in a Span</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec3.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Concepts of Basis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec4.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Basis as Coordinate System</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter6.html" class="internal"><span class="codenumber">6</span> <span class="title">Inverses</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp6sec1.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Reversing a Process</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp6sec2.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Strategies for Computing an Inverse</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter7.html" class="internal"><span class="codenumber">7</span> <span class="title">Geometry of Vectors</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="chp7sec1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Concepts of Vector Size</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter8.html" class="internal"><span class="codenumber">8</span> <span class="title">Matrix Decompositions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp8sec1.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Similar Matrix Decompositions (SMDs)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp8sec2.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Elementary Matrix Decompositions (EMDs)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp8sec3.html" class="internal"><span class="codenumber">8.3</span> <span class="title"><span class="process-math">\(LU\)</span>-Decompositions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter9.html" class="internal"><span class="codenumber">9</span> <span class="title">Determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp9sec1.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Determinant as Siogned Volume Scaling Factor</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp9sec2.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Algebraic Properties of the Determinant</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp9sec3.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Strategies for Computing the Determinant</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter10.html" class="internal"><span class="codenumber">10</span> <span class="title">Eigentheory</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="chp10sec1.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Matrix Multiplication as Mixture</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="chp4sec4"><h2 class="heading hide-type">
+<span class="type">Lesson</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Elimination as Matrix Multiplication</span>
+</h2>
+<div class="para" id="chp4sec4-2">We have seen mixture encoded as matrix multiplication. We have seen transformation encoded as matrix multiplication. Many <em class="emphasis">important processes can be encoded as matrix multiplication</em>. You will see this time after time in this text. In this lesson, you will discover how elementary row operations can be encoded as matrix multiplication (on the left).<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-elementary_matrix"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Elementary Matrix.</span>
+</h3>
+<div class="para" id="def-elementary_matrix-2-1">An <dfn class="terminology">elementary <span class="process-math">\(m\times m\)</span> matrix</dfn> is a square matrix <span class="process-math">\(E\)</span> such that, for any <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(EA\)</span> is obtained from <span class="process-math">\(A\)</span> via a single row operation. In other words, if you fix a row operation <span class="process-math">\(R\text{,}\)</span> then for all <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(A \stackrel{R}{\sim} EA\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-elementary_matrix-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 4.5.1: Elementary Matrix"><a href="#def-elementary_matrix" title="Copy heading and permalink for Definition 4.5.1: Elementary Matrix" aria-label="Copy heading and permalink for Definition 4.5.1: Elementary Matrix">🔗</a></div></article><article class="question example-like" id="activity-discover_elementary_matrices"><h3 class="heading">
+<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Discovering Elementary Matrices.</span>
+</h3>
+<div class="para" id="activity-discover_elementary_matrices-2">In this activity, you will explore row operations via transformations, and use this to try to classify elementary <span class="process-math">\(2\times 2\)</span> matrices.<div class="autopermalink" data-description="Paragraph"><a href="#activity-discover_elementary_matrices-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="activity-discover_elementary_matrices-3">
+<li id="activity-discover_elementary_matrices-3-1">
+<div class="para logical" id="activity-discover_elementary_matrices-3-1-1">
+<div class="para">
+<em class="alert">Part 1: From <span class="process-math">\(2\times 1\)</span> row operation to transformation.</em> For each of the below transformations of the plane (given to you <em class="alert">symbolically</em>), (1) <em class="alert">visually</em> sketch by hand, and clearly label, what it does to the unit square and (2) describe how it transforms the plane <em class="alert">verbally</em>, using complete sentences and geometric words.</div>
+<div class="displaymath process-math" id="activity-discover_elementary_matrices-3-1-1-5">
+\begin{equation*}
+T_1:\begin{bmatrix} x\\ y\end{bmatrix} \mapsto \begin{bmatrix} y\\ x\end{bmatrix} 
+\qquad
+T_2:\begin{bmatrix} x\\ y\end{bmatrix} \mapsto \begin{bmatrix} 2x\\ y\end{bmatrix} 
+\qquad
+T_3:\begin{bmatrix} x\\ y\end{bmatrix} \mapsto \begin{bmatrix} x+2y\\ y\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#activity-discover_elementary_matrices-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#activity-discover_elementary_matrices-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="activity-discover_elementary_matrices-3-2">
+<div class="para" id="activity-discover_elementary_matrices-3-2-1">
+<em class="alert">Part 2: From transformation to matrix.</em> For each of the above transformations, find the matrix the encodes it. Call those matrices <span class="process-math">\(E_1\text{,}\)</span> <span class="process-math">\(E_2\text{,}\)</span> and <span class="process-math">\(E_3\text{,}\)</span> respectively.<div class="autopermalink" data-description="Paragraph"><a href="#activity-discover_elementary_matrices-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#activity-discover_elementary_matrices-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="activity-discover_elementary_matrices-3-3">
+<div class="para logical" id="activity-discover_elementary_matrices-3-3-1">
+<div class="para">
+<em class="alert">Part 3: From matrix to row operation.</em> Recall that if <span class="process-math">\(A= [\vect{v}_1 \mid \cdots \mid \vect{v}_n]\text{,}\)</span> then <span class="process-math">\(EA = [E\vect{v}_1 \mid \cdots \mid E\vect{v}_n]\text{.}\)</span> Find the elementary <span class="process-math">\(2\times 2\)</span> matrix associated to each of the row operations:</div>
+<div class="displaymath process-math" id="activity-discover_elementary_matrices-3-3-1-5">
+\begin{equation*}
+r_1 \leftrightarrow r_2, \qquad
+r_1 \mapsto 2r_1, \qquad
+r_1 \mapsto r_1 + 2r_2.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#activity-discover_elementary_matrices-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#activity-discover_elementary_matrices-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="activity-discover_elementary_matrices-3-4">
+<div class="para" id="activity-discover_elementary_matrices-3-4-1">
+<em class="alert">Part 4: Generalize.</em> Now using your understanding of transformations and matrix multiplication of matrices, write down a complete classification of elementary matrices associated to row operations of <span class="process-math">\(2\times n\)</span> matrices.<div class="autopermalink" data-description="Paragraph"><a href="#activity-discover_elementary_matrices-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#activity-discover_elementary_matrices-3-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Activity 4.5.2: Discovering Elementary Matrices"><a href="#activity-discover_elementary_matrices" title="Copy heading and permalink for Activity 4.5.2: Discovering Elementary Matrices" aria-label="Copy heading and permalink for Activity 4.5.2: Discovering Elementary Matrices">🔗</a></div></article><article class="proposition theorem-like" id="prop-classification_of_elementary_matrices"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Classification of Elementary Matrices.</span>
+</h3>
+<div class="para logical" id="prop-classification_of_elementary_matrices-2-1">
+<div class="para">If <span class="process-math">\(E\)</span> is a <span class="process-math">\(2\times 2\)</span> elementary matrix, then it is of one of the following types:</div>
+<ol class="decimal ol-marker-4" id="prop-classification_of_elementary_matrices-2-1-3">
+<li id="prop-classification_of_elementary_matrices-2-1-3-1">
+<div class="para" id="prop-classification_of_elementary_matrices-2-1-3-1-1">Permutes rows: <span class="process-math">\(\begin{bmatrix}0\amp 1\\1\amp 0\end{bmatrix}\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-classification_of_elementary_matrices-2-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#prop-classification_of_elementary_matrices-2-1-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="prop-classification_of_elementary_matrices-2-1-3-2">
+<div class="para" id="prop-classification_of_elementary_matrices-2-1-3-2-1">Scales a row: <span class="process-math">\(\begin{bmatrix}a\amp 0\\0\amp 1\end{bmatrix}\)</span> or <span class="process-math">\(\begin{bmatrix}1\amp 0\\0\amp a\end{bmatrix}\text{,}\)</span> <span class="process-math">\(a\neq0\text{,}\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#prop-classification_of_elementary_matrices-2-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#prop-classification_of_elementary_matrices-2-1-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="prop-classification_of_elementary_matrices-2-1-3-3">
+<div class="para" id="prop-classification_of_elementary_matrices-2-1-3-3-1">Adds a multiple of a row to another: <span class="process-math">\(\begin{bmatrix}1\amp b\\0\amp 1\end{bmatrix}\)</span> or <span class="process-math">\(\begin{bmatrix}1\amp 0\\b\amp 1\end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-classification_of_elementary_matrices-2-1-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#prop-classification_of_elementary_matrices-2-1-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="para">Elementary <span class="process-math">\(n\times n\)</span> matrices also fall into one of the above types with appropriate modifications.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-classification_of_elementary_matrices-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 4.5.3: Classification of Elementary Matrices"><a href="#prop-classification_of_elementary_matrices" title="Copy heading and permalink for Proposition 4.5.3: Classification of Elementary Matrices" aria-label="Copy heading and permalink for Proposition 4.5.3: Classification of Elementary Matrices">🔗</a></div></article><div class="para" id="chp4sec4-6">Observe that each elementary <span class="process-math">\(2\times 2\)</span> matrix has a very simple geometric interpretation. <em class="alert">Type 1</em> matrices reflect across the line <span class="process-math">\(y=x\text{,}\)</span> <em class="alert">Type 2</em> matrices stretch a single direction by a factor of <span class="process-math">\(|k|\)</span> (and if <span class="process-math">\(k&lt;0\)</span> reflect in that direction as well), and <em class="alert">Type 3</em> matrices are a pure shear in a given direction.<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp4sec4-7">We may now generalize this reasoning to larger matrices. I now introduce a useful “auxiliary” object to help us reason about <span class="process-math">\(m\times m\)</span> elementary matrices - the <em class="alert">column of rows vector</em> <span class="process-math">\(\vect{r}=\begin{bmatrix}r_1\\ r_2\\ \vdots \\ r_m\end{bmatrix}\text{,}\)</span> whose entries we may think of as generic rows of an <span class="process-math">\(m\times n\)</span> matrix. We will act upon this row vector by both elementary matrices and elementary row operations, thereby helping us connect the row operations with elementary matrices.<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec4-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-elementary_matrix_E_to_op"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interpreting Elementary Matrices as Row Operations.</span>
+</h3>
+<div class="para logical" id="ex-elementary_matrix_E_to_op-2-1">
+<div class="para">If I tell you that the shear matrix</div>
+<div class="displaymath process-math" id="ex-elementary_matrix_E_to_op-2-1-1">
+\begin{equation*}
+E = \begin{bmatrix} 1\amp 0\amp 4\\0\amp 1\amp 0\\0\amp 0\amp 1\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">is an elementary matrix, how can you determine the elementary matrix to which it is associated?</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-elementary_matrix_E_to_op-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="ex-elementary_matrix_E_to_op-2-2">
+<div class="para">Compute (either via linear combination or pointer finger shortcut) the matrix product</div>
+<div class="displaymath process-math" id="ex-elementary_matrix_E_to_op-2-2-1">
+\begin{equation*}
+\begin{bmatrix} 1\amp 0\amp 4\\0\amp 1\amp 0\\0\amp 0\amp 1\end{bmatrix}
+\begin{bmatrix} r_1\\r_2\\r_3\end{bmatrix}
+= \begin{bmatrix} r_1+4r_3\\r_2\\r_3\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">So, multiplication by <span class="process-math">\(E\)</span> tells us to <em class="emphasis">replace row 1 with row 1 plus 4 times row 3</em>, or in symbols, <span class="process-math">\(\RowA{1}{3}{4}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-elementary_matrix_E_to_op-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.5.4: Interpreting Elementary Matrices as Row Operations"><a href="#ex-elementary_matrix_E_to_op" title="Copy heading and permalink for Example 4.5.4: Interpreting Elementary Matrices as Row Operations" aria-label="Copy heading and permalink for Example 4.5.4: Interpreting Elementary Matrices as Row Operations">🔗</a></div></article><article class="question example-like" id="activity-3x3_elementary_matrix_identification"><h3 class="heading">
+<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">3x3 Elementary Matrix Identification.</span>
+</h3>
+<div class="para logical" id="activity-3x3_elementary_matrix_identification-2">
+<div class="para">Each of the below matrices are elementary <span class="process-math">\(3\times 3\)</span> matrices. For each (1) using complete sentences, describe how the matrix transforms <span class="process-math">\(\mathbb{R}^3\text{,}\)</span> and (2) what row operation of <span class="process-math">\(3\times n\)</span> matrices does it encode (be precise!)?</div>
+<div class="displaymath process-math" id="activity-3x3_elementary_matrix_identification-2-4">
+\begin{equation*}
+\begin{bmatrix} 1\amp 0\amp 0\\0\amp -2\amp 0\\0\amp 0\amp 1\end{bmatrix}, \qquad
+\begin{bmatrix} 1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 3\amp 1\end{bmatrix}, \qquad
+\begin{bmatrix} 0\amp 0\amp 1\\0\amp 1\amp 0\\1\amp 0\amp 0\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#activity-3x3_elementary_matrix_identification-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Activity 4.5.5: 3x3 Elementary Matrix Identification"><a href="#activity-3x3_elementary_matrix_identification" title="Copy heading and permalink for Activity 4.5.5: 3x3 Elementary Matrix Identification" aria-label="Copy heading and permalink for Activity 4.5.5: 3x3 Elementary Matrix Identification">🔗</a></div></article><div class="para" id="chp4sec4-10">To determine the matrix associated to a row operation, there are several strategies. One such strategy is to write down the “new” column of rows, expand it as a linear combination of the original rows, and use matrix multiplication as linear combination to deduce the matrix.<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec4-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="ex-elementary_matrix_to_op_E"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Encoding a Row Operation as an Elementary Matrix.</span>
+</h3>
+<div class="para" id="ex-elementary_matrix_to_op_E-2-1">What <span class="process-math">\(3\times 3\)</span> elementary matrix encodes the row operation <em class="emphasis">replace row 3 with row 3 plus 2 times row 1</em>, or in symbols, <span class="process-math">\(\RowA{3}{1}{2}\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-elementary_matrix_to_op_E-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="ex-elementary_matrix_to_op_E-2-2">
+<div class="para">We want an unknown <span class="process-math">\(3\times 3\)</span> matrix <span class="process-math">\(E\)</span> satisfying</div>
+<div class="displaymath process-math" id="ex-elementary_matrix_to_op_E-2-2-3">
+\begin{equation*}
+E \begin{bmatrix} r_1\\r_2\\r_3\end{bmatrix}
+= \begin{bmatrix} r_1\\r_2\\r_3+2r_1\end{bmatrix}
+= r_1\begin{bmatrix} 1\\0\\2\end{bmatrix} + r_2\begin{bmatrix} 0\\1\\0\end{bmatrix} + r_3\begin{bmatrix} 0\\0\\1\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Via definition of matrix multiplication as linear combination,</div>
+<div class="displaymath process-math" id="ex-elementary_matrix_to_op_E-2-2-4">
+\begin{equation*}
+E = \begin{bmatrix} 1\amp 0\amp 0\\0\amp 1\amp 0\\2\amp 0\amp 1\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-elementary_matrix_to_op_E-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.5.6: Encoding a Row Operation as an Elementary Matrix"><a href="#ex-elementary_matrix_to_op_E" title="Copy heading and permalink for Example 4.5.6: Encoding a Row Operation as an Elementary Matrix" aria-label="Copy heading and permalink for Example 4.5.6: Encoding a Row Operation as an Elementary Matrix">🔗</a></div></article><div class="para" id="chp4sec4-12">Now that we can encode a single row operation as multiplication by a single elementary matrix, it follows that a sequence of row operations can be encoded by a product of elementary matrices. In particular, Gaussian elimination can be expressed via a product of elementary matrices!<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec4-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chp4sec4-13">
+<div class="para">Let us now revisit our example:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-elimination_elementary_matrix.html" id="chp4sec4-13-1">
+\begin{equation*}
+\left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 1 \amp  1 \amp  5 \end{array}\right]
+\rowA{2}{1}{-1}
+\left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 0 \amp  2 \amp  4 \end{array}\right] 
+\rowS{2}{\frac{1}{2}}
+\left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 0 \amp  1 \amp  2 \end{array}\right]
+\rowA{1}{2}{1}
+\left[\begin{array}{cc|c} 1 \amp  0 \amp  3 \\ 0 \amp  1 \amp  2 \end{array}\right].
+\end{equation*}
+</div>
+<div class="para">In terms of elementary matrices, this can be re-written as:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-elimination_elementary_matrix.html" id="eq-elimination_elementary_matrix">
+\begin{equation}
+\begin{bmatrix} 1\amp 1\\0\amp 1\end{bmatrix}
+\begin{bmatrix} 1\amp 0\\0\amp \frac{1}{2}\end{bmatrix} 
+\begin{bmatrix} 1\amp 0\\-1\amp 1\end{bmatrix} 
+\left[\begin{array}{cc|c} 1\amp -1\amp 1\\1\amp 1\amp 5\end{array}\right]   
+= \left[\begin{array}{cc|c} 1\amp 0\amp 3\\0\amp 1\amp 2\end{array}\right].\tag{4.5.1}
+\end{equation}
+</div>
+<div class="para">Observe now how the system equation, the augmented matrix row reduction, and <a href="chp4sec4.html#eq-elimination_elementary_matrix" class="xref" data-knowl="./knowl/xref/eq-elimination_elementary_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.5.1">(4.5.1)</a> encode the same information.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec4-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="question example-like" id="activity-elimination_as_matrix_mult"><h3 class="heading">
+<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Elimination as Matrix Multiplication.</span>
+</h3>
+<div class="para logical" id="activity-elimination_as_matrix_mult-2">
+<div class="para">Consider the matrix equation</div>
+<div class="displaymath process-math" id="activity-elimination_as_matrix_mult-2-1">
+\begin{equation*}
+\begin{bmatrix} 2\amp -2\\1\amp 1\end{bmatrix}\begin{bmatrix} x\\y\end{bmatrix}=\begin{bmatrix} -4\\8\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#activity-elimination_as_matrix_mult-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="activity-elimination_as_matrix_mult-3">
+<li id="activity-elimination_as_matrix_mult-3-1">
+<div class="para" id="activity-elimination_as_matrix_mult-3-1-1">
+<em class="alert">Row operations.</em> Re-write this matrix equation as an augmented matrix and solve it via Gaussian elimination.<div class="autopermalink" data-description="Paragraph"><a href="#activity-elimination_as_matrix_mult-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#activity-elimination_as_matrix_mult-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="activity-elimination_as_matrix_mult-3-2">
+<div class="para" id="activity-elimination_as_matrix_mult-3-2-1">
+<em class="alert">Elementary matrices.</em> Re-interpret your sequence of row operations as a single product of elementary matrices, as in <a href="chp4sec4.html#eq-elimination_elementary_matrix" class="xref" data-knowl="./knowl/xref/eq-elimination_elementary_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.5.1">(4.5.1)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#activity-elimination_as_matrix_mult-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#activity-elimination_as_matrix_mult-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Activity 4.5.7: Elimination as Matrix Multiplication"><a href="#activity-elimination_as_matrix_mult" title="Copy heading and permalink for Activity 4.5.7: Elimination as Matrix Multiplication" aria-label="Copy heading and permalink for Activity 4.5.7: Elimination as Matrix Multiplication">🔗</a></div></article><div class="para" id="chp4sec4-15">It will be useful in many situations to record sequences of row operations as multiplication by matrices.<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec4-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp4sec4-16">To conclude this lesson, I want to reiterate that matrix multiplication is a concept we already understand and will continue to develop more insights and tools throughout this course. Therefore, it is productive to be able to identify processes we encounter as coming from matrix multiplication, as we may then use the tools of matrix multiplication to analyze these processes. In this lesson, we encoded the process of row operation as matrix multiplication on the left by elementary matrices. We will revisit in future lessons both (1) elementary matrices and (2) the mental act of encoding new processes as matrix multiplication.<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec4-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lesson 4.5: Elimination as Matrix Multiplication"><a href="#chp4sec4" title="Copy heading and permalink for Lesson 4.5: Elimination as Matrix Multiplication" aria-label="Copy heading and permalink for Lesson 4.5: Elimination as Matrix Multiplication">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="chp4sec3b.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chapter5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

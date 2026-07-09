@@ -790,7 +790,7 @@ var ptx_lunr_docs = [
   "type": "Lesson",
   "number": "2.4",
   "title": "The Set of All Linear Combination",
-  "body": " The Set of All Linear Combination  In this lesson, we are interested in conceptualizing and symbolizing the set of all linear combinations we can make with a predetermined, fixed collection of vectors. This set of linear combinations is useful to consider in all the contexts in which we encounter vectors and linear combination. If I have 12 boxes of cereal on my shelf, what are all the nutrition fact vectors I can make by mixing them? If my sound processor can make 400 digital pure tones, what are all the sounds I can produce by mixing them? More generally, if I have a fixed collection of vectors, what are all the linear combinations I can make with them?    What can we make with one vector in the plane?    What can we make (using linear combinations) with ? Geometrically, we get the line with parametric vector form: . Observe our starting position is the zero vector (i.e. the origin).    A line in .        What can we make with two vectors in the plane?    What can we make (using linear combinations) with and ? Algebraically, what vectors do we make as we vary ? We can make anything in the plane!    A plane in .       The collection of all possible linear combinations which can be made with is made precise by the notion of span .   Span (the noun)   If , then their span is the set of all linear combinations of . Symbolically,     The word span may seem unintuitive for you, so if you wish, via the metaphor of mixture, you can think of span as the mixture set of . Note that even if is small, is big! In fact, as long as contains a nonzero vector, is an infinite set.  Spans have very nice geometric interpretations. The span of one nonzero vector is the line , starting at the origin, with velocity : (see ). The span of two nonzero, non-collinear vectors and is the plane going through their tips and the origin. In symbols, we write this plane in parametric vector form: .   Describing Span   For each of the following sets of vectors, describe geometrically the associated span. Be sure to use geometric words.                      What can we make with two vectors in Cartesian 3-Space?    If , , and , then is every possible mixture made with and , or using set notation, Using the mixture parallelograms to visualize the mixtures, we see that will be the plane going through the three points: , , and ,    A plane in .       Visualize the span of two vectors in at GeoGebra ID: axm8hsyg .  The algebraic notation of span is very compact and enables us to efficiently communicate our thoughts about linear combinations. It is therefore important that you practice symbolizing your thoughts with this compact notation and then practice interpreting in plain language such symbolic expressions.   Symbolizing with Span   Symbolize each complete sentence using span.   Vector is a linear combination of vectors and .  There is no way to write vector as a linear combination of vectors , , and .  Everything I can make with vectors and , I can also make with vectors , , and .      Interpreting the Symbolism of Span   For each, use complete sentences, using the language of mixture, to interpret the meaning of each algebraic expression.   .  .  .  .      Algebraic Properties of Span   If , and   (Non-empty.) if denotes the zero vector, then ;  (Closed under addition.) if , then ;  (Closed under scaling.) if and , then .      We must provide formal justification for each of the three properties.  I will begin with the first property. To show that , I must show that the zero vector is a linear combination of the vectors in . This is easy to arrange, just take zero serving sizes of each vector! In symbols:  Next, I will justify the second property. By assumption, there exists and such that and . So   From which we deduce .  All that is left justifying the third property. This is left to you in Activity .    Practicing Formal Justification   Carefully write down a formal justification for the third property of Proposition . Be sure to carefully explain your reasoning and include references to all appropriate definitions and proven propositions. When done, share with the class.     Algebraic Properties of Span as Mixture of Mixtures  Using the metaphor of mixture, Proposition says that, if you fix a collection of ingredients, a mixture of mixtures is still just a mixture of the original ingredients.   We now come to makeability . Given a collection of vectors and another vector , we want to know if can be made by mixing vectors in . In symbols, we can make with if there exists scalars such that . Put more compactly, is makeable with if . There is no guarantee that is makeable, in which case no such scalars exist.  Via the metaphor of cooking, given a certain collection of ingredients and a desired meal, makeability asks: can we make the meal with our ingredients?  When we view vectors geometrically, given a plane in and a point in , makeability asks: does the point lie on the plane?  If a vector is makeable with , then we usually also want to know how, i.e. what scalars allow us to make that vector.   Exploring Makability   In each of the following parts, explore how you can make from the given . Can you find a way to make from ? If so, are there multiple ways or is it unique? Explain.   Consider and .  Consider and .     Observe that a way to make with S is precisely a servings vector (Definition ).   Solution Vectors   If , , and are such that , then the associated servings vector is a solution vector for making with .    If has vectors, then a solution vector for making with has list-length .   Exploring Makeability Geometrically   In this activity, you will use GeoGebra ID: twf46ake to visualize and investigate makeability in . Let , , and .    Explore. Use the visual representations provided to decide if and can be made with . Clearly explain the visual feature(s) you are using to make your determinations.  Symbolize. For each makeable vector, write down the corresponding symbolic equation. (Perform the associated computation to verify you have indeed found a solution vector.)     Solution set in .       Sometimes a single solution vector is sufficient. However, sometimes we want to collect all of them into a single set.   Solution Set   If and then the set of all solution vectors for making with can be identified with a subset of called the solution set for making with . In symbols,     If is not makeable with , then the solution set is empty , which we denote .   Symbolizing with Solution Sets   Symbolize each expression using solution sets and set notation.   .  .  There is no way to make with vectors , , and .      Interpreting the Symbolism of Solution Sets   Use complete sentences and the language of mixture to interpret the meaning of each algebraic expression.   .  .  .     Solution sets are central objects in linear algebra and we will continue to deepen our understanding and develop tools for computing them in the lessons that come.   Span Summary  If , then following are equivalent:   You can make from ,  ,  is nonempty.    "
+  "body": " The Set of All Linear Combination  In this lesson, we are interested in conceptualizing and symbolizing the set of all linear combinations we can make with a predetermined, fixed collection of vectors. This set of linear combinations is useful to consider in all the contexts in which we encounter vectors and linear combination. If I have 12 boxes of cereal on my shelf, what are all the nutrition fact vectors I can make by mixing them? If my sound processor can make 400 digital pure tones, what are all the sounds I can produce by mixing them? More generally, if I have a fixed collection of vectors, what are all the linear combinations I can make with them?    What can we make with one nonzero vector in the plane?   What can we make (using linear combinations) with ? Geometrically, we get the line with parametric vector form: . Observe our starting position is the zero vector (i.e. the origin).    A line in .       What can we make with two vectors in the plane?    What can we make (using linear combinations) with and ? Algebraically, what vectors do we make as we vary ? We can make anything in the plane!    A plane in .       The collection of all possible linear combinations which can be made with is made precise by the notion of span .   Span (the noun)   If , then their span is the set of all linear combinations of . Symbolically,     The word span may seem unintuitive for you, so if you wish, via the metaphor of mixture, you can think of span as the mixture set of . Note that even if is small, is big! In fact, as long as contains a nonzero vector, is an infinite set.  Spans have very nice geometric interpretations. The span of one nonzero vector is the line , starting at the origin, with velocity : (see ). The span of two nonzero, non-collinear vectors and is the plane going through their tips and the origin. In symbols, we write this plane in parametric vector form: .   Describing Span   For each of the following sets of vectors, describe geometrically the associated span. Be sure to use geometric words.                      What can we make with two vectors in Cartesian 3-Space?    If , , and , then is every possible mixture made with and , or using set notation, Using the mixture parallelograms to visualize the mixtures, we see that will be the plane going through the three points: , , and ,    A plane in .       Visualize the span of two vectors in at GeoGebra ID: axm8hsyg .  The algebraic notation of span is very compact and enables us to efficiently communicate our thoughts about linear combinations. It is therefore important that you practice symbolizing your thoughts with this compact notation and then practice interpreting in plain language such symbolic expressions.   Symbolizing with Span   Symbolize each complete sentence using span.   Vector is a linear combination of vectors and .  There is no way to write vector as a linear combination of vectors , , and .  Everything I can make with vectors and , I can also make with vectors , , and .      Interpreting the Symbolism of Span   For each, use complete sentences, using the language of mixture, to interpret the meaning of each algebraic expression.   .  .  .  .      Algebraic Properties of Span   If , and   (Non-empty.) if denotes the zero vector, then ;  (Closed under addition.) if , then ;  (Closed under scaling.) if and , then .      We must provide formal justification for each of the three properties.  I will begin with the first property. To show that , I must show that the zero vector is a linear combination of the vectors in . This is easy to arrange, just take zero serving sizes of each vector! In symbols:  Next, I will justify the second property. By assumption, there exists and such that and . So   From which we deduce .  All that is left justifying the third property. This is left to you in Activity .    Practicing Formal Justification   Carefully write down a formal justification for the third property of Proposition . Be sure to carefully explain your reasoning and include references to all appropriate definitions and proven propositions. When done, share with the class.     Algebraic Properties of Span as Mixture of Mixtures  Using the metaphor of mixture, Proposition says that, if you fix a collection of ingredients, a mixture of mixtures is still just a mixture of the original ingredients.   We now come to makeability . Given a collection of vectors and another vector , we want to know if can be made by mixing vectors in . In symbols, we can make with if there exists scalars such that . Put more compactly, is makeable with if . There is no guarantee that is makeable, in which case no such scalars exist.  Via the metaphor of cooking, given a certain collection of ingredients and a desired meal, makeability asks: can we make the meal with our ingredients?  When we view vectors geometrically, given a plane in and a point in , makeability asks: does the point lie on the plane?  If a vector is makeable with , then we usually also want to know how, i.e. what scalars allow us to make that vector.   Exploring Makability   In each of the following parts, explore how you can make from the given . Can you find a way to make from ? If so, are there multiple ways or is it unique? Explain.   Consider and .  Consider and .     Observe that a way to make with S is precisely a servings vector (Definition ).   Solution Vectors   If , , and are such that , then the associated servings vector is a solution vector for making with .    If has vectors, then a solution vector for making with has list-length .   Exploring Makeability Geometrically   In this activity, you will use GeoGebra ID: twf46ake to visualize and investigate makeability in . Let , , and .    Explore. Use the visual representations provided to decide if and can be made with . Clearly explain the visual feature(s) you are using to make your determinations.  Symbolize. For each makeable vector, write down the corresponding symbolic equation. (Perform the associated computation to verify you have indeed found a solution vector.)     Solution set in .       Sometimes a single solution vector is sufficient. However, sometimes we want to collect all of them into a single set.   Solution Set   If and then the set of all solution vectors for making with can be identified with a subset of called the solution set for making with . In symbols,     If is not makeable with , then the solution set is empty , which we denote .   Symbolizing with Solution Sets   Symbolize each expression using solution sets and set notation.   .  .  There is no way to make with vectors , , and .      Interpreting the Symbolism of Solution Sets   Use complete sentences and the language of mixture to interpret the meaning of each algebraic expression.   .  .  .     Solution sets are central objects in linear algebra and we will continue to deepen our understanding and develop tools for computing them in the lessons that come.   Span Summary  If , then following are equivalent:   You can make from ,  ,  is nonempty.    "
 },
 {
   "id": "chp2sec4-3",
@@ -798,8 +798,8 @@ var ptx_lunr_docs = [
   "url": "chp2sec4.html#chp2sec4-3",
   "type": "Example",
   "number": "2.4.1",
-  "title": "What can we make with one vector in the plane?",
-  "body": " What can we make with one vector in the plane?    What can we make (using linear combinations) with ? Geometrically, we get the line with parametric vector form: . Observe our starting position is the zero vector (i.e. the origin).    A line in .      "
+  "title": "What can we make with one nonzero vector in the plane?",
+  "body": " What can we make with one nonzero vector in the plane?   What can we make (using linear combinations) with ? Geometrically, we get the line with parametric vector form: . Observe our starting position is the zero vector (i.e. the origin).    A line in .     "
 },
 {
   "id": "chp2sec4-4",
@@ -961,7 +961,7 @@ var ptx_lunr_docs = [
   "type": "Lesson",
   "number": "2.5",
   "title": "Dependency",
-  "body": " Dependency  A collection has redundancy if one of the vectors can be made from the others. Suppose I have on my cereal shelf two boxes of Sugar-Os and one box of Fiber Flakes. Even though I have three boxes, all I need to mix my breakfast is two of them - the second box of Sugar-Os does not enable me to make new mixtures - it is redundant.   Linear Dependence and Linear Independence   If is a (nonempty) finite subset of vectors such that one of its vectors can be written as a linear combination of its other vectors, then the subset is linearly dependent . In symbols, is dependent if there exists an and, for each , a number , such that   This is a dependency equation for . If no such equation exist, then is linearly independent .    Throughout this text, I may sometime refer to collections of vectors as being dependent or independent , by which I will always mean linearly dependent and linearly independent, respectively.  Observe that the compact notation of span allows use to rewrite Definition succinctly: A collection is dependent if there exists a vector such that   Justify for yourself that if the zero vector lies in , then Definition implies that is dependent. For this reason, when we consider questions of dependence, we often begin by assuming our subset of vectors are all nonzero, which I may symbolize as .  If you are only considering two nonzero vectors , then they are linearly dependent if and only if they are nonzero scalar multiples of each other, i.e. for some nonzero .   If you have three or more vectors, dependency is more nuanced. For example, both collections are dependent. In the first collection, the third vector is a scalar multiple of the first vector, hence .   In the second collection, no vector is a scalar multiple of the others, however, the third vector is a sum of the first two .   Identifying and removing redundancy   For each of the following sets of vectors, determine if it is dependent. If it is dependent, what can you throw away while preserving span?     Independence as Distinct Directions  Geometrically, dependent means that one of the vectors lies in the span of the other vectors. Conversely, if the collection is independent, every vector points in truly distinct directions.   The concept of independence allows us to generalize non-collinearity (Definition ) and planes (Definition ).   -Planes in and their Parametric Vector Form   If and the -vectors are independent, then the set of points is a -plane , symbolized in parametric vector form . Here are parameters .     -Plane as Traveling Instructions  If and the -vectors are independent, then the -plane is the set of all points in space that can be reached by the following travel directions:   Start at position ,  Travel with constant velocity for units of time,  Travel with constant direction and speed for units of time   Travel with constant velocity for units of time.    -planes play an important and reoccurring role in linear algebra.  If , -planes are lines. If , -planes are planes. While it is difficult to geometrically visualize -planes for , it is still productive to keep the pictures of lines (e.g. Example ) and planes (e.g. Example ) in our minds as a metaphor for -planes.  We may use span to condense of the notation for -planes: if , then we may write . In this way, we may then think about -planes as spans which have been translated by .  We may now reason about independent vectors, but we will not have the computational tools to check if a collection of vectors is independent until Chapter XYZ. However, if a collection of vectors satisfies an easy verifiable condition I call separated, then we are guaranteed that they are independent.   Determining Independence   Come up with an explanation as why each set below is independent: Can you summarize your argument with a single observation?    The property that the above collections share is formalized in the following definition.   Separated   If is a collection of vectors with the property that for each vector , there exists an index such that the -entry of is nonzero, and the entry of each of the other vectors in is 0, then is separated .     Separated implies independent   If is separated, then is independent.     OPS   Even though being separated may seem very restrictive, certain vectors we will obtain in Chapter XYZ by interpreting the reduced row echelon form of a matrix will be separated, and hence we will be assured independence.  An algebraically useful reformulation of dependency is to conceptualize it in terms of making the zero vector. We can always make the zero mixture by using zero servings of each vector. Dependency can be understood as being able to make the zero mixture by using some nonzero servings.   Dependency as making the zero vector in nontrivial ways.   If , then is dependent if and only if there exists numbers , at least one of which is not zero , such that .     This is an if-and-only-if proposition. This means that I am claiming that the two statements are equivalent and to justify this proposition, I need to justify how each statement implies the other.  To begin, Suppose the collection is dependent. Then, by Definition , there exists an and, for each , a number , such that   By moving to the other side of the equation, and setting , then I have produced an equation   where by construction, at least one of the scalars is nonzero. This completes this implication.  Now suppose that there exists numbers , at least one of which is not zero, such that . By assumption, at least one of the scalars is nonzero. Let denote the first nonzero scalar. Since is nonzero, so is . Then I may move to the other side of the equation, and by dividing by , have produced an and, for each , a number , such that   This completes this implication.   As you can see from the proof of Proposition , we can easily move between the scalars that allow us to write a dependency equation and the scalars that allow us to make zero. They contain the same information, but for algebraic reasons, we will often focus on the scalars that allow us to make zero. These scalars contain important information about our subset, and, as it is useful to name objects that we wish to reason about, we form and name the associated servings vector.    Null Vectors   If and are such that , then the associated servings vector is a null The word null means being associated to zero vector for .    If has vectors, then a null vector has list-length , or in symbols, if is a null vector for , then . Observe that a null vector is simply a solution vector for making zero (Definition ).   Visualizing Null Vectors   Here I investigate null vectors for   I know from Euclidean geometry that if I uniformly scale the plane, then I create similar triangles. I wonder if this can help me find new null vectors?     Exploring Null Vectors   In this activity, you will use GeoGebra ID: nd6qasfy to visualize and investigate null vectors for subsets of three vectors in . Begin with .   Explore. Following the strategy in Example , move the points , , and to form a closed triangle. (Hint: I have chosen so that you can find at least one set of nonzero, integers null vectors.)  Symbolize. Write down the corresponding symbolic equation using a null vector you found and the columns of the vectors in . (Perform the associated computation to verify you have indeed found a null vector.)  Interpret. What do your findings say about the collection in terms of redundancy? Explain.  Explore. So far, you should have found one null vector with of nonzero integer entries. Can you find more? How? (Hint: Consider the question at the end of Example .)  Repeated Reasoning. Repeat for the new set .  Generalize. What happens when has 4 vectors? Using tip-to-tail visualization, what shape are we looking for to find a null vector? How about many vectors? Explain.     To summarize up to this point, a null vector is a servings vector for making zero. The zero servings vector is always a null vector. The existence of a nonzero null vector is logically equivalent to our vectors being dependent.  Now that we have internalized the notion of a single null vector, we may start to reason about the collection of all null vectors.   Null Space of   If , then the set of all null vectors of is a subset of called the null space of . In symbols, using set notation,    Observe that the null space is precisely the solution set for making zero, or in symbols, .  Much like span, the compact symbolism of null space is very efficient, but it is easy to get lost in the symbolism. We must practice symbolizing our thoughts on terms of null space, and conversely, practice interpreting the symbolism of null space in context.  For example, we can compactly summarize our observations in Example with:   Symbolizing with Null Space   Symbolize each expression using null space and set notation.   .  is a nonzero vector.  There is no nontrivial way to make the zero vector with vectors , , and .      Interpreting the Symbolism of Null Space   Use complete sentences and the language of mixture to interpret the meaning of each algebraic expression.   .  .  .     Make sure that you understand how each of the following statement are equivalent.   Dependency Summary  If , then following are equivalent:   is dependent,  There exists such that ,  You can make from in a nontrivial way,  has a nonzero null vector.  is nonzero.    I encourage you to continue reasoning about (in)dependence in the language of redundancy and in the language of distinct directions. Be prepared to algebraically work with redundancy as making zero in nontrivial ways.  Much like the span of , , the null space of has useful algebraic properties (cf Proposition ).   Algebraic Properties of Null Spaces   If , and   (Non-empty.) if denotes the zero vector, then ;  (Closed under addition.) if , then ;  (Closed under scaling.) if and , then .      The logical steps here are similar to those in the proof of Proposition . We must provide formal justification for each of the three properties.  1. The non-empty property is verified with a direct computation: the zero servings vector will always give a zero mixture   2. Suppose that . Unpacking names and using the definition of vector addition ( ) . Observe,   Hence is also a null vector.  3. I leave this last formal justification to you in your homework in Problem XYZ.   We will continue to work with null spaces throughout this course, and will develop the computational tools to find, describe, and analyze null spaces in Chapter XYZ.  "
+  "body": " Dependency  A collection has redundancy if one of the vectors can be made from the others. Suppose I have on my cereal shelf two boxes of Sugar-Os and one box of Fiber Flakes. Even though I have three boxes, all I need to mix my breakfast is two of them - the second box of Sugar-Os does not enable me to make new mixtures - it is redundant.   Linear (In)Dependence   If is a (nonempty) finite subset of vectors such that one of its vectors can be written as a linear combination of its other vectors, then the subset is linearly dependent . In symbols, is dependent if there exists an and, for each , a number , such that   This is a dependency equation for . If no such equation exist, then is linearly independent .    Throughout this text, I may sometime refer to collections of vectors as being dependent or independent , by which I will always mean linearly dependent and linearly independent, respectively.  Observe that the compact notation of span allows use to rewrite Definition succinctly: A collection is dependent if there exists a vector such that   Justify for yourself that if the zero vector lies in , then implies that is dependent. For this reason, when we consider questions of dependence, we often begin by assuming our subset of vectors are all nonzero, which I may symbolize as .  If you are only considering two nonzero vectors , then they are linearly dependent if and only if they are nonzero scalar multiples of each other, i.e. for some nonzero .   If you have three or more vectors, dependency is more nuanced. For example, both collections are dependent.    A line in .     In the first collection, the third vector is a scalar multiple of the first vector, hence . In the second collection, no vector is a scalar multiple of the others, however, the third vector is a sum of the first two .   Identifying and removing redundancy   For each of the following sets of vectors, determine if it is dependent. If it is dependent, what can you throw away while preserving span?                      Independence as Distinct Directions  Geometrically, dependent means that one of the vectors lies in the span of the other vectors. Conversely, if the collection is independent, every vector points in truly distinct directions.   The concept of independence allows us to generalize non-collinearity ( ) and planes ( ).   -Planes in and their Parametric Vector Form   If and the -vectors are independent, then the set of points is a -plane , symbolized in parametric vector form . Here are parameters .     -Plane as Traveling Instructions  If and the -vectors are independent, then the -plane is the set of all points in space that can be reached by the following travel directions:   Start at position ,  Travel with constant velocity for units of time,  Travel with constant direction and speed for units of time   Travel with constant velocity for units of time.    -planes play an important and reoccurring role in linear algebra.  If , -planes are lines. If , -planes are planes. While it is difficult to geometrically visualize -planes for , it is still productive to keep the pictures of lines (e.g. Example ) and planes (e.g. Example ) in our minds as a metaphor for -planes.  We may use span to condense of the notation for -planes: if , then we may write . In this way, we may then think about -planes as spans which have been translated by .  We may now reason about independent vectors, but we will not have the computational tools to check if a collection of vectors is independent until Chapter XYZ. However, if a collection of vectors satisfies an easy verifiable condition I call separated, then we are guaranteed that they are independent.   Determining Independence   Come up with an explanation as why each set below is independent: Can you summarize your argument with a single observation?    The property that the above collections share is formalized in the following definition.   Separated   If is a collection of vectors with the property that for each vector , there exists an index such that the -entry of is nonzero, and the entry of each of the other vectors in is 0, then is separated .     Separated implies independent   If is separated, then is independent.     OPS   Even though being separated may seem very restrictive, certain vectors we will obtain in Chapter XYZ by interpreting the reduced row echelon form of a matrix will be separated, and hence we will be assured independence.  An algebraically useful reformulation of dependency is to conceptualize it in terms of making the zero vector. We can always make the zero mixture by using zero servings of each vector. Dependency can be understood as being able to make the zero mixture by using some nonzero servings.   Dependency as making the zero vector in nontrivial ways.   If , then is dependent if and only if there exists numbers , at least one of which is not zero , such that .     This is an if-and-only-if proposition. This means that I am claiming that the two statements are equivalent. To justify this proposition, I need to carefully show how each statement implies the other.  To begin, suppose the collection is dependent. Then, by , there exists an and, for each , a number , such that   By moving to the other side of the equation, and setting , then I have produced an equation   where by construction, at least one of the scalars is nonzero. This completes this implication.  Now suppose that there exists scalars , at least one of which is not zero, such that . Let denote the first nonzero scalar. Since is nonzero, so is . Then I may move to the other side of the equation, and by dividing by , have produced an and, for each , a number , such that   This completes this implication.   As you can see from the proof of Proposition , we can easily move between the scalars that allow us to write a dependency equation and the scalars that allow us to make zero. They contain the same information, but for algebraic reasons, we will often focus on the scalars that allow us to make zero. These scalars contain important information about our subset, and, as it is useful to name objects that we wish to reason about, we form and name the associated servings vector.    Null Vectors   If and are such that , then the associated servings vector is a null The word null means being associated to zero vector for .    If has vectors, then a null vector has list-length , or in symbols, if is a null vector for , then . Observe that a null vector is simply a solution vector for making zero (Definition ).   Visualizing Null Vectors   Here I investigate null vectors for   I know from Euclidean geometry that if I uniformly scale the plane, then I create similar triangles. I wonder if this can help me find new null vectors?     Exploring Null Vectors   In this activity, you will use GeoGebra ID: nd6qasfy to visualize and investigate null vectors for subsets of three vectors in . Begin with .   Explore. Following the strategy in Example , move the points , , and to form a closed triangle. (Hint: I have chosen so that you can find at least one set of nonzero, integers null vectors.)  Symbolize. Write down the corresponding symbolic equation using a null vector you found and the columns of the vectors in . (Perform the associated computation to verify you have indeed found a null vector.)  Interpret. What do your findings say about the collection in terms of redundancy? Explain.  Explore. So far, you should have found one null vector with of nonzero integer entries. Can you find more? How? (Hint: Consider the question at the end of Example .)  Repeated Reasoning. Repeat for the new set .  Generalize. What happens when has 4 vectors? Using tip-to-tail visualization, what shape are we looking for to find a null vector? How about many vectors? Explain.     To summarize up to this point, a null vector is a servings vector for making zero. The zero servings vector is always a null vector. The existence of a nonzero null vector is logically equivalent to our vectors being dependent.  Now that we have internalized the notion of a single null vector, we may start to reason about the collection of all null vectors.   Null Space of   If , then the set of all null vectors of is a subset of called the null space of . In symbols, using set notation,    Observe that the null space is precisely the solution set for making zero, or in symbols, .  Much like span, the compact symbolism of null space is very efficient, but it is easy to get lost in the symbolism. We must practice symbolizing our thoughts on terms of null space, and conversely, practice interpreting the symbolism of null space in context.  For example, we can compactly summarize our observations in Example with:   Symbolizing with Null Space   Symbolize each expression using null space and set notation.   .  is a nonzero vector.  There is no nontrivial way to make the zero vector with vectors , , and .      Interpreting the Symbolism of Null Space   Use complete sentences and the language of mixture to interpret the meaning of each algebraic expression.   .  .  .     Make sure that you understand how each of the following statement are equivalent.   Dependency Summary  If , then following are equivalent:   is dependent,  There exists such that ,  You can make from in a nontrivial way,  has a nonzero null vector.  is nonzero.    I encourage you to continue reasoning about (in)dependence in the language of redundancy and in the language of distinct directions. Be prepared to algebraically work with redundancy as making zero in nontrivial ways.  Much like the span of , , the null space of has useful algebraic properties (cf Proposition ).   Algebraic Properties of Null Spaces   If , and   (Non-empty.) if denotes the zero vector, then ;  (Closed under addition.) if , then ;  (Closed under scaling.) if and , then .      The logical steps here are similar to those in the proof of . We must provide formal justification for each of the three properties.  1. The non-empty property is verified with a direct computation: the zero servings vector will always give a zero mixture   2. Suppose that . Unpacking names and using the definition of vector addition ( ) . Observe,   Hence is also a null vector.  3. I leave this last formal justification to you in your homework in Problem XYZ.   We will continue to work with null spaces throughout this course, and will develop the computational tools to find, describe, and analyze null spaces in Chapter XYZ.  "
 },
 {
   "id": "def-dependence",
@@ -969,17 +969,17 @@ var ptx_lunr_docs = [
   "url": "chp2sec5.html#def-dependence",
   "type": "Definition",
   "number": "2.5.1",
-  "title": "Linear Dependence and Linear Independence.",
-  "body": " Linear Dependence and Linear Independence   If is a (nonempty) finite subset of vectors such that one of its vectors can be written as a linear combination of its other vectors, then the subset is linearly dependent . In symbols, is dependent if there exists an and, for each , a number , such that   This is a dependency equation for . If no such equation exist, then is linearly independent .   "
+  "title": "Linear (In)Dependence.",
+  "body": " Linear (In)Dependence   If is a (nonempty) finite subset of vectors such that one of its vectors can be written as a linear combination of its other vectors, then the subset is linearly dependent . In symbols, is dependent if there exists an and, for each , a number , such that   This is a dependency equation for . If no such equation exist, then is linearly independent .   "
 },
 {
-  "id": "activity-identifying_and_removing_redundancy",
+  "id": "activity-identifying_and_removinredundancy",
   "level": "2",
-  "url": "chp2sec5.html#activity-identifying_and_removing_redundancy",
+  "url": "chp2sec5.html#activity-identifying_and_removinredundancy",
   "type": "Activity",
   "number": "2.5.2",
   "title": "Identifying and removing redundancy.",
-  "body": " Identifying and removing redundancy   For each of the following sets of vectors, determine if it is dependent. If it is dependent, what can you throw away while preserving span?   "
+  "body": " Identifying and removing redundancy   For each of the following sets of vectors, determine if it is dependent. If it is dependent, what can you throw away while preserving span?                    "
 },
 {
   "id": "chp2sec5-11",
@@ -1060,7 +1060,7 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "2.5.2",
   "title": "",
-  "body": " This is an if-and-only-if proposition. This means that I am claiming that the two statements are equivalent and to justify this proposition, I need to justify how each statement implies the other.  To begin, Suppose the collection is dependent. Then, by Definition , there exists an and, for each , a number , such that   By moving to the other side of the equation, and setting , then I have produced an equation   where by construction, at least one of the scalars is nonzero. This completes this implication.  Now suppose that there exists numbers , at least one of which is not zero, such that . By assumption, at least one of the scalars is nonzero. Let denote the first nonzero scalar. Since is nonzero, so is . Then I may move to the other side of the equation, and by dividing by , have produced an and, for each , a number , such that   This completes this implication.  "
+  "body": " This is an if-and-only-if proposition. This means that I am claiming that the two statements are equivalent. To justify this proposition, I need to carefully show how each statement implies the other.  To begin, suppose the collection is dependent. Then, by , there exists an and, for each , a number , such that   By moving to the other side of the equation, and setting , then I have produced an equation   where by construction, at least one of the scalars is nonzero. This completes this implication.  Now suppose that there exists scalars , at least one of which is not zero, such that . Let denote the first nonzero scalar. Since is nonzero, so is . Then I may move to the other side of the equation, and by dividing by , have produced an and, for each , a number , such that   This completes this implication.  "
 },
 {
   "id": "def-null_scalars",
@@ -1141,7 +1141,7 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "2.5.3",
   "title": "",
-  "body": " The logical steps here are similar to those in the proof of Proposition . We must provide formal justification for each of the three properties.  1. The non-empty property is verified with a direct computation: the zero servings vector will always give a zero mixture   2. Suppose that . Unpacking names and using the definition of vector addition ( ) . Observe,   Hence is also a null vector.  3. I leave this last formal justification to you in your homework in Problem XYZ.  "
+  "body": " The logical steps here are similar to those in the proof of . We must provide formal justification for each of the three properties.  1. The non-empty property is verified with a direct computation: the zero servings vector will always give a zero mixture   2. Suppose that . Unpacking names and using the definition of vector addition ( ) . Observe,   Hence is also a null vector.  3. I leave this last formal justification to you in your homework in Problem XYZ.  "
 },
 {
   "id": "chp2sec6",
@@ -1150,7 +1150,1762 @@ var ptx_lunr_docs = [
   "type": "Lesson",
   "number": "2.6",
   "title": "Subsets That Contain Their Mixtures",
-  "body": " Subsets That Contain Their Mixtures  a  "
+  "body": " Subsets That Contain Their Mixtures   Subsets That Contain Their Mixtures  The algebraic properties of span in and null space in are rather important. Mixture is the fundamental operation of linear algebra, and spans and null spaces have the property that a mixture of elements within the set always stays within the set. It is useful for us to identify and name this special property for when we encounter it again.   Subspace   If is a subset that satisfies the following three properties:    Contains Zero. If denotes the zero vector, then ,    Closed Under Addition. If , then ,    Closed Under Scaling. If and , then ,    then is a subspace .    Subspaces are subsets which contain their mixtures . Such subsets are at the heart of linear algebra.  Observe that the whole space, , and the zero subset, satisfy these properties, and hence are subspaces. A consequence of is that spans are always subspaces.   Spans are Subspaces   If and , then is a subspace in .     Null Spaces are Subspaces   If is a set of vectors and , then is a subspace in .    When we view vectors geometrically, it is often useful to re-interpret the three properties of in the following geometric way.   Subspace — Geometric Formulation  If is a subspace, then:    Origin Containment. The origin is contained in .    Parallelogram Containment. If , then the whole mixture parallelogram associated to is contained in .    Line Containment. If , then the whole line is contained in .      Subspaces in the plane    Which subsets cannot be subspaces? Using , analyze the following subsets in the plane:  line (red),  line (blue),  line (violet),  circle (green),  first quadrant (orange), and  first quadrant and third quadrant (orange).  For each, determine if they satisfy origin containment, parallelogram containment, and line containment. Determine if they are subspaces. If one is a subspace, is it a span (i.e. can you find vectors such that the subspace is their span)?  To help your analysis, explore with the Subspace Tester at GeoGebra ID: mzcfrvqh .    Subsets in .     Spans vs Subspaces. Recall that spans in are either the origin, lines through the origin, or the whole plane. Can you find a subspace in that is not a span? If yes, clearly describe this set and explain how it satisfies . If not, explain why no such set can exist.    By , we have shown that all spans are subspaces. What about the other way around? Is every subspace a span?    Spans (the relationship)   If is a subspace and , then  spans  if .     Span (the noun) vs Spans (the relationship)  Span (the noun) and spans (the relationship) are different, but related concepts. These concepts were named this way by the mathematical community decades ago and is out of my control. For this book, if you wish, you can reference span the noun as the mixture set.    Visually Identifying Spans and Subspaces in   Analyze the image below, which can also be viewed at GeoGebra ID: xnnawvpr , and then answer the following questions.    Subsets in .      Describe all the subspaces depicted here.    For each subspace you found, which collections of shown vectors span them? Be complete, if multiple collections of vectors span a given subspace, list each collection.      To conclude this lesson, keep in mind that subspaces are subsets that contain their own linear combinations. This includes spans, null spaces, and lines and planes through the origin. In linear algebra, we frequently work with these sets in the lessons to come.   "
+},
+{
+  "id": "def-subspace",
+  "level": "2",
+  "url": "chp2sec6.html#def-subspace",
+  "type": "Definition",
+  "number": "2.6.1",
+  "title": "Subspace.",
+  "body": " Subspace   If is a subset that satisfies the following three properties:    Contains Zero. If denotes the zero vector, then ,    Closed Under Addition. If , then ,    Closed Under Scaling. If and , then ,    then is a subspace .   "
+},
+{
+  "id": "prop-span_is_subspace",
+  "level": "2",
+  "url": "chp2sec6.html#prop-span_is_subspace",
+  "type": "Proposition",
+  "number": "2.6.2",
+  "title": "Spans are Subspaces.",
+  "body": " Spans are Subspaces   If and , then is a subspace in .   "
+},
+{
+  "id": "prop-nullset_is_subspace",
+  "level": "2",
+  "url": "chp2sec6.html#prop-nullset_is_subspace",
+  "type": "Proposition",
+  "number": "2.6.3",
+  "title": "Null Spaces are Subspaces.",
+  "body": " Null Spaces are Subspaces   If is a set of vectors and , then is a subspace in .   "
+},
+{
+  "id": "def-subspace_geometric",
+  "level": "2",
+  "url": "chp2sec6.html#def-subspace_geometric",
+  "type": "Insight",
+  "number": "2.6.4",
+  "title": "Subspace — Geometric Formulation.",
+  "body": " Subspace — Geometric Formulation  If is a subspace, then:    Origin Containment. The origin is contained in .    Parallelogram Containment. If , then the whole mixture parallelogram associated to is contained in .    Line Containment. If , then the whole line is contained in .    "
+},
+{
+  "id": "geogebra-subspaces_in_plane",
+  "level": "2",
+  "url": "chp2sec6.html#geogebra-subspaces_in_plane",
+  "type": "Technology",
+  "number": "2.6.5",
+  "title": "Subspaces in the plane.",
+  "body": " Subspaces in the plane    Which subsets cannot be subspaces? Using , analyze the following subsets in the plane:  line (red),  line (blue),  line (violet),  circle (green),  first quadrant (orange), and  first quadrant and third quadrant (orange).  For each, determine if they satisfy origin containment, parallelogram containment, and line containment. Determine if they are subspaces. If one is a subspace, is it a span (i.e. can you find vectors such that the subspace is their span)?  To help your analysis, explore with the Subspace Tester at GeoGebra ID: mzcfrvqh .    Subsets in .     Spans vs Subspaces. Recall that spans in are either the origin, lines through the origin, or the whole plane. Can you find a subspace in that is not a span? If yes, clearly describe this set and explain how it satisfies . If not, explain why no such set can exist.   "
+},
+{
+  "id": "def-span_relationship",
+  "level": "2",
+  "url": "chp2sec6.html#def-span_relationship",
+  "type": "Definition",
+  "number": "2.6.6",
+  "title": "Spans (the relationship).",
+  "body": " Spans (the relationship)   If is a subspace and , then  spans  if .   "
+},
+{
+  "id": "lesson-linear_combination_subspace-13",
+  "level": "2",
+  "url": "chp2sec6.html#lesson-linear_combination_subspace-13",
+  "type": "Remark",
+  "number": "2.6.7",
+  "title": "Span (the noun) vs Spans (the relationship).",
+  "body": " Span (the noun) vs Spans (the relationship)  Span (the noun) and spans (the relationship) are different, but related concepts. These concepts were named this way by the mathematical community decades ago and is out of my control. For this book, if you wish, you can reference span the noun as the mixture set.  "
+},
+{
+  "id": "lesson-linear_combination_subspace-14",
+  "level": "2",
+  "url": "chp2sec6.html#lesson-linear_combination_subspace-14",
+  "type": "Technology",
+  "number": "2.6.8",
+  "title": "Visually Identifying Spans and Subspaces in <span class=\"process-math\">\\(\\R^3\\)<\/span>.",
+  "body": " Visually Identifying Spans and Subspaces in   Analyze the image below, which can also be viewed at GeoGebra ID: xnnawvpr , and then answer the following questions.    Subsets in .      Describe all the subspaces depicted here.    For each subspace you found, which collections of shown vectors span them? Be complete, if multiple collections of vectors span a given subspace, list each collection.     "
+},
+{
+  "id": "chp3sec1",
+  "level": "1",
+  "url": "chp3sec1.html",
+  "type": "Lesson",
+  "number": "3.1",
+  "title": "Matrix Multiplication as Mixture",
+  "body": " Matrix Multiplication as Mixture  We now return to the core idea of linear combination as mixture. We write linear combinations so often that it is useful to introduce a new, efficient, and compact notation to symbolize this process. If and are scalars, then the linear combination:   where the vector is the serving size vector (see Definition ) for the mixture and the new object obtained by smashing together the vectors is a matrix . Think of this matrix as your cereal boxes all lined up next to one another on a shelf.   Matrix   If , then the associated matrix is . The vectors of are the columns of and we say is the column of . When is clear from context, we may just write . The symbol is the name of the matrix.    The plural of matrix is matrices .    If , then the associated matrix is . The vector is the first column of and the vector is the second column of .    You can think of this as a sequence in two directions. (i.e., )   Vertical bars  The vertical bars between column vectors help us visually organize a matrix, but do not serve a computational purpose. I will use them going forward only when they improve the clarity of exposition.    Representing a matrix: name, column form, and entry form  We currently have three distinct ways to represent a matrix. The most succinct way to denote a matrix is with its name , say   If we want to unpack it into its column vectors , we can represent it as   Furthermore, each of the columns is itself a list of numbers, which we can unpack to obtain a grid of numbers   The symbol denotes the entry in the row and column. The matrix is all of these: its name , its column form , and its entry form .   I will always use capital letters for matrix names, e.g. , , , , etc. I try to always denote entries of a matrix with the associated lower case letters, e.g. , , etc.  How do we decide which representation to use? We will move between these constantly, choosing the representation that best meets our needs at the moment. While the entry form is often best for arithmetic computations, the name and column forms are usually better for us to organize our thoughts and communicate our reasoning.   Matrix Multiplication (Matrix with Vector)   If , and , then matrix multiplication of and is the linear combination of the columns of with corresponding scalars . In symbols,     At the level of entries, Definition \\ref{def_matrixmult} looks like:    Matrix Multiplication Meaning #1: as Mixture: The matrix equation  means  is the mixture of the columns of according to the serving sizes specified in .     Example \\ref{ex:mixture_parallelogram} could have been written in this language as .     Symbolizing Linear Combination as Matrix Multiplication   For each of the following linear combinations, compactly symbolize it using matrix multiplication     There exists such that  There does not exist such that      Interpreting Symbolism of Matrix Multiplication as Linear Combination   For each of the following expressions, (1) Clearly sketch and label its associated mixture parallelogram and (2) Use linear combinations to symbolically compute the corresponding mixture vector.       If and , then use matrix multiplication to compactly symbolize each of the following.   The sum of the vectors of .  The average of the vectors of .  Vector , where .     For the moment, there is no new concept here, just compact notation. Accordingly, matrix multiplication acquires all the meanings and algebraic properties we have previously established for linear combination.   Compactifying Algebraic Properties of Linear Combination   Recall Proposition \\ref{prop:dist_across_comb}, our double cookie recipe proposition, states: If and , then   Compactify this algebraic property using matrix multiplication.    For the moment, there is no new concept here, just compact notation. Accordingly, matrix multiplication acquires all the meanings and algebraic properties we have previously established for linear combination.   Compactifying Algebraic Properties of Linear Combination   Recall Proposition , our \"double cookie recipe\" proposition, states:  If and , then   Compactify this algebraic property using matrix multiplication.    Matrix multiplication satisfies two fundamental algebraic properties that we will constantly use.   Linearity Properties of Matrix Multiplication.   If is an matrix, , and , then   (Distributes across vector sum)  and    (Commutes with scaling)         These can be verified algebraically from the definition of matrix multiplication ( ), basic algebraic properties of real numbers ( ), and basic algebraic properties of linear combination ( ).  Here I will give the careful justification of distributivity, with the symbolic movements on the left, and the justification for those symbolic movements on the right. If , then    Matrix multiplication of a matrix with another matrix is simply a convenient way of organizing multiple mixtures all at once.   Matrix Multiplication (Matrix with Matrix)   If is an matrix and is an matrix (i.e. ), then the matrix multiplication of matrices  and is   The resulting matrix is their product .     Columns of a Product. The columns of a product of two matrices are linear combinations of the columns of the first matrix, as read from left to right.        Using Definition   Let and .    On your own, use to compute and .    Compare your computations with your group.    What interesting observations can you make?    Generalize your observations. If is and is where , then what do you observe about and . Explain your thinking interpreting these products using linear combinations.       Associativity of Matrix Multiplication.   If is an matrix, is an matrix, and , then      If , then    "
+},
+{
+  "id": "def-matrix",
+  "level": "2",
+  "url": "chp3sec1.html#def-matrix",
+  "type": "Definition",
+  "number": "3.1.1",
+  "title": "Matrix.",
+  "body": " Matrix   If , then the associated matrix is . The vectors of are the columns of and we say is the column of . When is clear from context, we may just write . The symbol is the name of the matrix.   "
+},
+{
+  "id": "ex-forming_matrix",
+  "level": "2",
+  "url": "chp3sec1.html#ex-forming_matrix",
+  "type": "Example",
+  "number": "3.1.2",
+  "title": "",
+  "body": "  If , then the associated matrix is . The vector is the first column of and the vector is the second column of .   "
+},
+{
+  "id": "chp3sec1-9",
+  "level": "2",
+  "url": "chp3sec1.html#chp3sec1-9",
+  "type": "Remark",
+  "number": "3.1.3",
+  "title": "Vertical bars.",
+  "body": " Vertical bars  The vertical bars between column vectors help us visually organize a matrix, but do not serve a computational purpose. I will use them going forward only when they improve the clarity of exposition.  "
+},
+{
+  "id": "rem-matrix_notation",
+  "level": "2",
+  "url": "chp3sec1.html#rem-matrix_notation",
+  "type": "Remark",
+  "number": "3.1.4",
+  "title": "Representing a matrix: name, column form, and entry form.",
+  "body": " Representing a matrix: name, column form, and entry form  We currently have three distinct ways to represent a matrix. The most succinct way to denote a matrix is with its name , say   If we want to unpack it into its column vectors , we can represent it as   Furthermore, each of the columns is itself a list of numbers, which we can unpack to obtain a grid of numbers   The symbol denotes the entry in the row and column. The matrix is all of these: its name , its column form , and its entry form .  "
+},
+{
+  "id": "def_matrixmult",
+  "level": "2",
+  "url": "chp3sec1.html#def_matrixmult",
+  "type": "Definition",
+  "number": "3.1.5",
+  "title": "Matrix Multiplication (Matrix with Vector).",
+  "body": " Matrix Multiplication (Matrix with Vector)   If , and , then matrix multiplication of and is the linear combination of the columns of with corresponding scalars . In symbols,    "
+},
+{
+  "id": "matrixmult_meaning1",
+  "level": "2",
+  "url": "chp3sec1.html#matrixmult_meaning1",
+  "type": "Insight",
+  "number": "3.1.6",
+  "title": "",
+  "body": " Matrix Multiplication Meaning #1: as Mixture: The matrix equation  means  is the mixture of the columns of according to the serving sizes specified in .  "
+},
+{
+  "id": "chp3sec1-17",
+  "level": "2",
+  "url": "chp3sec1.html#chp3sec1-17",
+  "type": "Example",
+  "number": "3.1.7",
+  "title": "",
+  "body": "  Example \\ref{ex:mixture_parallelogram} could have been written in this language as .   "
+},
+{
+  "id": "chp3sec1-18",
+  "level": "2",
+  "url": "chp3sec1.html#chp3sec1-18",
+  "type": "Activity",
+  "number": "3.1.8",
+  "title": "Symbolizing Linear Combination as Matrix Multiplication.",
+  "body": " Symbolizing Linear Combination as Matrix Multiplication   For each of the following linear combinations, compactly symbolize it using matrix multiplication     There exists such that  There does not exist such that    "
+},
+{
+  "id": "chp3sec1-19",
+  "level": "2",
+  "url": "chp3sec1.html#chp3sec1-19",
+  "type": "Activity",
+  "number": "3.1.9",
+  "title": "Interpreting Symbolism of Matrix Multiplication as Linear Combination.",
+  "body": " Interpreting Symbolism of Matrix Multiplication as Linear Combination   For each of the following expressions, (1) Clearly sketch and label its associated mixture parallelogram and (2) Use linear combinations to symbolically compute the corresponding mixture vector.    "
+},
+{
+  "id": "activity-symbolizing_with_matrices",
+  "level": "2",
+  "url": "chp3sec1.html#activity-symbolizing_with_matrices",
+  "type": "Activity",
+  "number": "3.1.10",
+  "title": "",
+  "body": "  If and , then use matrix multiplication to compactly symbolize each of the following.   The sum of the vectors of .  The average of the vectors of .  Vector , where .    "
+},
+{
+  "id": "chp3sec1-22",
+  "level": "2",
+  "url": "chp3sec1.html#chp3sec1-22",
+  "type": "Activity",
+  "number": "3.1.11",
+  "title": "Compactifying Algebraic Properties of Linear Combination.",
+  "body": " Compactifying Algebraic Properties of Linear Combination   Recall Proposition \\ref{prop:dist_across_comb}, our double cookie recipe proposition, states: If and , then   Compactify this algebraic property using matrix multiplication.   "
+},
+{
+  "id": "chp3sec1-24",
+  "level": "2",
+  "url": "chp3sec1.html#chp3sec1-24",
+  "type": "Activity",
+  "number": "3.1.12",
+  "title": "Compactifying Algebraic Properties of Linear Combination.",
+  "body": " Compactifying Algebraic Properties of Linear Combination   Recall Proposition , our \"double cookie recipe\" proposition, states:  If and , then   Compactify this algebraic property using matrix multiplication.   "
+},
+{
+  "id": "prop_fundamental_matrix_mult_props",
+  "level": "2",
+  "url": "chp3sec1.html#prop_fundamental_matrix_mult_props",
+  "type": "Proposition",
+  "number": "3.1.13",
+  "title": "Linearity Properties of Matrix Multiplication..",
+  "body": " Linearity Properties of Matrix Multiplication.   If is an matrix, , and , then   (Distributes across vector sum)  and    (Commutes with scaling)       "
+},
+{
+  "id": "chp3sec1-27",
+  "level": "2",
+  "url": "chp3sec1.html#chp3sec1-27",
+  "type": "Proof",
+  "number": "3.1.1",
+  "title": "",
+  "body": " These can be verified algebraically from the definition of matrix multiplication ( ), basic algebraic properties of real numbers ( ), and basic algebraic properties of linear combination ( ).  Here I will give the careful justification of distributivity, with the symbolic movements on the left, and the justification for those symbolic movements on the right. If , then   "
+},
+{
+  "id": "Def-matrix_mult_matrices",
+  "level": "2",
+  "url": "chp3sec1.html#Def-matrix_mult_matrices",
+  "type": "Definition",
+  "number": "3.1.14",
+  "title": "Matrix Multiplication (Matrix with Matrix).",
+  "body": " Matrix Multiplication (Matrix with Matrix)   If is an matrix and is an matrix (i.e. ), then the matrix multiplication of matrices  and is   The resulting matrix is their product .   "
+},
+{
+  "id": "ex-matrix_mult1",
+  "level": "2",
+  "url": "chp3sec1.html#ex-matrix_mult1",
+  "type": "Example",
+  "number": "3.1.15",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "activity-pfshortcut_by_hand",
+  "level": "2",
+  "url": "chp3sec1.html#activity-pfshortcut_by_hand",
+  "type": "Activity",
+  "number": "3.1.16",
+  "title": "Using Definition Definition 3.1.14.",
+  "body": " Using Definition   Let and .    On your own, use to compute and .    Compare your computations with your group.    What interesting observations can you make?    Generalize your observations. If is and is where , then what do you observe about and . Explain your thinking interpreting these products using linear combinations.     "
+},
+{
+  "id": "prop_fundamental_matrix_mult_props2",
+  "level": "2",
+  "url": "chp3sec1.html#prop_fundamental_matrix_mult_props2",
+  "type": "Proposition",
+  "number": "3.1.17",
+  "title": "Associativity of Matrix Multiplication..",
+  "body": " Associativity of Matrix Multiplication.   If is an matrix, is an matrix, and , then    "
+},
+{
+  "id": "chp3sec1-34",
+  "level": "2",
+  "url": "chp3sec1.html#chp3sec1-34",
+  "type": "Proof",
+  "number": "3.1.2",
+  "title": "",
+  "body": " If , then   "
+},
+{
+  "id": "chp3sec2",
+  "level": "1",
+  "url": "chp3sec2.html",
+  "type": "Lesson",
+  "number": "3.2",
+  "title": "Matrix Multiplication Sets",
+  "body": " Matrix Multiplication Sets  Recall in Chapter , I introduced three fundamental sets associated to linear combination: span, null space, and solution set. Since matrix multiplication is a symbolic compactification of linear combination, it should not come as a surprise that these three mixture sets become matrix multiplication sets.   Span becomes Column Space  The question of span concerns what all we can make with a fixed collection of ingredients. This notion is formalized with the concept of span (the noun) ( ). In symbols, if , then If we use the definition of matrix multiplication ( ) to compactify this expression and set , then We call this symbolic compactification the column space.   Column Space   If is an matrix, then the column space of is the span of its columns. In symbols,      A rose by any other name... Do not be scared of column space, it is just different language for span (the noun) - something you already know! You may then ask: Why introduce two names for the same thing? It is simply a matter of convenience: if we start with matrix whose columns are not already symbolized, then it is convenient to directly reference and reason about its column space without having to first symbolize its columns.  Column spaces are another instance of subspace (cf. ). Remember, subspaces play a central role in linear algebra and it is always useful to be aware of which subsets we are working with happen to be subspaces.   Column Space is a Subspace. If is an matrix, then is a subspace in .   The justification of this proposition is a logical consequence of chaining together and .     Dependency becomes Null Space  The question of redundancy concerns whether a collection of vectors contains one vector that can be made from a linear combination of the other vectors in the collection. This notion is formalized with the concept of dependence (Definition ). Algebraically, this condition was reformulated as asking if the zero vector can be made as a linear combination in a nontrivial way (cf. ). Symbolically, if , then we want to know if there exists numbers , at least one of which is not zero, such that . If we use the definition of matrix multiplication ( ) to compactify this expression and set , then we want to know if there exists a nonzero vector such that . We call this symbolic compactification the null space.   Null Space   If is an matrix, then the null space of is the null space of its columns. In symbols,      Null Space is a Subspace. If is an matrix, then is a subspace in .   The justification of this proposition is primarily a logical consequence of chaining together , Definition , and . Alternatively, consider . Fill in the details on your own.    Null space records redundancy. Do not be scared of null space, it is simply the null space of the columns of the matrix - something you already know! The null space is the set of all ways we can make the zero vector with the columns of our matrix.   Dependency as nontrivial null space. If is an matrix, then if and only if the columns of are independent.   For this formal justification, try to re-interpret Proposition using the compact notation of matrices and null space.    Finding Column Space and Null Space   Suppose and I want to know its column space and null space .  To start, I begin by recalling the meanings of these terms. Column space is the span of the columns of and null space is all the ways I can make zero with the columns of . So I then identify and write down the columns of : . I can see (e.g. by plotting) that and are non-collinear. Therefore, their span is the plane in going through the points , , and . Furthermore, since is non-collinear, it is independent, and hence the only way to make zero is the trivial way. Therefore the null space is the trivial (i.e. zero) subspace. In algebraic symbolism:      Finding Column Space and Null Space   Suppose and I want to know its column space and null space .  To start, I begin by recalling the meanings of these terms. Column space is the span of the columns of and null space is all the ways I can make zero with the columns of . So I then identify and write down the columns of : . I can see (e.g. by plotting) that and are non-collinear. Therefore, their span is the whole plane in , and hence the span of must also be all of . I can also see (e.g. by visual inspection), that , hence , and thus I have null scalars . In algebraic symbolism:      Column Space and Null Space   For each of the following matrices, analyze their column space and null space. Describe them geometrically (i.e. trivial, line, plane, or more generally, a -plane for appropriate ), use appropriate algebraic symbolism, and find their parametric vector forms.       Makeability becomes Solution Set  The question of makeability concerns whether a given vector can be made with the vectors in our collection, and if so, how. Symbolically, if , then we want to know if there exists numbers , such that . If we use the definition of matrix multiplication ( ) to compactify this expression and set , then we want to know if there exists a vector such that . We call this symbolic compactification the solution set of the matrix equation.   Solution Set   If is an matrix and , then the solution set to the matrix equation is the collection of all vectors such that . In symbols,     Solution sets to matrix equations are central to linear algebra, and we will revisit and look more deeply into them throughout the course.  Observe that , which is a subspace. On the other hand, if , then is never a subspace.   "
+},
+{
+  "id": "def-columnspace",
+  "level": "2",
+  "url": "chp3sec2.html#def-columnspace",
+  "type": "Definition",
+  "number": "3.2.1",
+  "title": "Column Space.",
+  "body": " Column Space   If is an matrix, then the column space of is the span of its columns. In symbols,    "
+},
+{
+  "id": "chp3sec2-3-7",
+  "level": "2",
+  "url": "chp3sec2.html#chp3sec2-3-7",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " The justification of this proposition is a logical consequence of chaining together and .  "
+},
+{
+  "id": "def-nullspace",
+  "level": "2",
+  "url": "chp3sec2.html#def-nullspace",
+  "type": "Definition",
+  "number": "3.2.2",
+  "title": "Null Space.",
+  "body": " Null Space   If is an matrix, then the null space of is the null space of its columns. In symbols,    "
+},
+{
+  "id": "chp3sec2-4-5",
+  "level": "2",
+  "url": "chp3sec2.html#chp3sec2-4-5",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " The justification of this proposition is primarily a logical consequence of chaining together , Definition , and . Alternatively, consider . Fill in the details on your own.  "
+},
+{
+  "id": "chp3sec2-4-8",
+  "level": "2",
+  "url": "chp3sec2.html#chp3sec2-4-8",
+  "type": "Proof",
+  "number": "2",
+  "title": "",
+  "body": " For this formal justification, try to re-interpret Proposition using the compact notation of matrices and null space.  "
+},
+{
+  "id": "chp3sec2-4-9",
+  "level": "2",
+  "url": "chp3sec2.html#chp3sec2-4-9",
+  "type": "Example",
+  "number": "3.2.3",
+  "title": "Finding Column Space and Null Space.",
+  "body": " Finding Column Space and Null Space   Suppose and I want to know its column space and null space .  To start, I begin by recalling the meanings of these terms. Column space is the span of the columns of and null space is all the ways I can make zero with the columns of . So I then identify and write down the columns of : . I can see (e.g. by plotting) that and are non-collinear. Therefore, their span is the plane in going through the points , , and . Furthermore, since is non-collinear, it is independent, and hence the only way to make zero is the trivial way. Therefore the null space is the trivial (i.e. zero) subspace. In algebraic symbolism:    "
+},
+{
+  "id": "chp3sec2-4-10",
+  "level": "2",
+  "url": "chp3sec2.html#chp3sec2-4-10",
+  "type": "Example",
+  "number": "3.2.4",
+  "title": "Finding Column Space and Null Space.",
+  "body": " Finding Column Space and Null Space   Suppose and I want to know its column space and null space .  To start, I begin by recalling the meanings of these terms. Column space is the span of the columns of and null space is all the ways I can make zero with the columns of . So I then identify and write down the columns of : . I can see (e.g. by plotting) that and are non-collinear. Therefore, their span is the whole plane in , and hence the span of must also be all of . I can also see (e.g. by visual inspection), that , hence , and thus I have null scalars . In algebraic symbolism:    "
+},
+{
+  "id": "activity-computing_col_null",
+  "level": "2",
+  "url": "chp3sec2.html#activity-computing_col_null",
+  "type": "Activity",
+  "number": "3.2.5",
+  "title": "Column Space and Null Space.",
+  "body": " Column Space and Null Space   For each of the following matrices, analyze their column space and null space. Describe them geometrically (i.e. trivial, line, plane, or more generally, a -plane for appropriate ), use appropriate algebraic symbolism, and find their parametric vector forms.    "
+},
+{
+  "id": "def-solutionset",
+  "level": "2",
+  "url": "chp3sec2.html#def-solutionset",
+  "type": "Definition",
+  "number": "3.2.6",
+  "title": "Solution Set.",
+  "body": " Solution Set   If is an matrix and , then the solution set to the matrix equation is the collection of all vectors such that . In symbols,    "
+},
+{
+  "id": "chp3sec3",
+  "level": "1",
+  "url": "chp3sec3.html",
+  "type": "Lesson",
+  "number": "3.3",
+  "title": "Matrix Multiplication as Transformation",
+  "body": " Matrix Multiplication as Transformation   Transforming Points and Objects   Matrix Transformation   If is an matrix, then the rule where you input the serving size vector and output the mixture vector is a matrix transformation from to .  If we give the transformation the name  , then we write such that , or equivalently, .  If , then we say sends to . When is clear from context, we may write instead of .     Matrix Multiplication Meaning #2: as Transformation  The matrix equation  means the transformation associated to multiplying by  sends the input serving size vector to the output mixture vector .   Matrix transformations have very nice geometric properties and model all sorts of phenomena. For example, these transformations and their generalizations are the basis for tools in computer graphics, cryptography, and machine learning.   Transforming a Point   Consider the matrix transformation associated to multiplication by .  For any input vector , . So, for example, . The transformation  sends vector to vector .   Let's visualize this transformation thinking of vectors as points . Observe how on the same plot, we draw both input and output. This allows us to see how moves the points in the plane.      Notation: vs  Please take note of the following subtle but important point: is the name of a rule of assignment, while is the name of a matrix . Think by analogy in calculus when you looked at the function . The function is a rule that doubles the input, while is just a number . While this rule and this number are related, they are distinct mathematical objects, just as and are distinct mathematical objects.   Points make up objects. When you look at where a matrix transformation sends all the points of an object, you now have a transformed object !   Transformed Sets   If is a matrix transformation and is a set of points, then the transformed set is the set of points in obtained by recording where sends each point of .  In symbols and we say  sends  to . We may also say is the image of under .    We are interested in understanding where matrix transformations send all sorts of geometric objects, including: lines, line segments, squares, and parallelograms.   Transforming a Line   Consider the matrix transformation associated to multiplication by , and the line . For each , and hence each point on ,     So  sends  to the new line  .  Again, let's visualize this transformation thinking of vectors as points . Lines are composed of points. Each value of parameter determines a point on the line. Below, we show with the dashed purple curves where several points on are sent to. By following where sends points, we see that every point on the line is sent to a point on the line .    Visualize how playing with the entries of a matrix affects how the associated matrix transformation moves lines in the plane at GeoGebra ID: abuf7abt .   Matrix transformations send lines to lines   If is an matrix, is the associated transformation , , denotes either a closed interval or all of , and is a line (segment), then either:     , in which case (i.e., the whole line is sent to one point), otherwise,    the transformed line (segment) is also a line (segment) and has parametric vector form .      If , then and: If , then . Otherwise if and , then we have shown that for each , identifies the point on at time with the point on at time , and hence .     Matrix transformations send to   If is an matrix and is the transformation , then .    This justification formalizes the intuition that mixing zero serving sizes of vectors results in the zero mixture. If , then .     Matrix transformations send subspaces to subspaces   If is an matrix, is the transformation and is a subspace, then the transformed subspace is a subspace.    This justification is an activity in reasoning about properties . Subspaces are defined by having three properties (Definition ). We use the assumption that has these properties to deduce also has these properties. In this context, you want to show:    Contains Zero.  .    Closed Under Addition. If , then .    Closed Under Scaling. If and , then .    The details of this justification are left as an activity. As a hint, , , , and may be useful.      Transformations of the Plane  For the moment, we will restrict our focus to matrix transformations associated to matrices. Such transformations are transformations of the plane. What do matrix transformations do to the plane? The plane is big (in fact infinite!), so it is useful to restrict our focus to well-chosen small subsets of the plane. Perhaps the most reasonable place to start is a square.   Geometric Words and Geometric Gestures  Imagine a square is made out of elastic and you are holding it in your hands. What some clear geometric words and gestures you could use to instruct someone transform that elastic square?     Stretch by a certain factor in a given direction.     Reflect across a given line.     Rotate by a certain number of degrees in a given direction.     Project onto a line (or origin).     Shear a line (or vector) to another line while holding another line fixed.      A cartoon depicting transforming the unit square.     We usually visualize transformations of the plane by drawing both the input and output on the same plane . This gives us a sense of the movement of the transformation.   (Standard) Unit Square    The (standard) unit square is the parallelogram in the Euclidean plane with vertices: , , , and .     As a consequence of and , to see what does to the unit square , it suffices to follow the three vertices , , and . Note that it is always important to clearly follow and label each vertex, as otherwise the pictures could mislead you.   Transforming a Square   In this example, we walk through how to use matrix multiplication and the unit square to reason about how transforms the plane.  By the above remarks, it suffices to follow what does to , , and . This amounts to the following three computations:    We plot these points, and since line segments are sent to line segments, we connect them up. We see we have drawn a rectangle.   Now we think to ourselves, if the unit square is made of elastic, and I am holding it within my hands, how can I describe what I would have to do to it to obtain the transformed square? We see that we stretch the square by a factor of 2 in the -direction and we stretch the square by a factor of 3 in the -direction.  We have now created visual and verbal representations of the transformation given by the symbolic expression .        For each of the following matrices, use the type of analysis modeled in Example to:   Clearly sketch and label how the matrix transforms the unit square (be sure to follow and label each vertex).  In complete sentences, use geometric words to describe how the matrix transforms the plane. Be as clear and precise as possible.        Look at each matrix and associated transformed square. Can you make a conjecture relating the entries of your matrix to the vertices of the transformed square? How might you justify your conjecture?    Look at the parallelogram, , depicted in the image below.   Find a matrix so that . Verify you are correct.  Is your matrix the only one that sends the unit square to this parallelogram? Explain.         A type of transformation we have not yet discussed is translation . Do you think translation is a matrix transformation?     The Transformation Visualizer Tool   In this activity, you will use the Transformation Visualizer Tool to investigate and visualize how the entries of a matrix affect the way the matrix transforms the unit square, and the plane more generally.     Finding matrix entries to create a given transformation. In this part, you will discover how the entries of the matrix affect the associated transformation. To begin, play with the sliders, one at a time, and then mixing them and see what transformations you get. Now go through systematically: How can you get stretches (vertically or horizontally), shears (horizontally or vertically), reflections across either axis, projections onto either axis, or rotations (counterclockwise or clockwise)? Clearly record your observations.     Creating visual and verbal representations from symbolic representations. For each of the following matrices (I) use your Transformation Visualizer Tool to clearly depict how to the unit square is transformed and (II) within a text box, use geometric words and complete sentences to verbally describe how the       "
+},
+{
+  "id": "def-matrix_transformation",
+  "level": "2",
+  "url": "chp3sec3.html#def-matrix_transformation",
+  "type": "Definition",
+  "number": "3.3.1",
+  "title": "Matrix Transformation.",
+  "body": " Matrix Transformation   If is an matrix, then the rule where you input the serving size vector and output the mixture vector is a matrix transformation from to .  If we give the transformation the name  , then we write such that , or equivalently, .  If , then we say sends to . When is clear from context, we may write instead of .   "
+},
+{
+  "id": "matrixmult_meaning2",
+  "level": "2",
+  "url": "chp3sec3.html#matrixmult_meaning2",
+  "type": "Insight",
+  "number": "3.3.2",
+  "title": "Matrix Multiplication Meaning #2: <span class=\"process-math\">\\(A\\vect{x}=\\vect{b}\\)<\/span> as Transformation.",
+  "body": " Matrix Multiplication Meaning #2: as Transformation  The matrix equation  means the transformation associated to multiplying by  sends the input serving size vector to the output mixture vector .  "
+},
+{
+  "id": "ex-transforming_point",
+  "level": "2",
+  "url": "chp3sec3.html#ex-transforming_point",
+  "type": "Example",
+  "number": "3.3.3",
+  "title": "Transforming a Point.",
+  "body": " Transforming a Point   Consider the matrix transformation associated to multiplication by .  For any input vector , . So, for example, . The transformation  sends vector to vector .   Let's visualize this transformation thinking of vectors as points . Observe how on the same plot, we draw both input and output. This allows us to see how moves the points in the plane.    "
+},
+{
+  "id": "notation-t-vs-a",
+  "level": "2",
+  "url": "chp3sec3.html#notation-t-vs-a",
+  "type": "Remark",
+  "number": "3.3.4",
+  "title": "Notation: <span class=\"process-math\">\\(T\\)<\/span> vs <span class=\"process-math\">\\(A\\)<\/span>.",
+  "body": " Notation: vs  Please take note of the following subtle but important point: is the name of a rule of assignment, while is the name of a matrix . Think by analogy in calculus when you looked at the function . The function is a rule that doubles the input, while is just a number . While this rule and this number are related, they are distinct mathematical objects, just as and are distinct mathematical objects.  "
+},
+{
+  "id": "def-transformed_set",
+  "level": "2",
+  "url": "chp3sec3.html#def-transformed_set",
+  "type": "Definition",
+  "number": "3.3.5",
+  "title": "Transformed Sets.",
+  "body": " Transformed Sets   If is a matrix transformation and is a set of points, then the transformed set is the set of points in obtained by recording where sends each point of .  In symbols and we say  sends  to . We may also say is the image of under .   "
+},
+{
+  "id": "ex-transforming_line",
+  "level": "2",
+  "url": "chp3sec3.html#ex-transforming_line",
+  "type": "Example",
+  "number": "3.3.6",
+  "title": "Transforming a Line.",
+  "body": " Transforming a Line   Consider the matrix transformation associated to multiplication by , and the line . For each , and hence each point on ,     So  sends  to the new line  .  Again, let's visualize this transformation thinking of vectors as points . Lines are composed of points. Each value of parameter determines a point on the line. Below, we show with the dashed purple curves where several points on are sent to. By following where sends points, we see that every point on the line is sent to a point on the line .   "
+},
+{
+  "id": "prop-matrices_transform_lines",
+  "level": "2",
+  "url": "chp3sec3.html#prop-matrices_transform_lines",
+  "type": "Proposition",
+  "number": "3.3.7",
+  "title": "Matrix transformations send lines to lines.",
+  "body": " Matrix transformations send lines to lines   If is an matrix, is the associated transformation , , denotes either a closed interval or all of , and is a line (segment), then either:     , in which case (i.e., the whole line is sent to one point), otherwise,    the transformed line (segment) is also a line (segment) and has parametric vector form .      If , then and: If , then . Otherwise if and , then we have shown that for each , identifies the point on at time with the point on at time , and hence .   "
+},
+{
+  "id": "prop-matrices_transform_zero",
+  "level": "2",
+  "url": "chp3sec3.html#prop-matrices_transform_zero",
+  "type": "Proposition",
+  "number": "3.3.8",
+  "title": "Matrix transformations send <span class=\"process-math\">\\(\\vect{0}\\)<\/span> to <span class=\"process-math\">\\(\\vect{0}\\)<\/span>.",
+  "body": " Matrix transformations send to   If is an matrix and is the transformation , then .    This justification formalizes the intuition that mixing zero serving sizes of vectors results in the zero mixture. If , then .   "
+},
+{
+  "id": "prop-matrices_transform_subspaces",
+  "level": "2",
+  "url": "chp3sec3.html#prop-matrices_transform_subspaces",
+  "type": "Proposition",
+  "number": "3.3.9",
+  "title": "Matrix transformations send subspaces to subspaces.",
+  "body": " Matrix transformations send subspaces to subspaces   If is an matrix, is the transformation and is a subspace, then the transformed subspace is a subspace.    This justification is an activity in reasoning about properties . Subspaces are defined by having three properties (Definition ). We use the assumption that has these properties to deduce also has these properties. In this context, you want to show:    Contains Zero.  .    Closed Under Addition. If , then .    Closed Under Scaling. If and , then .    The details of this justification are left as an activity. As a hint, , , , and may be useful.   "
+},
+{
+  "id": "language-geometric_transformations",
+  "level": "2",
+  "url": "chp3sec3.html#language-geometric_transformations",
+  "type": "Remark",
+  "number": "3.3.10",
+  "title": "Geometric Words and Geometric Gestures.",
+  "body": " Geometric Words and Geometric Gestures  Imagine a square is made out of elastic and you are holding it in your hands. What some clear geometric words and gestures you could use to instruct someone transform that elastic square?     Stretch by a certain factor in a given direction.     Reflect across a given line.     Rotate by a certain number of degrees in a given direction.     Project onto a line (or origin).     Shear a line (or vector) to another line while holding another line fixed.      A cartoon depicting transforming the unit square.    "
+},
+{
+  "id": "def-unit_square",
+  "level": "2",
+  "url": "chp3sec3.html#def-unit_square",
+  "type": "Definition",
+  "number": "3.3.11",
+  "title": "(Standard) Unit Square.",
+  "body": " (Standard) Unit Square    The (standard) unit square is the parallelogram in the Euclidean plane with vertices: , , , and .    "
+},
+{
+  "id": "ex-transforming_square1",
+  "level": "2",
+  "url": "chp3sec3.html#ex-transforming_square1",
+  "type": "Example",
+  "number": "3.3.12",
+  "title": "Transforming a Square.",
+  "body": " Transforming a Square   In this example, we walk through how to use matrix multiplication and the unit square to reason about how transforms the plane.  By the above remarks, it suffices to follow what does to , , and . This amounts to the following three computations:    We plot these points, and since line segments are sent to line segments, we connect them up. We see we have drawn a rectangle.   Now we think to ourselves, if the unit square is made of elastic, and I am holding it within my hands, how can I describe what I would have to do to it to obtain the transformed square? We see that we stretch the square by a factor of 2 in the -direction and we stretch the square by a factor of 3 in the -direction.  We have now created visual and verbal representations of the transformation given by the symbolic expression .   "
+},
+{
+  "id": "activity-matrix-sketches",
+  "level": "2",
+  "url": "chp3sec3.html#activity-matrix-sketches",
+  "type": "Activity",
+  "number": "3.3.13",
+  "title": "",
+  "body": "    For each of the following matrices, use the type of analysis modeled in Example to:   Clearly sketch and label how the matrix transforms the unit square (be sure to follow and label each vertex).  In complete sentences, use geometric words to describe how the matrix transforms the plane. Be as clear and precise as possible.        Look at each matrix and associated transformed square. Can you make a conjecture relating the entries of your matrix to the vertices of the transformed square? How might you justify your conjecture?    Look at the parallelogram, , depicted in the image below.   Find a matrix so that . Verify you are correct.  Is your matrix the only one that sends the unit square to this parallelogram? Explain.      "
+},
+{
+  "id": "activity-translation-check",
+  "level": "2",
+  "url": "chp3sec3.html#activity-translation-check",
+  "type": "Activity",
+  "number": "3.3.14",
+  "title": "",
+  "body": "  A type of transformation we have not yet discussed is translation . Do you think translation is a matrix transformation?   "
+},
+{
+  "id": "geogebra_TransformationVisualizer",
+  "level": "2",
+  "url": "chp3sec3.html#geogebra_TransformationVisualizer",
+  "type": "Technology",
+  "number": "3.3.15",
+  "title": "The Transformation Visualizer Tool.",
+  "body": " The Transformation Visualizer Tool   In this activity, you will use the Transformation Visualizer Tool to investigate and visualize how the entries of a matrix affect the way the matrix transforms the unit square, and the plane more generally.     Finding matrix entries to create a given transformation. In this part, you will discover how the entries of the matrix affect the associated transformation. To begin, play with the sliders, one at a time, and then mixing them and see what transformations you get. Now go through systematically: How can you get stretches (vertically or horizontally), shears (horizontally or vertically), reflections across either axis, projections onto either axis, or rotations (counterclockwise or clockwise)? Clearly record your observations.     Creating visual and verbal representations from symbolic representations. For each of the following matrices (I) use your Transformation Visualizer Tool to clearly depict how to the unit square is transformed and (II) within a text box, use geometric words and complete sentences to verbally describe how the     "
+},
+{
+  "id": "chp3sec4",
+  "level": "1",
+  "url": "chp3sec4.html",
+  "type": "Lesson",
+  "number": "3.4",
+  "title": "Composition",
+  "body": " Composition  If we have two transformations where the target of the first is the domain of the second, then we can chain them together and the output of the first becomes the input of the second .    A cartoon visualizing composition.     Composition   If and are matrix transformations, then the composition of transformation followed by transformation is the new transformation We denote this new rule and if , then .    Observe that, for composition to make sense, the list-length of the output of the first transformation must be equal to the list-length of inputs for the second matrix transformation.   In the notation above, is performed first , and is performed second . In other words, since we are using function notation, we read the transformation from right to left !   Composition is a very general concept which extends far beyond linear algebra. You will see it in calculus, analysis, geometry, and algebra, just to name a few places. However, if both and are matrix transformations, i.e., there exist matrices and such that and , then the composition is also a matrix transformation!   The composition of matrix transformations is a matrix transformation   If and , then .    Since matrix multiplication is associative (Proposition )       The product  means  first stretch by a factor of 2 in the -direction and factor of 3 in the -direction, and next shear the -axis in the -direction to the line .    Observe that if you performed the composition in the opposite order, you would get a different transformation!    Visualize composition as the product of matrices at GeoGebra ID: nq5kewqt .   Symbolic to Verbal   Given the following product, give a step by step list of how it transforms the plane. Be sure to use complete sentences and geometric words.      Verbal to Symbolic   Given the following list of transformations, give the associated matrix product:   Rotate clockwise,  Reflect across the -axis,  Stretch by a factor of 5 in the -direction (and nothing in the -direction).      Identifying Compositions   In this activity, you will expand upon GeoGebra Activity , looking more carefully at certain special classes of matrices which correspond to compositions of simple transformations.     Setting it up again. Quickly rebuild your Transformation Visualizer Tool . This is good practice as this should only take a moment. This should include the unit square, a matrix , and the transformed unit square.     Analyzing a new class of transformations. In this part, you will analyze the transformations given by the class of matrices of the form . Define two sliders  and , and within the Algebra Window , insert them in the appropriate places to create the matrix . Start analyzing the transformed unit square. Try a few specific values such at and . What do you see? Now as you vary and , what types of transformations are you seeing? Can you identify these transformations as a composition of two simple geometric transformations (e.g., stretch, shear, reflect, rotate, and\/or project)? Once you have some confidence in your description, carefully record it using geometric words in complete sentences.     Analyzing a new class of transformations. Repeat Part 2 for matrix and slider  . Start with values , then , and then go from there.       Decomposition as a problem solving strategy  A major goal of future lessons (see, for example, ) is to decompose a complicated matrix into a product of simpler matrices, thereby allowing us to identify its associated transformation as a composition of simple transformations.   "
+},
+{
+  "id": "def-composition",
+  "level": "2",
+  "url": "chp3sec4.html#def-composition",
+  "type": "Definition",
+  "number": "3.4.1",
+  "title": "Composition.",
+  "body": " Composition   If and are matrix transformations, then the composition of transformation followed by transformation is the new transformation We denote this new rule and if , then .   "
+},
+{
+  "id": "chp3sec4-6",
+  "level": "2",
+  "url": "chp3sec4.html#chp3sec4-6",
+  "type": "Warning",
+  "number": "3.4.2",
+  "title": "",
+  "body": " In the notation above, is performed first , and is performed second . In other words, since we are using function notation, we read the transformation from right to left !  "
+},
+{
+  "id": "prop-composition-matrix",
+  "level": "2",
+  "url": "chp3sec4.html#prop-composition-matrix",
+  "type": "Proposition",
+  "number": "3.4.3",
+  "title": "The composition of matrix transformations is a matrix transformation.",
+  "body": " The composition of matrix transformations is a matrix transformation   If and , then .    Since matrix multiplication is associative (Proposition )    "
+},
+{
+  "id": "ex-composition-shear",
+  "level": "2",
+  "url": "chp3sec4.html#ex-composition-shear",
+  "type": "Example",
+  "number": "3.4.4",
+  "title": "",
+  "body": "  The product  means  first stretch by a factor of 2 in the -direction and factor of 3 in the -direction, and next shear the -axis in the -direction to the line .    Observe that if you performed the composition in the opposite order, you would get a different transformation!   "
+},
+{
+  "id": "activity-ch2-composition",
+  "level": "2",
+  "url": "chp3sec4.html#activity-ch2-composition",
+  "type": "Activity",
+  "number": "3.4.6",
+  "title": "Symbolic to Verbal.",
+  "body": " Symbolic to Verbal   Given the following product, give a step by step list of how it transforms the plane. Be sure to use complete sentences and geometric words.    "
+},
+{
+  "id": "activity-composition-verbal-to-symbolic",
+  "level": "2",
+  "url": "chp3sec4.html#activity-composition-verbal-to-symbolic",
+  "type": "Activity",
+  "number": "3.4.7",
+  "title": "Verbal to Symbolic.",
+  "body": " Verbal to Symbolic   Given the following list of transformations, give the associated matrix product:   Rotate clockwise,  Reflect across the -axis,  Stretch by a factor of 5 in the -direction (and nothing in the -direction).    "
+},
+{
+  "id": "geogebra-identifying-compositions",
+  "level": "2",
+  "url": "chp3sec4.html#geogebra-identifying-compositions",
+  "type": "Activity",
+  "number": "3.4.8",
+  "title": "Identifying Compositions.",
+  "body": " Identifying Compositions   In this activity, you will expand upon GeoGebra Activity , looking more carefully at certain special classes of matrices which correspond to compositions of simple transformations.     Setting it up again. Quickly rebuild your Transformation Visualizer Tool . This is good practice as this should only take a moment. This should include the unit square, a matrix , and the transformed unit square.     Analyzing a new class of transformations. In this part, you will analyze the transformations given by the class of matrices of the form . Define two sliders  and , and within the Algebra Window , insert them in the appropriate places to create the matrix . Start analyzing the transformed unit square. Try a few specific values such at and . What do you see? Now as you vary and , what types of transformations are you seeing? Can you identify these transformations as a composition of two simple geometric transformations (e.g., stretch, shear, reflect, rotate, and\/or project)? Once you have some confidence in your description, carefully record it using geometric words in complete sentences.     Analyzing a new class of transformations. Repeat Part 2 for matrix and slider  . Start with values , then , and then go from there.     "
+},
+{
+  "id": "insight-decomposition-strategy",
+  "level": "2",
+  "url": "chp3sec4.html#insight-decomposition-strategy",
+  "type": "Insight",
+  "number": "3.4.9",
+  "title": "Decomposition as a problem solving strategy.",
+  "body": " Decomposition as a problem solving strategy  A major goal of future lessons (see, for example, ) is to decompose a complicated matrix into a product of simpler matrices, thereby allowing us to identify its associated transformation as a composition of simple transformations.  "
+},
+{
+  "id": "chp3sec5",
+  "level": "1",
+  "url": "chp3sec5.html",
+  "type": "Lesson",
+  "number": "3.5",
+  "title": "Matrix Multiplication as Mixture",
+  "body": " Matrix Multiplication as Mixture  By this point, you should understand that the columns of the matrix product are mixtures of the columns of the matrix (Definition ), and you should have plenty of practice using this to compute many such products. You are now ready for a computational shortcut.  Let be an matrix and be an matrix. We know is an matrix. Fix between and and between and . We now analyze the entry of in row and column . Look at column of . By Definition , it is . Next, let's look at only row . The entry in row is . Collecting these observations gives us the following shortcut for computing the entries of the matrix product.   Pointer-Finger Shortcut For Matrix Multiplication   If is an matrix, is an matrix, and , then for each and , the entry may be computed as follows:    Put your left pointer finger on the left-most entry of the -th row of ,    Put your right pointer finger on the top entry of the -th column of :     Left hand goes right (across columns), right hand goes down (across rows).             Let's look at the same product as we did in Example. Compare this computation with the computation in Example and observe that this is essentially the same computation, with a few steps removed and streamlined.     This shortcut is not the definition of matrix multiplication, nor does it convey any sort of impactful, productive meaning of matrix multiplication. It is simply a convenient computational shortcut .   Going forward I expect you to be able to correctly implement this shortcut by hand for matrices and smaller.  There is nothing particularly different about performing this shortcut for larger matrices. Whether you have used this shortcut to compute the product of or matrices, you have demonstrated to me the same understandings. Were I to ask you to compute large matrix products by hand, I would only perpetuate the misconception people have that linear algebra is tedious and computational. I will not ask you to compute by hand the product of matrices larger than .  The algorithmic nature of the Pointer-Finger Shortcut is well-suited for programming into a computer, which in turn, can compute matrix multiplication quickly and accurately. I will now go over how to input matrices and perform matrix multiplication on GeoGebra. On GeoGebra, you input matrices in the Algebra window. You input a matrix as a list of rows . You begin and end each list with curly brackets { and } . For example, to input the matrix , I input A={{1,2},{3,4}} . Once you have input matrices and of the appropriate sizes, to compute their product, you input A*B .  Going forward, I expect that you should be able to input and compute the matrix product of potentially very large matrices.    Double check your computations in Activity with GeoGebra.     Meanings First, Computational Shortcuts Second  Suppose I run a business and am looking to hire someone who can use linear algebra to solve problems for me. If you show up to an interview with me and you say all you can do is compute matrix products (and perform row reduction), I will never hire you, because, as you can see, my computer can do it (for free) faster and with fewer errors than you ever could. However, my computer cannot reason, it cannot interpret, it cannot explain, and it cannot justify. If you can do those things, then I will want to hire you.   "
+},
+{
+  "id": "shortcut-pointerfinger",
+  "level": "2",
+  "url": "chp3sec5.html#shortcut-pointerfinger",
+  "type": "Algorithm",
+  "number": "3.5.1",
+  "title": "Pointer-Finger Shortcut For Matrix Multiplication.",
+  "body": " Pointer-Finger Shortcut For Matrix Multiplication   If is an matrix, is an matrix, and , then for each and , the entry may be computed as follows:    Put your left pointer finger on the left-most entry of the -th row of ,    Put your right pointer finger on the top entry of the -th column of :     Left hand goes right (across columns), right hand goes down (across rows).          "
+},
+{
+  "id": "ex-matrix-mult2",
+  "level": "2",
+  "url": "chp3sec5.html#ex-matrix-mult2",
+  "type": "Example",
+  "number": "3.5.2",
+  "title": "",
+  "body": "  Let's look at the same product as we did in Example. Compare this computation with the computation in Example and observe that this is essentially the same computation, with a few steps removed and streamlined.   "
+},
+{
+  "id": "insight-shortcut-meaning",
+  "level": "2",
+  "url": "chp3sec5.html#insight-shortcut-meaning",
+  "type": "Insight",
+  "number": "3.5.3",
+  "title": "",
+  "body": " This shortcut is not the definition of matrix multiplication, nor does it convey any sort of impactful, productive meaning of matrix multiplication. It is simply a convenient computational shortcut .  "
+},
+{
+  "id": "activity-check-computations",
+  "level": "2",
+  "url": "chp3sec5.html#activity-check-computations",
+  "type": "Activity",
+  "number": "3.5.1",
+  "title": "",
+  "body": "  Double check your computations in Activity with GeoGebra.   "
+},
+{
+  "id": "insight-meanings-first",
+  "level": "2",
+  "url": "chp3sec5.html#insight-meanings-first",
+  "type": "Insight",
+  "number": "3.5.4",
+  "title": "Meanings First, Computational Shortcuts Second.",
+  "body": " Meanings First, Computational Shortcuts Second  Suppose I run a business and am looking to hire someone who can use linear algebra to solve problems for me. If you show up to an interview with me and you say all you can do is compute matrix products (and perform row reduction), I will never hire you, because, as you can see, my computer can do it (for free) faster and with fewer errors than you ever could. However, my computer cannot reason, it cannot interpret, it cannot explain, and it cannot justify. If you can do those things, then I will want to hire you.  "
+},
+{
+  "id": "chp4sec1",
+  "level": "1",
+  "url": "chp4sec1.html",
+  "type": "Lesson",
+  "number": "4.1",
+  "title": "Solution Sets as Intersection",
+  "body": " Solution Sets as Intersection  In a variety of contexts, we have encountered matrix equations of the form , where up to this point, typically the matrix and servings vector are known and we find the new mixture vector . We now focus our attention on the reverse situation where we know the matrix and mixture vector and wish to find a servings vector that satisfies the matrix equation . We call such a vector a solution vector to the matrix equation and the set of all such vectors is its solution set , denoted . In this lesson we revisit and reconceptualize solution sets.  Before analyzing the general situation, we specialize and look at small matrices. For the moment, consider the matrix equation where is a matrix, is a known vector, and we want to find a solution .  In the context of our two meanings of matrix multiplication, this means a solution vector is:    A servings vector to make as a linear combination of vectors and .    A point that the transformation sends to .    It is time to introduce a third conceptualization that is productive in analyzing the solution set to a matrix equation. The expression can be expanded as . For these two vectors to be equal, each of the corresponding entries must be equal. This means and must satisfy both   and  . Each equation imposes an algebraic constraint on the entries of a servings vector for it to be a solution set vector for the matrix equation.  Observe these algebraic constraints are the normal equations of lines! To satisfy one such equation is to say that the servings vector lies on the line, and hence, to satisfy both, is to say that the servings vector lies in their intersection. Hence a vector that satisfies is:    A point in the intersection of the system of lines:      Three Meanings of Solution Set   A vector that satisfies can be conceptualized as:    (Mixture) A servings vector to make as a combination of and .    (Transformation) A point that the transformation sends to .    (Intersection) A point in the intersection of the lines:        Interpretations Relative to the Three Meanings   Continuing , I now analyze the solution set to the equation . Observe that the two lines intersect at and . I now interpret this relative to each of our 3 meanings.   Meaning 1: Mixture. The servings necessary to write as a linear combination of vectors and are and , respectively.    Solution set as finding unknown scalars.     Meaning 2: Transformation. The transformation of the plane is a rotation of the plane by counterclockwise, together with a uniform stretch by a factor of } in all directions. The point that gets sent to under this transformation is .    Solution set as finding the unknown input.     Meaning 3: Intersection. The lines and intersect at the point .    Solution set as intersecting lines in .      Now consider the matrix equation where is a matrix, is a known vector, and we want to find a solution . The expression can be expanded as . For these two vectors to be equal, each of the corresponding entries must be equal. This means , , and must satisfy both   and  . Each equation imposes an algebraic constraint on the entries of a servings vector for it to be a solution set vector for the matrix equation.  Observe these algebraic constraints are the normal equations of planes ! For a vector to satisfy one such equation is to say that it lies on the plane , and hence, to satisfy both, is to say that the vector lies in both planes at the same time. Hence a vector that satisfies is a point in the intersection of the system of planes :    Three Meanings of Solution Set   A vector that satisfies can be conceptualized as:    (Mixture) A servings vector to make as a combination of , , and .    (Transformation) A point that the transformation sends to .    (Intersection) A point in the intersection of the planes:        Interpretations Relative to the Three Meanings   Meaning 3 allows us to find the solution set. Using GeoGebra, we can plot the planes and we can see that its intersection is a line. We can read off an initial position and velocity, and conclude it is the line with parametric vector form: Interpreting this solution relative to the three meanings:     (Mixture) For any , we mix:    (Transformation) Under the transformation , the whole line is sent to .    (Intersection) The line is the intersection of the planes:     GeoGebra rendering of two planes intersecting along a line in 3D space.      We now generalize to a matrix equation where is . The matrix equation can be written using its entries as which can be expanded to Two vectors are equal if and only if their entries are equal and hence a solution vector must satisfy each of the following equations:   Observe that each equation places a linear constraint on solution vectors. The set of points that satisfy such a linear constraint are called hyperplanes.   Hyperplane   The set of points in that satisfy a linear constraint is a hyperplane in . In symbols, Such a linear constraint equation is a normal equation for that hyperplane.    A hyperplane in is a line and a hyperplane in is a plane.    A hyperplane is an -plane.    To prove this proposition, I will use the strategy first used in the proof of where we first substitute in the constraining equation and then use linear combinations to split the vector apart.   Let be a hyperplane with normal equation . At least one of the 's is nonzero. I will prove the proposition when , and leave for you the case where . The normal equation is algebraically equivalent to Pick a point and look at its column: Observe that the last vectors are separated, and hence independent ( ).   In the definition of hyperplane, we require at least one of the 's to be nonzero. If all the 's are zero, we still get a constraining equation, but the set of all points that satisfy them are not hyperplanes. Let's quickly go over the two cases.  First, observe that the zero equation  places no meaningful constraint on vectors as every vector satisfies it, and hence On the other hand, what I call a zero-one equation (here, one can be replaced by any nonzero number and the same conclusions hold) places too alert of a constraint on vectors as no vector satisfies it, and hence   When we have many hyperplanes, as we do when analyzing a solution set, we call this a system of hyperplanes.   Systems of Hyperplanes   A system of hyperplanes in is a collection of -many hyperplanes, . If we have normal forms for the equations of each hyperplane, we can represent this collection with a system of linear equations in variables  : where .    Hyperplanes live in the set of servings vectors. A solution vector to must satisfy each of the constraints from , so it lies on each hyperplane.   Intersection   If are hyperplanes, then a point lies in their intersection if it lies on each hyperplane . In symbols, we then write .      Describe the intersection of the system of three lines depicted below.    A 2D coordinate system plotting three intersecting lines: a red line y = x - 1, a blue line y = 5 - x, and a green horizontal line y = 4.       Solution Set Meaning #3: as Intersection  If is , then the matrix equation  means that we are considering a system of -many hyperplanes in and a solution to the matrix equation is a point in the intersection of the system. In symbols, if has associated hyperplanes , then:    In , we will develop an efficient algorithm for finding these intersections.    Consider the matrix equation: Via Solution Set Meaning #3, the solution set is the collection of all points in that lie in the intersection of the 3 hyperplanes in :       If   is a matrix which is known ,    is known , and    is unknown ,   then the solution set, , for the matrix equation means:    (Mixture) The servings vectors in to make with the columns of .    (Transformation) The points in that the transformation sends to .    (Intersection) The intersection in of the system of 18 hyperplane rows of .      "
+},
+{
+  "id": "chp4sec1-2",
+  "level": "2",
+  "url": "chp4sec1.html#chp4sec1-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "solution vector solution set "
+},
+{
+  "id": "ex-3meaning",
+  "level": "2",
+  "url": "chp4sec1.html#ex-3meaning",
+  "type": "Example",
+  "number": "4.1.1",
+  "title": "Three Meanings of Solution Set.",
+  "body": " Three Meanings of Solution Set   A vector that satisfies can be conceptualized as:    (Mixture) A servings vector to make as a combination of and .    (Transformation) A point that the transformation sends to .    (Intersection) A point in the intersection of the lines:      "
+},
+{
+  "id": "ex-interpretsolutionset1",
+  "level": "2",
+  "url": "chp4sec1.html#ex-interpretsolutionset1",
+  "type": "Example",
+  "number": "4.1.2",
+  "title": "Interpretations Relative to the Three Meanings.",
+  "body": " Interpretations Relative to the Three Meanings   Continuing , I now analyze the solution set to the equation . Observe that the two lines intersect at and . I now interpret this relative to each of our 3 meanings.   Meaning 1: Mixture. The servings necessary to write as a linear combination of vectors and are and , respectively.    Solution set as finding unknown scalars.     Meaning 2: Transformation. The transformation of the plane is a rotation of the plane by counterclockwise, together with a uniform stretch by a factor of } in all directions. The point that gets sent to under this transformation is .    Solution set as finding the unknown input.     Meaning 3: Intersection. The lines and intersect at the point .    Solution set as intersecting lines in .     "
+},
+{
+  "id": "ex-3meaning2",
+  "level": "2",
+  "url": "chp4sec1.html#ex-3meaning2",
+  "type": "Example",
+  "number": "4.1.3",
+  "title": "Three Meanings of Solution Set.",
+  "body": " Three Meanings of Solution Set   A vector that satisfies can be conceptualized as:    (Mixture) A servings vector to make as a combination of , , and .    (Transformation) A point that the transformation sends to .    (Intersection) A point in the intersection of the planes:      "
+},
+{
+  "id": "ex-interpretsolutionset2",
+  "level": "2",
+  "url": "chp4sec1.html#ex-interpretsolutionset2",
+  "type": "Example",
+  "number": "4.1.4",
+  "title": "Interpretations Relative to the Three Meanings.",
+  "body": " Interpretations Relative to the Three Meanings   Meaning 3 allows us to find the solution set. Using GeoGebra, we can plot the planes and we can see that its intersection is a line. We can read off an initial position and velocity, and conclude it is the line with parametric vector form: Interpreting this solution relative to the three meanings:     (Mixture) For any , we mix:    (Transformation) Under the transformation , the whole line is sent to .    (Intersection) The line is the intersection of the planes:     GeoGebra rendering of two planes intersecting along a line in 3D space.     "
+},
+{
+  "id": "def-hyperplane",
+  "level": "2",
+  "url": "chp4sec1.html#def-hyperplane",
+  "type": "Definition",
+  "number": "4.1.5",
+  "title": "Hyperplane.",
+  "body": " Hyperplane   The set of points in that satisfy a linear constraint is a hyperplane in . In symbols, Such a linear constraint equation is a normal equation for that hyperplane.   "
+},
+{
+  "id": "prop-hyperplane-is-kplane",
+  "level": "2",
+  "url": "chp4sec1.html#prop-hyperplane-is-kplane",
+  "type": "Proposition",
+  "number": "4.1.6",
+  "title": "",
+  "body": "  A hyperplane is an -plane.   "
+},
+{
+  "id": "chp4sec1-21",
+  "level": "2",
+  "url": "chp4sec1.html#chp4sec1-21",
+  "type": "Proof",
+  "number": "4.1.1",
+  "title": "",
+  "body": " Let be a hyperplane with normal equation . At least one of the 's is nonzero. I will prove the proposition when , and leave for you the case where . The normal equation is algebraically equivalent to Pick a point and look at its column: Observe that the last vectors are separated, and hence independent ( ).  "
+},
+{
+  "id": "def-hyperplane-system",
+  "level": "2",
+  "url": "chp4sec1.html#def-hyperplane-system",
+  "type": "Definition",
+  "number": "4.1.7",
+  "title": "Systems of Hyperplanes.",
+  "body": " Systems of Hyperplanes   A system of hyperplanes in is a collection of -many hyperplanes, . If we have normal forms for the equations of each hyperplane, we can represent this collection with a system of linear equations in variables  : where .   "
+},
+{
+  "id": "def-intersection",
+  "level": "2",
+  "url": "chp4sec1.html#def-intersection",
+  "type": "Definition",
+  "number": "4.1.8",
+  "title": "Intersection.",
+  "body": " Intersection   If are hyperplanes, then a point lies in their intersection if it lies on each hyperplane . In symbols, we then write .   "
+},
+{
+  "id": "act-describe-intersection",
+  "level": "2",
+  "url": "chp4sec1.html#act-describe-intersection",
+  "type": "Activity",
+  "number": "4.1.9",
+  "title": "",
+  "body": "  Describe the intersection of the system of three lines depicted below.    A 2D coordinate system plotting three intersecting lines: a red line y = x - 1, a blue line y = 5 - x, and a green horizontal line y = 4.     "
+},
+{
+  "id": "meaning-mm3_int",
+  "level": "2",
+  "url": "chp4sec1.html#meaning-mm3_int",
+  "type": "Insight",
+  "number": "4.1.10",
+  "title": "Solution Set Meaning #3: <span class=\"process-math\">\\(A\\vect{x}=\\vect{b}\\)<\/span> as Intersection.",
+  "body": " Solution Set Meaning #3: as Intersection  If is , then the matrix equation  means that we are considering a system of -many hyperplanes in and a solution to the matrix equation is a point in the intersection of the system. In symbols, if has associated hyperplanes , then:   "
+},
+{
+  "id": "ex-r4-hyperplanes",
+  "level": "2",
+  "url": "chp4sec1.html#ex-r4-hyperplanes",
+  "type": "Example",
+  "number": "4.1.11",
+  "title": "",
+  "body": "  Consider the matrix equation: Via Solution Set Meaning #3, the solution set is the collection of all points in that lie in the intersection of the 3 hyperplanes in :    "
+},
+{
+  "id": "ex-general-meanings-summary",
+  "level": "2",
+  "url": "chp4sec1.html#ex-general-meanings-summary",
+  "type": "Example",
+  "number": "4.1.12",
+  "title": "",
+  "body": "  If   is a matrix which is known ,    is known , and    is unknown ,   then the solution set, , for the matrix equation means:    (Mixture) The servings vectors in to make with the columns of .    (Transformation) The points in that the transformation sends to .    (Intersection) The intersection in of the system of 18 hyperplane rows of .     "
+},
+{
+  "id": "chp4sec2",
+  "level": "1",
+  "url": "chp4sec2.html",
+  "type": "Lesson",
+  "number": "4.2",
+  "title": "Expectations for Intersections",
+  "body": " Expectations for Intersections  Before we start symbolically solving for solution sets, we should develop our intuition so we have an expectation as to the form of the most likely solution set. This way of thinking is an important part of thinking like a mathematician and helps us be more than just symbol pushers.  In this lesson, we will think of solution sets as intersections (see ). More precisely, if is an matrix and , then this matrix equation corresponds to a system of -many hyperplanes in and is its intersection. We will be guided by two motivating questions:    What are all the different types of configurations of -many hyperplanes in and what do their intersections look like?    Are some of the types of configurations more likely to occur than others?    To start, think about two lines in the plane. There are three possible types of configurations:    Disjoint  Parallel, but not equal. In this case their intersection is empty.    Crossing  Intersecting, but not equal. In this case their intersection is a point.    Equal  Equal. In this case their intersection is that line (and hence infinite).     Types of configurations of two lines in the plane: disjoint, crossing, and equal.    Configurations of two intersecting lines in .     Now let's think about three lines in the plane. Three lines can be formed by adding a line to our two-line configurations. If my third line is equal to either of the first two, then I do not get a new configuration - the picture will look the same. There are four possible new types of configurations:   New types of configurations of three lines in the plane.    Configurations of three intersecting lines in .     Only the last configuration, where all lines go through a single point, has a nonempty intersection. Take a moment to reason through why all the others have an empty intersection.   Intersections of Random Lines in 2-Space  If you randomly toss two lines into 2-space, what do you expect their intersection to be? Are all configurations equally likely or perhaps would you expect one to happen more frequently than the others? In this activity, you will explore intersections of random lines in the plane using the Line Tossing Tool at GeoGebra ID: r72dwnmr .    Sampling  Show and then re-toss line 2 10 times . Count how many times line 1 and line 2 are disjoint, crossing, and equal. Record your findings.    Conjecture and Informal Justification  Do your findings suggest one of the types of configurations occur more often than the others? Make and clearly write down a conjecture. Try to provide an informal justification for your conjecture.    Interpret  What would your conjecture mean about how likely it would be you could make a random vector in with two random vectors in . (If necessary, revisit how to move from Meaning : Intersection to Meaning : Mixture in .)    Repeated Reasoning  Repeat the above reasoning for a third line. Show and then re-toss line 3 10 times . Record the types of configurations are you observing. (Be sure to move the window and zoom in as necessary to investigate.) Make a conjecture as to which configurations occur most often and try to justify. (Hint for justification: focus on comparing line 3 with the intersection of the previous lines.)    Interpret  Interpret what your conjecture would mean about how likely it would be you could make a random vector in with two random vectors in .    Generalize  Generalize your conjecture to the expected intersection of -many lines in the plane. Interpret this conjecture in terms of the makeability of a random vector with two random vectors in .     I will now provide some explanation for what you found.  Start by tossing in your first line. It has some slope . Now let's toss in our second line. This second line could be any line, so its slope could be any real number. What is the odds that this number is precisely ? This almost certainly will not happen. So, while there are exceptions, you should expect a random system of two lines in the plane to intersect at a single point.  What happens what you toss a third line into the plane? What do you expect their intersection to be? While there are many more possible configurations, remember, most likely the first two lines intersect at a single point, and almost certainly, the third line does not go through that point. So, while there are exceptions, you should expect a system of three lines in the plane to not share an intersection point, i.e. the associated solution set is empty.  More generally we have the following:   Expectation: Lines in 2-Space  If lines are randomly tossed into the plane, then we expect their intersection to be:    A line if ,    A point if ,    Empty if .      Expectations of Planes in 3-Space  If you randomly toss two planes into 3-space, what do you expect their intersection to be? Are all configurations equally likely or perhaps would you expect one to happen more frequently than the others? In this activity, you will explore intersections of random planes in 3-space using the Plane Tossing Tool at GeoGebra ID: gvhnggvy .    Enumerate Configurations of 2 Planes  To begin, consider 2 planes in 3-space. There are three possible types of configurations. Both sketch and describe in sentences each type of configuration. In each case, what does their intersection look like?    Likelihood of Configurations of 2 Planes  Using the Plane Tossing Tool , show and then re-toss plane 2 10 times . Count how many times plane 1 and plane 2 are in each of the above three types of configurations. Record your findings. Do your findings suggest one of the types of configurations occur more often than the others? Make and clearly write down a conjecture. Try to provide an informal justification for your conjecture.    Interpret  What would your conjecture mean about how likely it would be you could make a random vector in with three random vectors in . (If necessary, revisit how to move from Meaning : Intersection to Meaning : Mixture in Lesson .)    Repeated Reasoning - Configurations of 3 Planes  Try to list all of the possible types of configurations of 3 planes. (Hint: build upon your list of configurations of 2 planes.) Using the Plane Tossing Tool , show and then re-toss plane 3 10 times . Count the number of times you observe the different types of configurations. Do your findings suggest one of the types of configurations occur more often than the others? Make and clearly write down a conjecture. Try to provide an informal justification for your conjecture. (Hint for justification: focus on comparing plane 3 with the intersection of the previous planes.)    Repeated Reasoning - Configurations of 4 Planes  Using the Plane Tossing Tool , show and then re-toss plane 4 10 times . Count the number of times you observe the different types of configurations. (Hint: If you find that your screen is getting too messy, then select Show intersection of 3 planes and deselect Show Plane 1 , Show Plane 2 , and Show Plane 3 . That way, you can focus on comparing the intersection of the first three with plane 4.) Do your findings suggest one of the types of configurations occur more often than the others? Make and clearly write down a conjecture. Try to provide an informal justification for your conjecture. (Hint for justification: focus on comparing plane 4 with the intersection of the previous planes.)    Generalize  Generalize your conjecture to the expected intersection of -many planes in 3-space. Interpret this conjecture in terms of the makeability of a random vector with three random vectors in .     After having gone through , you should have established the following expectations for the intersection of -many planes in 3-space.   Expectation: Planes in 3-Space  If planes are randomly tossed into 3-space, then we expect their intersection to be:    A plane if ,    A line if ,    A point if ,    Empty if .      Two planes in 3-space intersecting in a line.    Configuration of two intersecting lines in .     Now let's try to generalize to -space, for . We know a single hyperplane is an -plane (see ). From our observations in 2-space and 3-space, the following appears to be true: if we intersect a -plane with a random hyperplane, then we are most likely to get a -plane. This is in fact something we will be able to algebraically justify in future lessons.  Putting this together, we can generalize our thinking to the following expectations.   Expectation: Hyperplanes in -Space  If hyperplanes are randomly tossed into -space, then we expect their intersection to be:    an -plane if , (see ). In particular, when we expect a point.    empty if .      Visualizing Intersections of Hyperplanes  In this activity, you will reason about and visualize the intersections of hyperplanes in and . You will use these intersections to then reason about solution sets of matrix equations. The GeoGebra objects you should gain proficiency with are: Line , Plane , Intersect , and Intersect Two Surfaces . The four systems of hyperplanes you will be working with are below. Go through the parts for each one separately.         Verbalize.  Before doing any computations or inputting anything into GeoGebra, verbally describe the situation in the context of hyperplanes. (Be sure to mention if we are in or and mention how many hyperplanes we are considering.)      Expectations.  Before making any computations, do you expect the solution set to be empty, a single point, a line, or a plane? Explain.      Visualize.  Input the system symbolically into the GeoGebra Algebra Window and look at the collection visually (either in the Graphics Window or 3D Graphics Window depending if the system has 2 or 3 variables). Use the intersection tools to find their intersections.      Analyze.  In complete sentences, describe the solution set you found using geometric words. Reflect on if this matches your expectations.      Interpret.  In complete sentences, and using GeoGebra visualizations, interpret your solution set relative to Matrix Multiplication Meaning 1 and to Matrix Multiplication Meaning 2 (see ).      "
+},
+{
+  "id": "figure-two_lines_in_plane",
+  "level": "2",
+  "url": "chp4sec2.html#figure-two_lines_in_plane",
+  "type": "Figure",
+  "number": "4.2.1",
+  "title": "",
+  "body": " Types of configurations of two lines in the plane: disjoint, crossing, and equal.    Configurations of two intersecting lines in .    "
+},
+{
+  "id": "figure-three_lines_in_plane",
+  "level": "2",
+  "url": "chp4sec2.html#figure-three_lines_in_plane",
+  "type": "Figure",
+  "number": "4.2.2",
+  "title": "",
+  "body": " New types of configurations of three lines in the plane.    Configurations of three intersecting lines in .    "
+},
+{
+  "id": "activity-intersections_random_lines",
+  "level": "2",
+  "url": "chp4sec2.html#activity-intersections_random_lines",
+  "type": "Activity",
+  "number": "4.2.3",
+  "title": "Intersections of Random Lines in 2-Space.",
+  "body": " Intersections of Random Lines in 2-Space  If you randomly toss two lines into 2-space, what do you expect their intersection to be? Are all configurations equally likely or perhaps would you expect one to happen more frequently than the others? In this activity, you will explore intersections of random lines in the plane using the Line Tossing Tool at GeoGebra ID: r72dwnmr .    Sampling  Show and then re-toss line 2 10 times . Count how many times line 1 and line 2 are disjoint, crossing, and equal. Record your findings.    Conjecture and Informal Justification  Do your findings suggest one of the types of configurations occur more often than the others? Make and clearly write down a conjecture. Try to provide an informal justification for your conjecture.    Interpret  What would your conjecture mean about how likely it would be you could make a random vector in with two random vectors in . (If necessary, revisit how to move from Meaning : Intersection to Meaning : Mixture in .)    Repeated Reasoning  Repeat the above reasoning for a third line. Show and then re-toss line 3 10 times . Record the types of configurations are you observing. (Be sure to move the window and zoom in as necessary to investigate.) Make a conjecture as to which configurations occur most often and try to justify. (Hint for justification: focus on comparing line 3 with the intersection of the previous lines.)    Interpret  Interpret what your conjecture would mean about how likely it would be you could make a random vector in with two random vectors in .    Generalize  Generalize your conjecture to the expected intersection of -many lines in the plane. Interpret this conjecture in terms of the makeability of a random vector with two random vectors in .    "
+},
+{
+  "id": "expectation-lines_in_r2",
+  "level": "2",
+  "url": "chp4sec2.html#expectation-lines_in_r2",
+  "type": "Insight",
+  "number": "4.2.4",
+  "title": "Expectation: Lines in 2-Space.",
+  "body": " Expectation: Lines in 2-Space  If lines are randomly tossed into the plane, then we expect their intersection to be:    A line if ,    A point if ,    Empty if .    "
+},
+{
+  "id": "activity-expectations_planes_R3",
+  "level": "2",
+  "url": "chp4sec2.html#activity-expectations_planes_R3",
+  "type": "Activity",
+  "number": "4.2.5",
+  "title": "Expectations of Planes in 3-Space.",
+  "body": " Expectations of Planes in 3-Space  If you randomly toss two planes into 3-space, what do you expect their intersection to be? Are all configurations equally likely or perhaps would you expect one to happen more frequently than the others? In this activity, you will explore intersections of random planes in 3-space using the Plane Tossing Tool at GeoGebra ID: gvhnggvy .    Enumerate Configurations of 2 Planes  To begin, consider 2 planes in 3-space. There are three possible types of configurations. Both sketch and describe in sentences each type of configuration. In each case, what does their intersection look like?    Likelihood of Configurations of 2 Planes  Using the Plane Tossing Tool , show and then re-toss plane 2 10 times . Count how many times plane 1 and plane 2 are in each of the above three types of configurations. Record your findings. Do your findings suggest one of the types of configurations occur more often than the others? Make and clearly write down a conjecture. Try to provide an informal justification for your conjecture.    Interpret  What would your conjecture mean about how likely it would be you could make a random vector in with three random vectors in . (If necessary, revisit how to move from Meaning : Intersection to Meaning : Mixture in Lesson .)    Repeated Reasoning - Configurations of 3 Planes  Try to list all of the possible types of configurations of 3 planes. (Hint: build upon your list of configurations of 2 planes.) Using the Plane Tossing Tool , show and then re-toss plane 3 10 times . Count the number of times you observe the different types of configurations. Do your findings suggest one of the types of configurations occur more often than the others? Make and clearly write down a conjecture. Try to provide an informal justification for your conjecture. (Hint for justification: focus on comparing plane 3 with the intersection of the previous planes.)    Repeated Reasoning - Configurations of 4 Planes  Using the Plane Tossing Tool , show and then re-toss plane 4 10 times . Count the number of times you observe the different types of configurations. (Hint: If you find that your screen is getting too messy, then select Show intersection of 3 planes and deselect Show Plane 1 , Show Plane 2 , and Show Plane 3 . That way, you can focus on comparing the intersection of the first three with plane 4.) Do your findings suggest one of the types of configurations occur more often than the others? Make and clearly write down a conjecture. Try to provide an informal justification for your conjecture. (Hint for justification: focus on comparing plane 4 with the intersection of the previous planes.)    Generalize  Generalize your conjecture to the expected intersection of -many planes in 3-space. Interpret this conjecture in terms of the makeability of a random vector with three random vectors in .    "
+},
+{
+  "id": "expectation-planes_in_r3",
+  "level": "2",
+  "url": "chp4sec2.html#expectation-planes_in_r3",
+  "type": "Insight",
+  "number": "4.2.6",
+  "title": "Expectation: Planes in 3-Space.",
+  "body": " Expectation: Planes in 3-Space  If planes are randomly tossed into 3-space, then we expect their intersection to be:    A plane if ,    A line if ,    A point if ,    Empty if .    "
+},
+{
+  "id": "figure-random_intersecting_planes",
+  "level": "2",
+  "url": "chp4sec2.html#figure-random_intersecting_planes",
+  "type": "Figure",
+  "number": "4.2.7",
+  "title": "",
+  "body": " Two planes in 3-space intersecting in a line.    Configuration of two intersecting lines in .    "
+},
+{
+  "id": "expectation-hyperplanes_in_rn",
+  "level": "2",
+  "url": "chp4sec2.html#expectation-hyperplanes_in_rn",
+  "type": "Insight",
+  "number": "4.2.8",
+  "title": "Expectation: Hyperplanes in <span class=\"process-math\">\\(n\\)<\/span>-Space.",
+  "body": " Expectation: Hyperplanes in -Space  If hyperplanes are randomly tossed into -space, then we expect their intersection to be:    an -plane if , (see ). In particular, when we expect a point.    empty if .    "
+},
+{
+  "id": "geoactivity_visualizingintersections",
+  "level": "2",
+  "url": "chp4sec2.html#geoactivity_visualizingintersections",
+  "type": "Activity",
+  "number": "4.2.9",
+  "title": "Visualizing Intersections of Hyperplanes.",
+  "body": " Visualizing Intersections of Hyperplanes  In this activity, you will reason about and visualize the intersections of hyperplanes in and . You will use these intersections to then reason about solution sets of matrix equations. The GeoGebra objects you should gain proficiency with are: Line , Plane , Intersect , and Intersect Two Surfaces . The four systems of hyperplanes you will be working with are below. Go through the parts for each one separately.         Verbalize.  Before doing any computations or inputting anything into GeoGebra, verbally describe the situation in the context of hyperplanes. (Be sure to mention if we are in or and mention how many hyperplanes we are considering.)      Expectations.  Before making any computations, do you expect the solution set to be empty, a single point, a line, or a plane? Explain.      Visualize.  Input the system symbolically into the GeoGebra Algebra Window and look at the collection visually (either in the Graphics Window or 3D Graphics Window depending if the system has 2 or 3 variables). Use the intersection tools to find their intersections.      Analyze.  In complete sentences, describe the solution set you found using geometric words. Reflect on if this matches your expectations.      Interpret.  In complete sentences, and using GeoGebra visualizations, interpret your solution set relative to Matrix Multiplication Meaning 1 and to Matrix Multiplication Meaning 2 (see ).     "
+},
+{
+  "id": "chp4sec3a",
+  "level": "1",
+  "url": "chp4sec3a.html",
+  "type": "Lesson",
+  "number": "4.3",
+  "title": "Computing RREF",
+  "body": " Computing RREF  Recall that we want to understand solution sets of matrix equations. Via , we can conceptualize solution sets as intersections. In this lesson, we introduce three fundamental actions we can perform on the equations of the hyperplanes of a system in which do not change their intersection. Our goal is to successively use these three actions to create a new, simpler system with the same intersection from which we may readily read off the parametric vector form of a solution set.  You may very well already be familiar with the idea of manipulating the equations of a system of lines so that we can one-by-one eliminate variables . For example, we may use elimination to find the intersection of the lines and .      Visualizing elimination as successive changes to a system of lines.        Observe that elimination in this context geometrically means successively replace our current collection of lines with a new collection that is simpler but has the same intersection.   Consider a system of two hyperplanes in , with normal equations:       Observation 1  If we re-order (a.k.a. permute ) the system , then the set of hyperplanes remains unchanged, and hence, so does its intersection. In symbols, both systems and are the same set of hyperplanes and hence have the exact same intersection.    Observation 2  If is nonzero, let be the name of the hyperplane with normal equation . Since we can multiply by and , a point satisfies if and only if it satisfies . Scaling the equation does not change the hyperplane! In symbols, .  Furthermore, the original and scaled equations are both normal equations for the same hyperplane. If we scale a normal equation for a hyperplane in , then the set of hyperplanes remains unchanged, and hence, so does its intersection. In symbols, both systems and are the same set of hyperplanes and hence have the exact same intersection.    Neither permuting nor scaling actually eliminates variables, rather they enable us to clean up the equations of our hyperplanes in preparation for the third and final action, which does eliminate variables: addition.    Observation 3  Suppose . Then satisfies both normal equations and . By scaling and adding these two expressions together,   we deduce must also satisfy the equation . If is the name of the hyperplane with normal equation , then .  Conversely, if , there is a symmetric justification for why . So, while and are likely different hyperplanes, the intersections of the two systems and are the same .     Observe how sliding the multiplier rotates line around the axis formed at the intersection of lines and at GeoGebra ID: xc82hg6w . Can you slide the multiplier until the new line is vertical? If so, then you have eliminated the -variable!   Since each hyperplane is represented as a row in our system via normal equations, these actions take the form of manipulating the rows of our system. As such, we call each a row operation on our system. The above actions are summarized and symbolized in .   Row Operations   The three fundamental row operations are:    Permute rows and . We denote this by .    Scale row by nonzero scalar . We denote this by .    Add a scalar multiple of row to row . We denote this by .    We read these as Row is replaced by... or Row becomes... .     Augmented Matrix as Compact Notation of Matrix Equation  The notation of a system of hyperplanes can be cumbersome, and we want to streamline things since our goal is to be able to analyze systems with hundreds of variables and hundreds of equations. Observe that at each step of elimination, the 's, 's, and 's were all superfluous, all that mattered was the coefficients in the correct places. So, let's throw out these symbols and just record the coefficients in the correct places, placing a vertical line, the equals bar , where the equal signs should go. This gives us the augmented matrix associated to the system.  For example, becomes and more generally becomes .   The equals bar in an augmented matrix is there for our convenience, to remind us where the equals symbols should go when we reinterpret this augmented matrix as a system of equations. It can be, and often is, omitted. In such situations, it is your responsibility to remember where it goes.   Row Equivalent   If there is a sequence of row operations turning one matrix into another matrix, then the matrices are row equivalent . Symbolically, if and are row equivalent matrices, then we write .    Row equivalent augmented matrices always have equal solution sets! In symbols, if , then . Since row operations do not affect a column of zeros (think this through to convince yourself), it follows that and are row equivalent if and only if and are row equivalent. In particular, if and are row equivalent, then .  We now have efficient notation for writing systems and row operations.     Observe how and encode the same information.  The question now becomes, what is our desired outcome of this simplification process? How do we know when we are done? The answer is reduced row echelon form .   Reduced Row Echelon Form (rref)   A matrix is in reduced row echelon form (rref) if    All zero rows are at the bottom,    Each nonzero row starts with a 1 (called a leading 1 in the pivot position ), and    A leading 1 is to the right of all leading 1's in above rows.    All entries in a column above a leading 1 are 0's.      Condition (R3) is sometimes called the staircase condition because it requires that the zeros form a staircase moving downward from the top left. Observe this staircase in each of the following examples of matrices in reduced row echelon form:     In (R2), a pivot position of a matrix is the entry in which a leading 1 will appear in rref. So, for example, the matrix has pivot positions 1-1 and 2-2. Pivot positions play an important role in elimination and it is useful to have language to reference these positions.  Any matrix can be put into reduced row echelon form through a sequence of elementary row operations. If is a matrix, then we denote its reduced row echelon form .  Elimination can now be characterized as using row operations to put our augmented matrix into rref, from which we can then interpret the solution set.   Gaussian Elimination   If is a matrix, then the following sequence of row operations will produce .    Start at the top left. Make that a 1.  Use the pivot position to clear below.  Move right to next pivot position & repeat.  Get echelon form.  Start at the bottom right.  Use the pivot position to clear above.  Move left to next pivot position & repeat.  Finish with rref.      Take a moment to think about the different ways to compute the reduced row echelon form of the matrix Observe that one way introduces fractions while another does not. Both ways will give you the same reduced row echelon form matrix, however you will likely find that the way that avoids fractions is simpler computationally (and less likely to produce computational errors). When computing rref by hand, I encourage you to think through your options and select the sequence of row operations that is computationally simplest.   Computing and Interpreting rref   For each augmented matrix below, do each part.     Verbalize. Explain what it means geometrically in terms of intersecting hyperplanes.    Expectations. Describe what you expect the solution set to be.    Compute. Use the Gaussian Elimination strategy to put the matrix into rref by hand.         Many students come out of their linear algebra courses just knowing how to use row operations to put a matrix in reduced row echelon form. While this is important, as we shall shortly see, computers do this quite easily. It is far more valuable for you to be able to set up an augmented matrix and then interpreting the meaning of its associated reduced row echelon form.   rref in GeoGebra   In this activity, you will symbolically find and interpret solution sets. The GeoGebra objects you should gain proficiency with are: matrix and ReducedRowEchelon . You will do so by revisiting the systems from GeoGebra , in which you visually found the solution sets. Do each part for each system.     Compute. Using list notation, input the system as an augmented matrix. (Note that the equals bar cannot be input, so just remember where it goes.) Using ReducedRowEchelon , find the reduced row echelon form of the matrix.    -Planes. Interpret the rref matrix to write the solution set to the system in parametric vector form.    Compare. Reflect on if your solutions set agrees with the one you found via intersection tools in GeoGebra .       Going forward, I expect you to be able to flexibly and correctly implement the Gaussian Elimination by hand for matrices and smaller. There is nothing particularly different about performing Gaussian Elimination for larger matrices. Whether you have used Gaussian Elimination to compute the rref of or matrices, you have demonstrated the same understandings. You should be able to use technology such as GeoGebra to be able compute the rref for both small and large matrices.  "
+},
+{
+  "id": "fig-elimination-lines",
+  "level": "2",
+  "url": "chp4sec3a.html#fig-elimination-lines",
+  "type": "Figure",
+  "number": "4.3.1",
+  "title": "",
+  "body": " Visualizing elimination as successive changes to a system of lines.       "
+},
+{
+  "id": "note-geogebra-link",
+  "level": "2",
+  "url": "chp4sec3a.html#note-geogebra-link",
+  "type": "Note",
+  "number": "4.3.2",
+  "title": "",
+  "body": " Observe how sliding the multiplier rotates line around the axis formed at the intersection of lines and at GeoGebra ID: xc82hg6w . Can you slide the multiplier until the new line is vertical? If so, then you have eliminated the -variable!  "
+},
+{
+  "id": "Def-elementary_row_ops",
+  "level": "2",
+  "url": "chp4sec3a.html#Def-elementary_row_ops",
+  "type": "Definition",
+  "number": "4.3.3",
+  "title": "Row Operations.",
+  "body": " Row Operations   The three fundamental row operations are:    Permute rows and . We denote this by .    Scale row by nonzero scalar . We denote this by .    Add a scalar multiple of row to row . We denote this by .    We read these as Row is replaced by... or Row becomes... .   "
+},
+{
+  "id": "chp4sec3a-15",
+  "level": "2",
+  "url": "chp4sec3a.html#chp4sec3a-15",
+  "type": "Remark",
+  "number": "4.3.4",
+  "title": "Augmented Matrix as Compact Notation of Matrix Equation.",
+  "body": " Augmented Matrix as Compact Notation of Matrix Equation  The notation of a system of hyperplanes can be cumbersome, and we want to streamline things since our goal is to be able to analyze systems with hundreds of variables and hundreds of equations. Observe that at each step of elimination, the 's, 's, and 's were all superfluous, all that mattered was the coefficients in the correct places. So, let's throw out these symbols and just record the coefficients in the correct places, placing a vertical line, the equals bar , where the equal signs should go. This gives us the augmented matrix associated to the system.  For example, becomes and more generally becomes .  "
+},
+{
+  "id": "def-row-equivalent",
+  "level": "2",
+  "url": "chp4sec3a.html#def-row-equivalent",
+  "type": "Definition",
+  "number": "4.3.5",
+  "title": "Row Equivalent.",
+  "body": " Row Equivalent   If there is a sequence of row operations turning one matrix into another matrix, then the matrices are row equivalent . Symbolically, if and are row equivalent matrices, then we write .   "
+},
+{
+  "id": "def-rref",
+  "level": "2",
+  "url": "chp4sec3a.html#def-rref",
+  "type": "Definition",
+  "number": "4.3.6",
+  "title": "Reduced Row Echelon Form (rref).",
+  "body": " Reduced Row Echelon Form (rref)   A matrix is in reduced row echelon form (rref) if    All zero rows are at the bottom,    Each nonzero row starts with a 1 (called a leading 1 in the pivot position ), and    A leading 1 is to the right of all leading 1's in above rows.    All entries in a column above a leading 1 are 0's.     "
+},
+{
+  "id": "algorithm-elimination",
+  "level": "2",
+  "url": "chp4sec3a.html#algorithm-elimination",
+  "type": "Algorithm",
+  "number": "4.3.7",
+  "title": "Gaussian Elimination.",
+  "body": " Gaussian Elimination   If is a matrix, then the following sequence of row operations will produce .    Start at the top left. Make that a 1.  Use the pivot position to clear below.  Move right to next pivot position & repeat.  Get echelon form.  Start at the bottom right.  Use the pivot position to clear above.  Move left to next pivot position & repeat.  Finish with rref.     "
+},
+{
+  "id": "activity-computing_interpreting_rref",
+  "level": "2",
+  "url": "chp4sec3a.html#activity-computing_interpreting_rref",
+  "type": "Activity",
+  "number": "4.3.8",
+  "title": "Computing and Interpreting rref.",
+  "body": " Computing and Interpreting rref   For each augmented matrix below, do each part.     Verbalize. Explain what it means geometrically in terms of intersecting hyperplanes.    Expectations. Describe what you expect the solution set to be.    Compute. Use the Gaussian Elimination strategy to put the matrix into rref by hand.        "
+},
+{
+  "id": "activity-geogebra_rref",
+  "level": "2",
+  "url": "chp4sec3a.html#activity-geogebra_rref",
+  "type": "Technology",
+  "number": "4.3.9",
+  "title": "rref in GeoGebra.",
+  "body": " rref in GeoGebra   In this activity, you will symbolically find and interpret solution sets. The GeoGebra objects you should gain proficiency with are: matrix and ReducedRowEchelon . You will do so by revisiting the systems from GeoGebra , in which you visually found the solution sets. Do each part for each system.     Compute. Using list notation, input the system as an augmented matrix. (Note that the equals bar cannot be input, so just remember where it goes.) Using ReducedRowEchelon , find the reduced row echelon form of the matrix.    -Planes. Interpret the rref matrix to write the solution set to the system in parametric vector form.    Compare. Reflect on if your solutions set agrees with the one you found via intersection tools in GeoGebra .      "
+},
+{
+  "id": "chp4sec3b",
+  "level": "1",
+  "url": "chp4sec3b.html",
+  "type": "Lesson",
+  "number": "4.4",
+  "title": "Interpreting RREF",
+  "body": " Interpreting RREF  Before we go any further computationally putting a matrix in rref, let us spend time making sure you understand how to use an rref'ed augmented matrix to write down the solution set as a -plane in parametric vector form. In so doing, you will see why rref is so useful.  Recall that row equivalent systems have the same solution sets and each row of the system gives a constraint on the solution vectors. The rows of give the simplest collection of constraining equations, in that you have eliminated as many variables as possible. These constraining equations can be easily rewritten and substituted onto the entries of a solution vector. The variables that will be constrained by the equations of are determined variables, while variables that are not constrained are free variables.   Determined and Free Variables   If is a matrix equation, , and , then is a:    determined variable if the column of has a leading 1, and    free variable if the column of does not have a leading 1.      We now go over several examples of how to use the constraining equations of to determine the parametric vector form of .   Interpreting rref with No Free Variables   Revisiting our previous computation, we have the latter being in rref. Each row is a constraint on solution vectors. These constraining equations are I pick a solution vector and substitute in the constraining equations:      Interpreting rref with Free Variables   The following type of reduced row echelon matrix often confuses students, so let's look at it carefully: There are three columns left of the equals bar, hence we are working in and a hyperplane in this context is a plane. Since there are two rows, this is a system of two planes. The solution set is the intersection of these two planes, which we see to be a line. As such, we should write our solution set using parametric vector form of a line in .  Each row is a constraint on solution vectors. These constraining equations are Observe that is a free variable and and are determined by . I pick a solution vector and substitute in the constraining equations:      Interpreting rref with a Zero Row   Suppose The third constraint of means that a solution vector must satisfy All vectors satisfy this, so this is not a meaningful constraint. So, even though , their solution sets are equal, !    In contrast to a zero row, I call a row of all zeros before the equals bar and a one after the equals bar a zero-one row.   Interpreting rref with a Zero-One Row   Suppose The third constraint of means that a solution vector must satisfy No such vector exists! This constraint implies that the solution set is empty, !     Solution Sets as -Planes in Parametric Vector Form   If we have , how do we find the solution set?     A zero-one row, a row which is zero to the left of the equals bar but is 1 to the right, means the solution set is empty. We may say the matrix equation has no solution or is inconsistent .    Zero rows say nothing and can be ignored.    Each row that is not a zero-one row or zero row will contribute a constraint. Re-write each such equation to solve for the determined variables in terms of the free variables .    To find the parametric vector form of the solution set, write , substitute in each constraining equation, and then split apart this vector into a linear combination revealing the parametric vector form of the solution set.    Each free variable will contribute a velocity vector, and the collection of these velocity vectors is separated and hence independent.    The solution set will be a -plane where is the number of free variables.        Practice Interpreting rref   In this activity, you will practice using the information of a row reduced augmented matrix to describe its solution set. For each rref matrix below, clearly identify the free variables and then write the solution set, , in parametric vector form.     As we conclude this lesson, keep in mind we introduced the concept of reduced row echelon form and focused on two associated mental actions: computing and interpreting (the parametric vector form of solution sets). The two go hand-in-hand and you should practice and be proficient with both.  "
+},
+{
+  "id": "def-free_and_determined_variables",
+  "level": "2",
+  "url": "chp4sec3b.html#def-free_and_determined_variables",
+  "type": "Definition",
+  "number": "4.4.1",
+  "title": "Determined and Free Variables.",
+  "body": " Determined and Free Variables   If is a matrix equation, , and , then is a:    determined variable if the column of has a leading 1, and    free variable if the column of does not have a leading 1.     "
+},
+{
+  "id": "ex-interpreting-rref-no-free",
+  "level": "2",
+  "url": "chp4sec3b.html#ex-interpreting-rref-no-free",
+  "type": "Example",
+  "number": "4.4.2",
+  "title": "Interpreting rref with No Free Variables.",
+  "body": " Interpreting rref with No Free Variables   Revisiting our previous computation, we have the latter being in rref. Each row is a constraint on solution vectors. These constraining equations are I pick a solution vector and substitute in the constraining equations:    "
+},
+{
+  "id": "ex_interpretting_free_variables",
+  "level": "2",
+  "url": "chp4sec3b.html#ex_interpretting_free_variables",
+  "type": "Example",
+  "number": "4.4.3",
+  "title": "Interpreting rref with Free Variables.",
+  "body": " Interpreting rref with Free Variables   The following type of reduced row echelon matrix often confuses students, so let's look at it carefully: There are three columns left of the equals bar, hence we are working in and a hyperplane in this context is a plane. Since there are two rows, this is a system of two planes. The solution set is the intersection of these two planes, which we see to be a line. As such, we should write our solution set using parametric vector form of a line in .  Each row is a constraint on solution vectors. These constraining equations are Observe that is a free variable and and are determined by . I pick a solution vector and substitute in the constraining equations:    "
+},
+{
+  "id": "ex-interpretting_zero_row",
+  "level": "2",
+  "url": "chp4sec3b.html#ex-interpretting_zero_row",
+  "type": "Example",
+  "number": "4.4.4",
+  "title": "Interpreting rref with a Zero Row.",
+  "body": " Interpreting rref with a Zero Row   Suppose The third constraint of means that a solution vector must satisfy All vectors satisfy this, so this is not a meaningful constraint. So, even though , their solution sets are equal, !   "
+},
+{
+  "id": "ex-interpretting_zero_one_row",
+  "level": "2",
+  "url": "chp4sec3b.html#ex-interpretting_zero_one_row",
+  "type": "Example",
+  "number": "4.4.5",
+  "title": "Interpreting rref with a Zero-One Row.",
+  "body": " Interpreting rref with a Zero-One Row   Suppose The third constraint of means that a solution vector must satisfy No such vector exists! This constraint implies that the solution set is empty, !   "
+},
+{
+  "id": "interpretation-solution_sets",
+  "level": "2",
+  "url": "chp4sec3b.html#interpretation-solution_sets",
+  "type": "Insight",
+  "number": "4.4.6",
+  "title": "Solution Sets as <span class=\"process-math\">\\(k\\)<\/span>-Planes in Parametric Vector Form.",
+  "body": " Solution Sets as -Planes in Parametric Vector Form   If we have , how do we find the solution set?     A zero-one row, a row which is zero to the left of the equals bar but is 1 to the right, means the solution set is empty. We may say the matrix equation has no solution or is inconsistent .    Zero rows say nothing and can be ignored.    Each row that is not a zero-one row or zero row will contribute a constraint. Re-write each such equation to solve for the determined variables in terms of the free variables .    To find the parametric vector form of the solution set, write , substitute in each constraining equation, and then split apart this vector into a linear combination revealing the parametric vector form of the solution set.    Each free variable will contribute a velocity vector, and the collection of these velocity vectors is separated and hence independent.    The solution set will be a -plane where is the number of free variables.      "
+},
+{
+  "id": "activity-practice_interpreting_rref",
+  "level": "2",
+  "url": "chp4sec3b.html#activity-practice_interpreting_rref",
+  "type": "Activity",
+  "number": "4.4.1",
+  "title": "Practice Interpreting rref.",
+  "body": " Practice Interpreting rref   In this activity, you will practice using the information of a row reduced augmented matrix to describe its solution set. For each rref matrix below, clearly identify the free variables and then write the solution set, , in parametric vector form.    "
+},
+{
+  "id": "chp4sec4",
+  "level": "1",
+  "url": "chp4sec4.html",
+  "type": "Lesson",
+  "number": "4.5",
+  "title": "Elimination as Matrix Multiplication",
+  "body": " Elimination as Matrix Multiplication  We have seen mixture encoded as matrix multiplication. We have seen transformation encoded as matrix multiplication. Many important processes can be encoded as matrix multiplication . You will see this time after time in this text. In this lesson, you will discover how elementary row operations can be encoded as matrix multiplication (on the left).   Elementary Matrix   An elementary matrix is a square matrix such that, for any matrix , is obtained from via a single row operation. In other words, if you fix a row operation , then for all , .     Discovering Elementary Matrices  In this activity, you will explore row operations via transformations, and use this to try to classify elementary matrices.     Part 1: From row operation to transformation. For each of the below transformations of the plane (given to you symbolically ), (1) visually sketch by hand, and clearly label, what it does to the unit square and (2) describe how it transforms the plane verbally , using complete sentences and geometric words.      Part 2: From transformation to matrix. For each of the above transformations, find the matrix the encodes it. Call those matrices , , and , respectively.     Part 3: From matrix to row operation. Recall that if , then . Find the elementary matrix associated to each of the row operations:      Part 4: Generalize. Now using your understanding of transformations and matrix multiplication of matrices, write down a complete classification of elementary matrices associated to row operations of matrices.      Classification of Elementary Matrices   If is a elementary matrix, then it is of one of the following types:   Permutes rows: ,    Scales a row: or , , and    Adds a multiple of a row to another: or .   Elementary matrices also fall into one of the above types with appropriate modifications.    Observe that each elementary matrix has a very simple geometric interpretation. Type 1 matrices reflect across the line , Type 2 matrices stretch a single direction by a factor of (and if reflect in that direction as well), and Type 3 matrices are a pure shear in a given direction.  We may now generalize this reasoning to larger matrices. I now introduce a useful auxiliary object to help us reason about elementary matrices - the column of rows vector  , whose entries we may think of as generic rows of an matrix. We will act upon this row vector by both elementary matrices and elementary row operations, thereby helping us connect the row operations with elementary matrices.   Interpreting Elementary Matrices as Row Operations   If I tell you that the shear matrix is an elementary matrix, how can you determine the elementary matrix to which it is associated?  Compute (either via linear combination or pointer finger shortcut) the matrix product So, multiplication by tells us to replace row 1 with row 1 plus 4 times row 3 , or in symbols, .     3x3 Elementary Matrix Identification  Each of the below matrices are elementary matrices. For each (1) using complete sentences, describe how the matrix transforms , and (2) what row operation of matrices does it encode (be precise!)?    To determine the matrix associated to a row operation, there are several strategies. One such strategy is to write down the new column of rows, expand it as a linear combination of the original rows, and use matrix multiplication as linear combination to deduce the matrix.   Encoding a Row Operation as an Elementary Matrix   What elementary matrix encodes the row operation replace row 3 with row 3 plus 2 times row 1 , or in symbols, ?  We want an unknown matrix satisfying Via definition of matrix multiplication as linear combination,     Now that we can encode a single row operation as multiplication by a single elementary matrix, it follows that a sequence of row operations can be encoded by a product of elementary matrices. In particular, Gaussian elimination can be expressed via a product of elementary matrices!  Let us now revisit our example: In terms of elementary matrices, this can be re-written as: Observe now how the system equation, the augmented matrix row reduction, and encode the same information.   Elimination as Matrix Multiplication  Consider the matrix equation      Row operations. Re-write this matrix equation as an augmented matrix and solve it via Gaussian elimination.     Elementary matrices. Re-interpret your sequence of row operations as a single product of elementary matrices, as in .     It will be useful in many situations to record sequences of row operations as multiplication by matrices.  To conclude this lesson, I want to reiterate that matrix multiplication is a concept we already understand and will continue to develop more insights and tools throughout this course. Therefore, it is productive to be able to identify processes we encounter as coming from matrix multiplication, as we may then use the tools of matrix multiplication to analyze these processes. In this lesson, we encoded the process of row operation as matrix multiplication on the left by elementary matrices. We will revisit in future lessons both (1) elementary matrices and (2) the mental act of encoding new processes as matrix multiplication.  "
+},
+{
+  "id": "def-elementary_matrix",
+  "level": "2",
+  "url": "chp4sec4.html#def-elementary_matrix",
+  "type": "Definition",
+  "number": "4.5.1",
+  "title": "Elementary Matrix.",
+  "body": " Elementary Matrix   An elementary matrix is a square matrix such that, for any matrix , is obtained from via a single row operation. In other words, if you fix a row operation , then for all , .   "
+},
+{
+  "id": "activity-discover_elementary_matrices",
+  "level": "2",
+  "url": "chp4sec4.html#activity-discover_elementary_matrices",
+  "type": "Activity",
+  "number": "4.5.2",
+  "title": "Discovering Elementary Matrices.",
+  "body": " Discovering Elementary Matrices  In this activity, you will explore row operations via transformations, and use this to try to classify elementary matrices.     Part 1: From row operation to transformation. For each of the below transformations of the plane (given to you symbolically ), (1) visually sketch by hand, and clearly label, what it does to the unit square and (2) describe how it transforms the plane verbally , using complete sentences and geometric words.      Part 2: From transformation to matrix. For each of the above transformations, find the matrix the encodes it. Call those matrices , , and , respectively.     Part 3: From matrix to row operation. Recall that if , then . Find the elementary matrix associated to each of the row operations:      Part 4: Generalize. Now using your understanding of transformations and matrix multiplication of matrices, write down a complete classification of elementary matrices associated to row operations of matrices.    "
+},
+{
+  "id": "prop-classification_of_elementary_matrices",
+  "level": "2",
+  "url": "chp4sec4.html#prop-classification_of_elementary_matrices",
+  "type": "Proposition",
+  "number": "4.5.3",
+  "title": "Classification of Elementary Matrices.",
+  "body": " Classification of Elementary Matrices   If is a elementary matrix, then it is of one of the following types:   Permutes rows: ,    Scales a row: or , , and    Adds a multiple of a row to another: or .   Elementary matrices also fall into one of the above types with appropriate modifications.   "
+},
+{
+  "id": "ex-elementary_matrix_E_to_op",
+  "level": "2",
+  "url": "chp4sec4.html#ex-elementary_matrix_E_to_op",
+  "type": "Example",
+  "number": "4.5.4",
+  "title": "Interpreting Elementary Matrices as Row Operations.",
+  "body": " Interpreting Elementary Matrices as Row Operations   If I tell you that the shear matrix is an elementary matrix, how can you determine the elementary matrix to which it is associated?  Compute (either via linear combination or pointer finger shortcut) the matrix product So, multiplication by tells us to replace row 1 with row 1 plus 4 times row 3 , or in symbols, .   "
+},
+{
+  "id": "activity-3x3_elementary_matrix_identification",
+  "level": "2",
+  "url": "chp4sec4.html#activity-3x3_elementary_matrix_identification",
+  "type": "Activity",
+  "number": "4.5.5",
+  "title": "3x3 Elementary Matrix Identification.",
+  "body": " 3x3 Elementary Matrix Identification  Each of the below matrices are elementary matrices. For each (1) using complete sentences, describe how the matrix transforms , and (2) what row operation of matrices does it encode (be precise!)?   "
+},
+{
+  "id": "ex-elementary_matrix_to_op_E",
+  "level": "2",
+  "url": "chp4sec4.html#ex-elementary_matrix_to_op_E",
+  "type": "Example",
+  "number": "4.5.6",
+  "title": "Encoding a Row Operation as an Elementary Matrix.",
+  "body": " Encoding a Row Operation as an Elementary Matrix   What elementary matrix encodes the row operation replace row 3 with row 3 plus 2 times row 1 , or in symbols, ?  We want an unknown matrix satisfying Via definition of matrix multiplication as linear combination,    "
+},
+{
+  "id": "activity-elimination_as_matrix_mult",
+  "level": "2",
+  "url": "chp4sec4.html#activity-elimination_as_matrix_mult",
+  "type": "Activity",
+  "number": "4.5.7",
+  "title": "Elimination as Matrix Multiplication.",
+  "body": " Elimination as Matrix Multiplication  Consider the matrix equation      Row operations. Re-write this matrix equation as an augmented matrix and solve it via Gaussian elimination.     Elementary matrices. Re-interpret your sequence of row operations as a single product of elementary matrices, as in .    "
+},
+{
+  "id": "chp5sec1",
+  "level": "1",
+  "url": "chp5sec1.html",
+  "type": "Lesson",
+  "number": "5.1",
+  "title": "Dependency Analysis",
+  "body": " Dependency Analysis  Recall that is linearly dependent if one of its vectors is a linear combination of the others ( ). In symbols, is dependent if there exists an and, for each , a number , such that This is a dependency equation , or more succinctly, a dependency for . In this lesson, we revisit the concepts of dependency and use the tools of to analyze the dependency equations of .  A dependency equation is algebraically equivalent to making zero in a nontrivial way ( ). In the compact notation of matrix multiplication, this is then expressed as a solution vector to the matrix equation (i.e., a null vector). Computing , we can now find the parametric vector form of , each of whose vectors can be understood as encoding a dependency equation.   Extracting Dependency Equations from Null Space   Suppose and  What can we say about the dependencies of ? Using the analysis of , Observe that each of the velocity vectors of the parametric vector form of is a servings vector to make zero, and hence is algebraically equivalent to a dependency equation: All other dependencies are combinations of these, so we conclude is independent. Furthermore, since , we conclude .    Observe how in , the dependency equations can be seen in columns 2 and 5. This is not a coincidence and we will now explore a distinct but equivalent interpretation of .  For any matrix and list-length vectors and , if you put in rref, then you will have put in rref. In symbols, if , then . A useful mnemonic for this is you can slide the equals bar.    Sliding the Equals Bar   Returning to , we have each of the following:  Consistent with , we conclude:     is independent,     and are dependency equations, and     .      A quick remark about sliding the equals bar. In , we separately rewrote , , and so on. In practice, we do not rewrite these. Rather we just look at and mentally focus attention on the relevant columns.  We now generalize these examples to an arbitrary . From we are going to build a subset of vectors which is independent and satisfies , and furthermore find explicit dependency equations for each .  Start with containing and analyze to determine what other columns to include. Suppose we have computed (or are given) . We may now slide the equals bar and look at each , , and so on. At each step, we interpret the rref. Say we are looking at for some . We will encounter one of two possible cases:   Case 1. If has a pivot position in its column (i.e., its column is a pivot column ), then in we will see a zero-one row, and hence there is no way to make that vector from the previous independent vectors. We include in .   Case 2. If the column of is not a pivot column, then the column of is the servings vector to make from the previous independent vectors in . This gives us a dependency equation for .   Dependency Analysis   If are nonzero vectors and , how can we read dependencies from ?    Look at the columns of from left to right.    If is the set of pivot columns of , then is independent and .    A column in with a free variable is a servings vector for how to build that column from the previous pivot columns.      Keep in mind that sliding the equals bar and are essentially just a shortcut to interpreting the standard velocity vectors in the parametric vector form of as dependency equations.   Dependency Analysis Activity  You start with an ordered list of five vectors, . You want to determine the dependencies, throw out redundancies, and get an independent collection with the same span, so you compute . For each rref matrix below, using for guidance, explain which vectors you keep and the servings to make each vector you throw out.    The order of the vectors in matters! If you were to reorder and then perform the above dependency analysis, you would potentially get a different and different (but algebraically equivalent) dependency equations.   Order Matters for Dependency Analysis   Consider vectors , , and . If , then and using , we have the independent collection with dependency equation On the other hand, if , then and using , we have the independent collection with dependency equation Order matters for dependency analysis!    We now see that is independent if and only if has no free variables, or in other words, every column of has a leading 1. We may then deduce the following proposition for quickly checking if is independent.   Computational Quick Check For Independence   If , then is linearly independent if and only if has a leading 1 in every column.    We now aggregate four established equivalent statements encoding independence.   Characterizations of Independence  If and , then the following are equivalent:     is linearly independent.    The matrix equation  only has the trivial solution.     .     has a leading 1 in every column.      Comparison of Number of Vectors to List-Length  Let be a collection of vectors. Use to justify the statement:   If (i.e., there are more columns than rows in ), then  must be dependent.   Since a statement and its contrapositive are logically equivalent, you have also shown:   If is independent, then .   Note that if , may or may not be independent, you need to check!    Workflow to Determine Independence  You now have several strategies to determine if a collection of vectors is independent. I recommend the following workflow.    Separated  If you see that the vectors are separated ( ), then you know the vectors are independent without needing to perform any computations.    Columns > Rows  If you see that the number of vectors is greater than the list-length of vectors, then you know the vectors are dependent without needing to perform any computations.    Compute and Interpret  Otherwise, you can perform Computational Quick Check to deduce if the vectors are independent.       Consider the collection where    Without doing any computations, since we see three vectors in , we know this collection is Dependent . Now, to find the dependency equations, we compute: and using ,        Play with 3 vectors in at GeoGebra ID: n669dqec .   Consider where     Before performing computations, do you expect to be linearly independent?    Set up an augmented matrix associated to the dependency matrix equation.    Row reduce and interpret. Is independent? If not, what are the dependencies?     To conclude this lesson, understanding the dependencies within a collection of vectors is a fundamental linear algebraic goal. Translating dependencies into matrix equations, we leveraged the computational tools of Gaussian elimination and rref to perform explicit Dependency Analysis ( ). We hope you are now seeing that, while rref is a straightforward computation, it is how you interpret it in context that really matters.  "
+},
+{
+  "id": "ex-rref_reading_dependencies",
+  "level": "2",
+  "url": "chp5sec1.html#ex-rref_reading_dependencies",
+  "type": "Example",
+  "number": "5.1.1",
+  "title": "Extracting Dependency Equations from Null Space.",
+  "body": " Extracting Dependency Equations from Null Space   Suppose and  What can we say about the dependencies of ? Using the analysis of , Observe that each of the velocity vectors of the parametric vector form of is a servings vector to make zero, and hence is algebraically equivalent to a dependency equation: All other dependencies are combinations of these, so we conclude is independent. Furthermore, since , we conclude .   "
+},
+{
+  "id": "ex-dependency_slide_equals_bar",
+  "level": "2",
+  "url": "chp5sec1.html#ex-dependency_slide_equals_bar",
+  "type": "Example",
+  "number": "5.1.2",
+  "title": "Sliding the Equals Bar.",
+  "body": " Sliding the Equals Bar   Returning to , we have each of the following:  Consistent with , we conclude:     is independent,     and are dependency equations, and     .     "
+},
+{
+  "id": "insight-dependence",
+  "level": "2",
+  "url": "chp5sec1.html#insight-dependence",
+  "type": "Insight",
+  "number": "5.1.3",
+  "title": "Dependency Analysis.",
+  "body": " Dependency Analysis   If are nonzero vectors and , how can we read dependencies from ?    Look at the columns of from left to right.    If is the set of pivot columns of , then is independent and .    A column in with a free variable is a servings vector for how to build that column from the previous pivot columns.     "
+},
+{
+  "id": "activity-redundancy_reduction_algorithm",
+  "level": "2",
+  "url": "chp5sec1.html#activity-redundancy_reduction_algorithm",
+  "type": "Activity",
+  "number": "5.1.4",
+  "title": "Dependency Analysis Activity.",
+  "body": " Dependency Analysis Activity  You start with an ordered list of five vectors, . You want to determine the dependencies, throw out redundancies, and get an independent collection with the same span, so you compute . For each rref matrix below, using for guidance, explain which vectors you keep and the servings to make each vector you throw out.   "
+},
+{
+  "id": "ex-order-matters",
+  "level": "2",
+  "url": "chp5sec1.html#ex-order-matters",
+  "type": "Example",
+  "number": "5.1.5",
+  "title": "Order Matters for Dependency Analysis.",
+  "body": " Order Matters for Dependency Analysis   Consider vectors , , and . If , then and using , we have the independent collection with dependency equation On the other hand, if , then and using , we have the independent collection with dependency equation Order matters for dependency analysis!   "
+},
+{
+  "id": "cqc-independence",
+  "level": "2",
+  "url": "chp5sec1.html#cqc-independence",
+  "type": "Proposition",
+  "number": "5.1.6",
+  "title": "Computational Quick Check For Independence.",
+  "body": " Computational Quick Check For Independence   If , then is linearly independent if and only if has a leading 1 in every column.   "
+},
+{
+  "id": "summary-characterizations-independence",
+  "level": "2",
+  "url": "chp5sec1.html#summary-characterizations-independence",
+  "type": "Insight",
+  "number": "5.1.7",
+  "title": "Characterizations of Independence.",
+  "body": " Characterizations of Independence  If and , then the following are equivalent:     is linearly independent.    The matrix equation  only has the trivial solution.     .     has a leading 1 in every column.    "
+},
+{
+  "id": "activity-discover_ll_indep_rule",
+  "level": "2",
+  "url": "chp5sec1.html#activity-discover_ll_indep_rule",
+  "type": "Activity",
+  "number": "5.1.8",
+  "title": "Comparison of Number of Vectors to List-Length.",
+  "body": " Comparison of Number of Vectors to List-Length  Let be a collection of vectors. Use to justify the statement:   If (i.e., there are more columns than rows in ), then  must be dependent.   Since a statement and its contrapositive are logically equivalent, you have also shown:   If is independent, then .   Note that if , may or may not be independent, you need to check!  "
+},
+{
+  "id": "summary-strategies-independence",
+  "level": "2",
+  "url": "chp5sec1.html#summary-strategies-independence",
+  "type": "Insight",
+  "number": "5.1.9",
+  "title": "Workflow to Determine Independence.",
+  "body": " Workflow to Determine Independence  You now have several strategies to determine if a collection of vectors is independent. I recommend the following workflow.    Separated  If you see that the vectors are separated ( ), then you know the vectors are independent without needing to perform any computations.    Columns > Rows  If you see that the number of vectors is greater than the list-length of vectors, then you know the vectors are dependent without needing to perform any computations.    Compute and Interpret  Otherwise, you can perform Computational Quick Check to deduce if the vectors are independent.    "
+},
+{
+  "id": "ex-visual-dependency",
+  "level": "2",
+  "url": "chp5sec1.html#ex-visual-dependency",
+  "type": "Example",
+  "number": "5.1.10",
+  "title": "",
+  "body": "  Consider the collection where    Without doing any computations, since we see three vectors in , we know this collection is Dependent . Now, to find the dependency equations, we compute: and using ,       "
+},
+{
+  "id": "activity-3d-dependency",
+  "level": "2",
+  "url": "chp5sec1.html#activity-3d-dependency",
+  "type": "Activity",
+  "number": "5.1.11",
+  "title": "",
+  "body": " Consider where     Before performing computations, do you expect to be linearly independent?    Set up an augmented matrix associated to the dependency matrix equation.    Row reduce and interpret. Is independent? If not, what are the dependencies?    "
+},
+{
+  "id": "chp5sec2",
+  "level": "1",
+  "url": "chp5sec2.html",
+  "type": "Lesson",
+  "number": "5.2",
+  "title": "Containment in a Span",
+  "body": " Containment in a Span  Recall that the span of a set of vectors is the set of all linear combinations that can be made from vectors in ( ). It is a core linear algebraic goal to understand containment in a span — to understand whether a given vector, a collection of vectors, or another span, lies within . In so doing, we will be able to determine when itself. In this lesson, we use the tools of to concretely answer these questions of containment.   Is a given vector contained in a given plane?   Consider the collection where:    and . Geometrically, the span of is the plane containing the three noncollinear points:  , and . The plane can be written in parametric form:     Consider the vector and observe that: Since is a solution to , we conclude that lies in .    Play with span in at GeoGebra ID: zzupb6tg .  Play with span in at GeoGebra ID: tr9g6hym .  If is a collection of vectors and , then  is contained in the span of if is a linear combination of the vectors in , and hence if there exists a solution to the matrix equation . Leveraging , we have the following characterizations of being in the span.   Characterizations of Being Contained in  If , , and , then the following are equivalent:    is a linear combination of the vectors in ,    ,    There exists a solution to the matrix equation ,    ,    does not have a zero-one row.     We now understand how to quickly computationally check if a given vector lies in a span. We can do this for several vectors at once. Consider and suppose we want to know if . This means we want to check that, for each , the matrix equation has a solution. Computationally, this is equivalent to checking that, for each , does not have a zero-one row. Since the computation of is the same every time, we can group these all together and compute:   This motivates a new extended notation of an augmented matrix of two matrices . The equals bar here lies in between the two matrices. A zero-one row in this context means a row of zeros to the left of the equals bar and a one at some point to the right of the equals bar.  Using Dependency Analysis ( ), we analyze each column after the equals bar of . If we do not see a zero-one row, then each column of to the right of the equals bar gives the servings vectors for making the corresponding vector of from the pivot columns of . Conversely, if we see a zero-one row, then we know that vector of corresponding to the column of that one is a vector outside of the span of , and hence .  Recall that span is a subspace, it is a set that contains its linear combinations ( ). This fact can be restated as saying that, if and , then . Putting this all together, we have the following useful computational tool for span containment.   Computational Quick Check for Containment in   If and , then (i.e., ) if and only if has no zero-one rows.     Is a given plane contained in another given plane?   Consider the planes and where: I can plot the planes, using say GeoGebra, and verify that these are in fact equal planes. However, I can now do this entirely algebraically using Span Containment ( ). Checking: I deduce that . Similarly checking: I deduce that , and hence .    Take a moment to consider how powerful this kind of tool is. While it is powerful to leverage visualizations of lines and planes in our minds, it is not practical or even possible to explicitly plot all the spans we encounter. Nevertheless, we can still algebraically analyze and compare them.   How can we determine when two sets are equal? A common strategy is to show double containment, that is to say, to show , we show and . If the vectors of started out already in , then our containment analysis allows us to determine when , i.e., when spans ( ).   Characterizations of Spans (the Relationship)  If and , then the following are equivalent:    spans ,    ,    For every vector , there exists a solution to ,    ,    does not have a zero-one row.     Only in special circumstances does . There is one standard collection of vectors that we can quickly see does span .   The Standard Spanning Vectors   If , then: Let be the list-length vector with 1 in spot and zeros elsewhere. Then . So if , then . Furthermore observe that in this case, , the identity matrix. Hence, we have also shown .    Using Comparing Spans ( ) together with , we get that spans if and only if has no zero-one rows. This is a direct computational strategy for establishing spanning .  I claim now this can be detected by simply looking at the last row of , more precisely whether or not it has a leading 1, or is a zero row. If has a leading 1 in the last row, it has a leading 1 in every row, and hence implies always has a solution. On the other hand, if has a zero row, then consider the vector , the vector in that is all zeros except a 1 in the last row. Reversing the row operations used to get , the augmented matrix for some . By construction, implies has no solution. (To justify this last part, I used the fact that row operations are reversible , a fact that we will look at in much greater detail in .)   Computational Quick Check For Spanning   If , then spans if and only if has a leading 1 in every row.     Characterizations of Spanning  If and , then the following are equivalent:    spans all of .    For any , the matrix equation always has a solution.       has a leading 1 in every row.      Comparison of Number of Vectors to List-Length  Let be a collection of vectors. Use to justify the statement:   If (i.e., there are more rows than columns in ), then  cannot span  .   Since a statement and its contrapositive are logically equivalent, you have also shown:   If spans , then .   Note that if , may or may not span , you need to check!    Strategies to Determine Spanning  You now have several strategies to determine if a collection of vectors spans :    Deficient  If you see that all the vectors have zeros in the same entry, then you know the vectors do not span without needing to perform any computations.    Rows > Columns  If you see that the number of vectors is greater than the list-length of vectors, then you know the vectors are dependent without needing to perform any computations.    Compute and Interpret  Otherwise, you can perform Computational Quick Check to deduce if the vectors span .     You will have many opportunities to practice this analysis on the OPS.   Consider where:     Before performing any computations, do you expect these to span all of ?    Use Computational Quick Check to verify.     To conclude this lesson, understanding the concept of spanning is a fundamental linear algebraic goal. Translating spanning into matrix equations, we leveraged the computational tools of Gaussian elimination and to explicitly analyze Span Containment ( ). Once again, I hope you are now seeing that, while is a straightforward computation, it is how you interpret it in context that really matters.  "
+},
+{
+  "id": "ex-vector-contained-plane",
+  "level": "2",
+  "url": "chp5sec2.html#ex-vector-contained-plane",
+  "type": "Example",
+  "number": "5.2.1",
+  "title": "Is a given vector contained in a given plane?",
+  "body": " Is a given vector contained in a given plane?   Consider the collection where:    and . Geometrically, the span of is the plane containing the three noncollinear points:  , and . The plane can be written in parametric form:     Consider the vector and observe that: Since is a solution to , we conclude that lies in .   "
+},
+{
+  "id": "summary-contained-in-span",
+  "level": "2",
+  "url": "chp5sec2.html#summary-contained-in-span",
+  "type": "Insight",
+  "number": "5.2.2",
+  "title": "Characterizations of Being Contained in <span class=\"process-math\">\\(\\spn(S)\\)<\/span>.",
+  "body": " Characterizations of Being Contained in  If , , and , then the following are equivalent:    is a linear combination of the vectors in ,    ,    There exists a solution to the matrix equation ,    ,    does not have a zero-one row.    "
+},
+{
+  "id": "cqc-spanning_col",
+  "level": "2",
+  "url": "chp5sec2.html#cqc-spanning_col",
+  "type": "Proposition",
+  "number": "5.2.3",
+  "title": "Computational Quick Check for Containment in <span class=\"process-math\">\\(\\spn(S)\\)<\/span>.",
+  "body": " Computational Quick Check for Containment in   If and , then (i.e., ) if and only if has no zero-one rows.   "
+},
+{
+  "id": "ex-plane-contained-plane",
+  "level": "2",
+  "url": "chp5sec2.html#ex-plane-contained-plane",
+  "type": "Example",
+  "number": "5.2.4",
+  "title": "Is a given plane contained in another given plane?",
+  "body": " Is a given plane contained in another given plane?   Consider the planes and where: I can plot the planes, using say GeoGebra, and verify that these are in fact equal planes. However, I can now do this entirely algebraically using Span Containment ( ). Checking: I deduce that . Similarly checking: I deduce that , and hence .   "
+},
+{
+  "id": "summary-characterizations-spanning-relationship",
+  "level": "2",
+  "url": "chp5sec2.html#summary-characterizations-spanning-relationship",
+  "type": "Insight",
+  "number": "5.2.5",
+  "title": "Characterizations of Spans (the Relationship).",
+  "body": " Characterizations of Spans (the Relationship)  If and , then the following are equivalent:    spans ,    ,    For every vector , there exists a solution to ,    ,    does not have a zero-one row.    "
+},
+{
+  "id": "ex-standard-spanning-vectors",
+  "level": "2",
+  "url": "chp5sec2.html#ex-standard-spanning-vectors",
+  "type": "Example",
+  "number": "5.2.6",
+  "title": "The “Standard” Spanning Vectors.",
+  "body": " The Standard Spanning Vectors   If , then: Let be the list-length vector with 1 in spot and zeros elsewhere. Then . So if , then . Furthermore observe that in this case, , the identity matrix. Hence, we have also shown .   "
+},
+{
+  "id": "cqc-spanning",
+  "level": "2",
+  "url": "chp5sec2.html#cqc-spanning",
+  "type": "Proposition",
+  "number": "5.2.7",
+  "title": "Computational Quick Check For Spanning <span class=\"process-math\">\\(\\mathbb{R}^m\\)<\/span>.",
+  "body": " Computational Quick Check For Spanning   If , then spans if and only if has a leading 1 in every row.   "
+},
+{
+  "id": "summary-characterizations-spanning-rm",
+  "level": "2",
+  "url": "chp5sec2.html#summary-characterizations-spanning-rm",
+  "type": "Insight",
+  "number": "5.2.8",
+  "title": "Characterizations of Spanning <span class=\"process-math\">\\(\\mathbb{R}^m\\)<\/span>.",
+  "body": " Characterizations of Spanning  If and , then the following are equivalent:    spans all of .    For any , the matrix equation always has a solution.       has a leading 1 in every row.    "
+},
+{
+  "id": "activity-comparison-vectors-to-list-length",
+  "level": "2",
+  "url": "chp5sec2.html#activity-comparison-vectors-to-list-length",
+  "type": "Activity",
+  "number": "5.2.9",
+  "title": "Comparison of Number of Vectors to List-Length.",
+  "body": " Comparison of Number of Vectors to List-Length  Let be a collection of vectors. Use to justify the statement:   If (i.e., there are more rows than columns in ), then  cannot span  .   Since a statement and its contrapositive are logically equivalent, you have also shown:   If spans , then .   Note that if , may or may not span , you need to check!  "
+},
+{
+  "id": "summary-strategies-spanning",
+  "level": "2",
+  "url": "chp5sec2.html#summary-strategies-spanning",
+  "type": "Insight",
+  "number": "5.2.10",
+  "title": "Strategies to Determine Spanning.",
+  "body": " Strategies to Determine Spanning  You now have several strategies to determine if a collection of vectors spans :    Deficient  If you see that all the vectors have zeros in the same entry, then you know the vectors do not span without needing to perform any computations.    Rows > Columns  If you see that the number of vectors is greater than the list-length of vectors, then you know the vectors are dependent without needing to perform any computations.    Compute and Interpret  Otherwise, you can perform Computational Quick Check to deduce if the vectors span .    "
+},
+{
+  "id": "activity-spanning-check-3d",
+  "level": "2",
+  "url": "chp5sec2.html#activity-spanning-check-3d",
+  "type": "Activity",
+  "number": "5.2.11",
+  "title": "",
+  "body": " Consider where:     Before performing any computations, do you expect these to span all of ?    Use Computational Quick Check to verify.    "
+},
+{
+  "id": "chp5sec3",
+  "level": "1",
+  "url": "chp5sec3.html",
+  "type": "Lesson",
+  "number": "5.3",
+  "title": "Concepts of Basis",
+  "body": " Concepts of Basis  In the previous two lessons, we explored deeply dependencies and spans. In some sense, these two concepts are complementary, and in this lesson, we bring them together.  To begin, our first deep theorem relates independent vectors and span within subspaces.   Independent Sets Are No Bigger Than Spanning Sets   If is a subspace, such that , and is an independent collection, then .    In this proof, I outline an iterative process for one-by-one replacing the elements of with elements of while preserving the span, and in so doing, deduce that .  To begin, let . By assumption, lies in the span of , hence is dependent. It follows from Interpretation that there exists a nonpivot column in , and we may toss out the first one we see and maintain the same span. While I do not know which vector we tossed, I know it was not the first, . Write for this new collection. Since I included one vector and tossed out a vector, I know has vectors (and ).  Now iterate this process times: For each , let . Since , the collection is dependent. By removing the first nonpivot column of , we have a collection of vectors with the same span as . While I do not know which vector we tossed, I know it was not any of the first , , as those are all independent, and hence would all be pivot columns in .  We conclude that is a set of vectors whose span is and . Hence .      If is a subspace and and are both independent collections of vectors that span , then and have the same number of vectors.    This important result means that if I find a collection of many independent vectors that spans , then all other independent collections that span also have size .   Dimension   If is a subspace, and is an independent collection that spans , then the dimension of , denoted , is the size of .    You have seen that an independent collection is not too big. You have seen that a spanning collection is not too small. As I shall now explain, a basis is a Goldilocks collection — it is just right .   Basis   If is a subspace and is a collection of linearly independent vectors that spans , then is a basis for . An ordered basis is a basis where we fix once and for all the order in which we list them.    The plural of basis is bases .   Standard Basis of   The columns of the identity matrix, , is a basis for , which we call the standard basis . To see this, observe that if , then It also follows that has dimension .    We now come to the Fundamental Theorem of Bases, which guarantees that, if we have a basis, we can make every vector in with no redundancy.   Fundamental Theorem of Bases   If is a subspace, is an ordered basis for , and is a vector, then there exists a unique collection of coefficients such that     Since spans , . Suppose now and for some . Subtracting one from the other gives: The independence of ( ) implies each coefficient , or in other words, . We deduce that the coefficients are unique.    If is a matrix, then we know two important associated subspaces: its column space ( ) and its null space ( ). You should be able to find their bases.   Basis for Column Space and Null Space   Suppose and . This tells us and are independent, and . Hence a basis for is .  If , then: So a basis for is .     You start with an ordered list of five vectors, . You compute . For each rref matrix below, find a basis for (in terms of the vectors of ) and find a basis for .    In general, dimension is an excellent way to measure the size of a subspace.   Rank and Nullity   If is a matrix, then:    the dimension of its column space, , is the column rank of , written , and    the dimension of its null space, , is the nullity of , written .      It follows from Interpretation that is equal to the number of columns of with leading ones. Meanwhile, it follows from Interpretation that is equal to the number of columns of without leading ones. We deduce the following result.   Rank-Nullity   If is an matrix, then .    I conclude this lesson with a useful computational quick check for determining if a collection of vectors is a basis of . It follows from Computational Quick Checks and that, if , then is a basis for if and only if:    has a leading 1 in every column, AND    has a leading 1 in every row.    If has a leading 1 in every row and every column, must have the same number of rows as columns, and hence . So a basis in must have many vectors. Putting these observations together, we get the following quick check.   Computational Quick Check For Basis of   If , then is a basis if and only if , the identity matrix.    "
+},
+{
+  "id": "thm-indep_sets_spanning_sets",
+  "level": "2",
+  "url": "chp5sec3.html#thm-indep_sets_spanning_sets",
+  "type": "Theorem",
+  "number": "5.3.1",
+  "title": "Independent Sets Are No Bigger Than Spanning Sets.",
+  "body": " Independent Sets Are No Bigger Than Spanning Sets   If is a subspace, such that , and is an independent collection, then .    In this proof, I outline an iterative process for one-by-one replacing the elements of with elements of while preserving the span, and in so doing, deduce that .  To begin, let . By assumption, lies in the span of , hence is dependent. It follows from Interpretation that there exists a nonpivot column in , and we may toss out the first one we see and maintain the same span. While I do not know which vector we tossed, I know it was not the first, . Write for this new collection. Since I included one vector and tossed out a vector, I know has vectors (and ).  Now iterate this process times: For each , let . Since , the collection is dependent. By removing the first nonpivot column of , we have a collection of vectors with the same span as . While I do not know which vector we tossed, I know it was not any of the first , , as those are all independent, and hence would all be pivot columns in .  We conclude that is a set of vectors whose span is and . Hence .   "
+},
+{
+  "id": "cor-basis_same_length",
+  "level": "2",
+  "url": "chp5sec3.html#cor-basis_same_length",
+  "type": "Corollary",
+  "number": "5.3.2",
+  "title": "",
+  "body": "  If is a subspace and and are both independent collections of vectors that span , then and have the same number of vectors.   "
+},
+{
+  "id": "def-dimension",
+  "level": "2",
+  "url": "chp5sec3.html#def-dimension",
+  "type": "Definition",
+  "number": "5.3.3",
+  "title": "Dimension.",
+  "body": " Dimension   If is a subspace, and is an independent collection that spans , then the dimension of , denoted , is the size of .   "
+},
+{
+  "id": "def-basis",
+  "level": "2",
+  "url": "chp5sec3.html#def-basis",
+  "type": "Definition",
+  "number": "5.3.4",
+  "title": "Basis.",
+  "body": " Basis   If is a subspace and is a collection of linearly independent vectors that spans , then is a basis for . An ordered basis is a basis where we fix once and for all the order in which we list them.   "
+},
+{
+  "id": "ex-standard_basis",
+  "level": "2",
+  "url": "chp5sec3.html#ex-standard_basis",
+  "type": "Example",
+  "number": "5.3.5",
+  "title": "Standard Basis of <span class=\"process-math\">\\(\\vect{R}^n\\)<\/span>.",
+  "body": " Standard Basis of   The columns of the identity matrix, , is a basis for , which we call the standard basis . To see this, observe that if , then It also follows that has dimension .   "
+},
+{
+  "id": "thm-ftb",
+  "level": "2",
+  "url": "chp5sec3.html#thm-ftb",
+  "type": "Theorem",
+  "number": "5.3.6",
+  "title": "Fundamental Theorem of Bases.",
+  "body": " Fundamental Theorem of Bases   If is a subspace, is an ordered basis for , and is a vector, then there exists a unique collection of coefficients such that     Since spans , . Suppose now and for some . Subtracting one from the other gives: The independence of ( ) implies each coefficient , or in other words, . We deduce that the coefficients are unique.   "
+},
+{
+  "id": "ex-basis_for_col_and_null",
+  "level": "2",
+  "url": "chp5sec3.html#ex-basis_for_col_and_null",
+  "type": "Example",
+  "number": "5.3.7",
+  "title": "Basis for Column Space and Null Space.",
+  "body": " Basis for Column Space and Null Space   Suppose and . This tells us and are independent, and . Hence a basis for is .  If , then: So a basis for is .   "
+},
+{
+  "id": "activity-find-bases",
+  "level": "2",
+  "url": "chp5sec3.html#activity-find-bases",
+  "type": "Activity",
+  "number": "5.3.8",
+  "title": "",
+  "body": " You start with an ordered list of five vectors, . You compute . For each rref matrix below, find a basis for (in terms of the vectors of ) and find a basis for .   "
+},
+{
+  "id": "def-rank-nullity-terms",
+  "level": "2",
+  "url": "chp5sec3.html#def-rank-nullity-terms",
+  "type": "Definition",
+  "number": "5.3.9",
+  "title": "Rank and Nullity.",
+  "body": " Rank and Nullity   If is a matrix, then:    the dimension of its column space, , is the column rank of , written , and    the dimension of its null space, , is the nullity of , written .     "
+},
+{
+  "id": "thm-rank-nullity",
+  "level": "2",
+  "url": "chp5sec3.html#thm-rank-nullity",
+  "type": "Theorem",
+  "number": "5.3.10",
+  "title": "Rank-Nullity.",
+  "body": " Rank-Nullity   If is an matrix, then .   "
+},
+{
+  "id": "cqc-basis",
+  "level": "2",
+  "url": "chp5sec3.html#cqc-basis",
+  "type": "Algorithm",
+  "number": "5.3.11",
+  "title": "Computational Quick Check For Basis of <span class=\"process-math\">\\(\\vect{R}^m\\)<\/span>.",
+  "body": " Computational Quick Check For Basis of   If , then is a basis if and only if , the identity matrix.   "
+},
+{
+  "id": "chp5sec4",
+  "level": "1",
+  "url": "chp5sec4.html",
+  "type": "Lesson",
+  "number": "5.4",
+  "title": "Basis as Coordinate System",
+  "body": " Basis as Coordinate System  A coordinate system is an agreed upon rule to describe where points are relative to us. We care about ordered bases because they give us a new coordinate system to describe things. As we will see later, problems that seem difficult when looking at them relative to the standard coordinates become simple when viewed relative to a different, well-chosen coordinate system.   Coordinatization  This book takes the perspective that objects exist external to, and independent of, us humans. Objects do not come to us with grid lines. Coordinatization is the mental act of imposing coordinates on objects to allow us to describe them, to analyze them, and to solve problems concerning them. Coordinatization is fundamentally human. We can and must choose coordinates. At first, this may seem like an extra burden, however it is in fact a powerful tool. When we confront a problem, we can and should reflect upon the situation and choose the coordinate system that enables us to most easily achieve our goals. This is what we do in calculus when we decide if we wish to approach the problem with Cartesian coordinates, polar coordinates, or something else altogether. This is the same thing we do in linear algebra.    The mental act of imposing coordinates on the Earth.   Diagram showing the transition from an unlined globe to a coordinate system of longitude and latitude.    In linear algebra, it is bases that give us coordinates on subspaces.   Coordinate Vector   If is a subspace, is a basis for , , and the collection of scalars are the unique solution scalars for making with , then the are the coordinates of in the -coordinate system , and is the -coordinate vector for .    The Fundamental Theorem of Bases ( ) implies that any vector has a unique  -label.   Standard Coordinates on   The standard basis gives the standard coordinates on . If , then so . The columns that we have been writing have been in standard coordinates this whole time!    When conceptualizing column vectors as coordinates, or labels, the column and are different labels we assign to a fixed vector. Moving between these labels is what I will call change of coordinates or change of labels . If we write , then (using our understanding of Matrix Multiplication and Linear Combination), we see  Multiplication by changes the -label to the standard label!!! We have previously conceptualized matrix multiplication as encoding (geometric) transformations and encoding row operations. Changing labels on a fixed vector is a fundamentally new and distinct conceptualization of matrix multiplication.   Coordinate Change Matrix   If is a subspace and is a basis, then is the coordinate change matrix .     While we usually use to represent the matrix whose columns are , when working in the context of bases, it is common to represent this matrix with .   Suppose is a basis. We will draw lines that help us visually measure vectors in units of and . For any integer , the  constant- line is the line with parametric vector form . Similarly, we have constant- lines , reversing the role of and . The constant- lines and constant- lines fill up the plane and form the -coordinate grid . The -unit square is then the parallelogram determined by and .   Using the image below, with basis as indicated in the image:    Identify and label the constant 0th, 1st, and 2nd constant- lines.    Identify and label the constant 0th, 1st, and 2nd constant- lines.    What are the standard and -coordinates of ?    Using what you know about the -grid lines, approximate the -coordinates of the vectors with standard coordinates , , and .           Let us return to the example of (Example ). Let . Since , Computational Quick Check implies is a basis.  To draw the constant- lines, I draw the sequence of lines: etc. for each integer . In a similar way, I draw the sequence of constant- lines.   The -coordinate grid and -unit square are plotted to the right. I have also plotted the vector . Observe, it lies on both the standard and -coordinate grids, and we can read off its coordinates. Make sure you can see that in -coordinates, . Our previous computations have shown, which symbolically corresponds to our visual observation above that .        Consider the collection .    Use Computational Quick Check to verify is a basis.    Sketch by hand the -coordinate grid and the -unit square.    Consider the vectors and such that and .    Plot them on your grid, and approximate and .    Use matrix equations involving to set up and find and exactly.       Next, consider the example of . Let . Again, since , is a basis. Its associated -coordinate grid and -unit square are plotted below.  In the grid below, I have also plotted the vector . Observe, it lies on both the standard and -coordinate grids, and we can read off its coordinates. Make sure you can see that in -coordinates, . This corresponds to the computation          The -Coordinate Grid Tool  In this activity, you will learn how to use GeoGebra to visualize the -coordinate grid and use it to compute -coordinates. The GeoGebra functions you should gain proficiency with are: Line , Sequence , Coordinate , and Element . In so doing, you will create the B-Coordinate Grid Tool , which you will frequently revisit for the remainder of the course.      Part 1: Creating your basis. Drop two moveable points and in the plane. Label the origin . Use the Vector tool to draw the vector from to and then to . Name them and , respectively. Move and so that and are independent. You have now created your basis .     Part 2: Constructing grid lines part 1: One By One. The Line(P,Q) function creates a line going through the points and . With that in mind, using the Line tool, create the first 3 constant- lines using the Line tool. (Think about what points will need to be input into Line and how do they relate to and .) Do the same for the first 3 constant- lines. You should now have a portion of your -grid!     Part 3: Constructing grid lines part 2: Sequence. When dealing with computers, whenever we encounter a thing we are doing over and over again, we want to loop that process so that the computer does all of the work in one line of code. GeoGebra does this with the Sequence function. More precisely you have to input 4 things: Sequence(Object(n), n, lower, upper) , an object (such as a line) in terms of some value which you want to vary, and then the lower and upper bound on those ranges. Use the Sequence function, together with what you learned in the previous part, to have a single line of GeoGebra code construct the first 21 constant- lines (10 in each direction). Do a similar thing for the first 21 constant- lines.     Part 4: Visualizing and Computing -Coordinates       "
+},
+{
+  "id": "chp5sec4-2",
+  "level": "2",
+  "url": "chp5sec4.html#chp5sec4-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "coordinate system "
+},
+{
+  "id": "mental_act-coordinatization",
+  "level": "2",
+  "url": "chp5sec4.html#mental_act-coordinatization",
+  "type": "Insight",
+  "number": "5.4.1",
+  "title": "Coordinatization.",
+  "body": " Coordinatization  This book takes the perspective that objects exist external to, and independent of, us humans. Objects do not come to us with grid lines. Coordinatization is the mental act of imposing coordinates on objects to allow us to describe them, to analyze them, and to solve problems concerning them. Coordinatization is fundamentally human. We can and must choose coordinates. At first, this may seem like an extra burden, however it is in fact a powerful tool. When we confront a problem, we can and should reflect upon the situation and choose the coordinate system that enables us to most easily achieve our goals. This is what we do in calculus when we decide if we wish to approach the problem with Cartesian coordinates, polar coordinates, or something else altogether. This is the same thing we do in linear algebra.  "
+},
+{
+  "id": "fig-coordinatize-earth",
+  "level": "2",
+  "url": "chp5sec4.html#fig-coordinatize-earth",
+  "type": "Figure",
+  "number": "5.4.2",
+  "title": "",
+  "body": " The mental act of imposing coordinates on the Earth.   Diagram showing the transition from an unlined globe to a coordinate system of longitude and latitude.   "
+},
+{
+  "id": "def-coordinate_vector",
+  "level": "2",
+  "url": "chp5sec4.html#def-coordinate_vector",
+  "type": "Definition",
+  "number": "5.4.3",
+  "title": "Coordinate Vector.",
+  "body": " Coordinate Vector   If is a subspace, is a basis for , , and the collection of scalars are the unique solution scalars for making with , then the are the coordinates of in the -coordinate system , and is the -coordinate vector for .   "
+},
+{
+  "id": "ex-standard_coordinates",
+  "level": "2",
+  "url": "chp5sec4.html#ex-standard_coordinates",
+  "type": "Example",
+  "number": "5.4.4",
+  "title": "Standard Coordinates on <span class=\"process-math\">\\(\\mathbb{R}^n\\)<\/span>.",
+  "body": " Standard Coordinates on   The standard basis gives the standard coordinates on . If , then so . The columns that we have been writing have been in standard coordinates this whole time!   "
+},
+{
+  "id": "chp5sec4-9",
+  "level": "2",
+  "url": "chp5sec4.html#chp5sec4-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "change of coordinates change of labels "
+},
+{
+  "id": "def-change_of_label_matrix",
+  "level": "2",
+  "url": "chp5sec4.html#def-change_of_label_matrix",
+  "type": "Definition",
+  "number": "5.4.5",
+  "title": "Coordinate Change Matrix.",
+  "body": " Coordinate Change Matrix   If is a subspace and is a basis, then is the coordinate change matrix .   "
+},
+{
+  "id": "chp5sec4-11",
+  "level": "2",
+  "url": "chp5sec4.html#chp5sec4-11",
+  "type": "Remark",
+  "number": "5.4.6",
+  "title": "",
+  "body": " While we usually use to represent the matrix whose columns are , when working in the context of bases, it is common to represent this matrix with .  "
+},
+{
+  "id": "activity-bcoord-grid-reading",
+  "level": "2",
+  "url": "chp5sec4.html#activity-bcoord-grid-reading",
+  "type": "Activity",
+  "number": "5.4.7",
+  "title": "",
+  "body": " Using the image below, with basis as indicated in the image:    Identify and label the constant 0th, 1st, and 2nd constant- lines.    Identify and label the constant 0th, 1st, and 2nd constant- lines.    What are the standard and -coordinates of ?    Using what you know about the -grid lines, approximate the -coordinates of the vectors with standard coordinates , , and .        "
+},
+{
+  "id": "ex-coordinates-visualization",
+  "level": "2",
+  "url": "chp5sec4.html#ex-coordinates-visualization",
+  "type": "Example",
+  "number": "5.4.9",
+  "title": "",
+  "body": "  Let us return to the example of (Example ). Let . Since , Computational Quick Check implies is a basis.  To draw the constant- lines, I draw the sequence of lines: etc. for each integer . In a similar way, I draw the sequence of constant- lines.   The -coordinate grid and -unit square are plotted to the right. I have also plotted the vector . Observe, it lies on both the standard and -coordinate grids, and we can read off its coordinates. Make sure you can see that in -coordinates, . Our previous computations have shown, which symbolically corresponds to our visual observation above that .      "
+},
+{
+  "id": "activity-coordinates-computation",
+  "level": "2",
+  "url": "chp5sec4.html#activity-coordinates-computation",
+  "type": "Activity",
+  "number": "5.4.10",
+  "title": "",
+  "body": " Consider the collection .    Use Computational Quick Check to verify is a basis.    Sketch by hand the -coordinate grid and the -unit square.    Consider the vectors and such that and .    Plot them on your grid, and approximate and .    Use matrix equations involving to set up and find and exactly.    "
+},
+{
+  "id": "ex-coordinates-skew-grid",
+  "level": "2",
+  "url": "chp5sec4.html#ex-coordinates-skew-grid",
+  "type": "Example",
+  "number": "5.4.11",
+  "title": "",
+  "body": "  Next, consider the example of . Let . Again, since , is a basis. Its associated -coordinate grid and -unit square are plotted below.  In the grid below, I have also plotted the vector . Observe, it lies on both the standard and -coordinate grids, and we can read off its coordinates. Make sure you can see that in -coordinates, . This corresponds to the computation        "
+},
+{
+  "id": "geogebra_activity-bcoord_grid",
+  "level": "2",
+  "url": "chp5sec4.html#geogebra_activity-bcoord_grid",
+  "type": "Activity",
+  "number": "5.4.13",
+  "title": "The <span class=\"process-math\">\\(\\mathcal{B}\\)<\/span>-Coordinate Grid Tool.",
+  "body": " The -Coordinate Grid Tool  In this activity, you will learn how to use GeoGebra to visualize the -coordinate grid and use it to compute -coordinates. The GeoGebra functions you should gain proficiency with are: Line , Sequence , Coordinate , and Element . In so doing, you will create the B-Coordinate Grid Tool , which you will frequently revisit for the remainder of the course.      Part 1: Creating your basis. Drop two moveable points and in the plane. Label the origin . Use the Vector tool to draw the vector from to and then to . Name them and , respectively. Move and so that and are independent. You have now created your basis .     Part 2: Constructing grid lines part 1: One By One. The Line(P,Q) function creates a line going through the points and . With that in mind, using the Line tool, create the first 3 constant- lines using the Line tool. (Think about what points will need to be input into Line and how do they relate to and .) Do the same for the first 3 constant- lines. You should now have a portion of your -grid!     Part 3: Constructing grid lines part 2: Sequence. When dealing with computers, whenever we encounter a thing we are doing over and over again, we want to loop that process so that the computer does all of the work in one line of code. GeoGebra does this with the Sequence function. More precisely you have to input 4 things: Sequence(Object(n), n, lower, upper) , an object (such as a line) in terms of some value which you want to vary, and then the lower and upper bound on those ranges. Use the Sequence function, together with what you learned in the previous part, to have a single line of GeoGebra code construct the first 21 constant- lines (10 in each direction). Do a similar thing for the first 21 constant- lines.     Part 4: Visualizing and Computing -Coordinates      "
+},
+{
+  "id": "chp6sec1",
+  "level": "1",
+  "url": "chp6sec1.html",
+  "type": "Lesson",
+  "number": "6.1",
+  "title": "Reversing a Process",
+  "body": " Reversing a Process   Reversible   A process is reversible if there is some process that undoes process .  In other words, the composition of first process and then process results in the do-nothing process (i.e., for all inputs , ).    Three fundamental processes associated with matrix multiplication we have encountered have been:    Transformations of the plane .    Row operations (i.e., multiplication by elementary matrices) .    Change of coordinates .    Are these reversible processes? If so, which processes reverse them?   Reversing Transformations of the Plane  For each matrix, describe how it transforms the plane. Reason about that transformation and whether or not such a transformation is reversible.   For the transformations that are reversible, can you reason through what that reverse process should be and then find the matrix associated with that process?   After having done the activity, you should have found that these matrices correspond to stretching, shearing, rotating, projecting, and reflecting, respectively, and that all but projection are reversible. The matrices that correspond to the reverse processes are then:   Observe that since composition corresponds to matrix multiplication, the requirement that the composition is the do-nothing transformation means that .   Inverse Matrix   If is an matrix and if there exists an matrix such that , then is invertible and is an inverse of .     The Columns of an Inverse are a Basis   If and are and , then the columns of are a basis for .    Write and , where is the standard basis. By Definition , the matrix multiplication of matrices is . Therefore:   In other words, the columns of are precisely the mixing instructions to make each of the standard basis vectors out of the columns of , hence . It follows that and therefore the columns of span all of . By Computational Quick Check , every row of has a leading 1 (i.e., no zero rows). Since there are the same number of rows as columns, every column of  also has a leading one. By Computational Quick Check , the columns of are linearly independent. The conclusion follows from the definition of a basis.    If you multiplied your above matrices in the opposite order, you might have noticed that if reverses , then also reverses . Amazingly, this is always true.   Inverses are Two-Sided   If , then .    By the associativity of matrix multiplication, , hence by distributivity, . Write . Then looking at each column of , we have . Since the columns of are a basis, , so each , and hence , and thus .     Inverses are Unique   If and , then .    We can verify directly:      Notation: Inverse Matrix  If is invertible, we denote its inverse with the symbol . Note that this does not mean , which does not even make sense, or even the reciprocal of the entries.   To reverse a composition of processes, you must reverse them in the opposite order you did them in. Consider putting on your socks, and then your shoes. To reverse this process, you must first take off your shoes, and then your socks.   Socks and Shoes   If and are invertible, then .    To certify that a matrix is the inverse, we can just check that their product is the identity. Using associativity and the definitions of identity and inverse, observe that .     Summary of Being Invertible  If and , then the following are equivalent:    is invertible.    is a basis for .    .     "
+},
+{
+  "id": "def-reversible",
+  "level": "2",
+  "url": "chp6sec1.html#def-reversible",
+  "type": "Definition",
+  "number": "6.1.1",
+  "title": "Reversible.",
+  "body": " Reversible   A process is reversible if there is some process that undoes process .  In other words, the composition of first process and then process results in the do-nothing process (i.e., for all inputs , ).   "
+},
+{
+  "id": "activity-reverse-transformations-of-plane",
+  "level": "2",
+  "url": "chp6sec1.html#activity-reverse-transformations-of-plane",
+  "type": "Activity",
+  "number": "6.1.2",
+  "title": "Reversing Transformations of the Plane.",
+  "body": " Reversing Transformations of the Plane  For each matrix, describe how it transforms the plane. Reason about that transformation and whether or not such a transformation is reversible.   For the transformations that are reversible, can you reason through what that reverse process should be and then find the matrix associated with that process?  "
+},
+{
+  "id": "def-inverse",
+  "level": "2",
+  "url": "chp6sec1.html#def-inverse",
+  "type": "Definition",
+  "number": "6.1.3",
+  "title": "Inverse Matrix.",
+  "body": " Inverse Matrix   If is an matrix and if there exists an matrix such that , then is invertible and is an inverse of .   "
+},
+{
+  "id": "prop-inverse-columns-are-basis",
+  "level": "2",
+  "url": "chp6sec1.html#prop-inverse-columns-are-basis",
+  "type": "Proposition",
+  "number": "6.1.4",
+  "title": "The Columns of an Inverse are a Basis.",
+  "body": " The Columns of an Inverse are a Basis   If and are and , then the columns of are a basis for .    Write and , where is the standard basis. By Definition , the matrix multiplication of matrices is . Therefore:   In other words, the columns of are precisely the mixing instructions to make each of the standard basis vectors out of the columns of , hence . It follows that and therefore the columns of span all of . By Computational Quick Check , every row of has a leading 1 (i.e., no zero rows). Since there are the same number of rows as columns, every column of  also has a leading one. By Computational Quick Check , the columns of are linearly independent. The conclusion follows from the definition of a basis.   "
+},
+{
+  "id": "prop-inverses-are-twosided",
+  "level": "2",
+  "url": "chp6sec1.html#prop-inverses-are-twosided",
+  "type": "Proposition",
+  "number": "6.1.5",
+  "title": "Inverses are Two-Sided.",
+  "body": " Inverses are Two-Sided   If , then .    By the associativity of matrix multiplication, , hence by distributivity, . Write . Then looking at each column of , we have . Since the columns of are a basis, , so each , and hence , and thus .   "
+},
+{
+  "id": "prop-inverses-are-unique",
+  "level": "2",
+  "url": "chp6sec1.html#prop-inverses-are-unique",
+  "type": "Proposition",
+  "number": "6.1.6",
+  "title": "Inverses are Unique.",
+  "body": " Inverses are Unique   If and , then .    We can verify directly:    "
+},
+{
+  "id": "notation-inverse-matrix",
+  "level": "2",
+  "url": "chp6sec1.html#notation-inverse-matrix",
+  "type": "Remark",
+  "number": "6.1.7",
+  "title": "Notation: Inverse Matrix.",
+  "body": " Notation: Inverse Matrix  If is invertible, we denote its inverse with the symbol . Note that this does not mean , which does not even make sense, or even the reciprocal of the entries.  "
+},
+{
+  "id": "prop-socks-n-shoes",
+  "level": "2",
+  "url": "chp6sec1.html#prop-socks-n-shoes",
+  "type": "Proposition",
+  "number": "6.1.8",
+  "title": "Socks and Shoes.",
+  "body": " Socks and Shoes   If and are invertible, then .    To certify that a matrix is the inverse, we can just check that their product is the identity. Using associativity and the definitions of identity and inverse, observe that .   "
+},
+{
+  "id": "summary-being-invertible",
+  "level": "2",
+  "url": "chp6sec1.html#summary-being-invertible",
+  "type": "Insight",
+  "number": "6.1.9",
+  "title": "Summary of Being Invertible.",
+  "body": " Summary of Being Invertible  If and , then the following are equivalent:    is invertible.    is a basis for .    .    "
+},
+{
+  "id": "chp6sec2",
+  "level": "1",
+  "url": "chp6sec2.html",
+  "type": "Lesson",
+  "number": "6.2",
+  "title": "Strategies for Computing an Inverse",
+  "body": " Strategies for Computing an Inverse  Suppose is invertible. How do we find the inverse? We want to find the matrix where . Write and . Then, fixing one column at a time, we want to find the solutions to the matrix equations . So we want to row reduce each of the following:   Note that since each augmented matrix starts with the same matrix , the row reduction process for each will use the exact same row operations, so we may as well group them together into a super augmented matrix and do them all at once.   The Inverse Algorithm   If is invertible, then     You should be able to use the Inverse Algorithm to correctly compute the inverses for matrices, and maybe even ; however, for larger matrices, you should know how to use technology to perform this algorithm for you.  You can use GeoGebra to perform this computation in two ways. First, you can simply input the super-augmented matrix , use ReducedRowEchelonForm , and interpret. Alternatively, you may simply input the matrix , and then use the Invert command.   GeoGebra Activity  For the matrix , compute in each of the following ways:    By hand, using the inverse algorithm    Using GeoGebra, using the ReducedRowEchelonForm command to perform the inverse algorithm,    Using GeoGebra, using the Invert command.    Make certain you obtain the same matrix each time.   In general, there is no easy-to-remember rule for what inverses should look like; however, for matrices, there is an easy rule.   Inverse Formula   If is invertible, then .    This is a direct computation using the Inverse Algorithm ( ). I will show the computation assuming and will leave the case to you.     Observe that the number appears here, and we get an inverse precisely when this number is not zero. We will be looking at this important number and its meaning in the lessons to come.   Inverses of Simple Geometric Transformations  Let us revisit the classes of matrices that correspond to the simple geometric transformations we know, and verify that the inverses we obtain via the Inverse Algorithm agree with those that represent the reverse geometric transformation (cf. ).    — i.e., compress back down    — i.e., shear back the original amount.    — i.e., rotate in the opposite direction    — i.e., reflect again      Consider again the basis and recall that is the matrix that sends us from -coordinates into standard coordinates.  Applying either the Inverse Algorithm, or our Inverse Formula, we get , which is the matrix that sends us from standard coordinates into -coordinates.   Let us return to the matrix equation where and are known and is unknown.  In , I showed that for any matrix , we can find the solution set by computing and interpreting .  If we are in the special case where is and is invertible , and we know its inverse, then we can find by multiplying both sides of the matrix equation by :   This new method is a two-step process: (1) find the inverse and then (2) matrix multiply. Observe that if one uses the inverse algorithm, this involves first using elimination to find and then multiplying . Our previous method of just using elimination to find has fewer steps (and does not require to be invertible or square).  The point is this method is not always the most advantageous. However, it is useful when you expect to be solving multiple matrix equations with the same coefficient matrix (e.g., ). Then, you just compute once and save it . In such cases, it is simpler to just keep multiplying . A common example of such a situation is when you fix an ordered basis and use and to keep changing coordinates.   Consider the ordered basis and the vector . Suppose we want to find the -coordinates of , or in other words, the solution set to the matrix equation , where .  As usual, we could compute and interpret:   Alternatively, we can first find by computing and interpreting:   and then multiplying:    "
+},
+{
+  "id": "algorithm-inverse",
+  "level": "2",
+  "url": "chp6sec2.html#algorithm-inverse",
+  "type": "Proposition",
+  "number": "6.2.1",
+  "title": "The Inverse Algorithm.",
+  "body": " The Inverse Algorithm   If is invertible, then    "
+},
+{
+  "id": "tech-geogebra-inverse-computation",
+  "level": "2",
+  "url": "chp6sec2.html#tech-geogebra-inverse-computation",
+  "type": "Technology",
+  "number": "6.2.2",
+  "title": "GeoGebra Activity.",
+  "body": " GeoGebra Activity  For the matrix , compute in each of the following ways:    By hand, using the inverse algorithm    Using GeoGebra, using the ReducedRowEchelonForm command to perform the inverse algorithm,    Using GeoGebra, using the Invert command.    Make certain you obtain the same matrix each time.  "
+},
+{
+  "id": "prop-2x2-inverse-formula",
+  "level": "2",
+  "url": "chp6sec2.html#prop-2x2-inverse-formula",
+  "type": "Proposition",
+  "number": "6.2.3",
+  "title": "<span class=\"process-math\">\\(2\\times 2\\)<\/span> Inverse Formula.",
+  "body": " Inverse Formula   If is invertible, then .    This is a direct computation using the Inverse Algorithm ( ). I will show the computation assuming and will leave the case to you.    "
+},
+{
+  "id": "ex-geometric-inverses",
+  "level": "2",
+  "url": "chp6sec2.html#ex-geometric-inverses",
+  "type": "Example",
+  "number": "6.2.4",
+  "title": "Inverses of Simple Geometric Transformations.",
+  "body": " Inverses of Simple Geometric Transformations  Let us revisit the classes of matrices that correspond to the simple geometric transformations we know, and verify that the inverses we obtain via the Inverse Algorithm agree with those that represent the reverse geometric transformation (cf. ).    — i.e., compress back down    — i.e., shear back the original amount.    — i.e., rotate in the opposite direction    — i.e., reflect again    "
+},
+{
+  "id": "ex-change-of-basis-inverse",
+  "level": "2",
+  "url": "chp6sec2.html#ex-change-of-basis-inverse",
+  "type": "Example",
+  "number": "6.2.5",
+  "title": "",
+  "body": " Consider again the basis and recall that is the matrix that sends us from -coordinates into standard coordinates.  Applying either the Inverse Algorithm, or our Inverse Formula, we get , which is the matrix that sends us from standard coordinates into -coordinates.  "
+},
+{
+  "id": "ex-coordinate-computation",
+  "level": "2",
+  "url": "chp6sec2.html#ex-coordinate-computation",
+  "type": "Example",
+  "number": "6.2.6",
+  "title": "",
+  "body": " Consider the ordered basis and the vector . Suppose we want to find the -coordinates of , or in other words, the solution set to the matrix equation , where .  As usual, we could compute and interpret:   Alternatively, we can first find by computing and interpreting:   and then multiplying:   "
+},
+{
+  "id": "chp7sec1",
+  "level": "1",
+  "url": "chp7sec1.html",
+  "type": "Lesson",
+  "number": "7.1",
+  "title": "Concepts of Vector Size",
+  "body": " Concepts of Vector Size    "
+},
+{
+  "id": "chp8sec1",
+  "level": "1",
+  "url": "chp8sec1.html",
+  "type": "Lesson",
+  "number": "8.1",
+  "title": "Similar Matrix Decompositions (SMDs)",
+  "body": " Similar Matrix Decompositions (SMDs)    "
+},
+{
+  "id": "chp8sec2",
+  "level": "1",
+  "url": "chp8sec2.html",
+  "type": "Lesson",
+  "number": "8.2",
+  "title": "Elementary Matrix Decompositions (EMDs)",
+  "body": " Elementary Matrix Decompositions (EMDs)    "
+},
+{
+  "id": "chp8sec3",
+  "level": "1",
+  "url": "chp8sec3.html",
+  "type": "Lesson",
+  "number": "8.3",
+  "title": "<span class=\"process-math\">\\(LU\\)<\/span>-Decompositions",
+  "body": " -Decompositions    "
+},
+{
+  "id": "chp9sec1",
+  "level": "1",
+  "url": "chp9sec1.html",
+  "type": "Lesson",
+  "number": "9.1",
+  "title": "Determinant as Siogned Volume Scaling Factor",
+  "body": " Determinant as Siogned Volume Scaling Factor    "
+},
+{
+  "id": "chp9sec2",
+  "level": "1",
+  "url": "chp9sec2.html",
+  "type": "Lesson",
+  "number": "9.2",
+  "title": "Algebraic Properties of the Determinant",
+  "body": " Algebraic Properties of the Determinant    "
+},
+{
+  "id": "chp9sec3",
+  "level": "1",
+  "url": "chp9sec3.html",
+  "type": "Lesson",
+  "number": "9.3",
+  "title": "Strategies for Computing the Determinant",
+  "body": " Strategies for Computing the Determinant    "
+},
+{
+  "id": "chp10sec1",
+  "level": "1",
+  "url": "chp10sec1.html",
+  "type": "Lesson",
+  "number": "10.1",
+  "title": "Matrix Multiplication as Mixture",
+  "body": " Matrix Multiplication as Mixture    "
 },
 {
   "id": "backmatter-2",
