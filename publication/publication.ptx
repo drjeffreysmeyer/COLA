@@ -122,7 +122,9 @@
 
     <!--The platform host can be "web" or "runestone"-->
       <!--<platform host="runestone"/>-->
-
+    <platform host="web"/>
+    <search version="none"/>
+    <logo logo-image="images/MathME_dark.jpg" href="https://www.jeffreysmeyer.com/" />
     <!-- Whether to knowl a particular elements is set here    -->
     <!-- Lots of elements have this possibility; see the guide -->
     <knowl 
@@ -231,4 +233,5 @@
     <!-- @course, @coursepassword, @user, and @userpassword can also be set. -->
     <!-- You can also set how tasks are revealed for webwork problems using the @task-reveal attribute on the above-->
 
+    
 </publication>

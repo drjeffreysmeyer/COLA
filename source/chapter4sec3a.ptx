@@ -102,10 +102,10 @@
       </p>
       <me>
         \begin{array}{rrcrcrcc}
-        \rowcolor{red} \amp \textcolor{orange}{k}( a_1x_1 \amp + \amp \cdots \amp + \amp a_nx_n \amp = \amp p ) \\
-        \rowcolor{blue} + \amp b_1x_1 \amp + \amp \cdots \amp + \amp b_nx_n \amp = \amp q \\
+            \amp \textcolor{orange}{k}( \textcolor{red}{a_1x_1} \amp \textcolor{red}{+} \amp \textcolor{red}{\cdots} \amp \textcolor{red}{+} \amp \textcolor{red}{a_nx_n} \amp \textcolor{red}{=} \amp \textcolor{red}{p} ) \\
+         +  \amp \textcolor{blue}{b_1x_1} \amp \textcolor{blue}{+} \amp \textcolor{blue}{\cdots} \amp \textcolor{blue}{+} \amp \textcolor{blue}{b_nx_n} \amp \textcolor{blue}{=} \amp \textcolor{blue}{q} \\
         \hline
-        \rowcolor{purple} \amp (b_1+ka_1)x_1 \amp + \amp \cdots \amp + \amp (b_n+ka_n)x_n \amp = \amp q+kp
+          \amp \textcolor{purple}{(b_1+ka_1)x_1} \amp \textcolor{purple}{+} \amp \textcolor{purple}{\cdots} \amp \textcolor{purple}{+} \amp \textcolor{purple}{(b_n+ka_n)x_n} \amp \textcolor{purple}{=} \amp \textcolor{purple}{q+kp}
         \end{array}
       </me>
       <p>

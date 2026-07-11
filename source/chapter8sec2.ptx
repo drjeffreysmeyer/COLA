@@ -3,9 +3,119 @@
 <section xml:id="chp8sec2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Elementary Matrix Decompositions (EMDs)</title>
 
-	<p>
-		
-	</p>
+    <definition xml:id="def-emd">
+      <title>Elementary Matrix Decomposition</title>
+      <statement>
+        <p>
+          If <m>A</m> is a square matrix, then an <alert>elementary matrix decomposition</alert> of <m>A</m> is an expression <m>A=F_1F_2\cdots F_r</m> where each <m>F_i</m> is an elementary matrix.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Since elementary matrices are associated to stretches, shears, and reflections, an elementary matrix decomposition allows us to understand <m>T_A</m> as a composition of these simple transformations. The complexity comes in the fact that there will usually be many elementary matrices in such a decomposition.
+    </p>
+
+    <p>
+      Given such a decomposition, I expect that you are able to correctly verbally interpret such a decomposition using geometric words, clearly and correctly identifying the order of the transformations. See, for example,  <xref ref="activity-ch2-composition" />.
+    </p>
+
+    <p>
+      Now the question becomes, how do we <em>construct</em> such a decomposition. Here is a simple yet powerful observation:
+    </p>
+
+    <p>
+      <ol>
+        <li><p><em>If there is a sequence of elementary row operations transforming matrix <m>A</m> into matrix <m>B</m>, (i.e. <m>A\sim B</m>),</em></p></li>
+        <li><p><em>then there is a sequence of elementary matrices such that <m>E_r\cdots E_2E_1A=B</m>.</em></p></li>
+        <li><p><em>Using the Socks and Shoes property (<xref ref="prop-socks_n_shoes" />) to move these elementary matrices to the other side, we get <m>A=E_1^{-1}\cdots E_r^{-1}B</m>.</em></p></li>
+      </ol>
+    </p>
+
+    <p>
+      By choosing different <m>B</m>'s and different sequences of row operations, we obtain different matrix decompositions of <m>A</m>!
+    </p>
+
+    <p>
+      To begin, for any <m>m\times n</m> matrix <m>A</m>, let <m>B=\rref(A)</m> and choose any sequence of row operations. We then get a decomposition <m>A=E_1^{-1}\cdots E_r^{-1}\rref(A)</m>. In particular, if <m>m=n</m>, <m>\rref(A)=I</m>, and writing <m>F_i=E_i^{-1}</m>, then we get the following.
+    </p>
+
+    <insight xml:id="construction-emd">
+      <title>Construction: Elementary Matrix Decompositions</title>
+      <p>
+        If <m>A</m> is an invertible <m>n\times n</m> matrix, then to construct an elementary matrix decomposition:
+      </p>
+      <p>
+        <ol>
+          <li><p>Row reduce <m>A</m> to <m>I</m>, recording each row operation,</p></li>
+          <li><p>Write down the associated product <m>E_r\cdots E_2E_1A=I</m>,</p></li>
+          <li><p>Socks and Shoes (<xref ref="prop-socks_n_shoes" />) these matrices over to get <m>A=E_1^{-1}\cdots E_r^{-1}I</m> (you can then drop the <m>I</m>).</p></li>
+        </ol>
+      </p>
+    </insight>
+
+    <p>
+      Observe that since the inverse of an elementary matrix is an elementary matrix, this is an elementary matrix decomposition. Also, since there are many sequences of row operations to reduce <m>A</m> to <m>I</m>, there are accordingly many different possible elementary matrix decompositions.
+    </p>
+
+    <p>
+      I expect you should be able to correctly perform this process by hand for <m>2\times 2</m> and <m>3\times 3</m> matrices.
+    </p>
+
+    <example xml:id="ex-emd">
+      <statement>
+        <p>
+          Consider the invertible matrix <m>A=\begin{bmatrix}2\amp 3\\1\amp 2\end{bmatrix}</m>. Row reduction gives
+          <md>
+			<mrow>
+				\begin{bmatrix}2\amp 3\\1\amp 2\end{bmatrix} 
+				\rowP{1}{2} 
+				\begin{bmatrix}1\amp 2\\2\amp 3\end{bmatrix} 
+				\rowA{2}{1}{-2}
+				\begin{bmatrix}1\amp 2\\0\amp -1\end{bmatrix} 
+			</mrow>
+			<mrow>
+				\rowS{2}{-1}
+				\begin{bmatrix}1\amp 2\\0\amp 1\end{bmatrix} 
+				\rowA{1}{2}{-2}
+				\begin{bmatrix}1\amp 0\\0\amp 1\end{bmatrix}.
+			</mrow>
+          </md>
+          Recording the row operations with elementary matrices gives
+          <me>
+            \begin{bmatrix}1\amp -2\\0\amp 1\end{bmatrix} \begin{bmatrix}1\amp 0\\0\amp -1\end{bmatrix} \begin{bmatrix}1\amp 0\\-2\amp 1\end{bmatrix} \begin{bmatrix}0\amp 1\\1\amp 0\end{bmatrix}A = I.
+          </me>
+          Lastly, Socks and Shoesing it over, and dropping the superfluous <m>I</m>, gives
+          <me>
+            A= \begin{bmatrix}0\amp 1\\1\amp 0\end{bmatrix} \begin{bmatrix}1\amp 0\\2\amp 1\end{bmatrix} \begin{bmatrix}1\amp 0\\0\amp -1\end{bmatrix} \begin{bmatrix}1\amp 2\\0\amp 1\end{bmatrix}.
+          </me>
+          When <m>A</m> is viewed as a transformation of the plane, this <em>means</em> that <m>A</m> can be viewed as a composition of the following transformations:
+        </p>
+        <p>
+          <ol>
+            <li><p>First, shear the vector <m>\begin{bmatrix}0\\1\end{bmatrix}</m> two units in the positive <m>x</m>-direction.</p></li>
+            <li><p>Next, reflect through the <m>x</m>-axis.</p></li>
+            <li><p>Next, shear the vector <m>\begin{bmatrix}1\\0\end{bmatrix}</m> two units in the positive <m>y</m>-direction.</p></li>
+            <li><p>Last, reflect through the line <m>y=x</m>.</p></li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <question xml:id="activity-emd-practice">
+        <p>
+          Compute an elementary matrix decomposition for each of the following:
+          <me>
+            \begin{bmatrix}3\amp 1\\1\amp 2\end{bmatrix} \hspace{2pc} \begin{bmatrix}3\amp 4\\2\amp 3\end{bmatrix} \hspace{2pc} \begin{bmatrix}2\amp 4\\1\amp 2\end{bmatrix}
+          </me>
+        </p>
+    </question>
+
+    <note xml:id="note-geogebra-emd">
+      <p>
+        See a visual interpretation of an elementary matrix decomposition for <m>\begin{bmatrix}3\amp 1\\1\amp 2\end{bmatrix}</m> at GeoGebra ID: <url href="https://www.geogebra.org/m/yfqdvzbk"><alert>yfqdvzbk</alert></url>.
+      </p>
+    </note>
 
 
 </section>

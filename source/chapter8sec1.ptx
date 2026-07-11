@@ -3,9 +3,298 @@
 <section xml:id="chp8sec1" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Similar Matrix Decompositions (SMDs)</title>
 
-	<p>
-		
-	</p>
+    <p>
+      In earlier lessons, we have encountered simple matrices, such the standard geometric transformations and elementary matrices, which are easy to understand and work with. However, in general, a matrix looks and acts in complicated ways. A big idea the permeates through mathematics is <em>take a complicated thing and split it into simple pieces that are easy to understand</em>. This is a powerful problem-solving strategy.
+    </p>
+
+    <definition xml:id="def-matrix-decomposition">
+      <title>Matrix Decomposition</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>m \times n</m> matrix. A <alert>matrix decomposition</alert> of <m>A</m> is an expression <m>A=B_1B_2\cdots B_r</m> where each <m>B_i</m> is simple in a certain context. When viewed as a matrix transformation, this translates to identifying <m>\vect{x}\mapsto A\vect{x}</m> as a composition of simple transformations.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      There are different types of useful matrix decompositions. Associated to each decomposition there are two major problems:
+    </p>
+
+    <p>
+      <ol>
+        <li><p>Given a decomposition, what kinds of problems can be solved with it?</p></li>
+        <li><p>How does one find a decomposition, if it exists at all?</p></li>
+      </ol>
+    </p>
+
+    <p>
+      In this chapter, we will analyze the following:
+    </p>
+
+    <p>
+      <ol>
+        <li><p>Similar matrix decomposition (SMD),</p></li>
+        <li><p>Elementary matrix decomposition, and</p></li>
+        <li><p><m>LU</m>-decomposition.</p></li>
+      </ol>
+    </p>
+
+    <p>
+      Later in this text, we will cover other important decompositions:
+    </p>
+
+    <p>
+      <ol audience="remaining">
+        <li><p><m>QR</m>-decomposition,</p></li>
+        <li><p>Polar decomposition, and</p></li>
+        <li><p>Singular Value Decomposition (SVD).</p></li>
+      </ol>
+    </p>
+
+
+    <definition xml:id="def-smd">
+      <title>Similar Matrix Decomposition</title>
+      <statement>
+        <p>
+          Given a square matrix <m>A</m>, a <alert>similar matrix decomposition (SMD)</alert> of <m>A</m> is an expression <m>A=PBP^{-1}</m>. We say the two matrices <m>A</m> and <m>B</m> are <alert>similar</alert>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      While it is not necessary, it is typically our goal that <m>B</m> here be <em>very simple</em>, such as a stretch, shear, or rotation matrix.
+    </p>
+
+    <p>
+      Given a similar matrix decomposition, write <m>P=[\vect{v}_1|\cdots |\vect{v}_n]</m> and let <m>\mathcal{B}=\{\vect{v}_1,\ldots ,\vect{v}_n\}</m>. We should think of <m>P</m> as the change of basis matrix from <m>\mathcal{B}</m>-coordinates to standard coordinates, and as such, <m>P^{-1}</m> as the change of basis from standard coordinates to <m>\mathcal{B}</m>-coordinates.
+    </p>
+
+    <question xml:id="activity-smd_symbolic_to_geometric">
+      <title>Interpreting Similar Matrix Decomposition</title>
+        <p>
+          In complete sentences, and using geometric words, explain the meaning of each of the following expressions.
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>A=\begin{bmatrix}1\amp -1\\1\amp 1\end{bmatrix}\begin{bmatrix}2\amp 0\\0\amp 3\end{bmatrix}\begin{bmatrix}1\amp -1\\1\amp 1\end{bmatrix}^{-1}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>
+          B=\begin{bmatrix}3\amp 1\\1\amp 2\end{bmatrix}\begin{bmatrix}1\amp 1\\0\amp 1\end{bmatrix}\begin{bmatrix}3\amp 1\\1\amp 2\end{bmatrix}^{-1}
+        </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>
+          C=\begin{bmatrix}2\amp -1\\1\amp 2\end{bmatrix}\begin{bmatrix}1\amp 0\\0\amp 0\end{bmatrix}\begin{bmatrix}2\amp -1\\1\amp 2\end{bmatrix}^{-1}
+        </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>
+          D=\begin{bmatrix}3\amp 1\\1\amp 2\end{bmatrix}\begin{bmatrix}0\amp -1\\1\amp 0\end{bmatrix}\begin{bmatrix}3\amp 1\\1\amp 2\end{bmatrix}^{-1}
+        </m>
+            </p>
+          </li>
+      </ol>
+    </question>
+
+    <p>
+      So such a similar matrix decomposition <m>A=PBP^{-1}</m>, multiplication by <m>A</m> can understood as the composition of the following three processes:
+    </p>
+
+    <p>
+      <dl>
+        <li>
+          <title>Step 1 - <m>P^{-1}</m></title>
+          <p>Change the coordinate of your point from standard to <m>\mathcal{B}</m>-coordinates.</p>
+        </li>
+        <li>
+          <title>Step 2 - <m>B</m></title>
+          <p>Perform the <m>B</m> transformation in <m>\mathcal{B}</m>-coordinates.</p>
+        </li>
+        <li>
+          <title>Step 3 - <m>P</m></title>
+          <p>Change the coordinate of your point back from <m>\mathcal{B}</m>-coordinates to standard coordinates.</p>
+        </li>
+      </dl>
+    </p>
+
+        <technology xml:id="note-geogebra-link-smd1">
+      <p>
+        Play with SMDs and transformations of the plane relative to the <m>\mathcal{B}</m>-coordinate grid at GeoGebra ID: <url href="https://www.geogebra.org/m/qahp88bh"><alert>qahp88bh</alert></url>. Only go to this link <alert>after</alert> you have done the above activity.
+      </p>
+
+              <figure xml:id="figure-geogebra-smd1">
+    <caption>Visualizing SMDs as label change, geometric transformation, and label change back.</caption>
+    <interactive geogebra="uwra8jy7" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
+    <instructions>
+            <p>
+              An interactive GeoGebra window showing vector scaling via arrows. Move the basis vectors.  Observe how the coordinate grid changes.  Adjust the entries of the transformation matrix.  Move the purple point.  
+            </p>
+     </instructions>
+        <static>
+            <image width="100%" source="images/images/8.1_ex1b.png.png"/>
+            <shortdescription>An image of the transformed unit square.</shortdescription>
+        </static>
+    </interactive>
+  </figure>
+
+
+    </technology>
+
+
+    <p>
+      Such decompositions are incredibly important in both pure and applied linear algebra. It enables one to take a very complicated looking matrix, and by changing coordinates, understand it as a simple matrix.
+    </p>
+
+    <p>
+      You should be able to understand, interpret, and go between symbolic, verbal, and visual representations of such a decomposition, as shown in the following example.
+    </p>
+
+    <example xml:id="example_simmatrixdecomp1">
+      <statement>
+        <p>
+          Consider the matrix <m>A=\begin{bmatrix}2.5\amp -0.5\\-0.5\amp 2.5\end{bmatrix}</m>. This matrix does not fall into one of our categories of simple matrices. Looking at what it does to the standard unit square in the plane does not clarify matters much. Below is depicted how it transforms the standard unit square.
+        </p>
+
+        <figure xml:id="fig-unit-square-transform">
+          <image source="images/8.1_ex1a.png" height="100%"/> 
+        </figure>
+
+        <p>
+          Now suppose that we know <m>A=\begin{bmatrix}2.5\amp -0.5\\-0.5\amp 2.5\end{bmatrix}=\begin{bmatrix}1\amp -1\\1\amp 1\end{bmatrix}\begin{bmatrix}2\amp 0\\0\amp 3\end{bmatrix}\begin{bmatrix}1\amp -1\\1\amp 1\end{bmatrix}^{-1}</m>. What this says is we should not be looking at the standard coordinate system, but rather the coordinate system associated to our familiar ordered basis <m>\mathcal{B}=\{\vect{v}_1, \vect{v}_2\}=\left\{\begin{bmatrix}1\\1\end{bmatrix},\begin{bmatrix}-1\\1\end{bmatrix}\right\}</m>. With respect to this basis, <m>A</m> is a stretch by a factor of 2 in the <m>\vect{v}_1</m>-direction and a stretch by a factor of 3 in the <m>\vect{v}_2</m>-direction.
+        </p>
+
+        <figure xml:id="fig-basis-transform">
+           <image source="images/8.1_ex1b.png" height="100%"/> 
+        </figure>
+      </statement>
+    </example>
+
+    <technology xml:id="exploration-geogebra-smd">
+      <title>Visualizing <m>A=PBP^{-1}</m></title>
+      <statement>
+        <p>
+          The goal of this activity is to visualize elementary matrix transformations performed in <m>\mathcal{B}</m>-coordinates and computing the corresponding similar matrix decomposition.
+        </p>
+        <p>
+          <ol>
+            <li><p>Drop two points <m>p_1</m> and <m>p_2</m> in the plane so that they are movable. Move them to <m>(1,1)</m> and <m>(-1,1)</m>, respectively. Label the origin <m>O</m>.</p></li>
+            <li><p>Use the <c>Vector</c> tool to draw the vector from the origin to <m>p_1</m> and then the origin to <m>p_2</m>. Name them <m>\vect{v}_1</m> and <m>\vect{v}_2</m> respectively, and let <m>\mathcal{B}=\{\vect{v}_1,\vect{v}_2\}</m>.</p></li>
+            <li><p>Use the <c>Sequence</c> and <c>Line</c> commands to draw coordinate lines in the <m>\vect{v}_1</m> direction and then in the <m>\vect{v}_2</m>-direction.</p></li>
+            <li><p>Use the <c>Polygon</c> tool to fill in the <m>\mathcal{B}</m>-unit square. (Make sure the <m>\mathcal{B}</m>-unit square moves correctly when you move <m>p_1</m> and <m>p_2</m>.)</p></li>
+            <li><p>Define matrices <m>P=[\vect{v}_1|\vect{v}_2]</m> and <m>B=\{\{2,0\},\{0,3\}\}</m>. Use the <c>coordinate</c> tools <m>x(p_1)</m>, <m>y(p_1)</m>, etc., to make sure <m>P</m> dynamically changes as you move <m>p_1</m> and <m>p_2</m>.</p></li>
+            <li><p>Using <c>ApplyMatrix</c>, visually represent, analyze, and explain how each of the matrices <m>P^{-1}</m>, <m>BP^{-1}</m> and <m>PBP^{-1}</m> transform the <m>\mathcal{B}</m>-unit square?</p></li>
+            <li><p>Explore! Change your <m>B</m> matrix and see how the transformation changes. (Challenge: Replace entries of <m>B</m> with sliders.) Move your points <m>p_1</m> and <m>p_2</m> around.</p></li>
+            <li><p>Consider the coordinate system given by the ordered basis <m>\mathcal{B}=\{\vect{v}_1, \vect{v}_2\}=\left\{\begin{bmatrix}1\\1\end{bmatrix},\begin{bmatrix}-1\\2\end{bmatrix}\right\}</m> and the transformation that, relative to the <m>\mathcal{B}</m>-coordinate system, is a <m>90^\circ</m> rotation of <m>\vect{v}_1</m> in the direction of <m>\vect{v}_2</m>. Use GeoGebra to visually represent this matrix, find the associated similar matrix decomposition, and the single matrix that is its product.</p></li>
+            <li>
+              <p>For each of the following, use complete sentences and geometric words to describe how the matrix transforms the plane. Then use GeoGebra to clearly visually represent this transformation.</p>
+              <me>
+                \begin{bmatrix}3\amp 1\\1\amp 2\end{bmatrix}\begin{bmatrix}1\amp 0\\0\amp -2\end{bmatrix}\begin{bmatrix}3\amp 1\\1\amp 2\end{bmatrix}^{-1}
+                \hspace{3pc} \begin{bmatrix}2\amp -2\\1\amp 1\end{bmatrix}\begin{bmatrix}2\amp 1\\0\amp 2\end{bmatrix}\begin{bmatrix}2\amp -2\\1\amp 1\end{bmatrix}^{-1}
+              </me>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </technology>
+
+    <technology xml:id="note-geogebra-link-smd2">
+      <p>
+        Play with SMDs and transformations of the plane relative to the <m>\mathcal{B}</m>-coordinate grid at GeoGebra ID: <url href="https://www.geogebra.org/m/qahp88bh"><alert>qahp88bh</alert></url>. Only go to this link <alert>after</alert> you have done the above activity.
+      </p>
+
+              <figure xml:id="figure-geogebra-smd2">
+    <caption>Visualizing SMDs as label change, geometric transformation, and label change back.</caption>
+    <interactive geogebra="jesdv6ur" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
+    <instructions>
+            <p>
+              An interactive GeoGebra window showing vector scaling via arrows. Move the basis vectors.  Observe how the coordinate grid changes.  Adjust the entries of the transformation matrix.  Observe how the transformed unit square changes.
+            </p>
+     </instructions>
+        <static>
+            <image width="100%" source="images/images/8.1_ex1b.png.png"/>
+            <shortdescription>An image of the transformed unit square.</shortdescription>
+        </static>
+    </interactive>
+  </figure>
+
+
+    </technology>
+
+
+  <exercises xml:id="homework-chp8sec1">
+    <title>Problems</title>
+
+    <exercise xml:id="prob-basis-grids">
+      <statement>
+        <p>
+          Consider the following two ordered bases: <m>\mathcal{S}=\left\{ \begin{bmatrix}1\\0\end{bmatrix}, \begin{bmatrix}0\\1\end{bmatrix}\right\}</m> and <m>\mathcal{B}=\left\{ \begin{bmatrix}2\\1\end{bmatrix}, \begin{bmatrix}-1\\3\end{bmatrix}\right\}</m>. Let <m>P_{\mathcal{B}}</m> denote the transformation from <m>\mathcal{B}</m>-coordinates into <m>\mathcal{S}</m>-coordinates.
+        </p>
+        <p>
+          <ol label="(a)">
+            <li><p>Carefully draw and label the coordinate grids given by both ordered bases. (Make it plenty big because you will be drawing lots of things on it.) You may do this by hand or use GeoGebra.</p></li>
+            <li><p>Shade in <m>\vect{S}_\mathcal{B}</m>, the <m>\mathcal{B}</m>-unit square.</p></li>
+            <li><p>Let <m>A=P_{\mathcal{B}}\begin{bmatrix}-1\amp 0\\0\amp 2\end{bmatrix}P_{\mathcal{B}}^{-1}</m>. Sketch or use GeoGebra to show how <m>A</m> transforms <m>\vect{S}_\mathcal{B}</m>.</p></li>
+            <li><p>Using complete sentences and geometric words, explain how <m>A</m> transforms the plane.</p></li>
+            <li><p>Let <m>B=P_{\mathcal{B}}\begin{bmatrix}2\amp 1\\0\amp 2\end{bmatrix}P_{\mathcal{B}}^{-1}</m>. Sketch or use GeoGebra to show how <m>B</m> transforms <m>\vect{S}_\mathcal{B}</m>.</p></li>
+            <li><p>Using complete sentences and geometric words, explain how <m>B</m> transforms the plane.</p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="prob-red-blue-transform">
+      <statement>
+        <p>
+          The matrix <m>A</m> transforms the plane by sending the red region below to the blue region.
+        </p>
+        <sidebyside widths="40% 55%" valigns="middle middle">
+          <p>
+            <ol label="(a)">
+              <li><p>Using complete sentences and geometric words, <alert>verbally</alert> explain how <m>A</m> transforms the plane.</p></li>
+              <li><p>Find the <alert>symbolic</alert> expression for <m>A</m> and give its associated similar matrix decomposition.</p></li>
+            </ol>
+          </p>
+          <image source="images_hw/HW06similartransform.png" />
+        </sidebyside>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="prob-verbal-descriptions">
+      <statement>
+        <p>
+          Below is a verbal description of how two matrices transform the plane. For each, (i) give a <alert>symbolic</alert> expression for the described similar matrix decomposition, and (ii) clearly sketch or use GeoGebra to <alert>visually</alert> show how the described matrix transforms the plane, relative to the relevant coordinate system.
+        </p>
+        <p>
+          <ol label="(a)">
+            <li><p><m>A_1</m> stretches by a factor of 4 in the <m>\vect{v}_1=\begin{bmatrix}2\\-1\end{bmatrix}</m> direction and stretches by a factor of 2 in the <m>\vect{v}_2=\begin{bmatrix}0\\3\end{bmatrix}</m>.</p></li>
+            <li><p><m>A_2</m> shears the vector <m>\vect{v}_2=\begin{bmatrix}3\\0\end{bmatrix}</m> by 2 units in the direction of the vector <m>\vect{v}_1=\begin{bmatrix}-2\\1\end{bmatrix}</m> and does not move the vector <m>\vect{v}_1</m>.</p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="prob-matrix-powers">
+      <statement>
+        <p>
+          Suppose we know that <m>A = \begin{bmatrix}4\amp -3\\3\amp 4\end{bmatrix} \begin{bmatrix}2\amp 0\\0\amp 1\end{bmatrix} \begin{bmatrix}4\amp -3\\3\amp 4\end{bmatrix}^{-1}</m>.
+        </p>
+        <p>
+          <ol label="(a)">
+            <li><p>Recall <m>A^2 = A\cdot A</m>. In complete sentences and geometric word, verbally explain how <m>A^2$</m> transforms the plane. (Hint: Consider using the SMD together with the associative property of matrix multiplication.)</p></li>
+            <li><p>Generalize your reason to explain how <m>A^n</m> transforms the plane.</p></li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
 
 
 </section>

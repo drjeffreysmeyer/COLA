@@ -1,11 +1,691 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="chp9sec1" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Determinant as Siogned Volume Scaling Factor</title>
+	<title>Determinant as Signed Volume Scaling Factor</title>
 
-	<p>
+	<subsection xml:id="chp9sec1subsec1">
+		<title>Area</title>
 		
+	
+	<p>
+		<em>What is area?</em> More precisely, given a closed polygonal region <m>R</m>, what do we mean by the area of <m>R</m>? In short, it is the <q>size</q> of the region, as measure in units of the unit square <m>S</m>.
 	</p>
 
+	<definition xml:id="def-area">
+		<title>Area in the Plane</title>
+		<statement>
+			<p>
+				If <m>R</m> is closed polygonal region in the plane, its <term>area</term>, denoted <m>\Area(R)</m>, is the number of disjoint copies of the unit square needed to fill <m>R</m>.
+			</p>
+		</statement>
+	</definition>
 
+	<question xml:id="activity-area">
+		<title>Finding areas of polygonal regions</title>
+		<statement>
+			<p>
+				Find the areas of the regions <m>R_1</m>, <m>R_2</m>, and <m>R_3</m> in the figure below. Be sure to clearly explain your strategy. Can you then find a different strategy? 
+			</p>
+
+			<image source="images/9.1_area1.png" width="100%">
+				<description> 
+					<p>
+						Three polygonal regions in the plane.
+					</p>
+				</description>
+			</image>
+
+		</statement>
+	</question>
+
+	<p>
+		While completing <xref ref="activity-area"/>, it is likely that you discovered and used each of the following properties of area. Take a moment to go back and see all the places you might have used the following properties in the activity. 
+	</p>
+
+	<proposition xml:id="prop-area_properties">
+		<title>Properties of Area</title>
+		<statement>
+			<p>
+								Area has the following three properties:
+	
+	<ol>
+		<li><alert>(Normalization.)</alert> The area of the unit square <m>S</m> is 1 (i.e. <m>\Area(S)=1</m>),</li>
+		<li><alert>(Translation.)</alert> Translation does not affect area (i.e. <m>\Area(\vect{v}+R)=\Area (R)</m>), and</li>
+		<li>
+			<alert>(Additivity.)</alert> The area of two disjoint regions is the sum of their area <br/> 
+			(i.e. if <m>R_1\cap R_2=\varnothing</m>, then <m>\Area(R_1\cup R_2)=\Area (R_1)+\Area (R_2)</m>).
+		</li>
+	</ol>
+			</p>
+		</statement>
+	</proposition>
+
+	<p>
+		These three properties will allow us to productively reason about area going forward.
+	</p>
+
+	<p>
+		Given a square <m>2\times 2</m> matrix <m>A</m>, it transforms the plane via matrix multiplication <m>T:\R^2\to \R^2</m>, <m>\vect{x}\mapsto A\vect{x}</m>. We have already seen how we can measure stretch factors in a given direction. A second natural question is the following: <em>How does <m>T</m> change area?</em>
+	</p>
+
+	<figure xml:id="fig-area">
+		<image source="images/9.1_area2.png" />
+		<caption>A closed polygonal region <m>R</m> and a transformed region <m>T(R)</m>.</caption>
+	</figure>
+
+	<p>Some questions to start your investigations:</p>
+
+	<ol>
+		<li><em>How does the area of a transformed region <m>T(R)</m>, and a transformed translated region <m>T(\vect{v}+R)</m>, compare?</em></li>
+		<li><em>How do each of the elementary geometric matrix transformations affect area?</em></li>
+		<li><em>How do compositions affect area?</em></li>
+		<li><em>How might matrix decompositions help you better understand how a matrix transforms area?</em></li>
+		<li><em>How might we generalize this to higher dimensions?</em></li>
+	</ol>
+
+	<p>What else might you wonder about area as it relates to linear algebra?</p>
+
+	<question xml:id="geogebra_activity-asf">
+		<title>Visualizing and Exploring Area Scaling Factor</title>
+		<statement>
+			<p>
+				In this activity, you will use your <alert>Area Comparison Tool</alert> to analyze the areas of polygonal regions in the plane and discover how certain matrix transformations affect area. A pre-made version of the <alert>Area Comparison Tool</alert> can be found at GeoGebra ID: <url href="https://www.geogebra.org/m/rxtncdwy"><alert>rxtncdwy</alert></url>). I walk you thought constructing your own <alert>Area Comparison Tool</alert> in Creation . 
+			</p>
+			<p>
+				Start with <m>A=\begin{bmatrix}3\amp 0\\0\amp 2\end{bmatrix}</m>.
+			</p>
+			<ol>
+				<li>
+					<p><alert>Translations and Area.</alert></p>
+					<p>Using the mouse, click on the center of <m>R</m> and drag it. This <em>translates</em> <m>R</m>. As you translate <m>R</m>, how does its area <m>\Area(A)</m> change? How does the transformed area <m>\Area(T(R))</m> change? Perhaps your observations are unique to this specific matrix? Use your sliders to start to adjust the entries of your matrix and try again. Summarize your observations. Justify your conclusions by using the definition of area and its properties.</p>
+				</li>
+				<li>
+					<p><alert>Ratio of Areas.</alert></p>
+					<p>Find the <em>ratio</em> of the transformed area to the original area (i.e. <m>\frac{\Area(T(R))}{\Area(R)}</m>). Move around the points of your polygon. How does this change the <em>ratio</em> of areas? Use your sliders to start to adjust the entries of your matrix. How does this change the <em>ratio</em> of areas? Summarize your observations.</p>
+				</li>
+				<li>
+					<p><alert>Simple Transformations.</alert></p>
+					<p>How do you think each of the simple transformations: stretches, reflections, rotations, projections, and shears will affect the <em>ratio</em> of areas? For example,</p>
+					<me>
+					\begin{bmatrix}2\amp 0\\0\amp 1\end{bmatrix}\hspace{1pc}
+					\left[\begin{array}{rr}1\amp 0\\0\amp -1\end{array}\right]\hspace{1pc}
+					\left[\begin{array}{rr}0\amp -1\\1\amp 0\end{array}\right]\hspace{1pc}
+					\begin{bmatrix}0\amp 0\\0\amp 1\end{bmatrix}\hspace{1pc}
+					\begin{bmatrix}1\amp 2\\0\amp 1\end{bmatrix}
+					</me>
+					<p>After writing down your expectations, reset and use the <alert>Area Comparison Tool</alert> to check. After some time exploring these ratios, summarize your findings. Did any surprise you?</p>
+				</li>
+			</ol>
+		</statement>
+	</question>
+
+	<example>
+		<statement>
+			<p>
+				Consider the matrix <me>A=\begin{bmatrix}2\amp 4\\0\amp 3\end{bmatrix}</me> transforming the red pentagon to the right. The red pentagon has area <m>3</m>. The transformed pentagon in blue has area 18.
+			</p>
+			<p>
+				The <em>ratio</em> of areas is <m>\frac{18}{3}=6</m>.
+			</p>
+			<image source="images/9.1_area3.png" width="100%">
+		<description> 
+			<p>
+				A transformed polygonal region in the plane.
+			</p>
+		</description>
+	</image>
+
+		</statement>
+	</example>
+
+	<figure xml:id="figure-geogebra_asf">
+    <caption>Visualizing asf.</caption>
+    <interactive geogebra="sukakddu" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
+    <instructions>
+            <p>
+              An interactive to visualize a transformed polygonal region in the plane.
+            </p>
+     </instructions>
+        <static>
+            <image width="100%" source="images/9.1_area3.png"/>
+            <shortdescription>A transformed polygonal region in the plane.</shortdescription>
+        </static>
+    </interactive>
+  </figure>
+
+	<p>
+		Having completed the activity, here are two fundamental observations you should either have made or should now go back and verify.
+	</p>
+
+	<p>
+		<alert>Observation 1:</alert> Changing your polygon does <em>not</em> affect the ratio of areas. Rather, the ratio of areas only depends upon the matrix.
+	</p>
+
+	<p>As such, we are justified in making the following definition.</p>
+
+	<definition xml:id="def-asf">
+		<title>Area Scaling Factor (asf)</title>
+		<statement>
+			<p>
+				If <m>A</m> is a <m>2\times 2</m> matrix and <m>R</m> is any closed polygonal region, then the <term>area scaling factor</term> of <m>A</m> is the constant value <m>\asf(A) =  \frac{\Area(T_A(R))}{\Area(R)}</m>.
+			</p>
+		</statement>
+	</definition>
+
+	<p>
+		<alert>Observation 2:</alert> Simple transformations affect area in the following ways.
+	</p>
+	<ol>
+		<li>Pure stretches scale area by their stretch factor, <m>k</m>. (i.e. <m>\asf(A)=k</m>)</li>
+		<li>Projections smash area to 0. (i.e. <m>\asf(A)=0</m>) </li>
+		<li>Pure reflections do not affect area. (i.e. <m>\asf(A)=1</m>)</li>
+		<li>Pure rotations do not affect area. (i.e. <m>\asf(A)=1</m>)</li>
+		<li>Pure shears do not affect area. (i.e. <m>\asf(A)=1</m>) </li>
+	</ol>
+
+	<p>
+		<alert>Shears and Cavalieri's Principle</alert>
+		The most surprising <m>\asf</m> is that of the shear. This is a manifestation of <em>Cavalieri's principle</em>, which implies that if we have a stack of rectangles, they cover the same area, regardless of whether they are perfectly stacked upright or if they are offset. 
+	</p>
+
+	             <figure xml:id="figure-geogebra_cavalieris_principle">
+    <caption>Visualizing Cavalieri's principle.</caption>
+    <interactive geogebra="vrnff7nj" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
+    <instructions>
+            <p>
+              An interactive GeoGebra window visualizing Cavalieri's_principle.
+            </p>
+     </instructions>
+        <static>
+            <image width="100%" source="images/images/9.1_cavalieris_principle.png"/>
+            <shortdescription>An image of Cavalieri's Principle.</shortdescription>
+        </static>
+    </interactive>
+  </figure>
+
+
+	<p>
+		Play with Cavalieri's Principle at GeoGebra ID: <url href="https://www.geogebra.org/m/vrnff7nj"><alert>vrnff7nj</alert></url>.
+	</p>
+
+	<question>
+		<title>Exploring <m>\asf</m> and composition</title>
+		<statement>
+			<p>Consider each of the following matrix products.</p>
+			<me>
+			\begin{bmatrix}2\amp 0\\0\amp 1\end{bmatrix}
+			\begin{bmatrix}1\amp 0\\0\amp 3\end{bmatrix}
+			=\begin{bmatrix}2\amp 0\\0\amp 3\end{bmatrix}
+			\hspace{2pc}
+			\begin{bmatrix}1\amp 2\\0\amp 1\end{bmatrix}
+			\left[\begin{array}{rr}4\amp 0\\0\amp -1\end{array}\right]
+			=\left[\begin{array}{rr}4\amp -2\\0\amp -1\end{array}\right]
+			</me>
+			<p>Use the <url href="https://www.geogebra.org/m/rxtncdwy"><alert>Area Comparison Tool</alert></url> to find the <m>\asf</m> of each of the matrices in each product. How does the <m>\asf</m> of each of the constituent matrices relate to the <m>\asf</m> of their product?</p>
+			<p>Summarize your observations.</p>
+		</statement>
+	</question>
+
+	<p>A third fundamental observation about asf is:</p>
+
+	<p>
+		<alert>Observation 3:</alert> The area scaling factor of a composition is the product of the area scaling factors. Symbolically, this means the <m>\asf</m> satisfies the <alert>product formula</alert> <m>\asf(AB)=\asf(A)\asf(B)</m>.
+	</p>
+
+	<p>
+		Combining our new observations of the <m>\asf</m> of simple transformations together with the product formula, we may now use elementary matrix decompositions to compute <m>\asf</m>!
+	</p>
+
+	<example xml:id="ex-emd_to_det">
+		<title>Using an EMD to compute <m>\asf</m></title>
+		<statement>
+			<p>Let <m>A=\left[\begin{array}{rr}3\amp 1\\1\amp 2\end{array}\right]</m>. I will walk through how we can use an EMD for <m>A</m> together with the observations of this lesson, to compute <m>\asf(A)</m>.</p>
+			<p>1. Row reduction.</p>
+			<me>
+			\left[\begin{array}{rr}3\amp 1\\1\amp 2\end{array}\right] 
+			\textcolor{red}{\rowP{1}{2}} 
+			\left[\begin{array}{rr}1\amp 2\\3\amp 1\end{array}\right]
+			\textcolor{blue}{\rowA{2}{1}{-3}}
+			\left[\begin{array}{rr}1\amp 2\\0\amp -5\end{array}\right] 
+			\textcolor{green}{\rowS{2}{-\frac{1}{5}}}
+			\left[\begin{array}{rr}1\amp 2\\0\amp 1\end{array}\right] .
+			</me>
+			<p>2. Record row operations with elementary matrices.</p>
+			<me>
+			\textcolor{green}{\left[\begin{array}{rr}1\amp 0\\0\amp -\frac{1}{5}\end{array}\right]}
+			\textcolor{blue}{\left[\begin{array}{rr}1\amp 0\\-3\amp 1\end{array}\right]}
+			\textcolor{red}{\left[\begin{array}{rr}0\amp 1\\1\amp 0\end{array}\right]}
+			A = \left[\begin{array}{rr}1\amp 2\\0\amp 1\end{array}\right] .</me>
+			<p>3. Socks and Shoes over.</p>
+			<me>A=
+			\textcolor{red}{\left[\begin{array}{rr}0\amp 1\\1\amp 0\end{array}\right]}
+			\textcolor{blue}{\left[\begin{array}{rr}1\amp 0\\3\amp 1\end{array}\right]}
+			\textcolor{green}{\left[\begin{array}{rr}1\amp 0\\0\amp -5\end{array}\right]}
+			\left[\begin{array}{rr}1\amp 2\\0\amp 1\end{array}\right]
+			.</me>
+			<p>4. Use <m>\asf</m> of simple transformations and the product formula.</p>
+			<me>\asf(A) = 
+			\textcolor{red}{(1)}
+			\textcolor{blue}{(1)}
+			\textcolor{green}{(5)}
+			(1) 
+			= 5.</me>
+		</statement>
+	</example>
+
+	<question>
+		<statement>
+			<p>What is the <m>\asf</m> of </p>
+			<me>A=\left[\begin{array}{rr}1\amp -3\\0\amp 1\end{array}\right]
+			\left[\begin{array}{rr}0\amp 1\\1\amp 0\end{array}\right]
+			\left[\begin{array}{rr}1\amp 0\\-10\amp 1\end{array}\right]
+			\left[\begin{array}{rr}1\amp 0\\0\amp -1\end{array}\right]
+			\left[\begin{array}{rr}1\amp 0\\-4\amp 1\end{array}\right]
+			\left[\begin{array}{rr}1\amp 5\\0\amp 1\end{array}\right]
+			\left[\begin{array}{rr}7\amp 0\\0\amp 1\end{array}\right]
+			\left[\begin{array}{rr}0\amp 1\\1\amp 0\end{array}\right]
+			\left[\begin{array}{rr}2\amp 0\\0\amp 1\end{array}\right]?</me>
+		</statement>
+	</question>
+
+	<p>
+		We now connect <m>\asf</m> to the area of parallelograms. Consider the parallelogram in the plane determined by the basis <m>\mathcal{B} = \{\vect{v},\vect{w}\}</m>. This parallelogram is the <m>\mathcal{B}</m>-unit square <m>S_\mathcal{B}</m> (Figure <xref ref="fig-bunit_square"/>). The matrix <m>P_{\mathcal{B}}</m>, when viewed as a transformation, sends the standard unit square <m>S</m> to the <m>\mathcal{B}</m>-unit square <m>S_\mathcal{B}</m>.
+	</p>
+
+	<figure xml:id="fig-bunit_square">
+		<image source="images/9.1_area4.png" />
+		<caption>The <m>\mathcal{B}</m>-unit square is the transformed standard unit square.</caption>
+	</figure>
+
+	<p>Then </p>
+	<me>\asf(P_\mathcal{B}) = \frac{\Area(T_{P_\mathcal{B}}(S))}{\Area(S)} = \frac{\Area(S_\mathcal{B})}{\Area(S)} = \frac{\Area(S_\mathcal{B})}{1}  = \Area(S_\mathcal{B}).</me>
+	<p>We have just justified the following proposition.</p>
+
+	<proposition>
+		<title>Proposition (<m>\mathcal{B}</m>-unit squares and <m>\asf</m>)</title> 
+		<statement>
+			<p>
+				If <m>\mathcal{B}=\{\vect{v}_1,\vect{v}_2\}\subset \R^2</m> is a basis, and <m>S_\mathcal{B}</m> is the <m>\mathcal{B}</m>-unit square, then <m>\asf(P_\mathcal{B})= \Area(S_\mathcal{B})</m>.
+			</p>
+		</statement>
+	</proposition>
+
+	<p>This proposition has many uses in geometry. </p>
+
+	<example xml:id="ex-area_of_parallelogram">
+		<title>Area of a Parallelogram</title>
+		<statement>
+			<p>
+				Let <m>R</m> denote the parallelogram determined by vectors <m>\begin{bmatrix}3\\1\end{bmatrix}</m> and <m>\begin{bmatrix}1\\2\end{bmatrix}</m>. Then, using the computation in Example <xref ref="ex-emd_to_det"/>,
+				<me>\Area(R)=\asf\left(\left[\begin{array}{rr}3\amp 1\\1\amp 2\end{array}\right]\right)=5.</me>
+			</p>
+			<image source="images/9.1_area5.png" />
+		</statement>
+	</example>
+
+	<p>
+		Observe how areas of parallelograms emerge from <m>\asf</m>. Note that all triangles are half of a parallelogram. As such, <m>\asf</m> gives us a way to compute areas of triangles! Just like the side lengths () and angle measures of triangle (), area of a triangle emerges from linear algebraic concepts. 
+	</p>
+
+	<p>We can now generalize our reasoning to <m>\R^n</m> for <m>n\ge 2</m>.</p>
+
+	<definition xml:id="def-unit_cube">
+		<title>Unit Cube in <m>\R^n</m></title>
+		<statement>
+			<p>
+				The <term>unit cube</term> <m>C_n\subset \R^n</m> is the parallelepiped determined by the vectors <m>\vect{e}_1,\vect{e}_2,\ldots, \vect{e}_n</m>. 
+			</p>
+		</statement>
+	</definition>
+
+	<figure xml:id="fig-unitcube">
+		<image source="images/9.1_unitcube.png" />
+		<caption>The unit cube in <m>\R^3</m>.</caption>
+	</figure>
+
+	<p>
+		The volume of a region in <m>\R^n</m> is the size of a region as measured in units of the <m>n</m>-dimensional unit cube <m>C_n</m>.
+	</p>
+
+	<definition xml:id="def-volume">
+		<title>Volume in <m>\R^n</m></title>
+		<statement>
+			<p>
+				If <m>R</m> is closed polygonal region in <m>\R^n</m>, its <term>volume</term>, denoted <m>\Vol(R)</m>, is the number of disjoint copies of the unit cube needed to fill <m>R</m>.
+			</p>
+		</statement>
+	</definition>
+
+	<p>
+		It is convention to talk about volume in dimensions <m>n\ge 2</m>, and just be aware that volume when <m>n=2</m> is our usual notion of area. All properties in Proposition <xref ref="prop-area_properties"/> generalize to volume. For any <m>n\times n</m> matrix <m>A</m>, we can think about its associated <em>volume scaling factor</em> <m>\vsf</m>.
+	</p>
+
+	<definition xml:id="def-vsf">
+		<title>Volume Scaling Factor (vsf)</title>
+		<statement>
+			<p>
+				If <m>A</m> is an <m>n\times n</m> matrix and <m>R</m> is any closed polygonal region, then the <term>volume scaling factor</term> of <m>A</m> is the constant value <m>\vsf(A) =  \frac{\Vol(T_A(R))}{\Vol(R)}</m>.
+			</p>
+		</statement>
+	</definition>
+
+	<p>
+		Visualize volume scaling factor in <m>\R^3</m> at GeoGebra ID: <url href="https://www.geogebra.org/m/xkapvwer"><alert>xkapvwer</alert></url>.
+	</p>
+
+	<p>
+		From here on out, when considering all <m>n\ge2</m> we will use the term volume scaling factor and will only use the term area scaling factor when we are only looking at the plane. 
+	</p>
+	<p>
+		Again, upon generalizing our reasoning to <m>\R^n</m>, we see <m>\vsf</m> connects to the volume of parallelepipeds. 
+	</p>
+
+	<proposition>
+		<title>Proposition (<m>\mathcal{B}</m>-unit Cubes and <m>\vsf</m>)</title> 
+		<statement>
+			<p>
+				If <m>\mathcal{B}\subset \R^n</m> is an ordered basis and <m>P_{\mathcal{B}}</m> the change of basis matrix from <m>\mathcal{B}</m>-coordinates to standard coordinates, then the volume of the <m>\mathcal{B}</m>-unit cube is <m>\Vol(C_{\mathcal{B}})=\vsf(P_{\mathcal{B}})</m>.
+			</p>
+		</statement>
+	</proposition>
+
+	<example>
+		<statement>
+			<p>
+				Consider the parallelepiped <m>R</m> in <m>\R^3</m> determined by basis <m>\mathcal{B}=\{\vect{a},\vect{b},\vect{c}\}</m> where 
+			</p>
+			<me>\vect{a}= \left[\begin{array}{r} 2\\-1\\1\end{array}\right],
+			\vect{b}= \left[\begin{array}{r}0\\3\\1\end{array}\right], \text{ and }
+			\vect{c}= \begin{bmatrix}0\\0\\1\end{bmatrix}.</me>
+			<p>
+				You may play with <m>R</m> at GeoGebra ID: <url href="https://www.geogebra.org/m/vrmtn26v"><alert>vrmtn26v</alert></url>.
+			</p>
+			<p>
+				Then <m>\Vol(R)= \vsf(P_\mathcal{B})</m>.
+			</p>
+			<p>
+				We see <m>P_\mathcal{B}</m> has an EMD:
+			</p>
+			<figure>
+				<image source="images/9.1_parallelepiped1.png" />
+			</figure>
+			<me>
+			\left[\begin{array}{rrr} 2\amp 0\amp 0\\ -1\amp 3\amp 0 \\ 1\amp 1\amp 1\end{array}\right]
+			=
+			\left[\begin{array}{rrr} 2\amp 0\amp 0\\ 0\amp 1\amp 0 \\ 0\amp 0\amp 1\end{array}\right]
+			\left[\begin{array}{rrr} 1\amp 0\amp 0\\ -1\amp 1\amp 0 \\ 0\amp 0\amp 1\end{array}\right]
+			\left[\begin{array}{rrr} 1\amp 0\amp 0\\ 0\amp 1\amp 0 \\ 1\amp 0\amp 1\end{array}\right]
+			\left[\begin{array}{rrr} 1\amp 0\amp 0\\ 0\amp 3\amp 0 \\ 0\amp 0\amp 1\end{array}\right]
+			\left[\begin{array}{rrr} 1\amp 0\amp 0\\ 0\amp 1\amp 0 \\ 0\amp 1\amp 1\end{array}\right].
+			</me>
+			<p>
+				Using the product formula: <m>\vsf(A) = (2)(1)(1)(3)(1) = 6</m>. We deduce the parallelepiped has volume 6! Without <m>\vsf</m>, how else could you have computed that?!
+			</p>
+		</statement>
+	</example>
+
+	</subsection>
+	<subsection xml:id="chp9sec1subsec2">
+		<title>Orientation</title>
+		
+
+
+	<p>
+		A path is a <alert>loop</alert> if it closes up. A loop is <alert>simple</alert> if it does not intersect itself.
+	</p>
+
+	<definition>
+		<title>Orientation in the Plane</title>
+		<statement>
+			<p>
+				If <m>\ell</m> is simple loop in the plane, then its <term>orientation</term> is the direction it travels. The two options are <term>counterclockwise</term> and <term>clockwise</term>.
+			</p>
+		</statement>
+	</definition>
+
+	<figure xml:id="fig-oriented-loop">
+		<image source="images/9.1_orientated_loops.png" />
+		<caption>Simple loops with counterclockwise (left) and clockwise (right) orientations.</caption>
+	</figure>
+
+	<p>
+		When looking at a matrix transformation of the plane, another natural question is: <em>what happens to the orientation of loops?</em> Do counterclockwise loops go to counterclockwise loops, or are they flipped to clockwise loops?
+	</p>
+
+    <p>
+      If orientation is preserved, we say <m>A</m> has <term>positive sign</term> and if orientation flipped, we say <m>A</m> has <term>negative sign</term>.
+      We denote this by <m>\sgn(A)=1</m> or <m>\sgn(A)=-1</m>, respectively.
+    </p>
+
+    <question xml:id="geogebra_activity-sgn">
+      <title>Visualizing and Exploring Orientation</title>
+      <statement>
+        <p>
+          Use your <sc>Orientation Comparison Tool</sc> to analyze the orientation of polygonal regions in the plane and discover how certain matrix transformations affect orientation.
+          A pre-made version of the <sc>Orientation Comparison Tool</sc> can be found at GeoGebra ID: <url href="https://www.geogebra.org/m/e69sjkrw" visual="geogebra.org/m/e69sjkrw"><alert>e69sjkrw</alert></url>.
+        </p>
+      </statement>
+      
+      <task>
+        <title>Translations and Orientation</title>
+        <statement>
+          <p>
+            Click and drag <m>R</m>.
+            As you translate <m>R</m>, how does its orientation change?
+            How does the transformed orientation change?
+            Perhaps your observations are unique to this specific matrix?
+            Use sliders to change the entries of your matrix and try again.
+            Summarize your observations.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <title>Simple Transformations</title>
+        <statement>
+          <p>
+            How do you think each of the simple transformations: stretches, reflections, rotations, projections, and shears will affect orientation? For example,
+          </p>
+          <me>
+            \begin{bmatrix}2\amp 0\\0\amp 1\end{bmatrix}\quad
+            \begin{bmatrix}1\amp 0\\0\amp -1\end{bmatrix}\quad
+            \begin{bmatrix}0\amp -1\\1\amp 0\end{bmatrix}\quad
+            \begin{bmatrix}0\amp 0\\0\amp 1\end{bmatrix}\quad
+            \begin{bmatrix}1\amp 2\\0\amp 1\end{bmatrix}
+          </me>
+          <p>
+            After writing down your expectations, use the <sc>Orientation Comparison Tool</sc> to check.
+            Summarize your findings.
+          </p>
+        </statement>
+      </task>
+
+      <task>
+        <title>Compositions</title>
+        <statement>
+          <p>
+            Consider each of the following matrix products.
+          </p>
+          <me>
+            \begin{bmatrix}-1\amp 0\\0\amp 1\end{bmatrix}
+            \begin{bmatrix}1\amp 0\\0\amp -1\end{bmatrix}
+            =\begin{bmatrix}-1\amp 0\\0\amp -1\end{bmatrix}
+            \quad\quad
+            \begin{bmatrix}0\amp 1\\1\amp 0\end{bmatrix}
+            \begin{bmatrix}3\amp 1\\1\amp 2\end{bmatrix}
+            =\begin{bmatrix}1\amp 2\\3\amp 1\end{bmatrix}
+          </me>
+          <p>
+            How does the <m>\sgn</m> of each of the constituent matrices relate to the <m>\sgn</m> of their product?
+            Summarize your observations.
+          </p>
+        </statement>
+      </task>
+    </question>
+
+    <p>
+      Just like for the <m>\asf</m>, you should make three fundamental observations:
+    </p>
+
+    <p>
+      <alert>Observation 1:</alert> Changing your simple loop does <em>not</em> affect the sign.
+    </p>
+
+    <p>
+      <alert>Observation 2:</alert> Simple transformations affect orientation in the following way.
+    </p>
+
+    <orderedlist>
+      <item>
+        <p>Pure stretches do not affect orientation. (i.e., <m>\sgn(A)=1</m>)</p>
+      </item>
+      <item>
+        <p>Projections smash curve to 0. (i.e., <m>\sgn(A)</m> is N/A)</p>
+      </item>
+      <item>
+        <p>Pure reflections reverse orientation. (i.e., <m>\sgn(A)=-1</m>)</p>
+      </item>
+      <item>
+        <p>Pure shears do not affect orientation. (i.e., <m>\sgn(A)=1</m>)</p>
+      </item>
+      <item>
+        <p>Pure rotations do not affect orientation. (i.e., <m>\sgn(A)=1</m>)</p>
+      </item>
+    </orderedlist>
+
+    <p>
+      <alert>Observation 3:</alert> The sign of a composition is the product of the signs. Symbolically, this means the <m>\sgn</m> satisfies the <term>product formula</term> <m>\sgn(AB)=\sgn(A)\sgn(B)</m>.
+    </p>
+
+    <p>
+      Once more, we may use these observations with EMDs to compute the sign of any matrix.
+    </p>
+
+    <example xml:id="ex-emd_to_sgn">
+      <title>Using an EMD to compute <m>\sgn</m></title>
+      <statement>
+        <p>
+          If <m>A=\begin{bmatrix}3\amp 1\\1\amp 2\end{bmatrix}</m>, then in <xref ref="ex-emd_to_det" /> we computed
+        </p>
+        <me>
+          A = \color{red}{\begin{bmatrix}0\amp 1\\1\amp 0\end{bmatrix}}
+          \color{blue}{\begin{bmatrix}1\amp 0\\3\amp 1\end{bmatrix}}
+          \color{green}{\begin{bmatrix}1\amp 0\\0\amp -5\end{bmatrix}}
+          \begin{bmatrix}1\amp 2\\0\amp 1\end{bmatrix},
+        </me>
+        <p>so</p>
+        <me>
+          \sgn(A) = \color{red}{(-1)} \color{blue}{(1)} \color{green}{(-1)} (1) = 1.
+        </me>
+      </statement>
+    </example>
+
+    <question>
+      <statement>
+        <p>
+          What is the sign of 
+        </p>
+        <me>
+          A=\begin{bmatrix} 1\amp -3\\0\amp 1\end{bmatrix}
+          \begin{bmatrix} 0\amp 1\\1\amp 0\end{bmatrix}
+          \begin{bmatrix} 1\amp 0\\-10\amp 1\end{bmatrix}
+          \begin{bmatrix} 1\amp 0\\0\amp -1\end{bmatrix}
+          \begin{bmatrix} 1\amp 0\\-4\amp 1\end{bmatrix}
+          \begin{bmatrix} 1\amp 5\\0\amp 1\end{bmatrix}
+          \begin{bmatrix} 7\amp 0\\0\amp 1\end{bmatrix}
+          \begin{bmatrix} 0\amp 1\\1\amp 0\end{bmatrix}
+          \begin{bmatrix} 2\amp 0\\0\amp 1\end{bmatrix}?
+        </me>
+      </statement>
+    </question>
+
+    <p>
+      Generalizing sign to <m>\mathbb{R}^n</m> for <m>n \ge 3</m> is slightly nuanced.
+      We cannot just think about orientations of simple loops in <m>\mathbb{R}^n</m>.
+      (Why do you think that is?)
+      However, in <m>\mathbb{R}^2</m>, we found we could find the sign by counting reflections.
+      It is this perspective that easily generalizes to <m>\mathbb{R}^n</m>.
+    </p>
+
+    <definition xml:id="def-sign">
+      <title>Sign</title>
+      <statement>
+        <p>
+          If <m>A</m> is an invertible <m>n\times n</m> matrix and <m>r</m> is the number of times a reflection appears in an elementary matrix decomposition of <m>A</m>, then its <term>sign</term> is <m>\sgn(A)=(-1)^r</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Different elementary matrix decompositions might have different numbers of reflections.  
+      It is a proposition to be proved elsewhere that the <em>parity</em> of this number only depends on <m>A</m>, not the elementary matrix decomposition, and hence <m>\sgn(A)</m>, as defined in <xref ref="def-sign" /> is well-defined.
+    </p>
+
+	</subsection>
+	<subsection xml:id="chp9sec1subsec3">
+		<title>Determinant</title>
+    <p>
+      The volume scaling factor and sign, while measuring different things, are deeply related and we can put them together into a single number.
+    </p>
+
+
+    <definition xml:id="def-det">
+      <title>Determinant</title>
+      <statement>
+        <p>
+          The <term>signed volume scaling factor</term> of <m>A</m> is the product of its sign and volume scaling factor.  
+          This number is also called the <term>determinant</term> of <m>A</m>,
+        </p>
+        <me>
+          \det(A) = \sgn(A)\operatorname{vsf}(A).
+        </me>
+      </statement>
+    </definition>
+
+    <remark xml:id="notation-det">
+      <title>Different Notations For Determinant</title>
+      <p>
+        Recall in Notation  that I represent matrices in three different ways: name, columns, and entries. Depending on the relevant representation of the matrix, I represent its determinant differently.  
+      </p>
+      <p>
+        <ul>
+          <li>
+            <p>
+              <alert>Name:</alert> When working with a matrix name, I usually use <q>det.</q>
+            </p>
+          </li>
+          <li>
+            <p>
+              <alert>Column:</alert> When working with the columns of <m>A</m>, namely, <m>A=[\mathbf{v}_1\mid \cdots\mid \mathbf{v}_n]</m>, I will sometimes write the determinant of <m>A</m> in terms of its columns as <m>\det(A)=\det(\mathbf{v}_1, \ldots, \mathbf{v}_n)</m>. In this way, the determinant can then be viewed as a rule on columns, which turns out to be a productive perspective when working in multilinear algebra.
+            </p>
+          </li>
+          <li>
+            <p>
+              <alert>Entries:</alert> When I work with matrix <em>entries</em>, I often use vertical bars.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        For example, if <m>A=[\mathbf{v}\mid\mathbf{w}]=\begin{bmatrix}1\amp 2\\3\amp 4\end{bmatrix}</m>, then the three representations of the determinant are:
+      </p>
+      <me>
+        \det(A)=\det(\mathbf{v},\mathbf{w})=\begin{vmatrix}1\amp 2\\3\amp 4\end{vmatrix}.
+      </me>
+    </remark>
+
+    <p>
+      The determinant is an important number in linear algebra.  
+      In other textbooks, you will see it defined differently, often via formulas or algebraic properties.
+      Here, I made the pedagogical decision to start with and center <q>intuitive</q> geometric properties to help give the number meaning and aid you in your reasoning about the determinant.  
+    </p>
+    <p>
+      In <xref ref="chp9sec3" />, we will develop numerous strategies for computing the determinant, some of which you may already know. I want to remind you that is important to center the meaning of the determinant as signed volume scaling factor. In particular, <m>|\det(A)|</m> is <m>\operatorname{vsf}(A)</m>.  
+      The determinant arises in many formulas throughout math, and hence throughout STEM, and I want you to remember its geometric origins: when you see a determinant, there is a signed volume scaling factor nearby.  
+    </p>
+
+	</subsection>
+
+
+	
 </section>

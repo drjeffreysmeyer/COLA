@@ -3,6 +3,42 @@
 <section xml:id="chp0sec2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Note to Teachers</title>
   
-  <p> a </p> 
+  
+    <p>
+      Greetings instructor. This book evolved out of my course notes for linear algebra.
+      While there exists many excellent linear algebra textbooks, I could not find one that centered meaning-making and interwove the strands of mathematical proficiency.
+      Over the span of many years, I built this book to support the kind of linear algebra classroom I wanted.
+      The choice of topics and the choice of sequencing is intentional.
+      Every chapter is filled with lessons designed with the intention of students learning impactful and productive meanings.
+      I encourage you to use the materials in the order provided.
+      When I teach using these materials, each lesson is comprised of three parts: a short lecture introducing new concepts, in-class activities where students investigate these new concepts, and then finally a guided classroom discussion where students share their thinking and emphasize major goals and takeaways.
+      The lessons in this book are organized in a way to run your class in this manner.
+    </p>
+
+    <p>
+      <alert>What is in a lesson?</alert>
+      Each lesson contains an exposition that develops the concepts, provides meanings, mathematical mental actions, in-class activities for your students, formal definitions, and dozens of GeoGebra links which can be used for either demonstrations or activities.
+      Each lesson has a corresponding assignment on the <url href="https://imathas.mathme.net/">MathME Online Problem System</url>.
+      Each chapter ends with concrete learning targets for your students.
+      Every chapter ends with homework which students should carefully write up and turn in. These written problems give students opportunities to synthesize concepts from the lessons and practice important actions such as modeling, interpreting, and justifying.
+    </p>
+
+    <p>
+      <alert>Course Map</alert>
+      Below is a flow chart of the sequencing of chapters.
+    </p>
+
+    <figure xml:id="fig-course-map">
+      <title>COLA Chapter Sequencing Flowchart</title>
+
+    </figure>
+
+    <p>
+      I hope you find this book valuable in supporting you as you teach your students impactful and productive meanings.
+    </p>
+
+    <p align="right">
+      <em>Jeffrey S. Meyer</em>
+    </p>
   
 </section>

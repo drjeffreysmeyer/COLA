@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp0sec3" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>MathME Homework System</title>
+  
+  
+
+    <p>
+      Accompanying this text is a collection of problems as part of the MathMe Online Problem System that can be found at <url href="https://imathas.mathme.net/" />.
+      These problems have been written to support and enhance the COLA curriculum.
+      Going forward, I will refer to these as COLA Problems.
+      These problems follow the sequencing of the COLA curriculum and use the same symbolism.
+      There you will find a variety of problem types (centered around distinct mental actions):
+    </p>
+
+    <p>
+      <ol>
+        <li><p>Creation and movement between representations (verbal, visual, and symbolic),</p></li>
+        <li><p>Modeling,</p></li>
+        <li><p>Interpretation,</p></li>
+        <li><p>Computation,</p></li>
+        <li><p>Reasoning about properties,</p></li>
+        <li><p>Formal justifications.</p></li>
+      </ol>
+    </p>
+
+    <figure xml:id="fig-mathme-design">
+      <title>MathME System Design Framework</title>
+      <image source="images/MathME_dark.jpg" />
+    </figure>
+
+    <p>
+      It is well known that linear algebra involves a lot of computations, and GeoGebra is an easy way to perform many of these computations.
+    </p>
+
+    <p>
+      It is less well known that linear algebra is rich with geometry, and to help visualize this geometry, we will make heavy use of GeoGebra.
+      It is free and online.
+      By setting up an account, you can save and access your worksheets anywhere.
+      You can access GeoGebra here:
+      <url href="https://www.geogebra.org/classic" />.
+    </p>
+
+    <p>
+      In your browser, your default screen will have a <alert>toolbar</alert> on top, the <alert>algebra</alert> window on the left, and the <alert>graphics</alert> window on the right. In the algebra window is the <alert>input bar</alert>.
+    </p>
+
+    <figure xml:id="fig-geogebra-screen">
+      <title>Standard GeoGebra Classic Screen Interface</title>
+      <image source="images/geogebrascreen.png" />
+    </figure>
+
+    <p>
+      If you want to try something, but do not know how, try looking it up in the documentation:
+      <url href="https://geogebra.github.io/docs/manual/en/" />.
+    </p>
+
+  
+</section>

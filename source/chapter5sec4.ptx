@@ -26,7 +26,7 @@
 
 <figure xml:id="fig-coordinatize-earth">
   <caption>The mental act of imposing coordinates on the Earth.</caption>
-  <image xml:id="img-coordinatize-earth">
+  <image source="images/5.4_coordinates_on_earth.png" width="100%">
     <description>Diagram showing the transition from an unlined globe to a coordinate system of longitude and latitude.</description>
 
   </image>
@@ -123,9 +123,7 @@
     </ol>
 
     <figure xml:id="fig-activity-grid">
-      <image xml:id="img-activity-grid-visual">
-
-      </image>
+      <image source="images/5.4_coordinates1.png" width="100%"/>
     </figure>
 </question>
 
@@ -154,9 +152,7 @@
         </me>
         which symbolically corresponds to our visual observation above that <m>[\vect{w}]_{\mathcal{B}}=\begin{bmatrix}3\\2\end{bmatrix}</m>.
       </p>
-      <image xml:id="img-example-grid-plot">
-
-      </image>
+      <image source="images/5.4_coordinates2.png" width="100%"/>
     </sidebyside>
   </statement>
 </example>
@@ -201,9 +197,7 @@
     </p>
 
     <figure xml:id="fig-skew-grid">
-      <image xml:id="img-skew-grid-visual">
-
-      </image>
+      <image source="images/5.4_coordinates3.png" width="100%"/>
     </figure>
   </statement>
 </example>
@@ -241,5 +235,9 @@
       </ul>
     </p>
 </question>
+
+
+
+<image source="images/5.4_coordinates4.png" width="100%"/>
 
 </section>

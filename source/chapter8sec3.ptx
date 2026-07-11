@@ -3,9 +3,159 @@
 <section xml:id="chp8sec3" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title><m>LU</m>-Decompositions </title>
 
-	<p>
-		
-	</p>
+    <p>
+      Continuing with the core concept of the previous section, what happens when you can row reduce <m>A</m> to an upper triangular matrix <m>U</m> using <em>only</em> type 3 elementary row operations, only clearing downward. As I will show in a moment, this gives rise to a new type of decomposition.
+    </p>
 
+    <definition xml:id="def-lud">
+      <title><m>LU</m>-Decomposition</title>
+      <statement>
+        <p>
+          If <m>A</m> is a square matrix, then an <alert><m>LU</m>-decomposition</alert> of <m>A</m> is an expression <m>A=LU</m> where <m>L</m> is a lower triangular matrix and <m>U</m> is an upper triangular matrix.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Note that in the definition, neither the diagonals of <m>L</m> nor <m>U</m> need to be just 1's.
+    </p>
+
+    <p>
+      I will first explain a method to find an <m>LU</m>-decomposition, tweaking the ideas behind finding an elementary matrix decomposition, and using the following simple proposition.
+    </p>
+
+    <proposition xml:id="prop-prodofLs">
+      <title>Product of Lower Triangular Matrices is Lower Triangular</title>
+      <statement>
+        <p>
+          If <m>L_1</m> and <m>L_2</m> are lower (resp. upper) <m>n\times n</m> matrices, then their product <m>L_1L_2</m> is lower (resp. upper) triangular.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          In class activity. Hint: use Matrix Multiplication Meaning #1 and reason about about mixing vectors with many zeros.
+        </p>
+      </proof>
+    </proposition>
+
+    <remark xml:id="constructing-lud">
+      <title>Construction: <m>LU</m>-Decompositions</title>
+      <p>
+        If <m>A</m> can row reduced to an upper triangular matrix <m>U</m> using only type 3 row operations clearing below, then to construct an <m>LU</m>-decomposition:
+      </p>
+      <p>
+        <ol>
+          <li><p>Row reduce <m>A</m> to an upper triangular matrix <m>U</m> using only type 3 row operations clearing below.</p></li>
+          <li><p>Record these row operations as elementary matrices. Observe that type 3 elementary matrices that clear below are lower triangular. We then get <m>L_r\cdots L_2L_1A=U</m>.</p></li>
+          <li><p>Then, Socks and Shoes these matrices over to get <m>A=L_1^{-1}\cdots L_r^{-1}U</m>.</p></li>
+          <li><p>Multiply together the <m>L_i</m>'s, and by Proposition <xref ref="prop-prodofLs" />, this product, <m>L</m> is lower triangular. We then have <m>A=LU</m>.</p></li>
+        </ol>
+      </p>
+    </remark>
+
+    <question xml:id="activity-lu-practice">
+        <p>
+          Compute an <m>LU</m>-decomposition for each of the following:
+          <me>
+            \begin{bmatrix}1\amp 1\amp 1\\1\amp 2\amp 2\\1\amp 2\amp 3\end{bmatrix} \hspace{2pc} \begin{bmatrix}1\amp 2\amp 4\\3\amp 7\amp 15\\2\amp 8\amp 21\end{bmatrix} \hspace{2pc} \begin{bmatrix}0\amp 2\amp 9\\4\amp 3\amp 7\\2\amp 1\amp 2\end{bmatrix}
+          </me>
+        </p>
+    </question>
+
+    <p>
+      This idea is simple, but writing down and then multiplying each <m>L_i</m>'s for large matrices can be a pain. For the <m>L_i</m> that arise in this way, their product is nice as I shall now discuss.
+    </p>
+
+    <p>
+      Consider <m>3\times 3</m> case interpreted as a sequence of row operations performed to <m>I</m>:
+      <me>
+        \underbrace{\begin{bmatrix}1\amp 0\amp 0\\c_1\amp 1\amp 0\\0\amp 0\amp 1\end{bmatrix}}_{L_1^{-1}} \underbrace{\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\c_2\amp 0\amp 1\end{bmatrix}}_{L_2^{-1}} \underbrace{\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp c_3\amp 1\end{bmatrix}}_{L_3^{-1}} \underbrace{\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\end{bmatrix}}_{I}.
+      </me>
+      What we will be doing in filling up the columns of <m>I</m> below the diagonal, moving right to left. More precisely, it says, look at the second from the last column. Use the leading 1 to fill the column below it, filling from bottom to top. Then move one column to the left and repeat. When viewed this way, it is not hard to see that the product is then <m>\begin{bmatrix}1\amp 0\amp 0\\c_1\amp 1\amp 0\\c_2\amp c_3\amp 1\end{bmatrix}</m>.
+    </p>
+
+    <p>
+      In fact, this generalizes to <m>n\times n</m> matrices. This is formalized in the so called, Doolittle Algorithm.
+    </p>
+
+    <algorithm xml:id="algorithm-doolittle">
+      <title>Doolittle Algorithm for <m>LU</m>-Decompositions</title>
+      <statement>
+        <p>
+          If <m>A</m> can be row reduced to an upper triangular matrix <m>U</m> using only type 3 row operations clearing below and <m>c_{ij}</m> is negative the multiplier to use the pivot in the <m>j^{\text{th}}</m> row to clear the entry in the <m>i^{\text{th}}</m> row, then
+          <me>
+            A=\begin{bmatrix}1\amp  0 \amp  \cdots \amp 0\\ c_{21} \amp  1 \amp  \cdots \amp  0\\ \vdots \amp  \amp  \ddots \amp  \vdots \\ c_{n1} \amp  c_{n2} \amp  \cdots \amp 1\end{bmatrix} U.
+          </me>
+        </p>
+      </statement>
+    </algorithm>
+
+    <p>
+      Note that just as not all matrices may be reduced to an upper triangular matrix using only type 3 row operations only ever clearing below, it is also that case that not all matrices admit an <m>LU</m>-decomposition.
+    </p>
+
+    <p>
+      Unfortunately at this time, GeoGebra does not compute <m>LU</m>-decompositions, however, more powerful Computer Algebra Systems (CAS) can, such as the Python-based Sage. As such, I expect you should be able to compute <m>LU</m>-decompositions for <m>2\times 2</m> and <m>3\times 3</m> by hand. If you are so inclined, try out using Sage.
+    </p>
+
+    <p>
+      I expect that you understand the concepts behind where an <m>LU</m>-decomposition comes from, and why it works, so that you can alter the construction as necessary to create similar, related decompositions such as:
+    </p>
+
+    <p>
+      <ul>
+        <li><p><m>PLU</m>-decomposition where <m>P</m> is a permutation matrix, <m>L</m> is lower triangular, and <m>U</m> is upper triangular.</p></li>
+        <li><p><m>LDU</m>-decomposition where <m>L</m> is unipotent lower triangular, <m>D</m> is diagonal, and <m>U</m> is unipotent upper triangular.</p></li>
+      </ul>
+    </p>
+
+    <p>
+      Suppose we have a matrix equation <m>A\vect{x}=\vect{b}</m> where <m>A</m> is <em>square</em> matrix with <m>LU</m>-decomposition <m>A=LU</m>. In these special situations, then to find <m>\vect{x}</m> we can use the <m>LU</m>-decomposition.
+    </p>
+
+    <p>
+      Since <m>A\vect{x}=L(U\vect{x})</m>, we may split the matrix equation <m>A\vect{x}=\vect{b}</m> into two simpler equations:
+      <md>
+        <row>L\vect{y}=\vect{b} \amp \quad \text{where } \vect{y} \text{ is a new unknown that we solve for,}</row>
+        <row>U\vect{x}=\vect{y} \amp \quad \text{using the now known } \vect{y} \text{ from above.}</row>
+      </md>
+      and we solve the first by <em>forward substitution</em> and the second by <em>backward substitution</em>.
+    </p>
+
+    <p>
+      Given the matrix equation <m>L\vect{y}=\vect{b}</m>, forward substitution is the recursive process of solving for <m>y_i</m> by substituting in the values <m>y_1, y_2, \ldots, y_{i-1}</m> into row <m>i</m> of the matrix equation.
+    </p>
+
+    <example xml:id="ex-forward-sub">
+      <statement>
+        <p>
+          Suppose we have the matrix equation <m>\begin{bmatrix}1\amp 0\amp 0\\1\amp 1\amp 0\\1\amp 1\amp 1\end{bmatrix}\begin{bmatrix}y_1\\y_2\\y_3\end{bmatrix}=\begin{bmatrix}3\\5\\6\end{bmatrix}</m>. The forward substitution process proceeds as follows, one row at a time:
+        </p>
+        <p>
+          <ol>
+            <li><p>The first row tells us that <m>y_1=3.</m></p></li>
+            <li><p>Next substitute <m>y_1</m> into row 2, getting: <m>y_2=5-y_1=5-3=2.</m></p></li>
+            <li><p>Lastly, substitute <m>y_1</m> and <m>y_2</m> into row 3, getting <m>y_3=6-y_1-y_2=6-3-2=1.</m></p></li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+
+    <p>
+      Backwards substitution is the analogous recursive process for matrix equations <m>U\vect{x}=\vect{y}</m> in which you solve for <m>x_i</m> by substituting in the values <m>x_{i+1}, x_{i+2}, \ldots, x_n</m> into row <m>i</m> of the matrix equation.
+    </p>
+
+    <p>
+      When dealing with large matrices, this process can be relatively fast for solving matrix equations as compared to other methods for solving matrix equations.
+    </p>
+
+    <question xml:id="activity-lu-solve">
+        <p>
+          Use an <m>LU</m>-decomposition to solve the matrix equation
+          <me>
+            \begin{bmatrix}2\amp -1\amp 4\\-4\amp 3\amp -9\\2\amp 1\amp 5\end{bmatrix} \vect{x}= \begin{bmatrix}-1\\3\\5\end{bmatrix}.
+          </me>
+        </p>
+    </question>
 
 </section>

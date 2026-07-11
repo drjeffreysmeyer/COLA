@@ -147,7 +147,7 @@
   To reverse a composition of processes, you must reverse them in the opposite order you did them in. Consider putting on your socks, and then your shoes. To reverse this process, you must first take off your shoes, and then your socks.
 </p>
 
-<proposition xml:id="prop-socks-n-shoes">
+<proposition xml:id="prop-socks_n_shoes">
   <title>Socks and Shoes</title>
   <statement>
     <p>
