@@ -48,7 +48,24 @@ window.MathJax = {
   },
   "options": {
     "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
   },
   "chtml": {
     "scale": 0.98,
@@ -103,16 +120,16 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.1.9';
+eBookConfig.runestone_version = '8.1.11';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.846a0d6fafaa99e0.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bbcfc02849ebc023.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<script src="_static/prefix-runtime.8b6d53d5a91823a0.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.2901d6466316ff22.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.66fa8a682a32c0ac.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
@@ -211,6 +228,8 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\RowA}[3]{
   r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}
 }
+
+\newcommand{\rst}[1]{\color{red}{\cancel{\color{black}{#1}}}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -225,6 +244,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp0sec1.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Note to Students</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp0sec2.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Note to Teachers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp0sec3.html" class="internal"><span class="codenumber">0.3</span> <span class="title">MathME Homework System</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -305,37 +325,369 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp6sec2.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Strategies for Computing an Inverse</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="chapter7.html" class="internal"><span class="codenumber">7</span> <span class="title">Geometry of Vectors</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="chp7sec1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Concepts of Vector Size</span></a></div></li></ul>
-</li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="chapter8.html" class="internal"><span class="codenumber">8</span> <span class="title">Matrix Decompositions</span></a></div>
+<div class="toc-title-box"><a href="chapter8.html" class="internal"><span class="codenumber">7</span> <span class="title">Matrix Decompositions</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="chp8sec1.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Similar Matrix Decompositions (SMDs)</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp8sec2.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Elementary Matrix Decompositions (EMDs)</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp8sec3.html" class="internal"><span class="codenumber">8.3</span> <span class="title"><span class="process-math">\(LU\)</span>-Decompositions</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="chp8sec1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Similar Matrix Decompositions (SMDs)</span></a></div>
+<ul class="structural toc-item-list active"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chp8sec1.html#homework-chp8sec1" class="internal"><span class="codenumber">7.1</span> <span class="title">Problems</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp8sec2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Elementary Matrix Decompositions (EMDs)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp8sec3.html" class="internal"><span class="codenumber">7.3</span> <span class="title"><span class="process-math">\(LU\)</span>-Decompositions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="chapter9.html" class="internal"><span class="codenumber">9</span> <span class="title">Determinant</span></a></div>
+<div class="toc-title-box"><a href="chapter9.html" class="internal"><span class="codenumber">8</span> <span class="title">Determinant</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp9sec1.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Determinant as Siogned Volume Scaling Factor</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp9sec2.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Algebraic Properties of the Determinant</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp9sec3.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Strategies for Computing the Determinant</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chp9sec1.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Determinant as Signed Volume Scaling Factor</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp9sec1.html#chp9sec1subsec1" class="internal"><span class="title">Area</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp9sec1.html#chp9sec1subsec2" class="internal"><span class="title">Orientation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp9sec1.html#chp9sec1subsec3" class="internal"><span class="title">Determinant</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp9sec2.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Algebraic Properties of the Determinant</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp9sec3.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Strategies for Computing the Determinant</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="chapter10.html" class="internal"><span class="codenumber">10</span> <span class="title">Eigentheory</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="chp10sec1.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Matrix Multiplication as Mixture</span></a></div></li></ul>
+<div class="toc-title-box"><a href="chapter10.html" class="internal"><span class="codenumber">9</span> <span class="title">Eigentheory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp10sec1.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Concepts of Invariant Lines</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp10sec2.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Algebraically Finding Invariant Lines</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp10sec3.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Iteratively Finding Invariant Lines</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp10sec4.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Classification in the Plane</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter7.html" class="internal"><span class="codenumber">10</span> <span class="title">Geometry of Vectors</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="chp7sec1.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Concepts of Vector Size</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="chp8sec1"><h2 class="heading hide-type">
-<span class="type">Lesson</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Similar Matrix Decompositions (SMDs)</span>
+<span class="type">Lesson</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Similar Matrix Decompositions (SMDs)</span>
 </h2>
-<div class="para" id="chp8sec1-2"><div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
-<div class="autopermalink" data-description="Lesson 8.1: Similar Matrix Decompositions (SMDs)"><a href="#chp8sec1" title="Copy heading and permalink for Lesson 8.1: Similar Matrix Decompositions (SMDs)" aria-label="Copy heading and permalink for Lesson 8.1: Similar Matrix Decompositions (SMDs)">🔗</a></div></section></div>
+<div class="para" id="chp8sec1-2">In earlier lessons, we have encountered simple matrices, such the standard geometric transformations and elementary matrices, which are easy to understand and work with. However, in general, a matrix looks and acts in complicated ways. A big idea the permeates through mathematics is <em class="emphasis">take a complicated thing and split it into simple pieces that are easy to understand</em>. This is a powerful problem-solving strategy.<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-matrix-decomposition"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrix Decomposition.</span>
+</h3>
+<div class="para" id="def-matrix-decomposition-2-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m \times n\)</span> matrix. A <em class="alert">matrix decomposition</em> of <span class="process-math">\(A\)</span> is an expression <span class="process-math">\(A=B_1B_2\cdots B_r\)</span> where each <span class="process-math">\(B_i\)</span> is simple in a certain context. When viewed as a matrix transformation, this translates to identifying <span class="process-math">\(\vect{x}\mapsto A\vect{x}\)</span> as a composition of simple transformations.<div class="autopermalink" data-description="Paragraph"><a href="#def-matrix-decomposition-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7.1.1: Matrix Decomposition"><a href="#def-matrix-decomposition" title="Copy heading and permalink for Definition 7.1.1: Matrix Decomposition" aria-label="Copy heading and permalink for Definition 7.1.1: Matrix Decomposition">🔗</a></div></article><div class="para" id="chp8sec1-4">There are different types of useful matrix decompositions. Associated to each decomposition there are two major problems:<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chp8sec1-5">
+<ol class="decimal" id="chp8sec1-5-1">
+<li id="chp8sec1-5-1-1">
+<div class="para" id="chp8sec1-5-1-1-1">Given a decomposition, what kinds of problems can be solved with it?<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-5-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#chp8sec1-5-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="chp8sec1-5-1-2">
+<div class="para" id="chp8sec1-5-1-2-1">How does one find a decomposition, if it exists at all?<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-5-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#chp8sec1-5-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp8sec1-6">In this chapter, we will analyze the following:<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chp8sec1-7">
+<ol class="decimal" id="chp8sec1-7-1">
+<li id="chp8sec1-7-1-1">
+<div class="para" id="chp8sec1-7-1-1-1">Similar matrix decomposition (SMD),<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-7-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#chp8sec1-7-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="chp8sec1-7-1-2">
+<div class="para" id="chp8sec1-7-1-2-1">Elementary matrix decomposition, and<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-7-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#chp8sec1-7-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="chp8sec1-7-1-3">
+<div class="para" id="chp8sec1-7-1-3-1">
+<span class="process-math">\(LU\)</span>-decomposition.<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-7-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#chp8sec1-7-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp8sec1-8">Later in this text, we will cover other important decompositions:<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chp8sec1-9">
+<ol class="decimal" id="chp8sec1-9-1">
+<li id="chp8sec1-9-1-1">
+<div class="para" id="chp8sec1-9-1-1-1">
+<span class="process-math">\(QR\)</span>-decomposition,<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-9-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#chp8sec1-9-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="chp8sec1-9-1-2">
+<div class="para" id="chp8sec1-9-1-2-1">Polar decomposition, and<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-9-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#chp8sec1-9-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="chp8sec1-9-1-3">
+<div class="para" id="chp8sec1-9-1-3-1">Singular Value Decomposition (SVD).<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-9-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#chp8sec1-9-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-smd"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Similar Matrix Decomposition.</span>
+</h3>
+<div class="para" id="def-smd-2-1">Given a square matrix <span class="process-math">\(A\text{,}\)</span> a <em class="alert">similar matrix decomposition (SMD)</em> of <span class="process-math">\(A\)</span> is an expression <span class="process-math">\(A=PBP^{-1}\text{.}\)</span> We say the two matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are <em class="alert">similar</em>.<div class="autopermalink" data-description="Paragraph"><a href="#def-smd-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7.1.2: Similar Matrix Decomposition"><a href="#def-smd" title="Copy heading and permalink for Definition 7.1.2: Similar Matrix Decomposition" aria-label="Copy heading and permalink for Definition 7.1.2: Similar Matrix Decomposition">🔗</a></div></article><div class="para" id="chp8sec1-11">While it is not necessary, it is typically our goal that <span class="process-math">\(B\)</span> here be <em class="emphasis">very simple</em>, such as a stretch, shear, or rotation matrix.<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp8sec1-12">Given a similar matrix decomposition, write <span class="process-math">\(P=[\vect{v}_1|\cdots |\vect{v}_n]\)</span> and let <span class="process-math">\(\mathcal{B}=\{\vect{v}_1,\ldots ,\vect{v}_n\}\text{.}\)</span> We should think of <span class="process-math">\(P\)</span> as the change of basis matrix from <span class="process-math">\(\mathcal{B}\)</span>-coordinates to standard coordinates, and as such, <span class="process-math">\(P^{-1}\)</span> as the change of basis from standard coordinates to <span class="process-math">\(\mathcal{B}\)</span>-coordinates.<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="question example-like" id="activity-smd_symbolic_to_geometric"><h3 class="heading">
+<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interpreting Similar Matrix Decomposition.</span>
+</h3>
+<div class="para" id="activity-smd_symbolic_to_geometric-2">In complete sentences, and using geometric words, explain the meaning of each of the following expressions.<div class="autopermalink" data-description="Paragraph"><a href="#activity-smd_symbolic_to_geometric-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="activity-smd_symbolic_to_geometric-3">
+<li id="activity-smd_symbolic_to_geometric-3-1">
+<div class="para" id="activity-smd_symbolic_to_geometric-3-1-1">
+<span class="process-math">\(\displaystyle A=\begin{bmatrix}1\amp -1\\1\amp 1\end{bmatrix}\begin{bmatrix}2\amp 0\\0\amp 3\end{bmatrix}\begin{bmatrix}1\amp -1\\1\amp 1\end{bmatrix}^{-1}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#activity-smd_symbolic_to_geometric-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#activity-smd_symbolic_to_geometric-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="activity-smd_symbolic_to_geometric-3-2">
+<div class="para" id="activity-smd_symbolic_to_geometric-3-2-1">
+<span class="process-math">\(\displaystyle B=\begin{bmatrix}3\amp 1\\1\amp 2\end{bmatrix}\begin{bmatrix}1\amp 1\\0\amp 1\end{bmatrix}\begin{bmatrix}3\amp 1\\1\amp 2\end{bmatrix}^{-1}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#activity-smd_symbolic_to_geometric-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#activity-smd_symbolic_to_geometric-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="activity-smd_symbolic_to_geometric-3-3">
+<div class="para" id="activity-smd_symbolic_to_geometric-3-3-1">
+<span class="process-math">\(\displaystyle C=\begin{bmatrix}2\amp -1\\1\amp 2\end{bmatrix}\begin{bmatrix}1\amp 0\\0\amp 0\end{bmatrix}\begin{bmatrix}2\amp -1\\1\amp 2\end{bmatrix}^{-1}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#activity-smd_symbolic_to_geometric-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#activity-smd_symbolic_to_geometric-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="activity-smd_symbolic_to_geometric-3-4">
+<div class="para" id="activity-smd_symbolic_to_geometric-3-4-1">
+<span class="process-math">\(\displaystyle D=\begin{bmatrix}3\amp 1\\1\amp 2\end{bmatrix}\begin{bmatrix}0\amp -1\\1\amp 0\end{bmatrix}\begin{bmatrix}3\amp 1\\1\amp 2\end{bmatrix}^{-1}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#activity-smd_symbolic_to_geometric-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#activity-smd_symbolic_to_geometric-3-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Activity 7.1.3: Interpreting Similar Matrix Decomposition"><a href="#activity-smd_symbolic_to_geometric" title="Copy heading and permalink for Activity 7.1.3: Interpreting Similar Matrix Decomposition" aria-label="Copy heading and permalink for Activity 7.1.3: Interpreting Similar Matrix Decomposition">🔗</a></div></article><div class="para" id="chp8sec1-14">So such a similar matrix decomposition <span class="process-math">\(A=PBP^{-1}\text{,}\)</span> multiplication by <span class="process-math">\(A\)</span> can understood as the composition of the following three processes:<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chp8sec1-15">
+<dl class="description-list">
+<dt id="chp8sec1-15-1-1">Step 1 - <span class="process-math">\(P^{-1}\)</span><div class="autopermalink" data-description="Item: Step 1 - P^{-1}"><a href="#chp8sec1-15-1-1" title="Copy heading and permalink for Item: Step 1 - P^{-1}" aria-label="Copy heading and permalink for Item: Step 1 - P^{-1}">🔗</a></div>
+</dt>
+<dd><div class="para" id="chp8sec1-15-1-1-2">Change the coordinate of your point from standard to <span class="process-math">\(\mathcal{B}\)</span>-coordinates.<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-15-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></dd>
+<dt id="chp8sec1-15-1-2">Step 2 - <span class="process-math">\(B\)</span><div class="autopermalink" data-description="Item: Step 2 - B"><a href="#chp8sec1-15-1-2" title="Copy heading and permalink for Item: Step 2 - B" aria-label="Copy heading and permalink for Item: Step 2 - B">🔗</a></div>
+</dt>
+<dd><div class="para" id="chp8sec1-15-1-2-2">Perform the <span class="process-math">\(B\)</span> transformation in <span class="process-math">\(\mathcal{B}\)</span>-coordinates.<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-15-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></dd>
+<dt id="chp8sec1-15-1-3">Step 3 - <span class="process-math">\(P\)</span><div class="autopermalink" data-description="Item: Step 3 - P"><a href="#chp8sec1-15-1-3" title="Copy heading and permalink for Item: Step 3 - P" aria-label="Copy heading and permalink for Item: Step 3 - P">🔗</a></div>
+</dt>
+<dd><div class="para" id="chp8sec1-15-1-3-2">Change the coordinate of your point back from <span class="process-math">\(\mathcal{B}\)</span>-coordinates to standard coordinates.<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-15-1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></dd>
+</dl>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="technology computation-like" id="note-geogebra-link-smd1"><h3 class="heading">
+<span class="type">Technology</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="note-geogebra-link-smd1-1">Play with SMDs and transformations of the plane relative to the <span class="process-math">\(\mathcal{B}\)</span>-coordinate grid at GeoGebra ID: <a class="external" href="https://www.geogebra.org/m/qahp88bh" target="_blank"><em class="alert">qahp88bh</em></a>. Only go to this link <em class="alert">after</em> you have done the above activity.<div class="autopermalink" data-description="Paragraph"><a href="#note-geogebra-link-smd1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="figure-geogebra-smd1"><div class="interactive-iframe-container"><iframe src="https://www.geogebra.org/material/iframe/id/uwra8jy7/scaleContainerClass/interactive-iframe-container/width/800/height/640/allowUpscale/true/autoHeight/true/border/888888/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" id="figure-geogebra-smd1-2" style="width:540px; height:432px; display: block; "></iframe></div>
+<div class="instructions"><details id="figure-geogebra-smd1-2-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><div class="solution-like knowl__content">
+<div class="para" id="figure-geogebra-smd1-2-1-1">An interactive GeoGebra window showing vector scaling via arrows. Move the basis vectors.  Observe how the coordinate grid changes.  Adjust the entries of the transformation matrix.  Move the purple point.<div class="autopermalink" data-description="Paragraph"><a href="#figure-geogebra-smd1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Instructions"><a href="#figure-geogebra-smd1-2-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Visualizing SMDs as label change, geometric transformation, and label change back.<div class="autopermalink" data-description="Figure 7.1.5"><a href="#figure-geogebra-smd1" title="Copy heading and permalink for Figure 7.1.5" aria-label="Copy heading and permalink for Figure 7.1.5">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Technology 7.1.4"><a href="#note-geogebra-link-smd1" title="Copy heading and permalink for Technology 7.1.4" aria-label="Copy heading and permalink for Technology 7.1.4">🔗</a></div></article><div class="para" id="chp8sec1-17">Such decompositions are incredibly important in both pure and applied linear algebra. It enables one to take a very complicated looking matrix, and by changing coordinates, understand it as a simple matrix.<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp8sec1-18">You should be able to understand, interpret, and go between symbolic, verbal, and visual representations of such a decomposition, as shown in the following example.<div class="autopermalink" data-description="Paragraph"><a href="#chp8sec1-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="example_simmatrixdecomp1"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="example_simmatrixdecomp1-1-1">Consider the matrix <span class="process-math">\(A=\begin{bmatrix}2.5\amp -0.5\\-0.5\amp 2.5\end{bmatrix}\text{.}\)</span> This matrix does not fall into one of our categories of simple matrices. Looking at what it does to the standard unit square in the plane does not clarify matters much. Below is depicted how it transforms the standard unit square.<div class="autopermalink" data-description="Paragraph"><a href="#example_simmatrixdecomp1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <figure class="figure figure-like" id="fig-unit-square-transform"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/8.1_ex1a.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 7.1.7"><a href="#fig-unit-square-transform" title="Copy heading and permalink for Figure 7.1.7" aria-label="Copy heading and permalink for Figure 7.1.7">🔗</a></div></figcaption></figure> <div class="para" id="example_simmatrixdecomp1-1-3">Now suppose that we know <span class="process-math">\(A=\begin{bmatrix}2.5\amp -0.5\\-0.5\amp 2.5\end{bmatrix}=\begin{bmatrix}1\amp -1\\1\amp 1\end{bmatrix}\begin{bmatrix}2\amp 0\\0\amp 3\end{bmatrix}\begin{bmatrix}1\amp -1\\1\amp 1\end{bmatrix}^{-1}\text{.}\)</span> What this says is we should not be looking at the standard coordinate system, but rather the coordinate system associated to our familiar ordered basis <span class="process-math">\(\mathcal{B}=\{\vect{v}_1, \vect{v}_2\}=\left\{\begin{bmatrix}1\\1\end{bmatrix},\begin{bmatrix}-1\\1\end{bmatrix}\right\}\text{.}\)</span> With respect to this basis, <span class="process-math">\(A\)</span> is a stretch by a factor of 2 in the <span class="process-math">\(\vect{v}_1\)</span>-direction and a stretch by a factor of 3 in the <span class="process-math">\(\vect{v}_2\)</span>-direction.<div class="autopermalink" data-description="Paragraph"><a href="#example_simmatrixdecomp1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <figure class="figure figure-like" id="fig-basis-transform"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/8.1_ex1b.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 7.1.8"><a href="#fig-basis-transform" title="Copy heading and permalink for Figure 7.1.8" aria-label="Copy heading and permalink for Figure 7.1.8">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 7.1.6"><a href="#example_simmatrixdecomp1" title="Copy heading and permalink for Example 7.1.6" aria-label="Copy heading and permalink for Example 7.1.6">🔗</a></div></article><article class="technology computation-like" id="exploration-geogebra-smd"><h3 class="heading">
+<span class="type">Technology</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Visualizing <span class="process-math">\(A=PBP^{-1}\)</span>.</span>
+</h3>
+<div class="para" id="exploration-geogebra-smd-2-1">The goal of this activity is to visualize elementary matrix transformations performed in <span class="process-math">\(\mathcal{B}\)</span>-coordinates and computing the corresponding similar matrix decomposition.<div class="autopermalink" data-description="Paragraph"><a href="#exploration-geogebra-smd-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="exploration-geogebra-smd-2-2">
+<ol class="decimal" id="exploration-geogebra-smd-2-2-1">
+<li id="exploration-geogebra-smd-2-2-1-1">
+<div class="para" id="exploration-geogebra-smd-2-2-1-1-1">Drop two points <span class="process-math">\(p_1\)</span> and <span class="process-math">\(p_2\)</span> in the plane so that they are movable. Move them to <span class="process-math">\((1,1)\)</span> and <span class="process-math">\((-1,1)\text{,}\)</span> respectively. Label the origin <span class="process-math">\(O\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exploration-geogebra-smd-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#exploration-geogebra-smd-2-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="exploration-geogebra-smd-2-2-1-2">
+<div class="para" id="exploration-geogebra-smd-2-2-1-2-1">Use the <code class="code-inline tex2jax_ignore">Vector</code> tool to draw the vector from the origin to <span class="process-math">\(p_1\)</span> and then the origin to <span class="process-math">\(p_2\text{.}\)</span> Name them <span class="process-math">\(\vect{v}_1\)</span> and <span class="process-math">\(\vect{v}_2\)</span> respectively, and let <span class="process-math">\(\mathcal{B}=\{\vect{v}_1,\vect{v}_2\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exploration-geogebra-smd-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#exploration-geogebra-smd-2-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="exploration-geogebra-smd-2-2-1-3">
+<div class="para" id="exploration-geogebra-smd-2-2-1-3-1">Use the <code class="code-inline tex2jax_ignore">Sequence</code> and <code class="code-inline tex2jax_ignore">Line</code> commands to draw coordinate lines in the <span class="process-math">\(\vect{v}_1\)</span> direction and then in the <span class="process-math">\(\vect{v}_2\)</span>-direction.<div class="autopermalink" data-description="Paragraph"><a href="#exploration-geogebra-smd-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#exploration-geogebra-smd-2-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="exploration-geogebra-smd-2-2-1-4">
+<div class="para" id="exploration-geogebra-smd-2-2-1-4-1">Use the <code class="code-inline tex2jax_ignore">Polygon</code> tool to fill in the <span class="process-math">\(\mathcal{B}\)</span>-unit square. (Make sure the <span class="process-math">\(\mathcal{B}\)</span>-unit square moves correctly when you move <span class="process-math">\(p_1\)</span> and <span class="process-math">\(p_2\text{.}\)</span>)<div class="autopermalink" data-description="Paragraph"><a href="#exploration-geogebra-smd-2-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#exploration-geogebra-smd-2-2-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="exploration-geogebra-smd-2-2-1-5">
+<div class="para" id="exploration-geogebra-smd-2-2-1-5-1">Define matrices <span class="process-math">\(P=[\vect{v}_1|\vect{v}_2]\)</span> and <span class="process-math">\(B=\{\{2,0\},\{0,3\}\}\text{.}\)</span> Use the <code class="code-inline tex2jax_ignore">coordinate</code> tools <span class="process-math">\(x(p_1)\text{,}\)</span> <span class="process-math">\(y(p_1)\text{,}\)</span> etc., to make sure <span class="process-math">\(P\)</span> dynamically changes as you move <span class="process-math">\(p_1\)</span> and <span class="process-math">\(p_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exploration-geogebra-smd-2-2-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5"><a href="#exploration-geogebra-smd-2-2-1-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="exploration-geogebra-smd-2-2-1-6">
+<div class="para" id="exploration-geogebra-smd-2-2-1-6-1">Using <code class="code-inline tex2jax_ignore">ApplyMatrix</code>, visually represent, analyze, and explain how each of the matrices <span class="process-math">\(P^{-1}\text{,}\)</span> <span class="process-math">\(BP^{-1}\)</span> and <span class="process-math">\(PBP^{-1}\)</span> transform the <span class="process-math">\(\mathcal{B}\)</span>-unit square?<div class="autopermalink" data-description="Paragraph"><a href="#exploration-geogebra-smd-2-2-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6"><a href="#exploration-geogebra-smd-2-2-1-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+<li id="exploration-geogebra-smd-2-2-1-7">
+<div class="para" id="exploration-geogebra-smd-2-2-1-7-1">Explore! Change your <span class="process-math">\(B\)</span> matrix and see how the transformation changes. (Challenge: Replace entries of <span class="process-math">\(B\)</span> with sliders.) Move your points <span class="process-math">\(p_1\)</span> and <span class="process-math">\(p_2\)</span> around.<div class="autopermalink" data-description="Paragraph"><a href="#exploration-geogebra-smd-2-2-1-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7"><a href="#exploration-geogebra-smd-2-2-1-7" title="Copy heading and permalink for Item 7" aria-label="Copy heading and permalink for Item 7">🔗</a></div>
+</li>
+<li id="exploration-geogebra-smd-2-2-1-8">
+<div class="para" id="exploration-geogebra-smd-2-2-1-8-1">Consider the coordinate system given by the ordered basis <span class="process-math">\(\mathcal{B}=\{\vect{v}_1, \vect{v}_2\}=\left\{\begin{bmatrix}1\\1\end{bmatrix},\begin{bmatrix}-1\\2\end{bmatrix}\right\}\)</span> and the transformation that, relative to the <span class="process-math">\(\mathcal{B}\)</span>-coordinate system, is a <span class="process-math">\(90^\circ\)</span> rotation of <span class="process-math">\(\vect{v}_1\)</span> in the direction of <span class="process-math">\(\vect{v}_2\text{.}\)</span> Use GeoGebra to visually represent this matrix, find the associated similar matrix decomposition, and the single matrix that is its product.<div class="autopermalink" data-description="Paragraph"><a href="#exploration-geogebra-smd-2-2-1-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 8"><a href="#exploration-geogebra-smd-2-2-1-8" title="Copy heading and permalink for Item 8" aria-label="Copy heading and permalink for Item 8">🔗</a></div>
+</li>
+<li id="exploration-geogebra-smd-2-2-1-9">
+<div class="para" id="exploration-geogebra-smd-2-2-1-9-1">For each of the following, use complete sentences and geometric words to describe how the matrix transforms the plane. Then use GeoGebra to clearly visually represent this transformation.<div class="autopermalink" data-description="Paragraph"><a href="#exploration-geogebra-smd-2-2-1-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="exploration-geogebra-smd-2-2-1-9-2">
+\begin{equation*}
+\begin{bmatrix}3\amp 1\\1\amp 2\end{bmatrix}\begin{bmatrix}1\amp 0\\0\amp -2\end{bmatrix}\begin{bmatrix}3\amp 1\\1\amp 2\end{bmatrix}^{-1}
+\hspace{3pc} \begin{bmatrix}2\amp -2\\1\amp 1\end{bmatrix}\begin{bmatrix}2\amp 1\\0\amp 2\end{bmatrix}\begin{bmatrix}2\amp -2\\1\amp 1\end{bmatrix}^{-1}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Item 9"><a href="#exploration-geogebra-smd-2-2-1-9" title="Copy heading and permalink for Item 9" aria-label="Copy heading and permalink for Item 9">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#exploration-geogebra-smd-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Technology 7.1.9: Visualizing A=PBP^{-1}"><a href="#exploration-geogebra-smd" title="Copy heading and permalink for Technology 7.1.9: Visualizing A=PBP^{-1}" aria-label="Copy heading and permalink for Technology 7.1.9: Visualizing A=PBP^{-1}">🔗</a></div></article><article class="technology computation-like" id="note-geogebra-link-smd2"><h3 class="heading">
+<span class="type">Technology</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="note-geogebra-link-smd2-1">Play with SMDs and transformations of the plane relative to the <span class="process-math">\(\mathcal{B}\)</span>-coordinate grid at GeoGebra ID: <a class="external" href="https://www.geogebra.org/m/qahp88bh" target="_blank"><em class="alert">qahp88bh</em></a>. Only go to this link <em class="alert">after</em> you have done the above activity.<div class="autopermalink" data-description="Paragraph"><a href="#note-geogebra-link-smd2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="figure-geogebra-smd2"><div class="interactive-iframe-container"><iframe src="https://www.geogebra.org/material/iframe/id/jesdv6ur/scaleContainerClass/interactive-iframe-container/width/800/height/640/allowUpscale/true/autoHeight/true/border/888888/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" id="figure-geogebra-smd2-2" style="width:540px; height:432px; display: block; "></iframe></div>
+<div class="instructions"><details id="figure-geogebra-smd2-2-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><div class="solution-like knowl__content">
+<div class="para" id="figure-geogebra-smd2-2-1-1">An interactive GeoGebra window showing vector scaling via arrows. Move the basis vectors.  Observe how the coordinate grid changes.  Adjust the entries of the transformation matrix.  Observe how the transformed unit square changes.<div class="autopermalink" data-description="Paragraph"><a href="#figure-geogebra-smd2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Instructions"><a href="#figure-geogebra-smd2-2-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Visualizing SMDs as label change, geometric transformation, and label change back.<div class="autopermalink" data-description="Figure 7.1.11"><a href="#figure-geogebra-smd2" title="Copy heading and permalink for Figure 7.1.11" aria-label="Copy heading and permalink for Figure 7.1.11">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Technology 7.1.10"><a href="#note-geogebra-link-smd2" title="Copy heading and permalink for Technology 7.1.10" aria-label="Copy heading and permalink for Technology 7.1.10">🔗</a></div></article><section class="exercises" id="homework-chp8sec1"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Problems</span>
+</h3>
+<article class="exercise exercise-like" id="prob-basis-grids"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="prob-basis-grids-1-1">Consider the following two ordered bases: <span class="process-math">\(\mathcal{S}=\left\{ \begin{bmatrix}1\\0\end{bmatrix}, \begin{bmatrix}0\\1\end{bmatrix}\right\}\)</span> and <span class="process-math">\(\mathcal{B}=\left\{ \begin{bmatrix}2\\1\end{bmatrix}, \begin{bmatrix}-1\\3\end{bmatrix}\right\}\text{.}\)</span> Let <span class="process-math">\(P_{\mathcal{B}}\)</span> denote the transformation from <span class="process-math">\(\mathcal{B}\)</span>-coordinates into <span class="process-math">\(\mathcal{S}\)</span>-coordinates.<div class="autopermalink" data-description="Paragraph"><a href="#prob-basis-grids-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="prob-basis-grids-1-2">
+<ol class="lower-alpha ol-marker-5" id="prob-basis-grids-1-2-1">
+<li id="prob-basis-grids-1-2-1-1">
+<div class="para" id="prob-basis-grids-1-2-1-1-1">Carefully draw and label the coordinate grids given by both ordered bases. (Make it plenty big because you will be drawing lots of things on it.) You may do this by hand or use GeoGebra.<div class="autopermalink" data-description="Paragraph"><a href="#prob-basis-grids-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.1.1.a"><a href="#prob-basis-grids-1-2-1-1" title="Copy heading and permalink for Item 7.1.1.a" aria-label="Copy heading and permalink for Item 7.1.1.a">🔗</a></div>
+</li>
+<li id="prob-basis-grids-1-2-1-2">
+<div class="para" id="prob-basis-grids-1-2-1-2-1">Shade in <span class="process-math">\(\vect{S}_\mathcal{B}\text{,}\)</span> the <span class="process-math">\(\mathcal{B}\)</span>-unit square.<div class="autopermalink" data-description="Paragraph"><a href="#prob-basis-grids-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.1.1.b"><a href="#prob-basis-grids-1-2-1-2" title="Copy heading and permalink for Item 7.1.1.b" aria-label="Copy heading and permalink for Item 7.1.1.b">🔗</a></div>
+</li>
+<li id="prob-basis-grids-1-2-1-3">
+<div class="para" id="prob-basis-grids-1-2-1-3-1">Let <span class="process-math">\(A=P_{\mathcal{B}}\begin{bmatrix}-1\amp 0\\0\amp 2\end{bmatrix}P_{\mathcal{B}}^{-1}\text{.}\)</span> Sketch or use GeoGebra to show how <span class="process-math">\(A\)</span> transforms <span class="process-math">\(\vect{S}_\mathcal{B}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prob-basis-grids-1-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.1.1.c"><a href="#prob-basis-grids-1-2-1-3" title="Copy heading and permalink for Item 7.1.1.c" aria-label="Copy heading and permalink for Item 7.1.1.c">🔗</a></div>
+</li>
+<li id="prob-basis-grids-1-2-1-4">
+<div class="para" id="prob-basis-grids-1-2-1-4-1">Using complete sentences and geometric words, explain how <span class="process-math">\(A\)</span> transforms the plane.<div class="autopermalink" data-description="Paragraph"><a href="#prob-basis-grids-1-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.1.1.d"><a href="#prob-basis-grids-1-2-1-4" title="Copy heading and permalink for Item 7.1.1.d" aria-label="Copy heading and permalink for Item 7.1.1.d">🔗</a></div>
+</li>
+<li id="prob-basis-grids-1-2-1-5">
+<div class="para" id="prob-basis-grids-1-2-1-5-1">Let <span class="process-math">\(B=P_{\mathcal{B}}\begin{bmatrix}2\amp 1\\0\amp 2\end{bmatrix}P_{\mathcal{B}}^{-1}\text{.}\)</span> Sketch or use GeoGebra to show how <span class="process-math">\(B\)</span> transforms <span class="process-math">\(\vect{S}_\mathcal{B}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prob-basis-grids-1-2-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.1.1.e"><a href="#prob-basis-grids-1-2-1-5" title="Copy heading and permalink for Item 7.1.1.e" aria-label="Copy heading and permalink for Item 7.1.1.e">🔗</a></div>
+</li>
+<li id="prob-basis-grids-1-2-1-6">
+<div class="para" id="prob-basis-grids-1-2-1-6-1">Using complete sentences and geometric words, explain how <span class="process-math">\(B\)</span> transforms the plane.<div class="autopermalink" data-description="Paragraph"><a href="#prob-basis-grids-1-2-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.1.1.f"><a href="#prob-basis-grids-1-2-1-6" title="Copy heading and permalink for Item 7.1.1.f" aria-label="Copy heading and permalink for Item 7.1.1.f">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#prob-basis-grids-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.1.1"><a href="#prob-basis-grids" title="Copy heading and permalink for Exercise 7.1.1" aria-label="Copy heading and permalink for Exercise 7.1.1">🔗</a></div></article><article class="exercise exercise-like" id="prob-red-blue-transform"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="prob-red-blue-transform-1-1">The matrix <span class="process-math">\(A\)</span> transforms the plane by sending the red region below to the blue region.<div class="autopermalink" data-description="Paragraph"><a href="#prob-red-blue-transform-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;grid-template-columns:41.025641025641% 56.4102564102564%;column-gap:2.5%;">
+<div class="sbspanel sbspanel--middle middle" style=""><div class="para logical" id="prob-red-blue-transform-1-2-1">
+<ol class="lower-alpha ol-marker-5" id="prob-red-blue-transform-1-2-1-1">
+<li id="prob-red-blue-transform-1-2-1-1-1">
+<div class="para" id="prob-red-blue-transform-1-2-1-1-1-1">Using complete sentences and geometric words, <em class="alert">verbally</em> explain how <span class="process-math">\(A\)</span> transforms the plane.<div class="autopermalink" data-description="Paragraph"><a href="#prob-red-blue-transform-1-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.1.2.a"><a href="#prob-red-blue-transform-1-2-1-1-1" title="Copy heading and permalink for Item 7.1.2.a" aria-label="Copy heading and permalink for Item 7.1.2.a">🔗</a></div>
+</li>
+<li id="prob-red-blue-transform-1-2-1-1-2">
+<div class="para" id="prob-red-blue-transform-1-2-1-1-2-1">Find the <em class="alert">symbolic</em> expression for <span class="process-math">\(A\)</span> and give its associated similar matrix decomposition.<div class="autopermalink" data-description="Paragraph"><a href="#prob-red-blue-transform-1-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.1.2.b"><a href="#prob-red-blue-transform-1-2-1-1-2" title="Copy heading and permalink for Item 7.1.2.b" aria-label="Copy heading and permalink for Item 7.1.2.b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#prob-red-blue-transform-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<div class="sbspanel sbspanel--middle middle" style=""><div class="image-box"><img src="external/images_hw/HW06similartransform.png" class="contained"></div></div>
+</div></div>
+<div class="autopermalink" data-description="Exercise 7.1.2"><a href="#prob-red-blue-transform" title="Copy heading and permalink for Exercise 7.1.2" aria-label="Copy heading and permalink for Exercise 7.1.2">🔗</a></div></article><article class="exercise exercise-like" id="prob-verbal-descriptions"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="prob-verbal-descriptions-1-1">Below is a verbal description of how two matrices transform the plane. For each, (i) give a <em class="alert">symbolic</em> expression for the described similar matrix decomposition, and (ii) clearly sketch or use GeoGebra to <em class="alert">visually</em> show how the described matrix transforms the plane, relative to the relevant coordinate system.<div class="autopermalink" data-description="Paragraph"><a href="#prob-verbal-descriptions-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="prob-verbal-descriptions-1-2">
+<ol class="lower-alpha ol-marker-5" id="prob-verbal-descriptions-1-2-1">
+<li id="prob-verbal-descriptions-1-2-1-1">
+<div class="para" id="prob-verbal-descriptions-1-2-1-1-1">
+<span class="process-math">\(A_1\)</span> stretches by a factor of 4 in the <span class="process-math">\(\vect{v}_1=\begin{bmatrix}2\\-1\end{bmatrix}\)</span> direction and stretches by a factor of 2 in the <span class="process-math">\(\vect{v}_2=\begin{bmatrix}0\\3\end{bmatrix}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prob-verbal-descriptions-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.1.3.a"><a href="#prob-verbal-descriptions-1-2-1-1" title="Copy heading and permalink for Item 7.1.3.a" aria-label="Copy heading and permalink for Item 7.1.3.a">🔗</a></div>
+</li>
+<li id="prob-verbal-descriptions-1-2-1-2">
+<div class="para" id="prob-verbal-descriptions-1-2-1-2-1">
+<span class="process-math">\(A_2\)</span> shears the vector <span class="process-math">\(\vect{v}_2=\begin{bmatrix}3\\0\end{bmatrix}\)</span> by 2 units in the direction of the vector <span class="process-math">\(\vect{v}_1=\begin{bmatrix}-2\\1\end{bmatrix}\)</span> and does not move the vector <span class="process-math">\(\vect{v}_1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prob-verbal-descriptions-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.1.3.b"><a href="#prob-verbal-descriptions-1-2-1-2" title="Copy heading and permalink for Item 7.1.3.b" aria-label="Copy heading and permalink for Item 7.1.3.b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#prob-verbal-descriptions-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.1.3"><a href="#prob-verbal-descriptions" title="Copy heading and permalink for Exercise 7.1.3" aria-label="Copy heading and permalink for Exercise 7.1.3">🔗</a></div></article><article class="exercise exercise-like" id="prob-matrix-powers"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="prob-matrix-powers-1-1">Suppose we know that <span class="process-math">\(A = \begin{bmatrix}4\amp -3\\3\amp 4\end{bmatrix} \begin{bmatrix}2\amp 0\\0\amp 1\end{bmatrix} \begin{bmatrix}4\amp -3\\3\amp 4\end{bmatrix}^{-1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prob-matrix-powers-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="prob-matrix-powers-1-2">
+<ol class="lower-alpha ol-marker-5" id="prob-matrix-powers-1-2-1">
+<li id="prob-matrix-powers-1-2-1-1">
+<div class="para" id="prob-matrix-powers-1-2-1-1-1">Recall <span class="process-math">\(A^2 = A\cdot A\text{.}\)</span> In complete sentences and geometric word, verbally explain how <span class="process-math">\(A^2$\)</span> transforms the plane. (Hint: Consider using the SMD together with the associative property of matrix multiplication.)<div class="autopermalink" data-description="Paragraph"><a href="#prob-matrix-powers-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.1.4.a"><a href="#prob-matrix-powers-1-2-1-1" title="Copy heading and permalink for Item 7.1.4.a" aria-label="Copy heading and permalink for Item 7.1.4.a">🔗</a></div>
+</li>
+<li id="prob-matrix-powers-1-2-1-2">
+<div class="para" id="prob-matrix-powers-1-2-1-2-1">Generalize your reason to explain how <span class="process-math">\(A^n\)</span> transforms the plane.<div class="autopermalink" data-description="Paragraph"><a href="#prob-matrix-powers-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7.1.4.b"><a href="#prob-matrix-powers-1-2-1-2" title="Copy heading and permalink for Item 7.1.4.b" aria-label="Copy heading and permalink for Item 7.1.4.b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#prob-matrix-powers-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 7.1.4"><a href="#prob-matrix-powers" title="Copy heading and permalink for Exercise 7.1.4" aria-label="Copy heading and permalink for Exercise 7.1.4">🔗</a></div></article><div class="autopermalink" data-description="Exercises 7.1: Problems"><a href="#homework-chp8sec1" title="Copy heading and permalink for Exercises 7.1: Problems" aria-label="Copy heading and permalink for Exercises 7.1: Problems">🔗</a></div></section><div class="autopermalink" data-description="Lesson 7.1: Similar Matrix Decompositions (SMDs)"><a href="#chp8sec1" title="Copy heading and permalink for Lesson 7.1: Similar Matrix Decompositions (SMDs)" aria-label="Copy heading and permalink for Lesson 7.1: Similar Matrix Decompositions (SMDs)">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="chapter8.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chp8sec2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

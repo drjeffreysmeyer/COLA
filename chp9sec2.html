@@ -48,7 +48,24 @@ window.MathJax = {
   },
   "options": {
     "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
   },
   "chtml": {
     "scale": 0.98,
@@ -103,16 +120,28 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.1.9';
+eBookConfig.runestone_version = '8.1.11';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.846a0d6fafaa99e0.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bbcfc02849ebc023.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<script src="_static/prefix-runtime.8b6d53d5a91823a0.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.2901d6466316ff22.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.66fa8a682a32c0ac.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
 </script>
 </head>
 <body class="pretext book ignore-math">
@@ -211,6 +240,8 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\RowA}[3]{
   r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}
 }
+
+\newcommand{\rst}[1]{\color{red}{\cancel{\color{black}{#1}}}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -225,6 +256,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp0sec1.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Note to Students</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp0sec2.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Note to Teachers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp0sec3.html" class="internal"><span class="codenumber">0.3</span> <span class="title">MathME Homework System</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -306,36 +338,206 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="chapter7.html" class="internal"><span class="codenumber">7</span> <span class="title">Geometry of Vectors</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="chp7sec1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Concepts of Vector Size</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="chapter8.html" class="internal"><span class="codenumber">8</span> <span class="title">Matrix Decompositions</span></a></div>
+<div class="toc-title-box"><a href="chapter8.html" class="internal"><span class="codenumber">7</span> <span class="title">Matrix Decompositions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp8sec1.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Similar Matrix Decompositions (SMDs)</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp8sec2.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Elementary Matrix Decompositions (EMDs)</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp8sec3.html" class="internal"><span class="codenumber">8.3</span> <span class="title"><span class="process-math">\(LU\)</span>-Decompositions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chp8sec1.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Similar Matrix Decompositions (SMDs)</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chp8sec1.html#homework-chp8sec1" class="internal"><span class="codenumber">7.1</span> <span class="title">Problems</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp8sec2.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Elementary Matrix Decompositions (EMDs)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp8sec3.html" class="internal"><span class="codenumber">7.3</span> <span class="title"><span class="process-math">\(LU\)</span>-Decompositions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="chapter9.html" class="internal"><span class="codenumber">9</span> <span class="title">Determinant</span></a></div>
+<div class="toc-title-box"><a href="chapter9.html" class="internal"><span class="codenumber">8</span> <span class="title">Determinant</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp9sec1.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Determinant as Siogned Volume Scaling Factor</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="chp9sec2.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Algebraic Properties of the Determinant</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp9sec3.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Strategies for Computing the Determinant</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chp9sec1.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Determinant as Signed Volume Scaling Factor</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp9sec1.html#chp9sec1subsec1" class="internal"><span class="title">Area</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp9sec1.html#chp9sec1subsec2" class="internal"><span class="title">Orientation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp9sec1.html#chp9sec1subsec3" class="internal"><span class="title">Determinant</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="chp9sec2.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Algebraic Properties of the Determinant</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp9sec3.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Strategies for Computing the Determinant</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="chapter10.html" class="internal"><span class="codenumber">10</span> <span class="title">Eigentheory</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="chp10sec1.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Matrix Multiplication as Mixture</span></a></div></li></ul>
+<div class="toc-title-box"><a href="chapter10.html" class="internal"><span class="codenumber">9</span> <span class="title">Eigentheory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp10sec1.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Concepts of Invariant Lines</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp10sec2.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Algebraically Finding Invariant Lines</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp10sec3.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Iteratively Finding Invariant Lines</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp10sec4.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Classification in the Plane</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="chapter7.html" class="internal"><span class="codenumber">10</span> <span class="title">Geometry of Vectors</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="chp7sec1.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Concepts of Vector Size</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="chp9sec2"><h2 class="heading hide-type">
-<span class="type">Lesson</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Algebraic Properties of the Determinant</span>
+<span class="type">Lesson</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Algebraic Properties of the Determinant</span>
 </h2>
-<div class="para" id="chp9sec2-2"><div class="autopermalink" data-description="Paragraph"><a href="#chp9sec2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
-<div class="autopermalink" data-description="Lesson 9.2: Algebraic Properties of the Determinant"><a href="#chp9sec2" title="Copy heading and permalink for Lesson 9.2: Algebraic Properties of the Determinant" aria-label="Copy heading and permalink for Lesson 9.2: Algebraic Properties of the Determinant">🔗</a></div></section></div>
+<div class="para" id="chp9sec2-2">We conceptualize the determinant as originating as a geometric object, measuring geometric properties of transformations. However, from this conceptualization emerges numerous valuable algebraic properties. In this lesson we will develop some of these algebraic properties.<div class="autopermalink" data-description="Paragraph"><a href="#chp9sec2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp9sec2-3">From observations in the previous sections on <span class="process-math">\(\operatorname{vsf}\)</span> and <span class="process-math">\(\sgn\text{,}\)</span> we get the following two propositions.<div class="autopermalink" data-description="Paragraph"><a href="#chp9sec2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-elementarydet"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Elementary Matrix Rules.</span>
+</h3>
+<div class="para" id="prop-elementarydet-2-1">If <span class="process-math">\(E\)</span> is an elementary matrix, then<div class="autopermalink" data-description="Paragraph"><a href="#prop-elementarydet-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="prop-elementarydet-2-2">
+\begin{equation*}
+\det(E)=
+\begin{cases}
+-1 \amp \text{if } E \text{ is type 1,}\\
+k  \amp \text{if } E \text{ is type 2 with scaling factor } k\text{, and}\\
+1  \amp \text{if } E \text{ is type 3.}
+\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Proposition 8.2.1: Elementary Matrix Rules"><a href="#prop-elementarydet" title="Copy heading and permalink for Proposition 8.2.1: Elementary Matrix Rules" aria-label="Copy heading and permalink for Proposition 8.2.1: Elementary Matrix Rules">🔗</a></div></article><article class="remark remark-like" id="chp9sec2-5"><h3 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chp9sec2-5-1">Observe that the determinant of an elementary matrix is never zero.<div class="autopermalink" data-description="Paragraph"><a href="#chp9sec2-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 8.2.2"><a href="#chp9sec2-5" title="Copy heading and permalink for Remark 8.2.2" aria-label="Copy heading and permalink for Remark 8.2.2">🔗</a></div></article><div class="para" id="chp9sec2-6">Since both <span class="process-math">\(\operatorname{vsf}\)</span> and <span class="process-math">\(\sgn\)</span> satisfy the product formula, so does <span class="process-math">\(\det\text{!}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp9sec2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="thm-detproductformula"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Product Formula.</span>
+</h3>
+<div class="para" id="thm-detproductformula-2-1">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are <span class="process-math">\(n\times n\)</span> matrices, then<div class="autopermalink" data-description="Paragraph"><a href="#thm-detproductformula-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="thm-detproductformula-2-2">
+\begin{equation*}
+\det (AB) = \det (A)\det(B).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Proposition 8.2.3: Product Formula"><a href="#thm-detproductformula" title="Copy heading and permalink for Proposition 8.2.3: Product Formula" aria-label="Copy heading and permalink for Proposition 8.2.3: Product Formula">🔗</a></div></article><div class="para" id="chp9sec2-8">Taking <a href="chp9sec2.html#prop-elementarydet" class="xref" data-knowl="./knowl/xref/prop-elementarydet.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.2.1: Elementary Matrix Rules">Proposition 8.2.1</a> and <a href="chp9sec2.html#thm-detproductformula" class="xref" data-knowl="./knowl/xref/thm-detproductformula.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.2.3: Product Formula">Proposition 8.2.3</a> as our core determinant properties, we may both rigorously deduce all other algebraic properties of the determinant and compute determinants.<div class="autopermalink" data-description="Paragraph"><a href="#chp9sec2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="question example-like" id="chp9sec2-9"><h3 class="heading">
+<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chp9sec2-9-1-1">Compute the determinant of the following <span class="process-math">\(4\times 4\)</span> matrix:<div class="autopermalink" data-description="Paragraph"><a href="#chp9sec2-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div id="chp9sec2-9-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A0 = elementary_matrix(ZZ,4,row1=0, row2=3,scale=1)
+A1 = elementary_matrix(ZZ,4,row1=2,scale=2)
+A2 = elementary_matrix(ZZ,4,row1=1, row2=2,scale=1)
+A3 = elementary_matrix(ZZ,4,row1=1,row2=3)
+A4 = elementary_matrix(ZZ,4,row1=3,row2=0, scale=3)
+A = A0*A1*A2*A3*A4
+print(f"A = {A}")
+</script></div> <div class="para" id="chp9sec2-9-1-3">Use your result to describe how it transforms regions in <span class="process-math">\(\mathbb{R}^4\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp9sec2-9-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Activity 8.2.4"><a href="#chp9sec2-9" title="Copy heading and permalink for Activity 8.2.4" aria-label="Copy heading and permalink for Activity 8.2.4">🔗</a></div></article><div class="para" id="chp9sec2-10">More generally, we have the following strategy for computing determinants using elementary matrix decompositions.<div class="autopermalink" data-description="Paragraph"><a href="#chp9sec2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-det_compute_with_emd"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reading <span class="process-math">\(\det\)</span> from an EMD.</span>
+</h3>
+<div class="para" id="prop-det_compute_with_emd-2-1">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> matrix with elementary matrix decomposition <span class="process-math">\(A=E_1\cdots E_r \operatorname{rref}(A)\text{,}\)</span> with <span class="process-math">\(t_1\)</span> many type 1 elementary matrices, and <span class="process-math">\(t_2\)</span> many type 2 elementary matrices with scaling factors <span class="process-math">\(k_1,\ldots, k_{t_2}\text{,}\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#prop-det_compute_with_emd-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="prop-det_compute_with_emd-2-2">
+\begin{equation*}
+\det(A)=\begin{cases}0\amp \text{if } \operatorname{rref}(A)\ne I,\\ (-1)^{t_1}(k_1\cdots k_{t_2})\amp \text{if } \operatorname{rref}(A)=I.\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Proposition 8.2.5: Reading \det from an EMD"><a href="#prop-det_compute_with_emd" title="Copy heading and permalink for Proposition 8.2.5: Reading \det from an EMD" aria-label="Copy heading and permalink for Proposition 8.2.5: Reading \det from an EMD">🔗</a></div></article><details id="prop-det_compute_with_emd-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-det_compute_with_emd-3-1">If <span class="process-math">\(\operatorname{rref}(A)\ne I\text{,}\)</span> then <span class="process-math">\(\operatorname{rref}(A)\text{,}\)</span> and hence <span class="process-math">\(A\text{,}\)</span> is a projection, so <span class="process-math">\(A\)</span> has volume scaling factor 0. If <span class="process-math">\(\operatorname{rref}(A)=I\text{,}\)</span> then <span class="process-math">\(A\)</span> is a product of elementary matrices. The computation follows from putting together <a href="chp9sec2.html#prop-elementarydet" class="xref" data-knowl="./knowl/xref/prop-elementarydet.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.2.1: Elementary Matrix Rules">Proposition 8.2.1</a> and <a href="chp9sec2.html#thm-detproductformula" class="xref" data-knowl="./knowl/xref/thm-detproductformula.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.2.3: Product Formula">Proposition 8.2.3</a>.<div class="autopermalink" data-description="Paragraph"><a href="#prop-det_compute_with_emd-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 8.2.5.1"><a href="#prop-det_compute_with_emd-3" title="Copy heading and permalink for Proof 8.2.5.1" aria-label="Copy heading and permalink for Proof 8.2.5.1">🔗</a></div></article></details><div class="para" id="chp9sec2-12">
+<a href="chp9sec2.html#prop-det_compute_with_emd" class="xref" data-knowl="./knowl/xref/prop-det_compute_with_emd.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.2.5: Reading \det from an EMD">Proposition 8.2.5</a> is useful for computing the determinant of any matrix. In the next section, I will discuss other strategies for computation.<div class="autopermalink" data-description="Paragraph"><a href="#chp9sec2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-triangulardet"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Determinant of Triangular Matrices.</span>
+</h3>
+<div class="para" id="prop-triangulardet-2-1">If <span class="process-math">\(T\)</span> is a lower (or upper) triangular matrix with diagonal entries <span class="process-math">\(d_1,d_2, \ldots d_n\text{,}\)</span> then <span class="process-math">\(\det(T)=d_1d_2\cdots d_n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-triangulardet-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 8.2.6: Determinant of Triangular Matrices"><a href="#prop-triangulardet" title="Copy heading and permalink for Proposition 8.2.6: Determinant of Triangular Matrices" aria-label="Copy heading and permalink for Proposition 8.2.6: Determinant of Triangular Matrices">🔗</a></div></article><details id="prop-triangulardet-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-triangulardet-3-1">The details of this proof I leave as a homework assignment. I will give a few hints.<div class="autopermalink" data-description="Paragraph"><a href="#prop-triangulardet-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="prop-triangulardet-3-2">First, show that if none of the <span class="process-math">\(d_i\)</span>’s are <span class="process-math">\(0\text{,}\)</span> then there exists a sequence of type 3 row operations reducing <span class="process-math">\(T\)</span> to the diagonal matrix <span class="process-math">\(T_0\)</span> with diagonal entries <span class="process-math">\(d_1,d_2, \ldots d_n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-triangulardet-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="prop-triangulardet-3-3">Second, if one of the <span class="process-math">\(d_i\)</span>’s is <span class="process-math">\(0\text{,}\)</span> then <span class="process-math">\(\det(T)=0\text{.}\)</span> Among other results, you may find <a href="chp9sec2.html#prop-elementarydet" class="xref" data-knowl="./knowl/xref/prop-elementarydet.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.2.1: Elementary Matrix Rules">Proposition 8.2.1</a>, <a href="chp9sec2.html#thm-detproductformula" class="xref" data-knowl="./knowl/xref/thm-detproductformula.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.2.3: Product Formula">Proposition 8.2.3</a>, as well as the big ideas of  <a href="chp8sec3.html" class="internal" title="Lesson 7.3: LU-Decompositions">Lesson 7.3</a>, useful.<div class="autopermalink" data-description="Paragraph"><a href="#prop-triangulardet-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 8.2.6.1"><a href="#prop-triangulardet-3" title="Copy heading and permalink for Proof 8.2.6.1" aria-label="Copy heading and permalink for Proof 8.2.6.1">🔗</a></div></article></details><div class="para" id="chp9sec2-14">Conceptually, the only class of matrix transformation not invertible are projections, which happen to smash volumes to zero. It turns out that the determinant is a useful criteria to distinguish projections from the invertible transformations.<div class="autopermalink" data-description="Paragraph"><a href="#chp9sec2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-det_list"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Determinant and Invertibility.</span>
+</h3>
+<div class="para" id="prop-det_list-2-1">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> matrix, then the following two statements are equivalent:<div class="autopermalink" data-description="Paragraph"><a href="#prop-det_list-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="prop-det_list-2-2">
+\begin{equation*}
+\text{A is invertible} \iff \det(A)\ne 0.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Proposition 8.2.7: The Determinant and Invertibility"><a href="#prop-det_list" title="Copy heading and permalink for Proposition 8.2.7: The Determinant and Invertibility" aria-label="Copy heading and permalink for Proposition 8.2.7: The Determinant and Invertibility">🔗</a></div></article><details id="prop-det_list-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-det_list-3-1">To show equivalence, I need to show each implies the other.<div class="autopermalink" data-description="Paragraph"><a href="#prop-det_list-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="prop-det_list-3-2">To begin, write <span class="process-math">\(A=E_1\cdots E_r \operatorname{rref}(A)\)</span> where <span class="process-math">\(E_i\)</span> are elementary matrices. Since elementary matrices have nonzero determinant (<a href="chp9sec2.html#prop-elementarydet" class="xref" data-knowl="./knowl/xref/prop-elementarydet.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.2.1: Elementary Matrix Rules">Proposition 8.2.1</a>), the product formula (<a href="chp9sec2.html#thm-detproductformula" class="xref" data-knowl="./knowl/xref/thm-detproductformula.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.2.3: Product Formula">Proposition 8.2.3</a>) and the fact that the product of nonzero real numbers is nonzero implies that <span class="process-math">\(c = \det(E_1\cdots E_r)\)</span> is a nonzero number. Hence the product formula implies <span class="process-math">\(\det(A) = c\det(\operatorname{rref}(A))\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-det_list-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="prop-det_list-3-3">If <span class="process-math">\(A\)</span> is invertible, then <span class="process-math">\(\operatorname{rref}(A)=I\)</span> (Algorithm <a href="chp6sec2.html#algorithm-inverse" class="xref" data-knowl="./knowl/xref/algorithm-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 6.2.1: The Inverse Algorithm">Proposition 6.2.1</a>) and we deduce <span class="process-math">\(\det(A)=c\ne0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-det_list-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="prop-det_list-3-4">If <span class="process-math">\(A\)</span> is not invertible, then <span class="process-math">\(\operatorname{rref}(A)\ne I\)</span> is a projection, hence <span class="process-math">\(\det(A) = c(0)=0\text{.}\)</span> Since a statement is logically equivalent to its contrapositive, we deduce that if <span class="process-math">\(\det(A) \ne 0\text{,}\)</span> then <span class="process-math">\(A\)</span> is invertible.<div class="autopermalink" data-description="Paragraph"><a href="#prop-det_list-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 8.2.7.1"><a href="#prop-det_list-3" title="Copy heading and permalink for Proof 8.2.7.1" aria-label="Copy heading and permalink for Proof 8.2.7.1">🔗</a></div></article></details><div class="para" id="chp9sec2-16">
+<a href="chp9sec2.html#prop-det_list" class="xref" data-knowl="./knowl/xref/prop-det_list.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.2.7: The Determinant and Invertibility">Proposition 8.2.7</a> is an important computational check that is added to <em class="emphasis">The List</em>.<div class="autopermalink" data-description="Paragraph"><a href="#chp9sec2-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="chp9sec2-17">We now discuss two useful algebraic properties of the determinant. They both have clear geometric interpretations and can be rigorously proven from above known propositions. Make sure you understand both!<div class="autopermalink" data-description="Paragraph"><a href="#chp9sec2-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="question example-like" id="chp9sec2-18"><h3 class="heading">
+<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chp9sec2-18-1-1">Give a geometric explanation as to why <span class="process-math">\(\begin{bmatrix}2\amp 0\\0\amp 3 \end{bmatrix}\)</span> and <span class="process-math">\(\begin{bmatrix}\frac{1}{2}\amp 0\\0\amp \frac{1}{3}\end{bmatrix}\)</span> have reciprocal determinants.<div class="autopermalink" data-description="Paragraph"><a href="#chp9sec2-18-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Activity 8.2.8"><a href="#chp9sec2-18" title="Copy heading and permalink for Activity 8.2.8" aria-label="Copy heading and permalink for Activity 8.2.8">🔗</a></div></article><div class="para" id="chp9sec2-19">If a matrix transformation <span class="process-math">\(T\)</span> is invertible, then whatever <span class="process-math">\(T\)</span> does to volumes and sign, its inverse <span class="process-math">\(T^{-1}\)</span> should undo it.<div class="autopermalink" data-description="Paragraph"><a href="#chp9sec2-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-det_inverse"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Determinant of the Inverse.</span>
+</h3>
+<div class="para" id="prop-det_inverse-2-1">If <span class="process-math">\(A\)</span> is invertible, then <span class="process-math">\(\det(A^{-1}) = \frac{1}{\det(A)}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-det_inverse-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 8.2.9: Determinant of the Inverse"><a href="#prop-det_inverse" title="Copy heading and permalink for Proposition 8.2.9: Determinant of the Inverse" aria-label="Copy heading and permalink for Proposition 8.2.9: Determinant of the Inverse">🔗</a></div></article><details id="prop-det_inverse-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-det_inverse-3-1">Since <span class="process-math">\(A\)</span> is invertible, it has an inverse <span class="process-math">\(A^{-1}\)</span> which satisfies the equation <span class="process-math">\(AA^{-1}=I\)</span> (Definition <a href="chp6sec1.html#def-inverse" class="xref" data-knowl="./knowl/xref/def-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 6.1.3: Inverse Matrix">Definition 6.1.3</a>). Using the Product Formula (<a href="chp9sec2.html#thm-detproductformula" class="xref" data-knowl="./knowl/xref/thm-detproductformula.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.2.3: Product Formula">Proposition 8.2.3</a>),<div class="autopermalink" data-description="Paragraph"><a href="#prop-det_inverse-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/def-inverse.html ./knowl/xref/thm-detproductformula.html" id="prop-det_inverse-3-2">
+\begin{equation*}
+\det(A)\det(A^{-1}) = \det(AA^{-1})=\det(I)=1.
+\end{equation*}
+</div>
+<div class="para" id="prop-det_inverse-3-3">Then solve for <span class="process-math">\(\det(A^{-1})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-det_inverse-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 8.2.9.1"><a href="#prop-det_inverse-3" title="Copy heading and permalink for Proof 8.2.9.1" aria-label="Copy heading and permalink for Proof 8.2.9.1">🔗</a></div></article></details><article class="proposition theorem-like" id="prop-det_transpose"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Determinant of the Transpose.</span>
+</h3>
+<div class="para" id="prop-det_transpose-2-1">If <span class="process-math">\(A\)</span> is square, then <span class="process-math">\(\det(A^{T}) = \det(A)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-det_transpose-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 8.2.10: Determinant of the Transpose"><a href="#prop-det_transpose" title="Copy heading and permalink for Proposition 8.2.10: Determinant of the Transpose" aria-label="Copy heading and permalink for Proposition 8.2.10: Determinant of the Transpose">🔗</a></div></article><details id="prop-det_transpose-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-det_transpose-3-1">I will prove this assuming <span class="process-math">\(A\)</span> has an <span class="process-math">\(LU\)</span>-decomposition (which will generically be the case). I will leave the case in which it does not to you. Write <span class="process-math">\(A= LU\text{.}\)</span> Using the Sock and Shoes property of transpose (Proposition ), <span class="process-math">\(A^T=(LU)^T=U^TL^T\text{.}\)</span> Observe that the transpose of a lower (resp. upper) triangular matrix is an upper (resp. lower) triangular matrix. Furthermore, the diagonals of a triangular matrix and its transpose are the same. Using <a href="chp9sec2.html#prop-triangulardet" class="xref" data-knowl="./knowl/xref/prop-triangulardet.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.2.6: Determinant of Triangular Matrices">Proposition 8.2.6</a>, <span class="process-math">\(\det(U)=\det(U^T)\)</span> and <span class="process-math">\(\det(L)=\det(L^T)\text{.}\)</span> Using the Product Formula <a href="chp9sec2.html#thm-detproductformula" class="xref" data-knowl="./knowl/xref/thm-detproductformula.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.2.3: Product Formula">Proposition 8.2.3</a> and putting this all together:<div class="autopermalink" data-description="Paragraph"><a href="#prop-det_transpose-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-triangulardet.html ./knowl/xref/thm-detproductformula.html" id="prop-det_transpose-3-2">
+\begin{equation*}
+\det(A^T)=\det(U^TL^T)=\det(U^T)\det(L^T)= \det(U)\det(L)=\det(L)\det(U)=\det(LU)=\det(A).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Proof 8.2.10.1"><a href="#prop-det_transpose-3" title="Copy heading and permalink for Proof 8.2.10.1" aria-label="Copy heading and permalink for Proof 8.2.10.1">🔗</a></div></article></details><article class="question example-like" id="chp9sec2-22"><h3 class="heading">
+<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.2.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chp9sec2-22-1-1">Revisit Example <a href="chp8sec1.html#example_simmatrixdecomp1" class="xref" data-knowl="./knowl/xref/example_simmatrixdecomp1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.1.6">Example 7.1.6</a> and give a geometric explanation as to why <span class="process-math">\(\begin{bmatrix}2.5\amp -0.5\\-0.5\amp 2.5\end{bmatrix}\)</span> and <span class="process-math">\(\begin{bmatrix}2\amp 0\\0\amp 3\end{bmatrix}\)</span> have the same determinant.<div class="autopermalink" data-description="Paragraph"><a href="#chp9sec2-22-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Activity 8.2.11"><a href="#chp9sec2-22" title="Copy heading and permalink for Activity 8.2.11" aria-label="Copy heading and permalink for Activity 8.2.11">🔗</a></div></article><div class="para" id="chp9sec2-23">Fixing a matrix <span class="process-math">\(A\text{,}\)</span> it does not matter which region of <span class="process-math">\(\mathbb{R}^n\)</span> you are looking at, be it the unit square, a <span class="process-math">\(\mathcal{B}\)</span>-unit square, or something else, the volume scaling factor, sign, and hence determinant are all the same.<div class="autopermalink" data-description="Paragraph"><a href="#chp9sec2-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="proposition theorem-like" id="prop-det_smd"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Determinants of Similar Matrices.</span>
+</h3>
+<div class="para" id="prop-det_smd-2-1">If <span class="process-math">\(\mathcal{B}\)</span> is a basis and <span class="process-math">\(A=P_{\mathcal{B}}BP_{\mathcal{B}}^{-1}\text{,}\)</span> then <span class="process-math">\(\det(A) = \det (B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-det_smd-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 8.2.12: Determinants of Similar Matrices"><a href="#prop-det_smd" title="Copy heading and permalink for Proposition 8.2.12: Determinants of Similar Matrices" aria-label="Copy heading and permalink for Proposition 8.2.12: Determinants of Similar Matrices">🔗</a></div></article><details id="prop-det_smd-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="prop-det_smd-3-1">Using the Product Formula <a href="chp9sec2.html#thm-detproductformula" class="xref" data-knowl="./knowl/xref/thm-detproductformula.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.2.3: Product Formula">Proposition 8.2.3</a> and Proposition <a href="chp9sec2.html#prop-det_inverse" class="xref" data-knowl="./knowl/xref/prop-det_inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.2.9: Determinant of the Inverse">Proposition 8.2.9</a>:<div class="autopermalink" data-description="Paragraph"><a href="#prop-det_smd-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-detproductformula.html ./knowl/xref/prop-det_inverse.html" id="prop-det_smd-3-2">
+\begin{equation*}
+\det(A) = \det(P_{\mathcal{B}}BP_{\mathcal{B}}^{-1}) = \det(P_{\mathcal{B}})\det(B)\det(P_{\mathcal{B}}^{-1}) = \det(B).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Proof 8.2.12.1"><a href="#prop-det_smd-3" title="Copy heading and permalink for Proof 8.2.12.1" aria-label="Copy heading and permalink for Proof 8.2.12.1">🔗</a></div></article></details><div class="autopermalink" data-description="Lesson 8.2: Algebraic Properties of the Determinant"><a href="#chp9sec2" title="Copy heading and permalink for Lesson 8.2: Algebraic Properties of the Determinant" aria-label="Copy heading and permalink for Lesson 8.2: Algebraic Properties of the Determinant">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="chp9sec1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chp9sec3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

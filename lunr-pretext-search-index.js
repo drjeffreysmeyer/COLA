@@ -1,22 +1,13 @@
 var ptx_lunr_search_style = "textbook";
 var ptx_lunr_docs = [
 {
-  "id": "front-colophon",
-  "level": "1",
-  "url": "front-colophon.html",
-  "type": "Colophon",
-  "number": "",
-  "title": "Colophon",
-  "body": "  "
-},
-{
   "id": "chp0sec1",
   "level": "1",
   "url": "chp0sec1.html",
   "type": "Lesson",
   "number": "0.1",
   "title": "Note to Students",
-  "body": " Note to Students  a  "
+  "body": " Note to Students  Greetings students! I hope you are as excited as I am that you will be using my Concepts of Linear Algebra (COLA) text to learn linear algebra. This text has grown organically from teaching introductory undergraduate linear algebra for many, many years. It fills what I see as a gap in good introductory linear algebra materials that centers the core concepts of linear algebra (e.g. mixture) and has concrete manipulative activities.  By using my materials, you will:    Build a deep understanding of the concepts of linear algebra ,  Develop proficiency with technology for creating visualizations, exploring concepts, and performing computations,  Move between verbal, visual, and symbolical representations of every concept, and  Reason about and model the world around you with linear algebra.    My COLA text will not have many boxed formulas, but rather will highlight concepts and develop intuition. There are dozens of activities and dynamic GeoGebra links that, if you go through them carefully, will allow you to hold every concept within your own hands and explore how they interact. Be prepared to work, play, communicate, make connections, and grow.  These materials are designed to build core understanding of the concepts of linear algebra. This is not a proof-based or programming linear algebra course - those will come later. I highly encourage you to go on and take a second (and third and fourth) course in linear algebra where you build on the foundations established in this course.  On a personal note, I truly love linear algebra. It is a rich topic that connects to so many other areas of pure and applied mathematics. It saddens me that so many students take a course in linear algebra without coming away with much more than row reduction, a task better left to the computers anyway. As I say to my students every term, You can be so much more than just a symbol pusher. I hope you will walk away from this course seeing how concepts of linear algebra are everywhere and how its ideas and tools are truly powerful. Furthermore, I hope you will build and strengthen understandings and skills that will aid you long after you have left this classroom.   Jeffrey S. Meyer   "
 },
 {
   "id": "chp0sec2",
@@ -25,7 +16,43 @@ var ptx_lunr_docs = [
   "type": "Lesson",
   "number": "0.2",
   "title": "Note to Teachers",
-  "body": " Note to Teachers  a  "
+  "body": " Note to Teachers  Greetings instructor. This book evolved out of my course notes for linear algebra. While there exists many excellent linear algebra textbooks, I could not find one that centered meaning-making and interwove the strands of mathematical proficiency. Over the span of many years, I built this book to support the kind of linear algebra classroom I wanted. The choice of topics and the choice of sequencing is intentional. Every chapter is filled with lessons designed with the intention of students learning impactful and productive meanings. I encourage you to use the materials in the order provided. When I teach using these materials, each lesson is comprised of three parts: a short lecture introducing new concepts, in-class activities where students investigate these new concepts, and then finally a guided classroom discussion where students share their thinking and emphasize major goals and takeaways. The lessons in this book are organized in a way to run your class in this manner.   What is in a lesson? Each lesson contains an exposition that develops the concepts, provides meanings, mathematical mental actions, in-class activities for your students, formal definitions, and dozens of GeoGebra links which can be used for either demonstrations or activities. Each lesson has a corresponding assignment on the MathME Online Problem System . Each chapter ends with concrete learning targets for your students. Every chapter ends with homework which students should carefully write up and turn in. These written problems give students opportunities to synthesize concepts from the lessons and practice important actions such as modeling, interpreting, and justifying.   Course Map Below is a flow chart of the sequencing of chapters.   COLA Chapter Sequencing Flowchart   I hope you find this book valuable in supporting you as you teach your students impactful and productive meanings.   Jeffrey S. Meyer   "
+},
+{
+  "id": "fig-course-map",
+  "level": "2",
+  "url": "chp0sec2.html#fig-course-map",
+  "type": "Figure",
+  "number": "0.2.1",
+  "title": "COLA Chapter Sequencing Flowchart",
+  "body": " COLA Chapter Sequencing Flowchart  "
+},
+{
+  "id": "chp0sec3",
+  "level": "1",
+  "url": "chp0sec3.html",
+  "type": "Lesson",
+  "number": "0.3",
+  "title": "MathME Homework System",
+  "body": " MathME Homework System  Accompanying this text is a collection of problems as part of the MathMe Online Problem System that can be found at . These problems have been written to support and enhance the COLA curriculum. Going forward, I will refer to these as COLA Problems. These problems follow the sequencing of the COLA curriculum and use the same symbolism. There you will find a variety of problem types (centered around distinct mental actions):    Creation and movement between representations (verbal, visual, and symbolic),  Modeling,  Interpretation,  Computation,  Reasoning about properties,  Formal justifications.     MathME System Design Framework    It is well known that linear algebra involves a lot of computations, and GeoGebra is an easy way to perform many of these computations.  It is less well known that linear algebra is rich with geometry, and to help visualize this geometry, we will make heavy use of GeoGebra. It is free and online. By setting up an account, you can save and access your worksheets anywhere. You can access GeoGebra here: .  In your browser, your default screen will have a toolbar on top, the algebra window on the left, and the graphics window on the right. In the algebra window is the input bar .   Standard GeoGebra Classic Screen Interface    If you want to try something, but do not know how, try looking it up in the documentation: .  "
+},
+{
+  "id": "fig-mathme-design",
+  "level": "2",
+  "url": "chp0sec3.html#fig-mathme-design",
+  "type": "Figure",
+  "number": "0.3.1",
+  "title": "MathME System Design Framework",
+  "body": " MathME System Design Framework   "
+},
+{
+  "id": "fig-geogebra-screen",
+  "level": "2",
+  "url": "chp0sec3.html#fig-geogebra-screen",
+  "type": "Figure",
+  "number": "0.3.2",
+  "title": "Standard GeoGebra Classic Screen Interface",
+  "body": " Standard GeoGebra Classic Screen Interface   "
 },
 {
   "id": "chp1sec1",
@@ -2563,7 +2590,7 @@ var ptx_lunr_docs = [
   "type": "Lesson",
   "number": "5.4",
   "title": "Basis as Coordinate System",
-  "body": " Basis as Coordinate System  A coordinate system is an agreed upon rule to describe where points are relative to us. We care about ordered bases because they give us a new coordinate system to describe things. As we will see later, problems that seem difficult when looking at them relative to the standard coordinates become simple when viewed relative to a different, well-chosen coordinate system.   Coordinatization  This book takes the perspective that objects exist external to, and independent of, us humans. Objects do not come to us with grid lines. Coordinatization is the mental act of imposing coordinates on objects to allow us to describe them, to analyze them, and to solve problems concerning them. Coordinatization is fundamentally human. We can and must choose coordinates. At first, this may seem like an extra burden, however it is in fact a powerful tool. When we confront a problem, we can and should reflect upon the situation and choose the coordinate system that enables us to most easily achieve our goals. This is what we do in calculus when we decide if we wish to approach the problem with Cartesian coordinates, polar coordinates, or something else altogether. This is the same thing we do in linear algebra.    The mental act of imposing coordinates on the Earth.   Diagram showing the transition from an unlined globe to a coordinate system of longitude and latitude.    In linear algebra, it is bases that give us coordinates on subspaces.   Coordinate Vector   If is a subspace, is a basis for , , and the collection of scalars are the unique solution scalars for making with , then the are the coordinates of in the -coordinate system , and is the -coordinate vector for .    The Fundamental Theorem of Bases ( ) implies that any vector has a unique  -label.   Standard Coordinates on   The standard basis gives the standard coordinates on . If , then so . The columns that we have been writing have been in standard coordinates this whole time!    When conceptualizing column vectors as coordinates, or labels, the column and are different labels we assign to a fixed vector. Moving between these labels is what I will call change of coordinates or change of labels . If we write , then (using our understanding of Matrix Multiplication and Linear Combination), we see  Multiplication by changes the -label to the standard label!!! We have previously conceptualized matrix multiplication as encoding (geometric) transformations and encoding row operations. Changing labels on a fixed vector is a fundamentally new and distinct conceptualization of matrix multiplication.   Coordinate Change Matrix   If is a subspace and is a basis, then is the coordinate change matrix .     While we usually use to represent the matrix whose columns are , when working in the context of bases, it is common to represent this matrix with .   Suppose is a basis. We will draw lines that help us visually measure vectors in units of and . For any integer , the  constant- line is the line with parametric vector form . Similarly, we have constant- lines , reversing the role of and . The constant- lines and constant- lines fill up the plane and form the -coordinate grid . The -unit square is then the parallelogram determined by and .   Using the image below, with basis as indicated in the image:    Identify and label the constant 0th, 1st, and 2nd constant- lines.    Identify and label the constant 0th, 1st, and 2nd constant- lines.    What are the standard and -coordinates of ?    Using what you know about the -grid lines, approximate the -coordinates of the vectors with standard coordinates , , and .           Let us return to the example of (Example ). Let . Since , Computational Quick Check implies is a basis.  To draw the constant- lines, I draw the sequence of lines: etc. for each integer . In a similar way, I draw the sequence of constant- lines.   The -coordinate grid and -unit square are plotted to the right. I have also plotted the vector . Observe, it lies on both the standard and -coordinate grids, and we can read off its coordinates. Make sure you can see that in -coordinates, . Our previous computations have shown, which symbolically corresponds to our visual observation above that .        Consider the collection .    Use Computational Quick Check to verify is a basis.    Sketch by hand the -coordinate grid and the -unit square.    Consider the vectors and such that and .    Plot them on your grid, and approximate and .    Use matrix equations involving to set up and find and exactly.       Next, consider the example of . Let . Again, since , is a basis. Its associated -coordinate grid and -unit square are plotted below.  In the grid below, I have also plotted the vector . Observe, it lies on both the standard and -coordinate grids, and we can read off its coordinates. Make sure you can see that in -coordinates, . This corresponds to the computation          The -Coordinate Grid Tool  In this activity, you will learn how to use GeoGebra to visualize the -coordinate grid and use it to compute -coordinates. The GeoGebra functions you should gain proficiency with are: Line , Sequence , Coordinate , and Element . In so doing, you will create the B-Coordinate Grid Tool , which you will frequently revisit for the remainder of the course.      Part 1: Creating your basis. Drop two moveable points and in the plane. Label the origin . Use the Vector tool to draw the vector from to and then to . Name them and , respectively. Move and so that and are independent. You have now created your basis .     Part 2: Constructing grid lines part 1: One By One. The Line(P,Q) function creates a line going through the points and . With that in mind, using the Line tool, create the first 3 constant- lines using the Line tool. (Think about what points will need to be input into Line and how do they relate to and .) Do the same for the first 3 constant- lines. You should now have a portion of your -grid!     Part 3: Constructing grid lines part 2: Sequence. When dealing with computers, whenever we encounter a thing we are doing over and over again, we want to loop that process so that the computer does all of the work in one line of code. GeoGebra does this with the Sequence function. More precisely you have to input 4 things: Sequence(Object(n), n, lower, upper) , an object (such as a line) in terms of some value which you want to vary, and then the lower and upper bound on those ranges. Use the Sequence function, together with what you learned in the previous part, to have a single line of GeoGebra code construct the first 21 constant- lines (10 in each direction). Do a similar thing for the first 21 constant- lines.     Part 4: Visualizing and Computing -Coordinates       "
+  "body": " Basis as Coordinate System  A coordinate system is an agreed upon rule to describe where points are relative to us. We care about ordered bases because they give us a new coordinate system to describe things. As we will see later, problems that seem difficult when looking at them relative to the standard coordinates become simple when viewed relative to a different, well-chosen coordinate system.   Coordinatization  This book takes the perspective that objects exist external to, and independent of, us humans. Objects do not come to us with grid lines. Coordinatization is the mental act of imposing coordinates on objects to allow us to describe them, to analyze them, and to solve problems concerning them. Coordinatization is fundamentally human. We can and must choose coordinates. At first, this may seem like an extra burden, however it is in fact a powerful tool. When we confront a problem, we can and should reflect upon the situation and choose the coordinate system that enables us to most easily achieve our goals. This is what we do in calculus when we decide if we wish to approach the problem with Cartesian coordinates, polar coordinates, or something else altogether. This is the same thing we do in linear algebra.    The mental act of imposing coordinates on the Earth.   Diagram showing the transition from an unlined globe to a coordinate system of longitude and latitude.    In linear algebra, it is bases that give us coordinates on subspaces.   Coordinate Vector   If is a subspace, is a basis for , , and the collection of scalars are the unique solution scalars for making with , then the are the coordinates of in the -coordinate system , and is the -coordinate vector for .    The Fundamental Theorem of Bases ( ) implies that any vector has a unique  -label.   Standard Coordinates on   The standard basis gives the standard coordinates on . If , then so . The columns that we have been writing have been in standard coordinates this whole time!    When conceptualizing column vectors as coordinates, or labels, the column and are different labels we assign to a fixed vector. Moving between these labels is what I will call change of coordinates or change of labels . If we write , then (using our understanding of Matrix Multiplication and Linear Combination), we see  Multiplication by changes the -label to the standard label!!! We have previously conceptualized matrix multiplication as encoding (geometric) transformations and encoding row operations. Changing labels on a fixed vector is a fundamentally new and distinct conceptualization of matrix multiplication.   Coordinate Change Matrix   If is a subspace and is a basis, then is the coordinate change matrix .     While we usually use to represent the matrix whose columns are , when working in the context of bases, it is common to represent this matrix with .   Suppose is a basis. We will draw lines that help us visually measure vectors in units of and . For any integer , the  constant- line is the line with parametric vector form . Similarly, we have constant- lines , reversing the role of and . The constant- lines and constant- lines fill up the plane and form the -coordinate grid . The -unit square is then the parallelogram determined by and .   Using the image below, with basis as indicated in the image:    Identify and label the constant 0th, 1st, and 2nd constant- lines.    Identify and label the constant 0th, 1st, and 2nd constant- lines.    What are the standard and -coordinates of ?    Using what you know about the -grid lines, approximate the -coordinates of the vectors with standard coordinates , , and .          Let us return to the example of (Example ). Let . Since , Computational Quick Check implies is a basis.  To draw the constant- lines, I draw the sequence of lines: etc. for each integer . In a similar way, I draw the sequence of constant- lines.   The -coordinate grid and -unit square are plotted to the right. I have also plotted the vector . Observe, it lies on both the standard and -coordinate grids, and we can read off its coordinates. Make sure you can see that in -coordinates, . Our previous computations have shown, which symbolically corresponds to our visual observation above that .       Consider the collection .    Use Computational Quick Check to verify is a basis.    Sketch by hand the -coordinate grid and the -unit square.    Consider the vectors and such that and .    Plot them on your grid, and approximate and .    Use matrix equations involving to set up and find and exactly.       Next, consider the example of . Let . Again, since , is a basis. Its associated -coordinate grid and -unit square are plotted below.  In the grid below, I have also plotted the vector . Observe, it lies on both the standard and -coordinate grids, and we can read off its coordinates. Make sure you can see that in -coordinates, . This corresponds to the computation         The -Coordinate Grid Tool  In this activity, you will learn how to use GeoGebra to visualize the -coordinate grid and use it to compute -coordinates. The GeoGebra functions you should gain proficiency with are: Line , Sequence , Coordinate , and Element . In so doing, you will create the B-Coordinate Grid Tool , which you will frequently revisit for the remainder of the course.      Part 1: Creating your basis. Drop two moveable points and in the plane. Label the origin . Use the Vector tool to draw the vector from to and then to . Name them and , respectively. Move and so that and are independent. You have now created your basis .     Part 2: Constructing grid lines part 1: One By One. The Line(P,Q) function creates a line going through the points and . With that in mind, using the Line tool, create the first 3 constant- lines using the Line tool. (Think about what points will need to be input into Line and how do they relate to and .) Do the same for the first 3 constant- lines. You should now have a portion of your -grid!     Part 3: Constructing grid lines part 2: Sequence. When dealing with computers, whenever we encounter a thing we are doing over and over again, we want to loop that process so that the computer does all of the work in one line of code. GeoGebra does this with the Sequence function. More precisely you have to input 4 things: Sequence(Object(n), n, lower, upper) , an object (such as a line) in terms of some value which you want to vary, and then the lower and upper bound on those ranges. Use the Sequence function, together with what you learned in the previous part, to have a single line of GeoGebra code construct the first 21 constant- lines (10 in each direction). Do a similar thing for the first 21 constant- lines.     Part 4: Visualizing and Computing -Coordinates        "
 },
 {
   "id": "chp5sec4-2",
@@ -2644,7 +2671,7 @@ var ptx_lunr_docs = [
   "type": "Activity",
   "number": "5.4.7",
   "title": "",
-  "body": " Using the image below, with basis as indicated in the image:    Identify and label the constant 0th, 1st, and 2nd constant- lines.    Identify and label the constant 0th, 1st, and 2nd constant- lines.    What are the standard and -coordinates of ?    Using what you know about the -grid lines, approximate the -coordinates of the vectors with standard coordinates , , and .        "
+  "body": " Using the image below, with basis as indicated in the image:    Identify and label the constant 0th, 1st, and 2nd constant- lines.    Identify and label the constant 0th, 1st, and 2nd constant- lines.    What are the standard and -coordinates of ?    Using what you know about the -grid lines, approximate the -coordinates of the vectors with standard coordinates , , and .       "
 },
 {
   "id": "ex-coordinates-visualization",
@@ -2653,7 +2680,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "5.4.9",
   "title": "",
-  "body": "  Let us return to the example of (Example ). Let . Since , Computational Quick Check implies is a basis.  To draw the constant- lines, I draw the sequence of lines: etc. for each integer . In a similar way, I draw the sequence of constant- lines.   The -coordinate grid and -unit square are plotted to the right. I have also plotted the vector . Observe, it lies on both the standard and -coordinate grids, and we can read off its coordinates. Make sure you can see that in -coordinates, . Our previous computations have shown, which symbolically corresponds to our visual observation above that .      "
+  "body": "  Let us return to the example of (Example ). Let . Since , Computational Quick Check implies is a basis.  To draw the constant- lines, I draw the sequence of lines: etc. for each integer . In a similar way, I draw the sequence of constant- lines.   The -coordinate grid and -unit square are plotted to the right. I have also plotted the vector . Observe, it lies on both the standard and -coordinate grids, and we can read off its coordinates. Make sure you can see that in -coordinates, . Our previous computations have shown, which symbolically corresponds to our visual observation above that .     "
 },
 {
   "id": "activity-coordinates-computation",
@@ -2671,7 +2698,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "5.4.11",
   "title": "",
-  "body": "  Next, consider the example of . Let . Again, since , is a basis. Its associated -coordinate grid and -unit square are plotted below.  In the grid below, I have also plotted the vector . Observe, it lies on both the standard and -coordinate grids, and we can read off its coordinates. Make sure you can see that in -coordinates, . This corresponds to the computation        "
+  "body": "  Next, consider the example of . Let . Again, since , is a basis. Its associated -coordinate grid and -unit square are plotted below.  In the grid below, I have also plotted the vector . Observe, it lies on both the standard and -coordinate grids, and we can read off its coordinates. Make sure you can see that in -coordinates, . This corresponds to the computation       "
 },
 {
   "id": "geogebra_activity-bcoord_grid",
@@ -2755,9 +2782,9 @@ var ptx_lunr_docs = [
   "body": " Notation: Inverse Matrix  If is invertible, we denote its inverse with the symbol . Note that this does not mean , which does not even make sense, or even the reciprocal of the entries.  "
 },
 {
-  "id": "prop-socks-n-shoes",
+  "id": "prop-socks_n_shoes",
   "level": "2",
-  "url": "chp6sec1.html#prop-socks-n-shoes",
+  "url": "chp6sec1.html#prop-socks_n_shoes",
   "type": "Proposition",
   "number": "6.1.8",
   "title": "Socks and Shoes.",
@@ -2836,76 +2863,805 @@ var ptx_lunr_docs = [
   "body": " Consider the ordered basis and the vector . Suppose we want to find the -coordinates of , or in other words, the solution set to the matrix equation , where .  As usual, we could compute and interpret:   Alternatively, we can first find by computing and interpreting:   and then multiplying:   "
 },
 {
-  "id": "chp7sec1",
-  "level": "1",
-  "url": "chp7sec1.html",
-  "type": "Lesson",
-  "number": "7.1",
-  "title": "Concepts of Vector Size",
-  "body": " Concepts of Vector Size    "
-},
-{
   "id": "chp8sec1",
   "level": "1",
   "url": "chp8sec1.html",
   "type": "Lesson",
-  "number": "8.1",
+  "number": "7.1",
   "title": "Similar Matrix Decompositions (SMDs)",
-  "body": " Similar Matrix Decompositions (SMDs)    "
+  "body": " Similar Matrix Decompositions (SMDs)  In earlier lessons, we have encountered simple matrices, such the standard geometric transformations and elementary matrices, which are easy to understand and work with. However, in general, a matrix looks and acts in complicated ways. A big idea the permeates through mathematics is take a complicated thing and split it into simple pieces that are easy to understand . This is a powerful problem-solving strategy.   Matrix Decomposition   Let be an matrix. A matrix decomposition of is an expression where each is simple in a certain context. When viewed as a matrix transformation, this translates to identifying as a composition of simple transformations.    There are different types of useful matrix decompositions. Associated to each decomposition there are two major problems:    Given a decomposition, what kinds of problems can be solved with it?  How does one find a decomposition, if it exists at all?    In this chapter, we will analyze the following:    Similar matrix decomposition (SMD),  Elementary matrix decomposition, and  -decomposition.    Later in this text, we will cover other important decompositions:    -decomposition,  Polar decomposition, and  Singular Value Decomposition (SVD).     Similar Matrix Decomposition   Given a square matrix , a similar matrix decomposition (SMD) of is an expression . We say the two matrices and are similar .    While it is not necessary, it is typically our goal that here be very simple , such as a stretch, shear, or rotation matrix.  Given a similar matrix decomposition, write and let . We should think of as the change of basis matrix from -coordinates to standard coordinates, and as such, as the change of basis from standard coordinates to -coordinates.   Interpreting Similar Matrix Decomposition  In complete sentences, and using geometric words, explain the meaning of each of the following expressions.                         So such a similar matrix decomposition , multiplication by can understood as the composition of the following three processes:     Step 1 -  Change the coordinate of your point from standard to -coordinates.    Step 2 -  Perform the transformation in -coordinates.    Step 3 -  Change the coordinate of your point back from -coordinates to standard coordinates.      Play with SMDs and transformations of the plane relative to the -coordinate grid at GeoGebra ID: qahp88bh . Only go to this link after you have done the above activity.   Visualizing SMDs as label change, geometric transformation, and label change back.     Such decompositions are incredibly important in both pure and applied linear algebra. It enables one to take a very complicated looking matrix, and by changing coordinates, understand it as a simple matrix.  You should be able to understand, interpret, and go between symbolic, verbal, and visual representations of such a decomposition, as shown in the following example.    Consider the matrix . This matrix does not fall into one of our categories of simple matrices. Looking at what it does to the standard unit square in the plane does not clarify matters much. Below is depicted how it transforms the standard unit square.     Now suppose that we know . What this says is we should not be looking at the standard coordinate system, but rather the coordinate system associated to our familiar ordered basis . With respect to this basis, is a stretch by a factor of 2 in the -direction and a stretch by a factor of 3 in the -direction.        Visualizing   The goal of this activity is to visualize elementary matrix transformations performed in -coordinates and computing the corresponding similar matrix decomposition.    Drop two points and in the plane so that they are movable. Move them to and , respectively. Label the origin .  Use the Vector tool to draw the vector from the origin to and then the origin to . Name them and respectively, and let .  Use the Sequence and Line commands to draw coordinate lines in the direction and then in the -direction.  Use the Polygon tool to fill in the -unit square. (Make sure the -unit square moves correctly when you move and .)  Define matrices and . Use the coordinate tools , , etc., to make sure dynamically changes as you move and .  Using ApplyMatrix , visually represent, analyze, and explain how each of the matrices , and transform the -unit square?  Explore! Change your matrix and see how the transformation changes. (Challenge: Replace entries of with sliders.) Move your points and around.  Consider the coordinate system given by the ordered basis and the transformation that, relative to the -coordinate system, is a rotation of in the direction of . Use GeoGebra to visually represent this matrix, find the associated similar matrix decomposition, and the single matrix that is its product.   For each of the following, use complete sentences and geometric words to describe how the matrix transforms the plane. Then use GeoGebra to clearly visually represent this transformation.         Play with SMDs and transformations of the plane relative to the -coordinate grid at GeoGebra ID: qahp88bh . Only go to this link after you have done the above activity.   Visualizing SMDs as label change, geometric transformation, and label change back.      Problems    Consider the following two ordered bases: and . Let denote the transformation from -coordinates into -coordinates.    Carefully draw and label the coordinate grids given by both ordered bases. (Make it plenty big because you will be drawing lots of things on it.) You may do this by hand or use GeoGebra.  Shade in , the -unit square.  Let . Sketch or use GeoGebra to show how transforms .  Using complete sentences and geometric words, explain how transforms the plane.  Let . Sketch or use GeoGebra to show how transforms .  Using complete sentences and geometric words, explain how transforms the plane.        The matrix transforms the plane by sending the red region below to the blue region.     Using complete sentences and geometric words, verbally explain how transforms the plane.  Find the symbolic expression for and give its associated similar matrix decomposition.          Below is a verbal description of how two matrices transform the plane. For each, (i) give a symbolic expression for the described similar matrix decomposition, and (ii) clearly sketch or use GeoGebra to visually show how the described matrix transforms the plane, relative to the relevant coordinate system.    stretches by a factor of 4 in the direction and stretches by a factor of 2 in the .  shears the vector by 2 units in the direction of the vector and does not move the vector .        Suppose we know that .    Recall . In complete sentences and geometric word, verbally explain how transforms the plane. (Hint: Consider using the SMD together with the associative property of matrix multiplication.)  Generalize your reason to explain how transforms the plane.       "
+},
+{
+  "id": "def-matrix-decomposition",
+  "level": "2",
+  "url": "chp8sec1.html#def-matrix-decomposition",
+  "type": "Definition",
+  "number": "7.1.1",
+  "title": "Matrix Decomposition.",
+  "body": " Matrix Decomposition   Let be an matrix. A matrix decomposition of is an expression where each is simple in a certain context. When viewed as a matrix transformation, this translates to identifying as a composition of simple transformations.   "
+},
+{
+  "id": "def-smd",
+  "level": "2",
+  "url": "chp8sec1.html#def-smd",
+  "type": "Definition",
+  "number": "7.1.2",
+  "title": "Similar Matrix Decomposition.",
+  "body": " Similar Matrix Decomposition   Given a square matrix , a similar matrix decomposition (SMD) of is an expression . We say the two matrices and are similar .   "
+},
+{
+  "id": "activity-smd_symbolic_to_geometric",
+  "level": "2",
+  "url": "chp8sec1.html#activity-smd_symbolic_to_geometric",
+  "type": "Activity",
+  "number": "7.1.3",
+  "title": "Interpreting Similar Matrix Decomposition.",
+  "body": " Interpreting Similar Matrix Decomposition  In complete sentences, and using geometric words, explain the meaning of each of the following expressions.                        "
+},
+{
+  "id": "note-geogebra-link-smd1",
+  "level": "2",
+  "url": "chp8sec1.html#note-geogebra-link-smd1",
+  "type": "Technology",
+  "number": "7.1.4",
+  "title": "",
+  "body": " Play with SMDs and transformations of the plane relative to the -coordinate grid at GeoGebra ID: qahp88bh . Only go to this link after you have done the above activity.   Visualizing SMDs as label change, geometric transformation, and label change back.    "
+},
+{
+  "id": "example_simmatrixdecomp1",
+  "level": "2",
+  "url": "chp8sec1.html#example_simmatrixdecomp1",
+  "type": "Example",
+  "number": "7.1.6",
+  "title": "",
+  "body": "  Consider the matrix . This matrix does not fall into one of our categories of simple matrices. Looking at what it does to the standard unit square in the plane does not clarify matters much. Below is depicted how it transforms the standard unit square.     Now suppose that we know . What this says is we should not be looking at the standard coordinate system, but rather the coordinate system associated to our familiar ordered basis . With respect to this basis, is a stretch by a factor of 2 in the -direction and a stretch by a factor of 3 in the -direction.      "
+},
+{
+  "id": "exploration-geogebra-smd",
+  "level": "2",
+  "url": "chp8sec1.html#exploration-geogebra-smd",
+  "type": "Technology",
+  "number": "7.1.9",
+  "title": "Visualizing <span class=\"process-math\">\\(A=PBP^{-1}\\)<\/span>.",
+  "body": " Visualizing   The goal of this activity is to visualize elementary matrix transformations performed in -coordinates and computing the corresponding similar matrix decomposition.    Drop two points and in the plane so that they are movable. Move them to and , respectively. Label the origin .  Use the Vector tool to draw the vector from the origin to and then the origin to . Name them and respectively, and let .  Use the Sequence and Line commands to draw coordinate lines in the direction and then in the -direction.  Use the Polygon tool to fill in the -unit square. (Make sure the -unit square moves correctly when you move and .)  Define matrices and . Use the coordinate tools , , etc., to make sure dynamically changes as you move and .  Using ApplyMatrix , visually represent, analyze, and explain how each of the matrices , and transform the -unit square?  Explore! Change your matrix and see how the transformation changes. (Challenge: Replace entries of with sliders.) Move your points and around.  Consider the coordinate system given by the ordered basis and the transformation that, relative to the -coordinate system, is a rotation of in the direction of . Use GeoGebra to visually represent this matrix, find the associated similar matrix decomposition, and the single matrix that is its product.   For each of the following, use complete sentences and geometric words to describe how the matrix transforms the plane. Then use GeoGebra to clearly visually represent this transformation.       "
+},
+{
+  "id": "note-geogebra-link-smd2",
+  "level": "2",
+  "url": "chp8sec1.html#note-geogebra-link-smd2",
+  "type": "Technology",
+  "number": "7.1.10",
+  "title": "",
+  "body": " Play with SMDs and transformations of the plane relative to the -coordinate grid at GeoGebra ID: qahp88bh . Only go to this link after you have done the above activity.   Visualizing SMDs as label change, geometric transformation, and label change back.    "
+},
+{
+  "id": "prob-basis-grids",
+  "level": "2",
+  "url": "chp8sec1.html#prob-basis-grids",
+  "type": "Exercise",
+  "number": "7.1.1",
+  "title": "",
+  "body": "  Consider the following two ordered bases: and . Let denote the transformation from -coordinates into -coordinates.    Carefully draw and label the coordinate grids given by both ordered bases. (Make it plenty big because you will be drawing lots of things on it.) You may do this by hand or use GeoGebra.  Shade in , the -unit square.  Let . Sketch or use GeoGebra to show how transforms .  Using complete sentences and geometric words, explain how transforms the plane.  Let . Sketch or use GeoGebra to show how transforms .  Using complete sentences and geometric words, explain how transforms the plane.     "
+},
+{
+  "id": "prob-red-blue-transform",
+  "level": "2",
+  "url": "chp8sec1.html#prob-red-blue-transform",
+  "type": "Exercise",
+  "number": "7.1.2",
+  "title": "",
+  "body": "  The matrix transforms the plane by sending the red region below to the blue region.     Using complete sentences and geometric words, verbally explain how transforms the plane.  Find the symbolic expression for and give its associated similar matrix decomposition.       "
+},
+{
+  "id": "prob-verbal-descriptions",
+  "level": "2",
+  "url": "chp8sec1.html#prob-verbal-descriptions",
+  "type": "Exercise",
+  "number": "7.1.3",
+  "title": "",
+  "body": "  Below is a verbal description of how two matrices transform the plane. For each, (i) give a symbolic expression for the described similar matrix decomposition, and (ii) clearly sketch or use GeoGebra to visually show how the described matrix transforms the plane, relative to the relevant coordinate system.    stretches by a factor of 4 in the direction and stretches by a factor of 2 in the .  shears the vector by 2 units in the direction of the vector and does not move the vector .     "
+},
+{
+  "id": "prob-matrix-powers",
+  "level": "2",
+  "url": "chp8sec1.html#prob-matrix-powers",
+  "type": "Exercise",
+  "number": "7.1.4",
+  "title": "",
+  "body": "  Suppose we know that .    Recall . In complete sentences and geometric word, verbally explain how transforms the plane. (Hint: Consider using the SMD together with the associative property of matrix multiplication.)  Generalize your reason to explain how transforms the plane.     "
 },
 {
   "id": "chp8sec2",
   "level": "1",
   "url": "chp8sec2.html",
   "type": "Lesson",
-  "number": "8.2",
+  "number": "7.2",
   "title": "Elementary Matrix Decompositions (EMDs)",
-  "body": " Elementary Matrix Decompositions (EMDs)    "
+  "body": " Elementary Matrix Decompositions (EMDs)   Elementary Matrix Decomposition   If is a square matrix, then an elementary matrix decomposition of is an expression where each is an elementary matrix.    Since elementary matrices are associated to stretches, shears, and reflections, an elementary matrix decomposition allows us to understand as a composition of these simple transformations. The complexity comes in the fact that there will usually be many elementary matrices in such a decomposition.  Given such a decomposition, I expect that you are able to correctly verbally interpret such a decomposition using geometric words, clearly and correctly identifying the order of the transformations. See, for example, .  Now the question becomes, how do we construct such a decomposition. Here is a simple yet powerful observation:    If there is a sequence of elementary row operations transforming matrix into matrix , (i.e. ),  then there is a sequence of elementary matrices such that .  Using the Socks and Shoes property ( ) to move these elementary matrices to the other side, we get .    By choosing different 's and different sequences of row operations, we obtain different matrix decompositions of !  To begin, for any matrix , let and choose any sequence of row operations. We then get a decomposition . In particular, if , , and writing , then we get the following.   Construction: Elementary Matrix Decompositions  If is an invertible matrix, then to construct an elementary matrix decomposition:    Row reduce to , recording each row operation,  Write down the associated product ,  Socks and Shoes ( ) these matrices over to get (you can then drop the ).     Observe that since the inverse of an elementary matrix is an elementary matrix, this is an elementary matrix decomposition. Also, since there are many sequences of row operations to reduce to , there are accordingly many different possible elementary matrix decompositions.  I expect you should be able to correctly perform this process by hand for and matrices.    Consider the invertible matrix . Row reduction gives Recording the row operations with elementary matrices gives Lastly, Socks and Shoesing it over, and dropping the superfluous , gives When is viewed as a transformation of the plane, this means that can be viewed as a composition of the following transformations:    First, shear the vector two units in the positive -direction.  Next, reflect through the -axis.  Next, shear the vector two units in the positive -direction.  Last, reflect through the line .       Compute an elementary matrix decomposition for each of the following:     See a visual interpretation of an elementary matrix decomposition for at GeoGebra ID: yfqdvzbk .   "
+},
+{
+  "id": "def-emd",
+  "level": "2",
+  "url": "chp8sec2.html#def-emd",
+  "type": "Definition",
+  "number": "7.2.1",
+  "title": "Elementary Matrix Decomposition.",
+  "body": " Elementary Matrix Decomposition   If is a square matrix, then an elementary matrix decomposition of is an expression where each is an elementary matrix.   "
+},
+{
+  "id": "construction-emd",
+  "level": "2",
+  "url": "chp8sec2.html#construction-emd",
+  "type": "Insight",
+  "number": "7.2.2",
+  "title": "Construction: Elementary Matrix Decompositions.",
+  "body": " Construction: Elementary Matrix Decompositions  If is an invertible matrix, then to construct an elementary matrix decomposition:    Row reduce to , recording each row operation,  Write down the associated product ,  Socks and Shoes ( ) these matrices over to get (you can then drop the ).    "
+},
+{
+  "id": "ex-emd",
+  "level": "2",
+  "url": "chp8sec2.html#ex-emd",
+  "type": "Example",
+  "number": "7.2.3",
+  "title": "",
+  "body": "  Consider the invertible matrix . Row reduction gives Recording the row operations with elementary matrices gives Lastly, Socks and Shoesing it over, and dropping the superfluous , gives When is viewed as a transformation of the plane, this means that can be viewed as a composition of the following transformations:    First, shear the vector two units in the positive -direction.  Next, reflect through the -axis.  Next, shear the vector two units in the positive -direction.  Last, reflect through the line .     "
+},
+{
+  "id": "activity-emd-practice",
+  "level": "2",
+  "url": "chp8sec2.html#activity-emd-practice",
+  "type": "Activity",
+  "number": "7.2.4",
+  "title": "",
+  "body": " Compute an elementary matrix decomposition for each of the following:   "
+},
+{
+  "id": "note-geogebra-emd",
+  "level": "2",
+  "url": "chp8sec2.html#note-geogebra-emd",
+  "type": "Note",
+  "number": "7.2.5",
+  "title": "",
+  "body": " See a visual interpretation of an elementary matrix decomposition for at GeoGebra ID: yfqdvzbk .  "
 },
 {
   "id": "chp8sec3",
   "level": "1",
   "url": "chp8sec3.html",
   "type": "Lesson",
-  "number": "8.3",
+  "number": "7.3",
   "title": "<span class=\"process-math\">\\(LU\\)<\/span>-Decompositions",
-  "body": " -Decompositions    "
+  "body": " -Decompositions  Continuing with the core concept of the previous section, what happens when you can row reduce to an upper triangular matrix using only type 3 elementary row operations, only clearing downward. As I will show in a moment, this gives rise to a new type of decomposition.   -Decomposition   If is a square matrix, then an -decomposition of is an expression where is a lower triangular matrix and is an upper triangular matrix.    Note that in the definition, neither the diagonals of nor need to be just 1's.  I will first explain a method to find an -decomposition, tweaking the ideas behind finding an elementary matrix decomposition, and using the following simple proposition.   Product of Lower Triangular Matrices is Lower Triangular   If and are lower (resp. upper) matrices, then their product is lower (resp. upper) triangular.    In class activity. Hint: use Matrix Multiplication Meaning #1 and reason about about mixing vectors with many zeros.     Construction: -Decompositions  If can row reduced to an upper triangular matrix using only type 3 row operations clearing below, then to construct an -decomposition:    Row reduce to an upper triangular matrix using only type 3 row operations clearing below.  Record these row operations as elementary matrices. Observe that type 3 elementary matrices that clear below are lower triangular. We then get .  Then, Socks and Shoes these matrices over to get .  Multiply together the 's, and by Proposition , this product, is lower triangular. We then have .      Compute an -decomposition for each of the following:    This idea is simple, but writing down and then multiplying each 's for large matrices can be a pain. For the that arise in this way, their product is nice as I shall now discuss.  Consider case interpreted as a sequence of row operations performed to : What we will be doing in filling up the columns of below the diagonal, moving right to left. More precisely, it says, look at the second from the last column. Use the leading 1 to fill the column below it, filling from bottom to top. Then move one column to the left and repeat. When viewed this way, it is not hard to see that the product is then .  In fact, this generalizes to matrices. This is formalized in the so called, Doolittle Algorithm.   Doolittle Algorithm for -Decompositions   If can be row reduced to an upper triangular matrix using only type 3 row operations clearing below and is negative the multiplier to use the pivot in the row to clear the entry in the row, then     Note that just as not all matrices may be reduced to an upper triangular matrix using only type 3 row operations only ever clearing below, it is also that case that not all matrices admit an -decomposition.  Unfortunately at this time, GeoGebra does not compute -decompositions, however, more powerful Computer Algebra Systems (CAS) can, such as the Python-based Sage. As such, I expect you should be able to compute -decompositions for and by hand. If you are so inclined, try out using Sage.  I expect that you understand the concepts behind where an -decomposition comes from, and why it works, so that you can alter the construction as necessary to create similar, related decompositions such as:    -decomposition where is a permutation matrix, is lower triangular, and is upper triangular.  -decomposition where is unipotent lower triangular, is diagonal, and is unipotent upper triangular.    Suppose we have a matrix equation where is square matrix with -decomposition . In these special situations, then to find we can use the -decomposition.  Since , we may split the matrix equation into two simpler equations: and we solve the first by forward substitution and the second by backward substitution .  Given the matrix equation , forward substitution is the recursive process of solving for by substituting in the values into row of the matrix equation.    Suppose we have the matrix equation . The forward substitution process proceeds as follows, one row at a time:    The first row tells us that  Next substitute into row 2, getting:  Lastly, substitute and into row 3, getting      Backwards substitution is the analogous recursive process for matrix equations in which you solve for by substituting in the values into row of the matrix equation.  When dealing with large matrices, this process can be relatively fast for solving matrix equations as compared to other methods for solving matrix equations.   Use an -decomposition to solve the matrix equation    "
+},
+{
+  "id": "def-lud",
+  "level": "2",
+  "url": "chp8sec3.html#def-lud",
+  "type": "Definition",
+  "number": "7.3.1",
+  "title": "<span class=\"process-math\">\\(LU\\)<\/span>-Decomposition.",
+  "body": " -Decomposition   If is a square matrix, then an -decomposition of is an expression where is a lower triangular matrix and is an upper triangular matrix.   "
+},
+{
+  "id": "prop-prodofLs",
+  "level": "2",
+  "url": "chp8sec3.html#prop-prodofLs",
+  "type": "Proposition",
+  "number": "7.3.2",
+  "title": "Product of Lower Triangular Matrices is Lower Triangular.",
+  "body": " Product of Lower Triangular Matrices is Lower Triangular   If and are lower (resp. upper) matrices, then their product is lower (resp. upper) triangular.    In class activity. Hint: use Matrix Multiplication Meaning #1 and reason about about mixing vectors with many zeros.   "
+},
+{
+  "id": "constructing-lud",
+  "level": "2",
+  "url": "chp8sec3.html#constructing-lud",
+  "type": "Remark",
+  "number": "7.3.3",
+  "title": "Construction: <span class=\"process-math\">\\(LU\\)<\/span>-Decompositions.",
+  "body": " Construction: -Decompositions  If can row reduced to an upper triangular matrix using only type 3 row operations clearing below, then to construct an -decomposition:    Row reduce to an upper triangular matrix using only type 3 row operations clearing below.  Record these row operations as elementary matrices. Observe that type 3 elementary matrices that clear below are lower triangular. We then get .  Then, Socks and Shoes these matrices over to get .  Multiply together the 's, and by Proposition , this product, is lower triangular. We then have .    "
+},
+{
+  "id": "activity-lu-practice",
+  "level": "2",
+  "url": "chp8sec3.html#activity-lu-practice",
+  "type": "Activity",
+  "number": "7.3.4",
+  "title": "",
+  "body": " Compute an -decomposition for each of the following:   "
+},
+{
+  "id": "algorithm-doolittle",
+  "level": "2",
+  "url": "chp8sec3.html#algorithm-doolittle",
+  "type": "Algorithm",
+  "number": "7.3.5",
+  "title": "Doolittle Algorithm for <span class=\"process-math\">\\(LU\\)<\/span>-Decompositions.",
+  "body": " Doolittle Algorithm for -Decompositions   If can be row reduced to an upper triangular matrix using only type 3 row operations clearing below and is negative the multiplier to use the pivot in the row to clear the entry in the row, then    "
+},
+{
+  "id": "ex-forward-sub",
+  "level": "2",
+  "url": "chp8sec3.html#ex-forward-sub",
+  "type": "Example",
+  "number": "7.3.6",
+  "title": "",
+  "body": "  Suppose we have the matrix equation . The forward substitution process proceeds as follows, one row at a time:    The first row tells us that  Next substitute into row 2, getting:  Lastly, substitute and into row 3, getting     "
+},
+{
+  "id": "activity-lu-solve",
+  "level": "2",
+  "url": "chp8sec3.html#activity-lu-solve",
+  "type": "Activity",
+  "number": "7.3.7",
+  "title": "",
+  "body": " Use an -decomposition to solve the matrix equation   "
 },
 {
   "id": "chp9sec1",
   "level": "1",
   "url": "chp9sec1.html",
   "type": "Lesson",
-  "number": "9.1",
-  "title": "Determinant as Siogned Volume Scaling Factor",
-  "body": " Determinant as Siogned Volume Scaling Factor    "
+  "number": "8.1",
+  "title": "Determinant as Signed Volume Scaling Factor",
+  "body": " Determinant as Signed Volume Scaling Factor   Area   What is area? More precisely, given a closed polygonal region , what do we mean by the area of ? In short, it is the size of the region, as measure in units of the unit square .   Area in the Plane   If is closed polygonal region in the plane, its area , denoted , is the number of disjoint copies of the unit square needed to fill .     Finding areas of polygonal regions   Find the areas of the regions , , and in the figure below. Be sure to clearly explain your strategy. Can you then find a different strategy?    Three polygonal regions in the plane.      While completing , it is likely that you discovered and used each of the following properties of area. Take a moment to go back and see all the places you might have used the following properties in the activity.   Properties of Area   Area has the following three properties:  (Normalization.) The area of the unit square is 1 (i.e. ),  (Translation.) Translation does not affect area (i.e. ), and   (Additivity.) The area of two disjoint regions is the sum of their area (i.e. if , then ).      These three properties will allow us to productively reason about area going forward.  Given a square matrix , it transforms the plane via matrix multiplication , . We have already seen how we can measure stretch factors in a given direction. A second natural question is the following: How does change area?     A closed polygonal region and a transformed region .   Some questions to start your investigations:   How does the area of a transformed region , and a transformed translated region , compare?  How do each of the elementary geometric matrix transformations affect area?  How do compositions affect area?  How might matrix decompositions help you better understand how a matrix transforms area?  How might we generalize this to higher dimensions?   What else might you wonder about area as it relates to linear algebra?   Visualizing and Exploring Area Scaling Factor   In this activity, you will use your Area Comparison Tool to analyze the areas of polygonal regions in the plane and discover how certain matrix transformations affect area. A pre-made version of the Area Comparison Tool can be found at GeoGebra ID: rxtncdwy ). I walk you thought constructing your own Area Comparison Tool in Creation .  Start with .    Translations and Area.  Using the mouse, click on the center of and drag it. This translates  . As you translate , how does its area change? How does the transformed area change? Perhaps your observations are unique to this specific matrix? Use your sliders to start to adjust the entries of your matrix and try again. Summarize your observations. Justify your conclusions by using the definition of area and its properties.    Ratio of Areas.  Find the ratio of the transformed area to the original area (i.e. ). Move around the points of your polygon. How does this change the ratio of areas? Use your sliders to start to adjust the entries of your matrix. How does this change the ratio of areas? Summarize your observations.    Simple Transformations.  How do you think each of the simple transformations: stretches, reflections, rotations, projections, and shears will affect the ratio of areas? For example,   After writing down your expectations, reset and use the Area Comparison Tool to check. After some time exploring these ratios, summarize your findings. Did any surprise you?        Consider the matrix transforming the red pentagon to the right. The red pentagon has area . The transformed pentagon in blue has area 18.  The ratio of areas is .    A transformed polygonal region in the plane.       Visualizing asf.    Having completed the activity, here are two fundamental observations you should either have made or should now go back and verify.   Observation 1: Changing your polygon does not affect the ratio of areas. Rather, the ratio of areas only depends upon the matrix.  As such, we are justified in making the following definition.   Area Scaling Factor (asf)   If is a matrix and is any closed polygonal region, then the area scaling factor of is the constant value .     Observation 2: Simple transformations affect area in the following ways.   Pure stretches scale area by their stretch factor, . (i.e. )  Projections smash area to 0. (i.e. )  Pure reflections do not affect area. (i.e. )  Pure rotations do not affect area. (i.e. )  Pure shears do not affect area. (i.e. )    Shears and Cavalieri's Principle The most surprising is that of the shear. This is a manifestation of Cavalieri's principle , which implies that if we have a stack of rectangles, they cover the same area, regardless of whether they are perfectly stacked upright or if they are offset.   Visualizing Cavalieri's principle.    Play with Cavalieri's Principle at GeoGebra ID: vrnff7nj .   Exploring and composition   Consider each of the following matrix products.   Use the Area Comparison Tool to find the of each of the matrices in each product. How does the of each of the constituent matrices relate to the of their product?  Summarize your observations.    A third fundamental observation about asf is:   Observation 3: The area scaling factor of a composition is the product of the area scaling factors. Symbolically, this means the satisfies the product formula  .  Combining our new observations of the of simple transformations together with the product formula, we may now use elementary matrix decompositions to compute !   Using an EMD to compute   Let . I will walk through how we can use an EMD for together with the observations of this lesson, to compute .  1. Row reduction.   2. Record row operations with elementary matrices.   3. Socks and Shoes over.   4. Use of simple transformations and the product formula.       What is the of     We now connect to the area of parallelograms. Consider the parallelogram in the plane determined by the basis . This parallelogram is the -unit square (Figure ). The matrix , when viewed as a transformation, sends the standard unit square to the -unit square .    The -unit square is the transformed standard unit square.   Then   We have just justified the following proposition.   Proposition ( -unit squares and )   If is a basis, and is the -unit square, then .    This proposition has many uses in geometry.   Area of a Parallelogram   Let denote the parallelogram determined by vectors and . Then, using the computation in Example ,      Observe how areas of parallelograms emerge from . Note that all triangles are half of a parallelogram. As such, gives us a way to compute areas of triangles! Just like the side lengths () and angle measures of triangle (), area of a triangle emerges from linear algebraic concepts.  We can now generalize our reasoning to for .   Unit Cube in   The unit cube  is the parallelepiped determined by the vectors .      The unit cube in .   The volume of a region in is the size of a region as measured in units of the -dimensional unit cube .   Volume in   If is closed polygonal region in , its volume , denoted , is the number of disjoint copies of the unit cube needed to fill .    It is convention to talk about volume in dimensions , and just be aware that volume when is our usual notion of area. All properties in Proposition generalize to volume. For any matrix , we can think about its associated volume scaling factor  .   Volume Scaling Factor (vsf)   If is an matrix and is any closed polygonal region, then the volume scaling factor of is the constant value .    Visualize volume scaling factor in at GeoGebra ID: xkapvwer .  From here on out, when considering all we will use the term volume scaling factor and will only use the term area scaling factor when we are only looking at the plane.  Again, upon generalizing our reasoning to , we see connects to the volume of parallelepipeds.   Proposition ( -unit Cubes and )   If is an ordered basis and the change of basis matrix from -coordinates to standard coordinates, then the volume of the -unit cube is .      Consider the parallelepiped in determined by basis where   You may play with at GeoGebra ID: vrmtn26v .  Then .  We see has an EMD:      Using the product formula: . We deduce the parallelepiped has volume 6! Without , how else could you have computed that?!      Orientation  A path is a loop if it closes up. A loop is simple if it does not intersect itself.   Orientation in the Plane   If is simple loop in the plane, then its orientation is the direction it travels. The two options are counterclockwise and clockwise .      Simple loops with counterclockwise (left) and clockwise (right) orientations.   When looking at a matrix transformation of the plane, another natural question is: what happens to the orientation of loops? Do counterclockwise loops go to counterclockwise loops, or are they flipped to clockwise loops?  If orientation is preserved, we say has positive sign and if orientation flipped, we say has negative sign . We denote this by or , respectively.   Visualizing and Exploring Orientation   Use your Orientation Comparison Tool to analyze the orientation of polygonal regions in the plane and discover how certain matrix transformations affect orientation. A pre-made version of the Orientation Comparison Tool can be found at GeoGebra ID: e69sjkrw .    Translations and Orientation   Click and drag . As you translate , how does its orientation change? How does the transformed orientation change? Perhaps your observations are unique to this specific matrix? Use sliders to change the entries of your matrix and try again. Summarize your observations.     Simple Transformations   How do you think each of the simple transformations: stretches, reflections, rotations, projections, and shears will affect orientation? For example,   After writing down your expectations, use the Orientation Comparison Tool to check. Summarize your findings.     Compositions   Consider each of the following matrix products.   How does the of each of the constituent matrices relate to the of their product? Summarize your observations.     Just like for the , you should make three fundamental observations:   Observation 1: Changing your simple loop does not affect the sign.   Observation 2: Simple transformations affect orientation in the following way.    Pure stretches do not affect orientation. (i.e., )    Projections smash curve to 0. (i.e., is N\/A)    Pure reflections reverse orientation. (i.e., )    Pure shears do not affect orientation. (i.e., )    Pure rotations do not affect orientation. (i.e., )     Observation 3: The sign of a composition is the product of the signs. Symbolically, this means the satisfies the product formula  .  Once more, we may use these observations with EMDs to compute the sign of any matrix.   Using an EMD to compute   If , then in we computed   so       What is the sign of     Generalizing sign to for is slightly nuanced. We cannot just think about orientations of simple loops in . (Why do you think that is?) However, in , we found we could find the sign by counting reflections. It is this perspective that easily generalizes to .   Sign   If is an invertible matrix and is the number of times a reflection appears in an elementary matrix decomposition of , then its sign is .    Different elementary matrix decompositions might have different numbers of reflections. It is a proposition to be proved elsewhere that the parity of this number only depends on , not the elementary matrix decomposition, and hence , as defined in is well-defined.    Determinant  The volume scaling factor and sign, while measuring different things, are deeply related and we can put them together into a single number.   Determinant   The signed volume scaling factor of is the product of its sign and volume scaling factor. This number is also called the determinant of ,      Different Notations For Determinant  Recall in Notation that I represent matrices in three different ways: name, columns, and entries. Depending on the relevant representation of the matrix, I represent its determinant differently.      Name: When working with a matrix name, I usually use det.      Column: When working with the columns of , namely, , I will sometimes write the determinant of in terms of its columns as . In this way, the determinant can then be viewed as a rule on columns, which turns out to be a productive perspective when working in multilinear algebra.     Entries: When I work with matrix entries , I often use vertical bars.     For example, if , then the three representations of the determinant are:    The determinant is an important number in linear algebra. In other textbooks, you will see it defined differently, often via formulas or algebraic properties. Here, I made the pedagogical decision to start with and center intuitive geometric properties to help give the number meaning and aid you in your reasoning about the determinant.  In , we will develop numerous strategies for computing the determinant, some of which you may already know. I want to remind you that is important to center the meaning of the determinant as signed volume scaling factor. In particular, is . The determinant arises in many formulas throughout math, and hence throughout STEM, and I want you to remember its geometric origins: when you see a determinant, there is a signed volume scaling factor nearby.   "
+},
+{
+  "id": "def-area",
+  "level": "2",
+  "url": "chp9sec1.html#def-area",
+  "type": "Definition",
+  "number": "8.1.1",
+  "title": "Area in the Plane.",
+  "body": " Area in the Plane   If is closed polygonal region in the plane, its area , denoted , is the number of disjoint copies of the unit square needed to fill .   "
+},
+{
+  "id": "activity-area",
+  "level": "2",
+  "url": "chp9sec1.html#activity-area",
+  "type": "Activity",
+  "number": "8.1.2",
+  "title": "Finding areas of polygonal regions.",
+  "body": " Finding areas of polygonal regions   Find the areas of the regions , , and in the figure below. Be sure to clearly explain your strategy. Can you then find a different strategy?    Three polygonal regions in the plane.     "
+},
+{
+  "id": "prop-area_properties",
+  "level": "2",
+  "url": "chp9sec1.html#prop-area_properties",
+  "type": "Proposition",
+  "number": "8.1.3",
+  "title": "Properties of Area.",
+  "body": " Properties of Area   Area has the following three properties:  (Normalization.) The area of the unit square is 1 (i.e. ),  (Translation.) Translation does not affect area (i.e. ), and   (Additivity.) The area of two disjoint regions is the sum of their area (i.e. if , then ).     "
+},
+{
+  "id": "fig-area",
+  "level": "2",
+  "url": "chp9sec1.html#fig-area",
+  "type": "Figure",
+  "number": "8.1.4",
+  "title": "",
+  "body": "  A closed polygonal region and a transformed region .  "
+},
+{
+  "id": "geogebra_activity-asf",
+  "level": "2",
+  "url": "chp9sec1.html#geogebra_activity-asf",
+  "type": "Activity",
+  "number": "8.1.5",
+  "title": "Visualizing and Exploring Area Scaling Factor.",
+  "body": " Visualizing and Exploring Area Scaling Factor   In this activity, you will use your Area Comparison Tool to analyze the areas of polygonal regions in the plane and discover how certain matrix transformations affect area. A pre-made version of the Area Comparison Tool can be found at GeoGebra ID: rxtncdwy ). I walk you thought constructing your own Area Comparison Tool in Creation .  Start with .    Translations and Area.  Using the mouse, click on the center of and drag it. This translates  . As you translate , how does its area change? How does the transformed area change? Perhaps your observations are unique to this specific matrix? Use your sliders to start to adjust the entries of your matrix and try again. Summarize your observations. Justify your conclusions by using the definition of area and its properties.    Ratio of Areas.  Find the ratio of the transformed area to the original area (i.e. ). Move around the points of your polygon. How does this change the ratio of areas? Use your sliders to start to adjust the entries of your matrix. How does this change the ratio of areas? Summarize your observations.    Simple Transformations.  How do you think each of the simple transformations: stretches, reflections, rotations, projections, and shears will affect the ratio of areas? For example,   After writing down your expectations, reset and use the Area Comparison Tool to check. After some time exploring these ratios, summarize your findings. Did any surprise you?     "
+},
+{
+  "id": "chp9sec1subsec1-14",
+  "level": "2",
+  "url": "chp9sec1.html#chp9sec1subsec1-14",
+  "type": "Example",
+  "number": "8.1.6",
+  "title": "",
+  "body": "  Consider the matrix transforming the red pentagon to the right. The red pentagon has area . The transformed pentagon in blue has area 18.  The ratio of areas is .    A transformed polygonal region in the plane.     "
+},
+{
+  "id": "figure-geogebra_asf",
+  "level": "2",
+  "url": "chp9sec1.html#figure-geogebra_asf",
+  "type": "Figure",
+  "number": "8.1.7",
+  "title": "",
+  "body": " Visualizing asf.   "
+},
+{
+  "id": "def-asf",
+  "level": "2",
+  "url": "chp9sec1.html#def-asf",
+  "type": "Definition",
+  "number": "8.1.8",
+  "title": "Area Scaling Factor (asf).",
+  "body": " Area Scaling Factor (asf)   If is a matrix and is any closed polygonal region, then the area scaling factor of is the constant value .   "
+},
+{
+  "id": "figure-geogebra_cavalieris_principle",
+  "level": "2",
+  "url": "chp9sec1.html#figure-geogebra_cavalieris_principle",
+  "type": "Figure",
+  "number": "8.1.9",
+  "title": "",
+  "body": " Visualizing Cavalieri's principle.   "
+},
+{
+  "id": "chp9sec1subsec1-25",
+  "level": "2",
+  "url": "chp9sec1.html#chp9sec1subsec1-25",
+  "type": "Activity",
+  "number": "8.1.10",
+  "title": "Exploring <span class=\"process-math\">\\(\\asf\\)<\/span> and composition.",
+  "body": " Exploring and composition   Consider each of the following matrix products.   Use the Area Comparison Tool to find the of each of the matrices in each product. How does the of each of the constituent matrices relate to the of their product?  Summarize your observations.   "
+},
+{
+  "id": "ex-emd_to_det",
+  "level": "2",
+  "url": "chp9sec1.html#ex-emd_to_det",
+  "type": "Example",
+  "number": "8.1.11",
+  "title": "Using an EMD to compute <span class=\"process-math\">\\(\\asf\\)<\/span>.",
+  "body": " Using an EMD to compute   Let . I will walk through how we can use an EMD for together with the observations of this lesson, to compute .  1. Row reduction.   2. Record row operations with elementary matrices.   3. Socks and Shoes over.   4. Use of simple transformations and the product formula.    "
+},
+{
+  "id": "chp9sec1subsec1-30",
+  "level": "2",
+  "url": "chp9sec1.html#chp9sec1subsec1-30",
+  "type": "Activity",
+  "number": "8.1.12",
+  "title": "",
+  "body": "  What is the of    "
+},
+{
+  "id": "fig-bunit_square",
+  "level": "2",
+  "url": "chp9sec1.html#fig-bunit_square",
+  "type": "Figure",
+  "number": "8.1.13",
+  "title": "",
+  "body": "  The -unit square is the transformed standard unit square.  "
+},
+{
+  "id": "chp9sec1subsec1-36",
+  "level": "2",
+  "url": "chp9sec1.html#chp9sec1subsec1-36",
+  "type": "Proposition",
+  "number": "8.1.14",
+  "title": "Proposition (<span class=\"process-math\">\\(\\mathcal{B}\\)<\/span>-unit squares and <span class=\"process-math\">\\(\\asf\\)<\/span>).",
+  "body": " Proposition ( -unit squares and )   If is a basis, and is the -unit square, then .   "
+},
+{
+  "id": "ex-area_of_parallelogram",
+  "level": "2",
+  "url": "chp9sec1.html#ex-area_of_parallelogram",
+  "type": "Example",
+  "number": "8.1.15",
+  "title": "Area of a Parallelogram.",
+  "body": " Area of a Parallelogram   Let denote the parallelogram determined by vectors and . Then, using the computation in Example ,     "
+},
+{
+  "id": "def-unit_cube",
+  "level": "2",
+  "url": "chp9sec1.html#def-unit_cube",
+  "type": "Definition",
+  "number": "8.1.16",
+  "title": "Unit Cube in <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Unit Cube in   The unit cube  is the parallelepiped determined by the vectors .   "
+},
+{
+  "id": "fig-unitcube",
+  "level": "2",
+  "url": "chp9sec1.html#fig-unitcube",
+  "type": "Figure",
+  "number": "8.1.17",
+  "title": "",
+  "body": "  The unit cube in .  "
+},
+{
+  "id": "def-volume",
+  "level": "2",
+  "url": "chp9sec1.html#def-volume",
+  "type": "Definition",
+  "number": "8.1.18",
+  "title": "Volume in <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Volume in   If is closed polygonal region in , its volume , denoted , is the number of disjoint copies of the unit cube needed to fill .   "
+},
+{
+  "id": "def-vsf",
+  "level": "2",
+  "url": "chp9sec1.html#def-vsf",
+  "type": "Definition",
+  "number": "8.1.19",
+  "title": "Volume Scaling Factor (vsf).",
+  "body": " Volume Scaling Factor (vsf)   If is an matrix and is any closed polygonal region, then the volume scaling factor of is the constant value .   "
+},
+{
+  "id": "chp9sec1subsec1-50",
+  "level": "2",
+  "url": "chp9sec1.html#chp9sec1subsec1-50",
+  "type": "Proposition",
+  "number": "8.1.20",
+  "title": "Proposition (<span class=\"process-math\">\\(\\mathcal{B}\\)<\/span>-unit Cubes and <span class=\"process-math\">\\(\\vsf\\)<\/span>).",
+  "body": " Proposition ( -unit Cubes and )   If is an ordered basis and the change of basis matrix from -coordinates to standard coordinates, then the volume of the -unit cube is .   "
+},
+{
+  "id": "chp9sec1subsec1-51",
+  "level": "2",
+  "url": "chp9sec1.html#chp9sec1subsec1-51",
+  "type": "Example",
+  "number": "8.1.21",
+  "title": "",
+  "body": "  Consider the parallelepiped in determined by basis where   You may play with at GeoGebra ID: vrmtn26v .  Then .  We see has an EMD:      Using the product formula: . We deduce the parallelepiped has volume 6! Without , how else could you have computed that?!   "
+},
+{
+  "id": "chp9sec1subsec2-3",
+  "level": "2",
+  "url": "chp9sec1.html#chp9sec1subsec2-3",
+  "type": "Definition",
+  "number": "8.1.23",
+  "title": "Orientation in the Plane.",
+  "body": " Orientation in the Plane   If is simple loop in the plane, then its orientation is the direction it travels. The two options are counterclockwise and clockwise .   "
+},
+{
+  "id": "fig-oriented-loop",
+  "level": "2",
+  "url": "chp9sec1.html#fig-oriented-loop",
+  "type": "Figure",
+  "number": "8.1.24",
+  "title": "",
+  "body": "  Simple loops with counterclockwise (left) and clockwise (right) orientations.  "
+},
+{
+  "id": "chp9sec1subsec2-6",
+  "level": "2",
+  "url": "chp9sec1.html#chp9sec1subsec2-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "positive sign negative sign "
+},
+{
+  "id": "geogebra_activity-sgn",
+  "level": "2",
+  "url": "chp9sec1.html#geogebra_activity-sgn",
+  "type": "Activity",
+  "number": "8.1.25",
+  "title": "Visualizing and Exploring Orientation.",
+  "body": " Visualizing and Exploring Orientation   Use your Orientation Comparison Tool to analyze the orientation of polygonal regions in the plane and discover how certain matrix transformations affect orientation. A pre-made version of the Orientation Comparison Tool can be found at GeoGebra ID: e69sjkrw .    Translations and Orientation   Click and drag . As you translate , how does its orientation change? How does the transformed orientation change? Perhaps your observations are unique to this specific matrix? Use sliders to change the entries of your matrix and try again. Summarize your observations.     Simple Transformations   How do you think each of the simple transformations: stretches, reflections, rotations, projections, and shears will affect orientation? For example,   After writing down your expectations, use the Orientation Comparison Tool to check. Summarize your findings.     Compositions   Consider each of the following matrix products.   How does the of each of the constituent matrices relate to the of their product? Summarize your observations.    "
+},
+{
+  "id": "chp9sec1subsec2-12",
+  "level": "2",
+  "url": "chp9sec1.html#chp9sec1subsec2-12",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "product formula "
+},
+{
+  "id": "ex-emd_to_sgn",
+  "level": "2",
+  "url": "chp9sec1.html#ex-emd_to_sgn",
+  "type": "Example",
+  "number": "8.1.26",
+  "title": "Using an EMD to compute <span class=\"process-math\">\\(\\sgn\\)<\/span>.",
+  "body": " Using an EMD to compute   If , then in we computed   so    "
+},
+{
+  "id": "chp9sec1subsec2-15",
+  "level": "2",
+  "url": "chp9sec1.html#chp9sec1subsec2-15",
+  "type": "Activity",
+  "number": "8.1.27",
+  "title": "",
+  "body": "  What is the sign of    "
+},
+{
+  "id": "def-sign",
+  "level": "2",
+  "url": "chp9sec1.html#def-sign",
+  "type": "Definition",
+  "number": "8.1.28",
+  "title": "Sign.",
+  "body": " Sign   If is an invertible matrix and is the number of times a reflection appears in an elementary matrix decomposition of , then its sign is .   "
+},
+{
+  "id": "def-det",
+  "level": "2",
+  "url": "chp9sec1.html#def-det",
+  "type": "Definition",
+  "number": "8.1.29",
+  "title": "Determinant.",
+  "body": " Determinant   The signed volume scaling factor of is the product of its sign and volume scaling factor. This number is also called the determinant of ,    "
+},
+{
+  "id": "notation-det",
+  "level": "2",
+  "url": "chp9sec1.html#notation-det",
+  "type": "Remark",
+  "number": "8.1.30",
+  "title": "Different Notations For Determinant.",
+  "body": " Different Notations For Determinant  Recall in Notation that I represent matrices in three different ways: name, columns, and entries. Depending on the relevant representation of the matrix, I represent its determinant differently.      Name: When working with a matrix name, I usually use det.      Column: When working with the columns of , namely, , I will sometimes write the determinant of in terms of its columns as . In this way, the determinant can then be viewed as a rule on columns, which turns out to be a productive perspective when working in multilinear algebra.     Entries: When I work with matrix entries , I often use vertical bars.     For example, if , then the three representations of the determinant are:   "
 },
 {
   "id": "chp9sec2",
   "level": "1",
   "url": "chp9sec2.html",
   "type": "Lesson",
-  "number": "9.2",
+  "number": "8.2",
   "title": "Algebraic Properties of the Determinant",
-  "body": " Algebraic Properties of the Determinant    "
+  "body": " Algebraic Properties of the Determinant  We conceptualize the determinant as originating as a geometric object, measuring geometric properties of transformations. However, from this conceptualization emerges numerous valuable algebraic properties. In this lesson we will develop some of these algebraic properties.  From observations in the previous sections on and , we get the following two propositions.   Elementary Matrix Rules   If is an elementary matrix, then      Observe that the determinant of an elementary matrix is never zero.   Since both and satisfy the product formula, so does !   Product Formula   If and are matrices, then     Taking and as our core determinant properties, we may both rigorously deduce all other algebraic properties of the determinant and compute determinants.    Compute the determinant of the following matrix:   Use your result to describe how it transforms regions in .    More generally, we have the following strategy for computing determinants using elementary matrix decompositions.   Reading from an EMD   If is an matrix with elementary matrix decomposition , with many type 1 elementary matrices, and many type 2 elementary matrices with scaling factors , then     If , then , and hence , is a projection, so has volume scaling factor 0. If , then is a product of elementary matrices. The computation follows from putting together and .     is useful for computing the determinant of any matrix. In the next section, I will discuss other strategies for computation.   Determinant of Triangular Matrices   If is a lower (or upper) triangular matrix with diagonal entries , then .    The details of this proof I leave as a homework assignment. I will give a few hints.  First, show that if none of the 's are , then there exists a sequence of type 3 row operations reducing to the diagonal matrix with diagonal entries .  Second, if one of the 's is , then . Among other results, you may find , , as well as the big ideas of , useful.    Conceptually, the only class of matrix transformation not invertible are projections, which happen to smash volumes to zero. It turns out that the determinant is a useful criteria to distinguish projections from the invertible transformations.   The Determinant and Invertibility   If is an matrix, then the following two statements are equivalent:     To show equivalence, I need to show each implies the other.  To begin, write where are elementary matrices. Since elementary matrices have nonzero determinant ( ), the product formula ( ) and the fact that the product of nonzero real numbers is nonzero implies that is a nonzero number. Hence the product formula implies .  If is invertible, then (Algorithm ) and we deduce .  If is not invertible, then is a projection, hence . Since a statement is logically equivalent to its contrapositive, we deduce that if , then is invertible.     is an important computational check that is added to The List .  We now discuss two useful algebraic properties of the determinant. They both have clear geometric interpretations and can be rigorously proven from above known propositions. Make sure you understand both!    Give a geometric explanation as to why and have reciprocal determinants.    If a matrix transformation is invertible, then whatever does to volumes and sign, its inverse should undo it.   Determinant of the Inverse   If is invertible, then .    Since is invertible, it has an inverse which satisfies the equation (Definition ). Using the Product Formula ( ),   Then solve for .     Determinant of the Transpose   If is square, then .    I will prove this assuming has an -decomposition (which will generically be the case). I will leave the case in which it does not to you. Write . Using the Sock and Shoes property of transpose (Proposition ), . Observe that the transpose of a lower (resp. upper) triangular matrix is an upper (resp. lower) triangular matrix. Furthermore, the diagonals of a triangular matrix and its transpose are the same. Using , and . Using the Product Formula and putting this all together:       Revisit Example and give a geometric explanation as to why and have the same determinant.    Fixing a matrix , it does not matter which region of you are looking at, be it the unit square, a -unit square, or something else, the volume scaling factor, sign, and hence determinant are all the same.   Determinants of Similar Matrices   If is a basis and , then .    Using the Product Formula and Proposition :     "
+},
+{
+  "id": "prop-elementarydet",
+  "level": "2",
+  "url": "chp9sec2.html#prop-elementarydet",
+  "type": "Proposition",
+  "number": "8.2.1",
+  "title": "Elementary Matrix Rules.",
+  "body": " Elementary Matrix Rules   If is an elementary matrix, then    "
+},
+{
+  "id": "chp9sec2-5",
+  "level": "2",
+  "url": "chp9sec2.html#chp9sec2-5",
+  "type": "Remark",
+  "number": "8.2.2",
+  "title": "",
+  "body": " Observe that the determinant of an elementary matrix is never zero.  "
+},
+{
+  "id": "thm-detproductformula",
+  "level": "2",
+  "url": "chp9sec2.html#thm-detproductformula",
+  "type": "Proposition",
+  "number": "8.2.3",
+  "title": "Product Formula.",
+  "body": " Product Formula   If and are matrices, then    "
+},
+{
+  "id": "chp9sec2-9",
+  "level": "2",
+  "url": "chp9sec2.html#chp9sec2-9",
+  "type": "Activity",
+  "number": "8.2.4",
+  "title": "",
+  "body": "  Compute the determinant of the following matrix:   Use your result to describe how it transforms regions in .   "
+},
+{
+  "id": "prop-det_compute_with_emd",
+  "level": "2",
+  "url": "chp9sec2.html#prop-det_compute_with_emd",
+  "type": "Proposition",
+  "number": "8.2.5",
+  "title": "Reading <span class=\"process-math\">\\(\\det\\)<\/span> from an EMD.",
+  "body": " Reading from an EMD   If is an matrix with elementary matrix decomposition , with many type 1 elementary matrices, and many type 2 elementary matrices with scaling factors , then     If , then , and hence , is a projection, so has volume scaling factor 0. If , then is a product of elementary matrices. The computation follows from putting together and .   "
+},
+{
+  "id": "prop-triangulardet",
+  "level": "2",
+  "url": "chp9sec2.html#prop-triangulardet",
+  "type": "Proposition",
+  "number": "8.2.6",
+  "title": "Determinant of Triangular Matrices.",
+  "body": " Determinant of Triangular Matrices   If is a lower (or upper) triangular matrix with diagonal entries , then .    The details of this proof I leave as a homework assignment. I will give a few hints.  First, show that if none of the 's are , then there exists a sequence of type 3 row operations reducing to the diagonal matrix with diagonal entries .  Second, if one of the 's is , then . Among other results, you may find , , as well as the big ideas of , useful.   "
+},
+{
+  "id": "prop-det_list",
+  "level": "2",
+  "url": "chp9sec2.html#prop-det_list",
+  "type": "Proposition",
+  "number": "8.2.7",
+  "title": "The Determinant and Invertibility.",
+  "body": " The Determinant and Invertibility   If is an matrix, then the following two statements are equivalent:     To show equivalence, I need to show each implies the other.  To begin, write where are elementary matrices. Since elementary matrices have nonzero determinant ( ), the product formula ( ) and the fact that the product of nonzero real numbers is nonzero implies that is a nonzero number. Hence the product formula implies .  If is invertible, then (Algorithm ) and we deduce .  If is not invertible, then is a projection, hence . Since a statement is logically equivalent to its contrapositive, we deduce that if , then is invertible.   "
+},
+{
+  "id": "chp9sec2-18",
+  "level": "2",
+  "url": "chp9sec2.html#chp9sec2-18",
+  "type": "Activity",
+  "number": "8.2.8",
+  "title": "",
+  "body": "  Give a geometric explanation as to why and have reciprocal determinants.   "
+},
+{
+  "id": "prop-det_inverse",
+  "level": "2",
+  "url": "chp9sec2.html#prop-det_inverse",
+  "type": "Proposition",
+  "number": "8.2.9",
+  "title": "Determinant of the Inverse.",
+  "body": " Determinant of the Inverse   If is invertible, then .    Since is invertible, it has an inverse which satisfies the equation (Definition ). Using the Product Formula ( ),   Then solve for .   "
+},
+{
+  "id": "prop-det_transpose",
+  "level": "2",
+  "url": "chp9sec2.html#prop-det_transpose",
+  "type": "Proposition",
+  "number": "8.2.10",
+  "title": "Determinant of the Transpose.",
+  "body": " Determinant of the Transpose   If is square, then .    I will prove this assuming has an -decomposition (which will generically be the case). I will leave the case in which it does not to you. Write . Using the Sock and Shoes property of transpose (Proposition ), . Observe that the transpose of a lower (resp. upper) triangular matrix is an upper (resp. lower) triangular matrix. Furthermore, the diagonals of a triangular matrix and its transpose are the same. Using , and . Using the Product Formula and putting this all together:    "
+},
+{
+  "id": "chp9sec2-22",
+  "level": "2",
+  "url": "chp9sec2.html#chp9sec2-22",
+  "type": "Activity",
+  "number": "8.2.11",
+  "title": "",
+  "body": "  Revisit Example and give a geometric explanation as to why and have the same determinant.   "
+},
+{
+  "id": "prop-det_smd",
+  "level": "2",
+  "url": "chp9sec2.html#prop-det_smd",
+  "type": "Proposition",
+  "number": "8.2.12",
+  "title": "Determinants of Similar Matrices.",
+  "body": " Determinants of Similar Matrices   If is a basis and , then .    Using the Product Formula and Proposition :    "
 },
 {
   "id": "chp9sec3",
   "level": "1",
   "url": "chp9sec3.html",
   "type": "Lesson",
-  "number": "9.3",
+  "number": "8.3",
   "title": "Strategies for Computing the Determinant",
-  "body": " Strategies for Computing the Determinant    "
+  "body": " Strategies for Computing the Determinant  There are many ways to compute the determinant, all of which are equivalent. In this lesson, I go over a few different strategies for computing the determinant. Depending on the situation, some are more advantageous than others.  The primary method that I recommend for computing the determinant is to use -decompositions. By we can easily compute the determinants of and . By the determinant product formula, , we get . Furthermore, when has 1's along the diagonal (as is the case when we use the Doolittle Algorithm), then where are the diagonal entries of . If does not have an -decomposition, it still has a -decomposition, where the just introduces additional reflections, and hence the general formula is:   -Equation for the Determinant   If is an matrix with -decomposition coming from the Doolittle Algorithm, then      Using the -Equation   If , then using Type 3 row operations to clear down,   so gives     This -decomposition strategy can be used to derive the determinant formulas for and matrices. These formulas are well known and you are likely to see them in situations outside of this course. I will derive both now.   Determinant Formula    .     The proof follows from two cases: and . I will show the former and leave the latter for you to investigate. If , then   Then, using the Doolittle Algorithm, the associated -decomposition is then   Using Equation ,    A useful mnemonic to remember these two terms is to visualize this as adding the downward ( ) diagonal and subtracting the upward ( ) diagonal.     Determinant Formula    .     The proof follows from a few cases. I will assume and and leave the other cases for you to investigate. If , then   Observe that the bottom right term can be algebraically simplified:   Then, using the Doolittle Algorithm, the associated -decomposition is then   Using Equation ,    A useful mnemonic to remember these six terms is the Rule of Sarrus , which visualizes this as adding the following three downward ( ) diagonals and subtracting the following three upward ( ) diagonals.    There are no similar determinant formulas for matrices with . However, there is another well-known strategy for computing determinants, which is a recursive process known as cofactor expansion . Even though I do not recommend cofactor expansion in general, I include it here as you are likely to see it outside of this course and I want to make sure you are prepared accordingly.   Cofactor   If is an matrix and , then let denote the matrix obtained by removing the row and column of . The number the  cofactor of .      If , then and its cofactor is .     Cofactor Expansion   If is an matrix, then   We call this the cofactor expansion of along the row of .     Sketch of Proof of Proposition  This proof is technical and I will leave some details to the reader. Furthermore, I will only show the cofactor expansion for the first row, as other rows can be obtained by a row permutation. Write and let denote the list-length vector of entries through of . We know that Type 3 column operations, clearing right, do not affect the determinant. Then using column notation,   Using the additive and alternating properties of the determinant (see Problem and Problem ), it can be shown that this last expression reduces to the cofactor expansion .    Using Cofactor Expansion   If , then the cofactor expansion of along the first row of is:     Cofactor expansion is nice in that it recursive, and hence may be easily coded. It is conceptually nice in that it reduces a big computation into many smaller ones. One can easily use this procedure to compute determinants by hand for small , and the checkerboard pattern of is useful for correctly working out the signs. This is the method often taught in multivariable calculus, in particular for computing cross products.  In fact, cofactor expansion is often given as the definition of the determinant. That being said, this method has multiple deficiencies:    the connection between this method and the geometric intuition for the determinant is not easy to see.    For large , our Doolittle Algorithm (and variants) are far more efficient than cofactor expansion. The Doolittle Algorithm takes roughly many algebraic operations, whereas cofactor expansion take roughly many algebraic operations.    You should be able to compute by hand determinants for all , , and some particularly simple larger matrices. You should know hot to use technology to compute determinants too, both the double check your computations and to compute the determinants for larger matrices. GeoGebra will compute the determinant of a matrix using the Determinant command.    Compute the determinant for each of the following matrices. Try using both the -equation and cofactor expansion. Compare and contrast the two methods. Then double check your computations with GeoGebra.     Let .   Find an elementary matrix decomposition of .  Use this decomposition to find the area scaling factor of .  Use this decomposition to find the sign of .  Deduce .   Consider the matrix .   Find an -decomposition of . Do this by hand.  Using your decomposition, compute .   Let be an matrix and be a similar matrix decomposition.   In complete sentences, using geometric words, what is the geometric MEANING of the fact that , in the context of coordinates?   Rigorously algebraically prove . Clearly state each definition and algebraic property of sign and volume scaling factor you use. Be careful to present your arguments in complete sentences and with a clear logical progression.    Suppose you have the following three matrices , , and with the given decompositions (elementary, , and similar, respectively). For each,   Use the decomposition to compute the determinant of the given matrix by hand with minimal computations.  Explain: what you are looking at to minimize your computations (and what can you ignore)?  Reflect upon how matrix decompositions can be used to make the problem of computing determinant simple.                    If is a square matrix, show that . (Hint: You might find it useful to use the Sock and Shoes property of transpose (Proposition ) and an appropriately chosen matrix decomposition.)  If is a square matrix with orthonormal columns, show that .  If and , give a geometric proof of the following scaling property of the determinant: .  If is a basis and , give an algebraic proof of the following scaling property of the determinant:   If , give a geometric proof of the following skew-symmetric property of the determinant: .  If , give an algebraic proof of the following skew-symmetric property of the determinant:   If , give an algebraic proof of the following alternating property of the determinant:   If , give a geometric proof of the following additive property of the determinant: .  If is a basis and , give an algebraic proof of the following additive property of the determinant:   "
+},
+{
+  "id": "prop-det_plu",
+  "level": "2",
+  "url": "chp9sec3.html#prop-det_plu",
+  "type": "Theorem",
+  "number": "8.3.1",
+  "title": "<span class=\"process-math\">\\(PLU\\)<\/span>-Equation for the Determinant.",
+  "body": " -Equation for the Determinant   If is an matrix with -decomposition coming from the Doolittle Algorithm, then    "
+},
+{
+  "id": "chp9sec3-5",
+  "level": "2",
+  "url": "chp9sec3.html#chp9sec3-5",
+  "type": "Example",
+  "number": "8.3.2",
+  "title": "Using the <span class=\"process-math\">\\(PLU\\)<\/span>-Equation.",
+  "body": " Using the -Equation   If , then using Type 3 row operations to clear down,   so gives    "
+},
+{
+  "id": "prop-2x2det_formula",
+  "level": "2",
+  "url": "chp9sec3.html#prop-2x2det_formula",
+  "type": "Theorem",
+  "number": "8.3.3",
+  "title": "<span class=\"process-math\">\\(2\\times 2\\)<\/span> Determinant Formula.",
+  "body": " Determinant Formula    .   "
+},
+{
+  "id": "chp9sec3-8",
+  "level": "2",
+  "url": "chp9sec3.html#chp9sec3-8",
+  "type": "Proof",
+  "number": "8.3.1",
+  "title": "",
+  "body": " The proof follows from two cases: and . I will show the former and leave the latter for you to investigate. If , then   Then, using the Doolittle Algorithm, the associated -decomposition is then   Using Equation ,   "
+},
+{
+  "id": "prop-3x3det_formula",
+  "level": "2",
+  "url": "chp9sec3.html#prop-3x3det_formula",
+  "type": "Theorem",
+  "number": "8.3.4",
+  "title": "<span class=\"process-math\">\\(3\\times 3\\)<\/span> Determinant Formula.",
+  "body": " Determinant Formula    .   "
+},
+{
+  "id": "chp9sec3-12",
+  "level": "2",
+  "url": "chp9sec3.html#chp9sec3-12",
+  "type": "Proof",
+  "number": "8.3.2",
+  "title": "",
+  "body": " The proof follows from a few cases. I will assume and and leave the other cases for you to investigate. If , then   Observe that the bottom right term can be algebraically simplified:   Then, using the Doolittle Algorithm, the associated -decomposition is then   Using Equation ,   "
+},
+{
+  "id": "def-cofactor",
+  "level": "2",
+  "url": "chp9sec3.html#def-cofactor",
+  "type": "Definition",
+  "number": "8.3.5",
+  "title": "Cofactor.",
+  "body": " Cofactor   If is an matrix and , then let denote the matrix obtained by removing the row and column of . The number the  cofactor of .   "
+},
+{
+  "id": "chp9sec3-17",
+  "level": "2",
+  "url": "chp9sec3.html#chp9sec3-17",
+  "type": "Example",
+  "number": "8.3.6",
+  "title": "",
+  "body": "  If , then and its cofactor is .   "
+},
+{
+  "id": "prop-cofactor_expansion",
+  "level": "2",
+  "url": "chp9sec3.html#prop-cofactor_expansion",
+  "type": "Theorem",
+  "number": "8.3.7",
+  "title": "Cofactor Expansion.",
+  "body": " Cofactor Expansion   If is an matrix, then   We call this the cofactor expansion of along the row of .   "
+},
+{
+  "id": "chp9sec3-19",
+  "level": "2",
+  "url": "chp9sec3.html#chp9sec3-19",
+  "type": "Proof",
+  "number": "8.3.3",
+  "title": "Sketch of Proof of Proposition Theorem 8.3.7.",
+  "body": " Sketch of Proof of Proposition  This proof is technical and I will leave some details to the reader. Furthermore, I will only show the cofactor expansion for the first row, as other rows can be obtained by a row permutation. Write and let denote the list-length vector of entries through of . We know that Type 3 column operations, clearing right, do not affect the determinant. Then using column notation,   Using the additive and alternating properties of the determinant (see Problem and Problem ), it can be shown that this last expression reduces to the cofactor expansion .  "
+},
+{
+  "id": "chp9sec3-20",
+  "level": "2",
+  "url": "chp9sec3.html#chp9sec3-20",
+  "type": "Example",
+  "number": "8.3.8",
+  "title": "Using Cofactor Expansion.",
+  "body": " Using Cofactor Expansion   If , then the cofactor expansion of along the first row of is:    "
+},
+{
+  "id": "chp9sec3-25",
+  "level": "2",
+  "url": "chp9sec3.html#chp9sec3-25",
+  "type": "Activity",
+  "number": "8.3.9",
+  "title": "",
+  "body": "  Compute the determinant for each of the following matrices. Try using both the -equation and cofactor expansion. Compare and contrast the two methods. Then double check your computations with GeoGebra.    "
 },
 {
   "id": "chp10sec1",
   "level": "1",
   "url": "chp10sec1.html",
   "type": "Lesson",
+  "number": "9.1",
+  "title": "Concepts of Invariant Lines",
+  "body": " Concepts of Invariant Lines    "
+},
+{
+  "id": "chp10sec2",
+  "level": "1",
+  "url": "chp10sec2.html",
+  "type": "Lesson",
+  "number": "9.2",
+  "title": "Algebraically Finding Invariant Lines",
+  "body": " Algebraically Finding Invariant Lines    "
+},
+{
+  "id": "chp10sec3",
+  "level": "1",
+  "url": "chp10sec3.html",
+  "type": "Lesson",
+  "number": "9.3",
+  "title": "Iteratively Finding Invariant Lines",
+  "body": " Iteratively Finding Invariant Lines    "
+},
+{
+  "id": "chp10sec4",
+  "level": "1",
+  "url": "chp10sec4.html",
+  "type": "Lesson",
+  "number": "9.4",
+  "title": "Classification in the Plane",
+  "body": " Classification in the Plane    "
+},
+{
+  "id": "chp7sec1",
+  "level": "1",
+  "url": "chp7sec1.html",
+  "type": "Lesson",
   "number": "10.1",
-  "title": "Matrix Multiplication as Mixture",
-  "body": " Matrix Multiplication as Mixture    "
+  "title": "Concepts of Vector Size",
+  "body": " Concepts of Vector Size    "
 },
 {
   "id": "backmatter-2",
