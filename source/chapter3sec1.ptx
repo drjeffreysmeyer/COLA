@@ -115,7 +115,7 @@
 	<example>
 		<statement>
 			<p>
-				Example \ref{ex:mixture_parallelogram} could have been written in this language as <m>\left[\begin{array}{r|r}2\amp-1\\1\amp1\end{array}\right]\begin{bmatrix}2\\1.5\end{bmatrix}=\begin{bmatrix}2.5\\3.5\end{bmatrix}</m>.
+				<xref ref="ex-mixture_parallelogram" /> could have been written in this language as <m>\left[\begin{array}{r|r}2\amp-1\\1\amp1\end{array}\right]\begin{bmatrix}2\\1.5\end{bmatrix}=\begin{bmatrix}2.5\\3.5\end{bmatrix}</m>.
 			</p>
 		</statement>
 	</example>
@@ -169,7 +169,7 @@
 		<title>Compactifying Algebraic Properties of Linear Combination</title>
 		<statement>
 			<p>
-				Recall Proposition \ref{prop:dist_across_comb}, our <q>double cookie recipe</q> proposition, states: If <m>x_1,\ldots, x_n, k\in \R</m> and <m>\vect{v}_1,\ldots, \vect{v}_n\in\R^m</m>, then
+				Recall <xref ref="prop-dist_across_comb" />, our <q>double cookie recipe</q> proposition, states: If <m>x_1,\ldots, x_n, k\in \R</m> and <m>\vect{v}_1,\ldots, \vect{v}_n\in\R^m</m>, then
 			</p>
 			<me>k(x_1\vect{v}_1+\cdots+x_n\vect{v}_n) = (kx_1)\vect{v}_1+\cdots+(kx_n)\vect{v}_n.</me>
 			<p>
@@ -186,7 +186,7 @@
     <title>Compactifying Algebraic Properties of Linear Combination</title>
     <statement>
         <p>
-            Recall Proposition <xref ref="prop-dist_across_comb" />, our "double cookie recipe" proposition, states:
+            Recall <xref ref="prop-dist_across_comb" />, our "double cookie recipe" proposition, states:
         </p>
         <p>
             If <m>x_1,\ldots, x_n, k\in \R</m> and <m>\vect{v}_1,\ldots, \vect{v}_n\in\R^m</m>, then
@@ -236,6 +236,11 @@
         <mrow>\amp= A\vect{x}+A\vect{y} \amp \mbox{Repacking symbols}.</mrow>
     </md>
 </proof>
+
+
+<subsection xml:id="chp3sec1subsec2">
+	<title>Matrix Multiplication of Matrices with Matrices</title>
+	
 
 <p>
     Matrix multiplication of a matrix with another matrix is simply a convenient way of organizing multiple mixtures all at once.
@@ -317,5 +322,7 @@
     </md>
 </proof>
 
+
+</subsection>
 
 </section>

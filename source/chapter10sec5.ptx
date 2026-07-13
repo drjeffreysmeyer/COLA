@@ -18,6 +18,7 @@
 
         <figure xml:id="fig-graph-example">
             <caption>An example of a combinatorial graph.</caption>
+            <image source="images/10.5_graph.png" width="100%"/>
         </figure>
 
         <p>

@@ -98,7 +98,7 @@
 
 	<li>
 	<alert>Comparing and Contrasting.</alert>
-	<p>Compare and contrast this activity with GeoGebra Activity <xref ref="geogebra-invariant_lines"/>.
+	<p>Compare and contrast this activity with GeoGebra <xref ref="geogebra-invariant_lines"/>.
 	How do invariant lines compare with lines of convergence?  
 	Do they work in all the same situations, or is one more general than the other?
 	Which of these types of processes do you think computers are more easily capable of performing?</p>
@@ -119,8 +119,7 @@
 	</question>
 
 	<p>
-		Play with iterates of lines to approximate invariant lines at GeoGebra ID:
-		\href{https://www.geogebra.org/m/sek7epvq}{<alert>sek7epvq</alert>}.
+		Play with iterates of lines to approximate invariant lines at GeoGebra ID: <url href="https://www.geogebra.org/m/sek7epvq" visual=""><alert>sek7epvq</alert></url>.
 		Only go to this link <alert>after</alert> you have done the above activity.
 	</p>
 
@@ -138,13 +137,13 @@
 	Below is depicted a starting vector <m>\vect{v}=\begin{bmatrix}4\\1\end{bmatrix}</m> as well as the scaled (by maximal entry) vectors for its first 10 iterates.</p>
 
 	<figure>
-	
+	<image source="images/10.3_iterates1.png" width="100%"/>
 		
 	</figure>
 	</statement>
 	</example>
 
-	<p>You should observe that matrix in Example <xref ref="ex-attractingline"/> is diagonalizable with diagonalization</p>
+	<p>You should observe that matrix in <xref ref="ex-attractingline"/> is diagonalizable with diagonalization</p>
 	<me>\left[ \begin{array}{rr}2.25 \amp 0.25\\0.75 \amp 2.75 \end{array}\right]=
 	\left[ \begin{array}{rr}1 \amp -1\\3 \amp 1 \end{array}\right]
 	\left[ \begin{array}{rr}3 \amp 0\\0 \amp 2 \end{array}\right]
@@ -179,8 +178,7 @@
 	<li><p>Pick the first nonzero entry of <m>\vect{v}_d</m> (usually the first entry).  The ratio of that entry in <m>A\vect{v}_{d}</m> to the entry in <m>\vect{v}</m> is the approximation of your dominant eigenvalue.</p></li>
 	</ol>
 
-	<p>Play the Iterative Method at GeoGebra ID:
-	\href{https://www.geogebra.org/m/gejqjgte}{<alert>gejqjgte</alert>}.
+	<p>Play the Iterative Method at GeoGebra ID: <url href="https://www.geogebra.org/m/gejqjgte" visual=""><alert>gejqjgte</alert></url>.
 	Only go to this link <alert>after</alert> you have done the above activity.</p>
 
 	<p>

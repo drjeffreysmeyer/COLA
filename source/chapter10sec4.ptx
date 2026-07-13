@@ -111,7 +111,7 @@
 	<mrow>A\vect{u} \amp =A\left(\frac{1}{2}(\vect{v}+\overline{\vect{v}})\right)
 				=\frac{1}{2}\left(\lambda \vect{v}+\overline{\lambda}\overline{\vect{v}}\right)</mrow>
 	<mrow> \amp =\frac{1}{2}\left((\mu+\nu i) (\vect{u}+i\vect{w})+(\mu-\nu i)(\vect{u}-i\vect{w})\right)</mrow>
-	<mrow> \amp =\frac{1}{2}\left((\mu\vect{u}+\hcancel{\mu i\vect{w}}+\hcancel{\nu i\vect{u}}-\nu \vect{w})+(\mu\vect{u}-\hcancel{\mu i\vect{w}}-\hcancel{\nu i\vect{u}}-\nu \vect{w})\right)</mrow>
+	<mrow> \amp =\frac{1}{2}\left((\mu\vect{u}+\rst{\mu i\vect{w}}+\rst{\nu i\vect{u}}-\nu \vect{w})+(\mu\vect{u}-\rst{\mu i\vect{w}}-\rst{\nu i\vect{u}}-\nu \vect{w})\right)</mrow>
 	<mrow> \amp =\frac{1}{2}\left(2\mu\vect{u}-2\nu \vect{w}\right)
 				= \mu\vect{u}-\nu \vect{w}.</mrow>
 	</md>
@@ -160,7 +160,7 @@
 
 	<p>Visually, we have the following picture.</p>
 	<figure>
-
+		<image source="images/10.4_shear.png" width="100%"/>
 	</figure>
 	</statement>
 	</example>
@@ -191,7 +191,7 @@
 
 	<p>Visually, we have the following picture.  Note that the <m>\mathcal{B}</m>-unit circle is dashed red, and the transformed <m>\mathcal{B}</m>-unit circle is dashed blue.  Note how the vertices <m>(8,-5)</m> and <m>(6,15)</m> of the transformed <m>\mathcal{B}</m>-unit square lie on this ellipse.</p>
 	<figure>
-
+		<image source="images/10.4_rotation.png" width="100%"/>
 	</figure>
 	</statement>
 	</example>

@@ -5,8 +5,8 @@
     
   <p>In this lesson, we investigate, conceptualize, and formalize the notion of mixing vectors.</p>
 
-  <example xml:id="vig-pouring-cereal">
-    <title>Vignette: Pouring Cereal</title>
+  <data xml:id="vig-pouring-cereal">
+    <title>Pouring Cereal</title>
     <p>I love cereal. It can be a great way to start the day. I have two cereal boxes on my shelf: Sugar-Os, which is very tasty (but not so nutritious), and Vitaflakes, which is very nutritious (but not so tasty). When I look at the side of their boxes, I see their nutrition facts.</p>
     
     <image source="images/ai_cereal_mix.png" width="100%">
@@ -19,20 +19,20 @@
 
     <p>When I make my daily breakfast, I <em>mix</em> my cereals. Today, I mixed half a serving of Sugar-Os with a third of a serving of Vitaflakes. <em>What are the nutrition facts for my mixture?</em></p>
     <p>I wonder, <em>how much nutrients is in my bowl?</em></p>
-  </example>
+  </data>
 
-  <example xml:id="vig-travel-instructions">
-    <title>Vignette: Travel Instructions</title>
+  <data xml:id="vig-travel-instructions">
+    <title>Travel Instructions</title>
     <p>My neighborhood's streets are parallel and intersect at right angles, but they are not aligned with the north-south and east-west cardinal directions. My neighborhood map is depicted below, where the distance between each adjacent gridline is 100ft. The blue streets go from the southwest to the northeast, and each blue block measures 300ft east and 400ft north. The red streets travel from the northeast to the southeast, and each red block measures 400ft east and 300ft south.</p>
     
     <p></p>
 
     <p>My GPS tells me that my grocery store is 500ft east of me and 1500ft north of me, but of course, I can not get there traveling 500ft due east and 1500ft due north, as that would require I cut straight through other people's homes. Instead, I see I can travel 3 blue blocks northeast and 1 red block northwest, I get to the grocery store. <em>Could I have gotten there another way?</em></p>
     <p>I need to go to my bank. My bank is not too far away, and in fact my GPS tells me it is only 2300ft east and 1400ft north of me. I wonder, <em>how can I describe my path there in terms of blue blocks and red blocks?</em></p>
-  </example>
+  </data>
 
-  <example xml:id="vig-averaging-temperature">
-    <title>Vignette: Averaging Temperature</title>
+  <data xml:id="vig-averaging-temperature">
+    <title>Averaging Temperature</title>
     <p>I want to plan out my clothing for the week so pull up the weather app on my phone. I see the forecasts for each of the next two days, with temperatures measured in degrees Fahrenheit, is:</p>
     
     		<table>
@@ -91,10 +91,10 @@
 
     <p>The weather app plots the forecast for today, tomorrow, and the 2-day average below.</p>
     <p></p>
-  </example>
+  </data>
 
   <p>
-    One of the most fundamental ideas associated to (lists of) quantities is <em>mixing</em> (lists of) quantities.  In <xref ref="vig-pouring-cereal" />), I <em>pour</em> some of one cereal and then some of another cereal. In Vignette 2 (<xref ref="vig-travel-instructions" />), I <em>travel</em> in one direction, and then in another direction. In Vignette 3 (<xref ref="vig-averaging-temperature" />), I <em>average</em> each of my daily forecasts.
+    One of the most fundamental ideas associated to (lists of) quantities is <em>mixing</em> (lists of) quantities.  In <xref ref="vig-pouring-cereal" />), I <em>pour</em> some of one cereal and then some of another cereal. In (<xref ref="vig-travel-instructions" />), I <em>travel</em> in one direction, and then in another direction. In (<xref ref="vig-averaging-temperature" />), I <em>average</em> each of my daily forecasts.
   </p>
 
 <!--  <example xml:id="ex-mixing-vignettes">
@@ -152,7 +152,7 @@
     </figure>-->
     <figure xml:id="figure-geogebra-scaling">
     <caption>Visualizing vector scaling via arrows</caption>
-    <interactive geogebra="D5ZYkYQq" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
+    <interactive geogebra="kytcmzcy" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
     <instructions>
             <p>
               An interactive GeoGebra window showing vector scaling via arrows. Move the vector by dragging its tip.  Use the slider to change the scalar.  Play with this.  What happens when the scalar is between 0 and 1?  What happens when the scalar is negative?
@@ -210,7 +210,7 @@
     </figure>-->
       <figure xml:id="figure-geogebra-addition">
     <caption>Visualizing vector addition via arrows</caption>
-    <interactive geogebra="ADsHPgV4" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
+    <interactive geogebra="upkkkaux" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
     <instructions>
             <p>
               An interactive GeoGebra window showing vector addition via arrows. Move the vectors by dragging their tips.  Use the sliders to translate each vector to the tip of the other.  Play with this.  
@@ -254,14 +254,14 @@
     </figure>-->
         <figure xml:id="figure-geogebra-mixture_parallelogram">
     <caption>Visualizing linear combination via the mixture parallelogram.</caption>
-    <interactive geogebra="qAC4TXwy" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
+    <interactive geogebra="tsmarxr3" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
     <instructions>
             <p>
               An interactive GeoGebra window showing linear combination via the mixture parallelogram. Move the vectors by dragging their tips.  Use the sliders to change the scalar for each vector.  Play with this.  
             </p>
      </instructions>
         <static>
-            <image width="100%" source="images/2_1_geogebra_mixture_parallelogram.png.png"/>
+            <image width="100%" source="images/2_1_geogebra_mixture_parallelogram.png"/>
             <shortdescription>A static image of a vector and a vector scaled by 2.5.</shortdescription>
         </static>
     </interactive>

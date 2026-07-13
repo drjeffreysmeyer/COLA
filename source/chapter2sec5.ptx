@@ -27,7 +27,7 @@
 </p>
 
 <p>
-  Observe that the compact notation of span allows use to rewrite Definition <xref ref="def-dependence"/> succinctly:
+  Observe that the compact notation of span allows use to rewrite <xref ref="def-dependence"/> succinctly:
 A collection <m>S\subset \R^m</m> is <alert>dependent</alert> if there exists a vector <m>\vect{v}\in S</m> such that <m>\vect{v}\in \spn(S-\{\vect{v}\}).</m>
 </p>
 
@@ -125,7 +125,7 @@ are dependent.
 <p>
   If <m>k=1</m>, <m>k</m>-planes are lines.   
   If <m>k=2</m>, <m>k</m>-planes are planes.  
-  While it is difficult to geometrically visualize <m>k</m>-planes for <m>k&gt;2</m>, it is still productive to keep the pictures of lines (e.g. Example <xref ref="ex-line_parametric_to_yint"/>) and planes (e.g. Example <xref ref="ex-plane"/>) in our minds as a metaphor for <m>k</m>-planes.
+  While it is difficult to geometrically visualize <m>k</m>-planes for <m>k&gt;2</m>, it is still productive to keep the pictures of lines (e.g.  <xref ref="ex-line_parametric_to_yint"/>) and planes (e.g.  <xref ref="ex-plane"/>) in our minds as a metaphor for <m>k</m>-planes.
 </p>
 
 <p>
@@ -216,7 +216,7 @@ This completes this implication.
 <p>This completes this implication.</p>
 </proof>
 
-<p>As you can see from the proof of Proposition <xref ref="prop-dependence"/>, we can easily move between the scalars that allow us to write a dependency equation and the scalars that allow us to make zero.  
+<p>As you can see from the proof of <xref ref="prop-dependence"/>, we can easily move between the scalars that allow us to write a dependency equation and the scalars that allow us to make zero.  
 They contain the same information, but for algebraic reasons, we will often focus on the scalars that allow us to make zero.  
 These scalars contain important information about our subset, and, as it is useful to name objects that we wish to reason about, we form and name the associated servings vector.</p>
 
@@ -238,7 +238,7 @@ These scalars contain important information about our subset, and, as it is usef
 </definition>
 
 <p>
-  If <m>S</m> has <m>n</m> vectors, then a null vector has list-length <m>n</m>, or in symbols, if <m>\vect{n}</m> is a null vector for <m>S</m>, then <m>\vect{n}\in \R^n</m>.  Observe that a null vector is simply a solution vector for making zero (Definition <xref ref="def-solution_vectors"/>).
+  If <m>S</m> has <m>n</m> vectors, then a null vector has list-length <m>n</m>, or in symbols, if <m>\vect{n}</m> is a null vector for <m>S</m>, then <m>\vect{n}\in \R^n</m>.  Observe that a null vector is simply a solution vector for making zero (<xref ref="def-solution_vectors"/>).
 </p>
 
 <example xml:id="ex-visualizing_nullscalars">
@@ -266,10 +266,10 @@ Begin with <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}5
 </p>
 
 <ol>
-<li><p><alert>Explore.</alert>  Following the strategy in Example <xref ref="ex-visualizing_nullscalars"/>, move the points <m>U_1</m>, <m>U_2</m>, and <m>U_3</m> to form a closed triangle.  (Hint:  I have chosen <m>S</m> so that you can find at least one set of nonzero, integers null vectors.)</p></li>
+<li><p><alert>Explore.</alert>  Following the strategy in <xref ref="ex-visualizing_nullscalars"/>, move the points <m>U_1</m>, <m>U_2</m>, and <m>U_3</m> to form a closed triangle.  (Hint:  I have chosen <m>S</m> so that you can find at least one set of nonzero, integers null vectors.)</p></li>
 <li><p><alert>Symbolize.</alert>  Write down the corresponding symbolic equation using a null vector you found and the columns of the vectors in <m>S</m>.  (Perform the associated computation to verify you have indeed found a null vector.)</p></li>
 <li><p><alert>Interpret.</alert> What do your findings say about the collection <m>S</m> in terms of redundancy?  Explain.</p></li>
-<li><p><alert>Explore.</alert> So far, you should have found one null vector with of nonzero integer entries.  Can you find more?  How?  (Hint: Consider the question at the end of Example <xref ref="ex-visualizing_nullscalars"/>.) </p></li>
+<li><p><alert>Explore.</alert> So far, you should have found one null vector with of nonzero integer entries.  Can you find more?  How?  (Hint: Consider the question at the end of <xref ref="ex-visualizing_nullscalars"/>.) </p></li>
 <li><p><alert>Repeated Reasoning.</alert> Repeat for the new set <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}2\\1\end{bmatrix}, \begin{bmatrix}1\\2\end{bmatrix}, \begin{bmatrix}-1\\4\end{bmatrix}\right\}</m>.</p></li>
 <li><p><alert>Generalize.</alert> What happens when <m>S</m> has 4 vectors?  Using tip-to-tail visualization, what shape are we looking for to find a null vector? How about <m>n</m> many vectors?  Explain.</p></li>
 </ol>
@@ -293,7 +293,7 @@ Begin with <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}5
 
 <p>Much like span, the compact symbolism of null space is very efficient, but it is easy to get lost in the symbolism.  We must practice symbolizing our thoughts on terms of null space, and conversely, practice interpreting the symbolism of null space in context.</p>
 
-<p>For example, we can compactly summarize our observations in Example <xref ref="ex-visualizing_nullscalars"/> with: <me>\begin{bmatrix}2\\ \frac{1}{2}\\ 1\end{bmatrix}\in \Null \left( \begin{bmatrix}1\\-1\end{bmatrix}, \begin{bmatrix}2\\2\end{bmatrix}, \begin{bmatrix}-3\\1\end{bmatrix}\right).</me></p>
+<p>For example, we can compactly summarize our observations in <xref ref="ex-visualizing_nullscalars"/> with: <me>\begin{bmatrix}2\\ \frac{1}{2}\\ 1\end{bmatrix}\in \Null \left( \begin{bmatrix}1\\-1\end{bmatrix}, \begin{bmatrix}2\\2\end{bmatrix}, \begin{bmatrix}-3\\1\end{bmatrix}\right).</me></p>
 
 
 <question xml:id="activity-symbolizing_with_null_space">
@@ -340,7 +340,7 @@ Be prepared to algebraically work with redundancy as making zero in nontrivial w
 </p>
 
 <p>
-  Much like the span of <m>S</m>, <m>\spn(S)</m>, the null space of <m>S</m> has useful algebraic properties (cf Proposition <xref ref="prop-span_has_subspace_properties"/>).
+  Much like the span of <m>S</m>, <m>\spn(S)</m>, the null space of <m>S</m> has useful algebraic properties (cf <xref ref="prop-span_has_subspace_properties"/>).
 </p>
 
 <proposition xml:id="prop-nullscalars_has_subspace_properties">
@@ -383,7 +383,7 @@ Be prepared to algebraically work with redundancy as making zero in nontrivial w
 </proof>
 
 <p>
-  We will continue to work with null spaces throughout this course, and will develop the computational tools to find, describe, and analyze null spaces in Chapter XYZ.
+  We will continue to work with null spaces throughout this course, and will develop the computational tools to find, describe, and analyze null spaces in <xref ref="chp5sec1"/>.
 </p>
 
 

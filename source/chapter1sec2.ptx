@@ -5,11 +5,8 @@
 
 
   <p>
-    Let's begin this lesson by returning to cereal. In Figure \ref{figure:cereals_symbolize} are the nutrition facts for Sugar-Os.
+    Let's begin this lesson by returning to cereal. <em>How can I efficiently communicate lists of quantities such as the nutrition facts for one serving size of cereal?</em> It is desirable to do so without writing having to write out long lists like those in  <xref ref="ex-vignettes1"/>?   A core mathematical act is to create and use symbols to organize our thoughts and communicate our reasoning.
   </p>
-
-  <p><em>How can I efficiently communicate lists of quantities such as the nutrition facts for one serving size of cereal?</em> It is desirable to do so without writing having to write out long lists like those in  <xref ref="ex-vignettes1"/>?  
-  A core mathematical act is to create and use symbols to organize our thoughts and communicate our reasoning.</p>
 
   <note xml:id="mentalaction-symbolizing">
     <title>Mental Action - Symbolizing</title>
@@ -32,17 +29,10 @@
   </p>
 
   <p>
-    To begin, we may concretely symbolize the nutrient facts with a vertical <alert>column</alert> of all the numbers associated with the quantities.
-  In column form, I typically do not write down the units, but I remember they are still there.  
-  Each number in the column is an <alert>entry</alert>
-  This way of symbolizing this vector is useful because I can efficiently see all the quantities and I can use this for numerical computations.</p>
+    To begin, we may concretely symbolize the nutrient facts with a vertical <alert>column</alert> of all the numbers associated with the quantities. In column form, I typically do not write down the units, but I remember they are still there. Each number in the column is an <alert>entry</alert> This way of symbolizing this vector is useful because I can efficiently see all the quantities and I can use this for numerical computations.</p>
 
   <p>
-    However, columns can be cumbersome, and in certain situations, I may not need to know the nutrient values to reason about them or to talk about them.  
-  For example, I can talk to you about Sugar-Os without telling you explicitly the nutrient facts.
-  Just as we have a name for cereal, it is useful to also have a <alert>name</alert> for a vector.  
-  I will always name vectors with a single, lowercase bold letter.  In this case, I will choose <m>\vect{s}</m> to help me remember this vector comes from <alert>S</alert>ugar-Os.
-  The symbolizing just described is summarized in Figure \ref{figure:symbolizing}.
+    However, columns can be cumbersome, and in certain situations, I may not need to know the nutrient values to reason about them or to talk about them.  For example, I can talk to you about Sugar-Os without telling you explicitly the nutrient facts. Just as we have a name for cereal, it is useful to also have a <alert>name</alert> for a vector. I will always name vectors with a single, lowercase bold letter.  In this case, I will choose <m>\vect{s}</m> to help me remember this vector comes from <alert>S</alert>ugar-Os.
 </p>
 
   <image source="images/1.2_symbolizing_cereal.png" width="100%">
@@ -71,7 +61,9 @@
   </p>
 -->
 
-  <p>
+  <remark xml:id="remark-symbolizing_vectors">
+    <title>Symbolizing Vectors</title>
+      
     <ol>
       <li><p><alert>Writing names.</alert> 
       I will always name vectors with a single, lowercase bold letter.
@@ -94,7 +86,7 @@
       <li><p><alert>Consistency is important.</alert>  
       Consistency of notation brings clarity to your writing.  Please follow the above notational guidelines and always be consistent with how you write your vector names and columns.</p></li>
     </ol>
-  </p>
+  </remark>
 
   <p>
     When we move between a vector's name and a vector's column of entries, I will say we are <alert>unpacking</alert> or <alert>repacking</alert> the vector.  
@@ -202,7 +194,7 @@
       <ol>
         <li>
           <p>
-            Macronutrients (in grams) for a cereal.  (For a reminder about macronutrients, see Example <xref ref="ex-vignettes1"/>.)
+            Macronutrients (in grams) for a cereal.  (For a reminder about macronutrients, see <xref ref="ex-vignettes1"/>.)
           </p>
         </li>
         <li>

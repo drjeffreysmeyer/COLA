@@ -7,7 +7,7 @@
 		Welcome students! Before we can begin learning linear algebra, we need to establish the ontology of this book. In this book, I take the perspective that <term>objects</term> and <term>situations</term> exist external to us everywhere. These objects and situations possess many types of <term>attributes</term>. An attribute, together with an agreed upon unit of measurement, is a <term>quantity</term>.
 	</p>
 
-	<example>
+	<data>
 		<title>Object-Attribute-Quantity (OAQ) Analysis of a Glass of Water</title>
 		<p>
 			With my lunch, I am drinking a glass of water. This glass of water exists, external to me, sitting beside me on my table. The water has many attributes: size, mass, temperature, color, and many more. For the moment, I will focus on its size.  We could agree on many ways to measure size, for example by measuring its volume in liters, cups, ounces, or cubic inches. Let's pick ounces. The volume of the water in my glass, measured in ounces, is a quantity.
@@ -22,13 +22,13 @@
 		
 		<!-- <figure xml:id="fig-water_glass"> -->
     		<!-- <caption>Water in a glass. </caption> -->
-			<image source="images/water_glass.png" width="30%">
+			<image source="images/ai_glass_of_water.png" width="100%">
 			<shortdescription>Water in a glass.</shortdescription>
 			<description><p>Water in a glass.</p></description>
 			</image>
 		<!-- </figure> -->
 
-	</example>
+	</data>
 
 	<question>
 		<title>OAQ Analysis</title>
@@ -49,20 +49,12 @@
 		You do not need to know the value of a real number to reason about it. In Example , the volume of the water in my glass, measured in ounces is a number. We can reason about that volume of water without ever knowing its value. Sometimes I will <term>name</term> a real number with an italicized lower case letter. For example, I might name the volume of water in my glass, measured in ounces, with the letter <m>v</m>, for volume. I denote the collection of all real numbers as <m>\R</m> and use the symbols <m>a\in \R</m> to <em>mean</em> <m>a</m> is a real number.
 	</p>
 
-	<example xml:id="ex-vignettes1">
+	<data xml:id="ex-vignettes1">
 		<title>Quantities in my kitchen</title>
 		<p>
 			I walk into my kitchen to see what food I have to eat. As I look through my food, I suddenly realize that they are quite literally <em>covered</em> in lists of quantities! Pretty much every packaged food item has a box called <q>Nutrition Facts.</q> This box lists the masses of nutrients (either measured in grams g, milligrams mg, or micrograms mcg) contained within one serving size of the given food item. The box always lists the masses of the three most essential nutrients called <em>macronutrients</em>: total fat, total carbohydrates, and protein. Sometimes masses of other nutrients such as vitamin B, vitamin C, vitamin D, calcium, iron, and potassium are also listed.
 		</p>
-		
-		<image source="images/matrix_as_cereal.png" width="100%">
-    		<description> 
-				<p>
-					On the side of a box of cereal, we see the the "Nutrition Facts."
-				</p>
-			</description>
-		</image>
-
+	
 		<p>
 			For example, the <q>Nutrition Facts</q> on the side of my box of Sugar-Os cereal.
 		</p>		
@@ -74,10 +66,10 @@
 				</p>
 			</description>
 		</image>
-	</example>
+	</data>
 
 
-	<example xml:id="ex-vignettes2">
+	<data xml:id="ex-vignettes2">
 		<title>Quantities as I travel</title>
 		<p>
 			I am always driving where I need to go. Today I will drive to campus, to lunch, to the grocery store, and then home. Even if I know directions, I often use my GPS in case there is something like traffic or a road closure. As I put in my destinations today, I realize that I am staring at list of quantities! In a given trip, each step of the travel instructions is the distance I drive, either in miles or feet, on a given road, until I turn onto the next street.
@@ -99,10 +91,75 @@
 		</ol>
 		</p>
 
-	</example>
+	</data>
 
-	<example xml:id="ex-vignettes3">
+	<data xml:id="ex-vignettes3">
 		<title>Quantities outside</title>
+		<p> 
+			Sitting outside, I am curous what the weather will be like this afternoon.  I take out my phone and look at the weather app. I see temperature, humidity, and wind speed. I also see the forecast for the rest of the day. I realize that the forecast is a list of quantities!
+		</p>
+
+
+			<image source="images/ai_weatherapp1.png" width="100%">
+			<shortdescription>Weather forecast.</shortdescription>
+			<description><p>Weather forecast.</p></description>
+			</image>
+
+
+			<table>
+			<title>Today's Forcast</title>
+			<tabular halign="center">
+				<row header="yes" bottom="minor" >
+				<cell>Hours after noon </cell>
+				<cell>Temperature in Fahrenheit (&#176;F)</cell>
+				</row>
+				<row>
+				<cell>1</cell>
+				<cell>71&#176;F</cell>
+				</row>
+				<row>
+				<cell>2</cell>
+				<cell>73&#176;F</cell>
+				</row>
+				<row>
+				<cell>3</cell>
+				<cell>75&#176;F</cell>
+				</row>
+				<row>
+				<cell>4</cell>
+				<cell>76&#176;F</cell>
+				</row>
+				<row>
+				<cell>5</cell>
+				<cell>73&#176;F</cell>
+				</row>
+				<row>
+				<cell>6</cell>
+				<cell>68&#176;F</cell>
+				</row>
+				<row>
+				<cell>7</cell>
+				<cell>64&#176;F</cell>
+				</row>
+				<row>
+				<cell>8</cell>
+				<cell>61&#176;F</cell>
+				</row>
+			</tabular>
+
+			</table>
+
+			<p>
+			I scroll down a little further and see the following visual representation.
+		</p>
+
+			<image source="images/ai_weatherapp2.png" width="100%">
+			<shortdescription>A graphical representation of the weather forecast.</shortdescription>
+			<description><p>A graphical representation of the weather forecast.</p></description>
+			</image>
+
+
+		<!--	
 		<p> 
 			I want to plan out my day tomorrow and I look at my phone to get the forecast for the day. It is then that I realize that the forecast is a list of quantities! At first I see the following table.
 		</p>
@@ -157,11 +214,11 @@
 
 		<figure xml:id="fig-weather-forecast">
     		<caption>Weather forecast.</caption>
-    		<image source="images/forecast-graph.png" width="100%">
+    		<image source="images/ai_weatherapp1.png" width="100%">
         		<description><p>A graphical representation of a weather forecast.</p></description>
    	 		</image>
 		</figure>
-
+			-->
 
 
 		<p>
@@ -171,17 +228,17 @@
 		<p>
 			I wonder, <em>what other lists of quantities are useful in describing the weather</em>?
 		</p>
-	</example>
+	</data>
 
 	<p>
 		Observe that in each quantitative situation above, we encountered many quantities, naturally grouped together, all at once. Lists of quantities are often united by a single object or situation.  When analyzing the world around us, these lists of quantities naturally emerge, so it use useful to have language to discuss them.
 	</p>
 
 	<definition xml:id="def-list-length">
-    <title>Vectors and List-Length</title>
-    <statement>
-        <p>A <term>vector</term> is an ordered list of quantities.   The number of entries in the list is its <term>list-length</term>.</p>
-    </statement>
+		<title>Vectors and List-Length</title>
+		<statement>
+			<p>A <term>vector</term> is an ordered list of quantities.   The number of entries in the list is its <term>list-length</term>.</p>
+		</statement>
 	</definition>
 
 	<p>
@@ -224,18 +281,18 @@
 		<example>
 		<title>Quantities outside - Revisited</title>
 		<p>
-			An <em>object</em> is the air outside my home. An <em>attribute</em> of air is temperature. I can quantify temperature in many ways, for example measure the temperature in degrees Fahrenheit in 3 hour intervals throughout the day. The corresponding list of temperatures, below, has list-length 8.
+			An <em>object</em> is the air on campus. An <em>attribute</em> of air is temperature. I can quantify temperature in many ways, for example measure the temperature in degrees Fahrenheit in 1 hour intervals after noonthroughout the day. The corresponding list of temperatures, below, has list-length 8.
 		
 
 		<ol>
-			<li> Degrees Fahrenheit at 12am, </li>
-			<li> Degrees Fahrenheit at 3am, </li>
-			<li> Degrees Fahrenheit at 6am, </li>
-			<li> Degrees Fahrenheit at 9am </li>
-			<li> Degrees Fahrenheit at 12pm, </li>
+			<li> Degrees Fahrenheit at 1pm, </li>
+			<li> Degrees Fahrenheit at 2pm, </li>
 			<li> Degrees Fahrenheit at 3pm, </li>
+			<li> Degrees Fahrenheit at 4pm </li>
+			<li> Degrees Fahrenheit at 5pm, </li>
 			<li> Degrees Fahrenheit at 6pm, </li>
-			<li> Degrees Fahrenheit at 9pm. </li>
+			<li> Degrees Fahrenheit at 7pm, </li>
+			<li> Degrees Fahrenheit at 8pm. </li>
 		</ol>
 		</p>
 
@@ -243,12 +300,12 @@
 			A different <em>attribute</em> is humidity.  I can quantify humidity in many ways, for example measure the relative humidity (in percents) in 4 hour intervals throughout the day. The  corresponding list of humidities, below, has list-length 6.
 		
 		<ol>
-			<li> Percent humidity at 12am, </li>
-			<li> Percent humidity at 4am, </li>
-			<li> Percent humidity at 8am, </li>
 			<li> Percent humidity at 12pm, </li>
 			<li> Percent humidity at 4pm, </li>
 			<li> Percent humidity at 8pm, </li>
+			<li> Percent humidity at 12am, </li>
+			<li> Percent humidity at 4am, </li>
+			<li> Percent humidity at 8am, </li>
 		</ol>
 		</p>
 		

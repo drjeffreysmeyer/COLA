@@ -11,24 +11,24 @@
     More generally, if I have a fixed collection of vectors, <em>what are all the linear combinations I can make with them?</em>
   </p>
 
-<example>
-<title>What can we make with one nonzero vector in the plane?</title>
-<statement>
-<p>What can we make (using linear combinations) with <m>\vect{v}=\begin{bmatrix} 2\\1\end{bmatrix}</m>? <br/>
-Geometrically, we get the line with parametric vector form:
-<m>\left\{t\begin{bmatrix}2\\1\end{bmatrix} \ | \ t\in \R\right\}</m>. 
-Observe our starting position is the zero vector (i.e. the origin).</p>
+  <example>
+    <title>What can we make with one nonzero vector in the plane?</title>
+    <statement>
+      <p>What can we make (using linear combinations) with <m>\vect{v}=\begin{bmatrix} 2\\1\end{bmatrix}</m>?
+      Geometrically, we get the line with parametric vector form:
+      <m>\left\{t\begin{bmatrix}2\\1\end{bmatrix} \ | \ t\in \R\right\}</m>. 
+      Observe our starting position is the zero vector (i.e. the origin).</p>
 
-<image source="images/2.4_span1.svg" width="100%">
-<description> 
-  <p>
-    A line in <m>\R^2</m>.
-  </p>
-</description>
-</image>
+      <image source="images/2.4_span1.svg" width="100%">
+        <description> 
+          <p>
+            A line in <m>\R^2</m>.
+          </p>
+        </description>
+      </image>
 
-</statement>
-</example>
+    </statement>
+  </example>
 
 <example>
 <title>What can we make with two vectors in the plane?</title>
@@ -197,13 +197,13 @@ So</p>
 <p>From which we deduce <m>\vect{u}+\vect{w}\in \spn(S)</m>.</p>
 
 <p>All that is left justifying the third property.  
-This is left to you in Activity <xref ref="activity-justify_span_is_subspace"/>.</p>
+This is left to you in <xref ref="activity-justify_span_is_subspace"/>.</p>
 </proof>
 
 <question xml:id="activity-justify_span_is_subspace">
 <title>Practicing Formal Justification</title>
 <statement>
-<p>Carefully write down a formal justification for the third property of Proposition <xref ref="prop-span_has_subspace_properties"/>. 
+<p>Carefully write down a formal justification for the third property of <xref ref="prop-span_has_subspace_properties"/>. 
 Be sure to carefully explain your reasoning and include references to all appropriate definitions and proven propositions.  
 When done, share with the class.</p>
 </statement>
@@ -211,7 +211,7 @@ When done, share with the class.</p>
 
 <insight>
 <title>Algebraic Properties of Span as Mixture of Mixtures</title>
-<p>Using the metaphor of mixture, Proposition <xref ref="prop-span_has_subspace_properties"/> says that, if you fix a collection of ingredients, a <em>mixture of mixtures is still just a mixture</em> of the original ingredients.</p>
+<p>Using the metaphor of mixture, <xref ref="prop-span_has_subspace_properties"/> says that, if you fix a collection of ingredients, a <em>mixture of mixtures is still just a mixture</em> of the original ingredients.</p>
 </insight>
 
 <p>We now come to <em>makeability</em>. 
@@ -237,7 +237,7 @@ There is no guarantee that <m>\vect{b}</m> is makeable, in which case no such sc
 </statement>
 </question>
 
-<p>Observe that a way to make <m>\vect{b}</m> with S is precisely a servings vector (Definition <xref ref="def-serving_size_vector"/>).</p>
+<p>Observe that a way to make <m>\vect{b}</m> with S is precisely a servings vector (<xref ref="def-serving_size_vector"/>).</p>
 
 <definition xml:id="def-solution_vectors">
 <title>Solution Vectors</title>

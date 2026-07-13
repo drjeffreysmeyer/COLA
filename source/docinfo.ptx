@@ -115,5 +115,6 @@
 
   <rename element="question">Activity</rename>
   <rename element="section">Lesson</rename>
+  <rename element="data">Quantitative Situation</rename>
 
 </docinfo>
