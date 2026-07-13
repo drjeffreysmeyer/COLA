@@ -17,13 +17,18 @@
 
     /* Example Colors - Orange */
     --ex-border: #FF8C00;
-    --ex-bg: #ffd5807f;
+    --ex-bg: #ffd58052;
     --ex-text: #ffffff;
 
     /* Question Colors - Purple */
     --question-border: #bf00ff;
     --question-bg: #bf00ff18;
     --question-text: #ffffff;
+
+    /* Question Colors - Green */
+    --data-border: #008722;
+    --data-bg: #0087221b;
+    --data-text: #ffffff;
 }
 
 /* Definition - Blue Theme */
@@ -84,4 +89,15 @@ article.question {
 article.question .heading {
     color: var(--question-text) !important;
     background-color:  var(--question-border) !important;
+}
+
+/* Quantitative Situation - Green Theme */
+article.data {
+    border-left: 4px solid var(--data-border) !important;
+    border-bottom: 4px solid var(--data-border) !important;
+    background-color: var(--data-bg) !important;
+}
+article.data .heading {
+    color: var(--data-text) !important;
+    background-color:  var(--data-border) !important;
 }
