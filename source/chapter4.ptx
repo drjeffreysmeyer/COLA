@@ -5,17 +5,109 @@
 
   <introduction>
 
-    <p>
-      
-    </p>
+<p>
+    In this chapter, we perform a deep dive into solution sets of matrix equations <m>A\vect{x}=\vect{b}</m>.  We reconceptualize solution sets as intersections of hyperplanes and deduce that solution sets are <m>k</m>-planes themselves.  We then go on to use this perspective to construct an algorithmic strategy for finding the parametric vector form of solution sets.
+</p>
 
+<p>
+    <alert> <xref ref="chp4sec1" />.</alert>
+    Matrix equations arise in many quantitative situations and we frequently want to understand its solution set.  
+    If we reconceptualize a matrix equation <m>A\vect{x}=\vect{b}</m> as a system of hyperplanes, then we may conceptualize its solution set <m>\Sol(A,\vect{b})</m> as the intersection of these hyperplanes.  
+    This geometric perspective unlocks new strategies of analyzing solution sets.
+</p>
 
-    <objectives>
-      <title>Lesson 3.1</title>
-        <ul>
-            <li><p>I see that in certain quantitative situations, it is meaningful to add and scale vectors.</p></li>
-        </ul>
-    </objectives>
+<objectives>
+    <title>Objectives for <xref ref="chp4sec1" /></title>
+    <ul>
+        <li>
+            <p>I can <alert>interpret</alert> a matrix equation as a collection of hyperplanes.</p>
+        </li>
+        <li>
+            <p>I can <alert>interpret</alert> a solution set as an intersection of hyperplanes.</p>
+        </li>
+        <li>
+            <p>I can <alert>visualize</alert> configurations of hyperplanes and their intersections in <m>\mathbb{R}^2</m>, <m>\mathbb{R}^3</m>.</p>
+        </li>
+    </ul>
+</objectives>
+
+<p>
+    <alert> <xref ref="chp4sec2" />.</alert>  
+    Hyperplanes can form many different types of configurations, and hence so too can their intersections.  
+    We explore these different possible types of intersections of hyperplanes and construct expectations for their likelihoods.
+</p>
+
+<objectives>
+    <title>Objectives for <xref ref="chp4sec2" /></title>
+    <ul>
+        <li>
+            <p>I can <alert>verbalize</alert> and <alert>visualize</alert> the different types of configurations of hyperplanes in <m>\mathbb{R}^2</m> and <m>\mathbb{R}^3</m>. </p>
+        </li>
+        <li>
+            <p>I can <alert>justify</alert> my expectations for intersections of random hyperplanes in <m>\mathbb{R}^n</m>.</p>
+        </li>
+    </ul>
+</objectives>
+
+<p>
+    <alert> <xref ref="chp4sec3a" />.</alert>  The intersection of hyperplanes is a <m>k</m>-plane for some <m>k</m>.  
+    Having explored and developed our conceptualization of solution sets as intersections, we now leverage this understanding to compute the parametric vector form of solution sets.  
+    In so doing, we introduce several new actions and objects:   elementary row operations, reduced row echelon form, and Gaussian elimination.
+</p>
+
+<objectives>
+    <title>Objectives for <xref ref="chp4sec3a" /></title>
+    <ul>
+        <li>
+            <p>I can <alert>explain</alert> the goal of elimination and how it relates to solution sets of matrix equations.</p>
+        </li>
+        <li>
+            <p>I can <alert>justify</alert> why row operations do not change the system's intersection.</p>
+        </li>
+        <li>
+            <p>I can <alert>symbolize</alert> a matrix equation as an augmented matrix.</p>
+        </li>
+        <li>
+            <p>I can <alert>symbolize</alert> row operations.</p>
+        </li>
+        <li>
+            <p>I can <alert>compute</alert> by hand the reduced row echelon form (rref) of small matrices.</p>
+        </li>
+        <li>
+            <p>I can use technology to <alert>compute</alert> the reduced row echelon form of large matrices.</p>
+        </li>
+    </ul>
+</objectives>
+
+<p>
+    <alert> <xref ref="chp4sec3b" />.</alert>  We analyze rref and interpret its meanings in the context of solution sets.
+</p>
+
+<objectives>
+    <title>Objectives for <xref ref="chp4sec3b" /></title>
+    <ul>
+        <li>
+            <p>I can <alert>interpret</alert> the reduced row echelon form of an augmented matrix to write its solution set in parametric vector form.</p>
+        </li>
+    </ul>
+</objectives>
+
+<p>
+    <alert> <xref ref="chp4sec4" />.</alert>  
+    The three elementary row operations can be encoded by multiplication by elementary matrices.  These elementary matrices are familiar geometric transformations: reflections, stretches, and shears.  You should practice moving between row operations their associated elementary matrices.  We may then encode sequences of row operations with products of elementary matrices.
+</p>
+
+<objectives>
+    <title>Objectives for <xref ref="chp4sec4" /></title>
+    <ul>
+        <li>
+            <p>I understand which row operations correspond to which elementary matrices. </p>
+        </li>
+        <li>
+            <p>I can <alert>interpret</alert> a sequence of row operations as a product of elementary matrices.</p>
+        </li>
+    </ul>
+</objectives>
 
   </introduction>
 

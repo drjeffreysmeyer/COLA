@@ -380,36 +380,63 @@
         </statement>
     </question>
 
-    <p>
-        Let <m>A = \left[\begin{array}{rr}7 \amp 5\\2 \amp 4\end{array}\right]</m>.
-    </p>
-    <ol>
-        <li><p>Find an elementary matrix decomposition of <m>A</m>.</p></li>
-        <li><p>Use this decomposition to find the area scaling factor of <m>A</m>.</p></li>
-        <li><p>Use this decomposition to find the sign of <m>A</m>.</p></li>
-        <li><p>Deduce <m>\det(A)</m>.</p></li>
-    </ol>
 
-    <p>
-        Consider the matrix <m>A=\left[\begin{array}{rrr}2 \amp 1 \amp 4\\-2 \amp 0 \amp -1\\-4 \amp -5 \amp -12\end{array}\right]</m>.
-    </p>
-    <ol>
-        <li><p>Find an <m>LU</m>-decomposition of <m>A</m>.  Do this by hand.</p></li>
-        <li><p>Using your decomposition, compute <m>\det(A)</m>.</p></li>
-    </ol>
 
-    <p>
-        Let <m>A</m> be an <m>n\times n</m> matrix and <m>A=PBP^{-1}</m> be a similar matrix decomposition.
-    </p>
-    <ol>
-        <li><p>In complete sentences, using geometric words, what is the geometric <em>MEANING</em> of the fact that <m>\det(A)=\det(B)</m>, in the context of coordinates?</p></li>
-        <li>
+
+
+
+<exercises>
+    <title>Problems</title>
+
+    <exercise>
+        <statement>
             <p>
-                Rigorously algebraically prove <m>\det(A)=\det(B)</m>.  Clearly state each definition and algebraic property of sign and volume scaling factor you use.  
-                Be careful to present your arguments in complete sentences and with a clear logical progression.
+                Let <m>A = \left[\begin{array}{rr}7 \amp 5\\2 \amp 4\end{array}\right]</m>.
             </p>
-        </li>
-    </ol>
+            <ol>
+                <li><p>Find an elementary matrix decomposition of <m>A</m>.</p></li>
+                <li><p>Use this decomposition to find the area scaling factor of <m>A</m>.</p></li>
+                <li><p>Use this decomposition to find the sign of <m>A</m>.</p></li>
+                <li><p>Deduce <m>\det(A)</m>.</p></li>
+            </ol>
+        </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+            Consider the matrix <m>A=\left[\begin{array}{rrr}2 \amp 1 \amp 4\\-2 \amp 0 \amp -1\\-4 \amp -5 \amp -12\end{array}\right]</m>.
+        </p>
+        <ol>
+            <li><p>Find an <m>LU</m>-decomposition of <m>A</m>.  Do this by hand.</p></li>
+            <li><p>Using your decomposition, compute <m>\det(A)</m>.</p></li>
+        </ol>
+        </statement>
+    </exercise>
+
+
+
+    <exercise>
+      <statement>
+            <p>
+                Let <m>A</m> be an <m>n\times n</m> matrix and <m>A=PBP^{-1}</m> be a similar matrix decomposition.
+            </p>
+            <ol>
+                <li><p>In complete sentences, using geometric words, what is the geometric <em>MEANING</em> of the fact that <m>\det(A)=\det(B)</m>, in the context of coordinates?</p></li>
+                <li>
+                    <p>
+                        Rigorously algebraically prove <m>\det(A)=\det(B)</m>.  Clearly state each definition and algebraic property of sign and volume scaling factor you use.  
+                        Be careful to present your arguments in complete sentences and with a clear logical progression.
+                    </p>
+                </li>
+            </ol>
+        </statement>
+    </exercise>
+
+
+
+    <exercise>
+      <statement>
 
     <p>
         Suppose you have the following three matrices <m>A</m>, <m>B</m>, and <m>C</m> with the given decompositions (elementary, <m>LU</m>, and similar, respectively).  For each, 
@@ -446,54 +473,106 @@
             </p>
         </li>
     </ul>
+        </statement>
+    </exercise>
 
-    <p>
-        If <m>A</m> is a square matrix, show that <m>\det(A^T)=\det(A)</m>.  (Hint: You might find it useful to use the Sock and Shoes property of transpose (Proposition ) and an appropriately chosen matrix decomposition.)
-    </p>
 
-    <p>
-        If <m>A</m> is a square matrix with orthonormal columns, show that <m>\det(A)=1 \text{ or } -1</m>. 
-    </p>
 
-    <p>
-        If <m>\vect{v},\vect{w}\in \R^2</m> and <m>a\in \R</m>, give a geometric proof of the following scaling property of the determinant: <m>\det(a\vect{v},\vect{w})=a\det(\vect{v},\vect{w})</m>.
-    </p>
+  <exercise>
+      <statement>
+        <p>
+            If <m>A</m> is a square matrix, show that <m>\det(A^T)=\det(A)</m>.  (Hint: You might find it useful to use the Sock and Shoes property of transpose (Proposition ) and an appropriately chosen matrix decomposition.)
+        </p>
+        </statement>
+    </exercise>
 
-    <p>
-        If <m>S=\{\vect{v}_1,\ldots,\vect{v}_n\} \subset \R^n</m> is a basis and <m>a\in \R</m>, give an algebraic proof of the following scaling property of the determinant: 
-    </p>
-    <me>
-        \det(a\vect{v}_1,\vect{v}_2,,\ldots ,\vect{v}_n)=\det(a\vect{v}_1,\vect{v}_2,\ldots ,\vect{v}_n).
-    </me>
 
-    <p>
-        If <m>\vect{v},\vect{w}\in \R^2</m>, give a geometric proof of the following skew-symmetric property of the determinant: <m>\det(\vect{v},\vect{w})=-\det(\vect{w},\vect{v})</m>.
-    </p>
 
-    <p>
-        If <m>S=\{\vect{v}_1,\ldots,\vect{v}_n\} \subset \R^n</m>, give an algebraic proof of the following skew-symmetric property of the determinant: 
-    </p>
-    <me>
-        \det(\vect{v}_1,\vect{v}_2,\vect{v}_3,\ldots ,\vect{v}_n)=-\det(\vect{v}_2,\vect{v}_1,\vect{v}_3,\ldots ,\vect{v}_n).
-    </me>
+    <exercise>
+      <statement>
+        <p>
+            If <m>A</m> is a square matrix with orthonormal columns, show that <m>\det(A)=1 \text{ or } -1</m>. 
+        </p>
+        </statement>
+    </exercise>
 
-    <p xml:id="problem-det_alternating">
-        If <m>S=\{\vect{v}_1,\ldots,\vect{v}_n\} \subset \R^n</m>, give an algebraic proof of the following alternating property of the determinant: 
-    </p>
-    <me>
-        \det(\vect{v}_1,\vect{v}_1,\vect{v}_3,\ldots ,\vect{v}_n)=0.
-    </me>
 
-    <p>
-        If <m>\vect{u},\vect{v},\vect{w}\in \R^2</m>, give a geometric proof of the following additive property of the determinant: <m>\det(\vect{u}+\vect{v},\vect{w})=\det(\vect{u},\vect{w})+\det(\vect{v},\vect{w})</m>.
-    </p>
+    <exercise>
+      <statement>
+            <p>
+                If <m>\vect{v},\vect{w}\in \R^2</m> and <m>a\in \R</m>, give a geometric proof of the following scaling property of the determinant: <m>\det(a\vect{v},\vect{w})=a\det(\vect{v},\vect{w})</m>.
+            </p>
+        </statement>
+    </exercise>
 
-    <p xml:id="problem-det_additivity">
-        If <m>S=\{\vect{v}_1,\ldots,\vect{v}_n\} \subset \R^n</m> is a basis and <m>\vect{w}\in \R^n</m>, give an algebraic proof of the following additive property of the determinant: 
-    </p>
-    <me>
-        \det(\vect{v}_1+\vect{w},\vect{v}_2,\ldots ,\vect{v}_n)=\det(\vect{v}_1,\vect{v}_2,\ldots ,\vect{v}_n)+\det(\vect{w},\vect{v}_2,\ldots ,\vect{v}_n).
-    </me>
+
+    <exercise>
+      <statement>
+        <p>
+            If <m>S=\{\vect{v}_1,\ldots,\vect{v}_n\} \subset \R^n</m> is a basis and <m>a\in \R</m>, give an algebraic proof of the following scaling property of the determinant: 
+        </p>
+        <me>
+            \det(a\vect{v}_1,\vect{v}_2,,\ldots ,\vect{v}_n)=\det(a\vect{v}_1,\vect{v}_2,\ldots ,\vect{v}_n).
+        </me>
+        </statement>
+    </exercise>
+
+
+  <exercise>
+      <statement>
+        <p>
+            If <m>\vect{v},\vect{w}\in \R^2</m>, give a geometric proof of the following skew-symmetric property of the determinant: <m>\det(\vect{v},\vect{w})=-\det(\vect{w},\vect{v})</m>.
+        </p>
+        </statement>
+    </exercise>
+
+
+     <exercise>
+        <statement>
+            <p>
+                If <m>S=\{\vect{v}_1,\ldots,\vect{v}_n\} \subset \R^n</m>, give an algebraic proof of the following skew-symmetric property of the determinant: 
+            </p>
+            <me>
+                \det(\vect{v}_1,\vect{v}_2,\vect{v}_3,\ldots ,\vect{v}_n)=-\det(\vect{v}_2,\vect{v}_1,\vect{v}_3,\ldots ,\vect{v}_n).
+            </me>
+        </statement>
+    </exercise>
+
+
+    <exercise xml:id="problem-det_alternating">
+      <statement>
+        <p >
+            If <m>S=\{\vect{v}_1,\ldots,\vect{v}_n\} \subset \R^n</m>, give an algebraic proof of the following alternating property of the determinant: 
+        </p>
+        <me>
+            \det(\vect{v}_1,\vect{v}_1,\vect{v}_3,\ldots ,\vect{v}_n)=0.
+        </me>
+        </statement>
+    </exercise>
+
+
+    <exercise>
+      <statement>
+
+        <p>
+            If <m>\vect{u},\vect{v},\vect{w}\in \R^2</m>, give a geometric proof of the following additive property of the determinant: <m>\det(\vect{u}+\vect{v},\vect{w})=\det(\vect{u},\vect{w})+\det(\vect{v},\vect{w})</m>.
+        </p>
+        </statement>
+    </exercise>
+
+
+  <exercise>
+      <statement>
+        <p xml:id="problem-det_additivity">
+            If <m>S=\{\vect{v}_1,\ldots,\vect{v}_n\} \subset \R^n</m> is a basis and <m>\vect{w}\in \R^n</m>, give an algebraic proof of the following additive property of the determinant: 
+        </p>
+        <me>
+            \det(\vect{v}_1+\vect{w},\vect{v}_2,\ldots ,\vect{v}_n)=\det(\vect{v}_1,\vect{v}_2,\ldots ,\vect{v}_n)+\det(\vect{w},\vect{v}_2,\ldots ,\vect{v}_n).
+        </me>
+        </statement>
+    </exercise>
+
+</exercises>
 
 
 

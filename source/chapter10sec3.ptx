@@ -4,8 +4,190 @@
   <title>Iteratively Finding Invariant Lines</title>
 
 	<p>
-		
+		If we repeat the process, what, if any, configurations does the system tend toward?  
+	This idea is fundamental to understanding such real world processes as equilibria in mixing populations, Google PageRank, and image compression.  
+	The way to find stable configurations associated to matrix multiplication is given by <em>eigentheory</em>.
 	</p>
 
+	<p>
+		Given a process, you should expect that generically, configurations are not invariant, but rather are moved around.  
+	Lines will be sent to different lines.
+	</p>
+
+	<definition xml:id="def-iterates">
+	<title>Iterates</title>
+	<statement>
+	<p>Given a matrix transformation <m>T:\R^n\to \R^n</m>, <m>T(\vect{x})=A\vect{x}</m>, a line through the origin, <m>W</m>, and a positive integer <m>k</m>, the <m>k^{th}</m> <term>iterate</term> under <m>T</m> is the line <m>T^k(W)</m>.</p>
+	</statement>
+	</definition>
+
+	<figure>
+	<image source="images/10.3_line_iterates.png" width="100%"/>
+	<caption>A line and its iterates.</caption>
+	</figure>
+
+	<p>
+		Some questions to start your investigations:
+	</p>
+
+	<em>
+	<ol>
+	<li>What does it mean for lines to ``converge'' to another line?</li>
+	<li>Does there always exist lines to which other lines converge under iteration?</li>
+	<li>Do certain matrices behave better under iteration?</li>
+	<li>If a line of convergence exists, can you find it exactly?  Approximately?</li>
+	<li>How can this help you compute eigenvectors and eigenvalues?</li>
+	</ol>
+	</em>
+
+	<p>An important class of matrices in the study of iterations is positive proximal matrices.</p>
+
+	<definition>
+	<title>Proximal Matrices</title>
+	<statement>
+	<p>If <m>A</m> is <m>n\times n</m> with eigenvalues <m>\lambda_1,\ldots, \lambda_n</m>, for which <m>\lambda_1</m> is a positive real number and <m>\lambda_1>|\lambda_i|</m> for all <m>i>1</m>, then <m>A</m> is a <term>positive proximal matrix</term> and <m>\lambda_1</m> is its <term>dominant</term> eigenvalue.
+	The associated eigenspace is the <term>dominant eigenspace</term> and its nonzero vectors are <term>dominant eigenvectors</term>.</p>
+	</statement>
+	</definition>
+
+	<p>Observe that, when <m>A</m> is positive proximal, with each iterate of <m>T</m>, it pulls vectors <em>more and more</em> in the direction of the dominant eigenspace.</p>
+
+	<question xml:id="geogebra-iterates_lines">
+	<title>Approximating Lines of Convergence</title>
+	<statement>
+		<p>
+			The goal of this activity is to see how iterates of a positive proximal matrix applied to a generic line numerically approximate the invariant line of it dominant eigenvalue.
+		</p>
+
+	<ol>
+	<li>
+	<alert>Creating your matrix, line, and iterates.</alert>
+	<p>Input a matrix <m>A</m> with slider entries, and for the moment, slide the entries so your matrix is 
+	<m>A=\left[ \begin{array}{rr}2.4 \amp -0.6\\-0.4 \amp 2.6 \end{array}\right]</m>.
+	Create a slider <m>k</m> ranging between -40 and 40 with interval 1.  Set <m>k</m> to 1.
+	Create the point <m>O=(0,0)</m> and another  moveable point <m>B</m>.
+	Create the line between  <m>O</m> and <m>B</m>.
+	I will denote this line <m>W</m>.
+	ApplyMatrix <m>A^k</m> to <m>W</m>.  
+	It will probably be called <m>W'</m>.
+	I will denote this line <m>T^k(W)</m>.</p>
+	</li>
+
+	<li>
+	<alert>Exploring lines of convergence.</alert>
+	<p>Move the slider <m>k</m> from 1 to 40 and analyze the movement of the line <m>T^k(W)</m>.  
+	What line does it appear that the iterates <m>T^k(W)</m> converges too?
+	Move around the point <m>B</m>.  
+	How does moving <m>B</m> affect the line to which <m>T^k(W)</m> appears to converge to?
+	What is the meaning of moving the slider from <m>-1</m> to <m>-40</m>?  
+	What line does <m>T^{-k}(W)</m> seem to converge to?</p>
+	</li>
+
+	<li>
+	<alert>Approximating the dominant eigenvalue.</alert>
+	<p>ApplyMatrix <m>A^k</m> to <m>B</m>. 
+	This point is probably called <m>B'</m>.
+	Observe that while <m>B'</m> lies on <m>T^k(W)</m>, it quickly gets very large and leaves the screen.
+	We need to scale it to a reasonable size in a consistent way.  
+	Let's agree to always divide by the maximum entry <m>C=\frac{1}{Max(x(B'),y(B'))} B'</m>.  
+	Now ApplyMatrix <m>A</m> to <m>C</m>.  This point is probably called <m>C'</m>.  
+	Observe that by construction, <m>C</m> lies on <m>T^k(W)</m>. 
+	As you vary <m>k</m>, does <m>C'</m> ever lie on <m>T^k(W)</m>?  
+	Can you use <m>C</m> and <m>C'</m> to find <m>\lambda_1</m> exactly?  Approximately?  Explain.</p>
+	</li>
+
+	<li>
+	<alert>Comparing and Contrasting.</alert>
+	<p>Compare and contrast this activity with GeoGebra Activity <xref ref="geogebra-invariant_lines"/>.
+	How do invariant lines compare with lines of convergence?  
+	Do they work in all the same situations, or is one more general than the other?
+	Which of these types of processes do you think computers are more easily capable of performing?</p>
+	</li>
+
+	<li>
+	<alert>Varying the matrix.</alert>
+	<p>Repeat your above analysis for each of the following matrices:</p>
+
+	<me>  
+	\left[ \begin{array}{rr}1.25 \amp 2.25\\-0.25 \amp 2.75 \end{array}\right] \hspace{2pc}
+	\left[ \begin{array}{rr}-0.4 \amp -1.2\\-1.2 \amp 1.4 \end{array}\right] \hspace{2pc}
+	\left[ \begin{array}{rr}2 \amp -2.5\\10 \amp 2 \end{array}\right] \hspace{2pc}
+	</me>
+	</li>
+	</ol>
+	</statement>
+	</question>
+
+	<p>
+		Play with iterates of lines to approximate invariant lines at GeoGebra ID:
+		\href{https://www.geogebra.org/m/sek7epvq}{<alert>sek7epvq</alert>}.
+		Only go to this link <alert>after</alert> you have done the above activity.
+	</p>
+
+	<definition xml:id="def-attracting_lines">
+	<title>Attracting and Repelling Lines</title>
+	<statement>
+	<p>If <m>A</m> is an invertible <m>2\times 2</m> positive proximal matrix, then its line of convergence is its <term>attracting line</term>, and the line of convergence of <m>A^{-1}</m> is its <term>repelling line</term>.</p>
+	</statement>
+	</definition>
+
+	<example xml:id="ex-attractingline">
+	<statement>
+	<p>Consider the matrix <m>A=\left[ \begin{array}{rr}2.25 \amp 0.25\\0.75 \amp 2.75 \end{array}\right]</m>.  
+	It has an attracting line of <m>y=3x</m> and repelling line <m>y=-x</m>.  
+	Below is depicted a starting vector <m>\vect{v}=\begin{bmatrix}4\\1\end{bmatrix}</m> as well as the scaled (by maximal entry) vectors for its first 10 iterates.</p>
+
+	<figure>
+	
+		
+	</figure>
+	</statement>
+	</example>
+
+	<p>You should observe that matrix in Example <xref ref="ex-attractingline"/> is diagonalizable with diagonalization</p>
+	<me>\left[ \begin{array}{rr}2.25 \amp 0.25\\0.75 \amp 2.75 \end{array}\right]=
+	\left[ \begin{array}{rr}1 \amp -1\\3 \amp 1 \end{array}\right]
+	\left[ \begin{array}{rr}3 \amp 0\\0 \amp 2 \end{array}\right]
+	\left[ \begin{array}{rr}1 \amp -1\\3 \amp 1 \end{array}\right]^{-1},</me>
+	<p>and that the attracting line and repelling lines are precisely the invariant lines for the matrix.  
+	Even though both invariant lines have positive real eigenvalues, with each iterate, points are pulled <em>more</em> in the direction of the greatest eigenvalue, hence becoming the attracting line.</p>
+
+	<p>For the exact same reasons, this is true more generally.</p>
+
+	<theorem xml:id="thm-attractingareinvariant">
+	<title>Convergence of Iterated Lines</title>
+	<statement>
+	<p>If <m>A</m> is an <m>n\times n</m> positive proximal matrix and <m>L</m> is the eigenspace associated to the dominant eigenvalue, then generically, the iterates of all other lines converge to <m>L</m>.</p>
+	</statement>
+	</theorem>
+
+	<p>While we are not currently prepared to prove this, we will have the tools to do so after introducing inner products in the next section.
+	The proof rest upon understanding length, angle, the situation for a diagonal matrix, and similar matrix decompositions.</p>
+
+	<p>In the meanwhile, if <m>A</m> is a positive proximal matrix, then we have the following <alert>Iterative Strategy</alert> for numerically approximating the dominant eigenvalue and its associated invariant line.
+	This Iterative Strategy is made for computers, and is perfectly suited for Computer Algebra Systems (e.g. CAS on GeoGebra) or programming (e.g. Sage).</p>
+
+	<ol>
+	<li><p>Pick a certain number of decimal places of accuracy you want, say <m>r</m> places.</p></li>
+	<li><p>Input a test vector <m>\vect{v}\in \R^n</m>.</p></li>
+	<li><p>ApplyMatrix <m>A^k</m> to <m>\vect{v}</m> where <m>k</m> are positive integers that you can increase (e.g. via a slider or a loop)</p></li>
+	<li><p>Scale <m>A^k\vect{v}</m> in some reasonable way so that its entries do not get out of control.  
+	One reasonable way to scale is to divide by the maximum entry of <m>A^k\vect{v}</m>
+	(Another reasonable way it to divide each vector by its length so that each vector is length 1.  Wait until we go over length in the next section before implementing this way.)</p></li>
+	<li><p>Allow your CAS to numerically approximate these vectors to over <m>r</m> places of accuracy.  Keep increasing <m>k</m> until you reach the point that the first <m>r</m> many decimals are no longer changing with successive increases in <m>k</m>.  Denote this <m>\vect{v}_{d}</m>.  This is your numerical approximation of a dominant eigenvector.</p></li>
+	<li><p>To be extra safe, repeat this process with a couple more test vectors, just in case in the incredibly unlikely chance your original test vector was actually within the eigenspace of another eigenvalue.  If all the vectors <m>\vect{v}_d</m> you get are the same, then you can say with confidence you are correct to <m>r</m> decimal places of accuracy.</p></li>
+	<li><p>Pick the first nonzero entry of <m>\vect{v}_d</m> (usually the first entry).  The ratio of that entry in <m>A\vect{v}_{d}</m> to the entry in <m>\vect{v}</m> is the approximation of your dominant eigenvalue.</p></li>
+	</ol>
+
+	<p>Play the Iterative Method at GeoGebra ID:
+	\href{https://www.geogebra.org/m/gejqjgte}{<alert>gejqjgte</alert>}.
+	Only go to this link <alert>after</alert> you have done the above activity.</p>
+
+	<p>
+		There are many theorems that guarantee that certain matrices are positive proximal, and hence this iterative strategy is applicable.
+	See, for example, applications to Graphs and Ranking in <xref ref="chp10sec5"/>. 
+	For a variety of reasons, the Iterative Method (and its variants),  not the Algebraic Method, are predominantly used in industry.
+	Google makes heavy use of these methods.
+	</p>
 
 </section>

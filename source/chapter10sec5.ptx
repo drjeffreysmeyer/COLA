@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp10sec5" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Modern Application: Graphs and Ranking</title>
+
+        <definition xml:id="def-combinatorial-graph">
+            <title>Combinatorial Graph</title>
+            <statement>
+                <p>
+                    A <term>combinatorial graph</term> <m>\Gamma:=\Gamma(V,E)</m> is a collection of vertices <m>V=\{v_1,\ldots, v_r\}</m> and edges <m>E</m> connecting them. We often just call them graphs, but don't get confused with a graph of a function, they are different things. If two vertices are connected by an edge, we say they are <term>adjacent</term>.
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            Graphs are incredibly valuable for modeling networks such as utilities, roads, social networks, and websites.
+        </p>
+
+        <figure xml:id="fig-graph-example">
+            <caption>An example of a combinatorial graph.</caption>
+        </figure>
+
+        <p>
+            This graph has five vertices, but they are not all the same. Looking at this graph, you probably would agree that vertex <m>v_5</m> is most central, meanwhile by symmetry, the others are then equally second most central. What about <m>v_5</m> told you it was most central? In this case, it has the most adjacent vertices, but for more complicated graphs, you can imagine this cannot be the only thing you look at.
+        </p>
+
+        <p>
+            So the question becomes, how do you determine which vertices are most central? More importantly, how would you tell a computer how to determine which vertices are most central? What we want is a centrality function.
+        </p>
+
+        <definition xml:id="def-centrality-function">
+            <title>Centrality Function</title>
+            <statement>
+                <p>
+                    A <term>centrality function</term> <m>f</m> on the vertices is a rule that assigns a number to each vertex such that the larger the number, the more central it is, i.e. <m>f(v_i)&gt;f(v_j)</m> if <m>v_i</m> is more central than <m>v_j</m>. Letting <m>x_i:=f(v_i)</m>, then a centrality function can be represented as a <term>centrality vector</term> <m>\mathbf{x}</m>.
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            There are many ways to create such a centrality function, but here is a systematic idea: The value of the function on a vertex should be proportional to the sum of the values of the adjacent vertices. This is very appealing, since intuitively, vertices with more adjacencies should then have higher the values. To make this work, the constant of proportionality, say <m>\lambda</m> should be fixed for the whole graph and furthermore, <m>\lambda</m> and the values of the function at each vertex cannot be negative. (Think through why negative values would break this idea.)
+        </p>
+
+        <p>
+            Symbolically, for each <m>i</m>,
+        </p>
+
+        <me>\lambda x_i= x_{j_1}+x_{j_2}+\cdots + x_{j_r}, \hspace{1pc} \text{where } v_{j_1}, \ldots v_{j_r} \text{ are the vertices that are adjacent to } v_i</me>
+        <p>
+            This simply becomes
+        </p>
+        <me>\lambda \mathbf{x}=A_\Gamma \mathbf{x}</me>
+        <p>
+            where <m>\mathbf{x}</m> is a centrality vector and <m>A_\Gamma</m> is the <term>adjacency matrix</term> for <m>\Gamma</m> whose entry <m>a_{ij}</m> is 1 if there is an edge between <m>v_i</m> and <m>v_j</m> and 0 otherwise.
+        </p>
+
+        <definition xml:id="def-adjacency-matrix">
+            <title>Adjacency Matrix</title>
+            <statement>
+                <p>
+                    If <m>\Gamma</m> is a graph, its <term>adjacency matrix</term> <m>A_\Gamma</m> is the matrix whose entries are determine by 
+                </p>
+                <me>
+                    a_{ij} = \begin{cases}  1 &amp; \text{ if there is an edge between } v_i \text{ and } v_j \\
+                    0 &amp; \text{Otherwise}
+                    \end{cases}
+                </me>
+            </statement>
+        </definition>
+
+        <p>
+            So a reasonable centrality vector is should be associated a positive eigenvalue and associated nonnegative eigenvector. That is great, but how do we know one exists? Well, here is a black box (i.e. take as given) theorem:
+        </p>
+
+        <theorem xml:id="thm-perron-frobenius">
+            <title>Perron--Frobenius</title>
+            <statement>
+                <p>
+                    If <m>\Gamma</m> is a connected graph and <m>A_\Gamma</m> is its adjacency matrix, <m>A_\Gamma</m> has a unique largest real eigenvalue <m>\lambda_\Gamma</m> (called its <term>Perron--Frobenius eigenvalue</term>), and it has an all nonnegative eigenvector (called a <term>Perron--Frobenius eigenvector</term>).  
+                </p>
+                <p>
+                    Furthermore, if <m>\Gamma</m> has a loop with an odd number of edges (e.g. a triangle), then <m>\lambda_\Gamma</m> has <em>magnitude</em> larger than all other eigenvalues.
+                </p>
+            </statement>
+        </theorem>
+
+        <p>
+            The Perron--Frobenius Theorem has many generalizations and I give a simple version of it here that conveys the utility of this kind of result when searching for centrality vectors for graphs.
+        </p>
+
+        <p>
+            What this says is, to find a centrality vector for <m>\Gamma</m>, we do the following:
+        </p>
+        <ol>
+            <li>Turn the graph into a linear algebra object, its adjacency matrix <m>A_\Gamma</m>.</li>
+            <li>Approximate a Perron--Frobenius eigenvector.</li>
+        </ol>
+
+        <example>
+            <statement>
+                <p>
+                    Consider the graph <m>\Gamma</m> in Figure <xref ref="fig-graph-example" />. Its adjacency matrix is 
+                </p>
+                <me>
+                    A_\Gamma = \begin{bmatrix}0&amp;1&amp;0&amp;1&amp;1\\1&amp;0&amp;1&amp;0&amp;1\\0&amp;1&amp;0&amp;1&amp;1\\1&amp;0&amp;1&amp;0&amp;1\\1&amp;1&amp;1&amp;1&amp;0\end{bmatrix}.
+                </me>
+
+                <p>
+                    <alert>Method 1: Characteristic Polynomial + GeoGebra CAS.</alert> Using GeoGebra CAS, characteristic polynomial is
+                    <m>p_A(\lambda)= -\lambda^{5} + 8 \lambda^{3} + 8 \lambda^{2}</m>
+                    whose roots without multiplicity are
+                    <m>\{-2, -\sqrt{5} + 1, 0, \sqrt{5} + 1\}</m>.
+                    Its Perron--Frobenius eigenvalue is then <m>\lambda_\Gamma=\sqrt{5} + 1</m>.
+                    Plugging this into <m>(A-\lambda I)\mathbf{x}=\mathbf{0}</m> and row reducing, we find a Perron--Frobenius eigenvector of 
+                </p>
+                <me>
+                    \begin{bmatrix}
+                    \frac{5 \sqrt{5} + 11}{6 \sqrt{5} + 14}\\
+                    \frac{5 \sqrt{5} + 11}{6 \sqrt{5} + 14}\\
+                    \frac{5 \sqrt{5} + 11}{6 \sqrt{5} + 14}\\
+                    \frac{5 \sqrt{5} + 11}{6 \sqrt{5} + 14}\\
+                    1
+                    \end{bmatrix}  \approx
+                    \begin{bmatrix}
+                    0.8090169943749\\
+                    0.8090169943749\\
+                    0.8090169943749\\
+                    0.8090169943749\\
+                    1
+                    \end{bmatrix}
+                </me>
+                <p>
+                    We then <em>interpret</em> this to mean vertex 5 is ranked most central, and the others are ranked equally next most central.
+                </p>
+
+                <p>
+                    <alert>Method 2: Iterative + GeoGebra CAS.</alert>  
+                    Since <m>\Gamma</m> has triangles, without performing any computations we know its Perron--Frobenius eigenvalue will have magnitude larger than any other eigenvalues, and hence we may apply the iterative method to approximating an Perron--Frobenius eigenvector. Let's pick our test vector to be the standard basis vector <m>\mathbf{e}_1</m>. Using GeoGebra, with slider value for <m>n</m>, and then scaling by last entry to keep the numbers under control, we can see that after <m>n=70</m>, the numbers stabilize, and we get the Perron--Frobenius eigenvector correct to 15 decimal places of accuracy, i.e.
+                </p>
+                <me>
+                    \frac{1}{\text{Element}(A^{70}\mathbf{e}_1,5,1)}A^{70}\mathbf{e}_1\approx
+                    \begin{bmatrix}
+                    0.8090169943749\\
+                    0.8090169943749\\
+                    0.8090169943749\\
+                    0.8090169943749\\
+                    1
+                    \end{bmatrix}
+                </me>
+                <p>
+                    We then may draw the same conclusions as above. Note, as is standard with the iterative method, we do not need to compute the characteristic polynomial or its roots.
+                </p>
+            </statement>
+        </example>
+
+
+    <exercises>
+        <title>Chapter Homework Problems</title>
+
+        <exercise>
+            <statement>
+                <p>
+                    Rigorously prove the following proposition.
+                </p>
+                <p>
+                    <alert>Proposition 9.5.</alert>  
+                    If <m>W</m> is an invariant subspace of <m>B</m> and <m>A=PBP^{-1}</m>, 
+                    then <m>P(W)</m> is an invariant subspace of <m>A</m>.
+                </p>
+            </statement>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    Rigorously prove the following proposition.
+                </p>
+                <p>
+                    <alert>Proposition 9.7.</alert>  
+                    If <m>\mathcal{B}= \{\mathbf{v}_1,\ldots, \mathbf{v}_n\}\subset \mathbb{R}^n</m> is a basis, <m>P=[\mathbf{v}_1|\cdots| \mathbf{v}_n]</m>, <m>D</m> is a diagonal matrix with diagonal entries <m>\lambda_1,\ldots, \lambda_n</m>, and <m>A=PDP^{-1}</m>, then for each <m>i</m>, <m>1\le i\le n</m>, the line <m>L_i = \{t \mathbf{v}_i \mid t\in \mathbb{R}\}</m> is an <m>A</m>-invariant line with scaling factor <m>\lambda_i</m>.
+                </p>
+            </statement>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    Suppose that 
+                </p>
+                <me>
+                    A = \begin{bmatrix} 2&amp;1&amp;0\\  0&amp;1&amp;2\\1&amp;0&amp;1\end{bmatrix}
+                    \begin{bmatrix} 3&amp;0&amp;0\\  0&amp;2&amp;0\\0&amp;0&amp;-1\end{bmatrix}
+                    \begin{bmatrix} 2&amp;1&amp;0\\  0&amp;1&amp;2\\1&amp;0&amp;1\end{bmatrix}^{-1}.
+                </me>
+                <ol label="a">
+                    <li>Using the correct notation for the parametric vector equations for lines, find all <m>A</m>-invariant lines.</li>
+                    <li>For each <m>A</m>-invariant line, determine the scaling factor.</li>
+                </ol>
+            </statement>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    Suppose that <m>A</m> is a <m>2\times2</m> matrix which transforms the plane according to the following picture.
+                </p>
+                <image source="images_hw/hw09_invariant_lines.png" width="90%"/>
+                <ol label="a">
+                    <li>Using the correct notation for the parametric equations for lines, find all <m>A</m>-invariant lines.</li>
+                    <li>For each <m>A</m>-invariant line, determine the scaling factor.</li>
+                </ol>
+            </statement>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    Suppose that <m>A</m> is a <m>2\times2</m> matrix with invariant lines 
+                    <m>L_1 = \left\{\begin{bmatrix}2\\1\end{bmatrix} t \mid t\in \mathbb{R}\right\}</m>
+                    and 
+                    <m>L_2 = \left\{\begin{bmatrix}-3\\1\end{bmatrix} t \mid t\in \mathbb{R}\right\}</m>
+                    and associated scaling factors <m>\lambda_1 = 5</m> and <m>\lambda_2 = 2</m>. Determine the invariant lines and associated scaling factors for the matrix <m>A^3</m>. Be sure to justify <em>why</em> the lines you identify are invariant.
+                </p>
+            </statement>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    Consider the matrix <m>A=\begin{bmatrix}3&amp;1\\1&amp;3\end{bmatrix}</m>.
+                </p>
+                <ol label="a">
+                    <li>Use your <em>Invariant Line GeoGebra Tool</em> to explore the find reasonable guesses for the invariant lines <m>L_1</m> and <m>L_2</m> and their associated scaling factors. <em>Include GeoGebra images for both lines.</em></li>
+                    <li>Now <alert>symbolically</alert> find the invariant lines and scaling factors with the Algebraic Strategy. Verify you got the same thing as you did <alert>visually</alert> in the previous part.</li>
+                    <li>Use this to write down a similar matrix decomposition for <m>A</m>.</li>
+                    <li>Multiply the SMD out to verify that you do in fact recover <m>A</m> and the lines and scaling factors you found were correct.</li>
+                </ol>
+            </statement>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    Revisit Mathopolis. 
+                </p>
+                <ol label="a">
+                    <li>Let <m>A</m> be the stochastic matrix you found. Use the Algebraic Strategy to find its eigenstuff.</li>
+                    <li>Compare the eigenstuff you found to your conclusions in the prior problem. Explain how what you had found at that time was related to finding eigenstuff.</li>
+                </ol>
+            </statement>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    Consider the matrix <m>A=\begin{bmatrix}1&amp;2\\2&amp;1\end{bmatrix}</m>.
+                </p>
+                <ol label="a">
+                    <li>Compute <m>\text{disc}(A)</m> and then use this to determine the number of invariant lines <m>A</m> has in the plane.</li>
+                    <li>Compute <m>p_A(\lambda)</m>.</li>
+                    <li>Compute the eigenvalues of <m>A</m>.</li>
+                    <li>Set up, but do not evaluate, two augmented matrices whose solution sets correspond to eigenspaces.</li>
+                    <li>Find the parametric equations for the <m>A</m>-invariant lines.</li>
+                    <li>Find two independent eigenvectors of <m>A</m> and if possible, identify an ordered eigenbasis <m>\mathcal{B}</m>.</li>
+                    <li>Using complete sentences and geometric words, <alert>verbally</alert> describe how <m>A</m> transforms the plane.</li>
+                    <li><alert>Symbolically</alert> express your diagonalization of <m>A</m>.</li>
+                    <li>Using GeoGebra, <alert>visually</alert> represent the <m>\mathcal{B}</m>-coordinate grid, the <m>\mathcal{B}</m>-unit square, <m>S_\mathcal{B}</m>, and depict how <m>A</m> transforms <m>S_{\mathcal{B}}</m>.</li>
+                </ol>
+            </statement>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    Consider the following matrix <m>A=\begin{bmatrix}1&amp;4\\-1&amp;5\end{bmatrix}</m>.
+                </p>
+                <ol label="a">
+                    <li>Compute <m>\text{disc}(A)</m> and then use this to determine the number of invariant lines <m>A</m> has in the plane.</li>
+                    <li>Find <m>p_A(\lambda)</m>.</li>
+                    <li>Compute the eigenvalues of <m>A</m>.</li>
+                    <li>Set up, but do not evaluate an augmented matrix whose solution set corresponds to the eigenspace.</li>
+                    <li>Find the parametric equations for the <m>A</m>-invariant line and pick an eigenvector <m>\mathbf{v}</m>.</li>
+                    <li>Set up, but do not evaluate, an augmented matrix whose solution set correspond to the generalized eigenspace.</li>
+                    <li>Find the parametric equations for the <m>\mathbf{v}</m>-shear line and pick a generalized eigenvector <m>\mathbf{w}</m>. Let <m>\mathcal{B}</m> denote the ordered generalized eigenbasis you found.</li>
+                    <li>Using complete sentences and geometric words, <alert>verbally</alert> explain how <m>A</m> transforms the plane.</li>
+                    <li><alert>Symbolically</alert> express your triangularization of <m>A</m>.</li>
+                    <li>Using GeoGebra, <alert>visually</alert> represent the <m>\mathcal{B}</m>-coordinate grid, the <m>\mathcal{B}</m>-unit square, <m>S_\mathcal{B}</m>, and depict how <m>A</m> transforms <m>S_{\mathcal{B}}</m>.</li>
+                </ol>
+            </statement>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    Consider the complex number <m>z=4+3i</m>.
+                </p>
+                <ol label="a">
+                    <li>Use GeoGebra or sketch by hand <m>z</m> and <m>\overline{z}</m>. Be sure this is clearly labelled.</li>
+                    <li>Find the polar representation of this complex number.</li>
+                    <li>Compute <m>z^2</m> using both the Cartesian and polar representations. Which one was easier?</li>
+                </ol>
+            </statement>
+            <solution>
+                <p>
+                    (b) <m>z = 5e^{\theta i}</m> where <m>\theta =\arccos(4/5)</m>.
+                </p>
+                <p>
+                    (c) Using the Cartesian form requires foiling: <m>z^2= (4+3i)^2 = 7+14i</m>.
+                    Using the polar form is more direct: <m>z^2 =(5e^{\theta i})^2=25e^{2\theta i}</m> where <m>\theta</m> is a above.
+                </p>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    We can define a transformation of the complex plane <m>T:\mathbb{C}\to \mathbb{C}</m> where, given a complex number <m>z</m>, we then output <m>iz</m>. Recall that the complex plane <m>\mathbb{C}</m> is just the plane <m>\mathbb{R}^2</m> with multiplication with the identification <m>z = x+iy \leftrightarrow \mathbf{z} = \begin{bmatrix}x\\y\end{bmatrix}</m>. It turns out that there exists a <m>2\times 2</m> real matrix <m>A</m> such that <m>iz = A\mathbf{z}</m>.
+                </p>
+                <ol label="a">
+                    <li>Find <m>A</m>.</li>
+                    <li>Are you surprised by this matrix? Why or why not?</li>
+                    <li>What if we now consider <m>w=a+bi</m> and a new transformation <m>T:\mathbb{C}\to \mathbb{C}</m> where, given a complex number <m>z</m>, we then output <m>wz</m>. Can you find the associated matrix <m>A</m>? You are encouraged to use GeoGebra in your initial exploration.</li>
+                </ol>
+            </statement>
+            <solution>
+                <p>
+                    (a) Multiplication by <m>i</m> is just rotation by <m>90^\circ</m> counterclockwise, hence the associated matrix is <m>A=\begin{bmatrix}0&amp;-1\\1&amp;0\end{bmatrix}</m>.
+                </p>
+                <p>
+                    (c) More generally, complex multiplication by <m>w=a+bi</m> is the same as matrix multiplication by <m>A=\begin{bmatrix}a&amp;-b\\b&amp;a\end{bmatrix}</m>, a uniform stretch by <m>r=\sqrt{a^2+b^2}</m> and a rotation by <m>\theta =\arccos(a/r)</m> counterclockwise.
+                </p>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    Consider the following matrix <m>A=\begin{bmatrix}2&amp;-4\\2&amp;-2\end{bmatrix}</m>.
+                </p>
+                <ol label="a">
+                    <li>Compute <m>\text{disc}(A)</m> and then use this to determine the number of invariant lines <m>A</m> has in the plane.</li>
+                    <li>Find <m>p_A(\lambda)</m>.</li>
+                    <li>Use the quadratic formula to find and simplify the eigenvalues <m>\lambda_1</m> and <m>\lambda_2</m>.</li>
+                    <li>Set up, but do not evaluate, an augmented matrix whose solution sets correspond to a complex eigenspace.</li>
+                    <li>Find the parametric equations for the <m>A</m>-invariant line and pick an eigenvector <m>\mathbf{v}</m>. (Note: You will have complex numbers, that is okay.)</li>
+                    <li>Give a complex diagonalization of <m>A</m>.</li>
+                    <li>Use <m>\mathbf{v}</m> to find an ordered rotation basis <m>\mathcal{B}</m>.</li>
+                    <li>Using complete sentences and geometric words, <alert>verbally</alert> explain how <m>A</m> transforms the plane.</li>
+                    <li><alert>Symbolically</alert> express your rotationalization of <m>A</m>.</li>
+                    <li>Using GeoGebra, <alert>visually</alert> represent the <m>\mathcal{B}</m>-coordinate grid, the <m>\mathcal{B}</m>-unit square, <m>S_\mathcal{B}</m>, and depict how <m>A</m> transforms <m>S_{\mathcal{B}}</m>.</li>
+                </ol>
+            </statement>
+            <solution>
+                <p>
+                    (a) <m>\text{disc}(A) = -16</m>, hence <m>A</m> can be diagonalized over <m>\mathbb{C}</m> and had a rotationalization in the plane.
+                </p>
+                <p>
+                    (b) <m>p_A(\lambda) = \lambda^2 + 4</m>.
+                </p>
+                <p>
+                    (c) <m>\lambda = \pm 2i</m>
+                </p>
+                <p>
+                    (e) The complex eigenspace associated to <m>\lambda_1 = 2i</m> is 
+                    <me>L_1 = \left\{ t\begin{bmatrix}1+i\\1\end{bmatrix} \mid t\in \mathbb{C}\right\}.</me>
+                    The complex eigenspace associated to <m>\lambda_2 = \overline{\lambda_1} = -2i</m> is <m>L_2 = \overline{L_2}</m>.
+                </p>
+                <p>
+                    (f) <m>A = \begin{bmatrix}1+i&amp;1-i\\1&amp;1\end{bmatrix}\begin{bmatrix}2i&amp;0\\0&amp;-2i\end{bmatrix}\begin{bmatrix}1+i&amp;1-i\\1&amp;1\end{bmatrix}^{-1}</m>.
+                </p>
+                <p>
+                    (g) A rotation basis is <m>\mathcal{B} = \left\{\begin{bmatrix}1\\1\end{bmatrix}, \begin{bmatrix}1\\0\end{bmatrix}\right\}</m>. (Note: There are many acceptable choice here since any vector spanning <m>L_1</m> works)
+                </p>
+                <p>
+                    (h) Relative to the <m>\mathcal{B}</m>-coordinates, <m>A</m> is a uniform stretch by a factor of 2 and rotates the plane by <m>90^\circ</m> clockwise.
+                </p>
+                <p>
+                    (i) <m>A = \begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}\begin{bmatrix}0&amp;2\\-2&amp;0\end{bmatrix}\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{-1}</m>.
+                </p>
+                <p>
+                    (j)
+                </p>
+                <image source="images_hw/sol_hw11_03.png" width="90%"/>
+            </solution>
+        </exercise>
+
+        <exercise>
+            <statement>
+                <p>
+                    <alert>(It all comes together.)</alert> Consider the matrix <m>A=\begin{bmatrix}3&amp;4\\4&amp;3\end{bmatrix}</m>.
+                </p>
+                <ol label="a">
+                    <li>Without even computing the discriminant <m>\text{disc}(A)</m>, you should look at <m>A</m> and immediately understand its eigenstuff. What type of eigenvalues? How will the invariant lines lie in the plane relative to each other? Why?</li>
+                    <li>Compute <m>p_A(\lambda)</m> and compute the eigenvalues of <m>A</m>.</li>
+                    <li>Find the parametric equations for the <m>A</m>-invariant lines. Clearly show all steps.</li>
+                    <li>Verify that the invariant lines are orthogonal.</li>
+                    <li>Find an ordered orthonormal eigenbasis <m>\mathcal{B}</m> for <m>A</m>.</li>
+                    <li>Using complete sentences and geometric words, <alert>verbally</alert> describe how <m>A</m> transforms the plane.</li>
+                    <li><alert>Symbolically</alert> express your orthogonal diagonalization of <m>A</m>.</li>
+                    <li>Using GeoGebra, <alert>visually</alert> represent the <m>\mathcal{B}</m>-coordinate grid, the <m>\mathcal{B}</m>-unit square, <m>S_\mathcal{B}</m>, and depict how <m>A</m> transforms <m>S_{\mathcal{B}}</m>.</li>
+                </ol>
+            </statement>
+            <solution>
+                <p>
+                    (a) Since this is a symmetric matrix, the <m>2\times 2</m> Spectral Theorem tells us that this matrix is <alert>orthogonally diagonalizable</alert>, that is, it has 2 distinct real eigenvalues and the associated eigenspaces are orthogonal.
+                </p>
+                <p>
+                    (b) Using the <m>2\times 2</m> characteristic polynomial formula, 
+                    <m>p_A(\lambda) = \lambda^2 -\sage{tr}\lambda+ \sage{dt} = (\lambda-\sage{l1})(\lambda-\sage{l2})</m>.
+                </p>
+                <p>
+                    (c) Going through the now usual methods, we get our two invariant lines:
+                    <me>L_1 = \left\{ s\sage{v1} \mid s\in\mathbb{R} \right\}, \hspace{1pc} L_2 = \left\{ s\sage{v2} \mid s\in\mathbb{R} \right\}.</me>
+                </p>
+                <p>
+                    (d) We see 
+                    <m>(\mathbf{v}_1,\mathbf{v}_2) = \left(\sage{v1},\sage{v2}\right)= 0.</m>
+                </p>
+                <p>
+                    (e) We normalize to get our orthonormal eigenbasis
+                    <m>\mathcal{B} = \left\{ \sage{u1exact},\sage{u2exact}\right\}.</m>
+                </p>
+                <p>
+                    (f) It follows that <m>A</m>
+                </p>
+                <ol>
+                    <li>scales the plane by a factor of <m>\sage{l1}</m> in the direction of <m>L_1</m> and </li>
+                    <li>scales the plane by a factor of <m>\sage{l2}</m> in the direction of <m>L_2</m>.</li>
+                </ol>
+                <p>
+                    Alternatively, you can understand <m>A</m> as the composition:
+                </p>
+                <ol>
+                    <li>First rotate the plane by <m>45^\circ</m> clockwise.</li>
+                    <li>Second stretch by a factor of 7 in the <m>x</m>-direction and reflect over the <m>x</m>-axis.</li>
+                    <li>Third, rotate the plane back <m>45^\circ</m> counterclockwise.</li>
+                </ol>
+                <p>
+                    (g) We get the orthogonal diagonalization:
+                    <m>A = QDQ^T = \sage{Q}\sage{D}\sage{Q.transpose()}.</m>
+                </p>
+                <p>
+                    (h) The visual representation should look like:
+                </p>
+                <image source="images_hw/sol_hw14_03.png" width="60%"/>
+            </solution>
+        </exercise>
+
+        <sagesilent>
+        latex.matrix_delimiters('[', ']')
+        a = 3
+        b = 4
+        d = 3
+        A = matrix(QQbar,2,2,[a,b,b,d])
+        tr = a+d
+        dt = (a*d)-b^2
+        Disc = tr^2-4*dt
+        l1 = (tr+sqrt(Disc))/2
+        l2 = (tr-sqrt(Disc))/2
+
+        temp = A[0][0]-l1
+        if temp == 0:
+            v1 = matrix(QQbar, 2,1,[1,0])
+        else:
+            v1 = matrix(QQbar, 2,1,[-A[0][1]/temp,1])
+        u1 = 1/sqrt((v1.transpose()*v1)[0][0])*v1
+        u1exact = matrix(2,1,[u1[0][0].radical_expression(),u1[1][0].radical_expression()])
+
+        temp = A[0][0]-l2
+        if temp == 0:
+            v2 = matrix(QQbar, 2,1,[1,0])
+        else:
+            v2 = matrix(QQbar, 2,1,[-A[0][1]/temp,1])
+        u2 = 1/sqrt((v2.transpose()*v2)[0][0])*v2
+        u2exact = matrix(2,1,[u2[0][0].radical_expression(),u2[1][0].radical_expression()])
+
+        Q = block_matrix([[u1exact,u2exact]])
+        D = matrix(2,2,[l1,0,0,l2])
+        </sagesilent>
+
+    </exercises>
+</section>
+
+

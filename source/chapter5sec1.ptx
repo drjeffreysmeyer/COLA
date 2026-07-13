@@ -332,7 +332,7 @@
     </p>
     <sidebyside widths="55% 45%">
       <p>
-        Without doing any computations, since we see three vectors in <m>\mathbb{R}^2</m>, we know this collection is <alert>Dependent</alert>. 
+        Without doing any computations, since we see three vectors in <m>\mathbb{R}^2</m>, we know this collection is <em>dependent</em>. 
         Now, to find the dependency equations, we compute:
         <me>
           \begin{bmatrix}
@@ -347,9 +347,13 @@
         and using <xref ref="insight-dependence" />, 
         <me>\vect{v}_3 = -0.5\vect{v}_1+0.5\vect{v}_2.</me>
       </p>
-      <image xml:id="tikz-vector-dependency">
-        
-      </image>
+        <image source="images/5.1_dependency_analysis.png" width="100%">
+    <description> 
+      <p>
+        Three dependent vectors in <m>\R^3</m>.
+      </p>
+    </description>
+  </image>
     </sidebyside>
   </statement>
 </example>

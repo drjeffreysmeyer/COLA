@@ -229,15 +229,330 @@
         </li>
         <li>
           <p>
-            <alert>Part 4: Visualizing and Computing <m>\mathcal{B}</m>-Coordinates</alert>
+            <alert>Part 4: Visualizing and Computing <m>\mathcal{B}</m>-Coordinates</alert>  Drop a new moveable point <m>C</m> and draw the vector <m>\mathbf{w}</m> from <m>O</m> to <m>C</m>.
+                The function <c>x(A)</c> picks out the <m>x</m>-coordinate of <m>A</m>, and similarly the function <c>y(A)</c> picks out the <m>y</m>-coordinate of <m>A</m>.  
+                Using these functions, input an augmented matrix whose solution set is the <m>\mathcal{B}</m>-coordinates of <m>\mathbf{w}</m>.
+                Use the <c>ReducedRowEchelon</c> command to reduce the matrix.  
+                You should see the <m>\mathcal{B}</m>-coordinates here, but we need to pick them out.  The <c>Element</c> function <c>Element(M,i,j)</c> picks out the entry in the <m>i^{th}</m> row and <m>j^{th}</m> column of the matrix <m>M</m> (e.g. <c>Element(M,1,1)</c> is the element of <m>M</m> in row 1 and column 1).  
+                Use <c>Element</c> to build the vector <m>[\mathbf{w}]_{\mathcal{B}}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <alert>Part 5: Exploration</alert>  <p>
+                Move around your basis and your vector <m>\mathbf{w}</m>.  
+                Visually estimate the <m>\mathcal{B}</m>-coordinates of <m>\mathbf{w}</m> and then check to see if your coordinate calculator agrees. 
+                When you are done playing, use your <m>\mathcal{B}</m>-coordinate tool to <alert>visually</alert> and <alert>symbolically</alert> analyze the following.
+            </p>
+            <p>
+                Let 
+                <m>\mathcal{B}=\{\mathbf{v}_1, \mathbf{v}_2\}=\left\{\begin{bmatrix}3\\1\end{bmatrix},\begin{bmatrix}1\\2\end{bmatrix}\right\}</m>.
+                If <m>[\mathbf{u}]_{\mathcal{B}}=\begin{bmatrix}1\\3\end{bmatrix}</m>, find <m>\mathbf{u}</m>.
+                If <m>\mathbf{w}=\begin{bmatrix}11\\7\end{bmatrix}</m>, find <m>[\mathbf{w}]_{\mathcal{B}}</m>.
+            </p>
           </p>
         </li>
       </ul>
     </p>
 </question>
 
+<activity xml:id="geogebra_activity-bcoord_grid2">
+    <title>The <m>\mathcal{B}</m>-Coordinate Grid Tool</title>
+    <introduction>
+        <p>
+            In this activity, you will learn how to use GeoGebra to visualize the <m>\mathcal{B}</m>-coordinate grid and use it to compute <m>\mathcal{B}</m>-coordinates.  
+            The GeoGebra functions you should gain proficiency with are:
+            <c>Line</c>, <c>Sequence</c>, <c>Coordinate</c>, and <c>Element</c>.
+            In so doing, you will create the <em><m>\mathcal{B}</m>-Coordinate Grid Tool</em>, which you will frequently revisit for the remainder of the course.
+        </p>
+    </introduction>
+
+    <task>
+        <title>Creating your basis</title>
+        <statement>
+            <p>
+                Drop two moveable points <m>A</m> and <m>B</m> in the plane.  
+                Label the origin <m>O</m>. 
+                Use the <c>Vector</c> tool to draw the vector from <m>O</m> to <m>A</m> and then <m>O</m> to <m>B</m>.  
+                Name them <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m>, respectively.  Move <m>A</m> and <m>B</m> so that <m>\mathbf{v}_1</m> and <m>\mathbf{v}_2</m> are independent.
+                You have now created your basis <m>\mathcal{B}</m>.
+            </p>
+        </statement>
+    </task>
+
+    <task>
+        <title>Constructing grid lines part 1: One By One</title>
+        <statement>
+            <p>
+                The <c>Line(P,Q)</c> function creates a line going through the points <m>P</m> and <m>Q</m>. 
+                With that in mind, using the <c>Line</c> tool, create the first 3 constant-<m>\mathbf{v}_1</m> lines using the <c>Line</c> tool.
+                (Think about what points will need to be input into <c>Line</c> and how do they relate to <m>A</m> and <m>B</m>.)
+                Do the same for the first 3 constant-<m>\mathbf{v}_2</m>.
+                You should now have a portion of your <m>\mathcal{B}</m>-grid!  
+            </p>
+        </statement>
+    </task>
+
+    <task>
+        <title>Constructing grid lines part 2: Sequence</title>
+        <statement>
+            <p>
+                When dealing with computers, whenever we encounter a thing we are doing over and over again, we want to "loop" that process so that the computer does all of the work in one line of code.
+                GeoGebra does this with the <c>Sequence</c> function.
+                More precisely you have to input 4 things: <c>Sequence</c>(Object(<m>n</m>), <m>n</m>, lower, upper), and object (such as a line) in terms of some value <m>n</m> which you want to vary, and then the lower and upper bound on those ranges.
+                Use the <c>Sequence</c> function, together with what you learned in the previous part, to have a single line of GeoGebra code construct the to build the first 21 constant-<m>\mathbf{v}_1</m> lines (10 in each direction). Do a similar thing for the first 21 constant-<m>\mathbf{v}_2</m> lines.  
+            </p>
+        </statement>
+    </task>
+
+    <task>
+        <title>Visualizing and Computing <m>\mathcal{B}</m>-Coordinates</title>
+        <statement>
+            <p>
+                Drop a new moveable point <m>C</m> and draw the vector <m>\mathbf{w}</m> from <m>O</m> to <m>C</m>.
+                The function <c>x(A)</c> picks out the <m>x</m>-coordinate of <m>A</m>, and similarly the function <c>y(A)</c> picks out the <m>y</m>-coordinate of <m>A</m>.  
+                Using these functions, input an augmented matrix whose solution set is the <m>\mathcal{B}</m>-coordinates of <m>\mathbf{w}</m>.
+                Use the <c>ReducedRowEchelon</c> command to reduce the matrix.  
+                You should see the <m>\mathcal{B}</m>-coordinates here, but we need to pick them out.  The <c>Element</c> function <c>Element(M,i,j)</c> picks out the entry in the <m>i^{th}</m> row and <m>j^{th}</m> column of the matrix <m>M</m> (e.g. <c>Element(M,1,1)</c> is the element of <m>M</m> in row 1 and column 1).  
+                Use <c>Element</c> to build the vector <m>[\mathbf{w}]_{\mathcal{B}}</m>.
+            </p>
+        </statement>
+    </task>
+
+    <task>
+        <title>Exploration</title>
+        <statement>
+            <p>
+                Move around your basis and your vector <m>\mathbf{w}</m>.  
+                Visually estimate the <m>\mathcal{B}</m>-coordinates of <m>\mathbf{w}</m> and then check to see if your coordinate calculator agrees. 
+                When you are done playing, use your <m>\mathcal{B}</m>-coordinate tool to <alert>visually</alert> and <alert>symbolically</alert> analyze the following.
+            </p>
+            <p>
+                Let 
+                <m>\mathcal{B}=\{\mathbf{v}_1, \mathbf{v}_2\}=\left\{\begin{bmatrix}3\\1\end{bmatrix},\begin{bmatrix}1\\2\end{bmatrix}\right\}</m>.
+                If <m>[\mathbf{u}]_{\mathcal{B}}=\begin{bmatrix}1\\3\end{bmatrix}</m>, find <m>\mathbf{u}</m>.
+                If <m>\mathbf{w}=\begin{bmatrix}11\\7\end{bmatrix}</m>, find <m>[\mathbf{w}]_{\mathcal{B}}</m>.
+            </p>
+        </statement>
+    </task>
+</activity>
+
+<remark>
+    <p>
+        Visualize and play with the <alert><m>\mathcal{B}</m>-coordinate grid</alert> and change of coordinates at GeoGebra ID:
+        <url href="https://www.geogebra.org/m/sf7GdaBw">sf7GdaBw</url>.
+    </p>
+</remark>
+
+<p>
+    More generally, if <m>S\subset \mathbb{R}^m</m> is a collection of <m>n</m>-many nonzero, linearly independent vectors, then <m>S</m> is a basis for its span.  
+    This gives a coordinate system on this span.
+</p>
+
+<example>
+    <statement>
+        <p>
+            Consider the collection <m>S = \{\mathbf{v}_1,\mathbf{v}_2\}\subset \mathbb{R}^3</m> where
+        </p>
+        <p>
+            <m>\mathbf{v}_1=\begin{bmatrix}1\\2\\1 \end{bmatrix}</m> and
+            <m>\mathbf{v}_2=\begin{bmatrix}1\\-1\\2\end{bmatrix}</m>.
+            Let <m>W= \mathrm{span}(S)</m> be the plane spanned by <m>S</m> in <m>\mathbb{R}^3</m>.  Every point on this plane can be uniquely described by the amount of <m>\mathbf{v}_1</m> and the amount of <m>\mathbf{v}_2</m>.  This gives a coordinate grid on <m>W</m>.
+        </p>
+        <p>
+            For example, consider the vector 
+            <m>\mathbf{w} = \begin{bmatrix}3\\0\\5 \end{bmatrix}</m> lying in the plane <m>W</m>.
+        </p>
+        <p>
+            Since 
+            <me>
+            \left[\begin{array}{rr|r}
+            1&amp;1&amp;3\\2&amp;-1&amp;0\\1&amp;2&amp;5
+            \end{array}\right]
+            \sim
+            \left[\begin{array}{rr|r}
+            1&amp;0&amp;1\\0&amp;1&amp;2\\0&amp;0&amp;0
+            \end{array}\right],
+            </me>
+            we have <m>[\mathbf{w}]_S=\begin{bmatrix}1\\2\end{bmatrix}</m>.  
+        </p>
+        <figure>
+            <image source="images/5.4_coordinates4.png" width="100%"/>
+        </figure>
+        <p>
+            Conversely, given <m>[\mathbf{u}]_S=\begin{bmatrix}2\\-1\end{bmatrix}</m>, this <em>means</em> <m>\mathbf{u} = 2\mathbf{v}_1-\mathbf{v}_2 = \begin{bmatrix}1\\5\\0\end{bmatrix}</m>.
+        </p>
+    </statement>
+</example>
+
+<remark>
+    <p>
+        Play with bases of planes in <m>\mathbb{R}^3</m> at GeoGebra ID:
+        <url href="https://www.geogebra.org/m/bfqhrstb">bfqhrstb</url>.
+    </p>
+</remark>
+
+<exercises>
+    <title>Problems</title>
+    <exercise>
+        <statement>
+            <p>
+                Suppose
+                <m>S = \{\mathbf{w}_1, \mathbf{w}_2, \mathbf{w}_3, \mathbf{w}_4, \mathbf{w}_5\}\subset \mathbb{R}^3</m>
+                and <m>\operatorname{rref}(A_S)=\begin{bmatrix} 
+                1&amp;2&amp;0&amp;0&amp;2\\
+                0&amp;0&amp;1&amp;0&amp;3\\
+                0&amp;0&amp;0&amp;1&amp;1
+                \end{bmatrix}</m>.
+            </p>
+            <ol marker="a">
+                <li>
+                    <p>Interpreting <m>\operatorname{rref}(A_S)</m>, deduce whether or not <m>S</m> is independent. Explain.</p>
+                </li>
+                <li>
+                    <p>If <m>S</m> is dependent, (i) find a subset <m>S_0\subset S</m> which is independent, and (ii) write each vector in <m>S-S_0</m> as a linear combination of the vectors in <m>S</m>.</p>
+                </li>
+            </ol>
+        </statement>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>
+                Consider the matrix 
+                <m>A=\begin{bmatrix} 
+                2&amp;6&amp;1&amp;14&amp;32\\
+                1&amp;3&amp;1&amp;9&amp;18\\
+                4&amp;13&amp;2&amp;29&amp;67
+                \end{bmatrix}</m>.
+            </p>
+            <ol marker="a">
+                <li>
+                    <p>Before performing any computations, what do you <alert>expect</alert> the nullity of <m>A</m> to be? Why?</p>
+                </li>
+                <li>
+                    <p><alert>Symbolically</alert> find <m>\operatorname{Null}(A)</m>.</p>
+                </li>
+                <li>
+                    <p>Find a collection of linearly independent vectors that spans <m>\operatorname{Null}(A)</m>. Justify.</p>
+                </li>
+            </ol>
+        </statement>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>
+                Analyze <xref ref="figure-hw06-coordinates" /> and then answer the following questions.
+            </p>
+            <figure xml:id="figure-hw06-coordinates">
+                <caption></caption>
+                <image source="images/5.4_coordinates5.png" width="100%"/>
+            </figure>
+            <ol marker="a">
+                <li>
+                    <p>What is the basis <m>\mathcal{B}=\{\mathbf{v}_1,\mathbf{v}_2\}</m> depicted?</p>
+                </li>
+                <li>
+                    <p>Find the <m>\mathcal{B}</m>-coordinates of the vector <m>\mathbf{w}</m>, i.e. <m>[\mathbf{w}_1]_\mathcal{B}</m>.</p>
+                </li>
+            </ol>
+        </statement>
+    </exercise>
+
+    <exercise xml:id="hw06_04">
+        <statement>
+            <p>
+                Here you will use the GeoGebra <m>\mathcal{B}</m>-coordinate grid tool you made in class.
+            </p>
+            <ol marker="a">
+                <li>
+                    <p>Slide your points <m>A</m> and <m>B</m> so that graphics window depicts the coordinate grid associated to the ordered basis <m>\mathcal{B}=\left\{ \begin{bmatrix}4\\1\end{bmatrix},  \begin{bmatrix}-2\\2\end{bmatrix}\right\}</m>.</p>
+                </li>
+                <li>
+                    <p>Use your picture to <alert>visually</alert> find the standard coordinates of the vector <m>\mathbf{w}_1</m> with <m>\mathcal{B}</m>-coordinates <m>[\mathbf{w}_1]_\mathcal{B}=\begin{bmatrix}-1\\2\end{bmatrix}</m>. Include a clearly labelled GeoGebra picture depicting this.</p>
+                </li>
+                <li>
+                    <p>Set up a matrix expression that represents these coordinates, <alert>symbolically</alert> evaluate, and verify they match what you saw <alert>visually</alert> in the previous part.</p>
+                </li>
+                <li>
+                    <p>Use your picture to <alert>visually</alert> find the <m>\mathcal{B}</m>-coordinates of the vector <m>\mathbf{w}_2=\begin{bmatrix}6\\4\end{bmatrix}</m>. Include a clearly labelled GeoGebra picture depicting this.</p>
+                </li>
+                <li>
+                    <p>Set up a matrix equation whose solution represents the <m>\mathcal{B}</m>-coordinates of <m>\mathbf{w}_2</m>.</p>
+                </li>
+                <li>
+                    <p>Solve this system <alert>symbolically</alert>, either by hand or via GeoGebra, and verify that your solution matches your <m>\mathcal{B}</m>-coordinates you found visually in the previous part.</p>
+                </li>
+                <li>
+                    <p>Use your picture to <alert>visually</alert> <em>approximate</em> the <m>\mathcal{B}</m>-coordinates of the vector <m>\mathbf{w}_3=\begin{bmatrix}8\\6\end{bmatrix}</m>. Include a clearly labelled GeoGebra picture depicting this.</p>
+                </li>
+                <li>
+                    <p>Set up a matrix equation whose solution represents the <em>exact</em> <m>\mathcal{B}</m>-coordinates of <m>\mathbf{w}_3</m>.</p>
+                </li>
+                <li>
+                    <p>Solve this system <alert>symbolically</alert>, either by hand or GeoGebra, and verify that your solution matches your <m>\mathcal{B}</m>-coordinates you found visually in the previous part.</p>
+                </li>
+            </ol>
+        </statement>
+    </exercise>
+
+    <exercise xml:id="hw06_05">
+        <statement>
+            <p>
+                This is a 3D version of <xref ref="hw06_04" />.
+            </p>
+            <p>
+                Let <m>S = \{\mathbf{w}_1,\mathbf{w}_2\} = \left\{
+                \begin{bmatrix}
+                -4 \\ 3 \\ 4
+                \end{bmatrix}, 
+                \begin{bmatrix}
+                0 \\ -4 \\ 1 
+                \end{bmatrix}\right\}\subset \mathbb{R}^3</m>, <m>W = \mathrm{span}(S)</m> and  
+                <m>\mathbf{b}_1 = 
+                \begin{bmatrix}
+                -12\\ -15\\ 18
+                \end{bmatrix}</m>.
+            </p>
+            <ol marker="a">
+                <li>
+                    <p>Use the 3D Graphics view in GeoGebra to depict <m>\mathbf{w}_1</m>, <m>\mathbf{w}_2</m>, and <m>W</m>. Include the image. <br/>
+                    (Hint: Use <c>Plane Through 3 Points</c> tool.)</p>
+                </li>
+                <li>
+                    <p>Explain <alert>visually</alert> why <m>S</m> is linearly independent.</p>
+                </li>
+                <li>
+                    <p><alert>Symbolically</alert> show that <m>S</m> is linearly independent.</p>
+                </li>
+                <li>
+                    <p>Use your image to show <alert>visually</alert> that <m>\mathbf{b}_1</m> lies in <m>W</m>. Conclude <m>S</m> is a basis for <m>W</m>.</p>
+                </li>
+                <li>
+                    <p><alert>Symbolically</alert> show that <m>\mathbf{b}_1</m> lies in <m>W</m>.</p>
+                </li>
+                <li>
+                    <p>Use the <c>Sequence</c> and <c>Line</c> tools to draw the <m>S</m>-coordinate grid on <m>W</m>.</p>
+                </li>
+                <li>
+                    <p><alert>Visually</alert> find the <m>S</m>-coordinates of <m>\mathbf{b}_1</m>.</p>
+                </li>
+                <li>
+                    <p><alert>Symbolically</alert> find <m>[\mathbf{b}_1]_{S}</m>.</p>
+                </li>
+                <li>
+                    <p>Let <m>\mathbf{b}_2\in W</m> such that <m>[\mathbf{b}_2]_{S}=\begin{bmatrix} -2\\3\end{bmatrix}</m>. Visually find <m>\mathbf{b}_2</m>.</p>
+                </li>
+                <li>
+                    <p><alert>Symbolically</alert> find <m>\mathbf{b}_2</m> (in standard coordinates).</p>
+                </li>
+            </ol>
+        </statement>
+    </exercise>
+</exercises>
 
 
-<image source="images/5.4_coordinates4.png" width="100%"/>
+
 
 </section>

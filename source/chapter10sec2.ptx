@@ -2,10 +2,154 @@
 
 <section xml:id="chp10sec2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Algebraically Finding Invariant Lines</title>
+  
+  <p>
+    Now that we have a clear visual picture for finding invariant lines and their scaling factors, let's try to do the same thing algebraically.  
+    If <m>T(\vect{x})=A\vect{x}</m>, then a nonzero vector <m>\vect{x}</m> on a  <m>T</m>-invariant line satisfies:
+  </p>
 
-	<p>
-		
-	</p>
+  <men xml:id="eq-eigen">A\vect{x}=\lambda\vect{x}  \hspace{2pc} \text{ for some scaling factor } \hspace{2pc} \lambda\in \R.</men>
+
+  <p>
+    Performing algebraic operations to <xref ref="eq-eigen"/> gives the equivalent matrix equation
+  </p>
+
+  <men>(A-\lambda I)\vect{x}=\vect{0}</men>
+
+  <p>
+    Therefore, finding <m>T</m>-invariant lines can be reframed as finding non-zero null spaces.
+    It turns out, for almost all <m>\lambda\in \R</m>, <m>\Null(A-\lambda I)</m> is the zero subspace.  
+    We need to go on a hunt for scaling factors <m>\lambda</m> for which <m>\Null(A-\lambda I)</m> <em>not</em> the zero subspace.  
+    For <m>\Null(A-\lambda I)</m> to be nonzero, the transformation associated to the matrix <m>A-\lambda I</m> must be a <em>projection</em>!
+  </p>
+
+  <p>
+    We know that projections smash volumes and have a volume scaling factor of zero.
+    Hence, for <m>A-\lambda I</m> to be a projection, it must be the case that <m>\det(A-\lambda I)=0</m>.
+    When <m>A</m> is a small matrix (e.g. <m>n\times n</m> where <m>n\lt 5</m>), then <m>\det(A-\lambda I)</m> can be (relatively) easily computed, and we can see it is a polynomial in <m>\lambda</m> whose zeros we can find.
+    Once we find those <m>\lambda</m>'s, we can compute the nonzero nullspaces.
+  </p>
+
+  <p>
+    Let's see those ideas in action.
+  </p>
+
+  <example xml:id="example_eigenstuff1">
+    <statement>
+      <p>
+        Let <m>A=\left[ \begin{array}{rr}2.5 \amp -0.5 \\ -0.5 \amp 2.5 \end{array}\right]</m>.  
+        Using the Invariant Line tool, we can quickly find its invariant lines and their associated scaling factors.  
+        Let's now try this algebraically.
+      </p>
+
+      <p>
+        <alert>Step 1.</alert> Find the polynomial 
+      </p>
+      
+      <me>p_A(\lambda)=\det\left[ \begin{array}{cc}2.5-\lambda \amp -0.5 \\ -0.5 \amp 2.5-\lambda \end{array}\right]= \lambda^2-5\lambda+6 = (\lambda-2)(\lambda-3).</me>
+      
+      <p>
+        <alert>Step 2.</alert>  The possible scaling factors are the roots of <m>p_A(\lambda)</m>, namely <m>\lambda=2,3</m>.
+      </p>
+
+      <p>
+        <alert>Step 3.</alert>  For each scaling factor, we find the associated invariant line.
+      </p>
+
+      <me>\lambda_1=2: \hspace{2pc} \left[ \begin{array}{cc|c}2.5-2 \amp -0.5 \amp 0 \\ -0.5 \amp 2.5-2 \amp 0 \end{array}\right] = \left[ \begin{array}{rr|r}0.5 \amp -0.5 \amp 0 \\ -0.5 \amp 0.5 \amp 0 \end{array}\right]\sim \left[ \begin{array}{rr|r}1 \amp -1 \amp 0 \\ 0 \amp 0 \amp 0 \end{array}\right].</me>
+      
+      <p>
+        The invariant line with scaling factor 2 is 
+        <m>E_2:=\Null(A-2I) = \left\{t\left[ \begin{array}{r}1 \\ 1 \end{array}\right] \ \big| \ t\in \R\right\}.</m>
+      </p>
+
+      <me>\lambda_2=3: \hspace{2pc} \left[ \begin{array}{cc|c}2.5-3 \amp -0.5 \amp 0 \\ -0.5 \amp 2.5-3 \amp 0 \end{array}\right] = \left[ \begin{array}{rr|r}-0.5 \amp -0.5 \amp 0 \\ -0.5 \amp -0.5 \amp 0 \end{array}\right]\sim \left[ \begin{array}{rr|r}1 \amp 1 \amp 0 \\ 0 \amp 0 \amp 0 \end{array}\right].</me>
+      
+      <p>
+        The invariant line with scaling factor 3 is <m>E_3:=\Null(A-3I) = \left\{t\left[ \begin{array}{r}-1 \\ 1 \end{array}\right] \ \big| \ t\in \R\right\}</m>.
+      </p>
+
+      <p>
+        Observe <m>\vect{v}_1=\left[ \begin{array}{r}1 \\ 1 \end{array}\right]</m> is a nice choice for a nonzero vector on <m>E_2</m> and <m>\vect{v}_2=\left[ \begin{array}{r}-1 \\ 1 \end{array}\right]</m> is a nice choice for a nonzero vector on <m>E_3</m>.
+        The basis <m>\mathcal{B}=\{\vect{v}_1,\vect{v}_2\}</m> is a good basis for understanding <m>A</m>, namely, <m>A</m> stretched the <m>\vect{v}_1</m>-direction by a factor of <m>2</m> and stretches the <m>\vect{v}_2</m>-direction by a factor of 3.  
+        This gives us a nice similar matrix decomposition where <m>A</m> is similar to a diagonal matrix:
+        <m>A=\left[ \begin{array}{rr}1 \amp -1 \\ 1 \amp 1 \end{array}\right]\left[ \begin{array}{rr}2 \amp 0 \\ 0 \amp 3 \end{array}\right]\left[ \begin{array}{rr}1 \amp -1 \\ 1 \amp 1 \end{array}\right]^{-1}</m>  (cf. Example <xref ref="example_simmatrixdecomp1"/>).
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    So we have the <alert>Algebraic Strategy</alert> for finding invariant lines and their scaling factors:
+  </p>
+
+  <ol>
+    <li><p>Compute <m>p_A(\lambda):=\det(A-\lambda I)</m>.  This is a degree <m>n</m> polynomial in <m>\lambda</m>.</p></li>
+    <li><p>Find all roots of <m>p_A(\lambda)</m>.  These are the possible scaling factors.</p></li>
+    <li><p>For each scaling factor <m>\lambda_i</m>,  find the invariant subspace <m>E_{\lambda_i}:=\Null(A-\lambda_i I)</m>.</p></li>
+  </ol>
+
+  <p>
+    Now let's introduce the official terminology for these concepts.
+  </p>
+
+  <definition xml:id="def-eigen_dictionary">
+    <title>The Eigentheory Dictionary</title>
+    <statement>
+      <p>
+        Let <m>A</m> be an <m>n\times n</m> matrix.  
+      </p>
+      <ol>
+        <li><p><m>p_A(\lambda)=\det(A-\lambda I)</m> is the <term>characteristic polynomial</term> of <m>A</m>.</p></li>
+        <li><p>A root of the characteristic polynomial is an <term>eigenvalue</term> of <m>A</m>.</p></li>
+        <li><p>For each eigenvalue <m>\lambda_i</m>, <m>E_{\lambda_i}:=\Null(A-\lambda_i I)</m> is its associated  <term>eigenspace</term>.</p></li>
+        <li><p>Nonzero vectors in <m>E_{\lambda_i}</m> are <term>eigenvectors</term> associated to <m>\lambda_i</m>.</p></li>
+        <li><p>A collection of <m>n</m> linearly independent eigenvectors <m>\mathcal{B}</m> is an <term>eigenbasis</term>.</p></li>
+        <li><p>The similar matrix decomposition associated to <m>\mathcal{B}</m> is a <term>diagonalization</term> of <m>A</m>.</p></li>
+      </ol>
+    </statement>
+  </definition>
+
+  <p>
+    Note that there is <em>no guarantee</em> that a given matrix should have enough linearly independent eigenvectors to form an eigenbasis.
+    Go back to <xref ref="example_eigenstuff1"/> and make sure you can use proper eigensutff terminology to describe everything.
+  </p>
+
+  <proposition>
+	<title>Different Eigenvalues Implies Independence</title>
+	<statement>
+		<p>
+			If <m>A</m> is an <m>n\times n</m> matrix with <m>k</m> distinct eigenvalues <m>\lambda_1, \ldots, \lambda_k</m> and associated eigenvectors <m>\vect{v}_1,\ldots, \vect{v}_k</m>, 
+    then the vectors <m>S =\{\vect{v}_1,\ldots, \vect{v}_k\}</m> are linearly independent.
+		</p>
+	</statement>
+</proposition>
+
+  <proof>
+    <p>
+      This is a homework assignment.  
+      To determine independence, you will need to analyze the mixture
+      <m>x_1\vect{v}_1+\cdots+ x_k\vect{v}_k= \vect{0}</m> and determine that the <em>only</em> possible collection of scalars <m>x_1,\ldots, x_k</m> are all zeros (<xref ref="prop-dependence"/>). 
+      Consider an inductive argument, by which I mean, prove (a) when <m>k=2</m> and then prove (b) if this is true for <m>k=i</m>, then it is true for <m>k=i+1</m>.
+      You might find it useful that in all such cases, there will be at let one nonzero eigenvalue.
+    </p>
+  </proof>
+
+  <question>
+    <statement>
+      <p>
+        Let <m>A=\left[ \begin{array}{rr}1 \amp -4 \\ -1 \amp 1 \end{array}\right]</m>.  Use algebraic techniques to find a diagonalization.  In complete sentences and using geometric words, describe how <m>A</m> transforms the plane.  Then verify visually with your invariant line tool.
+      </p>
+    </statement>
+  </question>
+
+  <question>
+    <statement>
+      <p>
+        Let <m>A=\left[ \begin{array}{rr}2.6 \amp 0.8 \\ -0.2 \amp 3.4 \end{array}\right]</m>.  Use algebraic techniques to try to find a diagonalization.  Why does this fail?  Verify visually with your invariant line tool.  What type of transformation is this?  How can we find a basis to see this?
+      </p>
+    </statement>
+  </question>
+
 
 
 </section>

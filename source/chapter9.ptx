@@ -10,10 +10,12 @@
         </p>
 
         <p>
-            <alert>Lesson <xref ref="chp9sec1"/>.</alert> The volume of a region in <m>\R^n</m> is the number of unit cubes needed to cover it. Each matrix transformation <m>T_A</m> scales volumes and this scaling factor <m>\vsf(A)</m> depends only on the matrix and not the region. Of the simple geometric transformations, the only ones with a scaling factor other than 1 are the stretches (and projections). The determinant of a matrix <m>A</m> is the signed volume scaling factor of its associated transformation.
+            <alert> <xref ref="chp9sec1"/>.</alert> The volume of a region in <m>\R^n</m> is the number of unit cubes needed to cover it. Each matrix transformation <m>T_A</m> scales volumes and this scaling factor <m>\vsf(A)</m> depends only on the matrix and not the region. Of the simple geometric transformations, the only ones with a scaling factor other than 1 are the stretches (and projections). The determinant of a matrix <m>A</m> is the signed volume scaling factor of its associated transformation.
         </p>
 
-        <ul>
+    
+    <objectives>
+            <ul>
             <li>I understand how simple transformations of the plane affect area.</li>
             <li>I understand how to relate how a composition affects area to how each constituent transformation affects area.</li>
             <li>I can generalize my reasoning to volume in <m>\R^n</m>.</li>
@@ -22,34 +24,36 @@
             <li>I can generalize my reasoning to sign in <m>\R^n</m>.</li>
             <li>I can reason about the determinant of a matrix by geometrically conceptualizing it as the signed volume scaling factor.</li>
         </ul>
+    </objectives>
 
+    
         <p>
-            <alert>Lesson <xref ref="chp9sec2"/>.</alert> Even though we constructed the determinant through geometric reasoning, algebraic properties emerge. We develop these algebraic properties and relate the determinant to the \TheList.
+            <alert> <xref ref="chp9sec2"/>.</alert> Even though we constructed the determinant through geometric reasoning, algebraic properties emerge. We develop these algebraic properties and relate the determinant to the \TheList.
         </p>
 
-        <ul>
+    
+    <objectives>
+            <ul>
             <li>I can compute the determinant of elementary matrices.</li>
             <li>I understand how to relate the determinant of an arbitrary matrix to the determinants of elementary matrices.</li>
             <li>I understand properties of the determinant both geometrically and algebraically.</li>
         </ul>
+    </objectives>
 
         <p>
-            <alert>Lesson <xref ref="chp9sec3"/>.</alert> Having developed geometric meanings and algebraic properties, we conclude this chapter with different strategies for computing the determinant. 
+            <alert> <xref ref="chp9sec3"/>.</alert> Having developed geometric meanings and algebraic properties, we conclude this chapter with different strategies for computing the determinant. 
         </p>
 
+
+    <objectives>
         <ul>
             <li>I understand that there are many strategies for computing the determinant and can flexible decide which among them to use in a given context.</li>
             <li>I can use <m>PLU</m>-decompositions and cofactor expansion to compute the determinant by hand for small matrices.</li>
             <li>I can use GeoGebra to compute the determinant of matrices.</li>
         </ul>
-
-
-    <objectives>
-      <title>Lesson 3.1</title>
-        <ul>
-            <li><p>I see that in certain quantitative situations, it is meaningful to add and scale vectors.</p></li>
-        </ul>
     </objectives>
+
+
 
   </introduction>
 

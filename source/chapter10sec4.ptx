@@ -4,8 +4,231 @@
   <title>Classification in the Plane</title>
 
 	<p>
-		
+		In this lesson, our goal is to completely understand the situation for <m>2\times 2 </m> matrices.  As we shall see, our analysis boils down to whether we can find 2, 1, or 0 linearly independent eigenvectors. To understand eigenvectors, we first understand eigenvalues, and to understand eigenvalues, we first study the characteristic polynomial.
 	</p>
 
+	<p>
+		I now introduce/remind you of a few important terms.
+	</p>
+
+	<definition xml:id="def-2x2eigenstuff">
+		<title><m>2\times 2</m> Eigentheory Dictionary</title>
+		<statement>
+			<p>If <m>A=\begin{bmatrix}a \amp b\\c \amp d\end{bmatrix}</m>, then:</p>
+
+			<ol>
+				<li>The <term>determinant</term> of <m>A</m> is <m>\det(A)=ad-bc</m>.</li>
+				<li>The <term>trace</term> of <m>A</m> is <m>\tr(A)=a+d</m>, i.e. the sum of the diagonal entries.</li>
+				<li>The <term>discriminant</term> of <m>A</m> is <m>\disc(A)=\tr(A)^2-4\det(A)</m>.</li>
+				<li>The <term>characteristic polynomial</term> of <m>A</m> is <m>p_A(\lambda)=\det\left[ \begin{array}{ll}a-\lambda \amp b\\c \amp d-\lambda \end{array}\right]</m>.</li>
+			</ol>
+		</statement>
+	</definition>
+
+	<p>It is a straight forward activity to verify the following computational shortcuts.</p>
+
+	<proposition xml:id="prop-2x2charpoly_formula">
+		<title><m>2\times 2</m> Characteristic Polynomial Formula</title>
+		<statement>
+			<p>
+				If <m>A</m> is <m>2\times 2</m>, then
+			</p>
+			<me>p_A(\lambda)=\lambda^2-\tr(A)\lambda+\det(A).</me>
+		</statement>
+	</proposition>
+	
+	<proof>
+		<p>Proof Hint. Homework.  You might find Definition <xref ref="def-2x2eigenstuff"/> and Proposition <xref ref="prop-2x2det_formula"/> useful.</p>
+	</proof>
+
+	<proposition>
+		<statement>
+			<p>
+				If <m>A</m> is a <m>2\times 2</m> matrix and 
+			</p>
+				<me>\text{$\disc(A)$} 
+					\begin{cases} 
+						&gt; 0, \amp \text{ then $A$ has 2 distinct real eigenvalues $\lambda_1, \lambda_2$,}\\
+						=0, \amp \text{ then $A$ has 1 repeated real eigenvalue $\lambda$,}\\
+						&lt; 0, \amp \text{ then $A$ has 2 complex conjugate eigenvalues $\lambda=\mu\pm\nu i$.}
+					\end{cases}</me>
+		</statement>
+	</proposition>
+
+	<proof>
+		<p>
+			Applying the quadratic formula to the <m>2\times 2</m> Characteristic Polynomial Formula <xref ref="prop-2x2charpoly_formula"/> gives that the roots of <m>p_A(\lambda)</m> are
+		</p>
+		<me>\frac{\tr(A)\pm\sqrt{\tr(A)^2-4\det(A)}}{2}\hspace{1pc}=\hspace{1pc} \frac{\tr(A)\pm\sqrt{\disc(A)}}{2}.</me>
+	</proof>
+
+	<p>We now are prepared to consider the three possible cases.</p>
+
+	<p><alert>Case 1: Eigenbasis and Diagonalization.</alert></p>
+
+	<p>
+		Suppose <m>A</m> has two linearly independent (real) eigenvectors <m>\mathcal{B}=\{\vect{v}_1,\vect{v}_2\}</m>, corresponding to eigenvalues <m>\lambda_1,\lambda_2</m>.  This is the best of all possible situations and is the simplest to deal with.  This occurs when either <m>\disc(A)>0</m> or when <m>\disc(A)=0</m> and <m>A</m> is a scalar matrix (in which case <m>A</m> uniformly stretches the plane by a factor of <m>\lambda=\lambda_1=\lambda_2</m>).  In this case, we say <m>\mathcal{B}</m> is an <alert>eigenbasis</alert> for <m>A</m> and <m>A</m> admits a <alert>diagonalization</alert> <m>A=PDP^{-1}</m> where <m>P=[\vect{v}_1|\vect{v}_2]</m> and <m>D=\begin{bmatrix}\lambda_1 \amp 0\\0 \amp \lambda_2\end{bmatrix}</m>.
+	</p>
+
+	<p><alert>Eigenbasis Summary</alert></p>
+	<ul>
+	<li><alert>Discriminant:</alert> <m>\disc(A)>0</m> or <m>\disc(A)=0</m> and <m>A</m> is a scalar matrix,</li>
+	<li><alert>Eigenvalues:</alert> 2 distinct real eigenvalues <m>\lambda_1, \lambda_2</m>, or <m>A</m> is scalar.</li>
+	<li><alert>Basis <m>\mathcal{B}</m>:</alert> Two linearly independent eigenvectors <m>\vect{v}_1</m> and <m>\vect{v}_2</m>,</li>
+	<li><alert>Similar Matrix Decomp:</alert> Diagonalization <m>A=[\vect{v}_1|\vect{v}_2]\begin{bmatrix}\lambda_1 \amp 0\\0 \amp \lambda_2\end{bmatrix}[\vect{v}_1|\vect{v}_2]^{-1}</m>.</li>
+	<li><alert>Verbalization:</alert> <m>A</m> transforms the plane by stretching (and possibly reflecting if negative) by a factor of <m>\lambda_1</m> in the direction of <m>\vect{v}_1</m> and stretching (and possibly reflecting if negative) by a factor of <m>\lambda_2</m> in the direction of <m>\vect{v}_2</m>.</li>
+	</ul>
+
+	<p><alert>Case 2: Generalized Eigenbasis and Triagonalization.</alert></p>
+
+	<p>Next, suppose <m>A</m> has only one linearly independent eigenvector <m>\vect{v}</m> with repeated real eigenvalue <m>\lambda</m>.   This occurs when <m>\disc(A)=0</m> <em>and</em> <m>A</m> is not a scalar matrix.  In this case, we do not have enough vectors to form an eigenbasis, but we can find a nice vector to <em>toss in</em> to create a basis.  
+	Morally <m>A</m> shears along its eigenspace, so our idea is to find the vector <m>\vect{w}</m> we hold onto when we shear.  This  vector <m>\vect{w}</m>, which we call a <alert>generalized eigenvector</alert>, should satisfy</p>
+	<me>A\vect{w}=\lambda \vect{w} + \vect{v}</me>
+	<p>Observe that this amounts to solving the linear system <m>(A-\lambda I)\vect{w}=\vect{v}</m>.
+	We call <m>\mathcal{B}=\{\vect{v},\vect{w}\}</m> be the <alert>generalized ordered eigenbasis</alert>.
+	In this case, <m>A</m> admits a <alert>triagonalization</alert> <m>A=PTP^{-1}</m> where <m>P=[\vect{v}|\vect{w}]</m> and <m>T=\begin{bmatrix}\lambda \amp 1\\0 \amp \lambda\end{bmatrix}</m>.
+	Verbally, relative to its generalized eigenbasis, <m>A</m> is a uniform stretch by a factor of <m>\lambda</m>, follows by shearing the vector <m>\lambda \vect{w}</m> one unit in the <m>\vect{v}</m>-direction.</p>
+
+	<p>You can play with  triagonalizations at GeoGebra ID: \href{https://www.geogebra.org/m/j8jvewtk}{<alert>j8jvewtk</alert>}.</p>
+
+	<p><alert>Generalized Eigenbasis Summary</alert></p>
+	<ul>
+	<li><alert>Discriminant:</alert> <m>\disc(A)=0</m> and <m>A</m> is not a scalar matrix,</li>
+	<li><alert>Eigenvalues:</alert> 1 repeated real eigenvalue <m>\lambda</m>,</li>
+	<li><alert>Basis <m>\mathcal{B}</m>:</alert> Eigenvector <m>\vect{v}</m> and a generalized eigenvector <m>\vect{w}</m>,</li>
+	<li><alert>Similar Matrix Decomp:</alert> Triagonalization <m>A=[\vect{v}|\vect{w}]\begin{bmatrix}\lambda \amp 1\\0 \amp \lambda\end{bmatrix}[\vect{v}|\vect{w}]^{-1}</m>.</li>
+	<li><alert>Verbalization:</alert> <m>A</m> transforms the plane by uniformly stretching the plane by a factor of <m>\lambda</m> and then shearing the vector <m>\lambda\vect{w}</m> one unit in the <m>\vect{v}</m>-direction.</li>
+	</ul>
+
+	<p><alert>Case 3: Rotation Basis and Rotationalization.</alert></p>
+
+	<p>Suppose <m>A</m> has only no linearly independent real eigenvectors.  This occurs when <m>\disc(A)\lt 0</m>.  Then <m>A</m> has two complex<fn>See Appendix  for an overview of complex numbers <m>\C</m>.</fn> eigenvalues: <m>\lambda=\mu+\nu i=re^{i\theta}</m> and its complex conjugate <m>\overline{\lambda}=\mu-\nu i=re^{-i\theta}</m>.  Associated to each are complex conjugate eigenvectors <m>\vect{v}=\vect{u}+\vect{w}i</m> and <m>\overline{\vect{v}}=\vect{u}-\vect{w}i</m>, where <m>\vect{u}</m> and <m>\vect{w}</m> are real.  Since <m>\vect{v}</m> and <m>\overline{\vect{v}}</m> are linearly independent (over <m>\C</m>), it follows that <m>\vect{u}</m> and <m>\vect{w}</m> are linearly independent (over <m>\R</m>), and I call the collection <m>\mathcal{B}=\{\vect{u},\vect{w}\}</m> a  <alert>rotation basis</alert> for <m>A</m>.  (Note that this name is nonstandard.)</p>
+
+	<p>How does <m>A</m> transform the rotation basis?
+	Observe that <m>\vect{u}=\frac{1}{2}(\vect{v}+\overline{\vect{v}})</m> and <m>\vect{w}=\frac{1}{2i}(\vect{v}-\overline{\vect{v}})</m>.</p>
+
+	<md>
+	<mrow>A\vect{u} \amp =A\left(\frac{1}{2}(\vect{v}+\overline{\vect{v}})\right)
+				=\frac{1}{2}\left(\lambda \vect{v}+\overline{\lambda}\overline{\vect{v}}\right)</mrow>
+	<mrow> \amp =\frac{1}{2}\left((\mu+\nu i) (\vect{u}+i\vect{w})+(\mu-\nu i)(\vect{u}-i\vect{w})\right)</mrow>
+	<mrow> \amp =\frac{1}{2}\left((\mu\vect{u}+\hcancel{\mu i\vect{w}}+\hcancel{\nu i\vect{u}}-\nu \vect{w})+(\mu\vect{u}-\hcancel{\mu i\vect{w}}-\hcancel{\nu i\vect{u}}-\nu \vect{w})\right)</mrow>
+	<mrow> \amp =\frac{1}{2}\left(2\mu\vect{u}-2\nu \vect{w}\right)
+				= \mu\vect{u}-\nu \vect{w}.</mrow>
+	</md>
+
+	<p>Similarly <m>A\vect{w} = \nu\vect{u}+\mu \vect{w}</m>.</p>
+
+	<p>Hence <m>A</m> admits a <alert>rotationalization</alert> <m>A=PRP^{-1}</m> where <m>P=[\vect{u}|\vect{w}]</m> and <m>R</m> is the stretch/rotation matrix <m>R=\left[ \begin{array}{rr}\mu \amp \nu\\ -\nu \amp \mu \end{array}\right]= \left[ \begin{array}{rr}r\cos(\theta) \amp r\sin(\theta)\\ -r\sin(\theta) \amp r\cos(\theta) \end{array}\right]</m>.</p>
+
+	<p>You can play with finding and building rotationalizations, respectively, at GeoGebra IDs: \href{https://www.geogebra.org/m/ua9cd34u}{<alert>ua9cd34u</alert>} and  \href{https://www.geogebra.org/m/tbmrXJmd}{<alert>tbmrXJmd</alert>}.</p>
+
+	<p><alert>Rotation Basis Summary</alert></p>
+	<ul>
+	<li><alert>Discriminant:</alert> <m>\disc(A)\lt 0</m>,</li>
+	<li><alert>Eigenvalues:</alert> 2 complex conjugate complex eigenvalues <m>\mu\pm\nu i=re^{\pm i\theta}</m>,</li>
+	<li><alert>Basis <m>\mathcal{B}</m>:</alert> Rotation vectors <m>\vect{u},\vect{w}</m> where the complex eigenvectors are <m>\vect{u}\pm i\vect{w}</m>,</li>
+	<li><alert>Similar Matrix Decomp:</alert> Rotationalization <m>A=[\vect{u}|\vect{w}]\left[ \begin{array}{rr}r\cos(\theta) \amp r\sin(\theta)\\-r\sin(\theta) \amp r\cos(\theta) \end{array}\right][\vect{u}|\vect{w}]^{-1}</m>.</li>
+	<li><alert>Verbalization:</alert> <m>A</m> is a uniform stretch by a factor of <m>r=\sqrt{\mu^2+\nu^2}</m>, followed by a rotation in <m>\mathcal{B}</m>-coordinates by <m>\theta=\arccos\frac{\mu}{r}</m> degree sending <m>\vect{u}</m> away from <m>\vect{w}</m>.</li>
+	</ul>
+
+	<example xml:id="ex-triagonalization">
+	<statement>
+	<p>Consider the matrix <m>A=\left[ \begin{array}{rr}1.5 \amp 1\\-0.25 \amp 2.5 \end{array}\right].</m>  A direct computation shows</p>
+	<me>\disc(A)=4^2-4\cdot 4=0,</me>
+	<p>hence <m>A</m> has 1 repeated real eigenvalue, and since <m>A</m> is not scalar, we will look to find a triagonalization for <m>A</m>.  
+	It has characteristic polynomial</p>
+	<me>p_A(\lambda)=\lambda^2-4\lambda+4=(\lambda-2)^2,</me>
+	<p>so its eigenvalue is <m>\lambda=2</m>.  
+	Plugging <m>\lambda</m> into the standard matrix equation and row reducing,
+	we have</p>
+	<me>\left[ \begin{array}{rr|r}-0.5 \amp 1 \amp 0\\ -0.25 \amp 0.5 \amp 0 \end{array}\right]\sim\left[ \begin{array}{rr|r}1 \amp -2 \amp 0\\ 0 \amp 0 \amp 0 \end{array}\right]</me>
+	<p>From which we get that <m>x=2y</m>, and hence we get the eigenvector</p>
+	<me>\vect{v}=\left[ \begin{array}{r}2\\1 \end{array}\right].</me>
+	<p>We now find a generalized eigenvector that we hold on to to shear after having performed our uniform stretch, i.e. a vector <m>\vect{w}</m> such that <m>A\vect{w}=2\vect{w}+\vect{v}</m>.
+	In other words, we solve the following matrix equation</p>
+	<me>\left[ \begin{array}{rr|r}-0.5 \amp 1 \amp 2\\ -0.25 \amp 0.5 \amp 1 \end{array}\right]\sim\left[ \begin{array}{rr|r}1 \amp -2 \amp -4\\ 0 \amp 0 \amp 0 \end{array}\right]</me>
+	<p>From which we get that <m>x=-4+2y</m>, and hence, when <m>y=1</m>, we get the generalized eigenvector</p>
+	<me>\vect{w}=\left[ \begin{array}{r}-2\\1 \end{array}\right].</me>
+	<p>The vectors <m>\vect{v}</m> and <m>\vect{w}</m> are linearly independent and <m>\mathcal{B}:=\{\vect{v},\vect{w}\}</m> is our generalized eigenbasis.</p>
+
+	<p>Symbolically we have the triagonalization</p>
+	<me>\left[ \begin{array}{rr}1.5 \amp 1\\-0.25 \amp 2.5 \end{array}\right]=\left[ \begin{array}{rr}2 \amp -2\\1 \amp 1 \end{array}\right]\left[ \begin{array}{rr}2 \amp 1\\0 \amp 2 \end{array}\right]\left[ \begin{array}{rr}2 \amp -1\\1 \amp 1 \end{array}\right]^{-1}.</me>
+
+	<p>Verbally, <m>A</m> is a uniform stretch by a factor of <m>2</m> followed by a shear  in the <m>\mathcal{B}</m>-coordinates, taking the vector <m>2\vect{w}</m> 1 unit in the <m>\vect{v}</m> direction.</p>
+
+	<p>Example <xref ref="ex-triagonalization"/>, Continued.</p>
+
+	<p>Visually, we have the following picture.</p>
+	<figure>
+
+	</figure>
+	</statement>
+	</example>
+
+	<example xml:id="ex-rotationalization">
+	<statement>
+	<p>Consider the matrix <m>A=\left[ \begin{array}{rr}3 \amp 2\\-5 \amp 5 \end{array}\right].</m>  A direct computation shows </p>
+	<me>\disc(A)=8^2-4\cdot 25=-36\lt 0,</me> 
+	<p>hence <m>A</m> has 2 complex eigenvalues and we will look to find a rotationalization for <m>A</m>.  
+	It has characteristic polynomial</p>
+	<me>p_A(\lambda)=\lambda^2-8\lambda+25</me>
+	<p>and the quadratic formula gives its eigenvalues to be <m>4\pm 3i</m>.  
+	We focus on the eigenvalue <m>\lambda=4+ 3i=5e^{\arccos(4/5)i}</m>.  Plugging <m>\lambda</m> into the matrix equation <m>(A-\lambda I)\vect{x}=\vect{0}</m> and row reducing,
+	we have</p>
+	<me>\left[ \begin{array}{ll|r}-1-3i \amp 2 \amp 0\\ -5 \amp 1-3i \amp 0 \end{array}\right]\sim\left[ \begin{array}{lr|r}1+3i \amp -2 \amp 0\\ 0 \amp 0 \amp 0 \end{array}\right]</me>
+	<p>From which we get that <m>y=\frac{(1+3i)}{2}x</m>, and hence we get the complex eigenvector</p>
+	<me>\vect{v}=\left[ \begin{array}{ll}2\\1+3i \end{array}\right]=\left[ \begin{array}{rr}2\\1 \end{array}\right]+\left[ \begin{array}{rr}0\\3 \end{array}\right]i.</me>
+	<p>Here <m>\vect{u}:=\left[ \begin{array}{rr}2\\1 \end{array}\right]</m> is the real part and <m>\vect{w}:=\left[ \begin{array}{rr}0\\3 \end{array}\right]</m> is the imaginary part of the eigenvector.  They are linearly independent and <m>\mathcal{B}:=\{\vect{u},\vect{w}\}</m> is our rotation basis.</p>
+
+	<p>Direct computation using the strategy above gives <m>A\vect{u} = 4\vect{u}-3 \vect{w}</m> and <m>A\vect{w} = 3\vect{u}+4 \vect{w}</m>. </p>
+
+	<p>Symbolically we have the rotationalization</p>
+	<me>\left[ \begin{array}{rr}3 \amp 2\\-5 \amp 5 \end{array}\right]=\left[ \begin{array}{rr}2 \amp 0\\1 \amp 3 \end{array}\right]\left[ \begin{array}{rr}4 \amp 3\\-3 \amp 4 \end{array}\right]\left[ \begin{array}{rr}2 \amp 0\\1 \amp 3 \end{array}\right]^{-1}.</me>
+
+	<p>Verbally, <m>A</m> is a uniform stretch by a factor of <m>r=5</m> followed by a rotation in <m>\mathcal{B}</m>-coordinates by an angle of <m>\theta =\arccos\left(\frac{4}{5}\right)</m> radians moving <m>\vect{u}</m> away from <m>\vect{w}</m>.</p>
+
+	<p>Example <xref ref="ex-rotationalization"/>, Continued.</p>
+
+	<p>Visually, we have the following picture.  Note that the <m>\mathcal{B}</m>-unit circle is dashed red, and the transformed <m>\mathcal{B}</m>-unit circle is dashed blue.  Note how the vertices <m>(8,-5)</m> and <m>(6,15)</m> of the transformed <m>\mathcal{B}</m>-unit square lie on this ellipse.</p>
+	<figure>
+
+	</figure>
+	</statement>
+	</example>
+
+	<p>Below is a table the summarizes the three possible eigenstuff cases for a <m>2\times 2</m> matrix <m>A</m>.  I cannot fit pictures into the table, but I also expect you to be able to sketch the corresponding coordinate grids and transformed <m>\mathcal{B}</m>-unit squares.  For each case, I expect that given one representation (verbal, symbolic, or visual) you should be able to go to the other two.</p>
+
+	<table xml:id="table-2x2classification">
+	<tabular halign="left" border="1">
+		<row bottom="major">
+		<cell><alert># Lin. Indep. Eigenvectors</alert></cell>
+		<cell><alert>Eigenvalues</alert></cell>
+		<cell><alert>Basis</alert></cell>
+		<cell><alert>Verbal</alert></cell>
+		<cell><alert>Symbolic</alert></cell>
+		</row>
+		<row>
+		<cell>2 real: <m>\vect{v}_1,\vect{v}_2</m></cell>
+		<cell>2 real <m>\lambda_1,\lambda_2</m></cell>
+		<cell>Eigenbasis <m>\mathcal{B}=\{\vect{v}_1,\vect{v}_2\}</m></cell>
+		<cell>For each <m>i</m>, stretch (and possibly reflecting if negative) by a factor of <m>\lambda_i</m> in the direction of <m>\vect{v}_i</m>.</cell>
+		<cell>Diagonalization  <m>A=[\vect{v}_1|\vect{v}_2]\begin{bmatrix}\lambda_1 \amp 0\\0 \amp \lambda_2\end{bmatrix}[\vect{v}_1|\vect{v}_2]^{-1}</m></cell>
+		</row>
+		<row>
+		<cell>1 real: <m>\vect{v}</m></cell>
+		<cell>1 real <m>\lambda</m></cell>
+		<cell>Generalized Eigenbasis <m>\mathcal{B}=\{\vect{v},\vect{w}\}</m></cell>
+		<cell>Uniform stretch  by a factor of <m>\lambda</m>, then shear the vector <m>\lambda\vect{w}</m> one unit in the <m>\vect{v}</m>-direction.</cell>
+		<cell>Triagonalization  <m>A=[\vect{v}|\vect{w}]\begin{bmatrix}\lambda \amp 1\\0 \amp \lambda\end{bmatrix}[\vect{v}|\vect{w}]^{-1}</m></cell>
+		</row>
+		<row>
+		<cell>0 real, but 2 complex: <m>\vect{u}\pm\vect{w}i</m></cell>
+		<cell>2 complex <m>\mu\pm\nu i=re^{\pm i\theta}</m></cell>
+		<cell>Rotation Basis <m>\mathcal{B}=\{\vect{u},\vect{w}\}</m></cell>
+		<cell>Uniform stretch  by a factor of <m>r</m>, then rotation in <m>\mathcal{B}</m>-coordinates by angle <m>\theta=\arccos\frac{\mu}{r}</m> sending <m>\vect{u}</m> away from <m>\vect{w}</m>.</cell>
+		<cell>Rotationalization  <m>A=[\vect{u}|\vect{w}]\left[ \begin{array}{rr}\mu \amp \nu\\-\nu \amp \mu \end{array}\right][\vect{u}|\vect{w}]^{-1}</m></cell>
+		</row>
+	</tabular>
+	</table>
 
 </section>

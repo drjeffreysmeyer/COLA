@@ -249,7 +249,7 @@
           Using the Product Formula <xref ref="thm-detproductformula" /> and Proposition <xref ref="prop-det_inverse" />:
         </p>
         <me>
-          \det(A) = \det(P_{\mathcal{B}}BP_{\mathcal{B}}^{-1}) = \det(P_{\mathcal{B}})\det(B)\det(P_{\mathcal{B}}^{-1}) = \det(B).
+          \det(A) = \det(P_{\mathcal{B}}BP_{\mathcal{B}}^{-1}) = \rst{\det(P_{\mathcal{B}})}\det(B)\rst{\det(P_{\mathcal{B}}^{-1})} = \det(B).
         </me>
       </proof>
     </proposition>

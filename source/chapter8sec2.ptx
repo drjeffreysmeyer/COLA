@@ -117,5 +117,22 @@
       </p>
     </note>
 
+  <exercises xml:id="homework-chp8sec2">
+    <title>Problems</title>
+
+    <exercise>
+      <statement>
+        <p>
+          Consider the matrix <m>A=\left[\begin{array}{rr}2\amp -1\\1\amp 3\end{array}\right]</m>.
+        </p>
+        <ol>
+            <li>Find an elementary matrix decomposition of <m>A</m>.  Do this by hand and show how you get each elementary matrix.</li>
+            <li>Use your elementary matrix decomposition to describe in complete sentences, using geometric words, how <m>A</m> transforms the plane.</li>
+            <li>Use your decomposition to clearly sketch and label each step of how <m>A</m> transforms the plane.  Do so by following the standard unit square.  You may do this either carefully by hand or on GeoGebra.</li>
+            <li>Exploration.  Is the elementary matrix decomposition you found unique?  In other words, could you have found a different collection of elementary matrices whose product is <m>A</m>?  Explain.</li>
+        </ol>
+    </statement>
+    </exercise>
+  </exercises>
 
 </section>

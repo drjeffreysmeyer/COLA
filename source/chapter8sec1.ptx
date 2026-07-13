@@ -262,7 +262,7 @@
               <li><p>Find the <alert>symbolic</alert> expression for <m>A</m> and give its associated similar matrix decomposition.</p></li>
             </ol>
           </p>
-          <image source="images_hw/HW06similartransform.png" />
+          <image source="images/8.1_transformed_square3.png" />
         </sidebyside>
       </statement>
     </exercise>
@@ -288,7 +288,7 @@
         </p>
         <p>
           <ol label="(a)">
-            <li><p>Recall <m>A^2 = A\cdot A</m>. In complete sentences and geometric word, verbally explain how <m>A^2$</m> transforms the plane. (Hint: Consider using the SMD together with the associative property of matrix multiplication.)</p></li>
+            <li><p>Recall <m>A^2 = A\cdot A</m>. In complete sentences and geometric word, verbally explain how <m>A^2</m> transforms the plane. (Hint: Consider using the SMD together with the associative property of matrix multiplication.)</p></li>
             <li><p>Generalize your reason to explain how <m>A^n</m> transforms the plane.</p></li>
           </ol>
         </p>

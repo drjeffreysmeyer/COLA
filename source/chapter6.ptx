@@ -5,17 +5,36 @@
 
   <introduction>
 
-    <p>
-      
-    </p>
+<p>
+    In this chapter, we carefully analyze the concept of reversing a process and apply this analysis to processes associated with matrix multiplication.
+</p>
 
+<objectives>
+    <title>Objectives for <xref ref="chp6sec1" /></title>
+    <ul>
+        <li>
+            <p>I understand the concept reversing a process.</p>
+        </li>
+        <li>
+            <p>I can use my understanding of matrix transformations to deduce the matrix of its inverse.</p>
+        </li>
+        <li>
+            <p>I understand and can use the algebraic properties of inverses.</p>
+        </li>
+    </ul>
+</objectives>
 
-    <objectives>
-      <title>Lesson 3.1</title>
-        <ul>
-            <li><p>I see that in certain quantitative situations, it is meaningful to add and scale vectors.</p></li>
-        </ul>
-    </objectives>
+<objectives>
+    <title>Objectives for <xref ref="chp6sec2" /></title>
+    <ul>
+        <li>
+            <p>I can use the Inverse Algorithm to compute small inverses by hand.</p>
+        </li>
+        <li>
+            <p>I can use the Inverse Algorithm to compute large inverses using GeoGebra.</p>
+        </li>
+    </ul>
+</objectives>
 
   </introduction>
 

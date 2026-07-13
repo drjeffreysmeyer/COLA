@@ -5,17 +5,90 @@
 
   <introduction>
 
-    <p>
-      
-    </p>
+<p>
+    We spent a while trying to understand similar matrix decompositions and how to use them.  
+    Now the question becomes, how do we find them?  
+    How do we find our <em>good basis</em> relative to which our transformation is just a stretch, shear, or rotation.  
+    The answer is: <em>eigentheory</em>.
+</p>
 
+<objectives>
+    <title>Objectives for <xref ref="chp10sec1" /></title>
+    <ul>
+        <li>
+            <p>I understand the idea of <m>T</m>-invariant lines.</p>
+        </li>
+        <li>
+            <p>I can visualize lines and transformed lines in the plane, and use them to identify <m>T</m>-invariant lines and their associated scaling factors.</p>
+        </li>
+        <li>
+            <p>I can use <m>T</m>-invariant lines and their scaling factors to find similar matrix decompositions.</p>
+        </li>
+    </ul>
+</objectives>
 
-    <objectives>
-      <title>Lesson 3.1</title>
-        <ul>
-            <li><p>I see that in certain quantitative situations, it is meaningful to add and scale vectors.</p></li>
-        </ul>
-    </objectives>
+<objectives>
+    <title>Objectives for <xref ref="chp10sec2" /></title>
+    <ul>
+        <li>
+            <p>I understand how the concept of invariant line is symbolized by the matrix equation <m>A\mathbf{x}=\lambda\mathbf{x}</m>.</p>
+        </li>
+        <li>
+            <p>I understand the eigentheory dictionary and can correctly read and use the terminology.</p>
+        </li>
+        <li>
+            <p>I can use the <em>Algebraic Strategy</em> to compute exact eigenvalues, eigenvectors, and eigenspaces (in parametric vector form) for <m>2\times 2</m> and <m>3\times 3</m> matrices.</p>
+        </li>
+    </ul>
+</objectives>
+
+<objectives>
+    <title>Objectives for <xref ref="chp10sec3" /></title>
+    <ul>
+        <li>
+            <p>I understand the concept of iterating transformations and analyzing the iterates of lines.</p>
+        </li>
+        <li>
+            <p>I can use the <em>Iterative Strategy</em>, together with technology like GeoGebra, to  approximate dominant eigenvalues, eigenvectors, and eigenspaces (in parametric vector form) for positive proximal matrices of any size.</p>
+        </li>
+    </ul>
+</objectives>
+
+<objectives>
+    <title>Objectives for <xref ref="chp10sec4" /></title>
+    <ul>
+        <li>
+            <p>I can compute the discriminant and understand the associated cases.</p>
+        </li>
+        <li>
+            <p>I can determine if a matrix is diagonalizable, and if so, computationally find (by hand) its eigenvalues, an eigenbasis, and diagonalize it. Furthermore, I can verbally describe and visually depict it.</p>
+        </li>
+        <li>
+            <p>I can determine if a matrix is triagonalizable, and if so, can computationally find (by hand) its eigenvalue, a generalized eigenbasis, and triagonalize it. Furthermore, I can verbally describe and visually depict it.</p>
+        </li>
+        <li>
+            <p>I can determine if a matrix is rotationalizable, and if so, can computationally find (by hand) its complex eigenvalues, its complex eigenbasis, a rotation basis, and rotationalize it.  Furthermore, I can verbally describe and visually depict it.</p>
+        </li>
+    </ul>
+</objectives>
+
+<objectives>
+    <title>Objectives for <xref ref="chp10sec5" /></title>
+    <ul>
+        <li>
+            <p>I understand how networks, such as the internet, can be encoded by graphs.</p>
+        </li>
+        <li>
+            <p>I understand how vertex weights on a graph is a list of quantities (i.e. vector).</p>
+        </li>
+        <li>
+            <p>I understand how the adjacency matrix averages adjacent vertex weights.</p>
+        </li>
+        <li>
+            <p>I understand how centrality is an application of the <em>Iterative Strategy</em> for eigentheory.</p>
+        </li>
+    </ul>
+</objectives>
 
   </introduction>
 
@@ -24,6 +97,7 @@
     <xi:include href="chapter10sec2.ptx" />
     <xi:include href="chapter10sec3.ptx" />
     <xi:include href="chapter10sec4.ptx" />
+    <xi:include href="chapter10sec5.ptx" />
    
 
 </chapter>

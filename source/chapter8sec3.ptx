@@ -158,4 +158,62 @@
         </p>
     </question>
 
+
+
+
+  <exercises xml:id="homework-chp8sec3">
+    <title>Problems</title>
+
+    <exercise>
+      <statement>
+        <p>
+            Let <m>A=\left[\begin{array}{rrr} 5 \amp 1 \amp 4 \\ 15\amp 9\amp 14 \\ 25\amp 41\amp 35\end{array}\right]</m> and
+            <m>\vect{b} = \left[\begin{array}{rrr} 17 \\ 41 \\28\end{array}\right]</m>.
+        </p>
+        <ol>
+            <li>Find an <m>LU</m>-decomposition for <m>A</m>.</li>
+            <li>Use Method #3 to solve the matrix equation <m>A\vect{x}=\vect{b}</m>.</li>
+        </ol>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+            Consider the matrix <m>G=\left[\begin{array}{rrrr} 0 \amp 2 \amp 1 \\ 3\amp 1\amp 1 \\ 6\amp -8\amp 3\end{array}\right]</m>.
+        </p>
+        <ol>
+            <li>Why does <m>G</m> fail to have an <m>LU</m>-Decomposition?  Explain in complete sentences.</li>
+            <li>Write <m>G</m> as a product <m>PLU</m> where <m>L</m> is lower triangular, <m>U</m> is upper triangular, and <m>P</m> is a permutation matrix (i.e. a product of type-1 elementary matrices).</li>
+            <li>In class we discussed a step-by-step produce for using <m>LU</m>-decompositions to solves systems.  Create, and clearly explain, a step-by-step procedure for using <m>PLU</m>-Decompositions to solve systems.</li>
+            <li>Use the procedure you created to solve the matrix equation <m>G\vect{x}=\begin{bmatrix}5\\18\\17\end{bmatrix}</m>.</li>
+        </ol>
+      </statement>
+    </exercise>
+
+
+    <exercise>
+      <statement>
+        <p>
+          Rigorously prove the following sequence of propositions.
+        </p>
+        <p>
+            <alert>Proposition.</alert>  
+            Let <m>L = [\vect{v}_1| \cdots | \vect{v}_n]</m> is an <m>n\times n</m> lower triangular matrix and that <m>\vect{x}_i</m>, <m>1\le i\le n</m> is an <m>n\times 1</m> column vector for which the first <m>i-1</m> entries are 0.  
+            (For example, <m>\vect{x}_3</m> would be a vector where the first two entries are 0.)
+            <m>L\vect{x}_i</m> is a vector for which the first <m>i-1</m> entries are <em>also</em> 0.
+        </p>
+        <p>
+            <alert>Proposition.</alert>  
+            The product of two lower triangular matrices is also lower triangular.
+        </p>
+      </statement>
+    </exercise>
+
+  </exercises>
+
+
+
+
+
 </section>

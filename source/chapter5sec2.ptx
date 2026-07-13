@@ -26,7 +26,13 @@
           \spn(S) = \left\{ s\begin{bmatrix}-1\\0\\1 \end{bmatrix} + t\begin{bmatrix}-1\\1\\-1\end{bmatrix} \ \bigg| \ s,t, \in \mathbb{R}\right \}.
         </me>
       </p>
-      <image source="images/spanplane.png" />
+              <image source="images/5.2_spanplane.png" width="100%">
+    <description> 
+      <p>
+        Observe that <m>\vect{b}</m> is in <m>\spn(S)</m>.
+      </p>
+    </description>
+  </image>
     </sidebyside>
     <p>
       Consider the vector <m>\vect{b} = \begin{bmatrix}-3\\1\\1\end{bmatrix}</m> and observe that:

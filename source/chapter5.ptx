@@ -5,17 +5,98 @@
 
   <introduction>
 
-    <p>
-      
-    </p>
+  <p>
+    In this chapter, we use our new understandings of solution sets to revisit and analyze dependency and span.   We then construct bases and explore the new mental act of coordinatization.
+</p>
 
+<p>
+    <alert> <xref ref="chp5sec1" />.</alert>  Given a set of vectors <m>S</m>, we want to such a subset <m>S_0\subset S</m> that is independent, for which <m>\spn(S_0)=\spn(S)</m>, and find dependency equations for each <m>\vect{v}\in S-S_0</m>.  We do so by analyzing <m>\rref(A_S)</m>.  In so doing, we discover new strategies for determining whether a collection of vectors is independent.
+</p>
 
-    <objectives>
-      <title>Lesson 3.1</title>
-        <ul>
-            <li><p>I see that in certain quantitative situations, it is meaningful to add and scale vectors.</p></li>
-        </ul>
-    </objectives>
+<objectives>
+    <title>Objectives for <xref ref="chp5sec1" /></title>
+    <ul>
+        <li>
+            <p>I can use <m>\rref(A_S)</m> to pick out an independent subset <m>S_0\subset S</m> with the same span as <m>S</m>.</p>
+        </li>
+        <li>
+            <p>I can use <m>\rref(A_S)</m> to find dependency equations for each <m>\vect{v}\in S-S_0</m>.</p>
+        </li>
+        <li>
+            <p>I can flexibly use separability, Gaussian Elimination, and comparison of number of vectors to list-length to determine if a set of given vectors is dependent.</p>
+        </li>
+    </ul>
+</objectives>
+
+<p>
+    <alert> <xref ref="chp5sec2" />.</alert>  
+    Given two sets of vectors, <m>S</m> and <m>T</m>, we want to compare their spans.  For instance, when is <m>\spn(T)</m> contained within <m>\spn(S)</m>?  We do so by analyzing <m>\rref([A_S|B_T])</m>.  
+    In so doing, we discover new strategies for determining whether a collection of vectors spans <m>\R^n</m>.
+</p>
+
+<objectives>
+    <title>Objectives for <xref ref="chp5sec2" /></title>
+    <ul>
+        <li>
+            <p>I can use <m>\rref([A_S|B_T])</m> to compare <m>\spn(S)</m> and <m>\spn(T)</m>.</p>
+        </li>
+        <li>
+            <p>I can flexibly use Gaussian Elimination and comparison of number of vectors to list-length to determine if a set of given vectors spans <m>\R^m</m>.</p>
+        </li>
+    </ul>
+</objectives>
+
+<p>
+    <alert> <xref ref="chp5sec3" />.</alert>  A collection of independent vectors is a basis for its span.  We proved our first deep theorem, which implies that all bases for a given subspace have the same number of vectors.  The number of vectors on a basis for a subspace is an invariant of that subspace which we call its dimension.
+</p>
+
+<objectives>
+    <title>Objectives for <xref ref="chp5sec3" /></title>
+    <ul>
+        <li>
+            <p>I understand the relationship between the sizes of independent and spanning sets.</p>
+        </li>
+        <li>
+            <p>I understand the definition of dimension of a subspace.</p>
+        </li>
+        <li>
+            <p>I understand and can use the definition of a basis of a subspace.</p>
+        </li>
+        <li>
+            <p>I can flexibly use Gaussian Elimination and comparison of number of vectors to list-length to determine if a set of given vectors is a basis for <m>\R^m</m>.</p>
+        </li>
+        <li>
+            <p>I can reason about bases and their properties.</p>
+        </li>
+        <li>
+            <p>I can use <m>\rref(A)</m> to compute determine bases for <m>\operatorname{Col}(A)</m> and <m>\operatorname{Null}(A)</m>.</p>
+        </li>
+    </ul>
+</objectives>
+
+<p>
+    <alert> <xref ref="chp5sec4" />.</alert>
+    Coordinatization is a fundamental mental act that helps us solve problems.  We do this throughout mathematics.  
+    In linear algebra, we put coordinates on subspaces, and this amounts to selecting a basis.  We conceptualize columns as labels on a vector, and matrix multiplication changes the label.  This is a fundamentally new conceptualization of matrix multiplication.  
+</p>
+
+<objectives>
+    <title>Objectives for <xref ref="chp5sec4" /></title>
+    <ul>
+        <li>
+            <p>I understand the concept of coordinatization, how it is a problem solving strategy, and how it relates to bases.</p>
+        </li>
+        <li>
+            <p>I can look at a <m>\mathcal{B}</m>-grid in <m>\R^2</m> and read off <m>\mathcal{B}</m>-coordinates.</p>
+        </li>
+        <li>
+            <p>I understand how the coordinate map is a matrix transformation associated to matrix <m>P_\mathcal{B}</m>.</p>
+        </li>
+        <li>
+            <p>I can use the matrix equation <m>P_{\mathcal{B}}[\vect{w}]_{\mathcal{B}}=\vect{w}</m> to move between <m>\mathcal{B}</m>-coordinates and standard coordinates.</p>
+        </li>
+    </ul>
+</objectives>
 
   </introduction>
 

@@ -3,9 +3,271 @@
 <section xml:id="chp10sec1" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Concepts of Invariant Lines</title>
 
+  <p>
+    Processes are everywhere.  
+    We want to develop a deep understanding of processes.  
+    Chaining together processes gave rise to the notion of <em>composition</em>.  
+    Reversing a process gave rise to the notion of <em>inverses</em>.
+    Our next fundamental idea associated to a process is <em>invariance</em>.  
+  </p>
+
+  <p>
+    The the core idea of invariance is that something does not change after having performed a process.  Rotations in the plane do not change length.  Length is an <em>invariant</em> of rotation.  Shears in the plane do not change area.  Area is an <em>invariant</em> of shears.  
+  </p>
+
+  <p>
+    Recall that if <m>L\subset \R^n</m> is a line and <m>T:\R^n\to \R^n</m> is a matrix transformation, then <m>T(L)</m> is also a line (<xref ref="prop-matrices_transform_lines"/>).
+    We will now compare the lines <m>L</m> and <m>T(L)</m>.  
+    Might there be some lines for which <m>L</m> and <m>T(L)</m> are the same?
+  </p>
+
+  <definition xml:id="def-invariant_lines">
+    <title>Invariant Lines</title>
+    <statement>
+      <p>
+        If <m>T:\R^n\to \R^n</m> is a matrix transformation with associated matrix <m>A</m>, then a line <m>L</m> through the origin (a.k.a. a 1-dimensional subspace) is <term><m>T</m>-invariant</term> (or <term><m>A</m>-invariant</term>) if it is sent into itself under the transformation.  Symbolically, <m>T(L)\subset L</m>.  When <m>T</m> is clear from context, we will usually drop reference to <m>A</m> or <m>T</m> and just say the line is <term>invariant</term>.  
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Write the line <m>L=\{t\vect{x} \ | \ t\in \R\}</m> in parametric vector form (<xref ref="def-line"/>) for some nonzero vector <m>\vect{x}\in L</m>.
+    If <m>L</m> is <m>T</m>-invariant, then <m>T</m> must send <m>\vect{x}</m> to some other point on the line, i.e. <m>T(\vect{x})=\lambda \vect{x}</m> for some <m>\lambda\in \R</m>.
+    It follows from the scaling property if matrix multiplication (<xref ref="prop_fundamental_matrix_mult_props"/>),that <m>T</m> then scales <em>each</em> point on the line by this same <m>\lambda</m>.
+  </p>
+
+  <definition xml:id="def-associated_scaling_factor">
+    <title>Associated Scaling Factor</title>
+    <statement>
+      <p>
+        If <m>T:\R^n\to \R^n</m> is a matrix transformation and <m>L=\spn(\vect{x})</m> is a <m>T</m>-invariant line, then the value <m>\lambda\in \R</m> for which <m>T(\vect{x})=\lambda \vect{x}</m> is the  <term>associated scaling factor</term>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Understanding <m>T</m>-invariant lines and their associated scaling factors gives us an incredible about of information about <m>T</m>.
+  </p>
+
+  <p>
+    Some questions to start our investigations:
+  </p>
+
+  <ol>
+    <li><p><em>How do we find invariant lines?</em></p></li>
+    <li><p><em>How many invariant lines does each elementary geometric matrix transformation have?</em></p></li>
+    <li><p><em>How does knowing invariant lines help us better understand the transformation?</em></p></li>
+    <li><p><em>How might matrix decompositions help us better understand invariant lines?</em></p></li>
+    <li><p><em>How might we generalize this?</em></p></li>
+  </ol>
+
+  <p>
+    What else might you wonder about invariant lines as it relates to linear algebra?
+  </p>
+
+  <p>
+    Let's set out to find these lines and scaling factors in the plane.  We shall do this concretely, using GeoGebra to explore.
+  </p>
+
+  <activity>
+	<title>The Invariant Line Finder</title>
 	<p>
-		
+		In this creation activity, you will create The Invariant Line Finder Tool.
 	</p>
+
+	<ol>
+		<li>
+		<p><alert>Creating your matrix.</alert></p>
+		<p>
+			Input a matrix <m>A</m> with slider entries, and for the moment, slide the entries so your matrix is 
+			<m>A=\left[ \begin{array}{rr}2.5 \amp -0.5 \\ -0.5 \amp 2.5 \end{array}\right]</m>.
+		</p>
+		</li>
+		<li>
+		<p><alert>Creating your line and transformed line.</alert></p>
+		<p>
+			Create the point <m>O=(0,0)</m> and another moveable point <m>B</m>.
+			Create the line between <m>O</m> and <m>B</m>.
+			ApplyMatrix to <m>B</m>.  It will probably be called <m>B'</m>.
+			Create the line between <m>O</m> and <m>B'</m>.  
+			(Challenge:  Create the text ``INVARIANT!!!'' and make it appear only on the condition that the line <m>OB</m> equals the line <m>OB'</m>.)
+		</p>
+		</li>
+	</ol>
+</activity>
+
+  <p>
+    Once completed, your GeoGebra activity should look like GeoGebra ID:
+    <url href="https://www.geogebra.org/m/sjxcdtxh"><alert>sjxcdtxh</alert></url>.
+  </p>
+
+  <question xml:id="geogebra-invariant_lines">
+    <title>Finding and Analyzing Invariant Lines</title>
+    <statement>
+      <p>
+        In this activity, you will use your The Invariant Line Finder Tool to find and analyze invariant lines and their associated scaling factors.
+        You will discover how different matrices have different numbers of invariant lines.
+        In certain situations, you will find similar matrix decompositions.
+      </p>
+
+      <p>
+        Start with <m>A=\left[ \begin{array}{rr}2.5 \amp -0.5 \\ -0.5 \amp 2.5 \end{array}\right]</m>.
+      </p>
+
+      <ol>
+        <li>
+          <p><alert>Finding invariant lines and scaling factors.</alert></p>
+          <p>
+            Explore.  Move your point <m>B</m> and find all invariant lines. 
+            (Pro Tip: Try moving <m>B</m> to grid points, where GeoGebra can lock in values.)
+            For each invariant line, find the associated scaling factor.  
+            First, can you visually see the scaling factor?  
+            After approximating visually, you can compute the stretch factor exactly by analyzing the ratio of the length of <m>B'</m> to the length of <m>B</m>.  
+            Does the scaling factor include a reflection?
+            If you can find two distinct invariant lines, find a similar matrix decomposition for <m>A</m>.
+          </p>
+        </li>
+        <li>
+          <p><alert>Varying the matrix - Part 1.</alert></p>
+          <p>
+            Consider our geometric transformations of the plane: uniform stretches, stretches, reflections, shears, rotations, and projections.  How many distinct lines are invariant?  What is the most (resp. least) number of lines that can be invariant?
+          </p>
+          <p>
+            For example, analyze each of the following:
+          </p>
+          <me>  
+            \left[ \begin{array}{rr}2 \amp 0 \\ 0 \amp 2 \end{array}\right] \hspace{2pc}
+            \left[ \begin{array}{rr}2 \amp 0 \\ 0 \amp 3 \end{array}\right] \hspace{2pc}
+            \left[ \begin{array}{rr}-1 \amp 0 \\ 0 \amp 1 \end{array}\right] \hspace{2pc}
+            \left[ \begin{array}{rr}0 \amp 0 \\ 0 \amp 1 \end{array}\right] \hspace{2pc}
+            \left[ \begin{array}{rr}2 \amp 1 \\ 0 \amp 2 \end{array}\right] \hspace{2pc}
+            \left[ \begin{array}{rr}3 \amp -4 \\ 4 \amp 3 \end{array}\right] \hspace{2pc}
+          </me>
+        </li>
+        <li>
+          <p><alert>Varying the matrix - Part 2.</alert></p>
+          <p>
+            Repeat your above analysis for each of the following matrices (i.e. find invariant lines, find scaling factors, and find similar matrix decomposition):
+          </p>
+          <me>  
+            M_1 = \left[ \begin{array}{rr}1.25 \amp 2.25 \\ -0.25 \amp 2.75 \end{array}\right] \hspace{2pc}
+            M_2 = \left[ \begin{array}{rr}-0.4 \amp -1.2 \\ -1.2 \amp 1.4 \end{array}\right] \hspace{2pc}
+            M_3 = \left[ \begin{array}{rr}2 \amp -2.5 \\ 10 \amp 2 \end{array}\right]
+          </me>
+          <p>
+            Explain how knowing the different number of invariant lines a matrix has tells you something about the nature of the associated transformation (e.g. stretch vs. shear vs... etc).
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </question>
+
+  <p>
+    Upon reflecting on GeoGebra Activity <xref ref="geogebra-invariant_lines"/>, you should make the following observations: 
+  </p>
+
+  <p>
+    <alert>Observation 1:</alert>  Different transformations have different numbers of invariant lines:
+  </p>
+  <ol>
+    <li><p>All lines are invariant under a uniform stretch.</p></li>
+    <li><p>Two lines are invariant under stretches and reflections.</p></li>
+    <li><p>One line is invariant under a shear.</p></li>
+    <li><p>No lines are invariant under rotations.</p></li>
+  </ol>
+
+  <p>
+    <alert>Observation 2:</alert>  The invariant line(s) for the standard geometric transformation given by:
+  </p>
+  <ol>
+    <li><p><m>\begin{bmatrix}a \amp 0 \\ 0 \amp d\end{bmatrix}</m> are the <m>x</m>-axis and <m>y</m>-axis,</p></li>
+    <li><p><m>\begin{bmatrix}1 \amp b \\ 0 \amp 1\end{bmatrix}</m> is the <m>x</m>-axis, and</p></li>
+    <li><p><m>\begin{bmatrix}1 \amp 0 \\ c \amp 1\end{bmatrix}</m> is the <m>y</m>-axis.</p></li>
+  </ol>
+
+  <p>
+    <alert>Observation 3:</alert>  If you have enough invariant lines, you can build a similar matrix decomposition for your matrix!
+  </p>
+
+  <question>
+    <title>Using SMD to find invariant Lines</title>
+    <statement>
+      <p>
+        If you have a nice similar matrix decomposition, you can quickly read off its invariant lines.  
+        For each of the following matrices, determine its invariant lines and associated scaling factors.
+      </p>
+      <me>
+        A=\left[ \begin{array}{rr}1 \amp -1 \\ 1 \amp 1 \end{array}\right]\left[ \begin{array}{rr}2 \amp 0 \\ 0 \amp 3 \end{array}\right]\left[ \begin{array}{rr}1 \amp -1 \\ 1 \amp 1 \end{array}\right]^{-1}
+        \hspace{2pc}
+        B=\left[ \begin{array}{rr}3 \amp 1 \\ 1 \amp 2 \end{array}\right]\left[ \begin{array}{rr}1 \amp 1 \\ 0 \amp 1 \end{array}\right]\left[ \begin{array}{rr}3 \amp 1 \\ 1 \amp 2 \end{array}\right]^{-1}
+      </me>
+      <me>
+        C=\left[ \begin{array}{rr}2 \amp -1 \\ 1 \amp 2 \end{array}\right]\left[ \begin{array}{rr}1 \amp 0 \\ 0 \amp 0 \end{array}\right]\left[ \begin{array}{rr}2 \amp -1 \\ 1 \amp 2 \end{array}\right]^{-1}
+        \hspace{2pc}
+        D=\left[ \begin{array}{rr}3 \amp 1 \\ 1 \amp 2 \end{array}\right]\left[ \begin{array}{rr}0 \amp -1 \\ 1 \amp 0 \end{array}\right]\left[ \begin{array}{rr}3 \amp 1 \\ 1 \amp 2 \end{array}\right]^{-1}
+      </me>
+    </statement>
+  </question>
+
+  <p>
+    In fact, this is more generally true.  Try to use Definition <xref ref="def-invariant_lines"/> to justify each of the following propositions.
+  </p>
+
+  <proposition xml:id="prop-invariant_lines_smd">
+    <title>Invariant Lines and SMDs</title>
+	<statement>
+		<p>
+			    If <m>\mathcal{B}= \{\vect{v}_1,\ldots, \vect{v}_n\}\subset \R^n</m> is a basis,
+    <m>P=[\vect{v}_1|\cdots| \vect{v}_n]</m>, 
+    <m>D</m> is a diagonal matrix with diagonal entries <m>\lambda_1,\ldots, \lambda_n</m>, and
+    <m>A=PDP^{-1}</m>, 
+    then for each <m>i</m>, <m>1\le i\le n</m>, the line <m>L_i = \{t \vect{v}_i \ | \ t\in \mathbb{R}\}</m> is an <m>A</m>-invariant line with scaling factor <m>\lambda_i</m>.
+		</p>
+	</statement>
+  </proposition>
+
+  <proof>
+    <p>
+      It suffices to show that <m>A\vect{v}_i=\lambda_i\vect{v}_i</m>.  
+    </p>
+    <me>
+      A\vect{v}_i =P(D(P^{-1}\vect{v}_i))=P(D\vect{e}_i)=P(\lambda_i\vect{e}_i)=\lambda_i(P\vect{e}_i)=\lambda_i\vect{v}_i.
+    </me>
+  </proof>
+
+  <definition xml:id="def-invariant_subspace">
+    <title>Invariant Subspaces</title>
+    <statement>
+      <p>
+        If <m>T:\R^n\to \R^n</m> is a matrix transformation with associated matrix <m>A</m>, then a subspace <m>W\subset \R^n</m> is <term><m>T</m>-invariant</term> (or <term><m>A</m>-invariant</term>) if <m>T(W)\subset W</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    We may generalize <xref ref="prop-invariant_lines_smd"/> to any <m>T</m>-invariant subspace.
+  </p>
+
+  <p>
+    <alert>Invariant Subspaces and SMDs</alert>
+    If <m>W</m> is an invariant subspace of <m>B</m> and <m>A=PBP^{-1}</m>, 
+    then <m>P(W)</m> is an invariant subspace of <m>A</m>.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Suppose that <m>S=\{\vect{v}_1,\vect{v}_2,\vect{v}_3\}\subset \R^3</m> is an ordered basis.  The <m>3\times 3</m> matrix 
+      </p>
+      <me>
+        A=[\vect{v}_1,\vect{v}_2,\vect{v}_3]\begin{bmatrix}2 \amp 0 \amp 0 \\ 0 \amp 0 \amp -1 \\ 0 \amp 1 \amp 0\end{bmatrix}[\vect{v}_1,\vect{v}_2,\vect{v}_3]^{-1}.
+      </me>
+      <p>
+        We can see two invariant subspaces.  The line <m>L=\spn(\vect{v}_1)</m> is <m>A</m>-invariant with scaling factor 2.  The plane <m>W=\spn(\vect{v}_2,\vect{v}_3)</m> is invariant and <m>T_A</m> acts upon it by a rotation of <m>90^\circ</m> <m>\vect{v}_2</m> towards <m>\vect{v}_3</m>.  
+      </p>
+    </statement>
+  </example>
+
 
 
 </section>

@@ -5,19 +5,90 @@
 
   <introduction>
 
-    <p>
-      In this chapter, we introduce compact notation for linear combination, from which matrices and matrix multiplication emerge.   We then analyze matrix multiplication, conceptualizing it as encoding transformations from servings vectors to mixture vectors.  This new perspective is highly valuable in STEM application.
-    </p>
+<p>
+    In this chapter, we introduce compactify the notation of linear combination, from which matrices and matrix multiplication emerge.   We then analyze matrix multiplication, conceptualizing it as encoding transformations from servings vectors to mixture vectors.  This new perspective is highly valuable in STEM application.
+</p>
 
+<objectives>
+    <title>Objectives for <xref ref="chp3sec1" /></title>
+    <ul>
+        <li>
+            <p>I understand and can use the definition of <em>matrix multiplication as linear combination</em> to reason, communicate, justify, and compute.</p>
+        </li>
+        <li>
+            <p>I understand and correctly move between the 3 symbolic representations of a matrix: name, columns, entries.</p>
+        </li>
+        <li>
+            <p>I understand and can use the algebraic properties of matrix multiplication.</p>
+        </li>
+        <li>
+            <p>I understand the justifications for the algebraic properties and can produce similar justifications for other algebraic properties.</p>
+        </li>
+    </ul>
+</objectives>
 
-    <objectives>
-      <title>Lesson 3.1</title>
-        <ul>
-            <li>
-              <p>I see that in certain quantitative situations, it is meaningful to add and scale vectors.</p>
-            </li>
-        </ul>
-    </objectives>
+<objectives>
+    <title>Objectives for <xref ref="chp3sec2" /></title>
+    <ul>
+        <li>
+            <p>I understand how mixture questions become matrix questions.</p>
+        </li>
+        <li>
+            <p>I understand how <m>\operatorname{Col}(A)</m>, <m>\operatorname{Null}(A)</m>, and <m>\operatorname{Sol}(A,\mathbf{b})</m> relate to mixture questions.</p>
+        </li>
+    </ul>
+</objectives>
+
+<objectives>
+    <title>Objectives for <xref ref="chp3sec3" /></title>
+    <ul>
+        <li>
+            <p>I understand matrix transformations as inputting serving size vectors and outputting mixture vectors and can use this understanding to reason, communicate, and compute.</p>
+        </li>
+        <li>
+            <p>I can correctly use set notation to describe and reason about transformed objects.</p>
+        </li>
+        <li>
+            <p>I can visualize, reason about, and compute transformed lines, line segments, and squares.</p>
+        </li>
+        <li>
+            <p>I understand matrix transformations of the plane visually, verbally, symbolically, and numerically.  In particular, I can correctly sketch transformed squares and can use the appropriate geometric words.</p>
+        </li>
+    </ul>
+</objectives>
+
+<objectives>
+    <title>Objectives for <xref ref="chp3sec4" /></title>
+    <ul>
+        <li>
+            <p>I understand matrix multiplication of matrices as composition.</p>
+        </li>
+        <li>
+            <p>Given a list of transformations, I can correctly symbolize them in the correct order.</p>
+        </li>
+        <li>
+            <p>Given a symbolic expression for a composition, I can correctly interpret it in the correct order.</p>
+        </li>
+    </ul>
+</objectives>
+
+<objectives>
+    <title>Objectives for <xref ref="chp3sec5" /></title>
+    <ul>
+        <li>
+            <p>I understand the distinction between the meaning of matrix multiplication and computing matrix multiplication.</p>
+        </li>
+        <li>
+            <p>I am familiar with multiple computational strategies and the contexts for which they are appropriate.</p>
+        </li>
+        <li>
+            <p>I am can quickly and accurately compute matrix multiplication by hand for <m>3\times 3</m> and smaller matrices.</p>
+        </li>
+        <li>
+            <p>I can input matrices into a computer algebra system (such as GeoGebra) and use it to compute matrix multiplication.</p>
+        </li>
+    </ul>
+</objectives>
 
   </introduction>
 
