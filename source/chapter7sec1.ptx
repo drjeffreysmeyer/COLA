@@ -1,11 +1,221 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="chp7sec1" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Concepts of Vector Size</title>
+  <title>Vector Size</title>
 
-	<p>
-		
-	</p>
+    <p>
+      The motivating question of this lesson is: <em>What is the "size" of a vector?</em>  
+      By size, here I mean an <em>absolute size</em>, single number that captures the "bigness" of the vector.
+      This is in contrast to previous chapters, where we looked at <em>relative size</em> of two vectors (i.e. <m>2\vect{v}</m> is two times larger than <m>\vect{v}</m>).
+      There are many reasonable ways to measure size, and you will begin by investigating them in a variety of contexts.
+    </p>
+
+    <question>
+      <title>Size in Our Vignettes</title>
+      <statement>
+        <p>
+          Revisit Vignette \ref{vig2}. What would you say is the size of that vector of travel directions?
+          What if you were a bird?
+        </p>
+        <p>
+          Revisit Vignette \ref{vig3}. What would you say is the size of that vector of temperatures?
+        </p>
+      </statement>
+    </question>
+
+    <question xml:id="activity-vector_size2">
+      <title>Size in <m>\R^2</m></title>
+      <statement>
+        <p>
+          Here we investigate the size of each vector in <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \left[\begin{array}{r}-2\\2\end{array}\right], \left[\begin{array}{r}3\\3\end{array}\right], \left[\begin{array}{r}-4\\1\end{array}\right]\right\}.</m>
+        </p>
+        <p>
+          With your groups, discuss relevant ways to measure the <em>size</em> of each vector.
+          Can you come up with multiple ways?  Given a reasonable way to determine size, which vectors are the largest?  Smallest?
+        </p>
+      </statement>
+    </question>
+
+    <question xml:id="activity-vector_size3">
+      <title>Size in <m>\R^3</m></title>
+      <statement>
+        <p>
+          In groups of three, each of you pick one of the following vectors we investigate the size of each vector in <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \left[\begin{array}{r}6\\0\\0\end{array}\right],\left[\begin{array}{r}1\\5\\5\end{array}\right], \left[\begin{array}{r}4\\4\\4\end{array}\right]\right\}.</m>  Each of you, make an argument why your vector has the largest size.
+          (Note: each of you has a reasonable argument - think it through!)
+        </p>
+      </statement>
+    </question>
+
+    <p>
+      As you may have seen in the previous activities, there are many reasonable ways to measure size.
+      I will outline a few here, but note that you may think of other ways not listed below.
+      Recall the forecast from Vignette \ref{vig3}.
+    </p>
+
+    <p>
+      It would be reasonable to say that the ``size'' of this forecast vector is the highest temperature expected, in which case, its ``size'' would be <m>59^{\circ}</m> F.
+    </p>
+
+    <p>
+      More generally, one reasonable way to measure the size of a vector <m>\vect{v}</m> is by the magnitude of its largest entry, which I will call its absolute maximum.
+    </p>
+
+    <definition xml:id="def-absolute_max">
+      <title>Absolute Maximum (<m>\ell^\infty</m>-Norm)</title>
+      <statement>
+        <p>
+          If <m>\vect{v}\in \R^n</m>, then its <term>absolute maximum</term>, or <m>\ell^\infty</m>-<term>norm</term>, is the largest magnitude of its entries.
+          In algebraic symbols, <m>\norm{\vect{v}}_\infty= |v_i|</m> where <m>|v_i|\ge |v_j|</m> for all <m>j\in \{1,\ldots, n\}</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      When looking at a vector as a signal or data, it is often useful to think about its absolute maximum.
+    </p>
+
+    <p>
+      Recall the travel instructions from Vignette \ref{vig2}.
+    </p>
+
+    <p>
+      Since you are restricted to move along streets, it would be reasonable to say the size of this vector is number of blocks you have to travel, in which case the ``size'' of this vector is 4.  
+    </p>
+
+    <p>
+      More generally, a second reasonable way to measure the size if a vector <m>\vect{v}</m> is by the sum of the magnitude of its entries, which I call its absolute sum.
+    </p>
+
+    <definition xml:id="def-absolute_sum">
+      <title>Absolute Sum (<m>\ell^1</m>-Norm)</title>
+      <statement>
+        <p>
+          If <m>\vect{v}\in \R^n</m>, then its <term>absolute sum</term>, or <m>\ell^1</m>-<term>norm</term>, is the sum of the magnitude of its entries.
+          In algebraic symbols, <m>\norm{\vect{v}}_1= |v_1|+\cdots+|v_n|</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      The absolute sum has many interesting applications.  It is related to the notion of Taxi Cab Geometry, where you consider the number of blocks traveled by a taxi cab to reach its destination.
+      The absolute sum is also related to the average of the vector entries, which has many statistical applications.
+    </p>
+
+    <p>
+      A third reasonable way to measure the size if a vector <m>\vect{v}</m> is by its Euclidean length.
+      To work with Euclidean length in <m>\R^n</m>, we will need to develop the Generalized Pythagorean Theorem.
+    </p>
+
+    <p>
+      We begin with the Pythagorean Theorem in the Euclidean plane, the classical result which states that, given a right triangle <m>\triangle ABC</m>, the area of the square off of the hypotenuse <m>S_3</m> is the sum of the areas of the squares off the legs (<m>S_1</m> and <m>S_2</m>):
+    </p>
+    <me>\Area(S_1) + \Area(S_2) = \Area(S_3),</me>
+    <p>
+      yielding the famous equality,
+    </p>
+    <me>a^2 + b^2 = c^2,</me>
+    <p>
+      and hence
+    </p>
+    <me>c = \sqrt{a^2 + b^2}.</me>
+
+    <p>
+      Identifying a vector <m>\vect{v} = \begin{bmatrix}x\\y\end{bmatrix} \in \R^2</m> with the hypotenuse of the triangle, we get
+    </p>
+    <me>\text{Length of }\vect{v} = \sqrt{x^2+y^2}.</me>
+
+    <p>
+      By performing the Pythagorean Theorem twice, we get the Pythagorean Theorem in Euclidean 3-Space.
+      We can iterate this process over and over again to find length in <m>\R^n</m>.
+    </p>
+
+    <definition xml:id="def-length">
+      <title>Length (<m>\ell^2</m>-Norm)</title>
+      <statement>
+        <p>
+          If <m>\vect{v}\in \R^n</m>, then its <term>length</term>, or <m>\ell^2</m>-<term>norm</term>, is its Euclidean length (via the Generalized Pythagorean Theorem).
+          In algebraic symbols, <m>\norm{\vect{v}}_2 = \sqrt{v_1^2+\cdots + v_n^2}.</m>
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      You may be asking, <em>why call absolute magnitude, absolute sum, and length <m>\ell^p</m> (read ``ell p'') where <m>p</m> is "infinity," "one," or "two?"</em>   
+      In fact, these are instances of a broad family of ways of measuring size, or ``norms,''
+      <m>\norm{\vect{v}}_p:=(|v_1|^p+\cdots+|v_n|^p)^{\frac{1}{p}}</m>, where <m>p\in (0,\infty]</m>.  
+      These norms play an important role in areas of math that build on linear algebra.  
+      In this course, we will only need the three I mentioned above.  
+      Furthermore, the <m>\ell^2</m>-norm (i.e. length) will be most important for us going forward, so unless 
+      mentioned otherwise, I will always use <m>\norm{\vect{v}}</m> (i.e. no subscript) to denote the <m>\ell^2</m>-norm <m>\norm{\vect{v}}_2</m>.
+      For our purposes, I will reference it as the absolute maximum, since this is more descriptive.
+    </p>
+
+    <example xml:id="ex-three_norms">
+      <statement>
+        <p>
+          If <m>\vect{v}=\left[\begin{array}{r}1\\-4\\2\\-2\end{array}\right]</m>, then
+        </p>
+        <ul>
+          <li><m>\norm{\vect{v}}_\infty = \max (1,4,2,2) = 4</m>,</li>
+          <li><m>\norm{\vect{v}}_1 = 1+4+2+2 = 9</m>, and</li>
+          <li><m>\norm{\vect{v}}_2 = \sqrt{1^2+4^2+2^2+2^2}= \sqrt{1+16+4+4} = 5</m>.</li>
+        </ul>
+      </statement>
+    </example>
+
+    <question>
+      <statement>
+        <p>
+          Revisit Activity \ref{activity-vector_size3}.  Order the vectors according to each of the three norms.
+        </p>
+      </statement>
+    </question>
+
+    <question>
+      <title>Identify Sets of Norm 1</title>
+      <statement>
+        <p>
+          In the plane, clearly draw and label each of the following sets of points: 
+        </p>
+        <ol>
+          <li>The set of points that have absolute maximum of 1.  In symbols <m>C_\infty:=\{\vect{v} \ | \ \norm{\vect{v}}_\infty = 1\}</m>.</li>
+          <li>The set of points that have absolute sum of 1.  In symbols <m>C_1:=\{\vect{v} \ | \ \norm{\vect{v}}_1 = 1\}</m>.</li>
+          <li>The set of points that have length of 1.  In symbols <m>C_2:=\{\vect{v} \ | \ \norm{\vect{v}}_2 = 1\}</m>.</li>
+        </ol>
+        <p>
+          Conjecture the shapes of the sets of norm 1 in <m>\R^3</m>.
+        </p>
+      </statement>
+    </question>
+
+    <theorem xml:id="prop-scale_norms">
+      <title>Scaling a vector scales its norm</title>
+      <statement>
+        <p>
+          If <m>\vect{v}\in\R^n</m>, <m>p\in \{\infty,1,2\}</m>, and <m>k \in \R</m>, then <m>\norm{k \vect{v}}_p = |k|\ \norm{\vect{v}}_p</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      We often care about the ``direction'' and not the norm of a vector.
+      In such cases, we can use Proposition \ref{prop:scale_norms} to scale out by the norm and get a ``norm 1'' vector.
+      In certain contexts, working with a norm 1 vector is much nicer than working with messy or large norms.
+      The process of scaling a nonzero vector to length 1 is <em>normalization</em> (i.e. <m>\vect{v} \mapsto \frac{1}{\norm{\vect{v}}} \vect{v}</m>).
+    </p>
+
+    <definition>
+      <title>Unit Vector</title>
+      <statement>
+        <p>
+          A vector of length 1 is a <term>unit vector</term>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      I will use the ``hat'' notation to denote the unit vector in the <m>\vect{v}</m>-direction, i.e. <m>\widehat{\vect{v}} := \frac{1}{\norm{\vect{v}}} \vect{v}</m>.
+    </p>
 
 
 </section>

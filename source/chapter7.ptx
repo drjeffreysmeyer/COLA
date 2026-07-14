@@ -21,6 +21,11 @@
 
   <!-- include sections-->
     <xi:include href="chapter7sec1.ptx" />
+    <xi:include href="chapter7sec2.ptx" />
+    <xi:include href="chapter7sec3.ptx" />
+    <xi:include href="chapter7sec4.ptx" />
+    <xi:include href="chapter7sec5.ptx" />
+    <xi:include href="chapter7sec6.ptx" />
    
 
 </chapter>
