@@ -3,9 +3,125 @@
 <section xml:id="chp7sec4" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Orthogonality</title>
 
-	<p>
-		
-	</p>
+
+<p>
+    The motivating geometric question of this lesson is: <em>What does it mean for vectors to be orthogonal?</em>
+</p>
+
+<definition xml:id="def-orthogonal">
+    <title>Orthogonal</title>
+    <statement>
+        <p>
+            Two vectors are <term>orthogonal</term> if the angle between them is a right angle.
+        </p>
+    </statement>
+</definition>
+
+<p>
+    Using our understanding of cosine and the Angle Equation \eqref{eq_inner_prod_cos}, it follows that 
+</p>
+
+<proposition xml:id="prop-inner_prod_zero_orth">
+    <title>Vectors are Orthogonal if their Inner Product is Zero</title>
+    <statement>
+        <p>
+            If <m>\vect{v},\vect{w}\in \R^m</m> are nonzero, then <m>\vect{v}</m> and <m>\vect{w}</m> are orthogonal if and only if <m>\ip{\vect{v}}{\vect{w}} =0</m>.
+        </p>
+    </statement>
+</proposition>
+
+<definition xml:id="def-pairwise_orthogonal">
+    <title>Pairwise Orthogonal Set</title>
+    <statement>
+        <p>
+            If <m>S \subset \R^m</m> is a finite collection of nonzero vectors, then <m>S</m> is <term>pairwise orthogonal</term> if for all <m>\vect{v},\vect{w}\in S</m>, <m>\vect{v}\ne \vect{w}</m>, then <m>\ip{\vect{v}}{\vect{w}} = 0</m>.   
+        </p>
+    </statement>
+</definition>
+
+<proposition xml:id="cqc-orthogonality">
+    <title>Computational Quick Check for Orthogonality</title>
+    <statement>
+        <p>
+            If <m>S=\{\vect{v}_1,\ldots \vect{v}_n\}\subset \R^m</m> and <m>A=[\vect{v}_1 \ | \ \cdots\ | \  \vect{v}_n]</m>, then
+        </p>
+        <p>
+            <m>S</m> is pairwise orthogonal if and only if <m>A^TA</m> is diagonal.
+        </p>
+    </statement>
+</proposition>
+
+<proposition xml:id="prop-orth_implies_indep">
+    <title>Pairwise Orthogonal Vectors are Independent</title>
+    <statement>
+        <p>
+            If <m>S\subset V</m> is a finite set of pairwise orthogonal (nonzero) vectors, then <m>S</m> is linearly independent.
+        </p>
+    </statement>
+</proposition>
+
+<p>
+    Observe how this morally makes sense: <em>orthogonal vectors should be pointing in different directions</em>, and this is exactly what independence measures.
+</p>
+
+<proof>
+    <title>Sketch of proof</title>
+    <p>
+        Let <m>S=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset \R^m</m> and <m>A=[\vect{v}_1 \ | \ \cdots\ | \  \vect{v}_n]</m>.
+        Suppose <m>\vect{x}\in \R^n</m> is such that 
+        <m>A\vect{x}=\vect{0}</m>. 
+        Then <m>(A^TA)\vect{x}= A^T(A\vect{x})=A^T\vect{0}=\vect{0}</m>.
+        Since <m>S</m> is orthogonal, Algorithm \ref{cqc-orthogonality} implies <m>A^TA</m> is diagonal (with nonzero diagonal entries).  
+        Therefore <m>\vect{x}</m> must be <m>\vect{0}</m> and hence <m>S</m> is independent.
+    </p>
+</proof>
+
+<definition>
+    <title>Orthonormal Set</title>
+    <statement>
+        <p>
+            We call <m>S</m> <term>normal</term> if each vector in <m>S</m> is normal (i.e. if <m>\vect{v}\in S</m>, then <m>\ip{\vect{v}}{\vect{v}}=1</m>).  
+            If <m>S</m> is both pairwise orthogonal and normal, we call it <term>orthonormal</term>.
+        </p>
+    </statement>
+</definition>
+
+<proposition>
+    <statement>
+        <p>
+            Let <m>S = \{\vect{v}_1,\ldots, \vect{v}_n\}\subset \R^m</m> and <m>A  = [\vect{v}_1| \cdots | \vect{v}_n]</m>.   
+            Then <m>S</m> is orthonormal if and only if <m>A^TA = I_{n\times n}</m>.
+        </p>
+    </statement>
+</proposition>
+
+<definition>
+    <title>Orthogonal Matrix</title>
+    <statement>
+        <p>
+            An <m>m\times n</m> matrix <m>Q</m> is <term>orthogonal</term> if <m>Q^T Q = I_{n\times n}</m>.
+        </p>
+    </statement>
+</definition>
+
+<p>
+    It follows that if <m>S</m> is orthonormal, <em>it is an orthonormal basis for its span</em>.
+</p>
+
+<p>
+    <em>Why do we care?  </em>
+    Bases are necessary to perform computations.  
+    Basis give us coordinates!  
+    Orthonormal basis give us nice crisp square coordinate grids.  Certain computations become much easier with ``good'' orthogonal coordinates.
+</p>
+
+<p>
+    So the question becomes, given a basis <m>S</m> for a subspace <m>W\subset \R^n</m>, <em>how do you find an orthonormal basis for <m>W</m></em>?
+</p>
+
+<p>
+    One strategy for this is the Gram--Schmidt Orthogonalization Algorithm, which we will introduce in a few sections.
+</p>
 
 
 </section>

@@ -3,9 +3,324 @@
 <section xml:id="chp7sec2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Inner Product and Angle</title>
 
-	<p>
-		
-	</p>
+
+    <p>
+        Consider vectors <m>\vect{v}</m>, <m>\vect{w}</m>, and the parallelogram they form.  
+        Observe that <m>\vect{v}</m>, <m>\vect{w}</m>, and diagonal <m>\vect{v}-\vect{w}</m> form a triangle.
+        Let <m>\theta</m> denote the angle between <m>\vect{v}</m> and <m>\vect{w}</m>.  
+        See Figure <xref ref="fig-parallelogram-diagonals2"/>.
+    </p>
+
+    <p>
+        The motivating question of this lesson is: <em>How do the lengths of the sides <m>\vect{v}</m> and <m>\vect{w}</m> relate to the length of the diagonal <m>\vect{v}-\vect{w}</m>?</em>  
+    </p>
+
+    <figure xml:id="fig-parallelogram-diagonals2">
+        <caption>A mixture parallelogram and its diagonal.</caption>
+        <image source="images/7.2_other_diagonal.png" width="100%"/>
+    </figure>
+
+    <question xml:id="activity-exploring-diagonal">
+        <title>Exploring the Length of a Diagonal</title>
+        <statement>
+            <p>
+                In this activity, you will use the GeoGebra link <url href="https://www.geogebra.org/m/nzvwt6ju">nzvwt6ju</url> to explore the length of its diagonal.  
+                Begin with <m>\norm{\vect{v}}=4</m> and <m>\norm{\vect{w}}=3</m>.
+            </p>
+            <ol>
+                <li>
+                    <p>
+                        <term>Explore.</term> Move the vector <m>\vect{w}</m>. It is constrained to the circle of radius 3 (i.e. all <m>\vect{w}</m> for which <m>\norm{\vect{w}}=3</m>). Take note of the shapes of all the different parallelograms you are forming.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <term>The range of values of <m>\norm{\vect{v}-\vect{w}}</m>.</term> As you move <m>\vect{w}</m>, how does <m>\norm{\vect{v}-\vect{w}}</m> vary?  
+                        What is the largest it can be? Describe the parallelogram(s) that attain this maximum?
+                        What is the smallest it can be? Describe the parallelogram(s) that attain this minimum? 
+                        Is it ever the case that <m>\norm{\vect{v}-\vect{w}}= \norm{\vect{v}}+\norm{\vect{w}}</m> or <m>\norm{\vect{v}-\vect{w}}= \norm{\vect{v}}-\norm{\vect{w}}</m>, and if so, when?
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <term>The range of values of <m>\norm{\vect{v}-\vect{w}}^2</m>.</term> As you move <m>\vect{w}</m>, how does <m>\norm{\vect{v}-\vect{w}}^2</m> vary? Is it ever the case that <m>\norm{\vect{v}-\vect{w}}^2 = \norm{\vect{v}}^2+\norm{\vect{w}}^2</m>, and if so, when? In what way does the Pythagorean Theorem have to do with this? In what way does <m>\norm{\vect{v}-\vect{w}}^2</m> seem to relate to <m>\theta</m>, the angle between <m>\vect{v}</m> and <m>\vect{w}</m>?
+                    </p>
+                </li>
+            </ol>
+        </statement>
+    </question>
+
+    <p>
+        We see that, as <m>\norm{\vect{v}}</m> and <m>\norm{\vect{w}}</m> are left constant, <m>\norm{\vect{v}-\vect{w}}</m> varies with <m>\theta</m>. 
+        Let's algebraically expand <m>\norm{\vect{v}-\vect{w}}^2</m>. 
+    </p>
+
+    <md>
+        <mrow>\norm{\vect{v}-\vect{w}}^2 \amp= (v_1-w_1)^2 + \cdots + (v_n-w_n)^2</mrow>
+        <mrow>\amp=(v_1^2-2v_1w_1+w_1^2) + \cdots + (v_n^2-2v_nw_n+w_n^2)</mrow>
+        <mrow>\amp=(v_1^2 + \cdots+ v_n^2) - 2(v_1w_1+ \cdots +v_nw_n) + (w_1^2 + \cdots+ w_n^2)</mrow>
+        <mrow>\amp= \norm{\vect{v}}^2 - 2\underbrace{(v_1w_1+ \cdots +v_nw_n)}_{\text{``Measures'' angle between } \vect{v} \text{ and } \vect{w}} + \norm{\vect{w}}^2.</mrow>
+    </md>
+
+    <p>
+        This term <m>v_1w_1+ \cdots +v_nw_n</m> measures many interesting geometric features of this parallelogram and deserves its own name.
+    </p>
+
+    <definition xml:id="def-inner-product">
+        <title>(Standard) Inner Product (a.k.a. Dot Product)</title>
+        <statement>
+            <p>
+                The (standard) <term>inner product</term> (or <term>dot product</term>) of <m>\vect{v},\vect{w}\in \R^n</m> is:
+            </p>
+            <me>\ip{\vect{v}}{\vect{w}} = v_1w_1+ \cdots +v_nw_n.</me>
+        </statement>
+    </definition>
+
+    <p>
+        With the symbolism of the inner product, the length squared of the diagonal simplifies to 
+    </p>
+    
+    <men xml:id="eq-length-sq-diag">
+        \norm{\vect{v}-\vect{w}}^2 = \norm{\vect{v}}^2+\norm{\vect{w}}^2 - 2 \ip{\vect{v}}{\vect{w}}.
+    </men>
+
+    <assemblage>
+        <title>The Many Notations for Inner Product</title>
+        <p>
+            There are many common notations for the inner product. I use the ``angle bracket'' notation <m>\ip{\vect{v}}{\vect{w}}</m>.  
+            Another common notation is the ``dot'' notation <m>\vect{v}\cdot \vect{w}</m>.  
+            Further still, some may use the parentheses notation <m>(\vect{v},\vect{w})</m>.  
+            In this course, plan to use only the angle bracket notation, but be prepared to see these other notations in other books and courses.
+        </p>
+    </assemblage>
+
+    <p>
+        Observe that we may express length using the inner product:
+    </p>
+
+    <men xml:id="eq-innerproduct-length">
+        \ip{\vect{v}}{\vect{v}} = \norm{\vect{v}}^2
+    </men>
+
+    <p>
+        So the <em>inner product measures length!</em>
+    </p>
+
+    <proposition xml:id="prop-fundamental-standard-inner-product-props">
+        <title>Algebraic Properties of the Inner Product</title>
+        <statement>
+            <p>The inner product satisfies each of the following.</p>
+            <ol>
+                <li>
+                    <p><term>Positive definite.</term> If <m>\vect{v}\in \R^n</m>, then <m>\ip{\vect{v}}{\vect{v}}\ge 0</m>, and equals 0 precisely when <m>\vect{v}=\vect{0}</m>.</p>
+                </li>
+                <li>
+                    <p><term>Symmetric.</term> If <m>\vect{v},\vect{w}\in \R^n</m>, then <m>\ip{\vect{v}}{\vect{w}}=\ip{\vect{w}}{\vect{v}}</m>.</p>
+                </li>
+                <li>
+                    <p><term>Bilinear.</term> The inner product is linear in the second input.</p>
+                    <ol marker="a">
+                        <li><p><term>Additive.</term> If <m>\vect{u},\vect{v},\vect{w}\in \R^n</m>, then <m>\ip{\vect{u}}{\vect{v}+\vect{w}}=\ip{\vect{u}}{\vect{v}}+\ip{\vect{u}}{\vect{w}}</m>.</p></li>
+                        <li><p><term>Scaling.</term> If <m>\vect{v},\vect{w}\in \R^n</m>, <m>k\in \R</m>, then <m>\ip{\vect{v}}{k\vect{w}}=k\ip{\vect{v}}{\vect{w}}</m>.</p></li>
+                    </ol>
+                </li>
+            </ol>
+        </statement>
+    </proposition>
+
+    <p>
+        Observe that by symmetry, an inner product is bilinear in <em>both</em> inputs.  
+    </p>
+
+    <example xml:id="ex-using-ip-alg-props">
+        <title>Using Algebraic Properties to Compute Inner Products</title>
+        <statement>
+            <p>
+                Suppose we know <m>\ip{\vect{a}}{\vect{a}}=16</m>, <m>\ip{\vect{a}}{\vect{b}}=10</m>, and <m>\ip{\vect{b}}{\vect{b}}=9</m>.
+            </p>
+            <p>
+                How can we use this knowledge to compute <m>\ip{2\vect{a}+3\vect{b}}{\vect{b}}</m>?
+            </p>
+            <p>
+                <em>Heuristic: Use algebraic properties to decompose unknown inner products into combinations of known inner products.</em>
+            </p>
+            <md>
+                <mrow>\ip{2\vect{a}+3\vect{b}}{\vect{b}} \amp= \ip{2\vect{a}}{\vect{b}} + \ip{3\vect{b}}{\vect{b}}</mrow>
+                <mrow>\amp=2\ip{\vect{a}}{\vect{b}} + 3\ip{\vect{b}}{\vect{b}}</mrow>
+                <mrow>\amp=2(10) + 3(9) = 47</mrow>
+            </md>
+        </statement>
+    </example>
+
+    <question xml:id="activity-using-ip-alg-props">
+        <title>Using Algebraic Properties to Compute Inner Products</title>
+        <statement>
+            <p>
+                Suppose we know <m>\ip{\vect{a}}{\vect{a}}=16</m>, <m>\ip{\vect{a}}{\vect{b}}=10</m>, and <m>\ip{\vect{b}}{\vect{b}}=9</m>.
+                Use your knowledge of the algebraic properties of inner products to compute each of the following:
+            </p>
+            <ol>
+                <li><m>\ip{\vect{b}}{\vect{a}}</m></li>
+                <li><m>\ip{2\vect{a}}{\vect{b}}</m></li>
+                <li><m>\norm{-3\vect{a}}</m></li>
+                <li><m>\ip{\vect{a}}{\vect{b}}+\ip{-\vect{b}}{\vect{a}}</m></li>
+                <li><m>\norm{\vect{a}+\vect{b}}</m></li>
+                <li><m>\ip{2\vect{a}+3\vect{b}}{5\vect{a}+7\vect{b}}</m></li>
+            </ol>
+        </statement>
+    </question>
+
+    <p>
+        We have already seen in <xref ref="activity-using-ip-alg-props"/> that the inner product <m>\ip{\vect{v}}{\vect{w}}</m> relates to the angle between <m>\vect{v}</m> and <m>\vect{w}</m>. 
+        We now make the relationship more precise.
+        To do so, we will use a classical result from analytic geometry, the <em>Law of Cosines</em>.
+    </p>
+
+    <image source="images/7.2_vectorize_triangle.png" width="100%"/>
+
+
+    <proposition xml:id="prop-law-of-cosines">
+        <title>Law of Cosines</title>
+        <statement>
+            <sidebyside widths="50% 50%" valign="top">
+                <p>
+                    If <m>\triangle ABC</m> is a triangle with side lengths <m>a</m>, <m>b</m>, <m>c</m> and angle <m>\theta =\angle ACB</m>, then
+                    <me>c^2 = a^2 + b^2 - 2ab\cos(\theta).</me>
+                </p>
+                  <image source="images/7.2_law_of_cosines.png" width="100%"/>
+            </sidebyside>
+        </statement>
+    </proposition>
+
+    <note>
+        <p>
+            The Law of Cosines can be proved using the Pythagorean Theorem. 
+            See GeoGebra ID: <url href="https://www.geogebra.org/m/ck4w8asn">ck4w8asn</url>.
+        </p>
+    </note>
+
+    <figure xml:id="fig-law-of-cosines-triangle">
+
+    </figure>
+
+
+
+<p>
+    In Figure , we see the Law of Cosines, in vector symbolism, gives:
+</p>
+
+<me>c^2 = a^2 + b^2 - 2ab\cos(\theta)
+\hspace{1pc} \Rightarrow \hspace{1pc}
+\norm{\vect{v}-\vect{w}}^2 = \norm{\vect{v}}^2+\norm{\vect{w}}^2 - 2\ \norm{\vect{v}} \ \norm{\vect{w}}\ \cos(\theta)
+</me>
+
+<p>
+    Meanwhile, we have already shown in  that:
+</p>
+
+<me>\norm{\vect{v}-\vect{w}}^2 %= \ip{\vect{w}-\vect{v}}{\vect{w}-\vect{v}} 
+= \norm{\vect{v}}^2+\norm{\vect{w}}^2 - 2 \ip{\vect{v}}{\vect{w}}.</me>
+
+<p>
+    Comparing these expressions yields:
+</p>
+
+<proposition xml:id="prop-ip_angle_eq">
+    <title>The Angle Equation for the Inner Product</title>
+    <statement>
+        <p>
+            If <m>\vect{v},\vect{w}\in\R^n</m>, then,
+        </p>
+        <men xml:id="eq_inner_prod_cos"> \ip{\vect{v}}{\vect{w}}  =  \norm{\vect{v}} \ \norm{\vect{w}}\ \cos(\theta)</men>
+    </statement>
+</proposition>
+
+<p>
+    So we may use the inner product to compute <em>angle</em>!
+</p>
+
+<me>\theta = \arccos\left(\frac{\ip{\vect{v}}{\vect{w}} }{  \norm{\vect{v}} \ \norm{\vect{w}}}\right)</me>
+
+<p>
+    Keep in mind that <m>\arccos</m> outputs angles measures in radians.  If you want to find angles in degree, you need to change units by scaling by <m>\frac{360}{2\pi}</m>.
+</p>
+
+<question xml:id="activity-using_ip_alg_props">
+    <title>Using Algebraic Properties to Compute Triangle Data</title>
+    <statement>
+        <p>
+            Consider the triangle <m>\triangle ABC</m> where <m>A=(1,1)</m>, <m>B=(5,2)</m>, and <m>C=(2,4)</m>.
+            Use your knowledge of inner products to find the triangle data %(3 side lengths and 3 angle measurements) 
+            for <m>\triangle ABC</m>, specifically:
+        </p>
+        <ol>
+            <li>Length of segment <m>AB</m></li>
+            <li>Length of segment <m>AC</m></li>
+            <li>Length of segment <m>CB</m></li>
+            <li>Measure in degrees of <m>\angle CAB</m></li>
+            <li>Measure in degrees of <m>\angle ABC</m></li>
+            <li>Measure in degrees of <m>\angle BCA</m></li>
+        </ol>
+        <p>
+            <em>Hint: What vectors will you use?</em>
+        </p>
+        <p>
+        </p>
+        <image source="images/7.2_triangle.png" width="100%"/>
+    </statement>
+</question>
+
+<p>
+    The Angle Equation <xref ref="eq_inner_prod_cos"/> for the inner product has many important consequences, including the following two results.
+</p>
+
+<theorem xml:id="thm_cauchyschwartz">
+    <title>Cauchy--Schwartz Inequality</title>
+    <statement>
+        <p>
+            If <m>\vect{v},\vect{w}\in \R^n</m>, then <m>|\ip{\vect{v}}{\vect{w}}|  \le  \norm{\vect{v}} \ \norm{\vect{w}}</m>.
+        </p>
+    </statement>
+</theorem>
+
+<proof>
+    <title>Sketch of proof</title>
+    <p>
+        Note that <m>|\cos(\theta)|\le 1</m> and apply this to the Angle Equation <xref ref="eq_inner_prod_cos"/>.
+    </p>
+</proof>
+
+<theorem>
+    <title>Triangle inequality</title>
+    <statement>
+        <p>
+            If <m>\vect{v},\vect{w}\in \R^n</m>, then <m>\norm{\vect{v}-\vect{w}} \le \norm{\vect{v}}+\norm{\vect{w}}</m>.
+        </p>
+    </statement>
+</theorem>
+
+<proof>
+    <title>Sketch of proof</title>
+    <p>
+        Earlier using the algebraic properties of inner products in <xref ref="prop-fundamental-standard-inner-product-props"/>, I showed
+        <m>\norm{\vect{v}-\vect{w}}^2 = \norm{\vect{v}}^2+\norm{\vect{w}}^2 - 2\ \ip{\vect{v}}{\vect{w}}.</m>
+    </p>
+    <p>
+        Using Theorem <xref ref="thm_cauchyschwartz"/>, 
+        <m>\norm{\vect{v}-\vect{w}}^2 \le \norm{\vect{v}}^2+\norm{\vect{w}}^2 + 2\ \norm{\vect{v}} \ \norm{\vect{w}}
+        = \left(\norm{\vect{v}}+\norm{\vect{w}}\right)^2.</m>
+    </p>
+    <p>
+        Taking square roots, the result follows.
+    </p>
+</proof>
+
+<p>
+    The Cauchy-Schwartz Inequality is a useful inequality to bound inner products.
+    The Triangle Inequality is a fundamental geometric result stating that the length of a side of a triangle is less than the sums of the lengths of the other two sides.
+</p>
+
+
 
 
 </section>

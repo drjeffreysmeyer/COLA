@@ -3,9 +3,148 @@
 <section xml:id="chp7sec3" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Inner Product as Matrix Multiplication</title>
 
-	<p>
-		
-	</p>
+
+    <p>
+        Observe that the inner product
+    </p>
+    <me>\ip{\vect{v}}{\vect{w}} = 
+    v_1w_1+\cdots + v_mw_m = 
+    \left[ \begin{array}{}v_1\amp  v_2 \amp \cdots \amp v_m\end{array}\right]\left[ \begin{array}{}w_1\\w_2\\ \vdots \\ w_m\end{array}\right],</me>
+    <p>
+        where the last expression is just matrix multiplication of a "horizontal" <m>\vect{v}</m> with the normal vertical <m>\vect{w}</m>.
+        The "horizontal" version of <m>\vect{v}</m> is its transpose.
+    </p>
+
+    <definition xml:id="def-transpose">
+        <title>Transpose of a Vector</title>
+        <statement>
+            <p>
+                If <m>\vect{v}\in\R^m</m> is a vector, written in column form, then its <term>transpose</term> <m>\vect{v}^T</m> is the same list of numbers, written in row form.  In symbols, this can be expressed as
+            </p>
+            <me>\vect{v}^T = 
+            \left[ \begin{array}{}v_1\\v_2\\ \vdots \\ v_m\end{array}\right]^T := \left[ \begin{array}{}v_1\amp  v_2 \amp \cdots \amp v_m\end{array}\right].</me>
+        </statement>
+    </definition>
+
+    <p>
+        With the notation, <m>\ip{\vect{v}}{\vect{w}}=\vect{v}^T\vect{w}</m>.
+    </p>
+
+    <p>
+        More generally, 
+    </p>
+
+    <definition xml:id="def-tranpose_matrix">
+        <title>Transpose of a Matrix</title>
+        <statement>
+            <p>
+                if <m>A =[ \vect{v}_1 \ | \ \cdots| \vect{v}_n]</m> is an <m>m\times n</m> matrix, then
+                the <term>transpose</term> of <m>A</m>, denoted <m>A^T</m>, is the <m>n\times m</m> matrix whose rows are <m>\left[ \begin{array}{} \vect{v}_1^T\\  \vdots \\ \vect{v}_n^T\end{array}\right]</m>.  
+            </p>
+        </statement>
+    </definition>
+
+    <proposition>
+        <statement>
+            <p>
+                If <m>S = \{\vect{v}_1,\ldots , \vect{v}_n\}\subset \R^m</m> and <m>A = [\vect{v}_1| \cdots | \vect{v}_n]</m>, then the <m>n\times n</m> matrix 
+            </p>
+            <me>A^TA=
+             \left[ \begin{array}{} \vect{v}_1^T\\ \underline{\hspace{1pc}}\\\vdots \\  \underline{\hspace{1pc}}\\ \vect{v}_n^T\end{array}\right]
+             [\vect{v}_1| \cdots | \vect{v}_n]
+             =
+            \left[ \begin{array}{}
+            \ip{\vect{v}_1}{\vect{v}_1}\amp \ip{\vect{v}_1}{\vect{v}_2} \amp \cdots \amp \ip{\vect{v}_1}{\vect{v}_n}\\
+            \ip{\vect{v}_2}{\vect{v}_1}\amp \ip{\vect{v}_2}{\vect{v}_2} \amp \cdots \amp \ip{\vect{v}_2}{\vect{v}_n}\\
+            \vdots \amp \vdots \amp \ddots  \amp \vdots \\
+            \ip{\vect{v}_n}{\vect{v}_1}\amp \ip{\vect{v}_n}{\vect{v}_2} \amp \cdots \amp \ip{\vect{v}_n}{\vect{v}_n}\\
+            \end{array}\right].
+            </me>
+        </statement>
+    </proposition>
+
+    <definition xml:id="def-gram_matrix">
+        <title>Gram Matrix</title>
+        <statement>
+            <p>
+                If <m>S = \{\vect{v}_1,\ldots , \vect{v}_n\}\subset \R^m</m> and <m>A=A_S</m>, then its <term>Gram matrix</term> is <m>A^TA</m>.
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        The given a collection of vectors <m>S</m>, its Gram matrix contains an in incredible amount of geometric data in one convenient and efficient package.  
+        Observe that the diagonal entries encode length data  and the off-diagonal entries contain angle data <xref ref="eq_inner_prod_cos"/>.
+    </p>
+
+    <example>
+        <statement>
+            <p>
+                Suppose I want to determine the the geometry of the vectors 
+                <m>S = \left\{
+                \left[ \begin{array}{r}4\\1\end{array}\right],
+                \left[ \begin{array}{r}-2\\3\end{array}\right]
+                \right\}</m>.  This means I want both length and angle data.
+                I can quickly determine this by computing the Gram matrix and interpreting its entries appropriately.
+            </p>
+            <me>A^TA = 
+            \left[ \begin{array}{rr}4\amp 1\\-2\amp 3\end{array}\right]
+            \left[ \begin{array}{rr}4\amp -2\\1\amp 3\end{array}\right]
+            =
+            \left[ \begin{array}{rr}17\amp -5\\-5\amp 13\end{array}\right]
+            </me>
+            <p>
+                So interpreting: 
+            </p>
+            <me>
+              \norm{\vect{v}}=\sqrt{17}\approx 4.12
+            \hspace{3pc}
+            \norm{\vect{w}}=\sqrt{13}\approx 3.61
+            \hspace{3pc}
+            \theta =\arccos\left( \frac{-5}{\sqrt{17}{\sqrt{13}}} \right) \approx 109.65^\circ
+          </me>
+		<image source="images/7.3_gram_triangle.png" width="100%"/>
+        </statement>
+    </example>
+
+    <p>
+        See how the Gram matrix can be used, in conjunction with the length and angle equations, to completely determine the geometry of the vectors <m>\vect{v}</m> and <m>\vect{w}</m> at GeoGebra ID:
+        <url href="https://www.geogebra.org/m/quqdwezr"><alert>quqdwezr</alert></url>.
+    </p>
+
+    <p>
+        You can show directly that the transpose satisfies the following useful algebraic properties.
+    </p>
+
+    <proposition xml:id="prop-socknshoes_transpose">
+        <title>Transpose Socks 'n Shoes</title>
+        <statement>
+            <p>
+                If <m>A</m> is <m>m\times n</m> and <m>B</m> is <m>n\times p</m>, then <m>(AB)^T=B^TA^T</m>.
+            </p>
+        </statement>
+    </proposition>
+
+    <proposition>
+        <title>Adjoint Property</title>
+        <statement>
+            <p>
+                If <m>A</m> is an <m>m\times n</m> matrix, <m>\vect{v}\in\R^m</m> and <m>\vect{w}\in\R^n</m>, then  
+            </p>
+            <me>\ip{\vect{v}}{A\vect{w}} = \ip{A^T\vect{v}}{\vect{w}}.</me>
+        </statement>
+    </proposition>
+
+    <proof>
+        <title>Hint of proof</title>
+        <p>
+            Try using your understanding of inner product as matrix multiplication, together with transpose socks 'n shoes.
+        </p>
+    </proof>
+
+    <p>
+        In summary, the transpose is an algebraic operation that helps us phrase inner products as matrix multiplication, and helps us organize performing many inner products at once.
+    </p>
 
 
 </section>

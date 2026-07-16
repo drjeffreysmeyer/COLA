@@ -5,23 +5,22 @@
 
     <p>
       The motivating question of this lesson is: <em>What is the "size" of a vector?</em>  
-      By size, here I mean an <em>absolute size</em>, single number that captures the "bigness" of the vector.
-      This is in contrast to previous chapters, where we looked at <em>relative size</em> of two vectors (i.e. <m>2\vect{v}</m> is two times larger than <m>\vect{v}</m>).
+      By size, here I mean an <em>absolute size</em>, single number that captures the "bigness" of the vector.  This is in contrast to previous chapters, where we looked at <em>relative size</em> of two vectors (i.e. <m>2\vect{v}</m> is two times larger than <m>\vect{v}</m>).
       There are many reasonable ways to measure size, and you will begin by investigating them in a variety of contexts.
     </p>
 
-    <question>
-      <title>Size in Our Vignettes</title>
+    <data>
+      <title>Size in Quantitative Situations</title>
       <statement>
         <p>
-          Revisit Vignette \ref{vig2}. What would you say is the size of that vector of travel directions?
-          What if you were a bird?
+          Revisit <xref ref="ex-vignettes2"/>. What would you say is the size of that vector of travel directions?  What if you were a bird?
         </p>
+
         <p>
-          Revisit Vignette \ref{vig3}. What would you say is the size of that vector of temperatures?
+          Revisit <xref ref="ex-vignettes3"/>. What would you say is the size of that vector of temperatures?
         </p>
       </statement>
-    </question>
+    </data>
 
     <question xml:id="activity-vector_size2">
       <title>Size in <m>\R^2</m></title>
@@ -29,9 +28,9 @@
         <p>
           Here we investigate the size of each vector in <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \left[\begin{array}{r}-2\\2\end{array}\right], \left[\begin{array}{r}3\\3\end{array}\right], \left[\begin{array}{r}-4\\1\end{array}\right]\right\}.</m>
         </p>
+        <image source="images/7.1_size1.png" width="100%"/>
         <p>
-          With your groups, discuss relevant ways to measure the <em>size</em> of each vector.
-          Can you come up with multiple ways?  Given a reasonable way to determine size, which vectors are the largest?  Smallest?
+          Discuss relevant ways to measure the <em>size</em> of each vector.  Can you come up with multiple ways?  Given a reasonable way to determine size, which vectors are the largest?  Smallest?
         </p>
       </statement>
     </question>
@@ -40,20 +39,14 @@
       <title>Size in <m>\R^3</m></title>
       <statement>
         <p>
-          In groups of three, each of you pick one of the following vectors we investigate the size of each vector in <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \left[\begin{array}{r}6\\0\\0\end{array}\right],\left[\begin{array}{r}1\\5\\5\end{array}\right], \left[\begin{array}{r}4\\4\\4\end{array}\right]\right\}.</m>  Each of you, make an argument why your vector has the largest size.
-          (Note: each of you has a reasonable argument - think it through!)
+          Investigate the size of each vector in <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \left[\begin{array}{r}6\\0\\0\end{array}\right],\left[\begin{array}{r}1\\5\\5\end{array}\right], \left[\begin{array}{r}4\\4\\4\end{array}\right]\right\}.</m>  Make an argument why each vector could be considered to have the largest size.
+          (Note: each of them has a reasonable argument - think it through!)
         </p>
       </statement>
     </question>
 
     <p>
-      As you may have seen in the previous activities, there are many reasonable ways to measure size.
-      I will outline a few here, but note that you may think of other ways not listed below.
-      Recall the forecast from Vignette \ref{vig3}.
-    </p>
-
-    <p>
-      It would be reasonable to say that the ``size'' of this forecast vector is the highest temperature expected, in which case, its ``size'' would be <m>59^{\circ}</m> F.
+      As you may have seen in the previous activities, there are many reasonable ways to measure size. I will outline a few here, but note that you may think of other ways not listed below. Recall the forecast from <xref ref="ex-vignettes3"/>.  It would be reasonable to say that the "size" of this forecast vector is the highest temperature expected, in which case, its "size" would be <m>76^{\circ}</m> F.
     </p>
 
     <p>
@@ -75,15 +68,7 @@
     </p>
 
     <p>
-      Recall the travel instructions from Vignette \ref{vig2}.
-    </p>
-
-    <p>
-      Since you are restricted to move along streets, it would be reasonable to say the size of this vector is number of blocks you have to travel, in which case the ``size'' of this vector is 4.  
-    </p>
-
-    <p>
-      More generally, a second reasonable way to measure the size if a vector <m>\vect{v}</m> is by the sum of the magnitude of its entries, which I call its absolute sum.
+      Recall the travel instructions from <xref ref="ex-vignettes2"/>. Since you are restricted to move along streets, it would be reasonable to say the size of this vector is number of blocks you have to travel, in which case the "size" of this vector is 4.    More generally, a second reasonable way to measure the size of a vector <m>\vect{v}</m> is by the sum of the magnitude of its entries, which I call its absolute sum.
     </p>
 
     <definition xml:id="def-absolute_sum">
@@ -97,12 +82,11 @@
     </definition>
 
     <p>
-      The absolute sum has many interesting applications.  It is related to the notion of Taxi Cab Geometry, where you consider the number of blocks traveled by a taxi cab to reach its destination.
-      The absolute sum is also related to the average of the vector entries, which has many statistical applications.
+      The absolute sum has many interesting applications.  It is related to the notion of <em>Taxi Cab Geometry</em>, where you consider the number of blocks traveled by a taxi cab to reach its destination. The absolute sum is also related to the average of the vector entries, which has many statistical applications.
     </p>
 
     <p>
-      A third reasonable way to measure the size if a vector <m>\vect{v}</m> is by its Euclidean length.
+      A third reasonable way to measure the size of a vector <m>\vect{v}</m> is by its Euclidean length.
       To work with Euclidean length in <m>\R^n</m>, we will need to develop the Generalized Pythagorean Theorem.
     </p>
 
@@ -110,6 +94,7 @@
       We begin with the Pythagorean Theorem in the Euclidean plane, the classical result which states that, given a right triangle <m>\triangle ABC</m>, the area of the square off of the hypotenuse <m>S_3</m> is the sum of the areas of the squares off the legs (<m>S_1</m> and <m>S_2</m>):
     </p>
     <me>\Area(S_1) + \Area(S_2) = \Area(S_3),</me>
+    <image source="images/7.1_pythagorean_theorem1.png" width="100%"/>
     <p>
       yielding the famous equality,
     </p>
@@ -123,11 +108,13 @@
       Identifying a vector <m>\vect{v} = \begin{bmatrix}x\\y\end{bmatrix} \in \R^2</m> with the hypotenuse of the triangle, we get
     </p>
     <me>\text{Length of }\vect{v} = \sqrt{x^2+y^2}.</me>
+    <image source="images/7.1_pythagorean_theorem2.png" width="100%"/>
 
     <p>
       By performing the Pythagorean Theorem twice, we get the Pythagorean Theorem in Euclidean 3-Space.
       We can iterate this process over and over again to find length in <m>\R^n</m>.
     </p>
+    <image source="images/7.1_pythagorean_theorem3.png" width="100%"/>
 
     <definition xml:id="def-length">
       <title>Length (<m>\ell^2</m>-Norm)</title>
@@ -139,16 +126,17 @@
       </statement>
     </definition>
 
+    <remark>
     <p>
       You may be asking, <em>why call absolute magnitude, absolute sum, and length <m>\ell^p</m> (read ``ell p'') where <m>p</m> is "infinity," "one," or "two?"</em>   
-      In fact, these are instances of a broad family of ways of measuring size, or ``norms,''
+      In fact, these are instances of a broad family of ways of measuring size, or "norms,"
       <m>\norm{\vect{v}}_p:=(|v_1|^p+\cdots+|v_n|^p)^{\frac{1}{p}}</m>, where <m>p\in (0,\infty]</m>.  
       These norms play an important role in areas of math that build on linear algebra.  
       In this course, we will only need the three I mentioned above.  
       Furthermore, the <m>\ell^2</m>-norm (i.e. length) will be most important for us going forward, so unless 
       mentioned otherwise, I will always use <m>\norm{\vect{v}}</m> (i.e. no subscript) to denote the <m>\ell^2</m>-norm <m>\norm{\vect{v}}_2</m>.
-      For our purposes, I will reference it as the absolute maximum, since this is more descriptive.
     </p>
+    </remark>
 
     <example xml:id="ex-three_norms">
       <statement>
@@ -166,7 +154,7 @@
     <question>
       <statement>
         <p>
-          Revisit Activity \ref{activity-vector_size3}.  Order the vectors according to each of the three norms.
+          Revisit <xref ref="activity-vector_size3"/>.  Order the vectors according to each of the three norms.
         </p>
       </statement>
     </question>
@@ -188,18 +176,18 @@
       </statement>
     </question>
 
-    <theorem xml:id="prop-scale_norms">
+    <proposition xml:id="prop-scale_norms">
       <title>Scaling a vector scales its norm</title>
       <statement>
         <p>
           If <m>\vect{v}\in\R^n</m>, <m>p\in \{\infty,1,2\}</m>, and <m>k \in \R</m>, then <m>\norm{k \vect{v}}_p = |k|\ \norm{\vect{v}}_p</m>.
         </p>
       </statement>
-    </theorem>
+    </proposition>
 
     <p>
-      We often care about the ``direction'' and not the norm of a vector.
-      In such cases, we can use Proposition \ref{prop:scale_norms} to scale out by the norm and get a ``norm 1'' vector.
+      We often care about the "direction" and not the norm of a vector.
+      In such cases, we can use <xref ref="prop-scale_norms"/> to scale out by the norm and get a "norm 1" vector.
       In certain contexts, working with a norm 1 vector is much nicer than working with messy or large norms.
       The process of scaling a nonzero vector to length 1 is <em>normalization</em> (i.e. <m>\vect{v} \mapsto \frac{1}{\norm{\vect{v}}} \vect{v}</m>).
     </p>

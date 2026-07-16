@@ -3,9 +3,185 @@
 <section xml:id="chp7sec5" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Orthogonal Complement</title>
 
-	<p>
-		
-	</p>
+<p>
+Special Case I:  Complement to a Line.\\
+To begin, consider the following motivating geometric question: <em>Given a line <m>L=\spn(\vect{v})</m>, can you find the hyperplane orthogonal to it?</em>
+</p>
 
+<definition xml:id="def-orth_com">
+    <title>Orthogonal Complement of a Vector</title>
+    <statement>
+        <p>
+        If <m>\vect{v}\in\R^m</m>, then the <term>orthogonal complement</term> of <m>\vect{v}</m> (or equivalently the line spanned by <m>\vect{v}</m>) is the collection of all vectors orthogonal to <m>\vect{v}</m> and is symbolized by
+        </p>
+        <me>\vect{v}^\perp = \{ \vect{w}\in\R^m \ | \ \ip{\vect{v}}{\vect{w}} =0\}.</me>
+    </statement>
+</definition>
+
+
+<proposition xml:id="prop-orth_complement_subspace">
+    <title>Orthogonal Complement of Line is a Subspace</title>
+    <statement>
+        <p>
+            If <m>\vect{w}_1,\vect{w}_2\in \vect{v}^\perp</m> and <m>k\in \R</m>, 
+then <m>\vect{w}_1+\vect{w}_2 \in \vect{v}^\perp</m> and <m>k\vect{w}_1 \in \vect{v}^\perp</m>
+(i.e. <m>\vect{v}^\perp</m> is a subspace).
+        </p>
+    </statement>
+</proposition>]
+
+
+<proof>
+    <p>
+    [Hint of proof]
+    You want to show each of these two properties (closed under scaling and closed under addition).
+    You may want to use and reference (among possibly other things)
+    Proposition \ref{prop_fundamental_standard_inner_product_props}
+    and 
+    Definition \ref{def-orth_com}.
+    </p>
+</proof>
+
+<p>
+To say <m>\vect{x}</m> lies in <m>\vect{v}^\perp</m> is to say <m>\ip{\vect{v}}{\vect{x}}=0</m>.  
+Using our understanding of inner product as matrix multiplication by the transpose, this means <m>\vect{v}^T\vect{x}=0</m>.  
+It follows that <m>\vect{v}^\perp = \mathrm{Null}(\vect{v}^T)</m>.
+</p>
+
+<example>
+    <statement>
+        <p>
+        Here I will find the orthogonal complement, <m>\vect{v}^\perp</m>,  
+        to the vector  <m>\vect{v}=\left[ \begin{array}{r}1\\2\\3\end{array}\right]\in \R^3</m>.
+        </p>
+        <p>
+        Using our understanding of <m>\vect{v}^\perp</m> as the null space of <m>\vect{v}^T=\begin{bmatrix}1 \amp 2 \amp 3\end{bmatrix}</m>, 
+        it follows that <m>S = \left\{ \left[ \begin{array}{r}-2\\1\\0 \end{array}\right], \left[ \begin{array}{r}-3\\0\\1\end{array}\right] \right\}</m> is a basis for <m>\vect{v}^\perp</m>.
+        Hence <m>\vect{v}^\perp</m> is the plane spanned by <m>S</m>.
+        </p>
+        <image source="images/7.5_orthogonal_complement.png" width="100%"/>
+    </statement>
+</example>
+
+<p>
+Play with orthogonal complements to lines in <m>\R^3</m> at GeoGebra ID:
+https://www.geogebra.org/m/ged9fa8k <alert>ged9fa8k</alert>.
+</p>
+
+<p>
+Special Case II:  Complement to a Plane.\\
+Let's now consider a second situation: <em>Given a plane <m>V = \spn(\vect{v},\vect{w})</m> in <m>\R^3</m>, can you find its orthogonal line <m>L</m>?</em>
+</p>
+
+<p>
+Observe if <m>\vect{x}</m> is orthogonal to <m>V</m>, then it is orthogonal to <em>both</em> <m>\vect{v}</m> and <m>\vect{w}</m>.
+Hence <m>\vect{v}^T\vect{x}=0</m> <em>and</em> <m>\vect{w}^T\vect{x}=0</m>.  We can organize this into a single matrix equation:   <m>\left[ \begin{array}{r}\vect{v}^T\\ \vect{w}^T \end{array}\right]\vect{x}=\vect{0}</m>.
+</p>
+
+<p>
+The orthogonal line is then <m>\mathrm{Null}(A^T)</m> where 
+<m>A=[\vect{v}|\vect{w}]=\left[ \begin{array}{c|c} v_1 \amp w_1\\ v_2 \amp w_3\\ v_3 \amp w_3 \end{array}\right]</m>.
+</p>
+
+<example>
+    <statement>
+        <p>
+        <m>{}</m>
+        </p>
+        <p>
+        Given <m>S = \{\vect{v},\vect{w}\} = \left\{ \left[ \begin{array}{r}1\\1\\2 \end{array}\right], \left[ \begin{array}{r}2\\3\\1\end{array}\right] \right\}</m>, find the line orthogonal to the plane <m>\spn(S)</m>.
+        If <m>A=[\vect{v}|\vect{w}]</m>, then any vector <m>\vect{x}</m> on the orthogonal line must satisfy <m>A^T\vect{x}=\vect{0}</m>, and hence lie in its null space. \\
+        </p>
+        <p>
+        Via row reduction, 
+        </p>
+        <p>
+        <m>\left[ \begin{array}{ccc|c} 1 \amp 1 \amp 2 \amp 0\\ 2 \amp 3 \amp 1 \amp 0 \end{array}\right] \sim \left[ \begin{array}{ccr|c} 1 \amp 0 \amp 5 \amp 0\\ 0 \amp 1 \amp -3 \amp 0 \end{array}\right].</m>
+        </p>
+        <p>
+        It follows that the orthogonal line is 
+        <m>\mathrm{Null}(A^T) =  \left\{\left[ \begin{array}{r} -5\\ 3\\ 1 \end{array}\right] t \ | \ t\in\R \right \}.</m>
+        </p>
+        <image source="images/7.5_orthogonal_crossprod.png" width="100%"/>
+    </statement>
+</example>
+
+<p>
+Verify for yourself that the following are row equivalent:
+</p>
+
+<me>
+\left[ \begin{array}{ccc|c}
+v_1 \amp v_2 \amp v_3 \amp 0\\
+w_1 \amp w_2 \amp w_3 \amp 0
+\end{array}\right]
+\sim
+\left[ \begin{array}{ccr|c}
+1 \amp 0 \amp \frac{-v_2w_3+v_3w_2}{v_1w_2-v_2w_1} \amp 0\\
+0 \amp 1 \amp \frac{v_1w_3-v_3w_1}{v_1w_2-v_2w_1} \amp 0
+\end{array}\right].
+</me>
+
+<p>
+The orthogonal line is 
+<m>\mathrm{Null}(A^T) =  \left\{\left[ \begin{array}{r} v_2w_3-v_3w_2\\ -v_1w_3+v_3w_1\\ v_1w_2-v_2w_1 \end{array}\right] t \ | \ t\in\R \right \}.</m>
+</p>
+
+<p>
+This basis vector is so useful, and used so often, it gets its own name: 
+</p>
+
+<definition xml:id="def_cross_product">
+    <title>Cross Product</title>
+    <statement>
+        <p>
+        If <m>\vect{v} = \left[ \begin{array}{c} v_1\\ v_2\\ v_3 \end{array}\right]</m> 
+        and <m>\vect{w}=\left[ \begin{array}{c} w_1\\ w_2\\ w_3 \end{array}\right]</m>, 
+        then the <term>cross product</term> of 
+        <m>\vect{v}</m> and <m>\vect{w}</m> is 
+        </p>
+        <me>\vect{v}\times \vect{w} = \left[ \begin{array}{r} v_2w_3-v_3w_2\\ -v_1w_3+v_3w_1\\ v_1w_2-v_2w_1 \end{array}\right].</me>
+    </statement>
+</definition>
+
+<p>
+The <em>meaning</em> of the cross product is: it gives a vector which spans the plane orthogonal to both <m>\vect{v}</m> and <m>\vect{w}</m>.
+Due to the specific geometry of this situation, the cross product only makes sense in <m>\R^3</m>.
+</p>
+
+<p>
+General Case.\\
+Let us now consider the most general situation. 
+<em>Given a subspace, what is the collection of vectors orthogonal to it, and how do you find it?</em>
+</p>
+
+<definition xml:id="def-orthogonal_complement">
+    <title>Orthogonal Complement of a Subspace</title>
+    <statement>
+        <p>
+        If <m>W\subset \R^n</m> is a subspace, then the  <term>orthogonal complement</term> to <m>W</m> is the set
+        <m>W^\perp := \{ \vect{x} \in \R^n \ | \ \text{for all } \vect{v}\in W, (\vect{v},\vect{x}) = 0\}.</m>
+        </p>
+    </statement>
+</definition>
+
+<p>
+Let <m>S= \{\vect{v}_1,\ldots, \vect{v}_n\}\subset \R^m</m> be a collection on nonzero independent vectors which spans <m>W</m> (i.e.  
+<m>W = \spn(S)</m> ), and let <m>A=A_S=[\vect{v}_1|\cdots |\vect{v}_n]</m>.
+</p>
+
+<p>
+Since <m>S</m> is a basis for <m>W</m>, a vector <m>\vect{x}</m> is in <m>W^\perp </m> if and only if <m>\ip{\vect{v}_i}{\vect{x}} = 0</m> for each <m>i</m>.  
+Using the our understanding of the inner product as matrix multiplication by the transpose, and collecting each of the expressions, we get
+</p>
+
+<theorem xml:id="eq_orth_complements">
+    <title>Orthogonal Complements as Null Spaces</title>
+    <statement>
+        <p>
+        If <m>W\subset \R^m</m> is a subspace with basis <m>S</m>, then <m>W^\perp = \mathrm{Null}(A_S^T).</m>
+        </p>
+    </statement>
+</theorem>
 
 </section>
