@@ -4362,8 +4362,629 @@ var ptx_lunr_docs = [
   "url": "chp7sec1.html",
   "type": "Lesson",
   "number": "10.1",
-  "title": "Concepts of Vector Size",
-  "body": " Concepts of Vector Size    "
+  "title": "Vector Size",
+  "body": " Vector Size  The motivating question of this lesson is: What is the \"size\" of a vector? By size, here I mean an absolute size , single number that captures the \"bigness\" of the vector. This is in contrast to previous chapters, where we looked at relative size of two vectors (i.e. is two times larger than ). There are many reasonable ways to measure size, and you will begin by investigating them in a variety of contexts.   Size in Quantitative Situations   Revisit . What would you say is the size of that vector of travel directions? What if you were a bird?  Revisit . What would you say is the size of that vector of temperatures?     Size in   Here we investigate the size of each vector in    Discuss relevant ways to measure the size of each vector. Can you come up with multiple ways? Given a reasonable way to determine size, which vectors are the largest? Smallest?     Size in   Investigate the size of each vector in Make an argument why each vector could be considered to have the largest size. (Note: each of them has a reasonable argument - think it through!)    As you may have seen in the previous activities, there are many reasonable ways to measure size. I will outline a few here, but note that you may think of other ways not listed below. Recall the forecast from . It would be reasonable to say that the \"size\" of this forecast vector is the highest temperature expected, in which case, its \"size\" would be F.  More generally, one reasonable way to measure the size of a vector is by the magnitude of its largest entry, which I will call its absolute maximum.   Absolute Maximum ( -Norm)   If , then its absolute maximum , or - norm , is the largest magnitude of its entries. In algebraic symbols, where for all .    When looking at a vector as a signal or data, it is often useful to think about its absolute maximum.  Recall the travel instructions from . Since you are restricted to move along streets, it would be reasonable to say the size of this vector is number of blocks you have to travel, in which case the \"size\" of this vector is 4. More generally, a second reasonable way to measure the size of a vector is by the sum of the magnitude of its entries, which I call its absolute sum.   Absolute Sum ( -Norm)   If , then its absolute sum , or - norm , is the sum of the magnitude of its entries. In algebraic symbols, .    The absolute sum has many interesting applications. It is related to the notion of Taxi Cab Geometry , where you consider the number of blocks traveled by a taxi cab to reach its destination. The absolute sum is also related to the average of the vector entries, which has many statistical applications.  A third reasonable way to measure the size of a vector is by its Euclidean length. To work with Euclidean length in , we will need to develop the Generalized Pythagorean Theorem.  We begin with the Pythagorean Theorem in the Euclidean plane, the classical result which states that, given a right triangle , the area of the square off of the hypotenuse is the sum of the areas of the squares off the legs ( and ):    yielding the famous equality,   and hence   Identifying a vector with the hypotenuse of the triangle, we get    By performing the Pythagorean Theorem twice, we get the Pythagorean Theorem in Euclidean 3-Space. We can iterate this process over and over again to find length in .    Length ( -Norm)   If , then its length , or - norm , is its Euclidean length (via the Generalized Pythagorean Theorem). In algebraic symbols,      You may be asking, why call absolute magnitude, absolute sum, and length (read ``ell p'') where is \"infinity,\" \"one,\" or \"two?\" In fact, these are instances of a broad family of ways of measuring size, or \"norms,\" , where . These norms play an important role in areas of math that build on linear algebra. In this course, we will only need the three I mentioned above. Furthermore, the -norm (i.e. length) will be most important for us going forward, so unless mentioned otherwise, I will always use (i.e. no subscript) to denote the -norm .     If , then   ,  , and  .       Revisit . Order the vectors according to each of the three norms.     Identify Sets of Norm 1   In the plane, clearly draw and label each of the following sets of points:   The set of points that have absolute maximum of 1. In symbols .  The set of points that have absolute sum of 1. In symbols .  The set of points that have length of 1. In symbols .   Conjecture the shapes of the sets of norm 1 in .     Scaling a vector scales its norm   If , , and , then .    We often care about the \"direction\" and not the norm of a vector. In such cases, we can use to scale out by the norm and get a \"norm 1\" vector. In certain contexts, working with a norm 1 vector is much nicer than working with messy or large norms. The process of scaling a nonzero vector to length 1 is normalization (i.e. ).   Unit Vector   A vector of length 1 is a unit vector .    I will use the ``hat'' notation to denote the unit vector in the -direction, i.e. .  "
+},
+{
+  "id": "chp7sec1-3",
+  "level": "2",
+  "url": "chp7sec1.html#chp7sec1-3",
+  "type": "Quantitative Situation",
+  "number": "10.1.1",
+  "title": "Size in Quantitative Situations.",
+  "body": " Size in Quantitative Situations   Revisit . What would you say is the size of that vector of travel directions? What if you were a bird?  Revisit . What would you say is the size of that vector of temperatures?   "
+},
+{
+  "id": "activity-vector_size2",
+  "level": "2",
+  "url": "chp7sec1.html#activity-vector_size2",
+  "type": "Activity",
+  "number": "10.1.2",
+  "title": "Size in <span class=\"process-math\">\\(\\R^2\\)<\/span>.",
+  "body": " Size in   Here we investigate the size of each vector in    Discuss relevant ways to measure the size of each vector. Can you come up with multiple ways? Given a reasonable way to determine size, which vectors are the largest? Smallest?   "
+},
+{
+  "id": "activity-vector_size3",
+  "level": "2",
+  "url": "chp7sec1.html#activity-vector_size3",
+  "type": "Activity",
+  "number": "10.1.3",
+  "title": "Size in <span class=\"process-math\">\\(\\R^3\\)<\/span>.",
+  "body": " Size in   Investigate the size of each vector in Make an argument why each vector could be considered to have the largest size. (Note: each of them has a reasonable argument - think it through!)   "
+},
+{
+  "id": "def-absolute_max",
+  "level": "2",
+  "url": "chp7sec1.html#def-absolute_max",
+  "type": "Definition",
+  "number": "10.1.4",
+  "title": "Absolute Maximum (<span class=\"process-math\">\\(\\ell^\\infty\\)<\/span>-Norm).",
+  "body": " Absolute Maximum ( -Norm)   If , then its absolute maximum , or - norm , is the largest magnitude of its entries. In algebraic symbols, where for all .   "
+},
+{
+  "id": "def-absolute_sum",
+  "level": "2",
+  "url": "chp7sec1.html#def-absolute_sum",
+  "type": "Definition",
+  "number": "10.1.5",
+  "title": "Absolute Sum (<span class=\"process-math\">\\(\\ell^1\\)<\/span>-Norm).",
+  "body": " Absolute Sum ( -Norm)   If , then its absolute sum , or - norm , is the sum of the magnitude of its entries. In algebraic symbols, .   "
+},
+{
+  "id": "def-length",
+  "level": "2",
+  "url": "chp7sec1.html#def-length",
+  "type": "Definition",
+  "number": "10.1.6",
+  "title": "Length (<span class=\"process-math\">\\(\\ell^2\\)<\/span>-Norm).",
+  "body": " Length ( -Norm)   If , then its length , or - norm , is its Euclidean length (via the Generalized Pythagorean Theorem). In algebraic symbols,    "
+},
+{
+  "id": "chp7sec1-27",
+  "level": "2",
+  "url": "chp7sec1.html#chp7sec1-27",
+  "type": "Remark",
+  "number": "10.1.7",
+  "title": "",
+  "body": " You may be asking, why call absolute magnitude, absolute sum, and length (read ``ell p'') where is \"infinity,\" \"one,\" or \"two?\" In fact, these are instances of a broad family of ways of measuring size, or \"norms,\" , where . These norms play an important role in areas of math that build on linear algebra. In this course, we will only need the three I mentioned above. Furthermore, the -norm (i.e. length) will be most important for us going forward, so unless mentioned otherwise, I will always use (i.e. no subscript) to denote the -norm .  "
+},
+{
+  "id": "ex-three_norms",
+  "level": "2",
+  "url": "chp7sec1.html#ex-three_norms",
+  "type": "Example",
+  "number": "10.1.8",
+  "title": "",
+  "body": "  If , then   ,  , and  .    "
+},
+{
+  "id": "chp7sec1-29",
+  "level": "2",
+  "url": "chp7sec1.html#chp7sec1-29",
+  "type": "Activity",
+  "number": "10.1.9",
+  "title": "",
+  "body": "  Revisit . Order the vectors according to each of the three norms.   "
+},
+{
+  "id": "chp7sec1-30",
+  "level": "2",
+  "url": "chp7sec1.html#chp7sec1-30",
+  "type": "Activity",
+  "number": "10.1.10",
+  "title": "Identify Sets of Norm 1.",
+  "body": " Identify Sets of Norm 1   In the plane, clearly draw and label each of the following sets of points:   The set of points that have absolute maximum of 1. In symbols .  The set of points that have absolute sum of 1. In symbols .  The set of points that have length of 1. In symbols .   Conjecture the shapes of the sets of norm 1 in .   "
+},
+{
+  "id": "prop-scale_norms",
+  "level": "2",
+  "url": "chp7sec1.html#prop-scale_norms",
+  "type": "Proposition",
+  "number": "10.1.11",
+  "title": "Scaling a vector scales its norm.",
+  "body": " Scaling a vector scales its norm   If , , and , then .   "
+},
+{
+  "id": "chp7sec1-33",
+  "level": "2",
+  "url": "chp7sec1.html#chp7sec1-33",
+  "type": "Definition",
+  "number": "10.1.12",
+  "title": "Unit Vector.",
+  "body": " Unit Vector   A vector of length 1 is a unit vector .   "
+},
+{
+  "id": "chp7sec2",
+  "level": "1",
+  "url": "chp7sec2.html",
+  "type": "Lesson",
+  "number": "10.2",
+  "title": "Inner Product and Angle",
+  "body": " Inner Product and Angle  Consider vectors , , and the parallelogram they form. Observe that , , and diagonal form a triangle. Let denote the angle between and . See Figure .  The motivating question of this lesson is: How do the lengths of the sides and relate to the length of the diagonal ?    A mixture parallelogram and its diagonal.     Exploring the Length of a Diagonal   In this activity, you will use the GeoGebra link nzvwt6ju to explore the length of its diagonal. Begin with and .     Explore. Move the vector . It is constrained to the circle of radius 3 (i.e. all for which ). Take note of the shapes of all the different parallelograms you are forming.     The range of values of . As you move , how does vary? What is the largest it can be? Describe the parallelogram(s) that attain this maximum? What is the smallest it can be? Describe the parallelogram(s) that attain this minimum? Is it ever the case that or , and if so, when?     The range of values of . As you move , how does vary? Is it ever the case that , and if so, when? In what way does the Pythagorean Theorem have to do with this? In what way does seem to relate to , the angle between and ?      We see that, as and are left constant, varies with . Let's algebraically expand .   This term measures many interesting geometric features of this parallelogram and deserves its own name.   (Standard) Inner Product (a.k.a. Dot Product)   The (standard) inner product (or dot product ) of is:     With the symbolism of the inner product, the length squared of the diagonal simplifies to    The Many Notations for Inner Product  There are many common notations for the inner product. I use the ``angle bracket'' notation . Another common notation is the ``dot'' notation . Further still, some may use the parentheses notation . In this course, plan to use only the angle bracket notation, but be prepared to see these other notations in other books and courses.   Observe that we may express length using the inner product:   So the inner product measures length!    Algebraic Properties of the Inner Product   The inner product satisfies each of the following.    Positive definite. If , then , and equals 0 precisely when .    Symmetric. If , then .    Bilinear. The inner product is linear in the second input.   Additive. If , then .  Scaling. If , , then .       Observe that by symmetry, an inner product is bilinear in both inputs.   Using Algebraic Properties to Compute Inner Products   Suppose we know , , and .  How can we use this knowledge to compute ?   Heuristic: Use algebraic properties to decompose unknown inner products into combinations of known inner products.       Using Algebraic Properties to Compute Inner Products   Suppose we know , , and . Use your knowledge of the algebraic properties of inner products to compute each of the following:            We have already seen in that the inner product relates to the angle between and . We now make the relationship more precise. To do so, we will use a classical result from analytic geometry, the Law of Cosines .    Law of Cosines    If is a triangle with side lengths , , and angle , then        The Law of Cosines can be proved using the Pythagorean Theorem. See GeoGebra ID: ck4w8asn .     In Figure , we see the Law of Cosines, in vector symbolism, gives:   Meanwhile, we have already shown in that:   Comparing these expressions yields:   The Angle Equation for the Inner Product   If , then,     So we may use the inner product to compute angle !   Keep in mind that outputs angles measures in radians. If you want to find angles in degree, you need to change units by scaling by .   Using Algebraic Properties to Compute Triangle Data   Consider the triangle where , , and . Use your knowledge of inner products to find the triangle data %(3 side lengths and 3 angle measurements) for , specifically:   Length of segment  Length of segment  Length of segment  Measure in degrees of  Measure in degrees of  Measure in degrees of    Hint: What vectors will you use?        The Angle Equation for the inner product has many important consequences, including the following two results.   Cauchy--Schwartz Inequality   If , then .     Sketch of proof  Note that and apply this to the Angle Equation .    Triangle inequality   If , then .     Sketch of proof  Earlier using the algebraic properties of inner products in , I showed   Using Theorem ,   Taking square roots, the result follows.   The Cauchy-Schwartz Inequality is a useful inequality to bound inner products. The Triangle Inequality is a fundamental geometric result stating that the length of a side of a triangle is less than the sums of the lengths of the other two sides.  "
+},
+{
+  "id": "fig-parallelogram-diagonals2",
+  "level": "2",
+  "url": "chp7sec2.html#fig-parallelogram-diagonals2",
+  "type": "Figure",
+  "number": "10.2.1",
+  "title": "",
+  "body": " A mixture parallelogram and its diagonal.   "
+},
+{
+  "id": "activity-exploring-diagonal",
+  "level": "2",
+  "url": "chp7sec2.html#activity-exploring-diagonal",
+  "type": "Activity",
+  "number": "10.2.2",
+  "title": "Exploring the Length of a Diagonal.",
+  "body": " Exploring the Length of a Diagonal   In this activity, you will use the GeoGebra link nzvwt6ju to explore the length of its diagonal. Begin with and .     Explore. Move the vector . It is constrained to the circle of radius 3 (i.e. all for which ). Take note of the shapes of all the different parallelograms you are forming.     The range of values of . As you move , how does vary? What is the largest it can be? Describe the parallelogram(s) that attain this maximum? What is the smallest it can be? Describe the parallelogram(s) that attain this minimum? Is it ever the case that or , and if so, when?     The range of values of . As you move , how does vary? Is it ever the case that , and if so, when? In what way does the Pythagorean Theorem have to do with this? In what way does seem to relate to , the angle between and ?     "
+},
+{
+  "id": "def-inner-product",
+  "level": "2",
+  "url": "chp7sec2.html#def-inner-product",
+  "type": "Definition",
+  "number": "10.2.3",
+  "title": "(Standard) Inner Product (a.k.a. Dot Product).",
+  "body": " (Standard) Inner Product (a.k.a. Dot Product)   The (standard) inner product (or dot product ) of is:    "
+},
+{
+  "id": "prop-fundamental-standard-inner-product-props",
+  "level": "2",
+  "url": "chp7sec2.html#prop-fundamental-standard-inner-product-props",
+  "type": "Proposition",
+  "number": "10.2.4",
+  "title": "Algebraic Properties of the Inner Product.",
+  "body": " Algebraic Properties of the Inner Product   The inner product satisfies each of the following.    Positive definite. If , then , and equals 0 precisely when .    Symmetric. If , then .    Bilinear. The inner product is linear in the second input.   Additive. If , then .  Scaling. If , , then .      "
+},
+{
+  "id": "ex-using-ip-alg-props",
+  "level": "2",
+  "url": "chp7sec2.html#ex-using-ip-alg-props",
+  "type": "Example",
+  "number": "10.2.5",
+  "title": "Using Algebraic Properties to Compute Inner Products.",
+  "body": " Using Algebraic Properties to Compute Inner Products   Suppose we know , , and .  How can we use this knowledge to compute ?   Heuristic: Use algebraic properties to decompose unknown inner products into combinations of known inner products.     "
+},
+{
+  "id": "activity-using-ip-alg-props",
+  "level": "2",
+  "url": "chp7sec2.html#activity-using-ip-alg-props",
+  "type": "Activity",
+  "number": "10.2.6",
+  "title": "Using Algebraic Properties to Compute Inner Products.",
+  "body": " Using Algebraic Properties to Compute Inner Products   Suppose we know , , and . Use your knowledge of the algebraic properties of inner products to compute each of the following:           "
+},
+{
+  "id": "prop-law-of-cosines",
+  "level": "2",
+  "url": "chp7sec2.html#prop-law-of-cosines",
+  "type": "Proposition",
+  "number": "10.2.7",
+  "title": "Law of Cosines.",
+  "body": " Law of Cosines    If is a triangle with side lengths , , and angle , then      "
+},
+{
+  "id": "chp7sec2-23",
+  "level": "2",
+  "url": "chp7sec2.html#chp7sec2-23",
+  "type": "Note",
+  "number": "10.2.8",
+  "title": "",
+  "body": " The Law of Cosines can be proved using the Pythagorean Theorem. See GeoGebra ID: ck4w8asn .  "
+},
+{
+  "id": "fig-law-of-cosines-triangle",
+  "level": "2",
+  "url": "chp7sec2.html#fig-law-of-cosines-triangle",
+  "type": "Figure",
+  "number": "10.2.9",
+  "title": "",
+  "body": " "
+},
+{
+  "id": "prop-ip_angle_eq",
+  "level": "2",
+  "url": "chp7sec2.html#prop-ip_angle_eq",
+  "type": "Proposition",
+  "number": "10.2.10",
+  "title": "The Angle Equation for the Inner Product.",
+  "body": " The Angle Equation for the Inner Product   If , then,    "
+},
+{
+  "id": "activity-using_ip_alg_props",
+  "level": "2",
+  "url": "chp7sec2.html#activity-using_ip_alg_props",
+  "type": "Activity",
+  "number": "10.2.11",
+  "title": "Using Algebraic Properties to Compute Triangle Data.",
+  "body": " Using Algebraic Properties to Compute Triangle Data   Consider the triangle where , , and . Use your knowledge of inner products to find the triangle data %(3 side lengths and 3 angle measurements) for , specifically:   Length of segment  Length of segment  Length of segment  Measure in degrees of  Measure in degrees of  Measure in degrees of    Hint: What vectors will you use?       "
+},
+{
+  "id": "thm_cauchyschwartz",
+  "level": "2",
+  "url": "chp7sec2.html#thm_cauchyschwartz",
+  "type": "Theorem",
+  "number": "10.2.12",
+  "title": "Cauchy--Schwartz Inequality.",
+  "body": " Cauchy--Schwartz Inequality   If , then .   "
+},
+{
+  "id": "chp7sec2-37",
+  "level": "2",
+  "url": "chp7sec2.html#chp7sec2-37",
+  "type": "Proof",
+  "number": "10.2.1",
+  "title": "Sketch of proof.",
+  "body": " Sketch of proof  Note that and apply this to the Angle Equation .  "
+},
+{
+  "id": "chp7sec2-38",
+  "level": "2",
+  "url": "chp7sec2.html#chp7sec2-38",
+  "type": "Theorem",
+  "number": "10.2.13",
+  "title": "Triangle inequality.",
+  "body": " Triangle inequality   If , then .   "
+},
+{
+  "id": "chp7sec2-39",
+  "level": "2",
+  "url": "chp7sec2.html#chp7sec2-39",
+  "type": "Proof",
+  "number": "10.2.2",
+  "title": "Sketch of proof.",
+  "body": " Sketch of proof  Earlier using the algebraic properties of inner products in , I showed   Using Theorem ,   Taking square roots, the result follows.  "
+},
+{
+  "id": "chp7sec3",
+  "level": "1",
+  "url": "chp7sec3.html",
+  "type": "Lesson",
+  "number": "10.3",
+  "title": "Inner Product as Matrix Multiplication",
+  "body": " Inner Product as Matrix Multiplication  Observe that the inner product   where the last expression is just matrix multiplication of a \"horizontal\" with the normal vertical . The \"horizontal\" version of is its transpose.   Transpose of a Vector   If is a vector, written in column form, then its transpose  is the same list of numbers, written in row form. In symbols, this can be expressed as     With the notation, .  More generally,   Transpose of a Matrix   if is an matrix, then the transpose of , denoted , is the matrix whose rows are .      If and , then the matrix      Gram Matrix   If and , then its Gram matrix is .    The given a collection of vectors , its Gram matrix contains an in incredible amount of geometric data in one convenient and efficient package. Observe that the diagonal entries encode length data and the off-diagonal entries contain angle data .    Suppose I want to determine the the geometry of the vectors . This means I want both length and angle data. I can quickly determine this by computing the Gram matrix and interpreting its entries appropriately.   So interpreting:      See how the Gram matrix can be used, in conjunction with the length and angle equations, to completely determine the geometry of the vectors and at GeoGebra ID: quqdwezr .  You can show directly that the transpose satisfies the following useful algebraic properties.   Transpose Socks 'n Shoes   If is and is , then .     Adjoint Property   If is an matrix, and , then      Hint of proof  Try using your understanding of inner product as matrix multiplication, together with transpose socks 'n shoes.   In summary, the transpose is an algebraic operation that helps us phrase inner products as matrix multiplication, and helps us organize performing many inner products at once.  "
+},
+{
+  "id": "def-transpose",
+  "level": "2",
+  "url": "chp7sec3.html#def-transpose",
+  "type": "Definition",
+  "number": "10.3.1",
+  "title": "Transpose of a Vector.",
+  "body": " Transpose of a Vector   If is a vector, written in column form, then its transpose  is the same list of numbers, written in row form. In symbols, this can be expressed as    "
+},
+{
+  "id": "def-tranpose_matrix",
+  "level": "2",
+  "url": "chp7sec3.html#def-tranpose_matrix",
+  "type": "Definition",
+  "number": "10.3.2",
+  "title": "Transpose of a Matrix.",
+  "body": " Transpose of a Matrix   if is an matrix, then the transpose of , denoted , is the matrix whose rows are .   "
+},
+{
+  "id": "chp7sec3-9",
+  "level": "2",
+  "url": "chp7sec3.html#chp7sec3-9",
+  "type": "Proposition",
+  "number": "10.3.3",
+  "title": "",
+  "body": "  If and , then the matrix    "
+},
+{
+  "id": "def-gram_matrix",
+  "level": "2",
+  "url": "chp7sec3.html#def-gram_matrix",
+  "type": "Definition",
+  "number": "10.3.4",
+  "title": "Gram Matrix.",
+  "body": " Gram Matrix   If and , then its Gram matrix is .   "
+},
+{
+  "id": "chp7sec3-12",
+  "level": "2",
+  "url": "chp7sec3.html#chp7sec3-12",
+  "type": "Example",
+  "number": "10.3.5",
+  "title": "",
+  "body": "  Suppose I want to determine the the geometry of the vectors . This means I want both length and angle data. I can quickly determine this by computing the Gram matrix and interpreting its entries appropriately.   So interpreting:     "
+},
+{
+  "id": "prop-socknshoes_transpose",
+  "level": "2",
+  "url": "chp7sec3.html#prop-socknshoes_transpose",
+  "type": "Proposition",
+  "number": "10.3.6",
+  "title": "Transpose Socks ’n Shoes.",
+  "body": " Transpose Socks 'n Shoes   If is and is , then .   "
+},
+{
+  "id": "chp7sec3-16",
+  "level": "2",
+  "url": "chp7sec3.html#chp7sec3-16",
+  "type": "Proposition",
+  "number": "10.3.7",
+  "title": "Adjoint Property.",
+  "body": " Adjoint Property   If is an matrix, and , then    "
+},
+{
+  "id": "chp7sec3-17",
+  "level": "2",
+  "url": "chp7sec3.html#chp7sec3-17",
+  "type": "Proof",
+  "number": "10.3.1",
+  "title": "Hint of proof.",
+  "body": " Hint of proof  Try using your understanding of inner product as matrix multiplication, together with transpose socks 'n shoes.  "
+},
+{
+  "id": "chp7sec4",
+  "level": "1",
+  "url": "chp7sec4.html",
+  "type": "Lesson",
+  "number": "10.4",
+  "title": "Orthogonality",
+  "body": " Orthogonality  The motivating geometric question of this lesson is: What does it mean for vectors to be orthogonal?    Orthogonal   Two vectors are orthogonal if the angle between them is a right angle.    Using our understanding of cosine and the Angle Equation \\eqref{eq_inner_prod_cos}, it follows that   Vectors are Orthogonal if their Inner Product is Zero   If are nonzero, then and are orthogonal if and only if .     Pairwise Orthogonal Set   If is a finite collection of nonzero vectors, then is pairwise orthogonal if for all , , then .     Computational Quick Check for Orthogonality   If and , then   is pairwise orthogonal if and only if is diagonal.     Pairwise Orthogonal Vectors are Independent   If is a finite set of pairwise orthogonal (nonzero) vectors, then is linearly independent.    Observe how this morally makes sense: orthogonal vectors should be pointing in different directions , and this is exactly what independence measures.   Sketch of proof  Let and . Suppose is such that . Then . Since is orthogonal, Algorithm \\ref{cqc-orthogonality} implies is diagonal (with nonzero diagonal entries). Therefore must be and hence is independent.    Orthonormal Set   We call  normal if each vector in is normal (i.e. if , then ). If is both pairwise orthogonal and normal, we call it orthonormal .      Let and . Then is orthonormal if and only if .     Orthogonal Matrix   An matrix is orthogonal if .    It follows that if is orthonormal, it is an orthonormal basis for its span .   Why do we care? Bases are necessary to perform computations. Basis give us coordinates! Orthonormal basis give us nice crisp square coordinate grids. Certain computations become much easier with ``good'' orthogonal coordinates.  So the question becomes, given a basis for a subspace , how do you find an orthonormal basis for ?  One strategy for this is the Gram--Schmidt Orthogonalization Algorithm, which we will introduce in a few sections.  "
+},
+{
+  "id": "def-orthogonal",
+  "level": "2",
+  "url": "chp7sec4.html#def-orthogonal",
+  "type": "Definition",
+  "number": "10.4.1",
+  "title": "Orthogonal.",
+  "body": " Orthogonal   Two vectors are orthogonal if the angle between them is a right angle.   "
+},
+{
+  "id": "prop-inner_prod_zero_orth",
+  "level": "2",
+  "url": "chp7sec4.html#prop-inner_prod_zero_orth",
+  "type": "Proposition",
+  "number": "10.4.2",
+  "title": "Vectors are Orthogonal if their Inner Product is Zero.",
+  "body": " Vectors are Orthogonal if their Inner Product is Zero   If are nonzero, then and are orthogonal if and only if .   "
+},
+{
+  "id": "def-pairwise_orthogonal",
+  "level": "2",
+  "url": "chp7sec4.html#def-pairwise_orthogonal",
+  "type": "Definition",
+  "number": "10.4.3",
+  "title": "Pairwise Orthogonal Set.",
+  "body": " Pairwise Orthogonal Set   If is a finite collection of nonzero vectors, then is pairwise orthogonal if for all , , then .   "
+},
+{
+  "id": "cqc-orthogonality",
+  "level": "2",
+  "url": "chp7sec4.html#cqc-orthogonality",
+  "type": "Proposition",
+  "number": "10.4.4",
+  "title": "Computational Quick Check for Orthogonality.",
+  "body": " Computational Quick Check for Orthogonality   If and , then   is pairwise orthogonal if and only if is diagonal.   "
+},
+{
+  "id": "prop-orth_implies_indep",
+  "level": "2",
+  "url": "chp7sec4.html#prop-orth_implies_indep",
+  "type": "Proposition",
+  "number": "10.4.5",
+  "title": "Pairwise Orthogonal Vectors are Independent.",
+  "body": " Pairwise Orthogonal Vectors are Independent   If is a finite set of pairwise orthogonal (nonzero) vectors, then is linearly independent.   "
+},
+{
+  "id": "chp7sec4-10",
+  "level": "2",
+  "url": "chp7sec4.html#chp7sec4-10",
+  "type": "Proof",
+  "number": "10.4.1",
+  "title": "Sketch of proof.",
+  "body": " Sketch of proof  Let and . Suppose is such that . Then . Since is orthogonal, Algorithm \\ref{cqc-orthogonality} implies is diagonal (with nonzero diagonal entries). Therefore must be and hence is independent.  "
+},
+{
+  "id": "chp7sec4-11",
+  "level": "2",
+  "url": "chp7sec4.html#chp7sec4-11",
+  "type": "Definition",
+  "number": "10.4.6",
+  "title": "Orthonormal Set.",
+  "body": " Orthonormal Set   We call  normal if each vector in is normal (i.e. if , then ). If is both pairwise orthogonal and normal, we call it orthonormal .   "
+},
+{
+  "id": "chp7sec4-12",
+  "level": "2",
+  "url": "chp7sec4.html#chp7sec4-12",
+  "type": "Proposition",
+  "number": "10.4.7",
+  "title": "",
+  "body": "  Let and . Then is orthonormal if and only if .   "
+},
+{
+  "id": "chp7sec4-13",
+  "level": "2",
+  "url": "chp7sec4.html#chp7sec4-13",
+  "type": "Definition",
+  "number": "10.4.8",
+  "title": "Orthogonal Matrix.",
+  "body": " Orthogonal Matrix   An matrix is orthogonal if .   "
+},
+{
+  "id": "chp7sec5",
+  "level": "1",
+  "url": "chp7sec5.html",
+  "type": "Lesson",
+  "number": "10.5",
+  "title": "Orthogonal Complement",
+  "body": " Orthogonal Complement  Special Case I: Complement to a Line.\\\\ To begin, consider the following motivating geometric question: Given a line , can you find the hyperplane orthogonal to it?    Orthogonal Complement of a Vector   If , then the orthogonal complement of (or equivalently the line spanned by ) is the collection of all vectors orthogonal to and is symbolized by      Orthogonal Complement of Line is a Subspace   If and , then and (i.e. is a subspace).   ]  [Hint of proof] You want to show each of these two properties (closed under scaling and closed under addition). You may want to use and reference (among possibly other things) Proposition \\ref{prop_fundamental_standard_inner_product_props} and Definition \\ref{def-orth_com}.   To say lies in is to say . Using our understanding of inner product as matrix multiplication by the transpose, this means . It follows that .    Here I will find the orthogonal complement, , to the vector .  Using our understanding of as the null space of , it follows that is a basis for . Hence is the plane spanned by .     Play with orthogonal complements to lines in at GeoGebra ID: https:\/\/www.geogebra.org\/m\/ged9fa8k ged9fa8k .  Special Case II: Complement to a Plane.\\\\ Let's now consider a second situation: Given a plane in , can you find its orthogonal line ?   Observe if is orthogonal to , then it is orthogonal to both  and . Hence  and  . We can organize this into a single matrix equation: .  The orthogonal line is then where .       Given , find the line orthogonal to the plane . If , then any vector on the orthogonal line must satisfy , and hence lie in its null space. \\\\  Via row reduction,     It follows that the orthogonal line is      Verify for yourself that the following are row equivalent:   The orthogonal line is   This basis vector is so useful, and used so often, it gets its own name:   Cross Product   If and , then the cross product of and is     The meaning of the cross product is: it gives a vector which spans the plane orthogonal to both and . Due to the specific geometry of this situation, the cross product only makes sense in .  General Case.\\\\ Let us now consider the most general situation. Given a subspace, what is the collection of vectors orthogonal to it, and how do you find it?    Orthogonal Complement of a Subspace   If is a subspace, then the orthogonal complement to is the set     Let be a collection on nonzero independent vectors which spans (i.e. ), and let .  Since is a basis for , a vector is in if and only if for each . Using the our understanding of the inner product as matrix multiplication by the transpose, and collecting each of the expressions, we get   Orthogonal Complements as Null Spaces   If is a subspace with basis , then     "
+},
+{
+  "id": "def-orth_com",
+  "level": "2",
+  "url": "chp7sec5.html#def-orth_com",
+  "type": "Definition",
+  "number": "10.5.1",
+  "title": "Orthogonal Complement of a Vector.",
+  "body": " Orthogonal Complement of a Vector   If , then the orthogonal complement of (or equivalently the line spanned by ) is the collection of all vectors orthogonal to and is symbolized by    "
+},
+{
+  "id": "prop-orth_complement_subspace",
+  "level": "2",
+  "url": "chp7sec5.html#prop-orth_complement_subspace",
+  "type": "Proposition",
+  "number": "10.5.2",
+  "title": "Orthogonal Complement of Line is a Subspace.",
+  "body": " Orthogonal Complement of Line is a Subspace   If and , then and (i.e. is a subspace).   "
+},
+{
+  "id": "chp7sec5-5",
+  "level": "2",
+  "url": "chp7sec5.html#chp7sec5-5",
+  "type": "Proof",
+  "number": "10.5.1",
+  "title": "",
+  "body": " [Hint of proof] You want to show each of these two properties (closed under scaling and closed under addition). You may want to use and reference (among possibly other things) Proposition \\ref{prop_fundamental_standard_inner_product_props} and Definition \\ref{def-orth_com}.  "
+},
+{
+  "id": "chp7sec5-7",
+  "level": "2",
+  "url": "chp7sec5.html#chp7sec5-7",
+  "type": "Example",
+  "number": "10.5.3",
+  "title": "",
+  "body": "  Here I will find the orthogonal complement, , to the vector .  Using our understanding of as the null space of , it follows that is a basis for . Hence is the plane spanned by .    "
+},
+{
+  "id": "chp7sec5-12",
+  "level": "2",
+  "url": "chp7sec5.html#chp7sec5-12",
+  "type": "Example",
+  "number": "10.5.4",
+  "title": "",
+  "body": "     Given , find the line orthogonal to the plane . If , then any vector on the orthogonal line must satisfy , and hence lie in its null space. \\\\  Via row reduction,     It follows that the orthogonal line is     "
+},
+{
+  "id": "def_cross_product",
+  "level": "2",
+  "url": "chp7sec5.html#def_cross_product",
+  "type": "Definition",
+  "number": "10.5.5",
+  "title": "Cross Product.",
+  "body": " Cross Product   If and , then the cross product of and is    "
+},
+{
+  "id": "def-orthogonal_complement",
+  "level": "2",
+  "url": "chp7sec5.html#def-orthogonal_complement",
+  "type": "Definition",
+  "number": "10.5.6",
+  "title": "Orthogonal Complement of a Subspace.",
+  "body": " Orthogonal Complement of a Subspace   If is a subspace, then the orthogonal complement to is the set    "
+},
+{
+  "id": "eq_orth_complements",
+  "level": "2",
+  "url": "chp7sec5.html#eq_orth_complements",
+  "type": "Theorem",
+  "number": "10.5.7",
+  "title": "Orthogonal Complements as Null Spaces.",
+  "body": " Orthogonal Complements as Null Spaces   If is a subspace with basis , then    "
+},
+{
+  "id": "chp7sec6",
+  "level": "1",
+  "url": "chp7sec6.html",
+  "type": "Lesson",
+  "number": "10.6",
+  "title": "Orthogonal Projection",
+  "body": " Orthogonal Projection  In classical Euclidean geometry, given a line and a point off of the line, we can drop the perpendicular from the point to the line. I now rephrase this in the language of linear algebra.   Given vectors , we can orthogonally project  onto the line .  We may use some trigonometry and the Angle Equation \\eqref{eq_inner_prod_cos} to find the length of this projection.   This projection vector can now be computed.    Projection Component   The projection component of onto is the vector:     Observe that .   Orthogonal Component   The orthogonal component of relative to is the vector:     Observe that .   Viewing as the hypotenuse of a right triangle, its legs become the projection component and orthogonal component. Every vector has such a decomposition.\\\\  Play with projections at GeoGebra ID: https:\/\/www.geogebra.org\/m\/vgtq44gs vgtq44gs .  These ideas are at are at the core of the results in the next couple sections and are also incredible valuable in understanding vector calculus.  Suppose now that is independent. We may generalize the ideas of orthogonal projection from lines to considering orthogonal projections onto .  Given any , we can drop the perpendicular to a point on . This gives us a decomposition of ,   where   is its projection component   and   is its orthogonal component .\\\\   How do we actually find ?  images\/subspace_proj.png  Since ,   [Independent Implies Invertible Gram Matrix] If is independent, then is invertible.   A square matrix is invertible if and only if its null space is trivial. Pick . I will show that it must be zero.  By definition of null space, . By associativity of matrix multiplication, , and by Theorem \\ref{eq_orth_complements}, . Meanwhile, the definition of matrix multiplication implies . That means , and hence . So and the positive definiteness of the inner product (Proposition \\ref{prop_fundamental_standard_inner_product_props}) implies .  By assumption, is independent, and therefore, by Proposition \\ref{prop:dependency_null_2}, and thus it must be the case that .   Since the Gram matrix is invertible, we may multiply by its inverse to solve for the -coordinates of the projection component of ,   and finally, we change back to standard coordinates,    Orthogonal Projection Matrix   If is a matrix with independent columns, then is the orthogonal projection matrix onto .    Multiplying by this matrix has the effect of dropping the perpendicular!!!   Let be an matrix with independent columns, , , and ,  If the columns of do not span , the matrix equation   but we can find ``the closest possible solution,'' namely the orthogonal projection onto the column space, i.e. the matrix equation   Since is the point on that is closest to , the solution to this matrix equation is the best possible approximate solution to the original matrix equation. Since distance is given by a sum of squares, this solution minimizes the sum of squares. As such we call this solution the linear least squares (LLS) solution .   Linear Least Squares (LLS) Solution   If is an matrix with independent columns, , and , then the linear least squares solution to the matrix equation is     Unfortunately in the wild, the LLS solution is often denoted with a hat, , however this could be confused with normalized vectors. To avoid confusion, I will denote it denoted .  LLS solutions have many important applications. For example, in statistics, when we have data sets and want to find a predictive curve (e.g. line) of ``best fit.''    We measure a quantity we believe varies linearly over time. We measure: at , at , and at .  We want to find the best possible . There is noise, so it will not be a perfect fit.  If the data was perfectly linear, it would satisfy:   This amounts to solving the following matrix equation:   The data is not perfectly linear, and correspondingly, there is no solution to this matrix equation, but there is a LLS solution!!!  Check for yourself that is an excellent fit for this data.    Having gone through this example, let's walk through the general case. out in the wild, there are two covarying quantities, an independent quantity and a dependent quantity. You suspect that the underlying relationship between and can be modeled as a linear combination of linearly independent functions (e.g. monomials, trigonometric functions, exponentials, etc.) . To make this concrete, I will explicitly walk through linear relationships. So you suspect for some unknown and . You go out and make measurements at regular intervals of , let's say at times . Let denote the column vector of data (a.k.a. observables).  If the data was perfectly linear, it would satisfy:   This amounts to solving the following matrix equation:   The data is not perfectly linear, and correspondingly, there is no solution to this matrix equation, but there is a LLS solution. The LLS solution for gives line of best fit for the data you observe!!!     Consider the triangle depicted below. Observe that is the segment formed by dropping the perpendicular from to segment , and is the point of intersection. Let denote the angle formed at vertex . Using the Pythagorean Theorem, carefully show that   This important result is called the Law of Cosines .         Consider the triangle in the plane with vertices , , .   Use GeoGebra to draw and label this triangle.  Use the GeoGebra length and angle tools to measure the 3 sides and the 3 angles.  Let and let . Use these vectors to find a single inner product matrix who entries encode all of the geometric data for this triangle.  Use the entries of this inner product matrix algebraically find the side lengths , , and . Give both exact and numerically approximated solutions. Make sure they agree with the GeoGebra measurements.  Verify that the side lengths satisfy the Triangle Inequality : any side length is less than the sum of the other two side lengths.  Use the entries of this inner product matrix algebraically find the angle measures and . Give both exact and numerically approximated solutions. Make sure they agree with the GeoGebra measurements.  Why is not immediately found from the inner product matrix? What information about triangles can you use to then find it, given your knowledge of the other two angles?     (a,b,d,f) The GeoGebra image should look like:     (c) Let . Then the inner product matrix contains the geometric data of this triangle.  (d) Lengths can be found by computing square roots of the diagonal entries, .  (e) This can be done with direct checks, for example .  (f) Use the Angle Formula for the off diagonal entries.   (g) Look at the picture, is not realized as an angle between any of these vectors, but rather, its supplement is realized between and .      Rigorously prove the Proposition \\ref{prop:orth_implies_indep}.      Rigorously prove the Proposition \\ref{prop:orth_com_of_line_is_subspace}.      Let .   Use matrix transpose and your knowledge of matrix equations to find the orthogonal plane to . Express this in parametric vector form. Set up and explain all steps, though you may use GeoGebra for row reduction.  Use GeoGebra to plot the vector , the line , and the plane . Using the angle measurement tool, verify that the two basis vectors you found for form right angle with .     (a) Using our knowledge of inner products as matrix multiplication by the transpose: , so is determined and and are free, hence:   Hence   (b) The GeoGebra image should look like:         Let and consider the plane .   Use matrix transpose and your knowledge of matrix equations to find the orthogonal line to . Express in parametric vector form. Set up and explain all steps, though you may use GeoGebra for row reduction.  Use the cross product formula to find the orthogonal line. Verify that this is the same line as in the previous part.  Use GeoGebra to plot the plane and the line . Using the angle measurement tool, verify that the vector you found forms a right angle with both vectors in .     (a) Let . Using our knowledge of inner products as matrix multiplication by the transpose, the orthogonal line is: . Since   we see and are determined and is free, hence:   Hence   (b) The GeoGebra image should look like:        "
+},
+{
+  "id": "def-projection_component",
+  "level": "2",
+  "url": "chp7sec6.html#def-projection_component",
+  "type": "Definition",
+  "number": "10.6.1",
+  "title": "Projection Component.",
+  "body": " Projection Component   The projection component of onto is the vector:    "
+},
+{
+  "id": "def-orthogonal_component",
+  "level": "2",
+  "url": "chp7sec6.html#def-orthogonal_component",
+  "type": "Definition",
+  "number": "10.6.2",
+  "title": "Orthogonal Component.",
+  "body": " Orthogonal Component   The orthogonal component of relative to is the vector:    "
+},
+{
+  "id": "chp7sec6-30",
+  "level": "2",
+  "url": "chp7sec6.html#chp7sec6-30",
+  "type": "Proof",
+  "number": "10.6.1",
+  "title": "",
+  "body": " A square matrix is invertible if and only if its null space is trivial. Pick . I will show that it must be zero.  By definition of null space, . By associativity of matrix multiplication, , and by Theorem \\ref{eq_orth_complements}, . Meanwhile, the definition of matrix multiplication implies . That means , and hence . So and the positive definiteness of the inner product (Proposition \\ref{prop_fundamental_standard_inner_product_props}) implies .  By assumption, is independent, and therefore, by Proposition \\ref{prop:dependency_null_2}, and thus it must be the case that .  "
+},
+{
+  "id": "def-orthogonal_projection_matrix",
+  "level": "2",
+  "url": "chp7sec6.html#def-orthogonal_projection_matrix",
+  "type": "Definition",
+  "number": "10.6.3",
+  "title": "Orthogonal Projection Matrix.",
+  "body": " Orthogonal Projection Matrix   If is a matrix with independent columns, then is the orthogonal projection matrix onto .   "
+},
+{
+  "id": "def-lls_solution",
+  "level": "2",
+  "url": "chp7sec6.html#def-lls_solution",
+  "type": "Definition",
+  "number": "10.6.4",
+  "title": "Linear Least Squares (LLS) Solution.",
+  "body": " Linear Least Squares (LLS) Solution   If is an matrix with independent columns, , and , then the linear least squares solution to the matrix equation is    "
+},
+{
+  "id": "chp7sec6-46",
+  "level": "2",
+  "url": "chp7sec6.html#chp7sec6-46",
+  "type": "Example",
+  "number": "10.6.5",
+  "title": "",
+  "body": "  We measure a quantity we believe varies linearly over time. We measure: at , at , and at .  We want to find the best possible . There is noise, so it will not be a perfect fit.  If the data was perfectly linear, it would satisfy:   This amounts to solving the following matrix equation:   The data is not perfectly linear, and correspondingly, there is no solution to this matrix equation, but there is a LLS solution!!!  Check for yourself that is an excellent fit for this data.   "
+},
+{
+  "id": "chp7sec6-53-1",
+  "level": "2",
+  "url": "chp7sec6.html#chp7sec6-53-1",
+  "type": "Exercise",
+  "number": "10.6.1",
+  "title": "",
+  "body": "  Consider the triangle depicted below. Observe that is the segment formed by dropping the perpendicular from to segment , and is the point of intersection. Let denote the angle formed at vertex . Using the Pythagorean Theorem, carefully show that   This important result is called the Law of Cosines .      "
+},
+{
+  "id": "chp7sec6-53-2",
+  "level": "2",
+  "url": "chp7sec6.html#chp7sec6-53-2",
+  "type": "Exercise",
+  "number": "10.6.2",
+  "title": "",
+  "body": "  Consider the triangle in the plane with vertices , , .   Use GeoGebra to draw and label this triangle.  Use the GeoGebra length and angle tools to measure the 3 sides and the 3 angles.  Let and let . Use these vectors to find a single inner product matrix who entries encode all of the geometric data for this triangle.  Use the entries of this inner product matrix algebraically find the side lengths , , and . Give both exact and numerically approximated solutions. Make sure they agree with the GeoGebra measurements.  Verify that the side lengths satisfy the Triangle Inequality : any side length is less than the sum of the other two side lengths.  Use the entries of this inner product matrix algebraically find the angle measures and . Give both exact and numerically approximated solutions. Make sure they agree with the GeoGebra measurements.  Why is not immediately found from the inner product matrix? What information about triangles can you use to then find it, given your knowledge of the other two angles?     (a,b,d,f) The GeoGebra image should look like:     (c) Let . Then the inner product matrix contains the geometric data of this triangle.  (d) Lengths can be found by computing square roots of the diagonal entries, .  (e) This can be done with direct checks, for example .  (f) Use the Angle Formula for the off diagonal entries.   (g) Look at the picture, is not realized as an angle between any of these vectors, but rather, its supplement is realized between and .   "
+},
+{
+  "id": "chp7sec6-53-3",
+  "level": "2",
+  "url": "chp7sec6.html#chp7sec6-53-3",
+  "type": "Exercise",
+  "number": "10.6.3",
+  "title": "",
+  "body": "  Rigorously prove the Proposition \\ref{prop:orth_implies_indep}.   "
+},
+{
+  "id": "chp7sec6-53-4",
+  "level": "2",
+  "url": "chp7sec6.html#chp7sec6-53-4",
+  "type": "Exercise",
+  "number": "10.6.4",
+  "title": "",
+  "body": "  Rigorously prove the Proposition \\ref{prop:orth_com_of_line_is_subspace}.   "
+},
+{
+  "id": "chp7sec6-53-5",
+  "level": "2",
+  "url": "chp7sec6.html#chp7sec6-53-5",
+  "type": "Exercise",
+  "number": "10.6.5",
+  "title": "",
+  "body": "  Let .   Use matrix transpose and your knowledge of matrix equations to find the orthogonal plane to . Express this in parametric vector form. Set up and explain all steps, though you may use GeoGebra for row reduction.  Use GeoGebra to plot the vector , the line , and the plane . Using the angle measurement tool, verify that the two basis vectors you found for form right angle with .     (a) Using our knowledge of inner products as matrix multiplication by the transpose: , so is determined and and are free, hence:   Hence   (b) The GeoGebra image should look like:      "
+},
+{
+  "id": "chp7sec6-53-6",
+  "level": "2",
+  "url": "chp7sec6.html#chp7sec6-53-6",
+  "type": "Exercise",
+  "number": "10.6.6",
+  "title": "",
+  "body": "  Let and consider the plane .   Use matrix transpose and your knowledge of matrix equations to find the orthogonal line to . Express in parametric vector form. Set up and explain all steps, though you may use GeoGebra for row reduction.  Use the cross product formula to find the orthogonal line. Verify that this is the same line as in the previous part.  Use GeoGebra to plot the plane and the line . Using the angle measurement tool, verify that the vector you found forms a right angle with both vectors in .     (a) Let . Using our knowledge of inner products as matrix multiplication by the transpose, the orthogonal line is: . Since   we see and are determined and is free, hence:   Hence   (b) The GeoGebra image should look like:      "
 },
 {
   "id": "backmatter-2",

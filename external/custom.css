@@ -101,3 +101,10 @@ article.data .heading {
     color: var(--data-text) !important;
     background-color:  var(--data-border) !important;
 }
+
+
+.ptx-page-footer {
+
+    display: none;
+
+}
