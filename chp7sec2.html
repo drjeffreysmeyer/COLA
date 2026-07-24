@@ -96,6 +96,7 @@ window.MathJax = {
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
+<meta property="og:image" content="https://www.JeffreySMeyer.com/external/images/corner.svg">
 <meta property="book:title" content="Concepts of Linear Algebra">
 <meta property="book:author" content="Jeffrey S. Meyer">
 <script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
@@ -133,10 +134,12 @@ eBookConfig.enable_chatcodes =  false;
 </script>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""><img src="external/images/corner.svg" alt="Logo image"></a><div class="title-container">
 <h1 class="heading"><a href="COLA.html"><span class="title">Concepts of Linear Algebra</span> <span class="subtitle">A Meaningful and Hands-On Introduction</span></a></h1>
 <p class="byline">Jeffrey S. Meyer</p>
-</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
 <button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
@@ -247,8 +250,12 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="chapter0.html" class="internal"><span class="codenumber">0</span> <span class="title">Introduction</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp0sec1.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Note to Students</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp0sec2.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Note to Teachers</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chp0sec2.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Note to Teachers</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp0sec2.html#chp0sec2subsec1" class="internal"><span class="title">Why this book?</span></a></div></li></ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp0sec3.html" class="internal"><span class="codenumber">0.3</span> <span class="title">MathME Homework System</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp0sec4.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Acknowledgments</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -390,10 +397,17 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="chp7sec2.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Inner Product and Angle</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp7sec3.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Inner Product as Matrix Multiplication</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp7sec4.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Orthogonality</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp7sec5.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Orthogonal Complement</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="chp7sec5.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Orthogonal Complement</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp7sec5.html#chp7sec5subsec1" class="internal"><span class="title">Special Case I:  Complement to a Line</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp7sec5.html#chp7sec5subsec2" class="internal"><span class="title">Special Case II:  Complement to a Plane</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp7sec5.html#chp7sec5subsec3" class="internal"><span class="title">General Case:  Complement to a Subspace</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="chp7sec6.html" class="internal"><span class="codenumber">10.6</span> <span class="title">Orthogonal Projection</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chp7sec6.html#chp7sec6-53" class="internal"><span class="codenumber">10.6</span> <span class="title">Exercises</span></a></div></li></ul>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chp7sec6.html#chp7sec6-52" class="internal"><span class="codenumber">10.6</span> <span class="title">Problems</span></a></div></li></ul>
 </li>
 </ul>
 </li>
@@ -402,7 +416,7 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="chp7sec2"><h2 class="heading hide-type">
 <span class="type">Lesson</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inner Product and Angle</span>
 </h2>
-<div class="para" id="chp7sec2-2">Consider vectors <span class="process-math">\(\vect{v}\text{,}\)</span> <span class="process-math">\(\vect{w}\text{,}\)</span> and the parallelogram they form. Observe that <span class="process-math">\(\vect{v}\text{,}\)</span> <span class="process-math">\(\vect{w}\text{,}\)</span> and diagonal <span class="process-math">\(\vect{v}-\vect{w}\)</span> form a triangle. Let <span class="process-math">\(\theta\)</span> denote the angle between <span class="process-math">\(\vect{v}\)</span> and <span class="process-math">\(\vect{w}\text{.}\)</span> See Figure <a href="chp7sec2.html#fig-parallelogram-diagonals2" class="xref" data-knowl="./knowl/xref/fig-parallelogram-diagonals2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.1">Figure 10.2.1</a>.<div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="chp7sec2-2">Consider vectors <span class="process-math">\(\vect{v}\text{,}\)</span> <span class="process-math">\(\vect{w}\text{,}\)</span> and the parallelogram they form. Observe that <span class="process-math">\(\vect{v}\text{,}\)</span> <span class="process-math">\(\vect{w}\text{,}\)</span> and diagonal <span class="process-math">\(\vect{v}-\vect{w}\)</span> form a triangle. Let <span class="process-math">\(\theta\)</span> denote the angle between <span class="process-math">\(\vect{v}\)</span> and <span class="process-math">\(\vect{w}\text{.}\)</span> See <a href="chp7sec2.html#fig-parallelogram-diagonals2" class="xref" data-knowl="./knowl/xref/fig-parallelogram-diagonals2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 10.2.1">Figure 10.2.1</a>.<div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="chp7sec2-3">The motivating question of this lesson is: <em class="emphasis">How do the lengths of the sides <span class="process-math">\(\vect{v}\)</span> and <span class="process-math">\(\vect{w}\)</span> relate to the length of the diagonal <span class="process-math">\(\vect{v}-\vect{w}\text{?}\)</span></em><div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -433,12 +447,12 @@ eBookConfig.enable_chatcodes =  false;
 </ol>
 <div class="autopermalink" data-description="Activity 10.2.2: Exploring the Length of a Diagonal"><a href="#activity-exploring-diagonal" title="Copy heading and permalink for Activity 10.2.2: Exploring the Length of a Diagonal" aria-label="Copy heading and permalink for Activity 10.2.2: Exploring the Length of a Diagonal">🔗</a></div></article><div class="para" id="chp7sec2-6">We see that, as <span class="process-math">\(\norm{\vect{v}}\)</span> and <span class="process-math">\(\norm{\vect{w}}\)</span> are left constant, <span class="process-math">\(\norm{\vect{v}-\vect{w}}\)</span> varies with <span class="process-math">\(\theta\text{.}\)</span> Let’s algebraically expand <span class="process-math">\(\norm{\vect{v}-\vect{w}}^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-parallelogram-diagonals2.html ./knowl/xref/activity-using-ip-alg-props.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/prop-fundamental-standard-inner-product-props.html ./knowl/xref/thm_cauchyschwartz.html" id="chp7sec2-7">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-parallelogram-diagonals2.html ./knowl/xref/activity-using-ip-alg-props.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/prop_fundamental_standard_inner_product_props.html ./knowl/xref/thm_cauchyschwartz.html" id="chp7sec2-7">
 \begin{align*}
 \norm{\vect{v}-\vect{w}}^2 \amp= (v_1-w_1)^2 + \cdots + (v_n-w_n)^2\\
 \amp=(v_1^2-2v_1w_1+w_1^2) + \cdots + (v_n^2-2v_nw_n+w_n^2)\\
 \amp=(v_1^2 + \cdots+ v_n^2) - 2(v_1w_1+ \cdots +v_nw_n) + (w_1^2 + \cdots+ w_n^2)\\
-\amp= \norm{\vect{v}}^2 - 2\underbrace{(v_1w_1+ \cdots +v_nw_n)}_{\text{``Measures'' angle between } \vect{v} \text{ and } \vect{w}} + \norm{\vect{w}}^2.
+\amp= \norm{\vect{v}}^2 - 2\underbrace{(v_1w_1+ \cdots +v_nw_n)}_{\text{"Measures" angle between } \vect{v} \text{ and } \vect{w}} + \norm{\vect{w}}^2.
 \end{align*}
 </div>
 <div class="para" id="chp7sec2-8">This term <span class="process-math">\(v_1w_1+ \cdots +v_nw_n\)</span> measures many interesting geometric features of this parallelogram and deserves its own name.<div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -455,62 +469,62 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Definition 10.2.3: (Standard) Inner Product (a.k.a. Dot Product)"><a href="#def-inner-product" title="Copy heading and permalink for Definition 10.2.3: (Standard) Inner Product (a.k.a. Dot Product)" aria-label="Copy heading and permalink for Definition 10.2.3: (Standard) Inner Product (a.k.a. Dot Product)">🔗</a></div></article><div class="para" id="chp7sec2-10">With the symbolism of the inner product, the length squared of the diagonal simplifies to<div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-parallelogram-diagonals2.html ./knowl/xref/activity-using-ip-alg-props.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/prop-fundamental-standard-inner-product-props.html ./knowl/xref/thm_cauchyschwartz.html" id="eq-length-sq-diag">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-parallelogram-diagonals2.html ./knowl/xref/activity-using-ip-alg-props.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/prop_fundamental_standard_inner_product_props.html ./knowl/xref/thm_cauchyschwartz.html" id="eq-length-sq-diag">
 \begin{equation}
 \norm{\vect{v}-\vect{w}}^2 = \norm{\vect{v}}^2+\norm{\vect{w}}^2 - 2 \ip{\vect{v}}{\vect{w}}.\tag{10.2.1}
 \end{equation}
 </div>
 <article class="assemblage assemblage-like" id="chp7sec2-12"><h3 class="heading"><span class="title">The Many Notations for Inner Product.</span></h3>
-<div class="para" id="chp7sec2-12-2">There are many common notations for the inner product. I use the ``angle bracket’’ notation <span class="process-math">\(\ip{\vect{v}}{\vect{w}}\text{.}\)</span> Another common notation is the ``dot’’ notation <span class="process-math">\(\vect{v}\cdot \vect{w}\text{.}\)</span> Further still, some may use the parentheses notation <span class="process-math">\((\vect{v},\vect{w})\text{.}\)</span> In this course, plan to use only the angle bracket notation, but be prepared to see these other notations in other books and courses.<div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-12-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="chp7sec2-12-2">There are many common notations for the inner product. I use the "angle bracket" notation <span class="process-math">\(\ip{\vect{v}}{\vect{w}}\text{.}\)</span> Another common notation is the "dot" notation <span class="process-math">\(\vect{v}\cdot \vect{w}\text{.}\)</span> Further still, some may use the parentheses notation <span class="process-math">\((\vect{v},\vect{w})\text{.}\)</span> In this course, plan to use only the angle bracket notation, but be prepared to see these other notations in other books and courses.<div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-12-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Assemblage: The Many Notations for Inner Product"><a href="#chp7sec2-12" title="Copy heading and permalink for Assemblage: The Many Notations for Inner Product" aria-label="Copy heading and permalink for Assemblage: The Many Notations for Inner Product">🔗</a></div></article><div class="para" id="chp7sec2-13">Observe that we may express length using the inner product:<div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-parallelogram-diagonals2.html ./knowl/xref/activity-using-ip-alg-props.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/prop-fundamental-standard-inner-product-props.html ./knowl/xref/thm_cauchyschwartz.html" id="eq-innerproduct-length">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-parallelogram-diagonals2.html ./knowl/xref/activity-using-ip-alg-props.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/prop_fundamental_standard_inner_product_props.html ./knowl/xref/thm_cauchyschwartz.html" id="eq-innerproduct-length">
 \begin{equation}
 \ip{\vect{v}}{\vect{v}} = \norm{\vect{v}}^2\tag{10.2.2}
 \end{equation}
 </div>
 <div class="para" id="chp7sec2-15">So the <em class="emphasis">inner product measures length!</em><div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="proposition theorem-like" id="prop-fundamental-standard-inner-product-props"><h3 class="heading">
+<article class="proposition theorem-like" id="prop_fundamental_standard_inner_product_props"><h3 class="heading">
 <span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Algebraic Properties of the Inner Product.</span>
 </h3>
-<div class="para" id="prop-fundamental-standard-inner-product-props-2-1">The inner product satisfies each of the following.<div class="autopermalink" data-description="Paragraph"><a href="#prop-fundamental-standard-inner-product-props-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <ol class="decimal" id="prop-fundamental-standard-inner-product-props-2-2">
-<li id="prop-fundamental-standard-inner-product-props-2-2-1">
-<div class="para" id="prop-fundamental-standard-inner-product-props-2-2-1-1">
-<dfn class="terminology">Positive definite.</dfn> If <span class="process-math">\(\vect{v}\in \R^n\text{,}\)</span> then <span class="process-math">\(\ip{\vect{v}}{\vect{v}}\ge 0\text{,}\)</span> and equals 0 precisely when <span class="process-math">\(\vect{v}=\vect{0}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-fundamental-standard-inner-product-props-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="prop_fundamental_standard_inner_product_props-2-1">The inner product satisfies each of the following.<div class="autopermalink" data-description="Paragraph"><a href="#prop_fundamental_standard_inner_product_props-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ol class="decimal" id="prop_fundamental_standard_inner_product_props-2-2">
+<li id="prop_fundamental_standard_inner_product_props-2-2-1">
+<div class="para" id="prop_fundamental_standard_inner_product_props-2-2-1-1">
+<dfn class="terminology">Positive definite.</dfn> If <span class="process-math">\(\vect{v}\in \R^n\text{,}\)</span> then <span class="process-math">\(\ip{\vect{v}}{\vect{v}}\ge 0\text{,}\)</span> and equals 0 precisely when <span class="process-math">\(\vect{v}=\vect{0}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop_fundamental_standard_inner_product_props-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1"><a href="#prop-fundamental-standard-inner-product-props-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+<div class="autopermalink" data-description="Item 1"><a href="#prop_fundamental_standard_inner_product_props-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
-<li id="prop-fundamental-standard-inner-product-props-2-2-2">
-<div class="para" id="prop-fundamental-standard-inner-product-props-2-2-2-1">
-<dfn class="terminology">Symmetric.</dfn> If <span class="process-math">\(\vect{v},\vect{w}\in \R^n\text{,}\)</span> then <span class="process-math">\(\ip{\vect{v}}{\vect{w}}=\ip{\vect{w}}{\vect{v}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-fundamental-standard-inner-product-props-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="prop_fundamental_standard_inner_product_props-2-2-2">
+<div class="para" id="prop_fundamental_standard_inner_product_props-2-2-2-1">
+<dfn class="terminology">Symmetric.</dfn> If <span class="process-math">\(\vect{v},\vect{w}\in \R^n\text{,}\)</span> then <span class="process-math">\(\ip{\vect{v}}{\vect{w}}=\ip{\vect{w}}{\vect{v}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop_fundamental_standard_inner_product_props-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 2"><a href="#prop-fundamental-standard-inner-product-props-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#prop_fundamental_standard_inner_product_props-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
-<li id="prop-fundamental-standard-inner-product-props-2-2-3">
-<div class="para" id="prop-fundamental-standard-inner-product-props-2-2-3-1">
-<dfn class="terminology">Bilinear.</dfn> The inner product is linear in the second input.<div class="autopermalink" data-description="Paragraph"><a href="#prop-fundamental-standard-inner-product-props-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="prop_fundamental_standard_inner_product_props-2-2-3">
+<div class="para" id="prop_fundamental_standard_inner_product_props-2-2-3-1">
+<dfn class="terminology">Bilinear.</dfn> The inner product is linear in the second input.<div class="autopermalink" data-description="Paragraph"><a href="#prop_fundamental_standard_inner_product_props-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<ol class="lower-alpha ol-marker-2" id="prop-fundamental-standard-inner-product-props-2-2-3-2">
-<li id="prop-fundamental-standard-inner-product-props-2-2-3-2-1">
-<div class="para" id="prop-fundamental-standard-inner-product-props-2-2-3-2-1-1">
-<dfn class="terminology">Additive.</dfn> If <span class="process-math">\(\vect{u},\vect{v},\vect{w}\in \R^n\text{,}\)</span> then <span class="process-math">\(\ip{\vect{u}}{\vect{v}+\vect{w}}=\ip{\vect{u}}{\vect{v}}+\ip{\vect{u}}{\vect{w}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-fundamental-standard-inner-product-props-2-2-3-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<ol class="lower-alpha ol-marker-2" id="prop_fundamental_standard_inner_product_props-2-2-3-2">
+<li id="prop_fundamental_standard_inner_product_props-2-2-3-2-1">
+<div class="para" id="prop_fundamental_standard_inner_product_props-2-2-3-2-1-1">
+<dfn class="terminology">Additive.</dfn> If <span class="process-math">\(\vect{u},\vect{v},\vect{w}\in \R^n\text{,}\)</span> then <span class="process-math">\(\ip{\vect{u}}{\vect{v}+\vect{w}}=\ip{\vect{u}}{\vect{v}}+\ip{\vect{u}}{\vect{w}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop_fundamental_standard_inner_product_props-2-2-3-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 3.a"><a href="#prop-fundamental-standard-inner-product-props-2-2-3-2-1" title="Copy heading and permalink for Item 3.a" aria-label="Copy heading and permalink for Item 3.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 3.a"><a href="#prop_fundamental_standard_inner_product_props-2-2-3-2-1" title="Copy heading and permalink for Item 3.a" aria-label="Copy heading and permalink for Item 3.a">🔗</a></div>
 </li>
-<li id="prop-fundamental-standard-inner-product-props-2-2-3-2-2">
-<div class="para" id="prop-fundamental-standard-inner-product-props-2-2-3-2-2-1">
-<dfn class="terminology">Scaling.</dfn> If <span class="process-math">\(\vect{v},\vect{w}\in \R^n\text{,}\)</span> <span class="process-math">\(k\in \R\text{,}\)</span> then <span class="process-math">\(\ip{\vect{v}}{k\vect{w}}=k\ip{\vect{v}}{\vect{w}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-fundamental-standard-inner-product-props-2-2-3-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="prop_fundamental_standard_inner_product_props-2-2-3-2-2">
+<div class="para" id="prop_fundamental_standard_inner_product_props-2-2-3-2-2-1">
+<dfn class="terminology">Scaling.</dfn> If <span class="process-math">\(\vect{v},\vect{w}\in \R^n\text{,}\)</span> <span class="process-math">\(k\in \R\text{,}\)</span> then <span class="process-math">\(\ip{\vect{v}}{k\vect{w}}=k\ip{\vect{v}}{\vect{w}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop_fundamental_standard_inner_product_props-2-2-3-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 3.b"><a href="#prop-fundamental-standard-inner-product-props-2-2-3-2-2" title="Copy heading and permalink for Item 3.b" aria-label="Copy heading and permalink for Item 3.b">🔗</a></div>
-</li>
-</ol>
-<div class="autopermalink" data-description="Item 3"><a href="#prop-fundamental-standard-inner-product-props-2-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+<div class="autopermalink" data-description="Item 3.b"><a href="#prop_fundamental_standard_inner_product_props-2-2-3-2-2" title="Copy heading and permalink for Item 3.b" aria-label="Copy heading and permalink for Item 3.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Proposition 10.2.4: Algebraic Properties of the Inner Product"><a href="#prop-fundamental-standard-inner-product-props" title="Copy heading and permalink for Proposition 10.2.4: Algebraic Properties of the Inner Product" aria-label="Copy heading and permalink for Proposition 10.2.4: Algebraic Properties of the Inner Product">🔗</a></div></article><div class="para" id="chp7sec2-17">Observe that by symmetry, an inner product is bilinear in <em class="emphasis">both</em> inputs.<div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Item 3"><a href="#prop_fundamental_standard_inner_product_props-2-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Proposition 10.2.4: Algebraic Properties of the Inner Product"><a href="#prop_fundamental_standard_inner_product_props" title="Copy heading and permalink for Proposition 10.2.4: Algebraic Properties of the Inner Product" aria-label="Copy heading and permalink for Proposition 10.2.4: Algebraic Properties of the Inner Product">🔗</a></div></article><div class="para" id="chp7sec2-17">Observe that by symmetry, an inner product is bilinear in <em class="emphasis">both</em> inputs.<div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="ex-using-ip-alg-props"><h3 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Using Algebraic Properties to Compute Inner Products.</span>
@@ -582,7 +596,7 @@ c^2 = a^2 + b^2 - 2ab\cos(\theta).
 </div>
 <div class="autopermalink" data-description="Note 10.2.8"><a href="#chp7sec2-23" title="Copy heading and permalink for Note 10.2.8" aria-label="Copy heading and permalink for Note 10.2.8">🔗</a></div></article><figure class="figure figure-like" id="fig-law-of-cosines-triangle"><figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.2.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 10.2.9"><a href="#fig-law-of-cosines-triangle" title="Copy heading and permalink for Figure 10.2.9" aria-label="Copy heading and permalink for Figure 10.2.9">🔗</a></div></figcaption></figure><div class="para" id="chp7sec2-25">In Figure , we see the Law of Cosines, in vector symbolism, gives:<div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-parallelogram-diagonals2.html ./knowl/xref/activity-using-ip-alg-props.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/prop-fundamental-standard-inner-product-props.html ./knowl/xref/thm_cauchyschwartz.html" id="chp7sec2-26">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-parallelogram-diagonals2.html ./knowl/xref/activity-using-ip-alg-props.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/prop_fundamental_standard_inner_product_props.html ./knowl/xref/thm_cauchyschwartz.html" id="chp7sec2-26">
 \begin{equation*}
 c^2 = a^2 + b^2 - 2ab\cos(\theta)
 \hspace{1pc} \Rightarrow \hspace{1pc}
@@ -591,7 +605,7 @@ c^2 = a^2 + b^2 - 2ab\cos(\theta)
 </div>
 <div class="para" id="chp7sec2-27">Meanwhile, we have already shown in  that:<div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-parallelogram-diagonals2.html ./knowl/xref/activity-using-ip-alg-props.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/prop-fundamental-standard-inner-product-props.html ./knowl/xref/thm_cauchyschwartz.html" id="chp7sec2-28">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-parallelogram-diagonals2.html ./knowl/xref/activity-using-ip-alg-props.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/prop_fundamental_standard_inner_product_props.html ./knowl/xref/thm_cauchyschwartz.html" id="chp7sec2-28">
 \begin{equation*}
 \norm{\vect{v}-\vect{w}}^2 %= \ip{\vect{w}-\vect{v}}{\vect{w}-\vect{v}} 
 = \norm{\vect{v}}^2+\norm{\vect{w}}^2 - 2 \ip{\vect{v}}{\vect{w}}.
@@ -611,7 +625,7 @@ c^2 = a^2 + b^2 - 2ab\cos(\theta)
 </div>
 <div class="autopermalink" data-description="Proposition 10.2.10: The Angle Equation for the Inner Product"><a href="#prop-ip_angle_eq" title="Copy heading and permalink for Proposition 10.2.10: The Angle Equation for the Inner Product" aria-label="Copy heading and permalink for Proposition 10.2.10: The Angle Equation for the Inner Product">🔗</a></div></article><div class="para" id="chp7sec2-31">So we may use the inner product to compute <em class="emphasis">angle</em>!<div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-31" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-parallelogram-diagonals2.html ./knowl/xref/activity-using-ip-alg-props.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/prop-fundamental-standard-inner-product-props.html ./knowl/xref/thm_cauchyschwartz.html" id="chp7sec2-32">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-parallelogram-diagonals2.html ./knowl/xref/activity-using-ip-alg-props.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/eq_inner_prod_cos.html ./knowl/xref/prop_fundamental_standard_inner_product_props.html ./knowl/xref/thm_cauchyschwartz.html" id="chp7sec2-32">
 \begin{equation*}
 \theta = \arccos\left(\frac{\ip{\vect{v}}{\vect{w}} }{  \norm{\vect{v}} \ \norm{\vect{w}}}\right)
 \end{equation*}
@@ -670,9 +684,9 @@ c^2 = a^2 + b^2 - 2ab\cos(\theta)
 </h3>
 <div class="para" id="chp7sec2-38-2-1">If <span class="process-math">\(\vect{v},\vect{w}\in \R^n\text{,}\)</span> then <span class="process-math">\(\norm{\vect{v}-\vect{w}} \le \norm{\vect{v}}+\norm{\vect{w}}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-38-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 10.2.13: Triangle inequality"><a href="#chp7sec2-38" title="Copy heading and permalink for Theorem 10.2.13: Triangle inequality" aria-label="Copy heading and permalink for Theorem 10.2.13: Triangle inequality">🔗</a></div></article><details id="chp7sec2-39" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Sketch of proof.</span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chp7sec2-39-2">Earlier using the algebraic properties of inner products in <a href="chp7sec2.html#prop-fundamental-standard-inner-product-props" class="xref" data-knowl="./knowl/xref/prop-fundamental-standard-inner-product-props.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 10.2.4: Algebraic Properties of the Inner Product">Proposition 10.2.4</a>, I showed <span class="process-math">\(\norm{\vect{v}-\vect{w}}^2 = \norm{\vect{v}}^2+\norm{\vect{w}}^2 - 2\ \ip{\vect{v}}{\vect{w}}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-39-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 10.2.13: Triangle inequality"><a href="#chp7sec2-38" title="Copy heading and permalink for Theorem 10.2.13: Triangle inequality" aria-label="Copy heading and permalink for Theorem 10.2.13: Triangle inequality">🔗</a></div></article><details id="chp7sec2-39" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Sketch of proof.</span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chp7sec2-39-2">Earlier using the algebraic properties of inner products in <a href="chp7sec2.html#prop_fundamental_standard_inner_product_props" class="xref" data-knowl="./knowl/xref/prop_fundamental_standard_inner_product_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 10.2.4: Algebraic Properties of the Inner Product">Proposition 10.2.4</a>, I showed <span class="process-math">\(\norm{\vect{v}-\vect{w}}^2 = \norm{\vect{v}}^2+\norm{\vect{w}}^2 - 2\ \ip{\vect{v}}{\vect{w}}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-39-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="chp7sec2-39-3">Using Theorem <a href="chp7sec2.html#thm_cauchyschwartz" class="xref" data-knowl="./knowl/xref/thm_cauchyschwartz.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 10.2.12: Cauchy--Schwartz Inequality">Theorem 10.2.12</a>, <span class="process-math">\(\norm{\vect{v}-\vect{w}}^2 \le \norm{\vect{v}}^2+\norm{\vect{w}}^2 + 2\ \norm{\vect{v}} \ \norm{\vect{w}}
+<div class="para" id="chp7sec2-39-3">Using <a href="chp7sec2.html#thm_cauchyschwartz" class="xref" data-knowl="./knowl/xref/thm_cauchyschwartz.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 10.2.12: Cauchy--Schwartz Inequality">Theorem 10.2.12</a>, <span class="process-math">\(\norm{\vect{v}-\vect{w}}^2 \le \norm{\vect{v}}^2+\norm{\vect{w}}^2 + 2\ \norm{\vect{v}} \ \norm{\vect{w}}
 = \left(\norm{\vect{v}}+\norm{\vect{w}}\right)^2.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-39-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="chp7sec2-39-4">Taking square roots, the result follows.<div class="autopermalink" data-description="Paragraph"><a href="#chp7sec2-39-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
