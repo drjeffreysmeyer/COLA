@@ -8,7 +8,7 @@
         Consider vectors <m>\vect{v}</m>, <m>\vect{w}</m>, and the parallelogram they form.  
         Observe that <m>\vect{v}</m>, <m>\vect{w}</m>, and diagonal <m>\vect{v}-\vect{w}</m> form a triangle.
         Let <m>\theta</m> denote the angle between <m>\vect{v}</m> and <m>\vect{w}</m>.  
-        See Figure <xref ref="fig-parallelogram-diagonals2"/>.
+        See <xref ref="fig-parallelogram-diagonals2"/>.
     </p>
 
     <p>
@@ -59,7 +59,7 @@
         <mrow>\norm{\vect{v}-\vect{w}}^2 \amp= (v_1-w_1)^2 + \cdots + (v_n-w_n)^2</mrow>
         <mrow>\amp=(v_1^2-2v_1w_1+w_1^2) + \cdots + (v_n^2-2v_nw_n+w_n^2)</mrow>
         <mrow>\amp=(v_1^2 + \cdots+ v_n^2) - 2(v_1w_1+ \cdots +v_nw_n) + (w_1^2 + \cdots+ w_n^2)</mrow>
-        <mrow>\amp= \norm{\vect{v}}^2 - 2\underbrace{(v_1w_1+ \cdots +v_nw_n)}_{\text{``Measures'' angle between } \vect{v} \text{ and } \vect{w}} + \norm{\vect{w}}^2.</mrow>
+        <mrow>\amp= \norm{\vect{v}}^2 - 2\underbrace{(v_1w_1+ \cdots +v_nw_n)}_{\text{"Measures" angle between } \vect{v} \text{ and } \vect{w}} + \norm{\vect{w}}^2.</mrow>
     </md>
 
     <p>
@@ -87,8 +87,8 @@
     <assemblage>
         <title>The Many Notations for Inner Product</title>
         <p>
-            There are many common notations for the inner product. I use the ``angle bracket'' notation <m>\ip{\vect{v}}{\vect{w}}</m>.  
-            Another common notation is the ``dot'' notation <m>\vect{v}\cdot \vect{w}</m>.  
+            There are many common notations for the inner product. I use the "angle bracket" notation <m>\ip{\vect{v}}{\vect{w}}</m>.  
+            Another common notation is the "dot" notation <m>\vect{v}\cdot \vect{w}</m>.  
             Further still, some may use the parentheses notation <m>(\vect{v},\vect{w})</m>.  
             In this course, plan to use only the angle bracket notation, but be prepared to see these other notations in other books and courses.
         </p>
@@ -106,7 +106,7 @@
         So the <em>inner product measures length!</em>
     </p>
 
-    <proposition xml:id="prop-fundamental-standard-inner-product-props">
+    <proposition xml:id="prop_fundamental_standard_inner_product_props">
         <title>Algebraic Properties of the Inner Product</title>
         <statement>
             <p>The inner product satisfies each of the following.</p>
@@ -302,11 +302,11 @@
 <proof>
     <title>Sketch of proof</title>
     <p>
-        Earlier using the algebraic properties of inner products in <xref ref="prop-fundamental-standard-inner-product-props"/>, I showed
+        Earlier using the algebraic properties of inner products in <xref ref="prop_fundamental_standard_inner_product_props"/>, I showed
         <m>\norm{\vect{v}-\vect{w}}^2 = \norm{\vect{v}}^2+\norm{\vect{w}}^2 - 2\ \ip{\vect{v}}{\vect{w}}.</m>
     </p>
     <p>
-        Using Theorem <xref ref="thm_cauchyschwartz"/>, 
+        Using <xref ref="thm_cauchyschwartz"/>, 
         <m>\norm{\vect{v}-\vect{w}}^2 \le \norm{\vect{v}}^2+\norm{\vect{w}}^2 + 2\ \norm{\vect{v}} \ \norm{\vect{w}}
         = \left(\norm{\vect{v}}+\norm{\vect{w}}\right)^2.</m>
     </p>

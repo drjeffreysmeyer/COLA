@@ -18,7 +18,7 @@
 </definition>
 
 <p>
-    Using our understanding of cosine and the Angle Equation \eqref{eq_inner_prod_cos}, it follows that 
+    Using our understanding of cosine and the Angle Equation <xref ref="eq_inner_prod_cos"/>, it follows that 
 </p>
 
 <proposition xml:id="prop-inner_prod_zero_orth">
@@ -71,7 +71,7 @@
         Suppose <m>\vect{x}\in \R^n</m> is such that 
         <m>A\vect{x}=\vect{0}</m>. 
         Then <m>(A^TA)\vect{x}= A^T(A\vect{x})=A^T\vect{0}=\vect{0}</m>.
-        Since <m>S</m> is orthogonal, Algorithm \ref{cqc-orthogonality} implies <m>A^TA</m> is diagonal (with nonzero diagonal entries).  
+        Since <m>S</m> is orthogonal, Algorithm <xref ref="cqc-orthogonality"/> implies <m>A^TA</m> is diagonal (with nonzero diagonal entries).  
         Therefore <m>\vect{x}</m> must be <m>\vect{0}</m> and hence <m>S</m> is independent.
     </p>
 </proof>

@@ -3,7 +3,11 @@
 <section xml:id="chp0sec2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Note to Teachers</title>
   
-  
+
+  <subsection xml:id="chp0sec2subsec1">
+    <title>Why this book?</title>
+    
+ 
     <p>
       Greetings instructor. This book evolved out of my course notes for linear algebra.
       While there exists many excellent linear algebra textbooks, I could not find one that centered meaning-making and interwove the strands of mathematical proficiency.
@@ -23,15 +27,48 @@
       Every chapter ends with homework which students should carefully write up and turn in. These written problems give students opportunities to synthesize concepts from the lessons and practice important actions such as modeling, interpreting, and justifying.
     </p>
 
+  </subsection>
+<!--
+  <subsection xml:id="chp0sec2subsec2">
+    <title>Course Map</title>
+
     <p>
-      <alert>Course Map</alert>
-      Below is a flow chart of the sequencing of chapters.
+      For a 15-week course, I recommend the following course map:
+      <ol>
+        <li><p>Week 1: Chapter 1</p></li>
+        <li><p>Week 2: Chapter 2</p></li>
+        <li><p>Week 3: Chapter 3</p></li>
+        <li><p>Week 4: Chapter 4</p></li>
+        <li><p>Week 5: Chapter 5</p></li>
+        <li><p>Week 6: Chapter 6</p></li>
+        <li><p>Week 7: Chapter 7</p></li>
+        <li><p>Week 8: Chapter 8</p></li>
+        <li><p>Week 9: Chapter 9</p></li>
+        <li><p>Week 10: Chapter 10</p></li>
+      </ol>
+    </p>
+>
+      <p>
+        
+      For a 10-week course, I recommend the following course map:
+      <ol>
+        <li><p>Week 1: Chapter 1</p></li>
+        <li><p>Week 2: Chapter 2</p></li>
+        <li><p>Week 3: Chapter 3</p></li>
+        <li><p>Week 4: Chapter 4</p></li>
+        <li><p>Week 5: Chapter 5</p></li>
+        <li><p>Week 6: Chapter 6</p></li>
+        <li><p>Week 7: Chapter 7</p></li>
+        <li><p>Week 8: Chapter 8</p></li>
+        <li><p>Week 9: Chapter 9</p></li>
+        <li><p>Week 10: Chapter 10</p></li>
+      </ol>
     </p>
 
-    <figure xml:id="fig-course-map">
-      <title>COLA Chapter Sequencing Flowchart</title>
 
-    </figure>
+  </subsection>
+-->
+
 
     <p>
       I hope you find this book valuable in supporting you as you teach your students impactful and productive meanings.

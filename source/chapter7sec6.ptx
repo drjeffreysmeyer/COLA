@@ -16,25 +16,23 @@ Given vectors <m>\vect{v},\vect{w}\in\R^m</m>,  we can <em>orthogonally project<
 
 
 <p>
-We may use some trigonometry and the Angle Equation \eqref{eq_inner_prod_cos} to find the length of this projection.  
+We may use some trigonometry and the Angle Equation <xref ref="eq_inner_prod_cos"/> to find the length of this projection.  
 </p>
 
-<me>
-\text{Projection Length }
-\amp = \norm{\vect{w}}\cos(\theta)\\
-\amp = \frac{1}{\norm{\vect{v}}}\ip{\vect{v}}{\vect{w}}.
-</me>
+<md>
+    <mrow>\text{Projection Length } \amp = \norm{\vect{w}}\cos(\theta) </mrow>
+    <mrow> \amp = \frac{1}{\norm{\vect{v}}}\ip{\vect{v}}{\vect{w}}.</mrow>
+</md>
 
 <p>
 This projection vector can now be computed.
 </p>
 
-<me>
-\text{Projection Vector }
-\amp = \text{Length} \times \text{Unit Direction}\\
-\amp =\left(\frac{1}{\norm{\vect{v}}}\ip{\vect{v}}{\vect{w}}\right)\left(\frac{1}{\norm{\vect{v}}}\vect{v}\right)\\
-\amp = \frac{\ip{\vect{v}}{\vect{w}}}{\ip{\vect{v}}{\vect{v}}}\vect{v}.
-</me>
+<md>
+    <mrow> \text{Projection Vector } \amp = \text{Length} \times \text{Unit Direction}</mrow>
+    <mrow>\amp =\left(\frac{1}{\norm{\vect{v}}}\ip{\vect{v}}{\vect{w}}\right)\left(\frac{1}{\norm{\vect{v}}}\vect{v}\right)</mrow>
+    <mrow>\amp = \frac{\ip{\vect{v}}{\vect{w}}}{\ip{\vect{v}}{\vect{v}}}\vect{v}</mrow>
+</md>
 
 <definition xml:id="def-projection_component">
     <title>Projection Component</title>
@@ -67,16 +65,30 @@ Observe that <m>\mathrm{proj}_{\vect{v}}(\vect{w})  \in \spn(\vect{v})</m>.
 Observe that <m>\mathrm{orth}_{\vect{v}}(\vect{w})  \in \spn(\vect{v})^\perp</m>.  
 </p>
 
-<image source="images/7.6_orthogonal_projection2.png" width="100%"/>
+
+
+
+
 
 <p>
 Viewing <m>\vect{w}</m> as the hypotenuse of a right triangle, its legs become the projection component and orthogonal component.  
-Every vector has such a decomposition.\\
+Every vector has such a decomposition.
 </p>
 
+    <interactive geogebra="vgtq44gs" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
+    <instructions>
+            <p>
+              An interactive GeoGebra window showing projection components and orthogonal components.  Move the vector <m>\vect{w}</m> around and observe how the projection component and orthogonal component change.   
+            </p>
+     </instructions>
+        <static>
+            <image source="images/7.6_orthogonal_projection2.png" width="100%"/>
+            <shortdescription>An image of a vector scaled by a factor of 2.5.</shortdescription>
+        </static>
+    </interactive>
+
 <p>
-Play with projections at GeoGebra ID:
-https://www.geogebra.org/m/vgtq44gs <alert>vgtq44gs</alert>.
+Play with projections at GeoGebra ID: <url href="https://www.geogebra.org/m/vgtq44gs " visual=""><alert>vgtq44gs</alert></url>.
 </p>
 
 <p>
@@ -108,7 +120,7 @@ and
 </p>
 
 <p>
-<m>\mathrm{orth}_W(\vect{b})\in W^\perp</m> is its <alert>orthogonal component</alert>.\\
+<m>\mathrm{orth}_W(\vect{b})\in W^\perp</m> is its <alert>orthogonal component</alert>.
 </p>
 
 <image source="images/7.6_orthogonal_projection3d.png" width="100%"/>
@@ -118,24 +130,24 @@ How do we actually find <m>\mathrm{proj}_W(\vect{b})</m>?
 </p>
 
 <p>
-images/subspace_proj.png
-</p>
-
-<p>
 Since <m>\vect{b} = \mathrm{proj}_W(\vect{b})+\mathrm{orth}_W(\vect{b})</m>, 
 </p>
 
-<me>
-A^T \vect{b} 
-\amp =A^T(\mathrm{proj}_W(\vect{b}))+A^T(\mathrm{orth}_W(\vect{b}))\\
-\amp = A^T(\mathrm{proj}_W(\vect{b})) \\
-\amp  = (A^TA)[\mathrm{proj}_W(\vect{b})]_S.
-</me>
+<md>
+    <mrow> A^T \vect{b} \amp =A^T(\mathrm{proj}_W(\vect{b}))+A^T(\mathrm{orth}_W(\vect{b}))</mrow>
+    <mrow>\amp = A^T(\mathrm{proj}_W(\vect{b})) </mrow>
+    <mrow>\amp  = (A^TA)[\mathrm{proj}_W(\vect{b})]_S.</mrow>
+</md>
 
-<p>
-[Independent <m>S</m> Implies Invertible Gram Matrix]
-If <m>S</m> is independent, then <m>A^TA</m> is invertible.  
-</p>
+<proposition xml:id="prop-independent_implies_invertible_gram">
+    <title>Independent <m>S</m> Implies Invertible Gram Matrix</title>
+    <statement>
+        <p>
+        If <m>S</m> is independent, then <m>A^TA</m> is invertible.
+        </p>
+    </statement>
+</proposition>
+
 
 <proof>
     <p>
@@ -143,18 +155,18 @@ If <m>S</m> is independent, then <m>A^TA</m> is invertible.
     Pick <m>\vect{x}\in \Null(A^TA)</m>.  I will show that it must be zero.  
     </p>
     <p>
-    By definition of null space,  <m>(A^TA)\vect{x}=\vect{0}</m>.  By associativity of matrix multiplication, <m>0 = (A^TA)\vect{x}=A^T(A\vect{x})</m>, and by Theorem \ref{eq_orth_complements},  <m>A\vect{x}\in \spn(S)^\perp</m>.  
+    By definition of null space,  <m>(A^TA)\vect{x}=\vect{0}</m>.  By associativity of matrix multiplication, <m>0 = (A^TA)\vect{x}=A^T(A\vect{x})</m>, and by <xref ref="eq_orth_complements"/>,  <m>A\vect{x}\in \spn(S)^\perp</m>.  
     Meanwhile, the definition of matrix multiplication implies <m>A\vect{x}\in \spn(S)</m>.  That means <m>\norm{A\vect{x}}^2=\ip{A\vect{x}}{A\vect{x}}=0</m>, and hence <m>A\vect{x}=0</m>.
-    So <m>A\vect{x}=\vect{0}</m> and the positive definiteness of the inner product (Proposition \ref{prop_fundamental_standard_inner_product_props}) implies <m>\vect{x}\in \Null(A)</m>.
+    So <m>A\vect{x}=\vect{0}</m> and the positive definiteness of the inner product <xref ref="prop_fundamental_standard_inner_product_props"/> implies <m>\vect{x}\in \Null(A)</m>.
     </p>
     <p>
-    By assumption, <m>S</m> is independent, and therefore, by Proposition \ref{prop:dependency_null_2}, <m>\Null(A)=\{\vect{0}\}</m> 
+    By assumption, <m>S</m> is independent, and therefore, by <xref ref="prop-dependency_null_2"/>, <m>\Null(A)=\{\vect{0}\}</m> 
     and thus it must be the case that <m>\vect{x}=\vect{0}</m>.
     </p>
 </proof>
 
 <p>
-Since the Gram matrix is invertible, we may multiply by its inverse to solve for the <m>S</m>-coordinates of the projection component of <m>\vect{b}</m>,
+    Since the Gram matrix is invertible, we may multiply by its inverse to solve for the <m>S</m>-coordinates of the projection component of <m>\vect{b}</m>,
 </p>
 
 <me xml:id="eq-lls_matrix">
@@ -179,26 +191,33 @@ and finally, we change back to standard coordinates,
 </definition>
 
 <p>
-Multiplying by this matrix has the effect of <em>dropping the perpendicular!!!</em>
+    Multiplying by this matrix has the effect of <em>dropping the perpendicular!!!</em>
 </p>
 
 <p>
-Let <m>A=[\vect{v}_1| \cdots|\vect{v}_n]</m> be an <m>m\times n</m> matrix with independent columns, <m>W = \mathrm{Col}(A)</m>, <m>S=\{\vect{v}_1,\ldots,\vect{v}_n\}</m>, and <m>\vect{b} \in \R^m</m>,
+    Let <m>A=[\vect{v}_1| \cdots|\vect{v}_n]</m> be an <m>m\times n</m> matrix with independent columns, <m>W = \mathrm{Col}(A)</m>, <m>S=\{\vect{v}_1,\ldots,\vect{v}_n\}</m>, and <m>\vect{b} \in \R^m</m>,
 </p>
 
 <p>
-If the columns of <m>A</m> do not span <m>\R^n</m>, the matrix equation 
+    If the columns of <m>A</m> do not span <m>\R^n</m>, the matrix equation 
 </p>
-<me>A\vect{x} = \vect{b} \hspace{2pc} \text{generically has no solution.}</me>
-<p>
-but we can find ``the closest possible solution,'' namely the orthogonal projection onto the column space, i.e. the matrix equation
-</p>
-<me>A\vect{x} = \mathrm{proj}_W(\vect{b}) \hspace{2pc} \text{always has a solution.}</me>
+
+<me>
+    A\vect{x} = \vect{b} \hspace{2pc} \text{generically has no solution.}
+</me>
 
 <p>
-Since <m>\mathrm{proj}_W(\vect{b})</m> is the point on <m>W</m> that is closest to <m>\vect{b}</m>, the solution to <em>this</em> matrix equation is the best possible <em>approximate</em> solution to the original matrix equation.
-Since distance is given by a sum of squares, this solution minimizes the sum of squares.  
-As such we call this solution the <em>linear least squares (LLS) solution</em>.  
+    but we can find "the closest possible solution," namely the orthogonal projection onto the column space, i.e. the matrix equation
+</p>
+
+<me>
+    A\vect{x} = \mathrm{proj}_W(\vect{b}) \hspace{2pc} \text{always has a solution.}
+</me>
+
+<p>
+    Since <m>\mathrm{proj}_W(\vect{b})</m> is the point on <m>W</m> that is closest to <m>\vect{b}</m>, the solution to <em>this</em> matrix equation is the best possible <em>approximate</em> solution to the original matrix equation.
+    Since distance is given by a sum of squares, this solution minimizes the sum of squares.  
+    As such we call this solution the <em>linear least squares (LLS) solution</em>.  
 </p>
 
 <definition xml:id="def-lls_solution">
@@ -212,11 +231,11 @@ As such we call this solution the <em>linear least squares (LLS) solution</em>.
 </definition>
 
 <p>
-Unfortunately in the wild, the LLS solution is often denoted with a hat, <m>\widehat{\vect{x}}</m>, however this could be confused with normalized vectors.  To avoid confusion, I will denote it denoted <m>\vect{x}_{LLS}</m>.
+    Unfortunately in the wild, the LLS solution is often denoted with a hat, <m>\widehat{\vect{x}}</m>, however this could be confused with normalized vectors.  To avoid confusion, I will denote it denoted <m>\vect{x}_{LLS}</m>.
 </p>
 
 <p>
-LLS solutions have many important applications.  For example, in statistics, when we have data sets and want to find a predictive curve (e.g. line) of ``best fit.''
+    LLS solutions have many important applications.  For example, in statistics, when we have data sets and want to find a predictive curve (e.g. line) of ``best fit.''
 </p>
 
 <example>
@@ -232,11 +251,11 @@ LLS solutions have many important applications.  For example, in statistics, whe
         <p>
         If the data was perfectly linear, it would satisfy:
         </p>
-        <me>
-        f(0) = a_0 1 + a_10\\
-        f(1) = a_0 1 + a_11\\
-        f(2) = a_0 1 + a_12
-        </me>
+        <md>
+            <mrow> f(0) = a_0 1 + a_10</mrow>
+            <mrow> f(1) = a_0 1 + a_11</mrow>
+            <mrow> f(2) = a_0 1 + a_12</mrow>
+        </md>
         <p>
         This amounts to solving the following matrix equation:
         </p>
@@ -263,26 +282,26 @@ LLS solutions have many important applications.  For example, in statistics, whe
 </example>
 
 <p>
-Having gone through this example, let's walk through the general case. out in the wild, there are two covarying quantities, <m>x</m> an independent quantity and <m>y</m> a dependent quantity.  
-You suspect that the underlying relationship between <m>x</m> and <m>y</m> can be modeled as a linear combination of linearly independent functions (e.g. monomials, trigonometric functions, exponentials, etc.)  
-<m>y= f(x) = a_0 f_1(x) + \cdots a_rf_r(x)</m>.
-To make this concrete, I will explicitly walk through linear relationships.
-So you suspect <m>f(x) = a_01 + a_1x</m> for some unknown <m>a_0</m> and <m>a_1</m>.
-You go out and make <m>m</m> measurements at regular intervals of <m>x</m>, let's say at times <m>x=0,\ldots, m-1</m>.  
-Let <m>\vect{y}</m> denote the column vector of data (a.k.a. observables).
+    Having gone through this example, let's walk through the general case. out in the wild, there are two covarying quantities, <m>x</m> an independent quantity and <m>y</m> a dependent quantity.  
+    You suspect that the underlying relationship between <m>x</m> and <m>y</m> can be modeled as a linear combination of linearly independent functions (e.g. monomials, trigonometric functions, exponentials, etc.)  
+    <m>y= f(x) = a_0 f_1(x) + \cdots a_rf_r(x)</m>.
+    To make this concrete, I will explicitly walk through linear relationships.
+    So you suspect <m>f(x) = a_01 + a_1x</m> for some unknown <m>a_0</m> and <m>a_1</m>.
+    You go out and make <m>m</m> measurements at regular intervals of <m>x</m>, let's say at times <m>x=0,\ldots, m-1</m>.  
+    Let <m>\vect{y}</m> denote the column vector of data (a.k.a. observables).
 </p>
 
 <p>
 If the data was perfectly linear, it would satisfy:
 </p>
 
-<me>
-f(0) \amp = a_0 1 + a_10\\
-f(1) \amp = a_0 1 + a_11\\
-f(2) \amp = a_0 1 + a_12\\
-\vdots\hspace{1pc}\amp \hspace{1pc}\vdots\\
-f(m-1) \amp = a_0 1 + a_1(m-1)\\
-</me>
+<md>
+    <mrow> f(0) \amp = a_0 1 + a_10</mrow>
+    <mrow> f(1) \amp = a_0 1 + a_11</mrow>
+    <mrow> f(2) \amp = a_0 1 + a_12</mrow>
+    <mrow>\vdots\hspace{1pc}\amp \hspace{1pc}\vdots</mrow>
+    <mrow>f(m-1) \amp = a_0 1 + a_1(m-1)</mrow>
+</md>
 
 <p>
 This amounts to solving the following matrix equation:
@@ -302,14 +321,16 @@ This amounts to solving the following matrix equation:
 </me>
 
 <p>
-The data is not perfectly linear, and correspondingly, there is no solution to this matrix equation, but there is a LLS solution.
-The LLS solution for <m>\vect{a}</m> gives line of best fit for the data you observe!!!
+    The data is not perfectly linear, and correspondingly, there is no solution to this matrix equation, but there is a LLS solution.
+    The LLS solution for <m>\vect{a}</m> gives line of best fit for the data you observe!!!
 </p>
 
 
 
 
 <exercises>
+    <title>Problems</title>
+
     <exercise>
         <statement>
             <p>
@@ -335,7 +356,7 @@ The LLS solution for <m>\vect{a}</m> gives line of best fit for the data you obs
             <ol marker="a">
                 <li>Use GeoGebra to draw and label this triangle.</li>
                 <li>Use the GeoGebra length and angle tools to measure the 3 sides and the 3 angles.</li>
-                <li>Let <m>\vect{v}=\begin{bmatrix}4\\1\end{bmatrix}</m> and let <m>\vect{w} = \begin{bmatrix}[r] -1\\3\end{bmatrix}</m>. Use these vectors to find a single <m>3\times 3</m> inner product matrix who entries encode all of the geometric data for this triangle.</li>
+                <li>Let <m>\vect{v}=\begin{bmatrix}4\\1\end{bmatrix}</m> and let <m>\vect{w} = \left[\begin{array}{r} -1\\3\end{array}\right]</m>. Use these vectors to find a single <m>3\times 3</m> inner product matrix who entries encode all of the geometric data for this triangle.</li>
                 <li>Use the entries of this inner product matrix algebraically find the side lengths <m>PQ</m>, <m>QR</m>, and <m>PR</m>. Give <em>both</em> exact and numerically approximated solutions. Make sure they agree with the GeoGebra measurements.</li>
                 <li>Verify that the side lengths satisfy the <term>Triangle Inequality</term>: any side length is less than the sum of the other two side lengths.</li>
                 <li>Use the entries of this inner product matrix algebraically find the angle measures <m>\angle PRQ</m> and <m>\angle PQR</m>. Give <em>both</em> exact and numerically approximated solutions. Make sure they agree with the GeoGebra measurements.</li>
@@ -350,9 +371,9 @@ The LLS solution for <m>\vect{a}</m> gives line of best fit for the data you obs
                 <image source="images_hw/sol_hw12_02.png" width="90%"/>
             </figure>
             <p>
-                (c) Let <m>A=[\vect{u}|\vect{v}|\vect{w}] = \begin{bmatrix}[rrr]4\amp -1\amp -5\\1\amp 3\amp 2\end{bmatrix}</m>.  
+                (c) Let <m>A=[\vect{u}|\vect{v}|\vect{w}] = \left[\begin{array}{rrr}4\amp -1\amp -5\\1\amp 3\amp 2\end{array}\right]</m>.  
                 Then the inner product matrix 
-                <m>A^TA = \begin{bmatrix}[rrr]17\amp -1\amp -18\\-1\amp 10\amp 11\\-18\amp 11\amp 29\end{bmatrix}</m> contains the geometric data of this triangle.
+                <m>A^TA = \left[\begin{array}{rrr}17\amp -1\amp -18\\-1\amp 10\amp 11\\-18\amp 11\amp 29\end{array}\right]</m> contains the geometric data of this triangle.
             </p>
             <p>
                 (d) Lengths can be found by computing square roots of the diagonal entries, <m>\sqrt{17}\approx4.12, \sqrt{10}\approx 3.16, \sqrt{29}\approx 5.23</m>.
@@ -377,7 +398,7 @@ The LLS solution for <m>\vect{a}</m> gives line of best fit for the data you obs
     <exercise>
         <statement>
             <p>
-                Rigorously prove the Proposition \ref{prop:orth_implies_indep}.
+                Rigorously prove the <xref ref="prop-orth_implies_indep"/>.
             </p>
         </statement>
     </exercise>
@@ -385,7 +406,7 @@ The LLS solution for <m>\vect{a}</m> gives line of best fit for the data you obs
     <exercise>
         <statement>
             <p>
-                Rigorously prove the Proposition \ref{prop:orth_com_of_line_is_subspace}.
+                Rigorously prove the <xref ref="prop-orth_complement_subspace"/>.
             </p>
         </statement>
     </exercise>
@@ -393,7 +414,7 @@ The LLS solution for <m>\vect{a}</m> gives line of best fit for the data you obs
     <exercise>
         <statement>
             <p>
-                Let <m>\vect{v} = \begin{bmatrix}[r]1\\1\\1 \end{bmatrix}</m>.
+                Let <m>\vect{v} = \left[ \begin{array}{r}1\\1\\1 \end{array}\right]</m>.
             </p>
             <ol marker="a">
                 <li>Use matrix transpose and your knowledge of matrix equations to find the orthogonal plane <m>W = \vect{v}^\perp</m> to <m>\vect{v}</m>. Express this in parametric vector form. Set up and explain all steps, though you may use GeoGebra for row reduction.</li>
@@ -415,9 +436,9 @@ The LLS solution for <m>\vect{a}</m> gives line of best fit for the data you obs
             </p>
             <me>
                 V = \left\{
-                s\begin{bmatrix}[r]-1\\1\\0\end{bmatrix}
+                s\left[ \begin{array}{r} -1 \\ 1 \\ 0 \end{array} \right]
                 +
-                t\begin{bmatrix}[r]-1\\0\\1\end{bmatrix}
+                t\left[ \begin{array}{r} -1 \\ 0 \\ 1 \end{array} \right]
                 \ \middle| \ s,t\in\R\right\}.
             </me>
             <p>
@@ -433,8 +454,8 @@ The LLS solution for <m>\vect{a}</m> gives line of best fit for the data you obs
         <statement>
             <p>
                 Let <m>S = \{\vect{v}_1,\vect{v}_2\} = \left\{
-                \begin{bmatrix}[r]3\\4\\-1 \end{bmatrix},
-                \begin{bmatrix}[r]2\\3\\2\end{bmatrix}
+                \left[ \begin{array}{r}3\\4\\-1 \end{array} \right],
+                \left[ \begin{array}{r}2\\3\\2\end{array} \right]
                 \right\}\subset \R^3</m> and consider the plane <m>W=\spn(S)</m>.
             </p>
             <ol marker="a">
@@ -445,14 +466,14 @@ The LLS solution for <m>\vect{a}</m> gives line of best fit for the data you obs
         </statement>
         <solution>
             <p>
-                (a) Let <m>A=\begin{bmatrix}[rr]3\amp 2\\4\amp 3\\-1\amp 2\end{bmatrix}</m>. Using our knowledge of inner products as matrix multiplication by the transpose, the orthogonal line is:
+                (a) Let <m>A=\left[ \begin{array}{rr}3\amp 2\\4\amp 3\\-1\amp 2\end{array}\right]</m>. Using our knowledge of inner products as matrix multiplication by the transpose, the orthogonal line is:
                 <m>L = \mathrm{Null}(A^T)</m>.  
                 Since
             </p>
             <me>
-                \begin{bmatrix}[rrr|r]3\amp 4\amp -1\amp 0\\2\amp 3\amp 2\amp 0\end{bmatrix}
+                \left[ \begin{array}{rrr|c}3\amp 4\amp -1\amp 0\\2\amp 3\amp 2\amp 0\end{array}\right]
                 \sim
-                \begin{bmatrix}[rrr|r]1\amp 0\amp -11\amp 0\\0\amp 1\amp 8\amp 0\end{bmatrix}
+                \left[ \begin{array}{rrr|c}1\amp 0\amp -11\amp 0\\0\amp 1\amp 8\amp 0\end{array}\right]
             </me>
             <p>
                 we see <m>x</m> and <m>y</m> are determined and <m>z</m> is free, hence:
@@ -467,7 +488,7 @@ The LLS solution for <m>\vect{a}</m> gives line of best fit for the data you obs
             </p>
             <me>
                 L = \left\{
-                s\begin{bmatrix}[r]11\\-8\\1\end{bmatrix}
+                s\left[ \begin{array}{r}11\\-8\\1\end{array}\right]
                 \ \middle| \ s\in\R\right\}.
             </me>
             <p>

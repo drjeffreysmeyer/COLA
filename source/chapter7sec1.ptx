@@ -6,7 +6,7 @@
     <p>
       The motivating question of this lesson is: <em>What is the "size" of a vector?</em>  
       By size, here I mean an <em>absolute size</em>, single number that captures the "bigness" of the vector.  This is in contrast to previous chapters, where we looked at <em>relative size</em> of two vectors (i.e. <m>2\vect{v}</m> is two times larger than <m>\vect{v}</m>).
-      There are many reasonable ways to measure size, and you will begin by investigating them in a variety of contexts.
+      There are many reasonable ways to measure size, and we will begin by investigating them in a variety of contexts.
     </p>
 
     <data>
@@ -46,11 +46,15 @@
     </question>
 
     <p>
-      As you may have seen in the previous activities, there are many reasonable ways to measure size. I will outline a few here, but note that you may think of other ways not listed below. Recall the forecast from <xref ref="ex-vignettes3"/>.  It would be reasonable to say that the "size" of this forecast vector is the highest temperature expected, in which case, its "size" would be <m>76^{\circ}</m> F.
+      As you may have seen in the previous activities, there are many reasonable ways to measure size. I will outline a few here, but note that you may think of other ways not listed below. 
     </p>
 
     <p>
-      More generally, one reasonable way to measure the size of a vector <m>\vect{v}</m> is by the magnitude of its largest entry, which I will call its absolute maximum.
+      Recall the forecast from <xref ref="ex-vignettes3"/>.  It would be reasonable to say that the "size" of this forecast vector is the highest temperature expected, in which case, its "size" would be <m>76^{\circ}</m> F.
+    </p>
+
+    <p>
+      More generally, one reasonable way to measure the size of a vector <m>\vect{v}</m> is by the magnitude of its largest entry, which we will call its absolute maximum.
     </p>
 
     <definition xml:id="def-absolute_max">
@@ -68,7 +72,7 @@
     </p>
 
     <p>
-      Recall the travel instructions from <xref ref="ex-vignettes2"/>. Since you are restricted to move along streets, it would be reasonable to say the size of this vector is number of blocks you have to travel, in which case the "size" of this vector is 4.    More generally, a second reasonable way to measure the size of a vector <m>\vect{v}</m> is by the sum of the magnitude of its entries, which I call its absolute sum.
+      Recall the travel instructions from <xref ref="ex-vignettes2"/>. Since you are restricted to move along streets, it would be reasonable to say the size of this vector is number of blocks you have to travel, in which case the "size" of this vector is 4.    More generally, a second reasonable way to measure the size of a vector <m>\vect{v}</m> is by the sum of the magnitude of its entries, which we will call its absolute sum.
     </p>
 
     <definition xml:id="def-absolute_sum">
@@ -202,7 +206,7 @@
     </definition>
 
     <p>
-      I will use the ``hat'' notation to denote the unit vector in the <m>\vect{v}</m>-direction, i.e. <m>\widehat{\vect{v}} := \frac{1}{\norm{\vect{v}}} \vect{v}</m>.
+      I will use the "hat" notation to denote the unit vector in the <m>\vect{v}</m>-direction, i.e. <m>\widehat{\vect{v}} := \frac{1}{\norm{\vect{v}}} \vect{v}</m>.
     </p>
 
 

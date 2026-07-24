@@ -11,5 +11,6 @@
   <xi:include href="chapter0sec1.ptx" />
   <xi:include href="chapter0sec2.ptx" />
   <xi:include href="chapter0sec3.ptx" />
+  <xi:include href="chapter0sec4.ptx" />
 
 </chapter>

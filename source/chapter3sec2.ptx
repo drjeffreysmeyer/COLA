@@ -72,9 +72,14 @@
         <alert>Null space records redundancy.</alert> Do not be scared of null space, it is simply the null space of the columns of the matrix - something you already know! The null space is the set of all ways we can make the zero vector with the columns of our matrix.
     </p>
 
-    <p xml:id="prop-dependency_null_2">
-        <alert>Dependency as nontrivial null space.</alert> If <m>A</m> is an <m>m\times n</m> matrix, then <m>\Null(A)=\{\vect{0}\}</m> if and only if the columns of <m>A</m> are independent.
-    </p>
+    <proposition xml:id="prop-dependency_null_2">
+        <title>Dependency as nontrivial null space.</title>
+        <statement>
+            <p>
+            If <m>A</m> is an <m>m\times n</m> matrix, then <m>\Null(A)=\{\vect{0}\}</m> if and only if the columns of <m>A</m> are independent.
+            </p>
+        </statement>
+    </proposition>
 
     <proof>
         <p>

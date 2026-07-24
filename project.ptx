@@ -6,7 +6,7 @@
 <project ptx-version="2">
   <targets>
     <target name="web" format="html" publication="publication.ptx">
-      <stringparams html.css.extra="external/custom.css" />
+      <stringparams html.css.extra="external/custom.css" html.favicon="simple"/>
     </target>
     <target name="print" format="pdf" />
     <target name="latex" format="latex"/>
