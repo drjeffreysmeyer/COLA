@@ -69,7 +69,8 @@
     Let's set out to find these lines and scaling factors in the plane.  We shall do this concretely, using GeoGebra to explore.
   </p>
 
-  <activity>
+  <!--
+  <question>
 	<title>The Invariant Line Finder</title>
 	<p>
 		In this creation activity, you will create The Invariant Line Finder Tool.
@@ -94,21 +95,36 @@
 		</p>
 		</li>
 	</ol>
-</activity>
+</question>
+
 
   <p>
     Once completed, your GeoGebra activity should look like GeoGebra ID:
     <url href="https://www.geogebra.org/m/sjxcdtxh"><alert>sjxcdtxh</alert></url>.
   </p>
+  -->
+
 
   <question xml:id="geogebra-invariant_lines">
     <title>Finding and Analyzing Invariant Lines</title>
     <statement>
       <p>
-        In this activity, you will use your The Invariant Line Finder Tool to find and analyze invariant lines and their associated scaling factors.
+        In this activity, you will use <url href="https://www.geogebra.org/m/sjxcdtxh">The Invariant Line Finder Tool</url> to find and analyze invariant lines and their associated scaling factors.
         You will discover how different matrices have different numbers of invariant lines.
         In certain situations, you will find similar matrix decompositions.
       </p>
+
+      <interactive geogebra="j9grmqzq" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
+    <instructions>
+            <p>
+              An interactive GeoGebra window showing showing a line and transformed line.  Move the line and observe how the transformed line changes.  Is the line and transformed line the same?  Find all invariant lines and their associated scaling factors.   
+            </p>
+     </instructions>
+     <!--   <static>
+            <image width="100%" source="images/images/8.1_ex1b.png.png"/>
+            <shortdescription>An image of the transformed unit square.</shortdescription>
+        </static>-->
+    </interactive>
 
       <p>
         Start with <m>A=\left[ \begin{array}{rr}2.5 \amp -0.5 \\ -0.5 \amp 2.5 \end{array}\right]</m>.
@@ -122,7 +138,7 @@
             (Pro Tip: Try moving <m>B</m> to grid points, where GeoGebra can lock in values.)
             For each invariant line, find the associated scaling factor.  
             First, can you visually see the scaling factor?  
-            After approximating visually, you can compute the stretch factor exactly by analyzing the ratio of the length of <m>B'</m> to the length of <m>B</m>.  
+            After approximating visually, you can compute the stretch factor exactly by analyzing the ratio of the length of <m>T(B)</m> to the length of <m>B</m>.  
             Does the scaling factor include a reflection?
             If you can find two distinct invariant lines, find a similar matrix decomposition for <m>A</m>.
           </p>
@@ -136,12 +152,12 @@
             For example, analyze each of the following:
           </p>
           <me>  
-            \left[ \begin{array}{rr}2 \amp 0 \\ 0 \amp 2 \end{array}\right] \hspace{2pc}
-            \left[ \begin{array}{rr}2 \amp 0 \\ 0 \amp 3 \end{array}\right] \hspace{2pc}
-            \left[ \begin{array}{rr}-1 \amp 0 \\ 0 \amp 1 \end{array}\right] \hspace{2pc}
-            \left[ \begin{array}{rr}0 \amp 0 \\ 0 \amp 1 \end{array}\right] \hspace{2pc}
-            \left[ \begin{array}{rr}2 \amp 1 \\ 0 \amp 2 \end{array}\right] \hspace{2pc}
-            \left[ \begin{array}{rr}3 \amp -4 \\ 4 \amp 3 \end{array}\right] \hspace{2pc}
+            \left[ \begin{array}{rr}2 \amp 0 \\ 0 \amp 2 \end{array}\right] \hspace{1pc}
+            \left[ \begin{array}{rr}2 \amp 0 \\ 0 \amp 3 \end{array}\right] \hspace{1pc}
+            \left[ \begin{array}{rr}-1 \amp 0 \\ 0 \amp 1 \end{array}\right] \hspace{1pc}
+            \left[ \begin{array}{rr}0 \amp 0 \\ 0 \amp 1 \end{array}\right] \hspace{1pc}
+            \left[ \begin{array}{rr}2 \amp 1 \\ 0 \amp 2 \end{array}\right] \hspace{1pc}
+            \left[ \begin{array}{rr}3 \amp -4 \\ 4 \amp 3 \end{array}\right] \hspace{1pc}
           </me>
         </li>
         <li>
@@ -150,12 +166,13 @@
             Repeat your above analysis for each of the following matrices (i.e. find invariant lines, find scaling factors, and find similar matrix decomposition):
           </p>
           <me>  
-            M_1 = \left[ \begin{array}{rr}1.25 \amp 2.25 \\ -0.25 \amp 2.75 \end{array}\right] \hspace{2pc}
-            M_2 = \left[ \begin{array}{rr}-0.4 \amp -1.2 \\ -1.2 \amp 1.4 \end{array}\right] \hspace{2pc}
+            M_1 = \left[ \begin{array}{rr}1.25 \amp 2.25 \\ -0.25 \amp 2.75 \end{array}\right], \hspace{0.0pc}
+            M_2 = \left[ \begin{array}{rr}-0.4 \amp -1.2 \\ -1.2 \amp 1.4 \end{array}\right], \hspace{0.0pc}
             M_3 = \left[ \begin{array}{rr}2 \amp -2.5 \\ 10 \amp 2 \end{array}\right]
           </me>
           <p>
-            Explain how knowing the different number of invariant lines a matrix has tells you something about the nature of the associated transformation (e.g. stretch vs. shear vs... etc).
+            Explain how knowing the different number of invariant lines a matrix has tells you something about the nature of the associated transformation (e.g. stretch vs. shear vs rotation
+             etc).
           </p>
         </li>
       </ol>
@@ -163,7 +180,7 @@
   </question>
 
   <p>
-    Upon reflecting on GeoGebra Activity <xref ref="geogebra-invariant_lines"/>, you should make the following observations: 
+    Upon reflecting on GeoGebra <xref ref="geogebra-invariant_lines"/>, you should make the following observations: 
   </p>
 
   <p>
@@ -198,19 +215,19 @@
       </p>
       <me>
         A=\left[ \begin{array}{rr}1 \amp -1 \\ 1 \amp 1 \end{array}\right]\left[ \begin{array}{rr}2 \amp 0 \\ 0 \amp 3 \end{array}\right]\left[ \begin{array}{rr}1 \amp -1 \\ 1 \amp 1 \end{array}\right]^{-1}
-        \hspace{2pc}
+        \hspace{1pc}
         B=\left[ \begin{array}{rr}3 \amp 1 \\ 1 \amp 2 \end{array}\right]\left[ \begin{array}{rr}1 \amp 1 \\ 0 \amp 1 \end{array}\right]\left[ \begin{array}{rr}3 \amp 1 \\ 1 \amp 2 \end{array}\right]^{-1}
       </me>
       <me>
         C=\left[ \begin{array}{rr}2 \amp -1 \\ 1 \amp 2 \end{array}\right]\left[ \begin{array}{rr}1 \amp 0 \\ 0 \amp 0 \end{array}\right]\left[ \begin{array}{rr}2 \amp -1 \\ 1 \amp 2 \end{array}\right]^{-1}
-        \hspace{2pc}
+        \hspace{1pc}
         D=\left[ \begin{array}{rr}3 \amp 1 \\ 1 \amp 2 \end{array}\right]\left[ \begin{array}{rr}0 \amp -1 \\ 1 \amp 0 \end{array}\right]\left[ \begin{array}{rr}3 \amp 1 \\ 1 \amp 2 \end{array}\right]^{-1}
       </me>
     </statement>
   </question>
 
   <p>
-    In fact, this is more generally true.  Try to use Definition <xref ref="def-invariant_lines"/> to justify each of the following propositions.
+    In fact, this is more generally true.  Try to use <xref ref="def-invariant_lines"/> to justify the following proposition.
   </p>
 
   <proposition xml:id="prop-invariant_lines_smd">
@@ -248,11 +265,15 @@
     We may generalize <xref ref="prop-invariant_lines_smd"/> to any <m>T</m>-invariant subspace.
   </p>
 
-  <p>
-    <alert>Invariant Subspaces and SMDs</alert>
-    If <m>W</m> is an invariant subspace of <m>B</m> and <m>A=PBP^{-1}</m>, 
-    then <m>P(W)</m> is an invariant subspace of <m>A</m>.
-  </p>
+  <proposition xml:id="prop-invariant_subspaces_smd">
+    <title>Invariant Subspaces and SMDs</title>
+    <statement>
+      <p>
+        If <m>W</m> is an invariant subspace of <m>B</m> and <m>A=PBP^{-1}</m>, 
+        then <m>P(W)</m> is an invariant subspace of <m>A</m>.
+      </p>
+    </statement>
+  </proposition>
 
   <example>
     <statement>
@@ -260,7 +281,7 @@
         Suppose that <m>S=\{\vect{v}_1,\vect{v}_2,\vect{v}_3\}\subset \R^3</m> is an ordered basis.  The <m>3\times 3</m> matrix 
       </p>
       <me>
-        A=[\vect{v}_1,\vect{v}_2,\vect{v}_3]\begin{bmatrix}2 \amp 0 \amp 0 \\ 0 \amp 0 \amp -1 \\ 0 \amp 1 \amp 0\end{bmatrix}[\vect{v}_1,\vect{v}_2,\vect{v}_3]^{-1}.
+        A=[\vect{v}_1 \mid \vect{v}_2 \mid \vect{v}_3]\begin{bmatrix}2 \amp 0 \amp 0 \\ 0 \amp 0 \amp -1 \\ 0 \amp 1 \amp 0\end{bmatrix}[\vect{v}_1\mid \vect{v}_2\mid \vect{v}_3]^{-1}.
       </me>
       <p>
         We can see two invariant subspaces.  The line <m>L=\spn(\vect{v}_1)</m> is <m>A</m>-invariant with scaling factor 2.  The plane <m>W=\spn(\vect{v}_2,\vect{v}_3)</m> is invariant and <m>T_A</m> acts upon it by a rotation of <m>90^\circ</m> <m>\vect{v}_2</m> towards <m>\vect{v}_3</m>.  

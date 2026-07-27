@@ -349,6 +349,54 @@
 		</p>
 	</remark>
 
+	<p>
+		Some useful vectors are <em>count vectors</em>, which are vectors whose entries are counts of objects.
+	</p>
+
+	<data xml:id="qs-ecology-vectors">
+		<title>Leslie Vectors in Ecology</title>
+		<p>
+			When studying a population of a species, it is often useful to distinguish between different age groups within the population.  In a given year, we might measure the number of individuals in each age group and the corresponding vector would have list-length equal to the number of age groups.    We will call such a vector a <url href="https://en.wikipedia.org/wiki/Leslie_matrix"><alert>Leslie vector</alert></url>. For example, if we were to distinguish between newborns, juveniles, and adults, then the corresponding vector Leslie vector would be list-length 3.  If we were to distinguish between newborns, juveniles, adults, and seniors, then the corresponding vector Leslie vector would be list-length 4.  In general, if we were to distinguish between <m>n</m> age groups, then the corresponding vector Leslie vector would be list-length <m>n</m>.  
+		</p>
+	</data>
+
+	<data xml:id="qs-epidemiology-vectors">
+		<title>SIR Vectors in Epidemiology</title>
+		<p>
+			When studying a the spread of an infectious disease within a population, it is often useful to distinguish between three different types of individuals based on their infection status: susceptible, infected, and recovered. At a given moment, we might measure the number of individuals in each category.    I will call such a vector an <alert>SIR vector</alert>. An SIR vector has list-length 3.  The SIR model is one of many useful <url href="https://en.wikipedia.org/wiki/Compartmental_models_(epidemiology)">Compartmental models</url> in epidemiology used to model the spread of infectious diseases.  In general, if we were to distinguish between <m>n</m> compartments, then the corresponding vector would be list-length <m>n</m>.
+		</p>
+	</data>
+
+	<p>
+		A <em>proportion vector</em> (sometimes also called <em>probability vector</em> or a <em>stochastic vector</em>) is a vector whose entries are proportions of a whole.  Entries of a proportion vector are nonnegative and sum to 1.
+	</p>
+
+	<data xml:id="qs-finance-vectors">
+		<title>Portfolio Vectors in Finance</title>
+		<p>
+			In finance, a <em>portfolio</em> is a collection of financial assets such as stocks, bonds, or other investments. Upon fixing a set of assets, we can consider what proportion of our total investment is allocated to each asset. We will call such a vector a <alert>portfolio vector</alert>. If our portfolio consists of <m>n</m> assets, the corresponding vector would be list-length <m>n</m>.  Portfolio vectors play an important role in <url href="https://en.wikipedia.org/wiki/Modern_portfolio_theory"><em>Modern Portfolio Theory</em></url>, and in particular in portfolio optimization, which deals with finding the best allocation of assets to maximize returns or minimize risk. 
+		</p>
+	</data>
+
+	<data xml:id="qs-movement-vectors">
+		<title>Movement Vectors in Population Dynamics</title>
+		<p>
+			Consider a population of individuals distributed across different regions between which individuals are able to move. A <em>movement vector</em> for one region is a vector whose entries represent the proportion of individuals moving from that region to each of the other regions. If we have <m>n</m> regions, the corresponding movement vector would be list-length <m>n</m>. 
+		</p>
+	</data>
+
+	<p>
+		A <em>ranking vector</em> is a vector whose entries are comparisons of quantities.  In quantitative situations, the values of the entries themselves may not be particularly meaningful, but the comparisons between the entries are meaningful.  		
+	</p>
+
+
+	<data xml:id="qs-ranking-vectors">
+		<title>PageRank Vectors in Computer Science</title>
+		<p>
+			In computer science, we often wish to express the relative importance or preference of different items, for example in information retrieval, recommendation systems, and other applications where it is necessary to order or prioritize elements based on certain criteria.  In the context of search engines, ranking vectors are used to rank web pages based on their relevance to a given query.  The larger the number in an entry, the more relevant the corresponding web page is.   If we have <m>n</m> web pages, the corresponding ranking vector would be list-length <m>n</m>.  One such vector is <url href="https://en.wikipedia.org/wiki/PageRank"><alert>PageRank vector</alert></url>, which is used by Google Search to rank web pages in their search engine results.
+		</p>
+	</data>
+
 	<question>
 		<title> Constructing Feature Vectors (Machine Learning)</title>
 		<p>

@@ -38,7 +38,7 @@
 	</proposition>
 	
 	<proof>
-		<p>Proof Hint. Homework.  You might find Definition <xref ref="def-2x2eigenstuff"/> and Proposition <xref ref="prop-2x2det_formula"/> useful.</p>
+		<p>Proof Hint. Homework.  You might find <xref ref="def-2x2eigenstuff"/> and <xref ref="prop-2x2det_formula"/> useful.</p>
 	</proof>
 
 	<proposition>
@@ -70,7 +70,8 @@
 		Suppose <m>A</m> has two linearly independent (real) eigenvectors <m>\mathcal{B}=\{\vect{v}_1,\vect{v}_2\}</m>, corresponding to eigenvalues <m>\lambda_1,\lambda_2</m>.  This is the best of all possible situations and is the simplest to deal with.  This occurs when either <m>\disc(A)>0</m> or when <m>\disc(A)=0</m> and <m>A</m> is a scalar matrix (in which case <m>A</m> uniformly stretches the plane by a factor of <m>\lambda=\lambda_1=\lambda_2</m>).  In this case, we say <m>\mathcal{B}</m> is an <alert>eigenbasis</alert> for <m>A</m> and <m>A</m> admits a <alert>diagonalization</alert> <m>A=PDP^{-1}</m> where <m>P=[\vect{v}_1|\vect{v}_2]</m> and <m>D=\begin{bmatrix}\lambda_1 \amp 0\\0 \amp \lambda_2\end{bmatrix}</m>.
 	</p>
 
-	<p><alert>Eigenbasis Summary</alert></p>
+	<insight>
+		<title>Eigenbasis Summary</title>
 	<ul>
 	<li><alert>Discriminant:</alert> <m>\disc(A)>0</m> or <m>\disc(A)=0</m> and <m>A</m> is a scalar matrix,</li>
 	<li><alert>Eigenvalues:</alert> 2 distinct real eigenvalues <m>\lambda_1, \lambda_2</m>, or <m>A</m> is scalar.</li>
@@ -78,6 +79,7 @@
 	<li><alert>Similar Matrix Decomp:</alert> Diagonalization <m>A=[\vect{v}_1|\vect{v}_2]\begin{bmatrix}\lambda_1 \amp 0\\0 \amp \lambda_2\end{bmatrix}[\vect{v}_1|\vect{v}_2]^{-1}</m>.</li>
 	<li><alert>Verbalization:</alert> <m>A</m> transforms the plane by stretching (and possibly reflecting if negative) by a factor of <m>\lambda_1</m> in the direction of <m>\vect{v}_1</m> and stretching (and possibly reflecting if negative) by a factor of <m>\lambda_2</m> in the direction of <m>\vect{v}_2</m>.</li>
 	</ul>
+	</insight>
 
 	<p><alert>Case 2: Generalized Eigenbasis and Triagonalization.</alert></p>
 
@@ -91,7 +93,8 @@
 
 	<p>You can play with  triagonalizations at GeoGebra ID: \href{https://www.geogebra.org/m/j8jvewtk}{<alert>j8jvewtk</alert>}.</p>
 
-	<p><alert>Generalized Eigenbasis Summary</alert></p>
+	<insight>
+		<title>Generalized Eigenbasis Summary</title>
 	<ul>
 	<li><alert>Discriminant:</alert> <m>\disc(A)=0</m> and <m>A</m> is not a scalar matrix,</li>
 	<li><alert>Eigenvalues:</alert> 1 repeated real eigenvalue <m>\lambda</m>,</li>
@@ -99,6 +102,7 @@
 	<li><alert>Similar Matrix Decomp:</alert> Triagonalization <m>A=[\vect{v}|\vect{w}]\begin{bmatrix}\lambda \amp 1\\0 \amp \lambda\end{bmatrix}[\vect{v}|\vect{w}]^{-1}</m>.</li>
 	<li><alert>Verbalization:</alert> <m>A</m> transforms the plane by uniformly stretching the plane by a factor of <m>\lambda</m> and then shearing the vector <m>\lambda\vect{w}</m> one unit in the <m>\vect{v}</m>-direction.</li>
 	</ul>
+	</insight>
 
 	<p><alert>Case 3: Rotation Basis and Rotationalization.</alert></p>
 
@@ -122,7 +126,9 @@
 
 	<p>You can play with finding and building rotationalizations, respectively, at GeoGebra IDs: \href{https://www.geogebra.org/m/ua9cd34u}{<alert>ua9cd34u</alert>} and  \href{https://www.geogebra.org/m/tbmrXJmd}{<alert>tbmrXJmd</alert>}.</p>
 
-	<p><alert>Rotation Basis Summary</alert></p>
+
+	<insight>
+		<title>Rotation Basis Summary</title>
 	<ul>
 	<li><alert>Discriminant:</alert> <m>\disc(A)\lt 0</m>,</li>
 	<li><alert>Eigenvalues:</alert> 2 complex conjugate complex eigenvalues <m>\mu\pm\nu i=re^{\pm i\theta}</m>,</li>
@@ -130,6 +136,7 @@
 	<li><alert>Similar Matrix Decomp:</alert> Rotationalization <m>A=[\vect{u}|\vect{w}]\left[ \begin{array}{rr}r\cos(\theta) \amp r\sin(\theta)\\-r\sin(\theta) \amp r\cos(\theta) \end{array}\right][\vect{u}|\vect{w}]^{-1}</m>.</li>
 	<li><alert>Verbalization:</alert> <m>A</m> is a uniform stretch by a factor of <m>r=\sqrt{\mu^2+\nu^2}</m>, followed by a rotation in <m>\mathcal{B}</m>-coordinates by <m>\theta=\arccos\frac{\mu}{r}</m> degree sending <m>\vect{u}</m> away from <m>\vect{w}</m>.</li>
 	</ul>
+	</insight>
 
 	<example xml:id="ex-triagonalization">
 	<statement>
@@ -155,8 +162,6 @@
 	<me>\left[ \begin{array}{rr}1.5 \amp 1\\-0.25 \amp 2.5 \end{array}\right]=\left[ \begin{array}{rr}2 \amp -2\\1 \amp 1 \end{array}\right]\left[ \begin{array}{rr}2 \amp 1\\0 \amp 2 \end{array}\right]\left[ \begin{array}{rr}2 \amp -1\\1 \amp 1 \end{array}\right]^{-1}.</me>
 
 	<p>Verbally, <m>A</m> is a uniform stretch by a factor of <m>2</m> followed by a shear  in the <m>\mathcal{B}</m>-coordinates, taking the vector <m>2\vect{w}</m> 1 unit in the <m>\vect{v}</m> direction.</p>
-
-	<p>Example <xref ref="ex-triagonalization"/>, Continued.</p>
 
 	<p>Visually, we have the following picture.</p>
 	<figure>
@@ -186,8 +191,6 @@
 	<me>\left[ \begin{array}{rr}3 \amp 2\\-5 \amp 5 \end{array}\right]=\left[ \begin{array}{rr}2 \amp 0\\1 \amp 3 \end{array}\right]\left[ \begin{array}{rr}4 \amp 3\\-3 \amp 4 \end{array}\right]\left[ \begin{array}{rr}2 \amp 0\\1 \amp 3 \end{array}\right]^{-1}.</me>
 
 	<p>Verbally, <m>A</m> is a uniform stretch by a factor of <m>r=5</m> followed by a rotation in <m>\mathcal{B}</m>-coordinates by an angle of <m>\theta =\arccos\left(\frac{4}{5}\right)</m> radians moving <m>\vect{u}</m> away from <m>\vect{w}</m>.</p>
-
-	<p>Example <xref ref="ex-rotationalization"/>, Continued.</p>
 
 	<p>Visually, we have the following picture.  Note that the <m>\mathcal{B}</m>-unit circle is dashed red, and the transformed <m>\mathcal{B}</m>-unit circle is dashed blue.  Note how the vertices <m>(8,-5)</m> and <m>(6,15)</m> of the transformed <m>\mathcal{B}</m>-unit square lie on this ellipse.</p>
 	<figure>

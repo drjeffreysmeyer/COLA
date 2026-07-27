@@ -108,3 +108,13 @@ article.data .heading {
     display: none;
 
 }
+
+footer.ptx-footer::after {
+    content: "copyright and the reay";
+    visibility: visible;
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    color: #000000; /* Adjust color to match your theme */
+    font-size: 0.9em;
+}

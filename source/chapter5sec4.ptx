@@ -69,7 +69,7 @@
 
 <p>
   When conceptualizing column vectors as coordinates, or <q>labels,</q> the column <m>\vect{w}</m> and <m>[\vect{w}]_{\mathcal{B}}</m> are different labels we assign to a fixed vector. Moving between these labels is what I will call <term>change of coordinates</term> or <term>change of labels</term>.
-  If we write <m>P_{\mathcal{B}}=[\vect{v}_1 \mid \cdots \mid \vect{v}_n]</m>, then (using our understanding of Matrix Multiplication and Linear Combination), we see
+  If we write <m>P_{\mathcal{B}}=[\vect{v}_1 \mid \cdots \mid \vect{v}_n]</m>, then (using our understanding of Matrix Multiplication as Linear Combination <xref ref="def_matrixmult"/>), we see
   <me>
     \vect{w} = x_1\vect{v}_1+\cdots + x_n\vect{v}_n = \underbrace{[\vect{v}_1\mid\cdots\mid\vect{v}_n]}_{P_{\mathcal{B}}}\underbrace{\begin{bmatrix}x_1\\ \vdots \\ x_n\end{bmatrix}}_{[\vect{w}]_{\mathcal{B}}}.
   </me>
@@ -130,7 +130,7 @@
 <example xml:id="ex-coordinates-visualization">
   <statement>
     <p>
-      Let us return to the example of <m>\mathcal{B}=\{\vect{v}_1, \vect{v}_2\}=\left\{\begin{bmatrix}1\\1\end{bmatrix},\begin{bmatrix}-1\\1\end{bmatrix}\right\}</m> (Example <xref ref="ex-interpretsolutionset1" />).
+      Let us return to the example of <m>\mathcal{B}=\{\vect{v}_1, \vect{v}_2\}=\left\{\begin{bmatrix}1\\1\end{bmatrix},\begin{bmatrix}-1\\1\end{bmatrix}\right\}</m> (<xref ref="ex-interpretsolutionset1" />).
       Let <m>P_{\mathcal{B}}=[\vect{v}_1 \mid \vect{v}_2]</m>.
       Since <m>\operatorname{rref}(P_{\mathcal{B}})=I</m>, Computational Quick Check <xref ref="cqc-basis" /> implies <m>\mathcal{B}</m> is a basis.
     </p>

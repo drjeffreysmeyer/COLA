@@ -24,8 +24,8 @@
     </p>
     <p>
       To begin, let <m>S_1' = \{\vect{w}_1\}\cup S = \{\vect{w}_1, \vect{v}_1,\ldots, \vect{v}_n\}</m>. 
-      By assumption, <m>vect{w}_1</m> lies in the span of <m>S</m>, hence <m>S_1'</m> is dependent.
-      It follows from Interpretation <xref ref="insight-dependence" /> that there exists a nonpivot column in <m>A_{S_1'}</m>, and we may toss out the first one we see and maintain the same span.
+      By assumption, <m>\vect{w}_1</m> lies in the span of <m>S</m>, hence <m>S_1'</m> is dependent.
+      It follows from Dependency Analysis <xref ref="insight-dependence" /> that there exists a nonpivot column in <m>A_{S_1'}</m>, and we may toss out the first one we see and maintain the same span.
       While I do not know which vector we tossed, I know it was not the first, <m>\vect{w}_1</m>.
       Write <m>S_1</m> for this new collection. 
       Since I included one vector and tossed out a vector, I know <m>S_1</m> has <m>n</m> vectors (and <m>W = \spn(S)=\spn(S_1)</m>).

@@ -73,7 +73,7 @@
         Observe <m>\vect{v}_1=\left[ \begin{array}{r}1 \\ 1 \end{array}\right]</m> is a nice choice for a nonzero vector on <m>E_2</m> and <m>\vect{v}_2=\left[ \begin{array}{r}-1 \\ 1 \end{array}\right]</m> is a nice choice for a nonzero vector on <m>E_3</m>.
         The basis <m>\mathcal{B}=\{\vect{v}_1,\vect{v}_2\}</m> is a good basis for understanding <m>A</m>, namely, <m>A</m> stretched the <m>\vect{v}_1</m>-direction by a factor of <m>2</m> and stretches the <m>\vect{v}_2</m>-direction by a factor of 3.  
         This gives us a nice similar matrix decomposition where <m>A</m> is similar to a diagonal matrix:
-        <m>A=\left[ \begin{array}{rr}1 \amp -1 \\ 1 \amp 1 \end{array}\right]\left[ \begin{array}{rr}2 \amp 0 \\ 0 \amp 3 \end{array}\right]\left[ \begin{array}{rr}1 \amp -1 \\ 1 \amp 1 \end{array}\right]^{-1}</m>  (cf. Example <xref ref="example_simmatrixdecomp1"/>).
+        <m>A=\left[ \begin{array}{rr}1 \amp -1 \\ 1 \amp 1 \end{array}\right]\left[ \begin{array}{rr}2 \amp 0 \\ 0 \amp 3 \end{array}\right]\left[ \begin{array}{rr}1 \amp -1 \\ 1 \amp 1 \end{array}\right]^{-1}</m>  (cf. <xref ref="example_simmatrixdecomp1"/>).
       </p>
     </statement>
   </example>

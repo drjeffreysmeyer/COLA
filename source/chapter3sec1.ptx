@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="chp3sec1" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Matrix Multiplication as Mixture</title>
+  <title>Matrix Multiplication as Linear Combination</title>
 
 	<p>
 		We now return to the core idea of linear combination as mixture. We write linear combinations <em>so often</em> that it is useful to introduce a new, efficient, and compact notation to symbolize this process. If <m>\vect{v}_1,\ldots, \vect{v}_n\in\R^m</m> and <m>x_1,\ldots, x_n\in\R</m> are scalars, then the linear combination:
 	</p>
 	<me>x_1\vect{v}_1+\cdots +x_n\vect{v}_n \hspace{2pc} \text{will be re-written as} \hspace{2pc} [\vect{v}_1 | \cdots | \vect{v}_n]\vect{x}</me>
 	<p>
-		where the vector <m>\vect{x}=\begin{bmatrix}x_1\\ \vdots \\ x_n\end{bmatrix}</m> is the <em>serving size vector</em> (see Definition ) for the mixture and the new object <m>[\vect{v}_1 | \cdots | \vect{v}_n]</m> obtained by <q>smashing together</q> the vectors is a <em>matrix</em>. Think of this matrix as your cereal boxes all lined up next to one another on a shelf.
+		where the vector <m>\vect{x}=\begin{bmatrix}x_1\\ \vdots \\ x_n\end{bmatrix}</m> is the <em>servings vector</em> (see <xref ref="def-serving_size_vector"/>) for the mixture and the new object <m>[\vect{v}_1 | \cdots | \vect{v}_n]</m> obtained by <q>smashing together</q> the vectors is a <em>matrix</em>. Think of this matrix as your cereal boxes all lined up next to one another on a shelf.
 	</p>
 
 	<definition xml:id="def-matrix">
@@ -36,9 +36,6 @@
 		</statement>
 	</example>
 
-	<p>
-		You can think of this as a sequence in two directions. (i.e., <m>A\in \Mat_{m\times n}(\R)</m>)
-	</p>
 
 	<remark>
 		<title>Vertical bars</title>
@@ -89,13 +86,13 @@
 		<title>Matrix Multiplication (Matrix with Vector)</title>
 		<statement>
 			<p>
-				If <m>\vect{v}_1,\ldots, \vect{v}_n\in\R^m</m>, <m>A=[\vect{v}_1|\cdots | \vect{v}_n]</m> and <m>\vect{x}\in\R^n</m>, then <term>matrix multiplication</term> of <m>A</m> and <m>\vect{x}</m> is the linear combination of the columns of <m>A</m> with corresponding scalars <m>x_1, \ldots, x_n</m>. In symbols, <m>A\vect{x} = x_1\vect{v}_1+\cdots +x_n\vect{v}_n.</m>
+				If <m>\vect{v}_1,\ldots, \vect{v}_n\in\R^m</m>, <m>A=[\vect{v}_1|\cdots | \vect{v}_n]</m> and <m>\vect{x}\in\R^n</m>, then <term>matrix multiplication</term> of <m>A</m> and <m>\vect{x}</m> is the linear combination of the columns of <m>A</m> with corresponding scalars <m>x_1, \ldots, x_n</m>. In symbols, <men>A\vect{x} = x_1\vect{v}_1+\cdots +x_n\vect{v}_n.</men>
 			</p>
 		</statement>
 	</definition>
 	
 	<p>
-		At the level of entries, Definition \ref{def_matrixmult} looks like:
+		At the level of entries, <xref ref="def_matrixmult"/> looks like:
 	</p>
 
 	<me>
@@ -121,6 +118,20 @@
 	</example>
 
 	<question>
+		<title>Interpreting Symbolism of Matrix Multiplication as Linear Combination</title>
+		<statement>
+			<p>
+				For each of the following expressions, (1) Clearly sketch and label its associated mixture parallelogram and (2) Use linear combinations to symbolically compute the corresponding mixture vector.
+			</p>
+			<me>
+				\left[\begin{array}{r|r}3\amp1\\-1\amp2\end{array}\right]\begin{bmatrix}1\\1\end{bmatrix}\, \hspace{2pc} 
+				\left[\begin{array}{r|r}1\amp-1\\1\amp1\end{array}\right]\begin{bmatrix}2\\1\end{bmatrix}, \hspace{2pc} 
+				\left[\begin{array}{r|r}2\amp2\\1\amp-1\end{array}\right]\begin{bmatrix}3\\2\end{bmatrix}.</me>
+		</statement>
+	</question>
+
+
+	<question>
 		<title>Symbolizing Linear Combination as Matrix Multiplication</title>
 		<statement>
 			<p>
@@ -135,18 +146,7 @@
 		</statement>
 	</question>
 
-	<question>
-		<title>Interpreting Symbolism of Matrix Multiplication as Linear Combination</title>
-		<statement>
-			<p>
-				For each of the following expressions, (1) Clearly sketch and label its associated mixture parallelogram and (2) Use linear combinations to symbolically compute the corresponding mixture vector.
-			</p>
-			<me>
-				\left[\begin{array}{r|r}3\amp1\\-1\amp2\end{array}\right]\begin{bmatrix}1\\1\end{bmatrix}\, \hspace{2pc} 
-				\left[\begin{array}{r|r}1\amp-1\\1\amp1\end{array}\right]\begin{bmatrix}2\\1\end{bmatrix}, \hspace{2pc} 
-				\left[\begin{array}{r|r}2\amp2\\1\amp-1\end{array}\right]\begin{bmatrix}3\\2\end{bmatrix}.</me>
-		</statement>
-	</question>
+
 
 	<question xml:id="activity-symbolizing_with_matrices">
 		<statement>
