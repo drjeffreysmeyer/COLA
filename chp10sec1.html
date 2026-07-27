@@ -121,14 +121,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.1.14';
+eBookConfig.runestone_version = '8.1.16';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.cb5af2e851de3574.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.f51cd4153b45055d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<script src="_static/prefix-runtime.279b1f0077454c32.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.db8001875cb726c2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.66fa8a682a32c0ac.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -291,7 +291,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="chapter3.html" class="internal"><span class="codenumber">3</span> <span class="title">Matrix Multiplication</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="chp3sec1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Matrix Multiplication as Mixture</span></a></div>
+<div class="toc-title-box"><a href="chp3sec1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Matrix Multiplication as Linear Combination</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="chp3sec1.html#chp3sec1subsec2" class="internal"><span class="title">Matrix Multiplication of Matrices with Matrices</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
@@ -474,192 +474,174 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para" id="chp10sec1-12">Let’s set out to find these lines and scaling factors in the plane.  We shall do this concretely, using GeoGebra to explore.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="activity project-like" id="chp10sec1-13"><h3 class="heading">
-<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Invariant Line Finder.</span>
-</h3>
-<div class="para" id="chp10sec1-13-2">In this creation activity, you will create The Invariant Line Finder Tool.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<ol class="decimal" id="chp10sec1-13-3">
-<li id="chp10sec1-13-3-1">
-<div class="para" id="chp10sec1-13-3-1-1">
-<em class="alert">Creating your matrix.</em><div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-13-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="chp10sec1-13-3-1-2">Input a matrix <span class="process-math">\(A\)</span> with slider entries, and for the moment, slide the entries so your matrix is <span class="process-math">\(A=\left[ \begin{array}{rr}2.5 \amp -0.5 \\ -0.5 \amp 2.5 \end{array}\right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-13-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 1"><a href="#chp10sec1-13-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
-</li>
-<li id="chp10sec1-13-3-2">
-<div class="para" id="chp10sec1-13-3-2-1">
-<em class="alert">Creating your line and transformed line.</em><div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-13-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="chp10sec1-13-3-2-2">Create the point <span class="process-math">\(O=(0,0)\)</span> and another moveable point <span class="process-math">\(B\text{.}\)</span> Create the line between <span class="process-math">\(O\)</span> and <span class="process-math">\(B\text{.}\)</span> ApplyMatrix to <span class="process-math">\(B\text{.}\)</span>  It will probably be called <span class="process-math">\(B'\text{.}\)</span> Create the line between <span class="process-math">\(O\)</span> and <span class="process-math">\(B'\text{.}\)</span> (Challenge:  Create the text ``INVARIANT!!!’’ and make it appear only on the condition that the line <span class="process-math">\(OB\)</span> equals the line <span class="process-math">\(OB'\text{.}\)</span>)<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-13-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 2"><a href="#chp10sec1-13-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
-</li>
-</ol>
-<div class="autopermalink" data-description="Activity 9.1.1: The Invariant Line Finder"><a href="#chp10sec1-13" title="Copy heading and permalink for Activity 9.1.1: The Invariant Line Finder" aria-label="Copy heading and permalink for Activity 9.1.1: The Invariant Line Finder">🔗</a></div></article><div class="para" id="chp10sec1-14">Once completed, your GeoGebra activity should look like GeoGebra ID: <a class="external" href="https://www.geogebra.org/m/sjxcdtxh" target="_blank"><em class="alert">sjxcdtxh</em></a>.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
 <article class="question example-like" id="geogebra-invariant_lines"><h3 class="heading">
 <span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Finding and Analyzing Invariant Lines.</span>
 </h3>
-<div class="para" id="geogebra-invariant_lines-2-1">In this activity, you will use your The Invariant Line Finder Tool to find and analyze invariant lines and their associated scaling factors. You will discover how different matrices have different numbers of invariant lines. In certain situations, you will find similar matrix decompositions.<div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="geogebra-invariant_lines-2-2">Start with <span class="process-math">\(A=\left[ \begin{array}{rr}2.5 \amp -0.5 \\ -0.5 \amp 2.5 \end{array}\right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <ol class="decimal" id="geogebra-invariant_lines-2-3">
-<li id="geogebra-invariant_lines-2-3-1">
-<div class="para" id="geogebra-invariant_lines-2-3-1-1">
-<em class="alert">Finding invariant lines and scaling factors.</em><div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="geogebra-invariant_lines-2-1">In this activity, you will use <a class="external" href="https://www.geogebra.org/m/sjxcdtxh" target="_blank">The Invariant Line Finder Tool</a> to find and analyze invariant lines and their associated scaling factors. You will discover how different matrices have different numbers of invariant lines. In certain situations, you will find similar matrix decompositions.<div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="interactive-iframe-container"><iframe src="https://www.geogebra.org/material/iframe/id/j9grmqzq/scaleContainerClass/interactive-iframe-container/width/800/height/640/allowUpscale/true/autoHeight/true/border/888888/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" id="geogebra-invariant_lines-2-2" style="width:540px; height:432px; display: block; "></iframe></div>
+<div class="instructions"><details id="geogebra-invariant_lines-2-2-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><div class="solution-like knowl__content">
+<div class="para" id="geogebra-invariant_lines-2-2-1-1">An interactive GeoGebra window showing showing a line and transformed line.  Move the line and observe how the transformed line changes.  Is the line and transformed line the same?  Find all invariant lines and their associated scaling factors.<div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="geogebra-invariant_lines-2-3-1-2">Explore.  Move your point <span class="process-math">\(B\)</span> and find all invariant lines. (Pro Tip: Try moving <span class="process-math">\(B\)</span> to grid points, where GeoGebra can lock in values.) For each invariant line, find the associated scaling factor. First, can you visually see the scaling factor? After approximating visually, you can compute the stretch factor exactly by analyzing the ratio of the length of <span class="process-math">\(B'\)</span> to the length of <span class="process-math">\(B\text{.}\)</span> Does the scaling factor include a reflection? If you can find two distinct invariant lines, find a similar matrix decomposition for <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Instructions"><a href="#geogebra-invariant_lines-2-2-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details></div> <div class="para" id="geogebra-invariant_lines-2-3">Start with <span class="process-math">\(A=\left[ \begin{array}{rr}2.5 \amp -0.5 \\ -0.5 \amp 2.5 \end{array}\right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ol class="decimal" id="geogebra-invariant_lines-2-4">
+<li id="geogebra-invariant_lines-2-4-1">
+<div class="para" id="geogebra-invariant_lines-2-4-1-1">
+<em class="alert">Finding invariant lines and scaling factors.</em><div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1"><a href="#geogebra-invariant_lines-2-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+<div class="para" id="geogebra-invariant_lines-2-4-1-2">Explore.  Move your point <span class="process-math">\(B\)</span> and find all invariant lines. (Pro Tip: Try moving <span class="process-math">\(B\)</span> to grid points, where GeoGebra can lock in values.) For each invariant line, find the associated scaling factor. First, can you visually see the scaling factor? After approximating visually, you can compute the stretch factor exactly by analyzing the ratio of the length of <span class="process-math">\(T(B)\)</span> to the length of <span class="process-math">\(B\text{.}\)</span> Does the scaling factor include a reflection? If you can find two distinct invariant lines, find a similar matrix decomposition for <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#geogebra-invariant_lines-2-4-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
-<li id="geogebra-invariant_lines-2-3-2">
-<div class="para" id="geogebra-invariant_lines-2-3-2-1">
-<em class="alert">Varying the matrix - Part 1.</em><div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="geogebra-invariant_lines-2-4-2">
+<div class="para" id="geogebra-invariant_lines-2-4-2-1">
+<em class="alert">Varying the matrix - Part 1.</em><div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="geogebra-invariant_lines-2-3-2-2">Consider our geometric transformations of the plane: uniform stretches, stretches, reflections, shears, rotations, and projections.  How many distinct lines are invariant?  What is the most (resp. least) number of lines that can be invariant?<div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="geogebra-invariant_lines-2-4-2-2">Consider our geometric transformations of the plane: uniform stretches, stretches, reflections, shears, rotations, and projections.  How many distinct lines are invariant?  What is the most (resp. least) number of lines that can be invariant?<div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="geogebra-invariant_lines-2-3-2-3">For example, analyze each of the following:<div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-3-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="geogebra-invariant_lines-2-4-2-3">For example, analyze each of the following:<div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-4-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" id="geogebra-invariant_lines-2-3-2-4">
+<div class="displaymath process-math" id="geogebra-invariant_lines-2-4-2-4">
 \begin{equation*}
-\left[ \begin{array}{rr}2 \amp 0 \\ 0 \amp 2 \end{array}\right] \hspace{2pc}
-\left[ \begin{array}{rr}2 \amp 0 \\ 0 \amp 3 \end{array}\right] \hspace{2pc}
-\left[ \begin{array}{rr}-1 \amp 0 \\ 0 \amp 1 \end{array}\right] \hspace{2pc}
-\left[ \begin{array}{rr}0 \amp 0 \\ 0 \amp 1 \end{array}\right] \hspace{2pc}
-\left[ \begin{array}{rr}2 \amp 1 \\ 0 \amp 2 \end{array}\right] \hspace{2pc}
-\left[ \begin{array}{rr}3 \amp -4 \\ 4 \amp 3 \end{array}\right] \hspace{2pc}
+\left[ \begin{array}{rr}2 \amp 0 \\ 0 \amp 2 \end{array}\right] \hspace{1pc}
+\left[ \begin{array}{rr}2 \amp 0 \\ 0 \amp 3 \end{array}\right] \hspace{1pc}
+\left[ \begin{array}{rr}-1 \amp 0 \\ 0 \amp 1 \end{array}\right] \hspace{1pc}
+\left[ \begin{array}{rr}0 \amp 0 \\ 0 \amp 1 \end{array}\right] \hspace{1pc}
+\left[ \begin{array}{rr}2 \amp 1 \\ 0 \amp 2 \end{array}\right] \hspace{1pc}
+\left[ \begin{array}{rr}3 \amp -4 \\ 4 \amp 3 \end{array}\right] \hspace{1pc}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Item 2"><a href="#geogebra-invariant_lines-2-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#geogebra-invariant_lines-2-4-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
-<li id="geogebra-invariant_lines-2-3-3">
-<div class="para" id="geogebra-invariant_lines-2-3-3-1">
-<em class="alert">Varying the matrix - Part 2.</em><div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="geogebra-invariant_lines-2-4-3">
+<div class="para" id="geogebra-invariant_lines-2-4-3-1">
+<em class="alert">Varying the matrix - Part 2.</em><div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="geogebra-invariant_lines-2-3-3-2">Repeat your above analysis for each of the following matrices (i.e. find invariant lines, find scaling factors, and find similar matrix decomposition):<div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="geogebra-invariant_lines-2-4-3-2">Repeat your above analysis for each of the following matrices (i.e. find invariant lines, find scaling factors, and find similar matrix decomposition):<div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-4-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" id="geogebra-invariant_lines-2-3-3-3">
+<div class="displaymath process-math" id="geogebra-invariant_lines-2-4-3-3">
 \begin{equation*}
-M_1 = \left[ \begin{array}{rr}1.25 \amp 2.25 \\ -0.25 \amp 2.75 \end{array}\right] \hspace{2pc}
-M_2 = \left[ \begin{array}{rr}-0.4 \amp -1.2 \\ -1.2 \amp 1.4 \end{array}\right] \hspace{2pc}
+M_1 = \left[ \begin{array}{rr}1.25 \amp 2.25 \\ -0.25 \amp 2.75 \end{array}\right], \hspace{0.0pc}
+M_2 = \left[ \begin{array}{rr}-0.4 \amp -1.2 \\ -1.2 \amp 1.4 \end{array}\right], \hspace{0.0pc}
 M_3 = \left[ \begin{array}{rr}2 \amp -2.5 \\ 10 \amp 2 \end{array}\right]
 \end{equation*}
 </div>
-<div class="para" id="geogebra-invariant_lines-2-3-3-4">Explain how knowing the different number of invariant lines a matrix has tells you something about the nature of the associated transformation (e.g. stretch vs. shear vs... etc).<div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-3-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="geogebra-invariant_lines-2-4-3-4">Explain how knowing the different number of invariant lines a matrix has tells you something about the nature of the associated transformation (e.g. stretch vs. shear vs rotation etc).<div class="autopermalink" data-description="Paragraph"><a href="#geogebra-invariant_lines-2-4-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 3"><a href="#geogebra-invariant_lines-2-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+<div class="autopermalink" data-description="Item 3"><a href="#geogebra-invariant_lines-2-4-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Activity 9.1.3: Finding and Analyzing Invariant Lines"><a href="#geogebra-invariant_lines" title="Copy heading and permalink for Activity 9.1.3: Finding and Analyzing Invariant Lines" aria-label="Copy heading and permalink for Activity 9.1.3: Finding and Analyzing Invariant Lines">🔗</a></div></article><div class="para" id="chp10sec1-16">Upon reflecting on GeoGebra Activity <a href="chp10sec1.html#geogebra-invariant_lines" class="xref" data-knowl="./knowl/xref/geogebra-invariant_lines.html" data-reveal-label="Reveal" data-close-label="Close" title="Activity 9.1.3: Finding and Analyzing Invariant Lines">Activity 9.1.3</a>, you should make the following observations:<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Activity 9.1.3: Finding and Analyzing Invariant Lines"><a href="#geogebra-invariant_lines" title="Copy heading and permalink for Activity 9.1.3: Finding and Analyzing Invariant Lines" aria-label="Copy heading and permalink for Activity 9.1.3: Finding and Analyzing Invariant Lines">🔗</a></div></article><div class="para" id="chp10sec1-14">Upon reflecting on GeoGebra <a href="chp10sec1.html#geogebra-invariant_lines" class="xref" data-knowl="./knowl/xref/geogebra-invariant_lines.html" data-reveal-label="Reveal" data-close-label="Close" title="Activity 9.1.3: Finding and Analyzing Invariant Lines">Activity 9.1.3</a>, you should make the following observations:<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
+<div class="para" id="chp10sec1-15">
+<em class="alert">Observation 1:</em>  Different transformations have different numbers of invariant lines:<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ol class="decimal" id="chp10sec1-16">
+<li id="chp10sec1-16-1">
+<div class="para" id="chp10sec1-16-1-1">All lines are invariant under a uniform stretch.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#chp10sec1-16-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="chp10sec1-16-2">
+<div class="para" id="chp10sec1-16-2-1">Two lines are invariant under stretches and reflections.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-16-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#chp10sec1-16-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="chp10sec1-16-3">
+<div class="para" id="chp10sec1-16-3-1">One line is invariant under a shear.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-16-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#chp10sec1-16-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="chp10sec1-16-4">
+<div class="para" id="chp10sec1-16-4-1">No lines are invariant under rotations.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-16-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#chp10sec1-16-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
 <div class="para" id="chp10sec1-17">
-<em class="alert">Observation 1:</em>  Different transformations have different numbers of invariant lines:<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<em class="alert">Observation 2:</em>  The invariant line(s) for the standard geometric transformation given by:<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <ol class="decimal" id="chp10sec1-18">
 <li id="chp10sec1-18-1">
-<div class="para" id="chp10sec1-18-1-1">All lines are invariant under a uniform stretch.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-18-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="chp10sec1-18-1-1">
+<span class="process-math">\(\begin{bmatrix}a \amp 0 \\ 0 \amp d\end{bmatrix}\)</span> are the <span class="process-math">\(x\)</span>-axis and <span class="process-math">\(y\)</span>-axis,<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-18-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 1"><a href="#chp10sec1-18-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="chp10sec1-18-2">
-<div class="para" id="chp10sec1-18-2-1">Two lines are invariant under stretches and reflections.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-18-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="chp10sec1-18-2-1">
+<span class="process-math">\(\begin{bmatrix}1 \amp b \\ 0 \amp 1\end{bmatrix}\)</span> is the <span class="process-math">\(x\)</span>-axis, and<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-18-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 2"><a href="#chp10sec1-18-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 <li id="chp10sec1-18-3">
-<div class="para" id="chp10sec1-18-3-1">One line is invariant under a shear.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-18-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="chp10sec1-18-3-1">
+<span class="process-math">\(\begin{bmatrix}1 \amp 0 \\ c \amp 1\end{bmatrix}\)</span> is the <span class="process-math">\(y\)</span>-axis.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-18-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 3"><a href="#chp10sec1-18-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
-<li id="chp10sec1-18-4">
-<div class="para" id="chp10sec1-18-4-1">No lines are invariant under rotations.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-18-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 4"><a href="#chp10sec1-18-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
-</li>
 </ol>
 <div class="para" id="chp10sec1-19">
-<em class="alert">Observation 2:</em>  The invariant line(s) for the standard geometric transformation given by:<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<em class="alert">Observation 3:</em>  If you have enough invariant lines, you can build a similar matrix decomposition for your matrix!<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<ol class="decimal" id="chp10sec1-20">
-<li id="chp10sec1-20-1">
-<div class="para" id="chp10sec1-20-1-1">
-<span class="process-math">\(\begin{bmatrix}a \amp 0 \\ 0 \amp d\end{bmatrix}\)</span> are the <span class="process-math">\(x\)</span>-axis and <span class="process-math">\(y\)</span>-axis,<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 1"><a href="#chp10sec1-20-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
-</li>
-<li id="chp10sec1-20-2">
-<div class="para" id="chp10sec1-20-2-1">
-<span class="process-math">\(\begin{bmatrix}1 \amp b \\ 0 \amp 1\end{bmatrix}\)</span> is the <span class="process-math">\(x\)</span>-axis, and<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-20-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 2"><a href="#chp10sec1-20-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
-</li>
-<li id="chp10sec1-20-3">
-<div class="para" id="chp10sec1-20-3-1">
-<span class="process-math">\(\begin{bmatrix}1 \amp 0 \\ c \amp 1\end{bmatrix}\)</span> is the <span class="process-math">\(y\)</span>-axis.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-20-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 3"><a href="#chp10sec1-20-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
-</li>
-</ol>
-<div class="para" id="chp10sec1-21">
-<em class="alert">Observation 3:</em>  If you have enough invariant lines, you can build a similar matrix decomposition for your matrix!<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="question example-like" id="chp10sec1-22"><h3 class="heading">
+<article class="question example-like" id="chp10sec1-20"><h3 class="heading">
 <span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Using SMD to find invariant Lines.</span>
 </h3>
-<div class="para" id="chp10sec1-22-2-1">If you have a nice similar matrix decomposition, you can quickly read off its invariant lines. For each of the following matrices, determine its invariant lines and associated scaling factors.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-22-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="chp10sec1-20-2-1">If you have a nice similar matrix decomposition, you can quickly read off its invariant lines. For each of the following matrices, determine its invariant lines and associated scaling factors.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-20-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" id="chp10sec1-22-2-2">
+<div class="displaymath process-math" id="chp10sec1-20-2-2">
 \begin{equation*}
 A=\left[ \begin{array}{rr}1 \amp -1 \\ 1 \amp 1 \end{array}\right]\left[ \begin{array}{rr}2 \amp 0 \\ 0 \amp 3 \end{array}\right]\left[ \begin{array}{rr}1 \amp -1 \\ 1 \amp 1 \end{array}\right]^{-1}
-\hspace{2pc}
+\hspace{1pc}
 B=\left[ \begin{array}{rr}3 \amp 1 \\ 1 \amp 2 \end{array}\right]\left[ \begin{array}{rr}1 \amp 1 \\ 0 \amp 1 \end{array}\right]\left[ \begin{array}{rr}3 \amp 1 \\ 1 \amp 2 \end{array}\right]^{-1}
 \end{equation*}
 </div>
-<div class="displaymath process-math" id="chp10sec1-22-2-3">
+<div class="displaymath process-math" id="chp10sec1-20-2-3">
 \begin{equation*}
 C=\left[ \begin{array}{rr}2 \amp -1 \\ 1 \amp 2 \end{array}\right]\left[ \begin{array}{rr}1 \amp 0 \\ 0 \amp 0 \end{array}\right]\left[ \begin{array}{rr}2 \amp -1 \\ 1 \amp 2 \end{array}\right]^{-1}
-\hspace{2pc}
+\hspace{1pc}
 D=\left[ \begin{array}{rr}3 \amp 1 \\ 1 \amp 2 \end{array}\right]\left[ \begin{array}{rr}0 \amp -1 \\ 1 \amp 0 \end{array}\right]\left[ \begin{array}{rr}3 \amp 1 \\ 1 \amp 2 \end{array}\right]^{-1}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Activity 9.1.4: Using SMD to find invariant Lines"><a href="#chp10sec1-22" title="Copy heading and permalink for Activity 9.1.4: Using SMD to find invariant Lines" aria-label="Copy heading and permalink for Activity 9.1.4: Using SMD to find invariant Lines">🔗</a></div></article><div class="para" id="chp10sec1-23">In fact, this is more generally true.  Try to use Definition <a href="chp10sec1.html#def-invariant_lines" class="xref" data-knowl="./knowl/xref/def-invariant_lines.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 9.1.1: Invariant Lines">Definition 9.1.1</a> to justify each of the following propositions.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Activity 9.1.4: Using SMD to find invariant Lines"><a href="#chp10sec1-20" title="Copy heading and permalink for Activity 9.1.4: Using SMD to find invariant Lines" aria-label="Copy heading and permalink for Activity 9.1.4: Using SMD to find invariant Lines">🔗</a></div></article><div class="para" id="chp10sec1-21">In fact, this is more generally true.  Try to use <a href="chp10sec1.html#def-invariant_lines" class="xref" data-knowl="./knowl/xref/def-invariant_lines.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 9.1.1: Invariant Lines">Definition 9.1.1</a> to justify the following proposition.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="proposition theorem-like" id="prop-invariant_lines_smd"><h3 class="heading">
 <span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Invariant Lines and SMDs.</span>
 </h3>
 <div class="para" id="prop-invariant_lines_smd-2-1">If <span class="process-math">\(\mathcal{B}= \{\vect{v}_1,\ldots, \vect{v}_n\}\subset \R^n\)</span> is a basis, <span class="process-math">\(P=[\vect{v}_1|\cdots| \vect{v}_n]\text{,}\)</span> <span class="process-math">\(D\)</span> is a diagonal matrix with diagonal entries <span class="process-math">\(\lambda_1,\ldots, \lambda_n\text{,}\)</span> and <span class="process-math">\(A=PDP^{-1}\text{,}\)</span> then for each <span class="process-math">\(i\text{,}\)</span> <span class="process-math">\(1\le i\le n\text{,}\)</span> the line <span class="process-math">\(L_i = \{t \vect{v}_i \ | \ t\in \mathbb{R}\}\)</span> is an <span class="process-math">\(A\)</span>-invariant line with scaling factor <span class="process-math">\(\lambda_i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-invariant_lines_smd-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proposition 9.1.5: Invariant Lines and SMDs"><a href="#prop-invariant_lines_smd" title="Copy heading and permalink for Proposition 9.1.5: Invariant Lines and SMDs" aria-label="Copy heading and permalink for Proposition 9.1.5: Invariant Lines and SMDs">🔗</a></div></article><details id="chp10sec1-25" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chp10sec1-25-1">It suffices to show that <span class="process-math">\(A\vect{v}_i=\lambda_i\vect{v}_i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-25-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Proposition 9.1.5: Invariant Lines and SMDs"><a href="#prop-invariant_lines_smd" title="Copy heading and permalink for Proposition 9.1.5: Invariant Lines and SMDs" aria-label="Copy heading and permalink for Proposition 9.1.5: Invariant Lines and SMDs">🔗</a></div></article><details id="chp10sec1-23" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="chp10sec1-23-1">It suffices to show that <span class="process-math">\(A\vect{v}_i=\lambda_i\vect{v}_i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-23-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" id="chp10sec1-25-2">
+<div class="displaymath process-math" id="chp10sec1-23-2">
 \begin{equation*}
 A\vect{v}_i =P(D(P^{-1}\vect{v}_i))=P(D\vect{e}_i)=P(\lambda_i\vect{e}_i)=\lambda_i(P\vect{e}_i)=\lambda_i\vect{v}_i.
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Proof 9.1.1"><a href="#chp10sec1-25" title="Copy heading and permalink for Proof 9.1.1" aria-label="Copy heading and permalink for Proof 9.1.1">🔗</a></div></article></details><article class="definition definition-like" id="def-invariant_subspace"><h3 class="heading">
+<div class="autopermalink" data-description="Proof 9.1.1"><a href="#chp10sec1-23" title="Copy heading and permalink for Proof 9.1.1" aria-label="Copy heading and permalink for Proof 9.1.1">🔗</a></div></article></details><article class="definition definition-like" id="def-invariant_subspace"><h3 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Invariant Subspaces.</span>
 </h3>
 <div class="para" id="def-invariant_subspace-2-1">If <span class="process-math">\(T:\R^n\to \R^n\)</span> is a matrix transformation with associated matrix <span class="process-math">\(A\text{,}\)</span> then a subspace <span class="process-math">\(W\subset \R^n\)</span> is <dfn class="terminology"><span class="process-math">\(T\)</span>-invariant</dfn> (or <dfn class="terminology"><span class="process-math">\(A\)</span>-invariant</dfn>) if <span class="process-math">\(T(W)\subset W\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-invariant_subspace-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 9.1.6: Invariant Subspaces"><a href="#def-invariant_subspace" title="Copy heading and permalink for Definition 9.1.6: Invariant Subspaces" aria-label="Copy heading and permalink for Definition 9.1.6: Invariant Subspaces">🔗</a></div></article><div class="para" id="chp10sec1-27">We may generalize <a href="chp10sec1.html#prop-invariant_lines_smd" class="xref" data-knowl="./knowl/xref/prop-invariant_lines_smd.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 9.1.5: Invariant Lines and SMDs">Proposition 9.1.5</a> to any <span class="process-math">\(T\)</span>-invariant subspace.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 9.1.6: Invariant Subspaces"><a href="#def-invariant_subspace" title="Copy heading and permalink for Definition 9.1.6: Invariant Subspaces" aria-label="Copy heading and permalink for Definition 9.1.6: Invariant Subspaces">🔗</a></div></article><div class="para" id="chp10sec1-25">We may generalize <a href="chp10sec1.html#prop-invariant_lines_smd" class="xref" data-knowl="./knowl/xref/prop-invariant_lines_smd.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 9.1.5: Invariant Lines and SMDs">Proposition 9.1.5</a> to any <span class="process-math">\(T\)</span>-invariant subspace.<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="chp10sec1-28">
-<em class="alert">Invariant Subspaces and SMDs</em> If <span class="process-math">\(W\)</span> is an invariant subspace of <span class="process-math">\(B\)</span> and <span class="process-math">\(A=PBP^{-1}\text{,}\)</span> then <span class="process-math">\(P(W)\)</span> is an invariant subspace of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="example example-like" id="chp10sec1-29"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<article class="proposition theorem-like" id="prop-invariant_subspaces_smd"><h3 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Invariant Subspaces and SMDs.</span>
 </h3>
-<div class="para" id="chp10sec1-29-1-1">Suppose that <span class="process-math">\(S=\{\vect{v}_1,\vect{v}_2,\vect{v}_3\}\subset \R^3\)</span> is an ordered basis.  The <span class="process-math">\(3\times 3\)</span> matrix<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-29-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="prop-invariant_subspaces_smd-2-1">If <span class="process-math">\(W\)</span> is an invariant subspace of <span class="process-math">\(B\)</span> and <span class="process-math">\(A=PBP^{-1}\text{,}\)</span> then <span class="process-math">\(P(W)\)</span> is an invariant subspace of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-invariant_subspaces_smd-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="displaymath process-math" id="chp10sec1-29-1-2">
+<div class="autopermalink" data-description="Proposition 9.1.7: Invariant Subspaces and SMDs"><a href="#prop-invariant_subspaces_smd" title="Copy heading and permalink for Proposition 9.1.7: Invariant Subspaces and SMDs" aria-label="Copy heading and permalink for Proposition 9.1.7: Invariant Subspaces and SMDs">🔗</a></div></article><article class="example example-like" id="chp10sec1-27"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para" id="chp10sec1-27-1-1">Suppose that <span class="process-math">\(S=\{\vect{v}_1,\vect{v}_2,\vect{v}_3\}\subset \R^3\)</span> is an ordered basis.  The <span class="process-math">\(3\times 3\)</span> matrix<div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-27-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="chp10sec1-27-1-2">
 \begin{equation*}
-A=[\vect{v}_1,\vect{v}_2,\vect{v}_3]\begin{bmatrix}2 \amp 0 \amp 0 \\ 0 \amp 0 \amp -1 \\ 0 \amp 1 \amp 0\end{bmatrix}[\vect{v}_1,\vect{v}_2,\vect{v}_3]^{-1}.
+A=[\vect{v}_1 \mid \vect{v}_2 \mid \vect{v}_3]\begin{bmatrix}2 \amp 0 \amp 0 \\ 0 \amp 0 \amp -1 \\ 0 \amp 1 \amp 0\end{bmatrix}[\vect{v}_1\mid \vect{v}_2\mid \vect{v}_3]^{-1}.
 \end{equation*}
 </div>
-<div class="para" id="chp10sec1-29-1-3">We can see two invariant subspaces.  The line <span class="process-math">\(L=\spn(\vect{v}_1)\)</span> is <span class="process-math">\(A\)</span>-invariant with scaling factor 2.  The plane <span class="process-math">\(W=\spn(\vect{v}_2,\vect{v}_3)\)</span> is invariant and <span class="process-math">\(T_A\)</span> acts upon it by a rotation of <span class="process-math">\(90^\circ\)</span> <span class="process-math">\(\vect{v}_2\)</span> towards <span class="process-math">\(\vect{v}_3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-29-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="chp10sec1-27-1-3">We can see two invariant subspaces.  The line <span class="process-math">\(L=\spn(\vect{v}_1)\)</span> is <span class="process-math">\(A\)</span>-invariant with scaling factor 2.  The plane <span class="process-math">\(W=\spn(\vect{v}_2,\vect{v}_3)\)</span> is invariant and <span class="process-math">\(T_A\)</span> acts upon it by a rotation of <span class="process-math">\(90^\circ\)</span> <span class="process-math">\(\vect{v}_2\)</span> towards <span class="process-math">\(\vect{v}_3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp10sec1-27-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 9.1.7"><a href="#chp10sec1-29" title="Copy heading and permalink for Example 9.1.7" aria-label="Copy heading and permalink for Example 9.1.7">🔗</a></div></article><div class="autopermalink" data-description="Lesson 9.1: Concepts of Invariant Lines"><a href="#chp10sec1" title="Copy heading and permalink for Lesson 9.1: Concepts of Invariant Lines" aria-label="Copy heading and permalink for Lesson 9.1: Concepts of Invariant Lines">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Example 9.1.8"><a href="#chp10sec1-27" title="Copy heading and permalink for Example 9.1.8" aria-label="Copy heading and permalink for Example 9.1.8">🔗</a></div></article><div class="autopermalink" data-description="Lesson 9.1: Concepts of Invariant Lines"><a href="#chp10sec1" title="Copy heading and permalink for Lesson 9.1: Concepts of Invariant Lines" aria-label="Copy heading and permalink for Lesson 9.1: Concepts of Invariant Lines">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="chapter10.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chp10sec2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
