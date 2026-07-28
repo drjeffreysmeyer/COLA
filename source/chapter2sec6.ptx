@@ -100,14 +100,18 @@
             <p>
                 To help your analysis, explore with the <alert>Subspace Tester</alert> at GeoGebra ID: <url href="https://www.geogebra.org/m/mzcfrvqh">mzcfrvqh</url>.
             </p>
-            
-            <image source="images/2.6_subspaces2.png" width="100%">
-            <description> 
-              <p>
-                Subsets in <m>\R^2</m>.
-              </p>
-            </description>
-            </image>
+                <interactive geogebra="mzcfrvqh" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
+    <instructions>
+            <p>
+              An interactive GeoGebra window these different subsets in the plane.  Analyze each subset and determine if it is a subspace. Use the tools to check if each subset satisfies origin containment, parallelogram containment, and line containment.
+            </p>
+     </instructions>
+        <static>
+            <image width="100%" source="images/2.6_subspaces2.png"/>
+            <shortdescription>Subsets in <m>\R^2</m>.</shortdescription>
+        </static>
+    </interactive>
+
 
             <p>
                 <alert>Spans vs Subspaces.</alert> Recall that spans in <m>\R^2</m> are either the origin, lines through the origin, or the whole plane. Can you find a subspace in <m>\R^2</m> that is not a span? If yes, clearly describe this set and explain how it satisfies <xref ref="def-subspace_geometric" />. If not, explain why no such set can exist.

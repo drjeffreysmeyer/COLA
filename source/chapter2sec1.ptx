@@ -24,9 +24,16 @@
     <title>Travel Instructions</title>
     <p>My neighborhood's streets are parallel and intersect at right angles, but they are not aligned with the north-south and east-west cardinal directions. My neighborhood map is depicted below, where the distance between each adjacent gridline is 100ft. The blue streets go from the southwest to the northeast, and each blue block measures 300ft east and 400ft north. The red streets travel from the northeast to the southeast, and each red block measures 400ft east and 300ft south.</p>
     
-    <p></p>
+      <image source="images/2.1_map.png" width="100%">
+    <description> 
+      <p>
+        A map of the blocks near my home.
+      </p>
+    </description>
+  </image>
 
-    <p>My GPS tells me that my grocery store is 500ft east of me and 1500ft north of me, but of course, I can not get there traveling 500ft due east and 1500ft due north, as that would require I cut straight through other people's homes. Instead, I see I can travel 3 blue blocks northeast and 1 red block northwest, I get to the grocery store. <em>Could I have gotten there another way?</em></p>
+    <p>
+      My GPS tells me that my grocery store is 500ft east of me and 1500ft north of me, but of course, I can not get there traveling 500ft due east and 1500ft due north, as that would require I cut straight through other people's homes. Instead, I see I can travel 3 blue blocks northeast and 1 red block northwest, I get to the grocery store. <em>Could I have gotten there another way?</em></p>
     <p>I need to go to my bank. My bank is not too far away, and in fact my GPS tells me it is only 2300ft east and 1400ft north of me. I wonder, <em>how can I describe my path there in terms of blue blocks and red blocks?</em></p>
   </data>
 
@@ -86,10 +93,16 @@
 
 			</table>
 
-    <p>Interesting! Tomorrow will be a warmer day. The app then gives the average forecast over the next two days:</p>
+    <p>Interesting! Tomorrow will be a warmer day. The app then gives the average forecast over the next two days.</p>
 
     <p>The weather app plots the forecast for today, tomorrow, and the 2-day average below.</p>
-    <p></p>
+          <image source="images/2.1_forecast.png" width="100%">
+    <description> 
+      <p>
+        Two days of temperature forecasts and their average.
+      </p>
+    </description>
+  </image>
   </data>
 
   <p>

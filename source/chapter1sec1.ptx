@@ -314,7 +314,7 @@
 	<question>
 		<title>Identifying Lists of Quantities</title>
 		<p> 
-			Consider each of the following situations.  With your group, write down several lists of quantities that might naturally come up when analyzing the situation. Be sure to clearly specify each quantity (include object, attribute, and agreed way to measure).   Note that these are intentionally vague and open-ended prompts.
+			Consider each of the following situations.  Write down several lists of quantities that might naturally come up when analyzing the situation. Be sure to clearly specify each quantity (include object, attribute, and agreed way to measure).   Note that these are intentionally vague and open-ended prompts.
 			
 		<ol>
 			<li>The most recent time you went grocery shopping.</li>
@@ -421,7 +421,7 @@
 		</p>
 
 		<p>
-			While this is a promising quantity, it is probably not enough for the computer the learn the difference between cats and dogs.  (Why do you think this is the case?)  In groups, come up with other promising quantities which you can read from a picture, and for which will be useful in trying to tell the difference between cats and dogs.
+			While this is a promising quantity, it is probably not enough for the computer the learn the difference between cats and dogs.  (Why do you think this is the case?)  Come up with other promising quantities which you can read from a picture, and for which will be useful in trying to tell the difference between cats and dogs.
 		</p>
 
 		<p>

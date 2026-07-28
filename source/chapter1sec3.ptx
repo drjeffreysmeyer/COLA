@@ -2,8 +2,6 @@
 
 <section xml:id="chp1sec3" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Visualizing Vectors</title>
-
-
   <p>
     What images do you think of when you picture a serving size of cereal?  What images do you think of when you picture a vector?
   </p>
@@ -25,6 +23,10 @@
   <p>
     Vectors are lists of quantities.  They do not inherently come with any particular geometry or visualization. However, there are a few powerful visualizations that I will explicitly identify now to help you in your reasoning and communication.
   </p>
+
+  <subsection xml:id="chp1sec3subsec1">
+    <title>Vectors as Points and Arrows</title>
+  
 
   <p>
     In geometric visualizations, we view the entries of a vector as <em>spatial</em> coordinates.
@@ -71,6 +73,10 @@
     </description>
   </image>  
   </remark>
+  </subsection>
+
+  <subsection xml:id="chp1sec3subsec2">
+    <title>Vectors as Bar Graphs</title>
 
   <p>
     In bar graph visualizations, we often view the entries of a vector as <em>temporal</em> measurements.
@@ -88,25 +94,6 @@
     </description>
   </image>
 
-<!--  <p>
-  <image>
-  <latex-image>
-    \draw[color=geogebra_grey_light, xstep=1cm,ystep=1cm](\XMIN,\YMIN) grid (\XMAX,\YMAX);
-    \draw[color=black, line width=2pt] (\XMIN,0) - (\XMAX,0);
-    \draw[color=black, line width=2pt] (\XMIN,\YMIN) - (\XMIN,\YMAX);
-    \foreach \x in {1,..., 5}
-      \draw[shift={(\x,0)},color=black] (0pt,2pt) - (0pt,-2pt) node[below] {\footnotesize $\x$};
-    \foreach \y in {0, 1, ..., 6}
-      \draw[shift={(\XMIN,\y)},color=black] (2pt,0pt) - (-2pt,0pt) node[left] {\footnotesize $\y$};
-    \foreach \x/\y in \mymacro
-      \draw [line width=2pt,color=blue] (\x,0)-(\x,\y) node[above] {$\y$};
-    \draw[color=black] (-5,3) node[anchor = east] {\Large $\begin{bmatrix}1\\3\\5\\4\\2\end{bmatrix}$};
-    \path[ultra thick, black](-5,3) edge [postaction={decorate}]  node[above, sloped] {\Large Visualize  } node[below, color = blue] {Bar Graph} (0,3);
-  </latex-image>
-  </image>
-  </p>
-  -->
-
   <p>
     For vectors where the entries represent quantities taken at different times, or quantities all measured with the same units, the bar graph representation is very useful.
   </p>
@@ -115,12 +102,35 @@
     In <xref ref="ex-vignettes3"/> we already saw bar graph representations come up naturally in temperature forecasts. We could also use bar graph representations for the macronutrients vector or for population by block. We shall see later many more important uses for this representation, such as in digital signal processing.
   </p>
 
+  	<data xml:id="qs-signal-vectors">
+		<title>Signal Vectors in Audio Engineering</title>
+		<p>
+			When we record a sound, we are measuring the air pressure at a microphone over time.  The air pressure is measured in units of Pascals (Pa), and the measurements are taken at regular intervals of time.  If we take <m>m</m> measurements, then we can represent the sound as a vector <m>\vect{s}\in\R^m</m>, where the <m>i^{th}</m> entry of <m>\vect{s}</m> is the air pressure measured at time <m>t_i</m>.  We can this a <term>signal vector</term>.  We can visualize this vector as a bar graph, where for each <m>i</m>, we plot the vertical segment from <m>(t_i,0)</m> to <m>(t_i,s_i)</m>.
+		</p>
+    <p>
+      For example, sampling displacement modeled by the cosine function <m>f(t) = \cos(2\pi t)</m> at 5 equally spaced points in the interval <m>[0,1]</m> gives the vector <m>\vect{s}=\begin{bmatrix}1\\0.309\\-0.809\\-0.809\\0.309\end{bmatrix}</m>.  The bar graph representation of this vector is shown below.
+    </p>
+    <interactive geogebra="wkjtuqd2" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
+    <instructions>
+            <p>
+              An interactive GeoGebra window showing samplings of a pure tone sound wave.  Observe what happens when you move the slider to change the number of samples.  Notice how the bar graph representation of the vector changes as you change the number of samples.  
+            </p>
+     </instructions>
+        <static>
+            <image width="100%" source="images/1.3_signal_vector.png.png"/>
+            <shortdescription>A simple sound wave sampled at 5 points.</shortdescription>
+        </static>
+    </interactive>
+	</data>
+
+  </subsection>
+
   <figure xml:id="figure-geogebra-arrow_vs_bar">
     <caption>Comparing vector visualizations: arrow and bar graph</caption>
     <interactive geogebra="upnzznec" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
     <instructions>
             <p>
-              An interactive GeoGebra window visualizing side-by-side both arrow and bar graph visualizations for a list-length 2 vector.  Move the vector on the left to see how the tow visualizations simultaneously vary.
+              An interactive GeoGebra window visualizing side-by-side both arrow and bar graph visualizations for a list-length 2 vector.  Move the vector on the left to see how the the visualizations simultaneously vary.
             </p>
      </instructions>
         <static>

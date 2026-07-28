@@ -284,10 +284,7 @@
         </p>
         <ol>
             <li>
-                <p>On your own, use <xref ref="Def-matrix_mult_matrices" /> to compute <m>AB</m> and <m>BA</m>.</p>
-            </li>
-            <li>
-                <p>Compare your computations with your group.</p>
+                <p>Use <xref ref="Def-matrix_mult_matrices" /> to compute <m>AB</m> and <m>BA</m>.</p>
             </li>
             <li>
                 <p>What interesting observations can you make?</p>
