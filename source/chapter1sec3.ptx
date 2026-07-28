@@ -58,6 +58,20 @@
     The <alert>zero vector</alert> <m>\vect{0}\in \R^m</m> is the list of all zeros (of list-length <m>m</m>). When visualized as a geometric point, it is the <alert>origin</alert>. If a vector is not the zero vector, it is a <alert>nonzero</alert> vector.  Note, nonzero vectors can have <i>some</i> zero entries, they just cannot have <em>all</em> zero entries.
   </p>
 
+  <remark>
+    <title>Right-Hand Rule</title>
+    <p>
+      In 3-space, we can use the <alert>right-hand rule</alert> to determine the orientation of the axes.  If you point your right pointer finger in the direction of the positive <m>x</m>-axis, and your right middle finger in the direction of the positive <m>y</m>-axis, then your right thumb will point in the direction of the positive <m>z</m>-axis.
+    </p>
+      <image source="images/ai_righthandrule.png" width="100%">
+    <description> 
+      <p>
+        A cartoon depicting a learner realizing how the right-hand rule works in 3-space.
+      </p>
+    </description>
+  </image>  
+  </remark>
+
   <p>
     In bar graph visualizations, we often view the entries of a vector as <em>temporal</em> measurements.
   </p>
@@ -160,12 +174,12 @@
       </li>
       <li>
         <p>
-          Carefully sketch and label this vector as both a point and an arrow in Cartesian 3-space (see, for example, Figure \ref{figure:visualizing2}).
+          Carefully sketch and label this vector as both a point and an arrow in Cartesian 3-space.
         </p>
       </li>
       <li>
         <p>
-          Carefully sketch and label this vector as a bar graph in Cartesian 2-space (see, for example, Figure \ref{figure:visualizing3}).
+          Carefully sketch and label this vector as a bar graph in Cartesian 2-space.
         </p>
       </li>
     </ol>

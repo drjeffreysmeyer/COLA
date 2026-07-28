@@ -47,6 +47,13 @@
                         <br /><br />
                         Observe how on the <em>same</em> plot, we draw both input and output. This allows us to <em>see</em> how <m>T_A</m> moves the points in the plane.
                     </p>
+        <image source="images/3.3_transforming_a_point.png" width="100%">
+    		<description> 
+				<p>
+					Visualizing the input (serving) vector and the output (mixture) vector on the same plane.
+				</p>
+			</description>
+		</image>
                     
                 </sidebyside>
             </statement>
@@ -98,7 +105,13 @@
                 <p>
                     Again, let's visualize this transformation thinking of <em>vectors as points</em>. Lines are composed of points. Each value of parameter <m>t</m> determines a point on the line. Below, we show with the dashed purple curves where several points on <m>\ell</m> are sent to. By following where <m>T</m> sends points, we see that every point on the line <m>\ell</m> is sent to a point on the line <m>T(\ell)</m>.
                 </p>
-                
+                        <image source="images/3.3_transforming_a_line.png" width="100%">
+    		<description> 
+				<p>
+					By following the individual points that comprise the line, we may visualize the line and the associated transformed line on the same plane.
+				</p>
+			</description>
+		</image>
             </statement>
         </example>
 
@@ -241,7 +254,13 @@
                     <p>
                         The <term>(standard) unit square</term> is the parallelogram <m>S</m> in the Euclidean plane with vertices: <m>O=(0,0)</m>, <m>P=(1,0)</m>, <m>Q=(1,1)</m>, and <m>R=(0,1)</m>.
                     </p>
-                    
+                     <image source="images/3.3_unit_square.png" width="100%">
+    		<description> 
+				<p>
+					Visualizing the unit square and transformed unit square on the same plane.
+				</p>
+			</description>
+		</image>
 					
                 </sidebyside>
             </statement>
@@ -269,6 +288,13 @@
                         </md>
                         We plot these points, and since line segments are sent to line segments, we connect them up. We see we have drawn a rectangle.
                     </p>
+                            <image source="images/3.3_transformed_square1.png" width="100%">
+    		<description> 
+				<p>
+					Visualizing the unit square and transformed unit square on the same plane.
+				</p>
+			</description>
+		</image>
                   </sidebyside>
                 <p>
                     Now we think to ourselves, <em>if the unit square is made of elastic, and I am holding it within my hands, how can I describe what I would have to do to it to obtain the transformed square?</em> We see that we <em>stretch</em> the square by a factor of 2 in the <m>x</m>-direction and we <em>stretch</em> the square by a factor of 3 in the <m>y</m>-direction.
@@ -308,6 +334,13 @@
 						</ol>
                     </li>
                 </ol>
+                 <image source="images/3.3_transformed_square2.png" width="100%">
+    		<description> 
+				<p>
+					What matrix sends the unit square to this parallelogram?
+				</p>
+			</description>
+		</image>
             </statement>
         </question>
 
@@ -327,6 +360,14 @@
                 <p>
                     In this activity, you will use the <url href="https://www.geogebra.org/m/prKSK7EV">Transformation Visualizer Tool</url> to investigate and visualize how the entries of a <m>2\times 2</m> matrix affect the way the matrix transforms the unit square, and the plane more generally.
                 </p>
+                    <interactive geogebra="dde8c6pe" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
+    <instructions>
+            <p>
+              An interactive GeoGebra window showing how adjusting the matrix entries affects the transformation of the unit square. What happens when you adjust the top left entry of the matrix? Reset. What about the bottom right entry? Reset. What happens when you adjust the top right entry of the matrix? Reset. What about the bottom left entry? 
+            </p>
+     </instructions>
+    </interactive>
+
                 <ol>
                     <li>
                         <p>
@@ -335,15 +376,182 @@
                         </p>
                     </li>
                     <li>
-                        <p>
-							<alert>Creating visual and verbal representations from symbolic representations.</alert>
-                            For each of the following matrices (I) use your <url href="https://www.geogebra.org/m/prKSK7EV">Transformation Visualizer Tool</url> to clearly depict how to the unit square <m>S</m> is transformed and (II) within a text box, use <strong>geometric words</strong> and complete sentences to verbally describe how the
-                        </p>
-                    </li>
+                <p>
+                    <alert>Creating visual and verbal representations from symbolic representations.</alert>
+                </p>
+                <p>
+                    For each of the following matrices (I) use your <url href="https://www.geogebra.org/m/prKSK7EV">Transformation Visualizer Tool</url> to clearly depict how to the unit square <m>S</m> is transformed and (II) within a text box, use <alert>geometric words</alert> and complete sentences to verbally describe how the matrix transforms the plane. (Note: you may need to use multiple geometric words, in the proper order.)
+                </p>
+                <me>
+                    A_1=\left[ \begin{array}{rr}1\amp -1 \\1\amp 1 \end{array}\right]\hspace{2pc} 
+                    A_2=\left[ \begin{array}{rr}2\amp 0 \\0\amp -1 \end{array}\right]\hspace{2pc}
+                    A_3=\left[ \begin{array}{rr}2\amp 1 \\0\amp 2 \end{array}\right]
+                </me>
+            </li>
+            <li>
+                <p>
+                    <alert>Relating the transformed unit square to mixture parallelograms.</alert>
+                </p>
+                <p>
+                    If <m>A=[\vect{v}|\vect{w}]</m>, then how does the quadrilateral <m>T(S)</m> relate to the vectors <m>\vect{v}</m> and <m>\vect{w}</m>? Play with your sliders until you are confident in your answer. In complete and clear sentences, record this relationship.
+                </p>
+            </li>
                 </ol>
             </statement>
         </technology>
 
+<p>
+    In each image below, the unit square <m>S</m> is red and the transformed unit square <m>T(S)</m> is blue.
+</p>
+        <image source="images/3.3_tranformation_list.png" width="100%">
+          <description> 
+            <p>
+              Visualizing the transformation of the unit cube by a 3x3 matrix.
+            </p>
+          </description>
+        </image>
+
+<p>
+    Visualize how playing with the entries of a <m>2\times 2</m> matrix affects how the matrix transforms the unit square at GeoGebra ID: <url href="https://www.geogebra.org/m/prKSK7EV"><alert>prKSK7EV</alert></url>.
+</p>
+
+<p>
+    Note that the matrix <m>I=\left[ \begin{array}{}1\amp 0\\0\amp 1\end{array}\right]</m> is very special. It gives the <alert>do nothing</alert> transformation. In other words, multiplication by <m>I</m> always gives back the point you put in. For this reason <m>I</m> is called the identity matrix.
+</p>
+
+<definition xml:id="def-identity_matrix">
+    <title>Identity Matrix</title>
+    <statement>
+        <p>
+            The <m>n\times n</m> matrix with 1's along the diagonal and all other entries <m>0</m> is the <m>n\times n</m> <term>identity matrix</term>. We typically name the identity matrix <m>I</m>.
+        </p>
+    </statement>
+</definition>
+
+<proposition>
+    <statement>
+        <p>
+            If <m>I</m> is the <m>n\times n</m> identity matrix and <m>\vect{x}\in \R^n</m>, then <m>I\vect{x}=\vect{x}</m>.
+        </p>
+    </statement>
+</proposition>
+
+<p>
+    While stretches, reflections, projections, and shears relative to the <m>x</m>- and <m>y</m>-axes are relatively straight forward and easy to identify (once you get the hang of it) rotations are a little more subtle. I will now go over what a rotation matrix looks like.
+</p>
+
+<p>
+    Draw the unit square and then rotate it by <m>\theta</m> radians counterclockwise (see <xref ref="fig-rotating_square"/>). <em>What matrix sends <m>S</m> to this rotated square?</em>
+</p>
+
+<figure xml:id="fig-rotating_square">
+    <caption>The unit square (red) and the unit square rotated <m>\theta</m> radians counterclockwise (blue).</caption>
+            <image source="images/3.3_rotation_transformation.png" width="100%">
+          <description> 
+            <p>
+              Visualizing the rotations and of the unit square and the associated trigonometry.
+            </p>
+          </description>
+        </image>
+</figure>
+
+<p>
+    To figure this out, I think about matrix multiplication as mixture (Matrix Multiplication Meaning #1 <xref ref="matrixmult_meaning1"/>) and the unit square <m>S</m> to <em>reason</em> about the columns of a rotation matrix. Suppose that <m>A=[\vect{v}|\vect{w}]</m> is our rotation matrix. Using just a little trigonometry (see <xref ref="fig-rotating_square"/> above), we see that <m>\left[ \begin{array}{}1\\0\end{array}\right]</m> is sent to <m>\left[ \begin{array}{}\cos(\theta)\\\sin(\theta)\end{array}\right]</m> and <m>\left[ \begin{array}{}0\\1\end{array}\right]</m> is sent to <m>\left[ \begin{array}{r}-\sin(\theta)\\\cos(\theta)\end{array}\right]</m>. This gives us two computations:
+</p>
+
+<me>
+    \left[ \begin{array}{}\cos(\theta)\\\sin(\theta)\end{array}\right] 
+    = T\left(\left[ \begin{array}{}1\\0\end{array}\right]\right)
+    = [\vect{v}|\vect{w}]\left[ \begin{array}{}1\\0\end{array}\right]
+    = 1\vect{v}+0\vect{w}
+    = \vect{v}
+</me>
+
+<me>
+    \left[ \begin{array}{r}-\sin(\theta)\\\cos(\theta)\end{array}\right] 
+    = T\left(\left[ \begin{array}{}0\\1\end{array}\right]\right)
+    = [\vect{v}|\vect{w}]\left[ \begin{array}{}0\\1\end{array}\right]
+    = 0\vect{v}+1\vect{w}
+    = \vect{w}
+</me>
+
+<p>
+    It follows that the matrix that rotates the plane by <m>\theta</m> radians counterclockwise is <m>\left[ \begin{array}{r|r}\cos(\theta)\amp -\sin(\theta)\\\sin(\theta)\amp \cos(\theta)\end{array}\right]</m>.
+</p>
+
+<p>
+    Visualize how sliding the <m>\theta</m> parameter of a rotation matrix affects how it transform the unit square at GeoGebra ID: <url href="https://www.geogebra.org/m/sPSqFaqP"><alert>sPSqFaqP</alert></url>.
+</p>
+
+<p>
+    Below I summarize the "simple" classes of matrices according to their associated transformations:
+</p>
+
+<table>
+    <tabular>
+        <row header="yes">
+            <cell><alert>Form</alert></cell>
+            <cell><alert>Name</alert></cell>
+            <cell><alert>Geometric Description</alert></cell>
+        </row>
+        <row>
+            <cell><m>\left[ \begin{array}{}a\amp 0\\0\amp a\end{array}\right]</m></cell>
+            <cell>Scalar</cell>
+            <cell>When <m>a>0</m>, this is a <alert>uniform stretch</alert>.</cell>
+        </row>
+        <row>
+            <cell><m>\left[ \begin{array}{}a\amp 0\\0\amp d\end{array}\right]</m></cell>
+            <cell>Diagonal</cell>
+            <cell>If <m>a>0</m> and <m>b>0</m>, then this is a <alert>pure stretch</alert>, by a factor of <m>a</m> in the <m>x</m>-direction and a factor of <m>d</m> in the <m>y</m>-direction. If <m>a=0</m> or <m>b=0</m>, this is a <alert>projection</alert>. If <m>a&lt;0</m> or <m>b&lt;0</m>, then this is a <alert>reflection</alert> (plus stretch).</cell>
+        </row>
+        <row>
+            <cell><m>\left[ \begin{array}{}1\amp b\\0\amp 1\end{array}\right]</m></cell>
+            <cell>Upper Triangular (with 1's on diagonal)</cell>
+            <cell>This is a <alert>pure shear</alert> by <m>b</m>-units in the <m>x</m>-direction (i.e. the <m>y</m>-axis is sheared in the <m>x</m>-direction to the line <m>y=\frac{1}{b}x</m>).</cell>
+        </row>
+        <row>
+            <cell><m>\left[ \begin{array}{}1\amp 0\\c\amp 1\end{array}\right]</m></cell>
+            <cell>Lower Triangular (with 1's on diagonal)</cell>
+            <cell>This is a <alert>pure shear</alert> by <m>c</m>-units in the <m>y</m>-direction (i.e. the <m>x</m>-axis is sheared in the <m>y</m>-direction to the line <m>y=c x</m>).</cell>
+        </row>
+        <row>
+            <cell><m>\left[ \begin{array}{rr}\cos\theta\amp -\sin\theta\\\sin\theta\amp \cos\theta\end{array}\right]</m></cell>
+            <cell>Rotation</cell>
+            <cell>This is a <alert>rotation</alert> by <m>\theta</m> radians counterclockwise.</cell>
+        </row>
+    </tabular>
+</table>
+
+<p>
+    This is not a complete list of important special matrices - you will encounter many more in this course. For example, in <xref ref="geogebra-identifying_compositions"/> you explore two more important classes.
+</p>
     </subsection>
+
+
+<subsection>
+    <title>Transformations of <m>\R^n</m> for <m>n>2</m></title>
+    <p>
+        If <m>A</m> is an <m>n \times n</m> matrix, where <m>n>2</m>, then <m>T_A</m> is a transformation of <m>\R^n</m>. All of the transformations we encountered in the plane generalize to this context. Furthermore, there are no fundamentally new transformations.
+    </p>
+    <p>
+        For example, the <em>diagonal</em> matrix <m>A=\left[ \begin{array}{}2\amp 0\amp 0\\0\amp 3\amp 0\\0\amp 0\amp 5\end{array}\right]</m> transforms the unit <em>cube</em> by stretching the <m>x</m>-direction by a factor of 2, stretching the <m>y</m>-direction by a factor of 3, and stretching the <m>z</m>-direction by a factor of 5.
+    </p>
+
+              <image source="images/3.3_transformed_cube1.png" width="100%">
+          <description> 
+            <p>
+              Visualizing the transformation of the unit cube by a 3x3 matrix.
+            </p>
+          </description>
+        </image>
+
+
+            <p>
+        Visualize how playing with the entries of a <m>3\times 3</m> matrix affects how the matrix transform the unit cube at GeoGebra ID: <url href="https://www.geogebra.org/m/xxyav5vz"><alert>xxyav5vz</alert></url>.
+    </p>
+
+    </subsection>
+
+        
 
 </section>

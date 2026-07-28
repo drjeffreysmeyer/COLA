@@ -123,7 +123,7 @@
   </proposition>
 
   <p>
-    Revisit how in GeoGebra <xref ref="geogebra_activity-lincomb" />, Part 5, as you fix <m>r=1</m> and slide <m>s</m>, the tips of the vectors <m>\begin{bmatrix}3\\1\end{bmatrix}+s \begin{bmatrix}-1\\2\end{bmatrix}</m>, <em>sweeps out a line</em> through <m>\begin{bmatrix}3\\1\end{bmatrix}</m> and in the direction of <m>\begin{bmatrix}-1\\2\end{bmatrix}</m>.
+    Revisit how in GeoGebra <xref ref="geogebra_activity-lincomb" />, Part 3, as you fix <m>r=1</m> and slide <m>s</m>, the tips of the vectors <m>\begin{bmatrix}3\\1\end{bmatrix}+s \begin{bmatrix}-1\\2\end{bmatrix}</m>, <em>sweeps out a line</em> through <m>\begin{bmatrix}3\\1\end{bmatrix}</m> and in the direction of <m>\begin{bmatrix}-1\\2\end{bmatrix}</m>.
   </p>
 
   <technology xml:id="exploration-geogebra-lines1">
