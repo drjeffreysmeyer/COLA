@@ -370,4 +370,54 @@
       </statement>
   </question>
 
+
+    <exercises xml:id="problems-chp2sec1">
+    <title>Problems</title>
+
+     <exercise>
+      <statement>
+        <p>
+          Let <m>\Gamma</m> denote a graph with vertices <m>V=\{v_1, v_2, v_3, \ldots, v_n\}</m>.  A list-length <m>n</m> vector can be understood as a function on the vertices of <m>\Gamma</m>.  Explain.  The <m>i^{th}</m> <term>indicator vector</term> of <m>\Gamma</m> is the vector <m>\vect{e}_i\in \mathbb{R}^n</m> whose <m>i^{th}</m> entry is 1 and all other entries are 0.  Explain how any function on the vertices of <m>\Gamma</m> can be expressed as a linear combination of the indicator vectors of <m>\Gamma</m>.
+        </p> 
+      </statement>
+    </exercise>
+
+      <exercise>
+      <statement>
+        <p>
+          There is a city called Mathopolis and an adjacent suburb called Vector Valley. For city X, its Mathopolis-Vector Valley probability vector is the list-length 2 vector: 
+          <ol>
+            <li> Probability a person in X will be in Mathopolis next year</li>
+            <li> Probability a person in X will be in Vector Valley next year.</li>
+          </ol>
+Each year about 3% of Mathopolis's population moves to Vector Valley, and about 5% of Vector Valley's population moves to Mathopolis. (This is an unusual place - there are no births, no deaths, and there is no travel to or from other places.)
+<ol>
+  <li>
+    <p>
+      What is the Mathopolis-Vector Valley probability vector for Mathopolis?
+    </p>
+  </li>
+  <li>
+    <p>
+      What is the Mathopolis-Vector Valley probability vector for Vector Valley?
+    </p>
+  </li>
+  <li>
+    <p>
+      If the current populations of Mathopolis and Vector Valley are <m>m</m> million and <m>v</m> million, respectively, express the population vector of Mathopolis and Vector Valley next year as a linear combination of probability vectors and in terms of <m>m</m> and <m>v</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      If the current populations of Mathopolis and Vector Valley are 7 million and 1 million, respectively, what will be the population vector of Mathopolis and Vector Valley next year?
+    </p>
+  </li>
+</ol>
+        </p> 
+      </statement>
+    </exercise>
+
+  </exercises>
+
+
 </section>

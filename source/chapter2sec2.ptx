@@ -173,4 +173,33 @@
           <p>Pick an appropriate metaphor and provide a meaningful informal justification for  <xref ref="prop-scalar_sum_across_comb" />. Use <xref ref="rem-assume_algebraic_props_of_reals" />, <xref ref="Def-vector_scaling" />, <xref ref="Def-vector_addition" />, and <xref ref="prop-fundamental_vector_props" /> to provide a formal justification for  <xref ref="prop-scalar_sum_across_comb" />.</p>
       </statement>
   </question>
+
+
+
+
+    <exercises xml:id="problems-chp2sec2">
+    <title>Problems</title>
+
+    <exercise>
+      <statement>
+        <p>
+          For each positive integer <m>m</m>, there is a special vector that has what we call the <term>zero property</term>, which is, whenever you add it to another vector, you get that other vector back.  In symbols, we say <m>\vect{z}\in \mathbb{R}^m</m> has the zero property if for all <m>\vect{v}\in \mathbb{R}^m</m>, <m>\vect{z}+\vect{v}=\vect{v}</m>.  Deduce what <m>\vect{z}</m> must be and explain how it has the zero property.  What food item might have <m>\vect{z}</m> as its nutrition facts vector?  What direction vector might have <m>\vect{z}</m> as its coordinates?
+        </p> 
+      </statement>
+    </exercise>
+
+        <exercise>
+      <statement>
+        <p>
+          Noise-cancelling headphones have the property that, for each external sound it detects, it produces another sound such that, when the two sounds are played together, the result is no sound at all.  A standard sample rate is 44,100 times per second (44.1kHz).  If <m>\vect{v}\in \mathbb{R}^{44100}</m> is the "signal vector" of the external sound and <m>\vect{w}\in \mathbb{R}^{44100}</m> is the signal vector of the sound produced by the headphones, what algebraic relationship must <m>\vect{v}</m> and <m>\vect{w}</m> satisfy?  Describe and explain.
+        </p> 
+      </statement>
+    </exercise>
+
+
+  </exercises>
+
+
+
+
 </section>
