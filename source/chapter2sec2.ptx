@@ -87,7 +87,7 @@
       <title>Algebraic Properties of Real Numbers</title>
       <statement>
           <p>Real numbers satisfy the following algebraic properties.</p>
-          <ol>
+          <ol marker="(F1)">
               <li><p><alert>Addition and multiplication are associative:</alert> If <m>a,b,c \in \R</m>, then <m>(a+b)+c=a+(b+c)</m> and <m>(ab)c=a(bc)</m>.</p></li>
               <li><p><alert>Additive and multiplicative identities:</alert> The element <m>0\in \R</m> satisfies the property: if <m>a\in \R</m>, then <m>0+a=a</m>. The element <m>1\in \R</m> satisfies the property: if <m>a\in \R</m>, then <m>1a=a</m>.</p></li>
               <li><p><alert>There exist additive and multiplicative inverses:</alert> If <m>a\in \R</m>, then there exists an element <m>-a\in \R</m> such that <m>a+(-a)=0</m>. If <m>a\in \R-\{0\}</m>, then there exists an element <m>a^{-1}\in \R-\{0\}</m> such that <m>aa^{-1}=1</m>.</p></li>
@@ -104,7 +104,7 @@
       <title>Fundamental Algebraic Properties of Linear Combination</title>
       <statement>
           <p>If <m>\vect{u}, \vect{v},\vect{w} \in \R^m</m> and <m>x,y\in\R</m>, then</p>
-          <ol>
+          <ol marker="(LC1)">
               <li><p><alert>(Associativity of addition)</alert> <m>(\vect{u}+\vect{v})+\vect{w}=\vect{u}+(\vect{v}+\vect{w})</m>;</p></li>
               <li><p><alert>(Zero vector)</alert> <m>\vect{0}+\vect{v}=\vect{v}</m>, where <m>\vect{0}</m> is the vector of all zero entries;</p></li>
               <li><p><alert>(Inverse vector)</alert> <m>\vect{-v}+\vect{v}=\vect{0}</m>, where <m>\vect{-v}</m> is the vector whose entries are the negative of the entries of <m>\vect{v}</m>;</p></li>
@@ -122,11 +122,11 @@
       <p>
           <md>
               <mrow>(\vect{u}+\vect{v})+\vect{w} \amp =\left( \begin{bmatrix}u_1\\ \vdots\\ u_m\end{bmatrix} + \begin{bmatrix}v_1\\ \vdots\\ v_m\end{bmatrix}\right)+ \begin{bmatrix}w_1\\ \vdots\\ w_m\end{bmatrix} \amp\amp \text{Unpacking symbols}</mrow>
-              <mrow>\amp = \begin{bmatrix}u_1+v_1\\ \vdots\\ u_m+v_m\end{bmatrix}+ \begin{bmatrix}w_1\\ \vdots\\ w_m\end{bmatrix} \amp\amp \text{Addition of vectors, Definition \ref{Def-vector_addition}}</mrow>
-              <mrow>\amp = \begin{bmatrix}(u_1+v_1)+w_1\\ \vdots\\ (u_m+v_m)+w_m\end{bmatrix} \amp\amp \text{Addition of vectors, Definition \ref{Def-vector_addition}}</mrow>
-              <mrow>\amp = \begin{bmatrix}u_1+(v_1+w_1)\\ \vdots\\ u_m+(v_m+w_m)\end{bmatrix} \amp\amp \text{Associativity of addition in } \R, \text{Definition \ref{rem-assume_algebraic_props_of_reals}}</mrow>
-              <mrow>\amp = \begin{bmatrix}u_1\\ \vdots\\ u_m\end{bmatrix}+ \begin{bmatrix}v_1+w_1\\ \vdots\\ v_m+w_m\end{bmatrix} \amp\amp \text{Addition of vectors, Definition \ref{Def-vector_addition}}</mrow>
-              <mrow>\amp = \begin{bmatrix}u_1\\ \vdots\\ u_m\end{bmatrix} + \left( \begin{bmatrix}v_1\\ \vdots\\ v_m\end{bmatrix}+ \begin{bmatrix}w_1\\ \vdots\\ w_m\end{bmatrix}\right) \amp\amp \text{Addition of vectors, Definition \ref{Def-vector_addition}}</mrow>
+              <mrow>\amp = \begin{bmatrix}u_1+v_1\\ \vdots\\ u_m+v_m\end{bmatrix}+ \begin{bmatrix}w_1\\ \vdots\\ w_m\end{bmatrix} \amp\amp \text{Addition of vectors}</mrow>
+              <mrow>\amp = \begin{bmatrix}(u_1+v_1)+w_1\\ \vdots\\ (u_m+v_m)+w_m\end{bmatrix} \amp\amp \text{Addition of vectors}</mrow>
+              <mrow>\amp = \begin{bmatrix}u_1+(v_1+w_1)\\ \vdots\\ u_m+(v_m+w_m)\end{bmatrix} \amp\amp \text{Associativity of addition in } \R \text{ (F1) }</mrow>
+              <mrow>\amp = \begin{bmatrix}u_1\\ \vdots\\ u_m\end{bmatrix}+ \begin{bmatrix}v_1+w_1\\ \vdots\\ v_m+w_m\end{bmatrix} \amp\amp \text{Addition of vectors}</mrow>
+              <mrow>\amp = \begin{bmatrix}u_1\\ \vdots\\ u_m\end{bmatrix} + \left( \begin{bmatrix}v_1\\ \vdots\\ v_m\end{bmatrix}+ \begin{bmatrix}w_1\\ \vdots\\ w_m\end{bmatrix}\right) \amp\amp \text{Addition of vectors}</mrow>
               <mrow>\amp = \vect{u}+(\vect{v}+\vect{w}) \amp\amp \text{Repacking symbols}.</mrow>
           </md>
       </p>
