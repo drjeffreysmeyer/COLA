@@ -3,7 +3,8 @@
 <section xml:id="chp2sec5" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Dependency</title>
 
-
+<subsection xml:id="chp2sec5subsec1">
+  <title>Dependency as Redundancy</title>
   <p>
     A collection has <q>redundancy</q> if one of the vectors can be made from the others. Suppose I have on my cereal shelf two boxes of Sugar-Os and one box of Fiber Flakes.  Even though I have three boxes, all I need to mix my breakfast is two of them - the second box of Sugar-Os does not enable me to make new mixtures - it is redundant. 
   </p>
@@ -171,7 +172,8 @@ This completes this implication.
 <p>This completes this implication.</p>
 </proof>
 
-<subsection xml:id="chp2sec5subsec1">
+</subsection>
+<subsection xml:id="chp2sec5subsec2">
   <title>Independence as Distinct Directions</title>
   
 <p>
@@ -219,12 +221,14 @@ This completes this implication.
 </p>
 
 </subsection>
-<subsection xml:id="chp2sec5subsec2">
+<subsection xml:id="chp2sec5subsec3">
   <title>Null Vectors</title>
 
-<p>As you can see from the proof of <xref ref="prop-dependence"/>, we can easily move between the scalars that allow us to write a dependency equation and the scalars that allow us to make zero.  
-They contain the same information, but for algebraic reasons, we will often focus on the scalars that allow us to make zero.  
-These scalars contain important information about our subset, and, as it is useful to name objects that we wish to reason about, we form and name the associated servings vector.</p>
+<p>
+  As you can see from the proof of <xref ref="prop-dependence"/>, we can easily move between the scalars that allow us to write a dependency equation and the scalars that allow us to make zero.  
+  They contain the same information, but for algebraic reasons, we will often focus on the scalars that allow us to make zero.  
+  These scalars contain important information about our subset, and, as it is useful to name objects that we wish to reason about, we form and name the associated servings vector.
+</p>
 
 <me>
 \underbrace{\textcolor{blue}{x_1}\vect{v}_1+\cdots + \textcolor{blue}{x_n}\vect{v}_n}_{\textcolor{red}{\text{Zero Mixture}}} =\vect{0}
@@ -254,11 +258,24 @@ These scalars contain important information about our subset, and, as it is usef
       Here I investigate null vectors for 
       <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}1\\-1\end{bmatrix}, \begin{bmatrix}2\\2\end{bmatrix}, \begin{bmatrix}-3\\1\end{bmatrix}\right\}.</m>
 
-      </p>
+     I know <m>\begin{bmatrix}0\\0\\0\end{bmatrix}</m> is a null vector for <m>S</m>. (Why?)  For this particular <m>S</m>, I can find a nonzero null vector.
 
+      Using the tip-to-tail visualization, I will have found a null vector for the three vectors in <m>S</m> precisely when the scaled vectors, placed tip-to-tail, form a closed triangle.  (Why?)  
+      In this instance, I can close off the triangle using 2 units of <m>\vect{v}_1</m>, <m>\frac{1}{2}</m> a unit of <m>\vect{v}_2</m>, and <m>1</m> unit of <m>\vect{v}_3</m>.  
+      So I have found that <m>\begin{bmatrix}2\\ \frac{1}{2}\\ 1\end{bmatrix}</m> is a null vector for <m>S</m>. 
+
+      </p>
+  <image source="images/2.5_dependency_loop.png" width="100%">
+<description> 
+  <p>
+    Sets of vectors in <m>\R^2</m>.
+  </p>
+</description>
+</image>
   <p>
     I know from Euclidean geometry that if I uniformly scale the plane, then I create similar triangles. I wonder if this can help me find new null vectors?
   </p>
+
   </statement>
 </example>
 
@@ -339,6 +356,11 @@ Begin with <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}5
 <li><p><m>\Null(S)</m> is nonzero.</p></li>
 </ol>
 </insight>
+
+</subsection>
+<subsection xml:id="chp2sec5subsec4">
+  <title>Algebraic Properties of Null Space</title>
+
 
 <p>
   I encourage you to continue reasoning about (in)dependence in the language of redundancy and in the language of distinct directions.  
