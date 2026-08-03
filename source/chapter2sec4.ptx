@@ -3,6 +3,10 @@
 <section xml:id="chp2sec4" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>The Set of All Linear Combination</title>
   
+  <subsection xml:id="chp2sec4subsec1">
+    <title>Span</title>
+    
+ 
   <p>
     In this lesson, we are interested in conceptualizing and symbolizing the set of all linear combinations we can make with a predetermined, fixed collection of vectors.  
     This set of linear combinations is useful to consider in all the contexts in which we encounter vectors and linear combination.
@@ -109,7 +113,6 @@ We can make anything in the plane!</p>
 <example>
   <title>What can we make with two vectors in Cartesian 3-Space?</title>
   <statement>
-    <sidebyside widths="45% 50%">
     <p>
       If <m>\vect{v}_1=\begin{bmatrix}1\\2\\3\end{bmatrix}</m>, 
       <m>\vect{v}_2=\begin{bmatrix}2\\-1\\0\end{bmatrix}</m>, and
@@ -119,14 +122,17 @@ We can make anything in the plane!</p>
       Using the mixture parallelograms to visualize the mixtures, we see that <m>\spn(S)</m> will be the plane going through the three points: <m>(0,0,0)</m>, <m>(1,2,3)</m>, and <m>(2,-1,0)</m>,
     </p>
 
-    <image source="images/2.4_span3.png" width="100%">
-          <description> 
+    <interactive geogebra="n4tfeqdx" width="90%" aspect="6:4" reset-icon="yes" shift-drag-zoom="yes">
+    <instructions>
             <p>
-              A plane in <m>\R^2</m>.
+              An interactive GeoGebra window showing the span of two vectors in 3D space. Play with this.  
             </p>
-          </description>
-          </image>
-    </sidebyside>
+     </instructions>
+        <static>
+            <image width="100%" source="images/2.4_span3.png"/>
+            <shortdescription>A plane in <m>\R^2</m>.</shortdescription>
+        </static>
+    </interactive>
   </statement>
 </example>
 
@@ -162,72 +168,31 @@ We can make anything in the plane!</p>
   </statement>
 </question>
 
-<proposition xml:id="prop-span_has_subspace_properties">
-  <title>Algebraic Properties of Span</title>
-  <statement>
-  <p>If <m>S=\{\vect{v}_1,\ldots,\vect{v}_n\}\subset \R^m</m>, and </p>
-  <ol>
-  <li><p>(Non-empty.) if <m>\vect{0}\in \R^m</m> denotes the zero vector, then <m>\vect{0}\in \spn(S)</m>;</p></li>
-  <li><p>(Closed under addition.) if <m>\vect{u},\vect{w}\in \spn(S)</m>, then <m>\vect{u}+\vect{w}\in \spn(S)</m>;</p></li>
-  <li><p>(Closed under scaling.) if <m>\vect{w}\in \spn(S)</m> and <m>k\in \R</m>, then <m>k\vect{w}\in \spn(S)</m>.</p></li>
-  </ol>
-  </statement>
-</proposition>
+</subsection>
+<subsection xml:id="chp2sec4subsec2">
+    <title>Solution Sets</title>
 
-<proof>
-<p>We must provide formal justification for each of the three properties.</p>  
+<p>
+  Given a collection of vectors <m>S=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset \R^m</m> and another vector <m>\vect{b}\in\R^m</m>, we want to know if we can <q>make</q> <m>\vect{b}</m> by mixing vectors in <m>S</m>.   
+  In symbols, we can make <m>\vect{b}</m> with <m>S</m> if there exists scalars <m>x_1,\ldots, x_n\in \R</m> such that <m>x_1\vect{v}_1+\cdots+x_n\vect{v}_n=\vect{b}</m>.  
+  Put more compactly, <m>\vect{b}</m> is <em>makeable</em> with <m>S</m> if <m>\vect{b}\in \spn(S)</m>.
+  There is no guarantee that <m>\vect{b}</m> is makeable, in which case no such scalars exist.
+</p>
 
-<p>I will begin with the first property.
-To show that <m>\vect{0}\in \spn(S)</m>, I must show that the zero vector is a linear combination of the vectors in <m>S</m>.  
-This is easy to arrange, just take zero serving sizes of each vector! 
-In symbols:
-<me>\vect{0}=0\vect{v}_1+0\vect{v}_2+\cdots+ 0\vect{v}_n\in \spn(S).</me></p>
+<p>
+  Via the metaphor of cooking, given a certain collection of ingredients and a desired meal, makeability asks: <em>can we make the meal with our ingredients?</em>
+  </p>
 
-<p>Next, I will justify the second property. 
-By assumption, there exists <m>x_1,\ldots, x_n\in \R</m> and <m>y_1,\ldots, y_n\in \R</m> such that 
-<m>\vect{u}=x_1\vect{v}_1+\cdots +x_n\vect{v}_n</m> and 
-<m>\vect{w}=y_1\vect{v}_1+\cdots +y_n\vect{v}_n</m>.
-So</p>
+<p>
+  When we view vectors geometrically, given a plane in <m>\R^3</m> and a point in <m>\R^3</m>, makeability asks: <em>does the point lie on the plane?</em>
+</p>
 
-<md>
-<mrow>\vect{u}+\vect{w} \amp =\left( x_1\vect{v}_1+\cdots +x_n\vect{v}_n \right)+ \left(y_1\vect{v}_1+\cdots +y_n\vect{v}_n\right) \amp \text{Definition of Span \ref{def-span}}</mrow>
-<mrow>\amp = ( x_1+y_1)\vect{v}_1+\cdots +(x_n+y_n)\vect{v}_n \amp \text{Algebraic Properties "prop-fundamental_vector_props" LC1 and LC7.}</mrow>
-</md>
-
-<p>From which we deduce <m>\vect{u}+\vect{w}\in \spn(S)</m>.</p>
-
-<p>All that is left justifying the third property.  
-This is left to you in <xref ref="activity-justify_span_is_subspace"/>.</p>
-</proof>
-
-<question xml:id="activity-justify_span_is_subspace">
-<title>Practicing Formal Justification</title>
-<statement>
-<p>Carefully write down a formal justification for the third property of <xref ref="prop-span_has_subspace_properties"/>. 
-Be sure to carefully explain your reasoning and include references to all appropriate definitions and proven propositions.  
-When done, share with the class.</p>
-</statement>
-</question>
-
-<insight>
-<title>Algebraic Properties of Span as Mixture of Mixtures</title>
-<p>Using the metaphor of mixture, <xref ref="prop-span_has_subspace_properties"/> says that, if you fix a collection of ingredients, a <em>mixture of mixtures is still just a mixture</em> of the original ingredients.</p>
-</insight>
-
-<p>We now come to <em>makeability</em>. 
-Given a collection of vectors <m>S=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset \R^m</m> and another vector <m>\vect{b}\in\R^m</m>, we want to know if <m>\vect{b}</m> can be <q>made</q> by mixing vectors in <m>S</m>.   
-In symbols, we can make <m>\vect{b}</m> with <m>S</m> if there exists scalars <m>x_1,\ldots, x_n\in \R</m> such that <m>x_1\vect{v}_1+\cdots+x_n\vect{v}_n=\vect{b}</m>.  
-Put more compactly, <m>\vect{b}</m> is <em>makeable</em> with <m>S</m> if <m>\vect{b}\in \spn(S)</m>.
-There is no guarantee that <m>\vect{b}</m> is makeable, in which case no such scalars exist.</p>
-
-<p>Via the metaphor of cooking, given a certain collection of ingredients and a desired meal, makeability asks: <em>can we make the meal with our ingredients?</em></p>
-
-<p>When we view vectors geometrically, given a plane in <m>\R^3</m> and a point in <m>\R^3</m>, makeability asks: <em>does the point lie on the plane?</em></p>
-
-<p>If a vector is makeable with <m>S</m>, then we usually also want to know how, i.e. what scalars allow us to make that vector.</p>
+<p>
+  If a vector is makeable with <m>S</m>, then we usually also want to know how, i.e. what scalars allow us to make that vector.
+</p>
 
 <question xml:id="activity-makeability1">
-<title>Exploring Makability</title>
+<title>Exploring Makeability</title>
 <statement>
 <p>In each of the following parts, explore how you can make <m>\vect{b}</m> from the given <m>S</m>.  Can you find a way to make <m>\vect{b}</m> from <m>S</m>?  If so, are there multiple ways or is it unique?  Explain.</p>
 <ol>
@@ -237,7 +202,7 @@ There is no guarantee that <m>\vect{b}</m> is makeable, in which case no such sc
 </statement>
 </question>
 
-<p>Observe that a way to make <m>\vect{b}</m> with S is precisely a servings vector (<xref ref="def-serving_size_vector"/>).</p>
+<p>Observe that a way to make <m>\vect{b}</m> with <m>S</m> is precisely a servings vector (<xref ref="def-serving_size_vector"/>).</p>
 
 <definition xml:id="def-solution_vectors">
 <title>Solution Vectors</title>
@@ -275,7 +240,9 @@ Clearly explain the visual feature(s) you are using to make your determinations.
 </statement>
 </question>
 
-<p>Sometimes a single solution vector is sufficient.  However, sometimes we want to collect all of them into a single set.</p>
+<p>
+  Sometimes a single solution vector is sufficient.  However, sometimes we want to collect all of them into a single set.
+</p>
 
 <definition xml:id="def-solution_set">
   <title>Solution Set</title>
@@ -330,5 +297,66 @@ Clearly explain the visual feature(s) you are using to make your determinations.
   <li><p><m>\Sol(S,\vect{b})</m> is nonempty.</p></li>
   </ol>
 </insight>
+
+</subsection>
+<subsection xml:id="chp2sec4subsec3">
+  <title>Algebraic Properties of Span</title>
   
+<p>
+  Spans have very nice algebraic properties.  
+</p>
+
+<proposition xml:id="prop-span_has_subspace_properties">
+  <title>Algebraic Properties of Span</title>
+  <statement>
+  <p>If <m>S=\{\vect{v}_1,\ldots,\vect{v}_n\}\subset \R^m</m>, and </p>
+  <ol>
+  <li><p>(Non-empty.) if <m>\vect{0}\in \R^m</m> denotes the zero vector, then <m>\vect{0}\in \spn(S)</m>;</p></li>
+  <li><p>(Closed under addition.) if <m>\vect{u},\vect{w}\in \spn(S)</m>, then <m>\vect{u}+\vect{w}\in \spn(S)</m>;</p></li>
+  <li><p>(Closed under scaling.) if <m>\vect{w}\in \spn(S)</m> and <m>k\in \R</m>, then <m>k\vect{w}\in \spn(S)</m>.</p></li>
+  </ol>
+  </statement>
+</proposition>
+
+<proof>
+<p>We must provide formal justification for each of the three properties.</p>  
+
+<p>I will begin with the first property.
+To show that <m>\vect{0}\in \spn(S)</m>, I must show that the zero vector is a linear combination of the vectors in <m>S</m>.  
+This is easy to arrange, just take zero serving sizes of each vector! 
+In symbols:
+<me>\vect{0}=0\vect{v}_1+0\vect{v}_2+\cdots+ 0\vect{v}_n\in \spn(S).</me></p>
+
+<p>Next, I will justify the second property. 
+By assumption, there exists <m>x_1,\ldots, x_n\in \R</m> and <m>y_1,\ldots, y_n\in \R</m> such that 
+<m>\vect{u}=x_1\vect{v}_1+\cdots +x_n\vect{v}_n</m> and 
+<m>\vect{w}=y_1\vect{v}_1+\cdots +y_n\vect{v}_n</m>.
+So</p>
+
+<md>
+  <mrow>\vect{u}+\vect{w} \amp =\left( x_1\vect{v}_1+\cdots +x_n\vect{v}_n \right)+ \left(y_1\vect{v}_1+\cdots +y_n\vect{v}_n\right) \amp \text{Definition of Span}</mrow>
+  <mrow>\amp = ( x_1+y_1)\vect{v}_1+\cdots +(x_n+y_n)\vect{v}_n \amp \text{Algebraic Properties of Linear Combinations LC1 and LC7.}</mrow>
+</md>
+
+<p>From which we deduce <m>\vect{u}+\vect{w}\in \spn(S)</m>.</p>
+
+<p>
+  All that is left justifying the third property.  This is left to you in <xref ref="activity-justify_span_is_subspace"/>.</p>
+</proof>
+
+<question xml:id="activity-justify_span_is_subspace">
+<title>Practicing Formal Justification</title>
+<statement>
+<p>Carefully write down a formal justification for the third property of <xref ref="prop-span_has_subspace_properties"/>. 
+Be sure to carefully explain your reasoning and include references to all appropriate definitions and proven propositions.  
+When done, share with the class.</p>
+</statement>
+</question>
+
+<insight>
+<title>Algebraic Properties of Span as Mixture of Mixtures</title>
+<p>Using the metaphor of mixture, <xref ref="prop-span_has_subspace_properties"/> says that, if you fix a collection of ingredients, a <em>mixture of mixtures is still just a mixture</em> of the original ingredients.</p>
+</insight>
+
+  </subsection>
 </section>

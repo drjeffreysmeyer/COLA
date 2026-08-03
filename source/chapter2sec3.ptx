@@ -184,7 +184,7 @@
       <title>Lines as Paths of Travel</title>
       <ol>
           <li><p><m>\vect{p}</m> gives your starting <em>position</em>.</p></li>
-          <li><p><m>\vect{v}</m> gives the direction and distance travelled in 1 unit of time (i.e. <em>velocity</em>).</p></li>
+          <li><p><m>\vect{v}</m> gives the direction and distance traveled in 1 unit of time (i.e. <em>velocity</em>).</p></li>
           <li><p><m>t</m> gives you elapsed time. When <m>t</m> is positive, you can think of <m>\vect{p} + t\vect{v}</m> as what your position will be <m>t</m> units of time in the future, and when <m>x</m> is negative, you can think of <m>\vect{p} + t\vect{v}</m> as what your position had been <m>t</m> units of time in the past.</p></li>
       </ol>
   </remark>
@@ -214,6 +214,9 @@
   <technology xml:id="exploration-geogebra-lines2">
     <p>
       Visualize parametrized lines in <m>\R^3</m> at GeoGebra ID: <url href="https://www.geogebra.org/m/nrp6wa5k">nrp6wa5k</url>. Move the vectors <m>\vect{p}</m> and <m>\vect{v}</m> and observe how the line visualization and line symbolization changes. Slide the parameter <m>t</m> and observe how you "move" along the line.
+
+      <interactive geogebra="nrp6wa5k" width="90%" aspect="5:6" reset-icon="yes" shift-drag-zoom="yes">
+    </interactive>
     </p>
   </technology>
 
