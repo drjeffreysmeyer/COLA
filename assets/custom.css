@@ -18,7 +18,7 @@
     --prop-header-text: #ffffff;
 
     /* Example Colors - Orange */
-    --ex-border: #ea580c;
+    --ex-border: #fb923c;
     --ex-bg: #fff7ed;
     --ex-header-text: #ffffff;
 
@@ -241,7 +241,7 @@ html.light-mode {
     --copyright-border: #cbd5e1;
 }
 
-.ptx-content::after,
+.ptx-main::after,
 main::after {
     /* Edit your name and text here */
     content: "© 2026 Jeffrey S. Meyer. All Rights Reserved."; 
