@@ -203,12 +203,21 @@ article.data .heading {
 
 }
 
-footer.ptx-footer::after {
-    content: "copyright and the reay";
-    visibility: visible;
-    display: block;
+.ptx-content::after,
+.ptx-main::after,
+main::after {
+    /* Edit your name and text here */
+    content: "© 2026 Your Name. All Rights Reserved."; 
+    
+    display: block !important;
+    clear: both !important; /* Prevents floating elements from overlapping */
     text-align: center;
-    padding: 10px 0;
-    color: #000000; /* Adjust color to match your theme */
-    font-size: 0.9em;
+    margin: 50px auto 20px auto;
+    padding-top: 15px;
+    width: 100%;
+    max-width: 800px; /* Matches standard reading width in PreTeXt */
+    border-top: 1px solid var(--copyright-border) !important;
+    font-size: 0.85rem;
+    font-family: inherit;
+    color: var(--copyright-text) !important;
 }
