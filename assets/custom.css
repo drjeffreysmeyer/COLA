@@ -242,10 +242,9 @@ html.light-mode {
 }
 
 .ptx-content::after,
-.ptx-main::after,
 main::after {
     /* Edit your name and text here */
-    content: "© 2026 Your Name. All Rights Reserved."; 
+    content: "© 2026 Jeffrey S. Meyer. All Rights Reserved."; 
     
     display: block !important;
     clear: both !important; /* Prevents floating elements from overlapping */
