@@ -1,34 +1,142 @@
 /* Custom Colors for PreTeXt Blocks */
-/* =========================================
-   1. COLOR PALETTES (LIGHT AND DARK)
-   ========================================= */
 
-/* Default / Light Mode Colors */
+/* ===================================================
+   1. COLOR PALETTES (LIGHT MODE DEFAULTS)
+   =================================================== */
 :root {
+    /* General Block Text Color */
+    --block-body-text: #1e293b;
+
     /* Definition Colors - Blue */
     --def-border: #0984e3;
     --def-bg: #ebf6ff;
-    --def-text: #ffffff;
+    --def-header-text: #ffffff;
 
-    /* Proposition Colors - Red */
-    --prop-border: #ff0000;
-    --prop-bg: hsla(0, 100%, 50%, 0.2);
-    --prop-text: #ffffff;
+    /* Proposition / Theorem / Corollary Colors - Red */
+    --prop-border: #e11d48;
+    --prop-bg: #fff1f2;
+    --prop-header-text: #ffffff;
 
     /* Example Colors - Orange */
-    --ex-border: #FF8C00;
-    --ex-bg: #ffd58052;
-    --ex-text: #ffffff;
+    --ex-border: #ea580c;
+    --ex-bg: #fff7ed;
+    --ex-header-text: #ffffff;
 
     /* Question Colors - Purple */
-    --question-border: #bf00ff;
-    --question-bg: #bf00ff18;
-    --question-text: #ffffff;
+    --question-border: #9333ea;
+    --question-bg: #faf5ff;
+    --question-header-text: #ffffff;
 
-    /* Question Colors - Green */
-    --data-border: #008722;
-    --data-bg: #0087221b;
-    --data-text: #ffffff;
+    /* Data Colors - Green */
+    --data-border: #16a34a;
+    --data-bg: #f0fdf4;
+    --data-header-text: #ffffff;
+}
+
+/* ===================================================
+   2. DARK MODE PALETTE OVERRIDES
+   =================================================== */
+
+/* OS / Browser System Dark Mode Preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --block-body-text: #f8fafc;
+
+    /* Definition - Cyan/Blue */
+    --def-border: #38bdf8;
+    --def-bg: #0f172a;
+    --def-header-text: #0f172a;
+
+    /* Proposition / Theorem / Corollary - Coral Red */
+    --prop-border: #f87171;
+    --prop-bg: #2a1215;
+    --prop-header-text: #0f172a;
+
+    /* Example - Bright Orange */
+    --ex-border: #fb923c;
+    --ex-bg: #2c1a0e;
+    --ex-header-text: #0f172a;
+
+    /* Question - Light Purple */
+    --question-border: #c084fc;
+    --question-bg: #22102a;
+    --question-header-text: #0f172a;
+
+    /* Data - Light Green */
+    --data-border: #4ade80;
+    --data-bg: #0d2818;
+    --data-header-text: #0f172a;
+  }
+}
+
+/* PreTeXt Theme Toggle & Manual Dark Mode Selectors */
+[data-theme="dark"],
+html.dark-mode,
+html.dark,
+body.dark,
+.colorscheme-dark {
+    --block-body-text: #f8fafc;
+
+    /* Definition - Cyan/Blue */
+    --def-border: #38bdf8;
+    --def-bg: #0f172a;
+    --def-header-text: #0f172a;
+
+    /* Proposition / Theorem / Corollary - Coral Red */
+    --prop-border: #f87171;
+    --prop-bg: #2a1215;
+    --prop-header-text: #0f172a;
+
+    /* Example - Bright Orange */
+    --ex-border: #fb923c;
+    --ex-bg: #2c1a0e;
+    --ex-header-text: #0f172a;
+
+    /* Question - Light Purple */
+    --question-border: #c084fc;
+    --question-bg: #22102a;
+    --question-header-text: #0f172a;
+
+    /* Data - Light Green */
+    --data-border: #4ade80;
+    --data-bg: #0d2818;
+    --data-header-text: #0f172a;
+}
+
+/* Force Light Mode Variables if explicit Light Theme toggle clicked */
+[data-theme="light"],
+html.light-mode {
+    --block-body-text: #1e293b;
+    --def-border: #0984e3;
+    --def-bg: #ebf6ff;
+    --def-header-text: #ffffff;
+    --prop-border: #e11d48;
+    --prop-bg: #fff1f2;
+    --prop-header-text: #ffffff;
+    --ex-border: #ea580c;
+    --ex-bg: #fff7ed;
+    --ex-header-text: #ffffff;
+    --question-border: #9333ea;
+    --question-bg: #faf5ff;
+    --question-header-text: #ffffff;
+    --data-border: #16a34a;
+    --data-bg: #f0fdf4;
+    --data-header-text: #ffffff;
+}
+
+/* ===================================================
+   3. ELEMENT STYLES (APPLIED ONCE VIA VARIABLES)
+   =================================================== */
+
+/* Body Text Inside All Custom Blocks */
+article.definition,
+article.proposition,
+article.theorem,
+article.corollary,
+article.example,
+article.question,
+article.data {
+    color: var(--block-body-text) !important;
 }
 
 /* Definition - Blue Theme */
@@ -37,35 +145,21 @@ article.definition {
     background-color: var(--def-bg) !important;
 }
 article.definition .heading {
-    color: var(--def-text) !important;
+    color: var(--def-header-text) !important;
     background-color: var(--def-border) !important;
 }
 
-/* Proposition - Red Theme */
-article.proposition {
-    border: 4px solid var(--prop-border) !important;
-    background-color: var(--prop-bg) !important;
-}
-article.proposition .heading {
-    color: var(--prop-text) !important;
-    background-color: var(--prop-border) !important;
-}
-/* Theorem - Red Theme */
-article.theorem {
-    border: 4px solid var(--prop-border) !important;
-    background-color: var(--prop-bg) !important;
-}
-article.theorem .heading {
-    color: var(--prop-text) !important;
-    background-color: var(--prop-border) !important;
-}
-/* Corollary - Red Theme */
+/* Proposition, Theorem, Corollary - Red Theme */
+article.proposition,
+article.theorem,
 article.corollary {
     border: 4px solid var(--prop-border) !important;
     background-color: var(--prop-bg) !important;
 }
+article.proposition .heading,
+article.theorem .heading,
 article.corollary .heading {
-    color: var(--prop-text) !important;
+    color: var(--prop-header-text) !important;
     background-color: var(--prop-border) !important;
 }
 
@@ -76,30 +170,30 @@ article.example {
     background-color: var(--ex-bg) !important;
 }
 article.example .heading {
-    color: var(--ex-text) !important;
+    color: var(--ex-header-text) !important;
     background-color: var(--ex-border) !important;
 }
 
-/* Example - Purple Theme */
+/* Question - Purple Theme */
 article.question {
     border-left: 4px solid var(--question-border) !important;
     border-bottom: 4px solid var(--question-border) !important;
     background-color: var(--question-bg) !important;
 }
 article.question .heading {
-    color: var(--question-text) !important;
-    background-color:  var(--question-border) !important;
+    color: var(--question-header-text) !important;
+    background-color: var(--question-border) !important;
 }
 
-/* Quantitative Situation - Green Theme */
+/* Data / Quantitative Situation - Green Theme */
 article.data {
     border-left: 4px solid var(--data-border) !important;
     border-bottom: 4px solid var(--data-border) !important;
     background-color: var(--data-bg) !important;
 }
 article.data .heading {
-    color: var(--data-text) !important;
-    background-color:  var(--data-border) !important;
+    color: var(--data-header-text) !important;
+    background-color: var(--data-border) !important;
 }
 
 
