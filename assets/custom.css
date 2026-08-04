@@ -36,13 +36,13 @@
     --copyright-border: #cbd5e1; /* Soft divider line */
 }
 
+/* ===================================================
+   2. DARK MODE PALETTE OVERRIDES
+   =================================================== */
 
-/* PreTeXt Theme Toggle & Manual Dark Mode Selectors */
-[data-theme="dark"],
-html.dark-mode,
-html.dark,
-body.dark,
-.colorscheme-dark {
+/* OS / Browser System Dark Mode Preference */
+@media (prefers-color-scheme: dark) {
+  :root {
     --block-body-text: #f8fafc;
 
     /* Definition - Cyan/Blue */
@@ -72,7 +72,9 @@ body.dark,
 
     --copyright-text: #94a3b8;   /* Light slate text for dark backgrounds */
     --copyright-border: #334155; /* Dark divider line */
+  }
 }
+
 
 /* Force Light Mode Variables if explicit Light Theme toggle clicked */
 [data-theme="light"],
