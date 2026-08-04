@@ -31,6 +31,9 @@
     --data-border: #16a34a;
     --data-bg: #f0fdf4;
     --data-header-text: #ffffff;
+
+    --copyright-text: #475569;   /* Slate text for light backgrounds */
+    --copyright-border: #cbd5e1; /* Soft divider line */
 }
 
 /* ===================================================
@@ -101,6 +104,9 @@ body.dark,
     --data-border: #4ade80;
     --data-bg: #0d2818;
     --data-header-text: #0f172a;
+
+    --copyright-text: #94a3b8;   /* Light slate text for dark backgrounds */
+    --copyright-border: #334155; /* Dark divider line */
 }
 
 /* Force Light Mode Variables if explicit Light Theme toggle clicked */
@@ -122,6 +128,8 @@ html.light-mode {
     --data-border: #16a34a;
     --data-bg: #f0fdf4;
     --data-header-text: #ffffff;
+    --copyright-text: #475569;
+    --copyright-border: #cbd5e1;
 }
 
 /* ===================================================
@@ -203,43 +211,6 @@ article.data .heading {
 
 }
 
-
-
-
-/* ===================================================
-   DYNAMIC COPYRIGHT FOOTER FOR PRETEXT
-   =================================================== */
-
-/* 1. Light Mode Colors (Default) */
-:root {
-    --copyright-text: #475569;   /* Slate text for light backgrounds */
-    --copyright-border: #cbd5e1; /* Soft divider line */
-}
-
-/* 2. Dark Mode Colors (System / OS Preference) */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --copyright-text: #94a3b8;   /* Light slate text for dark backgrounds */
-        --copyright-border: #334155; /* Dark divider line */
-    }
-}
-
-/* 3. Dark Mode Colors (PreTeXt Theme Toggle) */
-[data-theme="dark"],
-html.dark-mode,
-html.dark,
-body.dark,
-.colorscheme-dark {
-    --copyright-text: #94a3b8;
-    --copyright-border: #334155;
-}
-
-/* 4. Light Mode Override (If user manually toggles back to Light Mode) */
-[data-theme="light"],
-html.light-mode {
-    --copyright-text: #475569;
-    --copyright-border: #cbd5e1;
-}
 
 .ptx-main::after,
 main::after {
