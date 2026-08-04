@@ -75,6 +75,42 @@
   }
 }
 
+/* PreTeXt Theme Toggle & Manual Dark Mode Selectors */
+[data-theme="dark"],
+html.dark-mode,
+html.dark,
+body.dark,
+.colorscheme-dark {
+    --block-body-text: #f8fafc;
+
+    /* Definition - Cyan/Blue */
+    --def-border: #38bdf8;
+    --def-bg: #0f172a;
+    --def-header-text: #0f172a;
+
+    /* Proposition / Theorem / Corollary - Coral Red */
+    --prop-border: #f87171;
+    --prop-bg: #2a1215;
+    --prop-header-text: #0f172a;
+
+    /* Example - Bright Orange */
+    --ex-border: #fb923c;
+    --ex-bg: #2c1a0e;
+    --ex-header-text: #0f172a;
+
+    /* Question - Light Purple */
+    --question-border: #c084fc;
+    --question-bg: #22102a;
+    --question-header-text: #0f172a;
+
+    /* Data - Light Green */
+    --data-border: #4ade80;
+    --data-bg: #0d2818;
+    --data-header-text: #0f172a;
+
+    --copyright-text: #94a3b8;   /* Light slate text for dark backgrounds */
+    --copyright-border: #334155; /* Dark divider line */
+}
 
 /* Force Light Mode Variables if explicit Light Theme toggle clicked */
 [data-theme="light"],

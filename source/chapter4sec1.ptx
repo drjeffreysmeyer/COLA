@@ -149,7 +149,7 @@
                 Interpreting this solution relative to the three meanings:
             </p>
 
-            <sidebyside widths="55% 40%" margins="auto">
+            
                 <ol>
                     <li>
                         <p><alert>(Mixture)</alert> For any <m>t\in \mathbb{R}</m>, we mix: <me>t\begin{bmatrix}1\\3\end{bmatrix}+t\begin{bmatrix}2\\-1\end{bmatrix}+(2-t)\begin{bmatrix}3\\2\end{bmatrix}=\begin{bmatrix}6\\4\end{bmatrix}.</me></p>
@@ -161,10 +161,11 @@
                         <p><alert>(Intersection)</alert> The line <m>\ell</m> is the intersection of the planes: <me>\begin{cases} x+2y+3z=6\\ 3x-y+2z=4 \end{cases}</me></p>
                     </li>
                 </ol>
-                <image source="images/4.1_intersecting_planes.png">
+                <image source="images/4.1_intersecting_planes.png" width="100%">
                     <description>GeoGebra rendering of two planes intersecting along a line in 3D space.</description>
                 </image>
-            </sidebyside>
+            
+                
         </statement>
     </example>
 
