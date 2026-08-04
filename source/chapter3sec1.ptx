@@ -203,7 +203,7 @@
 </p>
 
 <proposition xml:id="prop_fundamental_matrix_mult_props">
-    <title>Linearity Properties of Matrix Multiplication.</title> 
+    <title>Linearity Properties of Matrix Multiplication</title> 
 	<statement>
 		<p>
 			If <m>A</m> is an <m>m\times n</m> matrix, <m>\vect{x},\vect{y}\in\R^n</m>, and <m>k\in \R</m>, then

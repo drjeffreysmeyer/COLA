@@ -16,7 +16,7 @@
       If <m>S\subset \R^m</m> is a (nonempty) finite subset of vectors such that one of its vectors can be written as a linear combination of its other vectors, then the subset <m>S</m> is <term>linearly dependent</term>. In symbols, <m>S=\{\vect{v}_1,\vect{v}_2, \ldots, \vect{v}_n\}</m> is dependent if there exists an <m>i\in \{1, \ldots , n\}</m> and, for each <m>j\in \{1,\ldots,n\} - \{i\}</m>, a number <m>x_j\in \R</m>, such that
     </p>
     <men xml:id="eq-dependency">
-    \vect{v}_i=x_1\vect{v}_1+x_2\vect{v}_2+\cdots +x_{i-1}\vect{v}_{i-1}+x_{i+1}\vect{v}_{i+1}+\cdots +x_n\vect{v}_n.
+    \vect{v}_i=x_1\vect{v}_1+\cdots +x_{i-1}\vect{v}_{i-1}+x_{i+1}\vect{v}_{i+1}+\cdots +x_n\vect{v}_n.
     </men>
     <p>
       This is a <term>dependency equation</term> for <m>S</m>.  If no such equation exist, then <m>S</m> is <term>linearly independent</term>.</p>
@@ -59,7 +59,9 @@ are dependent.
 
 </sidebyside>
 
-<p>In the first collection, the third vector is a scalar multiple of the first vector, hence <m>\textcolor{purple}{\begin{bmatrix}6\\2\end{bmatrix}}=2\textcolor{red}{\begin{bmatrix}3\\1\end{bmatrix}}</m>.  In the second collection,  no vector is a scalar multiple of the others, however, the third vector is a sum of the first two <m>\textcolor{g_green}{\begin{bmatrix}4\\3\end{bmatrix}}=1\textcolor{red}{\begin{bmatrix}3\\1\end{bmatrix}}+1\textcolor{blue}{\begin{bmatrix}1\\2\end{bmatrix}}</m>.</p>
+<p>
+  In the first collection, the third vector is a scalar multiple of the first vector, hence <m>\textcolor{purple}{\begin{bmatrix}6\\2\end{bmatrix}}=2\textcolor{red}{\begin{bmatrix}3\\1\end{bmatrix}}</m>.  In the second collection,  no vector is a scalar multiple of the others, however, the third vector is a sum of the first two <m>\textcolor{g_green}{\begin{bmatrix}4\\3\end{bmatrix}}=1\textcolor{red}{\begin{bmatrix}3\\1\end{bmatrix}}+1\textcolor{blue}{\begin{bmatrix}1\\2\end{bmatrix}}</m>.
+</p>
 
 <question xml:id="activity-identifying_and_removinredundancy">
 <title>Identifying and removing redundancy</title>
@@ -97,8 +99,8 @@ are dependent.
   <statement>
     <p>
       Come up with an explanation as why each set below is independent:
-    <me>S_4=\left\{ \begin{bmatrix}1\\0\end{bmatrix}, \begin{bmatrix}0\\  1\end{bmatrix} \right \}, \hspace{0.5pc} 
-    S_5=\left\{ \begin{bmatrix}2\\1\\0\end{bmatrix}, \begin{bmatrix}5\\0\\  1\end{bmatrix} \right \}, \hspace{0.5pc}  
+    <me>S_4=\left\{ \begin{bmatrix}1\\0\end{bmatrix}, \begin{bmatrix}0\\  1\end{bmatrix} \right \}, \hspace{0.25pc} 
+    S_5=\left\{ \begin{bmatrix}2\\1\\0\end{bmatrix}, \begin{bmatrix}5\\0\\  1\end{bmatrix} \right \}, \hspace{0.25pc}  
     S_6=\left\{ \begin{bmatrix}3\\1\\0\\0\end{bmatrix}, \begin{bmatrix}-1\\0\\  1\\0\end{bmatrix}, \begin{bmatrix}4\\0\\  0\\1\end{bmatrix} \right \}.</me>
     Can you summarize your argument with a single observation?
     </p>
@@ -289,19 +291,33 @@ Begin with <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}5
 </p>
 
 <ol>
-<li><p><alert>Explore.</alert>  Following the strategy in <xref ref="ex-visualizing_nullscalars"/>, move the points <m>U_1</m>, <m>U_2</m>, and <m>U_3</m> to form a closed triangle.  (Hint:  I have chosen <m>S</m> so that you can find at least one set of nonzero, integers null vectors.)</p></li>
-<li><p><alert>Symbolize.</alert>  Write down the corresponding symbolic equation using a null vector you found and the columns of the vectors in <m>S</m>.  (Perform the associated computation to verify you have indeed found a null vector.)</p></li>
-<li><p><alert>Interpret.</alert> What do your findings say about the collection <m>S</m> in terms of redundancy?  Explain.</p></li>
-<li><p><alert>Explore.</alert> So far, you should have found one null vector with of nonzero integer entries.  Can you find more?  How?  (Hint: Consider the question at the end of <xref ref="ex-visualizing_nullscalars"/>.) </p></li>
-<li><p><alert>Repeated Reasoning.</alert> Repeat for the new set <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}2\\1\end{bmatrix}, \begin{bmatrix}1\\2\end{bmatrix}, \begin{bmatrix}-1\\4\end{bmatrix}\right\}</m>.</p></li>
-<li><p><alert>Generalize.</alert> What happens when <m>S</m> has 4 vectors?  Using tip-to-tail visualization, what shape are we looking for to find a null vector? How about <m>n</m> many vectors?  Explain.</p></li>
+  <li>
+    <p><alert>Explore.</alert>  Following the strategy in <xref ref="ex-visualizing_nullscalars"/>, move the points <m>U_1</m>, <m>U_2</m>, and <m>U_3</m> to form a closed triangle.  (Hint:  I have chosen <m>S</m> so that you can find at least one set of nonzero, integers null vectors.)</p>
+  </li>
+  <li>
+    <p><alert>Symbolize.</alert>  Write down the corresponding symbolic equation using a null vector you found and the columns of the vectors in <m>S</m>.  (Perform the associated computation to verify you have indeed found a null vector.)</p>
+  </li>
+  <li>
+    <p><alert>Interpret.</alert> What do your findings say about the collection <m>S</m> in terms of redundancy?  Explain.</p>
+  </li>
+  <li>
+    <p><alert>Explore.</alert> So far, you should have found one null vector with of nonzero integer entries.  Can you find more?  How?  (Hint: Consider the question at the end of <xref ref="ex-visualizing_nullscalars"/>.) </p></li>
+  <li><p><alert>Repeated Reasoning.</alert> Repeat for the new set <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}2\\1\end{bmatrix}, \begin{bmatrix}1\\2\end{bmatrix}, \begin{bmatrix}-1\\4\end{bmatrix}\right\}</m>.</p>
+  </li>
+  <li>
+    <p><alert>Generalize.</alert> What happens when <m>S</m> has 4 vectors?  Using tip-to-tail visualization, what shape are we looking for to find a null vector? How about <m>n</m> many vectors?  Explain.</p>
+  </li>
 </ol>
 </statement>
 </question>
 
-<p>To summarize up to this point, a null vector is a servings vector for making zero.  The zero servings vector is always a null vector.  The existence of a nonzero null vector is logically equivalent to our vectors being dependent.</p>
+<p>
+  To summarize up to this point, a null vector is a servings vector for making zero.  The zero servings vector is always a null vector.  The existence of a nonzero null vector is logically equivalent to our vectors being dependent.
+</p>
 
-<p>Now that we have internalized the notion of a single null vector, we may start to reason about the collection of all null vectors.</p>
+<p>
+  Now that we have internalized the notion of a single null vector, we may start to reason about the collection of all null vectors.
+</p>
 
 <definition xml:id="def-nullspaceS">
 <title>Null Space of <m>S</m></title>
@@ -312,49 +328,55 @@ Begin with <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}5
 </statement>
 </definition>
 
-<p>Observe that the null space is precisely the solution set for making zero, or in symbols, <m>\Null(S) = \Sol(S, \vect{0})</m>.</p>
+<p>
+  Observe that the null space is precisely the solution set for making zero, or in symbols, <m>\Null(S) = \Sol(S, \vect{0})</m>.
+</p>
 
-<p>Much like span, the compact symbolism of null space is very efficient, but it is easy to get lost in the symbolism.  We must practice symbolizing our thoughts on terms of null space, and conversely, practice interpreting the symbolism of null space in context.</p>
+<p>
+  Much like span, the compact symbolism of null space is very efficient, but it is easy to get lost in the symbolism.  We must practice symbolizing our thoughts on terms of null space, and conversely, practice interpreting the symbolism of null space in context.
+</p>
 
-<p>For example, we can compactly summarize our observations in <xref ref="ex-visualizing_nullscalars"/> with: <me>\begin{bmatrix}2\\ \frac{1}{2}\\ 1\end{bmatrix}\in \Null \left( \begin{bmatrix}1\\-1\end{bmatrix}, \begin{bmatrix}2\\2\end{bmatrix}, \begin{bmatrix}-3\\1\end{bmatrix}\right).</me></p>
+<p>
+  For example, we can compactly summarize our observations in <xref ref="ex-visualizing_nullscalars"/> with: <me>\begin{bmatrix}2\\ \frac{1}{2}\\ 1\end{bmatrix}\in \Null \left( \begin{bmatrix}1\\-1\end{bmatrix}, \begin{bmatrix}2\\2\end{bmatrix}, \begin{bmatrix}-3\\1\end{bmatrix}\right).</me>
+</p>
 
 
 <question xml:id="activity-symbolizing_with_null_space">
-<title>Symbolizing with Null Space</title>
-<statement>
-<p>Symbolize each expression using null space and set notation.</p>
-<ol>
-<li><p><m>3\vect{a}+2\vect{b}+\vect{c}=\vect{0}</m>.</p></li>
-<li><p><m>2\vect{v}-\vect{w}</m> is a nonzero vector.</p></li>
-<li><p>There is no nontrivial way to make the zero vector with vectors <m>\vect{p}</m>, <m>\vect{q}</m>,  and <m>\vect{r}</m>.</p></li>
-</ol>
-</statement>
+  <title>Symbolizing with Null Space</title>
+  <statement>
+  <p>Symbolize each expression using null space and set notation.</p>
+  <ol>
+    <li><p><m>3\vect{a}+2\vect{b}+\vect{c}=\vect{0}</m>.</p></li>
+    <li><p><m>2\vect{v}-\vect{w}</m> is a nonzero vector.</p></li>
+    <li><p>There is no nontrivial way to make the zero vector with vectors <m>\vect{p}</m>, <m>\vect{q}</m>,  and <m>\vect{r}</m>.</p></li>
+  </ol>
+  </statement>
 </question>
 
 <question xml:id="activity-interpreting_null_space">
-<title>Interpreting the Symbolism of Null Space</title>
-<statement>
-<p>Use complete sentences and the language of mixture to interpret the meaning of each algebraic expression.</p>
-<ol>
-<li><p><m>\begin{bmatrix}1\\-1\\2\\-2 \end{bmatrix}  \in \Null(\vect{a},\vect{b},\vect{c},\vect{d})</m>.</p></li>
-<li><p><m>\{\vect{0}\} \subsetneq \Null(\vect{p},\vect{q},\vect{r})</m>.</p></li>
-<li><p><m>\begin{bmatrix}-3\\2\\1 \end{bmatrix}\notin \Null(\vect{v},\vect{u},\vect{w})</m>.</p></li>
-</ol>
-</statement>
+  <title>Interpreting the Symbolism of Null Space</title>
+  <statement>
+  <p>Use complete sentences and the language of mixture to interpret the meaning of each algebraic expression.</p>
+  <ol>
+    <li><p><m>\begin{bmatrix}1\\-1\\2\\-2 \end{bmatrix}  \in \Null(\vect{a},\vect{b},\vect{c},\vect{d})</m>.</p></li>
+    <li><p><m>\{\vect{0}\} \subsetneq \Null(\vect{p},\vect{q},\vect{r})</m>.</p></li>
+    <li><p><m>\begin{bmatrix}-3\\2\\1 \end{bmatrix}\notin \Null(\vect{v},\vect{u},\vect{w})</m>.</p></li>
+  </ol>
+  </statement>
 </question>
 
 <p>Make sure that you understand how each of the following statement are equivalent.</p>
 
 <insight xml:id="summary-dependency">
-<title>Dependency Summary</title>
-<p>If <m>S\subset \R^m</m>, then following are equivalent:</p>
-<ol>
-<li><p><m>S</m> is dependent,</p></li>
-<li><p>There exists <m>\vect{v}\in S</m> such that <m>\vect{v}\in \spn(S-\vect{v})</m>,</p></li>
-<li><p>You can make <m>\vect{0}</m> from <m>S</m> in a nontrivial way,</p></li>
-<li><p><m>S</m> has a nonzero null vector.</p></li>
-<li><p><m>\Null(S)</m> is nonzero.</p></li>
-</ol>
+  <title>Dependency Summary</title>
+  <p>If <m>S\subset \R^m</m>, then following are equivalent:</p>
+  <ol>
+    <li><p><m>S</m> is dependent,</p></li>
+    <li><p>There exists <m>\vect{v}\in S</m> such that <m>\vect{v}\in \spn(S-\vect{v})</m>,</p></li>
+    <li><p>You can make <m>\vect{0}</m> from <m>S</m> in a nontrivial way,</p></li>
+    <li><p><m>S</m> has a nonzero null vector.</p></li>
+    <li><p><m>\Null(S)</m> is nonzero.</p></li>
+  </ol>
 </insight>
 
 </subsection>
@@ -364,7 +386,7 @@ Begin with <m>S= \{\vect{v}_1,\vect{v}_2,\vect{v}_3\} = \left\{ \begin{bmatrix}5
 
 <p>
   I encourage you to continue reasoning about (in)dependence in the language of redundancy and in the language of distinct directions.  
-Be prepared to algebraically work with redundancy as making zero in nontrivial ways.
+  Be prepared to algebraically work with redundancy as making zero in nontrivial ways.
 </p>
 
 <p>

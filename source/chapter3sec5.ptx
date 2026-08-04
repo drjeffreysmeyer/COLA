@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="chp3sec5" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Matrix Multiplication as Mixture</title>
+  <title>Computational Shortcuts</title>
 
     <p>
         By this point, you should understand that the columns of the matrix product <m>AB</m> are mixtures of the columns of the matrix <m>A</m> (Definition <xref ref="Def-matrix_mult_matrices"/>), and you should have plenty of practice using this to compute many such products. You are now ready for a computational shortcut.
