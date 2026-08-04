@@ -36,41 +36,6 @@
     --copyright-border: #cbd5e1; /* Soft divider line */
 }
 
-/* ===================================================
-   2. DARK MODE PALETTE OVERRIDES
-   =================================================== */
-
-/* OS / Browser System Dark Mode Preference */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --block-body-text: #f8fafc;
-
-    /* Definition - Cyan/Blue */
-    --def-border: #38bdf8;
-    --def-bg: #0f172a;
-    --def-header-text: #0f172a;
-
-    /* Proposition / Theorem / Corollary - Coral Red */
-    --prop-border: #f87171;
-    --prop-bg: #2a1215;
-    --prop-header-text: #0f172a;
-
-    /* Example - Bright Orange */
-    --ex-border: #fb923c;
-    --ex-bg: #2c1a0e;
-    --ex-header-text: #0f172a;
-
-    /* Question - Light Purple */
-    --question-border: #c084fc;
-    --question-bg: #22102a;
-    --question-header-text: #0f172a;
-
-    /* Data - Light Green */
-    --data-border: #4ade80;
-    --data-bg: #0d2818;
-    --data-header-text: #0f172a;
-  }
-}
 
 /* PreTeXt Theme Toggle & Manual Dark Mode Selectors */
 [data-theme="dark"],
