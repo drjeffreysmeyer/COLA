@@ -312,10 +312,10 @@
     </p>
     <md>
         <mrow>A(B\vect{x}) \amp= A([\vect{w}_1|\cdots|\vect{w}_p]\vect{x}) \amp \mbox{Unpack } B</mrow>
-        <mrow>\amp= A(x_1\vect{w}_1+\cdots+x_p\vect{w}_p) \amp \mbox{Definition \ref{def_matrixmult} - matrix multiplication}</mrow>
-        <mrow>\amp= x_1(A\vect{w}_1)+\cdots+x_p(A\vect{w}_p) \amp \mbox{Proposition \ref{prop_fundamental_matrix_mult_props} - linearity properties}</mrow>
-        <mrow>\amp= [A\vect{w}_1|\cdots|A\vect{w}_p]\vect{x} \amp \mbox{Definition \ref{def_matrixmult} - matrix multiplication}</mrow>
-        <mrow>\amp= (AB)\vect{x}. \amp \mbox{Definition \ref{Def-matrix_mult_matrices} - matrix multiplication}</mrow>
+        <mrow>\amp= A(x_1\vect{w}_1+\cdots+x_p\vect{w}_p) \amp \mbox{Definition of matrix multiplication}</mrow>
+        <mrow>\amp= x_1(A\vect{w}_1)+\cdots+x_p(A\vect{w}_p) \amp \mbox{Linearity of Matrix Multiplication}</mrow>
+        <mrow>\amp= [A\vect{w}_1|\cdots|A\vect{w}_p]\vect{x} \amp \mbox{Definition of matrix multiplication}</mrow>
+        <mrow>\amp= (AB)\vect{x}. \amp \mbox{Definition of matrix multiplication}</mrow>
     </md>
 </proof>
 

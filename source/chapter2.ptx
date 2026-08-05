@@ -26,7 +26,7 @@
     </objectives>
 
     <p>
-        <alert> <xref ref="chp2sec2" />.</alert> Upon reasoning about linear combinations in quantitative situations, certain meaningful algebraic properties emerge. These algebraic properties, summarized in Proposition <xref ref="prop-fundamental_vector_props" />, are central to how we will work with linear combinations vectors going forward. In particular, they will both be used for <em>justifying</em> future mathematical statements about linear combination as well as aid in <em>computation</em> of linear combinations. You should make sure you know each of them and can invoke them to justify your thinking.
+        <alert> <xref ref="chp2sec2" />.</alert> Upon reasoning about linear combinations in quantitative situations, certain meaningful algebraic properties emerge. These algebraic properties, summarized in  <xref ref="prop-fundamental_vector_props" />, are central to how we will work with linear combinations vectors going forward. In particular, they will both be used for <em>justifying</em> future mathematical statements about linear combination as well as aid in <em>computation</em> of linear combinations. You should make sure you know each of them and can invoke them to justify your thinking.
     </p>
 
     <objectives>

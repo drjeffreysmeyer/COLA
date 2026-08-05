@@ -194,22 +194,25 @@
 
 
 
-  <figure xml:id="fig-line_in_r3">
+<!--<figure xml:id="fig-line_in_r3">
       <caption>Line in <m>\R^3</m></caption>
   </figure>
+-->  
 
-  <image source="images/2.3_lines_in_r3.png" width="100%">
+
+
+<example>
+  <p>
+    The line below is given by parametric vector form <m>\ell = \left\{\begin{bmatrix}2\\1\\1\end{bmatrix}+t\begin{bmatrix}-1\\-1\\1\end{bmatrix} \ \big| \ t\in \R \right\}</m>.  Observe that the line starts at time zero at the point <m>\begin{bmatrix}2\\1\\1\end{bmatrix}</m> and then travels in the direction of <m>\begin{bmatrix}-1\\-1\\1\end{bmatrix}</m>.
+  </p>
+    <image source="images/2.3_lines_in_r3.png" width="100%">
     <description> 
       <p>
         A line in <m>\R^3</m>.
       </p>
     </description>
   </image>
-
-
-  <p>
-    The line in  <xref ref="fig-line_in_r3" /> is given by parametric vector form <m>\ell = \left\{\begin{bmatrix}2\\1\\1\end{bmatrix}+t\begin{bmatrix}-1\\-1\\1\end{bmatrix} \ \big| \ t\in \R \right\}</m>.
-  </p>
+</example>
 
   <technology xml:id="exploration-geogebra-lines2">
     <p>
@@ -222,9 +225,28 @@
 
 
 
+<remark xml:id="remark-constrains_on_line_parameters">
+  <title>Constraints on Parameters</title>
+  <p>
+    In quantitative situations, we may have constraints on the parameters. For example, if we are modeling a line segment, then we may have a constraint on the parameter <m>t</m> such that <m>a \leq t \leq b</m> for some real numbers <m>a &lt; b</m>. In other situations, we may have a constraint on the parameter <m>t</m> such that <m>t \geq 0</m> or <m>t \leq 0</m>. In these cases, we are modeling a ray. In yet other situations, parameters may be constrained to a discrete set of values, such as <m>t \in \Z</m>. In this case, we are modeling a discrete set of points along the line.
+  </p>
+</remark>
 
-
-
+<data>
+  <title>Segments in Color</title>
+  <p>
+    Consider the rgb color vectors where we have normalized values to be in the range 0 to 1.  In this case, we have the red vector <m>\vect{r} = \begin{bmatrix}1\\0\\0\end{bmatrix}</m>, the green vector <m>\vect{g} = \begin{bmatrix}0\\1\\0\end{bmatrix}</m>, and the blue vector <m>\vect{b} = \begin{bmatrix}0\\0\\1\end{bmatrix}</m>.  We can create a line segment of colors from red to blue.  The parametric vector form of this line segment is <me>\left\{\begin{bmatrix}1\\0\\0\end{bmatrix}+s\begin{bmatrix}-1\\0\\1\end{bmatrix}\ \bigg| \ 0 \leq s \leq 1\right\}.</me>  Observe that in the context of this situation, since rgb vectors only have values between 0 and 1, we have a constraint on the parameter <m>s</m> such that <m>0 \leq s \leq 1</m>.  
+  </p>
+  <p>
+    More generally, the line segment between a color vector <m>\vect{c}_1 = \begin{bmatrix}r_1\\g_1\\b_1\end{bmatrix}</m> and a color vector <m>\vect{c}_2 = \begin{bmatrix}r_2\\g_2\\b_2\end{bmatrix}</m> is given by the parametric vector form 
+    <me>\left\{\begin{bmatrix}r_1\\g_1\\b_1\end{bmatrix}+s\begin{bmatrix}r_2-r_1\\g_2-g_1\\b_2-b_1\end{bmatrix}\ \bigg| \ 0 \leq s \leq 1\right\}.</me>
+  </p> 
+    <interactive geogebra="zaj77ftt" width="90%" aspect="5:5" reset-icon="yes" shift-drag-zoom="no">
+      <instructions>
+        In the GeoGebra window, adjust the parameter s to see the line segment in action.See how to color moves from red to blue.  You can also change the to endpoints to see different color segments.
+      </instructions>
+    </interactive>
+</data>
 
 
 

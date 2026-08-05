@@ -4,7 +4,7 @@
   <title>Matrix Multiplication Sets</title>
 
 <p>
-    Recall in Chapter <xref ref="chapter2" />, I introduced three fundamental sets associated to linear combination: span, null space, and solution set. Since matrix multiplication is a symbolic compactification of linear combination, it should not come as a surprise that these three mixture sets become matrix multiplication sets.
+    Recall in <xref ref="chapter2" />, I introduced three fundamental sets associated to linear combination: span, null space, and solution set. Since matrix multiplication is a symbolic compactification of linear combination, it should not come as a surprise that these three mixture sets become matrix multiplication sets.
 </p>
 
 <subsection>
@@ -31,9 +31,14 @@
         Column spaces are another instance of subspace (cf. <xref ref="def-subspace" />). Remember, subspaces play a central role in linear algebra and it is always useful to be aware of which subsets we are working with happen to be subspaces.
     </p>
 
-    <p>
-        <alert>Column Space is a Subspace.</alert> If <m>A</m> is an <m>m\times n</m> matrix, then <m>\col(A)</m> is a subspace in <m>\R^m</m>.
-    </p>
+    <proposition xml:id="prop-columnset_is_subspace">
+        <title>Column Space is a Subspace</title>
+        <statement>
+            <p>
+                If <m>A</m> is an <m>m\times n</m> matrix, then <m>\col(A)</m> is a subspace in <m>\R^m</m>.
+            </p>
+        </statement>
+    </proposition>
 
     <proof>
         <p>
@@ -45,7 +50,7 @@
 <subsection>
     <title>Dependency becomes Null Space</title>
     <p>
-        The question of <em>redundancy</em> concerns whether a collection of vectors contains one vector that can be made from a linear combination of the other vectors in the collection. This notion is formalized with the concept of dependence (Definition <xref ref="def-dependence" />). Algebraically, this condition was reformulated as asking if the zero vector can be made as a linear combination in a nontrivial way (cf. <xref ref="prop-dependence" />). Symbolically, if <m>S=\{\vect{v}_1, \ldots, \vect{v}_n\}\subset \R^m</m>, then we want to know if there exists numbers <m>x_1,\ldots, x_n\in \R</m>, at least one of which is not zero, such that <m>x_1\vect{v}_1+\cdots+x_n\vect{v}_n=\vect{0}</m>. If we use the definition of matrix multiplication (<xref ref="def_matrixmult" />) to compactify this expression and set <m>A=[\vect{v}_1 \ | \ \cdots \ | \ \vect{v}_n]</m>, then we want to know if there exists a <em>nonzero</em> vector <m>\vect{x}\in \R^n</m> such that <m>A\vect{x}=\vect{0}</m>. We call this symbolic compactification the null space.
+        The question of <em>redundancy</em> concerns whether a collection of vectors contains one vector that can be made from a linear combination of the other vectors in the collection. This notion is formalized with the concept of dependence (<xref ref="def-dependence" />). Algebraically, this condition was reformulated as asking if the zero vector can be made as a linear combination in a nontrivial way (cf. <xref ref="prop-dependence" />). Symbolically, if <m>S=\{\vect{v}_1, \ldots, \vect{v}_n\}\subset \R^m</m>, then we want to know if there exists numbers <m>x_1,\ldots, x_n\in \R</m>, at least one of which is not zero, such that <m>x_1\vect{v}_1+\cdots+x_n\vect{v}_n=\vect{0}</m>. If we use the definition of matrix multiplication (<xref ref="def_matrixmult" />) to compactify this expression and set <m>A=[\vect{v}_1 \ | \ \cdots \ | \ \vect{v}_n]</m>, then we want to know if there exists a <em>nonzero</em> vector <m>\vect{x}\in \R^n</m> such that <m>A\vect{x}=\vect{0}</m>. We call this symbolic compactification the null space.
     </p>
 
     <definition xml:id="def-nullspace">
@@ -58,13 +63,18 @@
         </statement>
     </definition>
 
-    <p>
-        <alert>Null Space is a Subspace.</alert> If <m>A</m> is an <m>m\times n</m> matrix, then <m>\Null(A)</m> is a subspace in <m>\R^n</m>.
-    </p>
+    <proposition xml:id="prop-nullA_is_subspace">
+        <title>Null Space is a Subspace</title>
+        <statement>
+            <p>
+                If <m>A</m> is an <m>m\times n</m> matrix, then <m>\Null(A)</m> is a subspace in <m>\R^n</m>.
+            </p>
+        </statement>
+    </proposition>
 
     <proof>
         <p>
-            The justification of this proposition is primarily a logical consequence of chaining together <xref ref="def-nullspace" />, Definition <xref ref="def-subspace" />, and <xref ref="prop_fundamental_matrix_mult_props" />. Alternatively, consider <xref ref="prop-nullset_is_subspace" />. Fill in the details on your own.
+            The justification of this proposition is primarily a logical consequence of chaining together <xref ref="def-nullspace" />,  <xref ref="def-subspace" />, and <xref ref="prop_fundamental_matrix_mult_props" />. Alternatively, consider <xref ref="prop-nullset_is_subspace" />. Fill in the details on your own.
         </p>
     </proof>
 

@@ -168,6 +168,30 @@ We can make anything in the plane!</p>
   </statement>
 </question>
 
+<remark xml:id="remark-constrains_on_parameters">
+  <title>Constraints on Parameters</title>
+  <p>
+    Just as in <xref ref="remark-constrains_on_line_parameters"/>, in quantitative situations, we may have constraints on the parameters. For instance, parameters my be bounded from above or below, or they may be constrained to a discrete set of values.  In some instances, the parameters may be subject to linear equations or inequalities.  
+  </p>
+</remark>
+
+
+<data>
+  <title>Color as a Subset of Span</title>
+  <p>
+    Consider the rgb color vectors where we have normalized values to be in the range 0 to 1.  In this case, we have the red vector <m>\vect{r} = \begin{bmatrix}1\\0\\0\end{bmatrix}</m>, the green vector <m>\vect{g} = \begin{bmatrix}0\\1\\0\end{bmatrix}</m>, and the blue vector <m>\vect{b} = \begin{bmatrix}0\\0\\1\end{bmatrix}</m>.  The set of all colors is not the full span of these three vectors, but rather the set of all linear combinations of these three vectors with nonnegative scalars less than or equal to 1.  In symbols, the set of all colors is
+    <me>\left\{r\vect{r}+g\vect{g}+b\vect{b}\ | \ 0\le r,g,b\le 1\right\}\subset \spn(\vect{r},\vect{g},\vect{b}).</me>
+  </p>  
+</data>
+
+<data>
+  <title>Cereal as a Subset of Span</title>
+  <p>
+    Returning to my cereal example, suppose that I know that my box of Sugar-O's contains 12 servings and my  box of Vitaflakes contains 10 servings.  If <m>\vect{s}</m> is the nutrition facts vector for a single serving of Sugar-O's and <m>\vect{v}</m> is the nutrition facts vector for a single serving of Vitaflakes, then the set of all possible mixtures I can make are given by:
+    <me>\left\{x\vect{s}+y\vect{v}\ | \ 0\le x\le 12, \ 0\le y\le 10\right\}\subset \spn(\vect{s},\vect{v}).</me>
+  </p>  
+</data>
+
 </subsection>
 <subsection xml:id="chp2sec4subsec2">
     <title>Solution Sets</title>
