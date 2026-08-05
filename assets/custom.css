@@ -75,6 +75,32 @@
   }
 }
 
+
+/* Force Light Mode Variables if explicit Light Theme toggle clicked */
+[data-theme="light"],
+html.light-mode 
+html.light,
+body.light{
+    --block-body-text: #1e293b;
+    --def-border: #0984e3;
+    --def-bg: #ebf6ff;
+    --def-header-text: #ffffff;
+    --prop-border: #e11d48;
+    --prop-bg: #fff1f2;
+    --prop-header-text: #ffffff;
+    --ex-border: #ea580c;
+    --ex-bg: #fff7ed;
+    --ex-header-text: #ffffff;
+    --question-border: #9333ea;
+    --question-bg: #faf5ff;
+    --question-header-text: #ffffff;
+    --data-border: #16a34a;
+    --data-bg: #f0fdf4;
+    --data-header-text: #ffffff;
+    --copyright-text: #475569;
+    --copyright-border: #cbd5e1;
+}
+
 /* PreTeXt Theme Toggle & Manual Dark Mode Selectors */
 [data-theme="dark"],
 html.dark-mode,
@@ -112,28 +138,6 @@ body.dark,
     --copyright-border: #334155; /* Dark divider line */
 }
 
-/* Force Light Mode Variables if explicit Light Theme toggle clicked */
-[data-theme="light"],
-html.light-mode {
-    --block-body-text: #1e293b;
-    --def-border: #0984e3;
-    --def-bg: #ebf6ff;
-    --def-header-text: #ffffff;
-    --prop-border: #e11d48;
-    --prop-bg: #fff1f2;
-    --prop-header-text: #ffffff;
-    --ex-border: #ea580c;
-    --ex-bg: #fff7ed;
-    --ex-header-text: #ffffff;
-    --question-border: #9333ea;
-    --question-bg: #faf5ff;
-    --question-header-text: #ffffff;
-    --data-border: #16a34a;
-    --data-bg: #f0fdf4;
-    --data-header-text: #ffffff;
-    --copyright-text: #475569;
-    --copyright-border: #cbd5e1;
-}
 
 /* ===================================================
    3. ELEMENT STYLES (APPLIED ONCE VIA VARIABLES)

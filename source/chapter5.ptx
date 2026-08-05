@@ -75,13 +75,13 @@
 </objectives>
 
 <p>
-    <alert> <xref ref="chp5sec4" />.</alert>
+    <alert> <xref ref="chp5sec3" />.</alert>
     Coordinatization is a fundamental mental act that helps us solve problems.  We do this throughout mathematics.  
     In linear algebra, we put coordinates on subspaces, and this amounts to selecting a basis.  We conceptualize columns as labels on a vector, and matrix multiplication changes the label.  This is a fundamentally new conceptualization of matrix multiplication.  
 </p>
 
 <objectives>
-    <title>Objectives for <xref ref="chp5sec4" /></title>
+    <title>Objectives for <xref ref="chp5sec3" /></title>
     <ul>
         <li>
             <p>I understand the concept of coordinatization, how it is a problem solving strategy, and how it relates to bases.</p>
@@ -104,7 +104,7 @@
     <xi:include href="chapter5sec1.ptx" />
     <xi:include href="chapter5sec2.ptx" />
     <xi:include href="chapter5sec3.ptx" />
-    <xi:include href="chapter5sec4.ptx" />
+    <!--<xi:include href="chapter5sec4.ptx" />-->
    
 
 </chapter>

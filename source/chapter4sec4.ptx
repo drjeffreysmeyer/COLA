@@ -159,15 +159,19 @@
 </p>
 <p>
   Let us now revisit our example:
-  <me>
-    \left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 1 \amp  1 \amp  5 \end{array}\right]
-    \rowA{2}{1}{-1}
-    \left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 0 \amp  2 \amp  4 \end{array}\right] 
+  <md>
+    <mrow> \left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 1 \amp  1 \amp  5 \end{array}\right]
+    \amp  \rowA{2}{1}{-1}
+    \left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 0 \amp  2 \amp  4 \end{array}\right] </mrow>
+    <mrow> \amp  \rowA{2}{1}{-1}
+    \left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 0 \amp  2 \amp  4 \end{array}\right] </mrow>
+   <mrow> \amp 
     \rowS{2}{\frac{1}{2}}
-    \left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 0 \amp  1 \amp  2 \end{array}\right]
+    \left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 0 \amp  1 \amp  2 \end{array}\right]</mrow>
+    <mrow> \amp 
     \rowA{1}{2}{1}
-    \left[\begin{array}{cc|c} 1 \amp  0 \amp  3 \\ 0 \amp  1 \amp  2 \end{array}\right].
-  </me>
+    \left[\begin{array}{cc|c} 1 \amp  0 \amp  3 \\ 0 \amp  1 \amp  2 \end{array}\right].</mrow>
+  </md>
   In terms of elementary matrices, this can be re-written as:
   <men xml:id="eq-elimination_elementary_matrix">
     \begin{bmatrix} 1\amp 1\\0\amp 1\end{bmatrix}

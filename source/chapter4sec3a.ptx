@@ -240,7 +240,7 @@
   </definition>
 
   <p>
-    Condition (R3) is sometimes called the staircase condition because it requires that the zeros form a staircase moving downward from the top left. 
+    Condition (R3) is sometimes called the <em>staircase condition</em> because it requires that the zeros form a staircase moving downward from the top left. 
     Observe this staircase in each of the following examples of matrices in reduced row echelon form:
   </p>
 
@@ -256,20 +256,22 @@
   </p>
 
   <p>
-    In (R2), a pivot position of a matrix is the entry in which a leading 1 will appear in rref. 
+    In (R2), a <term>pivot position</term> of a matrix is the entry in which a leading 1 will appear in rref. 
     So, for example, the matrix <m>\begin{bmatrix} 1 \amp -1 \amp 1 \\ 1 \amp 1 \amp 5 \end{bmatrix}</m> has pivot positions 1-1 and 2-2. 
     Pivot positions play an important role in elimination and it is useful to have language to reference these positions.
+    A column containing a pivot position is called a <term>pivot column</term>, and a column that does not contain a pivot position is called a <term>free column</term>.
   </p>
 
   <p>
-    Any matrix can be put into reduced row echelon form through a sequence of elementary row operations. 
-    If <m>A</m> is a matrix, then we denote its reduced row echelon form <m>\rref(A)</m>.
+        If <m>A</m> is a matrix, then we denote its reduced row echelon form <m>\rref(A)</m>.
+  </p>
+
+  <p>
+    Any matrix can be put into reduced row echelon form through a sequence of elementary row operations. While there are many sequences of row operations that will produce rref, the Gaussian elimination algorithm below provides a systematic approach.
   </p>
 
 
-<p>
-  Elimination can now be characterized as using row operations to put our augmented matrix into rref, from which we can then interpret the solution set.
-</p>
+
 
 <algorithm xml:id="algorithm-elimination">
   <title>Gaussian Elimination</title>
@@ -293,6 +295,10 @@
 </algorithm>
 
 <p>
+  Elimination can now be characterized as using row operations to put our augmented matrix into rref, from which we can then interpret the solution set.
+</p>
+
+<p>
   Take a moment to think about the different ways to compute the reduced row echelon form of the matrix 
   <me>\left[\begin{array}{cc|c} 2 \amp 7 \amp -3 \\ 1 \amp 3 \amp -1 \end{array}\right]</me>
   Observe that one way introduces fractions while another does not. 
@@ -307,7 +313,7 @@
       For each augmented matrix below, do each part. 
     </p>
     <p>
-      <ol label="a">
+      <ol label="a.">
         <li>
           <p><alert>Verbalize.</alert> Explain what it means geometrically in terms of intersecting hyperplanes.</p>
         </li>
@@ -345,8 +351,9 @@
       You will do so by revisiting the systems from GeoGebra  <xref ref="geoactivity_visualizingintersections"/>, in which you visually found the solution sets. 
       Do each part for each system.
     </p>
+    <interactive geogebra="sfx325un" width="90%" aspect="5:2" reset-icon="yes" algebra-input="yes"/>
     <p>
-      <ol label="a">
+      <ol label="a.">
         <li>
           <p><alert>Compute.</alert> Using list notation, input the system as an augmented matrix. (Note that the equals bar cannot be input, so just remember where it goes.) Using <c>ReducedRowEchelon</c>, find the reduced row echelon form of the matrix.</p>
         </li>

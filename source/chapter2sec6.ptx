@@ -145,16 +145,15 @@
             <p>
                 Analyze the image below, which can also be viewed at GeoGebra ID: <url href="https://www.geogebra.org/m/xnnawvpr">xnnawvpr</url>, and then answer the following questions.
             </p>
+            <interactive geogebra="xnnawvpr" width="90%" aspect="5:4" reset-icon="yes" shift-drag-zoom="yes">
+        <static>
+            <image width="100%" source="images/2.6_subspaces3.png"/>
+            <shortdescription>Subsets in <m>\R^3</m>.</shortdescription>
+        </static>
+    </interactive>
 
-            <image source="images/2.6_subspaces3.png" width="100%">
-            <description> 
-              <p>
-                Subsets in <m>\R^3</m>.
-              </p>
-            </description>
-            </image>
 
-            <ol label="a">
+            <ol label="a.">
                 <li>
                     <p>Describe all the subspaces depicted here.</p>
                 </li>

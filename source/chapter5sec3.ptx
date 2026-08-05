@@ -182,8 +182,8 @@
 </definition>
 
 <p>
-  It follows from Interpretation <xref ref="insight-dependence" /> that <m>\rank(A)</m> is equal to the number of columns of <m>\rref(A)</m> with leading ones.
-  Meanwhile, it follows from Interpretation <xref ref="interpretation-solution_sets" /> that <m>\nullity(A)</m> is equal to the number of columns of <m>\rref(A)</m> without leading ones.
+  It follows from Dependency Analysis <xref ref="insight-dependence" /> that <m>\rank(A)</m> is equal to the number of columns of <m>\rref(A)</m> with leading ones.
+  Meanwhile, it follows from  <xref ref="interpretation-solution_sets" /> that <m>\nullity(A)</m> is equal to the number of columns of <m>\rref(A)</m> without leading ones.
   We deduce the following result.
 </p>
 

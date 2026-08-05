@@ -81,23 +81,17 @@
 
     \newcommand{\rowP}[2]{
       \hspace{0.5pc}  
-      \overset
-      {r_{#1} \leftrightarrow r_{#2}}
-      {\widesim}
+      \xrightarrow{r_{#1} \leftrightarrow r_{#2}}
       \hspace{0.5pc}
     }
     \newcommand{\rowS}[2]{
       \hspace{0.5pc}  
-      \overset
-      {r_{#1} \mapsto #2r_{#1}}
-      {\widesim}
+      \xrightarrow{r_{#1} \mapsto #2r_{#1}}
       \hspace{0.5pc}
     }
     \newcommand{\rowA}[3]{
       \hspace{0.5pc}  
-      \overset
-      {r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}}
-      {\widesim}
+      \xrightarrow{r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}}
       \hspace{0.5pc}
     }
     \newcommand{\RowA}[3]{

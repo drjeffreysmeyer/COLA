@@ -42,7 +42,7 @@
     <statement>
       <p>
         Revisiting our previous computation, we have
-        <me>\rref\left(\begin{bmatrix} 1 \amp -1 \amp 1 \\ 1 \amp 1 \amp 5 \end{bmatrix}\right) = \begin{bmatrix} 1 \amp 0 \amp 3 \\ 0 \amp 1 \amp 2 \end{bmatrix},</me>
+        <me>\rref\left(\left[\begin{array}{cc|c} 1 \amp -1 \amp 1 \\ 1 \amp 1 \amp 5 \end{array}\right]\right) =\left[\begin{array}{cc|c} 1 \amp 0 \amp 3 \\ 0 \amp 1 \amp 2 \end{array}\right],</me>
         the latter being in rref. Each row is a constraint on solution vectors. These constraining equations are
         <me>\begin{cases} x=3 \\ y=2 \end{cases}</me>
         I pick a solution vector <m>\begin{bmatrix} x \\ y \end{bmatrix} \in \operatorname{Sol}\left(\begin{bmatrix} 1 \amp -1 \\ 1 \amp 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 5 \end{bmatrix}\right)</m> and substitute in the constraining equations:
@@ -75,7 +75,9 @@
         \begin{bmatrix} x \\ y \\ z \end{bmatrix} 
         = \begin{bmatrix} 3+z \\ 2-4z \\ z \end{bmatrix} 
         = \begin{bmatrix} 3 \\ 2 \\ 0 \end{bmatrix} + z \begin{bmatrix} 1 \\ -4 \\ 1 \end{bmatrix}
-        \quad \text{which implies} \quad
+      </me>
+      which implies
+      <me>
         \operatorname{Sol}(A,\vect{b}) = \left\{ \begin{bmatrix} 3 \\ 2 \\ 0 \end{bmatrix} + z \begin{bmatrix} 1 \\ -4 \\ 1 \end{bmatrix} \,\,\middle|\,\, z \in \mathbb{R} \right\}.
       </me>
     </p>
@@ -168,7 +170,7 @@
         </li>
         <li>
           <p>
-            The solution set <m>\operatorname{Sol}(A,\vect{b})$</m> will be a <m>k</m>-plane where <m>k</m> is the number of free variables.
+            The solution set <m>\operatorname{Sol}(A,\vect{b})</m> will be a <m>k</m>-plane where <m>k</m> is the number of free variables.
           </p>
         </li>
       </ol>
@@ -176,21 +178,37 @@
   </statement>
 </insight>
 
-<activity xml:id="activity-practice_interpreting_rref">
+<question xml:id="activity-practice_interpreting_rref">
   <title>Practice Interpreting rref</title>
   <statement>
     <p>
       In this activity, you will practice using the information of a row reduced augmented matrix <m>\rref\left([A \mid \vect{b}]\right)</m> to describe its solution set.
       For each rref matrix below, clearly identify the free variables and then write the solution set, <m>\operatorname{Sol}(A,\vect{b})</m>, in parametric vector form.
-      <me>
-        \left[\begin{array}{cccc|c} 1 \amp 0 \amp -1 \amp 2 \amp 5 \\ 0 \amp 1 \amp -1 \amp 3 \amp 2 \end{array}\right], \quad
-        \left[\begin{array}{cc|c} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{array}\right], \quad
-        \left[\begin{array}{ccc|c} 1 \amp 0 \amp 0 \amp 2 \\ 0 \amp 1 \amp 0 \amp 3 \\ 0 \amp 0 \amp 1 \amp 1 \end{array}\right], \quad
-        \left[\begin{array}{ccc|c} 1 \amp 1 \amp 0 \amp 3 \\ 0 \amp 0 \amp 1 \amp 4 \end{array}\right]
-      </me>
     </p>
+      <ol marker="a.">
+        <li>
+          <p>
+            <m>\left[\begin{array}{cccc|c} 1 \amp 0 \amp -1 \amp 2 \amp 5 \\ 0 \amp 1 \amp -1 \amp 3 \amp 2 \end{array}\right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left[\begin{array}{cc|c} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{array}\right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left[\begin{array}{ccc|c} 1 \amp 0 \amp 0 \amp 2 \\ 0 \amp 1 \amp 0 \amp 3 \\ 0 \amp 0 \amp 1 \amp 1 \end{array}\right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left[\begin{array}{ccc|c} 1 \amp 1 \amp 0 \amp 3 \\ 0 \amp 0 \amp 1 \amp 4 \end{array}\right]</m>
+          </p>
+        </li>
+      </ol>
   </statement>
-</activity>
+</question>
 
 <p>
   As we conclude this lesson, keep in mind we introduced the concept of reduced row echelon form and focused on two associated mental actions: computing and interpreting (the parametric vector form of solution sets). 
