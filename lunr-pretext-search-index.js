@@ -754,7 +754,7 @@ var ptx_lunr_docs = [
   "type": "Lesson",
   "number": "2.3",
   "title": "Lines as Traveling Down a Path",
-  "body": " Lines as Traveling Down a Path  In this lesson, we use our understanding of vectors and linear combination to inform how we think about lines in the plane, and then generalize to how we think about lines (and planes) in .    Lines in the plane.     Lines in  While I expect anyone taking this course to have seen lines before, it may be useful to remind you what they are and how we describe them. Lines are subsets of the plane satisfying certain geometric properties, and these subsets can be describe by certain equations.   Lines in   A line  in the plane is the set of all points that satisfy an algebraic equation of the form . This is a normal equation of a line. Using set builder notation, I may write    Let's take a moment to discuss the equations that describe the points on a line. Every line satisfies a normal equation. If the line is not vertical (i.e. ), then its points satisfy two other algebraically equivalent equations:  Slope-Intercept Equation  , where the line has slope and -intercept .  Point-Slope Equation  , where the line goes through point and has slope .  We can think of these equations as constraints that points in the plane must satisfy to lie on the given line.  Keep in mind, a line is a set of points, not one of the many equations that describe those points. Now recall that points in the plane may be understood as vectors. Can we use vectors to formulate new and productive ways to describe the points that comprise a line?    Finding vectors that describe a line   Consider the line with slope-intercept equation .  If is the coordinate of a point on , then  Name and .   Then I can think of this line via a metaphor of traveling along a path as follows:  is your starting position .  is the direction and distance you travel in 1 unit of time (i.e. velocity ).  is your elapsed time. When is positive, you can think of as what your position on the path will be units of time in the future, and when is negative, you can think of as what your position had been units of time in the past. Since here is conceptualized as time, we often replace the symbol with the symbol .  In symbols, the line can be expressed as the set of points .    The graph of the line with equation .       We can generalize our reasoning in to any line in the plane.   Parametric Vector Form of Lines in   If is a line in , then there exists vectors such that .    To begin, suppose is not vertical and has slope-intercept equation . If are the coordinates of a point on , then we may substitute for : Name and . Then . Since this is true for all , it follows that . The case when is vertical is left as an exercise.    Observe the role substitution played in both and . Using constraining equations and substituting in this way will be a reoccurring strategy throughout this course.   Parametric to Slope-Intercept Conversion   Consider the path with initial position  and travels with velocity .   Thinking of the scalar in front of as time , I mark off units of on the path, and I label the points at times , 0, 1, 2, and 3. As we range over all time, the collection of all points on the path can be expressed as In general, at time my position on the path has coordinate . Since , then . Substituting this into the equation for ,    The graph of the line with equation .       Once again, we can generalize our reasoning in to any line in the plane.    If , then the set is a line.    To show that the set is a line, I need to verify the coordinates satisfy an equation of a line ( ). Unpacking entries, . If is the coordinate of a point on , then and . If , then the first equations can be rewritten as , which can then be substituted into the second equation to get: This is the slope-intercept form of a line ( ). The case of is left as an exercise.    Revisit how in GeoGebra , Part 3, as you fix and slide , the tips of the vectors , sweeps out a line through and in the direction of .   Visualize parametrized lines in by playing with position vectors and velocity vectors at GeoGebra ID: j2pnwgwz . Observe that a different vector in the direction of will sweep out the same line, but will be at points at different \"times.\" Move the vectors and and observe how the -intercept form of the line varies.     A cartoon depicting walking down a linear path. The initial position vector and velocity vector are clearly visible.    To summarize, you should reconceptualize lines as the collection of all points in the plane reached by traveling along a path in the following way:  Begin at a given starting point, symbolized as .  Start traveling in a constant direction and constant speed, symbolized as .  Your position on this path at time can be represented with the linear combination .   Representing Lines   For each of the following lines in ,  Clearly visually sketch and label it,  Find the symbolic form not given (i.e. slope-intercept or parametric vector form)  Verbally write down, in complete sentences the meaning of the parametric equation in the language of position and steps per unit of time.         Lines in  It is with this conceptualization of lines in the plane that we may generalize to reason about lines in . We formalize this in the following definition.   Lines in and their Parametric Vector Form   If and is nonzero, then the set is a line in , symbolized in parametric vector form . Here is a parameter . If is a closed interval, then is a line segment in .     Lines as Paths of Travel   gives your starting position .  gives the direction and distance traveled in 1 unit of time (i.e. velocity ).  gives you elapsed time. When is positive, you can think of as what your position will be units of time in the future, and when is negative, you can think of as what your position had been units of time in the past.     Line in     A line in .    The line in is given by parametric vector form .   Visualize parametrized lines in at GeoGebra ID: nrp6wa5k . Move the vectors and and observe how the line visualization and line symbolization changes. Slide the parameter and observe how you \"move\" along the line.      Planes in  We now move on to generalize our reasoning to a new geometric object: a plane in . While many have a sense of what a plane is when they see it, it is another matter to make sense of it mathematically. I will provide a geometric formulation. If points, , , and in do not all lie on the same line (in the language of geometry language, are non-collinear ), then they form a triangle. Emanating from vertex are sides and . The set of all points that I can reach by traveling with velocity vectors coming from the triangle's sides is a plane. In a qualitative sense, the plane a triangle determines is the unique flat slice of that contains that triangle .   Plane in     A plane in .     Plane through 3 non-collinear points   Start at position ,  Travel with constant direction and speed for units of time,  Travel with constant direction and speed for units of time.     Non-Collinear Vectors   If are nonzero vectors and lines and are not equal, then and are non-collinear vectors.     Planes in and their Parametric Vector Form   If such that and are non-collinear, then the set of points is a plane , symbolized in parametric vector form . Here and are parameters .     Plane in   Below is an image of the plane in with parametric vector form:     A plane in .    Using the metaphor of travel, this plane is the collection of all points we can reach if we start at position , travel units of time with constant velocity , and then units of time with constant velocity . For example, to reach the point , we start at , travel units of time with constant velocity , and then units of time with constant velocity . This path is depicted in orange.     Visualize a plane in at GeoGebra ID: qg2afdpt . Move the vectors , , and to move the plane. Adjust the parameters and to reach different points on the plane.    Plane in   Below is an image of the plane in with parametric vector form:     A plane in .    Using the metaphor of travel, is the collection of all points we can reach if we start at position , travel units of time with constant velocity , and then units of time with constant velocity . Observe that fills up all of - I can reach any point in by traveling for the appropriate amounts of time with constant velocities and . For example, to reach the point , we start at the origin , travel units of time with constant velocity , and then units of time with constant velocity .    Visualize the planes (in parametric form) in at GeoGebra ID: tk8s9eut .   In multivariable calculus, you will expand on the ideas introduced here to describe parametrized surfaces and their tangent planes .    A tangent plane to a sphere in .     Visualize tangent planes to surfaces in at GeoGebra ID: mmkmzuqr .    "
+  "body": " Lines as Traveling Down a Path  In this lesson, we use our understanding of vectors and linear combination to inform how we think about lines in the plane, and then generalize to how we think about lines (and planes) in .    Lines in the plane.     Lines in  While I expect anyone taking this course to have seen lines before, it may be useful to remind you what they are and how we describe them. Lines are subsets of the plane satisfying certain geometric properties, and these subsets can be describe by certain equations.   Lines in   A line  in the plane is the set of all points that satisfy an algebraic equation of the form . This is a normal equation of a line. Using set builder notation, I may write    Let's take a moment to discuss the equations that describe the points on a line. Every line satisfies a normal equation. If the line is not vertical (i.e. ), then its points satisfy two other algebraically equivalent equations:  Slope-Intercept Equation  , where the line has slope and -intercept .  Point-Slope Equation  , where the line goes through point and has slope .  We can think of these equations as constraints that points in the plane must satisfy to lie on the given line.  Keep in mind, a line is a set of points, not one of the many equations that describe those points. Now recall that points in the plane may be understood as vectors. Can we use vectors to formulate new and productive ways to describe the points that comprise a line?    Finding vectors that describe a line   Consider the line with slope-intercept equation .  If is the coordinate of a point on , then  Name and .   Then I can think of this line via a metaphor of traveling along a path as follows:  is your starting position .  is the direction and distance you travel in 1 unit of time (i.e. velocity ).  is your elapsed time. When is positive, you can think of as what your position on the path will be units of time in the future, and when is negative, you can think of as what your position had been units of time in the past. Since here is conceptualized as time, we often replace the symbol with the symbol .  In symbols, the line can be expressed as the set of points .    The graph of the line with equation .       We can generalize our reasoning in to any line in the plane.   Parametric Vector Form of Lines in   If is a line in , then there exists vectors such that .    To begin, suppose is not vertical and has slope-intercept equation . If are the coordinates of a point on , then we may substitute for : Name and . Then . Since this is true for all , it follows that . The case when is vertical is left as an exercise.    Observe the role substitution played in both and . Using constraining equations and substituting in this way will be a reoccurring strategy throughout this course.   Parametric to Slope-Intercept Conversion   Consider the path with initial position  and travels with velocity .   Thinking of the scalar in front of as time , I mark off units of on the path, and I label the points at times , 0, 1, 2, and 3. As we range over all time, the collection of all points on the path can be expressed as In general, at time my position on the path has coordinate . Since , then . Substituting this into the equation for ,    The graph of the line with equation .       Once again, we can generalize our reasoning in to any line in the plane.    If , then the set is a line.    To show that the set is a line, I need to verify the coordinates satisfy an equation of a line ( ). Unpacking entries, . If is the coordinate of a point on , then and . If , then the first equations can be rewritten as , which can then be substituted into the second equation to get: This is the slope-intercept form of a line ( ). The case of is left as an exercise.    Revisit how in GeoGebra , Part 3, as you fix and slide , the tips of the vectors , sweeps out a line through and in the direction of .   Visualize parametrized lines in by playing with position vectors and velocity vectors at GeoGebra ID: j2pnwgwz . Observe that a different vector in the direction of will sweep out the same line, but will be at points at different \"times.\" Move the vectors and and observe how the -intercept form of the line varies.     A cartoon depicting walking down a linear path. The initial position vector and velocity vector are clearly visible.    To summarize, you should reconceptualize lines as the collection of all points in the plane reached by traveling along a path in the following way:  Begin at a given starting point, symbolized as .  Start traveling in a constant direction and constant speed, symbolized as .  Your position on this path at time can be represented with the linear combination .   Representing Lines   For each of the following lines in ,  Clearly visually sketch and label it,  Find the symbolic form not given (i.e. slope-intercept or parametric vector form)  Verbally write down, in complete sentences the meaning of the parametric equation in the language of position and steps per unit of time.         Lines in  It is with this conceptualization of lines in the plane that we may generalize to reason about lines in . We formalize this in the following definition.   Lines in and their Parametric Vector Form   If and is nonzero, then the set is a line in , symbolized in parametric vector form . Here is a parameter . If is a closed interval, then is a line segment in .     Lines as Paths of Travel   gives your starting position .  gives the direction and distance traveled in 1 unit of time (i.e. velocity ).  gives you elapsed time. When is positive, you can think of as what your position will be units of time in the future, and when is negative, you can think of as what your position had been units of time in the past.      The line below is given by parametric vector form . Observe that the line starts at time zero at the point and then travels in the direction of .    A line in .      Visualize parametrized lines in at GeoGebra ID: nrp6wa5k . Move the vectors and and observe how the line visualization and line symbolization changes. Slide the parameter and observe how you \"move\" along the line.     Constraints on Parameters  In quantitative situations, we may have constraints on the parameters. For example, if we are modeling a line segment, then we may have a constraint on the parameter such that for some real numbers . In other situations, we may have a constraint on the parameter such that or . In these cases, we are modeling a ray. In yet other situations, parameters may be constrained to a discrete set of values, such as . In this case, we are modeling a discrete set of points along the line.    Segments in Color  Consider the rgb color vectors where we have normalized values to be in the range 0 to 1. In this case, we have the red vector , the green vector , and the blue vector . We can create a line segment of colors from red to blue. The parametric vector form of this line segment is Observe that in the context of this situation, since rgb vectors only have values between 0 and 1, we have a constraint on the parameter such that .  More generally, the line segment between a color vector and a color vector is given by the parametric vector form       Planes in  We now move on to generalize our reasoning to a new geometric object: a plane in . While many have a sense of what a plane is when they see it, it is another matter to make sense of it mathematically. I will provide a geometric formulation. If points, , , and in do not all lie on the same line (in the language of geometry language, are non-collinear ), then they form a triangle. Emanating from vertex are sides and . The set of all points that I can reach by traveling with velocity vectors coming from the triangle's sides is a plane. In a qualitative sense, the plane a triangle determines is the unique flat slice of that contains that triangle .   Plane in     A plane in .     Plane through 3 non-collinear points   Start at position ,  Travel with constant direction and speed for units of time,  Travel with constant direction and speed for units of time.     Non-Collinear Vectors   If are nonzero vectors and lines and are not equal, then and are non-collinear vectors.     Planes in and their Parametric Vector Form   If such that and are non-collinear, then the set of points is a plane , symbolized in parametric vector form . Here and are parameters .     Plane in   Below is an image of the plane in with parametric vector form:     A plane in .    Using the metaphor of travel, this plane is the collection of all points we can reach if we start at position , travel units of time with constant velocity , and then units of time with constant velocity . For example, to reach the point , we start at , travel units of time with constant velocity , and then units of time with constant velocity . This path is depicted in orange.     Visualize a plane in at GeoGebra ID: qg2afdpt . Move the vectors , , and to move the plane. Adjust the parameters and to reach different points on the plane.    Plane in   Below is an image of the plane in with parametric vector form:     A plane in .    Using the metaphor of travel, is the collection of all points we can reach if we start at position , travel units of time with constant velocity , and then units of time with constant velocity . Observe that fills up all of - I can reach any point in by traveling for the appropriate amounts of time with constant velocities and . For example, to reach the point , we start at the origin , travel units of time with constant velocity , and then units of time with constant velocity .    Visualize the planes (in parametric form) in at GeoGebra ID: tk8s9eut .   In multivariable calculus, you will expand on the ideas introduced here to describe parametrized surfaces and their tangent planes .    A tangent plane to a sphere in .     Visualize tangent planes to surfaces in at GeoGebra ID: mmkmzuqr .    "
 },
 {
   "id": "def-lines_r2",
@@ -838,13 +838,13 @@ var ptx_lunr_docs = [
   "body": " Lines as Paths of Travel   gives your starting position .  gives the direction and distance traveled in 1 unit of time (i.e. velocity ).  gives you elapsed time. When is positive, you can think of as what your position will be units of time in the future, and when is negative, you can think of as what your position had been units of time in the past.   "
 },
 {
-  "id": "fig-line_in_r3",
+  "id": "chp2sec3subsec2-5",
   "level": "2",
-  "url": "chp2sec3.html#fig-line_in_r3",
-  "type": "Figure",
+  "url": "chp2sec3.html#chp2sec3subsec2-5",
+  "type": "Example",
   "number": "2.3.10",
   "title": "",
-  "body": " Line in  "
+  "body": " The line below is given by parametric vector form . Observe that the line starts at time zero at the point and then travels in the direction of .    A line in .    "
 },
 {
   "id": "exploration-geogebra-lines2",
@@ -856,11 +856,29 @@ var ptx_lunr_docs = [
   "body": " Visualize parametrized lines in at GeoGebra ID: nrp6wa5k . Move the vectors and and observe how the line visualization and line symbolization changes. Slide the parameter and observe how you \"move\" along the line.   "
 },
 {
+  "id": "remark-constrains_on_line_parameters",
+  "level": "2",
+  "url": "chp2sec3.html#remark-constrains_on_line_parameters",
+  "type": "Remark",
+  "number": "2.3.12",
+  "title": "Constraints on Parameters.",
+  "body": " Constraints on Parameters  In quantitative situations, we may have constraints on the parameters. For example, if we are modeling a line segment, then we may have a constraint on the parameter such that for some real numbers . In other situations, we may have a constraint on the parameter such that or . In these cases, we are modeling a ray. In yet other situations, parameters may be constrained to a discrete set of values, such as . In this case, we are modeling a discrete set of points along the line.  "
+},
+{
+  "id": "chp2sec3subsec2-8",
+  "level": "2",
+  "url": "chp2sec3.html#chp2sec3subsec2-8",
+  "type": "Quantitative Situation",
+  "number": "2.3.13",
+  "title": "Segments in Color.",
+  "body": " Segments in Color  Consider the rgb color vectors where we have normalized values to be in the range 0 to 1. In this case, we have the red vector , the green vector , and the blue vector . We can create a line segment of colors from red to blue. The parametric vector form of this line segment is Observe that in the context of this situation, since rgb vectors only have values between 0 and 1, we have a constraint on the parameter such that .  More generally, the line segment between a color vector and a color vector is given by the parametric vector form    "
+},
+{
   "id": "fig-plane_in_r3",
   "level": "2",
   "url": "chp2sec3.html#fig-plane_in_r3",
   "type": "Figure",
-  "number": "2.3.12",
+  "number": "2.3.14",
   "title": "",
   "body": " Plane in  "
 },
@@ -869,7 +887,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp2sec3.html#chp2sec3subsec3-5",
   "type": "Remark",
-  "number": "2.3.13",
+  "number": "2.3.15",
   "title": "Plane through 3 non-collinear points.",
   "body": " Plane through 3 non-collinear points   Start at position ,  Travel with constant direction and speed for units of time,  Travel with constant direction and speed for units of time.   "
 },
@@ -878,7 +896,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp2sec3.html#def-noncollinear",
   "type": "Definition",
-  "number": "2.3.14",
+  "number": "2.3.16",
   "title": "Non-Collinear Vectors.",
   "body": " Non-Collinear Vectors   If are nonzero vectors and lines and are not equal, then and are non-collinear vectors.   "
 },
@@ -887,7 +905,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp2sec3.html#def-plane",
   "type": "Definition",
-  "number": "2.3.15",
+  "number": "2.3.17",
   "title": "Planes in <span class=\"process-math\">\\(\\R^m\\)<\/span> and their Parametric Vector Form.",
   "body": " Planes in and their Parametric Vector Form   If such that and are non-collinear, then the set of points is a plane , symbolized in parametric vector form . Here and are parameters .   "
 },
@@ -896,7 +914,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp2sec3.html#ex-plane",
   "type": "Example",
-  "number": "2.3.16",
+  "number": "2.3.18",
   "title": "Plane in <span class=\"process-math\">\\(\\R^3\\)<\/span>.",
   "body": " Plane in   Below is an image of the plane in with parametric vector form:     A plane in .    Using the metaphor of travel, this plane is the collection of all points we can reach if we start at position , travel units of time with constant velocity , and then units of time with constant velocity . For example, to reach the point , we start at , travel units of time with constant velocity , and then units of time with constant velocity . This path is depicted in orange.   "
 },
@@ -905,7 +923,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp2sec3.html#exploration-geogebra-planes",
   "type": "Technology",
-  "number": "2.3.17",
+  "number": "2.3.19",
   "title": "",
   "body": " Visualize a plane in at GeoGebra ID: qg2afdpt . Move the vectors , , and to move the plane. Adjust the parameters and to reach different points on the plane.  "
 },
@@ -914,7 +932,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp2sec3.html#chp2sec3subsec3-10",
   "type": "Example",
-  "number": "2.3.18",
+  "number": "2.3.20",
   "title": "Plane in <span class=\"process-math\">\\(\\R^2\\)<\/span>.",
   "body": " Plane in   Below is an image of the plane in with parametric vector form:     A plane in .    Using the metaphor of travel, is the collection of all points we can reach if we start at position , travel units of time with constant velocity , and then units of time with constant velocity . Observe that fills up all of - I can reach any point in by traveling for the appropriate amounts of time with constant velocities and . For example, to reach the point , we start at the origin , travel units of time with constant velocity , and then units of time with constant velocity .   "
 },
@@ -923,7 +941,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp2sec3.html#chp2sec3subsec3-12",
   "type": "Remark",
-  "number": "2.3.19",
+  "number": "2.3.21",
   "title": "",
   "body": " In multivariable calculus, you will expand on the ideas introduced here to describe parametrized surfaces and their tangent planes .    A tangent plane to a sphere in .     Visualize tangent planes to surfaces in at GeoGebra ID: mmkmzuqr .  "
 },
@@ -934,7 +952,7 @@ var ptx_lunr_docs = [
   "type": "Lesson",
   "number": "2.4",
   "title": "The Set of All Linear Combination",
-  "body": " The Set of All Linear Combination   Span  In this lesson, we are interested in conceptualizing and symbolizing the set of all linear combinations we can make with a predetermined, fixed collection of vectors. This set of linear combinations is useful to consider in all the contexts in which we encounter vectors and linear combination. If I have 12 boxes of cereal on my shelf, what are all the nutrition fact vectors I can make by mixing them? If my sound processor can make 400 digital pure tones, what are all the sounds I can produce by mixing them? More generally, if I have a fixed collection of vectors, what are all the linear combinations I can make with them?    What can we make with one nonzero vector in the plane?   What can we make (using linear combinations) with ? Geometrically, we get the line with parametric vector form: . Observe our starting position is the zero vector (i.e. the origin).    A line in .       What can we make with two vectors in the plane?    What can we make (using linear combinations) with and ? Algebraically, what vectors do we make as we vary ? We can make anything in the plane!    A plane in .       The collection of all possible linear combinations which can be made with is made precise by the notion of span .   Span (the noun)   If , then their span is the set of all linear combinations of . Symbolically,     The word span may seem unintuitive for you, so if you wish, via the metaphor of mixture, you can think of span as the mixture set of . Note that even if is small, is big! In fact, as long as contains a nonzero vector, is an infinite set.  Spans have very nice geometric interpretations. The span of one nonzero vector is the line , starting at the origin, with velocity : (see ). The span of two nonzero, non-collinear vectors and is the plane going through their tips and the origin. In symbols, we write this plane in parametric vector form: .   Describing Span   For each of the following sets of vectors, describe geometrically the associated span. Be sure to use geometric words.                      What can we make with two vectors in Cartesian 3-Space?   If , , and , then is every possible mixture made with and , or using set notation, Using the mixture parallelograms to visualize the mixtures, we see that will be the plane going through the three points: , , and ,     Visualize the span of two vectors in at GeoGebra ID: axm8hsyg .  The algebraic notation of span is very compact and enables us to efficiently communicate our thoughts about linear combinations. It is therefore important that you practice symbolizing your thoughts with this compact notation and then practice interpreting in plain language such symbolic expressions.   Symbolizing with Span   Symbolize each complete sentence using span.   Vector is a linear combination of vectors and .  There is no way to write vector as a linear combination of vectors , , and .  Everything I can make with vectors and , I can also make with vectors , , and .      Interpreting the Symbolism of Span   For each, use complete sentences, using the language of mixture, to interpret the meaning of each algebraic expression.   .  .  .  .       Solution Sets  Given a collection of vectors and another vector , we want to know if we can make  by mixing vectors in . In symbols, we can make with if there exists scalars such that . Put more compactly, is makeable with if . There is no guarantee that is makeable, in which case no such scalars exist.  Via the metaphor of cooking, given a certain collection of ingredients and a desired meal, makeability asks: can we make the meal with our ingredients?   When we view vectors geometrically, given a plane in and a point in , makeability asks: does the point lie on the plane?   If a vector is makeable with , then we usually also want to know how, i.e. what scalars allow us to make that vector.   Exploring Makeability   In each of the following parts, explore how you can make from the given . Can you find a way to make from ? If so, are there multiple ways or is it unique? Explain.   Consider and .  Consider and .     Observe that a way to make with is precisely a servings vector ( ).   Solution Vectors   If , , and are such that , then the associated servings vector is a solution vector for making with .    If has vectors, then a solution vector for making with has list-length .   Exploring Makeability Geometrically   In this activity, you will use GeoGebra ID: twf46ake to visualize and investigate makeability in . Let , , and .    Explore. Use the visual representations provided to decide if and can be made with . Clearly explain the visual feature(s) you are using to make your determinations.  Symbolize. For each makeable vector, write down the corresponding symbolic equation. (Perform the associated computation to verify you have indeed found a solution vector.)     Solution set in .       Sometimes a single solution vector is sufficient. However, sometimes we want to collect all of them into a single set.   Solution Set   If and then the set of all solution vectors for making with can be identified with a subset of called the solution set for making with . In symbols,     If is not makeable with , then the solution set is empty , which we denote .   Symbolizing with Solution Sets   Symbolize each expression using solution sets and set notation.   .  .  There is no way to make with vectors , , and .      Interpreting the Symbolism of Solution Sets   Use complete sentences and the language of mixture to interpret the meaning of each algebraic expression.   .  .  .     Solution sets are central objects in linear algebra and we will continue to deepen our understanding and develop tools for computing them in the lessons that come.   Span Summary  If , then following are equivalent:   You can make from ,  ,  is nonempty.      Algebraic Properties of Span  Spans have very nice algebraic properties.   Algebraic Properties of Span   If , and   (Non-empty.) if denotes the zero vector, then ;  (Closed under addition.) if , then ;  (Closed under scaling.) if and , then .      We must provide formal justification for each of the three properties.  I will begin with the first property. To show that , I must show that the zero vector is a linear combination of the vectors in . This is easy to arrange, just take zero serving sizes of each vector! In symbols:  Next, I will justify the second property. By assumption, there exists and such that and . So   From which we deduce .  All that is left justifying the third property. This is left to you in .    Practicing Formal Justification   Carefully write down a formal justification for the third property of . Be sure to carefully explain your reasoning and include references to all appropriate definitions and proven propositions. When done, share with the class.     Algebraic Properties of Span as Mixture of Mixtures  Using the metaphor of mixture, says that, if you fix a collection of ingredients, a mixture of mixtures is still just a mixture of the original ingredients.    "
+  "body": " The Set of All Linear Combination   Span  In this lesson, we are interested in conceptualizing and symbolizing the set of all linear combinations we can make with a predetermined, fixed collection of vectors. This set of linear combinations is useful to consider in all the contexts in which we encounter vectors and linear combination. If I have 12 boxes of cereal on my shelf, what are all the nutrition fact vectors I can make by mixing them? If my sound processor can make 400 digital pure tones, what are all the sounds I can produce by mixing them? More generally, if I have a fixed collection of vectors, what are all the linear combinations I can make with them?    What can we make with one nonzero vector in the plane?   What can we make (using linear combinations) with ? Geometrically, we get the line with parametric vector form: . Observe our starting position is the zero vector (i.e. the origin).    A line in .       What can we make with two vectors in the plane?    What can we make (using linear combinations) with and ? Algebraically, what vectors do we make as we vary ? We can make anything in the plane!    A plane in .       The collection of all possible linear combinations which can be made with is made precise by the notion of span .   Span (the noun)   If , then their span is the set of all linear combinations of . Symbolically,     The word span may seem unintuitive for you, so if you wish, via the metaphor of mixture, you can think of span as the mixture set of . Note that even if is small, is big! In fact, as long as contains a nonzero vector, is an infinite set.  Spans have very nice geometric interpretations. The span of one nonzero vector is the line , starting at the origin, with velocity : (see ). The span of two nonzero, non-collinear vectors and is the plane going through their tips and the origin. In symbols, we write this plane in parametric vector form: .   Describing Span   For each of the following sets of vectors, describe geometrically the associated span. Be sure to use geometric words.                      What can we make with two vectors in Cartesian 3-Space?   If , , and , then is every possible mixture made with and , or using set notation, Using the mixture parallelograms to visualize the mixtures, we see that will be the plane going through the three points: , , and ,     Visualize the span of two vectors in at GeoGebra ID: axm8hsyg .  The algebraic notation of span is very compact and enables us to efficiently communicate our thoughts about linear combinations. It is therefore important that you practice symbolizing your thoughts with this compact notation and then practice interpreting in plain language such symbolic expressions.   Symbolizing with Span   Symbolize each complete sentence using span.   Vector is a linear combination of vectors and .  There is no way to write vector as a linear combination of vectors , , and .  Everything I can make with vectors and , I can also make with vectors , , and .      Interpreting the Symbolism of Span   For each, use complete sentences, using the language of mixture, to interpret the meaning of each algebraic expression.   .  .  .  .      Constraints on Parameters  Just as in , in quantitative situations, we may have constraints on the parameters. For instance, parameters my be bounded from above or below, or they may be constrained to a discrete set of values. In some instances, the parameters may be subject to linear equations or inequalities.    Color as a Subset of Span  Consider the rgb color vectors where we have normalized values to be in the range 0 to 1. In this case, we have the red vector , the green vector , and the blue vector . The set of all colors is not the full span of these three vectors, but rather the set of all linear combinations of these three vectors with nonnegative scalars less than or equal to 1. In symbols, the set of all colors is     Cereal as a Subset of Span  Returning to my cereal example, suppose that I know that my box of Sugar-O's contains 12 servings and my box of Vitaflakes contains 10 servings. If is the nutrition facts vector for a single serving of Sugar-O's and is the nutrition facts vector for a single serving of Vitaflakes, then the set of all possible mixtures I can make are given by:      Solution Sets  Given a collection of vectors and another vector , we want to know if we can make  by mixing vectors in . In symbols, we can make with if there exists scalars such that . Put more compactly, is makeable with if . There is no guarantee that is makeable, in which case no such scalars exist.  Via the metaphor of cooking, given a certain collection of ingredients and a desired meal, makeability asks: can we make the meal with our ingredients?   When we view vectors geometrically, given a plane in and a point in , makeability asks: does the point lie on the plane?   If a vector is makeable with , then we usually also want to know how, i.e. what scalars allow us to make that vector.   Exploring Makeability   In each of the following parts, explore how you can make from the given . Can you find a way to make from ? If so, are there multiple ways or is it unique? Explain.   Consider and .  Consider and .     Observe that a way to make with is precisely a servings vector ( ).   Solution Vectors   If , , and are such that , then the associated servings vector is a solution vector for making with .    If has vectors, then a solution vector for making with has list-length .   Exploring Makeability Geometrically   In this activity, you will use GeoGebra ID: twf46ake to visualize and investigate makeability in . Let , , and .    Explore. Use the visual representations provided to decide if and can be made with . Clearly explain the visual feature(s) you are using to make your determinations.  Symbolize. For each makeable vector, write down the corresponding symbolic equation. (Perform the associated computation to verify you have indeed found a solution vector.)     Solution set in .       Sometimes a single solution vector is sufficient. However, sometimes we want to collect all of them into a single set.   Solution Set   If and then the set of all solution vectors for making with can be identified with a subset of called the solution set for making with . In symbols,     If is not makeable with , then the solution set is empty , which we denote .   Symbolizing with Solution Sets   Symbolize each expression using solution sets and set notation.   .  .  There is no way to make with vectors , , and .      Interpreting the Symbolism of Solution Sets   Use complete sentences and the language of mixture to interpret the meaning of each algebraic expression.   .  .  .     Solution sets are central objects in linear algebra and we will continue to deepen our understanding and develop tools for computing them in the lessons that come.   Span Summary  If , then following are equivalent:   You can make from ,  ,  is nonempty.      Algebraic Properties of Span  Spans have very nice algebraic properties.   Algebraic Properties of Span   If , and   (Non-empty.) if denotes the zero vector, then ;  (Closed under addition.) if , then ;  (Closed under scaling.) if and , then .      We must provide formal justification for each of the three properties.  I will begin with the first property. To show that , I must show that the zero vector is a linear combination of the vectors in . This is easy to arrange, just take zero serving sizes of each vector! In symbols:  Next, I will justify the second property. By assumption, there exists and such that and . So   From which we deduce .  All that is left justifying the third property. This is left to you in .    Practicing Formal Justification   Carefully write down a formal justification for the third property of . Be sure to carefully explain your reasoning and include references to all appropriate definitions and proven propositions. When done, share with the class.     Algebraic Properties of Span as Mixture of Mixtures  Using the metaphor of mixture, says that, if you fix a collection of ingredients, a mixture of mixtures is still just a mixture of the original ingredients.    "
 },
 {
   "id": "chp2sec4subsec1-3",
@@ -1000,11 +1018,38 @@ var ptx_lunr_docs = [
   "body": " Interpreting the Symbolism of Span   For each, use complete sentences, using the language of mixture, to interpret the meaning of each algebraic expression.   .  .  .  .    "
 },
 {
+  "id": "remark-constrains_on_parameters",
+  "level": "2",
+  "url": "chp2sec4.html#remark-constrains_on_parameters",
+  "type": "Remark",
+  "number": "2.4.8",
+  "title": "Constraints on Parameters.",
+  "body": " Constraints on Parameters  Just as in , in quantitative situations, we may have constraints on the parameters. For instance, parameters my be bounded from above or below, or they may be constrained to a discrete set of values. In some instances, the parameters may be subject to linear equations or inequalities.  "
+},
+{
+  "id": "chp2sec4subsec1-16",
+  "level": "2",
+  "url": "chp2sec4.html#chp2sec4subsec1-16",
+  "type": "Quantitative Situation",
+  "number": "2.4.9",
+  "title": "Color as a Subset of Span.",
+  "body": " Color as a Subset of Span  Consider the rgb color vectors where we have normalized values to be in the range 0 to 1. In this case, we have the red vector , the green vector , and the blue vector . The set of all colors is not the full span of these three vectors, but rather the set of all linear combinations of these three vectors with nonnegative scalars less than or equal to 1. In symbols, the set of all colors is   "
+},
+{
+  "id": "chp2sec4subsec1-17",
+  "level": "2",
+  "url": "chp2sec4.html#chp2sec4subsec1-17",
+  "type": "Quantitative Situation",
+  "number": "2.4.10",
+  "title": "Cereal as a Subset of Span.",
+  "body": " Cereal as a Subset of Span  Returning to my cereal example, suppose that I know that my box of Sugar-O's contains 12 servings and my box of Vitaflakes contains 10 servings. If is the nutrition facts vector for a single serving of Sugar-O's and is the nutrition facts vector for a single serving of Vitaflakes, then the set of all possible mixtures I can make are given by:   "
+},
+{
   "id": "activity-makeability1",
   "level": "2",
   "url": "chp2sec4.html#activity-makeability1",
   "type": "Activity",
-  "number": "2.4.8",
+  "number": "2.4.11",
   "title": "Exploring Makeability.",
   "body": " Exploring Makeability   In each of the following parts, explore how you can make from the given . Can you find a way to make from ? If so, are there multiple ways or is it unique? Explain.   Consider and .  Consider and .    "
 },
@@ -1013,7 +1058,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp2sec4.html#def-solution_vectors",
   "type": "Definition",
-  "number": "2.4.9",
+  "number": "2.4.12",
   "title": "Solution Vectors.",
   "body": " Solution Vectors   If , , and are such that , then the associated servings vector is a solution vector for making with .   "
 },
@@ -1022,7 +1067,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp2sec4.html#activity-exploring_makeability_geometrically",
   "type": "Activity",
-  "number": "2.4.10",
+  "number": "2.4.13",
   "title": "Exploring Makeability Geometrically.",
   "body": " Exploring Makeability Geometrically   In this activity, you will use GeoGebra ID: twf46ake to visualize and investigate makeability in . Let , , and .    Explore. Use the visual representations provided to decide if and can be made with . Clearly explain the visual feature(s) you are using to make your determinations.  Symbolize. For each makeable vector, write down the corresponding symbolic equation. (Perform the associated computation to verify you have indeed found a solution vector.)     Solution set in .      "
 },
@@ -1031,7 +1076,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp2sec4.html#def-solution_set",
   "type": "Definition",
-  "number": "2.4.11",
+  "number": "2.4.14",
   "title": "Solution Set.",
   "body": " Solution Set   If and then the set of all solution vectors for making with can be identified with a subset of called the solution set for making with . In symbols,    "
 },
@@ -1040,7 +1085,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp2sec4.html#activity-symbolizing_with_solution_sets",
   "type": "Activity",
-  "number": "2.4.12",
+  "number": "2.4.15",
   "title": "Symbolizing with Solution Sets.",
   "body": " Symbolizing with Solution Sets   Symbolize each expression using solution sets and set notation.   .  .  There is no way to make with vectors , , and .    "
 },
@@ -1049,7 +1094,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp2sec4.html#activity-interpreting_the_symbolism_of_solution_sets",
   "type": "Activity",
-  "number": "2.4.13",
+  "number": "2.4.16",
   "title": "Interpreting the Symbolism of Solution Sets.",
   "body": " Interpreting the Symbolism of Solution Sets   Use complete sentences and the language of mixture to interpret the meaning of each algebraic expression.   .  .  .    "
 },
@@ -1058,7 +1103,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp2sec4.html#summary-span_summary",
   "type": "Insight",
-  "number": "2.4.14",
+  "number": "2.4.17",
   "title": "Span Summary.",
   "body": " Span Summary  If , then following are equivalent:   You can make from ,  ,  is nonempty.   "
 },
@@ -1067,7 +1112,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp2sec4.html#prop-span_has_subspace_properties",
   "type": "Proposition",
-  "number": "2.4.15",
+  "number": "2.4.18",
   "title": "Algebraic Properties of Span.",
   "body": " Algebraic Properties of Span   If , and   (Non-empty.) if denotes the zero vector, then ;  (Closed under addition.) if , then ;  (Closed under scaling.) if and , then .    "
 },
@@ -1085,7 +1130,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp2sec4.html#activity-justify_span_is_subspace",
   "type": "Activity",
-  "number": "2.4.16",
+  "number": "2.4.19",
   "title": "Practicing Formal Justification.",
   "body": " Practicing Formal Justification   Carefully write down a formal justification for the third property of . Be sure to carefully explain your reasoning and include references to all appropriate definitions and proven propositions. When done, share with the class.   "
 },
@@ -1094,7 +1139,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp2sec4.html#chp2sec4subsec3-6",
   "type": "Insight",
-  "number": "2.4.17",
+  "number": "2.4.20",
   "title": "Algebraic Properties of Span as Mixture of Mixtures.",
   "body": " Algebraic Properties of Span as Mixture of Mixtures  Using the metaphor of mixture, says that, if you fix a collection of ingredients, a mixture of mixtures is still just a mixture of the original ingredients.  "
 },
@@ -1546,7 +1591,7 @@ var ptx_lunr_docs = [
   "type": "Lesson",
   "number": "3.2",
   "title": "Matrix Multiplication Sets",
-  "body": " Matrix Multiplication Sets  Recall in Chapter , I introduced three fundamental sets associated to linear combination: span, null space, and solution set. Since matrix multiplication is a symbolic compactification of linear combination, it should not come as a surprise that these three mixture sets become matrix multiplication sets.   Span becomes Column Space  The question of span concerns what all we can make with a fixed collection of ingredients. This notion is formalized with the concept of span (the noun) ( ). In symbols, if , then If we use the definition of matrix multiplication ( ) to compactify this expression and set , then We call this symbolic compactification the column space.   Column Space   If is an matrix, then the column space of is the span of its columns. In symbols,      A rose by any other name... Do not be scared of column space, it is just different language for span (the noun) - something you already know! You may then ask: Why introduce two names for the same thing? It is simply a matter of convenience: if we start with matrix whose columns are not already symbolized, then it is convenient to directly reference and reason about its column space without having to first symbolize its columns.  Column spaces are another instance of subspace (cf. ). Remember, subspaces play a central role in linear algebra and it is always useful to be aware of which subsets we are working with happen to be subspaces.   Column Space is a Subspace. If is an matrix, then is a subspace in .   The justification of this proposition is a logical consequence of chaining together and .     Dependency becomes Null Space  The question of redundancy concerns whether a collection of vectors contains one vector that can be made from a linear combination of the other vectors in the collection. This notion is formalized with the concept of dependence (Definition ). Algebraically, this condition was reformulated as asking if the zero vector can be made as a linear combination in a nontrivial way (cf. ). Symbolically, if , then we want to know if there exists numbers , at least one of which is not zero, such that . If we use the definition of matrix multiplication ( ) to compactify this expression and set , then we want to know if there exists a nonzero vector such that . We call this symbolic compactification the null space.   Null Space   If is an matrix, then the null space of is the null space of its columns. In symbols,      Null Space is a Subspace. If is an matrix, then is a subspace in .   The justification of this proposition is primarily a logical consequence of chaining together , Definition , and . Alternatively, consider . Fill in the details on your own.    Null space records redundancy. Do not be scared of null space, it is simply the null space of the columns of the matrix - something you already know! The null space is the set of all ways we can make the zero vector with the columns of our matrix.   Dependency as nontrivial null space.   If is an matrix, then if and only if the columns of are independent.     For this formal justification, try to re-interpret Proposition using the compact notation of matrices and null space.    Finding Column Space and Null Space   Suppose and I want to know its column space and null space .  To start, I begin by recalling the meanings of these terms. Column space is the span of the columns of and null space is all the ways I can make zero with the columns of . So I then identify and write down the columns of : . I can see (e.g. by plotting) that and are non-collinear. Therefore, their span is the plane in going through the points , , and . Furthermore, since is non-collinear, it is independent, and hence the only way to make zero is the trivial way. Therefore the null space is the trivial (i.e. zero) subspace. In algebraic symbolism:      Finding Column Space and Null Space   Suppose and I want to know its column space and null space .  To start, I begin by recalling the meanings of these terms. Column space is the span of the columns of and null space is all the ways I can make zero with the columns of . So I then identify and write down the columns of : . I can see (e.g. by plotting) that and are non-collinear. Therefore, their span is the whole plane in , and hence the span of must also be all of . I can also see (e.g. by visual inspection), that , hence , and thus I have null scalars . In algebraic symbolism:      Column Space and Null Space   For each of the following matrices, analyze their column space and null space. Describe them geometrically (i.e. trivial, line, plane, or more generally, a -plane for appropriate ), use appropriate algebraic symbolism, and find their parametric vector forms.       Makeability becomes Solution Set  The question of makeability concerns whether a given vector can be made with the vectors in our collection, and if so, how. Symbolically, if , then we want to know if there exists numbers , such that . If we use the definition of matrix multiplication ( ) to compactify this expression and set , then we want to know if there exists a vector such that . We call this symbolic compactification the solution set of the matrix equation.   Solution Set   If is an matrix and , then the solution set to the matrix equation is the collection of all vectors such that . In symbols,     Solution sets to matrix equations are central to linear algebra, and we will revisit and look more deeply into them throughout the course.  Observe that , which is a subspace. On the other hand, if , then is never a subspace.   "
+  "body": " Matrix Multiplication Sets  Recall in , I introduced three fundamental sets associated to linear combination: span, null space, and solution set. Since matrix multiplication is a symbolic compactification of linear combination, it should not come as a surprise that these three mixture sets become matrix multiplication sets.   Span becomes Column Space  The question of span concerns what all we can make with a fixed collection of ingredients. This notion is formalized with the concept of span (the noun) ( ). In symbols, if , then If we use the definition of matrix multiplication ( ) to compactify this expression and set , then We call this symbolic compactification the column space.   Column Space   If is an matrix, then the column space of is the span of its columns. In symbols,      A rose by any other name... Do not be scared of column space, it is just different language for span (the noun) - something you already know! You may then ask: Why introduce two names for the same thing? It is simply a matter of convenience: if we start with matrix whose columns are not already symbolized, then it is convenient to directly reference and reason about its column space without having to first symbolize its columns.  Column spaces are another instance of subspace (cf. ). Remember, subspaces play a central role in linear algebra and it is always useful to be aware of which subsets we are working with happen to be subspaces.   Column Space is a Subspace   If is an matrix, then is a subspace in .     The justification of this proposition is a logical consequence of chaining together and .     Dependency becomes Null Space  The question of redundancy concerns whether a collection of vectors contains one vector that can be made from a linear combination of the other vectors in the collection. This notion is formalized with the concept of dependence ( ). Algebraically, this condition was reformulated as asking if the zero vector can be made as a linear combination in a nontrivial way (cf. ). Symbolically, if , then we want to know if there exists numbers , at least one of which is not zero, such that . If we use the definition of matrix multiplication ( ) to compactify this expression and set , then we want to know if there exists a nonzero vector such that . We call this symbolic compactification the null space.   Null Space   If is an matrix, then the null space of is the null space of its columns. In symbols,      Null Space is a Subspace   If is an matrix, then is a subspace in .     The justification of this proposition is primarily a logical consequence of chaining together , , and . Alternatively, consider . Fill in the details on your own.    Null space records redundancy. Do not be scared of null space, it is simply the null space of the columns of the matrix - something you already know! The null space is the set of all ways we can make the zero vector with the columns of our matrix.   Dependency as nontrivial null space.   If is an matrix, then if and only if the columns of are independent.     For this formal justification, try to re-interpret Proposition using the compact notation of matrices and null space.    Finding Column Space and Null Space   Suppose and I want to know its column space and null space .  To start, I begin by recalling the meanings of these terms. Column space is the span of the columns of and null space is all the ways I can make zero with the columns of . So I then identify and write down the columns of : . I can see (e.g. by plotting) that and are non-collinear. Therefore, their span is the plane in going through the points , , and . Furthermore, since is non-collinear, it is independent, and hence the only way to make zero is the trivial way. Therefore the null space is the trivial (i.e. zero) subspace. In algebraic symbolism:      Finding Column Space and Null Space   Suppose and I want to know its column space and null space .  To start, I begin by recalling the meanings of these terms. Column space is the span of the columns of and null space is all the ways I can make zero with the columns of . So I then identify and write down the columns of : . I can see (e.g. by plotting) that and are non-collinear. Therefore, their span is the whole plane in , and hence the span of must also be all of . I can also see (e.g. by visual inspection), that , hence , and thus I have null scalars . In algebraic symbolism:      Column Space and Null Space   For each of the following matrices, analyze their column space and null space. Describe them geometrically (i.e. trivial, line, plane, or more generally, a -plane for appropriate ), use appropriate algebraic symbolism, and find their parametric vector forms.       Makeability becomes Solution Set  The question of makeability concerns whether a given vector can be made with the vectors in our collection, and if so, how. Symbolically, if , then we want to know if there exists numbers , such that . If we use the definition of matrix multiplication ( ) to compactify this expression and set , then we want to know if there exists a vector such that . We call this symbolic compactification the solution set of the matrix equation.   Solution Set   If is an matrix and , then the solution set to the matrix equation is the collection of all vectors such that . In symbols,     Solution sets to matrix equations are central to linear algebra, and we will revisit and look more deeply into them throughout the course.  Observe that , which is a subspace. On the other hand, if , then is never a subspace.   "
 },
 {
   "id": "def-columnspace",
@@ -1556,6 +1601,15 @@ var ptx_lunr_docs = [
   "number": "3.2.1",
   "title": "Column Space.",
   "body": " Column Space   If is an matrix, then the column space of is the span of its columns. In symbols,    "
+},
+{
+  "id": "prop-columnset_is_subspace",
+  "level": "2",
+  "url": "chp3sec2.html#prop-columnset_is_subspace",
+  "type": "Proposition",
+  "number": "3.2.2",
+  "title": "Column Space is a Subspace.",
+  "body": " Column Space is a Subspace   If is an matrix, then is a subspace in .   "
 },
 {
   "id": "chp3sec2-3-7",
@@ -1571,9 +1625,18 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp3sec2.html#def-nullspace",
   "type": "Definition",
-  "number": "3.2.2",
+  "number": "3.2.3",
   "title": "Null Space.",
   "body": " Null Space   If is an matrix, then the null space of is the null space of its columns. In symbols,    "
+},
+{
+  "id": "prop-nullA_is_subspace",
+  "level": "2",
+  "url": "chp3sec2.html#prop-nullA_is_subspace",
+  "type": "Proposition",
+  "number": "3.2.4",
+  "title": "Null Space is a Subspace.",
+  "body": " Null Space is a Subspace   If is an matrix, then is a subspace in .   "
 },
 {
   "id": "chp3sec2-4-5",
@@ -1582,14 +1645,14 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "1",
   "title": "",
-  "body": " The justification of this proposition is primarily a logical consequence of chaining together , Definition , and . Alternatively, consider . Fill in the details on your own.  "
+  "body": " The justification of this proposition is primarily a logical consequence of chaining together , , and . Alternatively, consider . Fill in the details on your own.  "
 },
 {
   "id": "prop-dependency_null_2",
   "level": "2",
   "url": "chp3sec2.html#prop-dependency_null_2",
   "type": "Proposition",
-  "number": "3.2.3",
+  "number": "3.2.5",
   "title": "Dependency as nontrivial null space..",
   "body": " Dependency as nontrivial null space.   If is an matrix, then if and only if the columns of are independent.   "
 },
@@ -1607,7 +1670,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp3sec2.html#chp3sec2-4-9",
   "type": "Example",
-  "number": "3.2.4",
+  "number": "3.2.6",
   "title": "Finding Column Space and Null Space.",
   "body": " Finding Column Space and Null Space   Suppose and I want to know its column space and null space .  To start, I begin by recalling the meanings of these terms. Column space is the span of the columns of and null space is all the ways I can make zero with the columns of . So I then identify and write down the columns of : . I can see (e.g. by plotting) that and are non-collinear. Therefore, their span is the plane in going through the points , , and . Furthermore, since is non-collinear, it is independent, and hence the only way to make zero is the trivial way. Therefore the null space is the trivial (i.e. zero) subspace. In algebraic symbolism:    "
 },
@@ -1616,7 +1679,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp3sec2.html#chp3sec2-4-10",
   "type": "Example",
-  "number": "3.2.5",
+  "number": "3.2.7",
   "title": "Finding Column Space and Null Space.",
   "body": " Finding Column Space and Null Space   Suppose and I want to know its column space and null space .  To start, I begin by recalling the meanings of these terms. Column space is the span of the columns of and null space is all the ways I can make zero with the columns of . So I then identify and write down the columns of : . I can see (e.g. by plotting) that and are non-collinear. Therefore, their span is the whole plane in , and hence the span of must also be all of . I can also see (e.g. by visual inspection), that , hence , and thus I have null scalars . In algebraic symbolism:    "
 },
@@ -1625,7 +1688,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp3sec2.html#activity-computing_col_null",
   "type": "Activity",
-  "number": "3.2.6",
+  "number": "3.2.8",
   "title": "Column Space and Null Space.",
   "body": " Column Space and Null Space   For each of the following matrices, analyze their column space and null space. Describe them geometrically (i.e. trivial, line, plane, or more generally, a -plane for appropriate ), use appropriate algebraic symbolism, and find their parametric vector forms.    "
 },
@@ -1634,7 +1697,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "chp3sec2.html#def-solutionset",
   "type": "Definition",
-  "number": "3.2.7",
+  "number": "3.2.9",
   "title": "Solution Set.",
   "body": " Solution Set   If is an matrix and , then the solution set to the matrix equation is the collection of all vectors such that . In symbols,    "
 },
