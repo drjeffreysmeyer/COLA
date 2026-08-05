@@ -213,23 +213,17 @@ eBookConfig.enable_chatcodes =  false;
 
 \newcommand{\rowP}[2]{
   \hspace{0.5pc}  
-  \overset
-  {r_{#1} \leftrightarrow r_{#2}}
-  {\widesim}
+  \xrightarrow{r_{#1} \leftrightarrow r_{#2}}
   \hspace{0.5pc}
 }
 \newcommand{\rowS}[2]{
   \hspace{0.5pc}  
-  \overset
-  {r_{#1} \mapsto #2r_{#1}}
-  {\widesim}
+  \xrightarrow{r_{#1} \mapsto #2r_{#1}}
   \hspace{0.5pc}
 }
 \newcommand{\rowA}[3]{
   \hspace{0.5pc}  
-  \overset
-  {r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}}
-  {\widesim}
+  \xrightarrow{r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}}
   \hspace{0.5pc}
 }
 \newcommand{\RowA}[3]{
@@ -315,6 +309,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="chp2sec6.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Subsets That Contain Their Mixtures</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec6.html#lesson-linear_combination_subspace" class="internal"><span class="title">Subsets That Contain Their Mixtures</span></a></div></li></ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec7.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Basis as Coordinate System</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -360,10 +355,6 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec1.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Dependency Analysis</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec2.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Containment in a Span</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec3.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Concepts of Basis</span></a></div></li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="chp5sec4.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Basis as Coordinate System</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chp5sec4.html#chp5sec4-23" class="internal"><span class="codenumber">5.4</span> <span class="title">Problems</span></a></div></li></ul>
-</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -619,7 +610,7 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reduced Row Echelon Form (rref).</span>
 </h3>
 <div class="para" id="def-rref-2-1">A matrix is in <dfn class="terminology">reduced row echelon form (rref)</dfn> if<div class="autopermalink" data-description="Paragraph"><a href="#def-rref-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <ol class="decimal ol-marker-5" id="def-rref-2-2">
+</div> <ol class="decimal ol-marker-6" id="def-rref-2-2">
 <li id="def-rref-2-2-1">
 <div class="para" id="def-rref-2-2-1-1">All zero rows are at the bottom,<div class="autopermalink" data-description="Paragraph"><a href="#def-rref-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -641,7 +632,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Item 4"><a href="#def-rref-2-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Definition 4.3.6: Reduced Row Echelon Form (rref)"><a href="#def-rref" title="Copy heading and permalink for Definition 4.3.6: Reduced Row Echelon Form (rref)" aria-label="Copy heading and permalink for Definition 4.3.6: Reduced Row Echelon Form (rref)">🔗</a></div></article><div class="para" id="chp4sec3a-24">Condition (R3) is sometimes called the staircase condition because it requires that the zeros form a staircase moving downward from the top left. Observe this staircase in each of the following examples of matrices in reduced row echelon form:<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3a-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 4.3.6: Reduced Row Echelon Form (rref)"><a href="#def-rref" title="Copy heading and permalink for Definition 4.3.6: Reduced Row Echelon Form (rref)" aria-label="Copy heading and permalink for Definition 4.3.6: Reduced Row Echelon Form (rref)">🔗</a></div></article><div class="para" id="chp4sec3a-24">Condition (R3) is sometimes called the <em class="emphasis">staircase condition</em> because it requires that the zeros form a staircase moving downward from the top left. Observe this staircase in each of the following examples of matrices in reduced row echelon form:<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3a-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="chp4sec3a-25">
 <div class="displaymath process-math" id="chp4sec3a-25-1">
@@ -656,11 +647,11 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3a-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="chp4sec3a-26">In (R2), a pivot position of a matrix is the entry in which a leading 1 will appear in rref. So, for example, the matrix <span class="process-math">\(\begin{bmatrix} 1 \amp -1 \amp 1 \\ 1 \amp 1 \amp 5 \end{bmatrix}\)</span> has pivot positions 1-1 and 2-2. Pivot positions play an important role in elimination and it is useful to have language to reference these positions.<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3a-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="chp4sec3a-26">In (R2), a <dfn class="terminology">pivot position</dfn> of a matrix is the entry in which a leading 1 will appear in rref. So, for example, the matrix <span class="process-math">\(\begin{bmatrix} 1 \amp -1 \amp 1 \\ 1 \amp 1 \amp 5 \end{bmatrix}\)</span> has pivot positions 1-1 and 2-2. Pivot positions play an important role in elimination and it is useful to have language to reference these positions. A column containing a pivot position is called a <dfn class="terminology">pivot column</dfn>, and a column that does not contain a pivot position is called a <dfn class="terminology">free column</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3a-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="chp4sec3a-27">Any matrix can be put into reduced row echelon form through a sequence of elementary row operations. If <span class="process-math">\(A\)</span> is a matrix, then we denote its reduced row echelon form <span class="process-math">\(\rref(A)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3a-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="chp4sec3a-27">If <span class="process-math">\(A\)</span> is a matrix, then we denote its reduced row echelon form <span class="process-math">\(\rref(A)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3a-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="chp4sec3a-28">Elimination can now be characterized as using row operations to put our augmented matrix into rref, from which we can then interpret the solution set.<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3a-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="chp4sec3a-28">Any matrix can be put into reduced row echelon form through a sequence of elementary row operations. While there are many sequences of row operations that will produce rref, the Gaussian elimination algorithm below provides a systematic approach.<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3a-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="algorithm theorem-like" id="algorithm-elimination"><h3 class="heading">
 <span class="type">Algorithm</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Gaussian Elimination.</span>
@@ -711,15 +702,17 @@ eBookConfig.enable_chatcodes =  false;
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#algorithm-elimination-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Algorithm 4.3.7: Gaussian Elimination"><a href="#algorithm-elimination" title="Copy heading and permalink for Algorithm 4.3.7: Gaussian Elimination" aria-label="Copy heading and permalink for Algorithm 4.3.7: Gaussian Elimination">🔗</a></div></article><div class="para logical" id="chp4sec3a-30">
+<div class="autopermalink" data-description="Algorithm 4.3.7: Gaussian Elimination"><a href="#algorithm-elimination" title="Copy heading and permalink for Algorithm 4.3.7: Gaussian Elimination" aria-label="Copy heading and permalink for Algorithm 4.3.7: Gaussian Elimination">🔗</a></div></article><div class="para" id="chp4sec3a-30">Elimination can now be characterized as using row operations to put our augmented matrix into rref, from which we can then interpret the solution set.<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3a-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="chp4sec3a-31">
 <div class="para">Take a moment to think about the different ways to compute the reduced row echelon form of the matrix</div>
-<div class="displaymath process-math" id="chp4sec3a-30-1">
+<div class="displaymath process-math" id="chp4sec3a-31-1">
 \begin{equation*}
 \left[\begin{array}{cc|c} 2 \amp 7 \amp -3 \\ 1 \amp 3 \amp -1 \end{array}\right]
 \end{equation*}
 </div>
 <div class="para">Observe that one way introduces fractions while another does not. Both ways will give you the same reduced row echelon form matrix, however you will likely find that the way that avoids fractions is simpler computationally (and less likely to produce computational errors). When computing rref by hand, I encourage you to think through your options and select the sequence of row operations that is computationally simplest.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3a-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3a-31" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="question example-like" id="activity-computing_interpreting_rref"><h3 class="heading">
 <span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Computing and Interpreting rref.</span>
@@ -755,36 +748,36 @@ eBookConfig.enable_chatcodes =  false;
 \left[\begin{array}{ccc|c} 1 \amp 2 \amp 3 \amp 0 \\ 4 \amp 5 \amp 6 \amp 0 \\ 7 \amp 8 \amp 9 \amp 0 \end{array}\right]
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Activity 4.3.8: Computing and Interpreting rref"><a href="#activity-computing_interpreting_rref" title="Copy heading and permalink for Activity 4.3.8: Computing and Interpreting rref" aria-label="Copy heading and permalink for Activity 4.3.8: Computing and Interpreting rref">🔗</a></div></article><div class="para" id="chp4sec3a-32">Many students come out of their linear algebra courses <em class="emphasis">just</em> knowing how to use row operations to put a matrix in reduced row echelon form. While this is important, as we shall shortly see, computers do this quite easily. It is far more valuable for you to be able to set up an augmented matrix and then interpreting the meaning of its associated reduced row echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3a-32" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Activity 4.3.8: Computing and Interpreting rref"><a href="#activity-computing_interpreting_rref" title="Copy heading and permalink for Activity 4.3.8: Computing and Interpreting rref" aria-label="Copy heading and permalink for Activity 4.3.8: Computing and Interpreting rref">🔗</a></div></article><div class="para" id="chp4sec3a-33">Many students come out of their linear algebra courses <em class="emphasis">just</em> knowing how to use row operations to put a matrix in reduced row echelon form. While this is important, as we shall shortly see, computers do this quite easily. It is far more valuable for you to be able to set up an augmented matrix and then interpreting the meaning of its associated reduced row echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3a-33" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="technology computation-like" id="activity-geogebra_rref"><h3 class="heading">
 <span class="type">Technology</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">rref in GeoGebra.</span>
 </h3>
 <div class="para" id="activity-geogebra_rref-2-1">In this activity, you will symbolically find and interpret solution sets. The GeoGebra objects you should gain proficiency with are: <code class="code-inline tex2jax_ignore">matrix</code> and <code class="code-inline tex2jax_ignore">ReducedRowEchelon</code>. You will do so by revisiting the systems from GeoGebra  <a href="chp4sec2.html#geoactivity_visualizingintersections" class="xref" data-knowl="./knowl/xref/geoactivity_visualizingintersections.html" data-reveal-label="Reveal" data-close-label="Close" title="Activity 4.2.9: Visualizing Intersections of Hyperplanes">Activity 4.2.9</a>, in which you visually found the solution sets. Do each part for each system.<div class="autopermalink" data-description="Paragraph"><a href="#activity-geogebra_rref-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para logical" id="activity-geogebra_rref-2-2">
-<ol class="lower-alpha ol-marker-4" id="activity-geogebra_rref-2-2-1">
-<li id="activity-geogebra_rref-2-2-1-1">
-<div class="para" id="activity-geogebra_rref-2-2-1-1-1">
-<em class="alert">Compute.</em> Using list notation, input the system as an augmented matrix. (Note that the equals bar cannot be input, so just remember where it goes.) Using <code class="code-inline tex2jax_ignore">ReducedRowEchelon</code>, find the reduced row echelon form of the matrix.<div class="autopermalink" data-description="Paragraph"><a href="#activity-geogebra_rref-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="interactive-iframe-container"><iframe src="https://www.geogebra.org/material/iframe/id/sfx325un/scaleContainerClass/interactive-iframe-container/width/800/height/320/allowUpscale/true/autoHeight/true/border/888888/smb/false/stb/false/stbh/false/ai/true/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/false" id="activity-geogebra_rref-2-2" style="width:540px; height:216px; display: block; "></iframe></div> <div class="para logical" id="activity-geogebra_rref-2-3">
+<ol class="lower-alpha ol-marker-4" id="activity-geogebra_rref-2-3-1">
+<li id="activity-geogebra_rref-2-3-1-1">
+<div class="para" id="activity-geogebra_rref-2-3-1-1-1">
+<em class="alert">Compute.</em> Using list notation, input the system as an augmented matrix. (Note that the equals bar cannot be input, so just remember where it goes.) Using <code class="code-inline tex2jax_ignore">ReducedRowEchelon</code>, find the reduced row echelon form of the matrix.<div class="autopermalink" data-description="Paragraph"><a href="#activity-geogebra_rref-2-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item a"><a href="#activity-geogebra_rref-2-2-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+<div class="autopermalink" data-description="Item a"><a href="#activity-geogebra_rref-2-3-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
 </li>
-<li id="activity-geogebra_rref-2-2-1-2">
-<div class="para" id="activity-geogebra_rref-2-2-1-2-1">
-<em class="alert"><span class="process-math">\(k\)</span>-Planes.</em> Interpret the rref matrix to write the solution set to the system in parametric vector form.<div class="autopermalink" data-description="Paragraph"><a href="#activity-geogebra_rref-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="activity-geogebra_rref-2-3-1-2">
+<div class="para" id="activity-geogebra_rref-2-3-1-2-1">
+<em class="alert"><span class="process-math">\(k\)</span>-Planes.</em> Interpret the rref matrix to write the solution set to the system in parametric vector form.<div class="autopermalink" data-description="Paragraph"><a href="#activity-geogebra_rref-2-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item b"><a href="#activity-geogebra_rref-2-2-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+<div class="autopermalink" data-description="Item b"><a href="#activity-geogebra_rref-2-3-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
 </li>
-<li id="activity-geogebra_rref-2-2-1-3">
-<div class="para" id="activity-geogebra_rref-2-2-1-3-1">
-<em class="alert">Compare.</em> Reflect on if your solutions set agrees with the one you found via intersection tools in GeoGebra  <a href="chp4sec2.html#geoactivity_visualizingintersections" class="xref" data-knowl="./knowl/xref/geoactivity_visualizingintersections.html" data-reveal-label="Reveal" data-close-label="Close" title="Activity 4.2.9: Visualizing Intersections of Hyperplanes">Activity 4.2.9</a>.<div class="autopermalink" data-description="Paragraph"><a href="#activity-geogebra_rref-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="activity-geogebra_rref-2-3-1-3">
+<div class="para" id="activity-geogebra_rref-2-3-1-3-1">
+<em class="alert">Compare.</em> Reflect on if your solutions set agrees with the one you found via intersection tools in GeoGebra  <a href="chp4sec2.html#geoactivity_visualizingintersections" class="xref" data-knowl="./knowl/xref/geoactivity_visualizingintersections.html" data-reveal-label="Reveal" data-close-label="Close" title="Activity 4.2.9: Visualizing Intersections of Hyperplanes">Activity 4.2.9</a>.<div class="autopermalink" data-description="Paragraph"><a href="#activity-geogebra_rref-2-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item c"><a href="#activity-geogebra_rref-2-2-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+<div class="autopermalink" data-description="Item c"><a href="#activity-geogebra_rref-2-3-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#activity-geogebra_rref-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#activity-geogebra_rref-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Technology 4.3.9: rref in GeoGebra"><a href="#activity-geogebra_rref" title="Copy heading and permalink for Technology 4.3.9: rref in GeoGebra" aria-label="Copy heading and permalink for Technology 4.3.9: rref in GeoGebra">🔗</a></div></article><div class="para" id="chp4sec3a-34">Going forward, I expect you to be able to flexibly and correctly implement the Gaussian Elimination <a href="chp4sec3a.html#algorithm-elimination" class="xref" data-knowl="./knowl/xref/algorithm-elimination.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 4.3.7: Gaussian Elimination">Algorithm 4.3.7</a> by hand for <span class="process-math">\(3 \times 3\)</span> matrices and smaller. There is nothing particularly different about performing Gaussian Elimination for larger matrices. Whether you have used Gaussian Elimination to compute the rref of <span class="process-math">\(3 \times 3\)</span> or <span class="process-math">\(300 \times 300\)</span> matrices, you have demonstrated the same understandings. You should be able to use technology such as GeoGebra to be able compute the rref for both small and large matrices.<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3a-34" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Technology 4.3.9: rref in GeoGebra"><a href="#activity-geogebra_rref" title="Copy heading and permalink for Technology 4.3.9: rref in GeoGebra" aria-label="Copy heading and permalink for Technology 4.3.9: rref in GeoGebra">🔗</a></div></article><div class="para" id="chp4sec3a-35">Going forward, I expect you to be able to flexibly and correctly implement the Gaussian Elimination <a href="chp4sec3a.html#algorithm-elimination" class="xref" data-knowl="./knowl/xref/algorithm-elimination.html" data-reveal-label="Reveal" data-close-label="Close" title="Algorithm 4.3.7: Gaussian Elimination">Algorithm 4.3.7</a> by hand for <span class="process-math">\(3 \times 3\)</span> matrices and smaller. There is nothing particularly different about performing Gaussian Elimination for larger matrices. Whether you have used Gaussian Elimination to compute the rref of <span class="process-math">\(3 \times 3\)</span> or <span class="process-math">\(300 \times 300\)</span> matrices, you have demonstrated the same understandings. You should be able to use technology such as GeoGebra to be able compute the rref for both small and large matrices.<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3a-35" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Lesson 4.3: Computing RREF"><a href="#chp4sec3a" title="Copy heading and permalink for Lesson 4.3: Computing RREF" aria-label="Copy heading and permalink for Lesson 4.3: Computing RREF">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">

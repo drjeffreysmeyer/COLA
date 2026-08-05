@@ -1,7 +1,8 @@
 ol.ol-marker-1 > li::marker { content: "(F"counter(list-item,decimal)") "; }
 ol.ol-marker-2 > li::marker { content: "(LC"counter(list-item,decimal)") "; }
 ol.ol-marker-3 > li::marker { content: "(S"counter(list-item,decimal)") "; }
-ol.ol-marker-4 > li::marker { content: ""counter(list-item,lower-alpha)" "; }
-ol.ol-marker-5 > li::marker { content: "(R"counter(list-item,decimal)") "; }
-ol.ol-marker-6 > li::marker { content: "Type "counter(list-item,decimal)". "; }
-ol.ol-marker-7 > li::marker { content: "("counter(list-item,lower-alpha)") "; }
+ol.ol-marker-4 > li::marker { content: ""counter(list-item,lower-alpha)". "; }
+ol.ol-marker-5 > li::marker { content: ""counter(list-item,lower-alpha)" "; }
+ol.ol-marker-6 > li::marker { content: "(R"counter(list-item,decimal)") "; }
+ol.ol-marker-7 > li::marker { content: "Type "counter(list-item,decimal)". "; }
+ol.ol-marker-8 > li::marker { content: "("counter(list-item,lower-alpha)") "; }

@@ -213,23 +213,17 @@ eBookConfig.enable_chatcodes =  false;
 
 \newcommand{\rowP}[2]{
   \hspace{0.5pc}  
-  \overset
-  {r_{#1} \leftrightarrow r_{#2}}
-  {\widesim}
+  \xrightarrow{r_{#1} \leftrightarrow r_{#2}}
   \hspace{0.5pc}
 }
 \newcommand{\rowS}[2]{
   \hspace{0.5pc}  
-  \overset
-  {r_{#1} \mapsto #2r_{#1}}
-  {\widesim}
+  \xrightarrow{r_{#1} \mapsto #2r_{#1}}
   \hspace{0.5pc}
 }
 \newcommand{\rowA}[3]{
   \hspace{0.5pc}  
-  \overset
-  {r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}}
-  {\widesim}
+  \xrightarrow{r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}}
   \hspace{0.5pc}
 }
 \newcommand{\RowA}[3]{
@@ -315,6 +309,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="chp2sec6.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Subsets That Contain Their Mixtures</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec6.html#lesson-linear_combination_subspace" class="internal"><span class="title">Subsets That Contain Their Mixtures</span></a></div></li></ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec7.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Basis as Coordinate System</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -360,10 +355,6 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec1.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Dependency Analysis</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec2.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Containment in a Span</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec3.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Concepts of Basis</span></a></div></li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="chp5sec4.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Basis as Coordinate System</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chp5sec4.html#chp5sec4-23" class="internal"><span class="codenumber">5.4</span> <span class="title">Problems</span></a></div></li></ul>
-</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -478,7 +469,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">Revisiting our previous computation, we have</div>
 <div class="displaymath process-math" id="ex-interpreting-rref-no-free-2-1-1">
 \begin{equation*}
-\rref\left(\begin{bmatrix} 1 \amp -1 \amp 1 \\ 1 \amp 1 \amp 5 \end{bmatrix}\right) = \begin{bmatrix} 1 \amp 0 \amp 3 \\ 0 \amp 1 \amp 2 \end{bmatrix},
+\rref\left(\left[\begin{array}{cc|c} 1 \amp -1 \amp 1 \\ 1 \amp 1 \amp 5 \end{array}\right]\right) =\left[\begin{array}{cc|c} 1 \amp 0 \amp 3 \\ 0 \amp 1 \amp 2 \end{array}\right],
 \end{equation*}
 </div>
 <div class="para">the latter being in rref. Each row is a constraint on solution vectors. These constraining equations are</div>
@@ -523,7 +514,11 @@ eBookConfig.enable_chatcodes =  false;
 \begin{bmatrix} x \\ y \\ z \end{bmatrix} 
 = \begin{bmatrix} 3+z \\ 2-4z \\ z \end{bmatrix} 
 = \begin{bmatrix} 3 \\ 2 \\ 0 \end{bmatrix} + z \begin{bmatrix} 1 \\ -4 \\ 1 \end{bmatrix}
-\quad \text{which implies} \quad
+\end{equation*}
+</div>
+<div class="para">which implies</div>
+<div class="displaymath process-math" id="ex_interpretting_free_variables-2-2-10">
+\begin{equation*}
 \operatorname{Sol}(A,\vect{b}) = \left\{ \begin{bmatrix} 3 \\ 2 \\ 0 \end{bmatrix} + z \begin{bmatrix} 1 \\ -4 \\ 1 \end{bmatrix} \,\,\middle|\,\, z \in \mathbb{R} \right\}.
 \end{equation*}
 </div>
@@ -619,29 +614,44 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Item 5"><a href="#interpretation-solution_sets-2-2-1-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
 </li>
 <li id="interpretation-solution_sets-2-2-1-6">
-<div class="para" id="interpretation-solution_sets-2-2-1-6-1">The solution set <span class="process-math">\(\operatorname{Sol}(A,\vect{b})$\)</span> will be a <span class="process-math">\(k\)</span>-plane where <span class="process-math">\(k\)</span> is the number of free variables.<div class="autopermalink" data-description="Paragraph"><a href="#interpretation-solution_sets-2-2-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="interpretation-solution_sets-2-2-1-6-1">The solution set <span class="process-math">\(\operatorname{Sol}(A,\vect{b})\)</span> will be a <span class="process-math">\(k\)</span>-plane where <span class="process-math">\(k\)</span> is the number of free variables.<div class="autopermalink" data-description="Paragraph"><a href="#interpretation-solution_sets-2-2-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 6"><a href="#interpretation-solution_sets-2-2-1-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
 </li>
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#interpretation-solution_sets-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Insight 4.4.6: Solution Sets as k-Planes in Parametric Vector Form"><a href="#interpretation-solution_sets" title="Copy heading and permalink for Insight 4.4.6: Solution Sets as k-Planes in Parametric Vector Form" aria-label="Copy heading and permalink for Insight 4.4.6: Solution Sets as k-Planes in Parametric Vector Form">🔗</a></div></article><article class="activity project-like" id="activity-practice_interpreting_rref"><h3 class="heading">
-<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Practice Interpreting rref.</span>
+<div class="autopermalink" data-description="Insight 4.4.6: Solution Sets as k-Planes in Parametric Vector Form"><a href="#interpretation-solution_sets" title="Copy heading and permalink for Insight 4.4.6: Solution Sets as k-Planes in Parametric Vector Form" aria-label="Copy heading and permalink for Insight 4.4.6: Solution Sets as k-Planes in Parametric Vector Form">🔗</a></div></article><article class="question example-like" id="activity-practice_interpreting_rref"><h3 class="heading">
+<span class="type">Activity</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Practice Interpreting rref.</span>
 </h3>
-<div class="para logical" id="activity-practice_interpreting_rref-2-1">
-<div class="para">In this activity, you will practice using the information of a row reduced augmented matrix <span class="process-math">\(\rref\left([A \mid \vect{b}]\right)\)</span> to describe its solution set. For each rref matrix below, clearly identify the free variables and then write the solution set, <span class="process-math">\(\operatorname{Sol}(A,\vect{b})\text{,}\)</span> in parametric vector form.</div>
-<div class="displaymath process-math" id="activity-practice_interpreting_rref-2-1-3">
-\begin{equation*}
-\left[\begin{array}{cccc|c} 1 \amp 0 \amp -1 \amp 2 \amp 5 \\ 0 \amp 1 \amp -1 \amp 3 \amp 2 \end{array}\right], \quad
-\left[\begin{array}{cc|c} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{array}\right], \quad
-\left[\begin{array}{ccc|c} 1 \amp 0 \amp 0 \amp 2 \\ 0 \amp 1 \amp 0 \amp 3 \\ 0 \amp 0 \amp 1 \amp 1 \end{array}\right], \quad
-\left[\begin{array}{ccc|c} 1 \amp 1 \amp 0 \amp 3 \\ 0 \amp 0 \amp 1 \amp 4 \end{array}\right]
-\end{equation*}
+<div class="para" id="activity-practice_interpreting_rref-2-1">In this activity, you will practice using the information of a row reduced augmented matrix <span class="process-math">\(\rref\left([A \mid \vect{b}]\right)\)</span> to describe its solution set. For each rref matrix below, clearly identify the free variables and then write the solution set, <span class="process-math">\(\operatorname{Sol}(A,\vect{b})\text{,}\)</span> in parametric vector form.<div class="autopermalink" data-description="Paragraph"><a href="#activity-practice_interpreting_rref-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ol class="lower-alpha ol-marker-4" id="activity-practice_interpreting_rref-2-2">
+<li id="activity-practice_interpreting_rref-2-2-1">
+<div class="para" id="activity-practice_interpreting_rref-2-2-1-1">
+<span class="process-math">\(\displaystyle \left[\begin{array}{cccc|c} 1 \amp 0 \amp -1 \amp 2 \amp 5 \\ 0 \amp 1 \amp -1 \amp 3 \amp 2 \end{array}\right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#activity-practice_interpreting_rref-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#activity-practice_interpreting_rref-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Item a"><a href="#activity-practice_interpreting_rref-2-2-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="activity-practice_interpreting_rref-2-2-2">
+<div class="para" id="activity-practice_interpreting_rref-2-2-2-1">
+<span class="process-math">\(\displaystyle \left[\begin{array}{cc|c} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{array}\right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#activity-practice_interpreting_rref-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Activity 4.4.1: Practice Interpreting rref"><a href="#activity-practice_interpreting_rref" title="Copy heading and permalink for Activity 4.4.1: Practice Interpreting rref" aria-label="Copy heading and permalink for Activity 4.4.1: Practice Interpreting rref">🔗</a></div></article><div class="para" id="chp4sec3b-13">As we conclude this lesson, keep in mind we introduced the concept of reduced row echelon form and focused on two associated mental actions: computing and interpreting (the parametric vector form of solution sets). The two go hand-in-hand and you should practice and be proficient with both.<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3b-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Item b"><a href="#activity-practice_interpreting_rref-2-2-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="activity-practice_interpreting_rref-2-2-3">
+<div class="para" id="activity-practice_interpreting_rref-2-2-3-1">
+<span class="process-math">\(\displaystyle \left[\begin{array}{ccc|c} 1 \amp 0 \amp 0 \amp 2 \\ 0 \amp 1 \amp 0 \amp 3 \\ 0 \amp 0 \amp 1 \amp 1 \end{array}\right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#activity-practice_interpreting_rref-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item c"><a href="#activity-practice_interpreting_rref-2-2-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="activity-practice_interpreting_rref-2-2-4">
+<div class="para" id="activity-practice_interpreting_rref-2-2-4-1">
+<span class="process-math">\(\displaystyle \left[\begin{array}{ccc|c} 1 \amp 1 \amp 0 \amp 3 \\ 0 \amp 0 \amp 1 \amp 4 \end{array}\right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#activity-practice_interpreting_rref-2-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item d"><a href="#activity-practice_interpreting_rref-2-2-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Activity 4.4.7: Practice Interpreting rref"><a href="#activity-practice_interpreting_rref" title="Copy heading and permalink for Activity 4.4.7: Practice Interpreting rref" aria-label="Copy heading and permalink for Activity 4.4.7: Practice Interpreting rref">🔗</a></div></article><div class="para" id="chp4sec3b-13">As we conclude this lesson, keep in mind we introduced the concept of reduced row echelon form and focused on two associated mental actions: computing and interpreting (the parametric vector form of solution sets). The two go hand-in-hand and you should practice and be proficient with both.<div class="autopermalink" data-description="Paragraph"><a href="#chp4sec3b-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Lesson 4.4: Interpreting RREF"><a href="#chp4sec3b" title="Copy heading and permalink for Lesson 4.4: Interpreting RREF" aria-label="Copy heading and permalink for Lesson 4.4: Interpreting RREF">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">

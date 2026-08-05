@@ -213,23 +213,17 @@ eBookConfig.enable_chatcodes =  false;
 
 \newcommand{\rowP}[2]{
   \hspace{0.5pc}  
-  \overset
-  {r_{#1} \leftrightarrow r_{#2}}
-  {\widesim}
+  \xrightarrow{r_{#1} \leftrightarrow r_{#2}}
   \hspace{0.5pc}
 }
 \newcommand{\rowS}[2]{
   \hspace{0.5pc}  
-  \overset
-  {r_{#1} \mapsto #2r_{#1}}
-  {\widesim}
+  \xrightarrow{r_{#1} \mapsto #2r_{#1}}
   \hspace{0.5pc}
 }
 \newcommand{\rowA}[3]{
   \hspace{0.5pc}  
-  \overset
-  {r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}}
-  {\widesim}
+  \xrightarrow{r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}}
   \hspace{0.5pc}
 }
 \newcommand{\RowA}[3]{
@@ -315,6 +309,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="chp2sec6.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Subsets That Contain Their Mixtures</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec6.html#lesson-linear_combination_subspace" class="internal"><span class="title">Subsets That Contain Their Mixtures</span></a></div></li></ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec7.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Basis as Coordinate System</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -360,10 +355,6 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec1.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Dependency Analysis</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec2.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Containment in a Span</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec3.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Concepts of Basis</span></a></div></li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="chp5sec4.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Basis as Coordinate System</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chp5sec4.html#chp5sec4-23" class="internal"><span class="codenumber">5.4</span> <span class="title">Problems</span></a></div></li></ul>
-</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -510,7 +501,7 @@ r_1 \mapsto r_1 + 2r_2.
 </h3>
 <div class="para logical" id="prop-classification_of_elementary_matrices-2-1">
 <div class="para">If <span class="process-math">\(E\)</span> is a <span class="process-math">\(2\times 2\)</span> elementary matrix, then it is of one of the following types:</div>
-<ol class="decimal ol-marker-6" id="prop-classification_of_elementary_matrices-2-1-3">
+<ol class="decimal ol-marker-7" id="prop-classification_of_elementary_matrices-2-1-3">
 <li id="prop-classification_of_elementary_matrices-2-1-3-1">
 <div class="para" id="prop-classification_of_elementary_matrices-2-1-3-1-1">Permutes rows: <span class="process-math">\(\begin{bmatrix}0\amp 1\\1\amp 0\end{bmatrix}\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-classification_of_elementary_matrices-2-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -601,15 +592,19 @@ E = \begin{bmatrix} 1\amp 0\amp 0\\0\amp 1\amp 0\\2\amp 0\amp 1\end{bmatrix}.
 <div class="para logical" id="chp4sec4-13">
 <div class="para">Let us now revisit our example:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-elimination_elementary_matrix.html" id="chp4sec4-13-1">
-\begin{equation*}
+\begin{align*}
 \left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 1 \amp  1 \amp  5 \end{array}\right]
-\rowA{2}{1}{-1}
-\left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 0 \amp  2 \amp  4 \end{array}\right] 
+\amp  \rowA{2}{1}{-1}
+\left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 0 \amp  2 \amp  4 \end{array}\right] \\
+\amp  \rowA{2}{1}{-1}
+\left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 0 \amp  2 \amp  4 \end{array}\right] \\
+\amp 
 \rowS{2}{\frac{1}{2}}
-\left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 0 \amp  1 \amp  2 \end{array}\right]
+\left[\begin{array}{cc|c} 1 \amp  -1 \amp  1 \\ 0 \amp  1 \amp  2 \end{array}\right]\\
+\amp 
 \rowA{1}{2}{1}
 \left[\begin{array}{cc|c} 1 \amp  0 \amp  3 \\ 0 \amp  1 \amp  2 \end{array}\right].
-\end{equation*}
+\end{align*}
 </div>
 <div class="para">In terms of elementary matrices, this can be re-written as:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-elimination_elementary_matrix.html" id="eq-elimination_elementary_matrix">

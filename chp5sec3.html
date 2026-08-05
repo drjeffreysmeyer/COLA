@@ -151,7 +151,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="chp5sec2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter5.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chp5sec4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="chp5sec2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chapter5.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chapter6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} 
 \newcommand{\Z}{\mathbb Z} 
 \newcommand{\Q}{\mathbb Q} 
@@ -213,23 +213,17 @@ eBookConfig.enable_chatcodes =  false;
 
 \newcommand{\rowP}[2]{
   \hspace{0.5pc}  
-  \overset
-  {r_{#1} \leftrightarrow r_{#2}}
-  {\widesim}
+  \xrightarrow{r_{#1} \leftrightarrow r_{#2}}
   \hspace{0.5pc}
 }
 \newcommand{\rowS}[2]{
   \hspace{0.5pc}  
-  \overset
-  {r_{#1} \mapsto #2r_{#1}}
-  {\widesim}
+  \xrightarrow{r_{#1} \mapsto #2r_{#1}}
   \hspace{0.5pc}
 }
 \newcommand{\rowA}[3]{
   \hspace{0.5pc}  
-  \overset
-  {r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}}
-  {\widesim}
+  \xrightarrow{r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}}
   \hspace{0.5pc}
 }
 \newcommand{\RowA}[3]{
@@ -315,6 +309,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="chp2sec6.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Subsets That Contain Their Mixtures</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec6.html#lesson-linear_combination_subspace" class="internal"><span class="title">Subsets That Contain Their Mixtures</span></a></div></li></ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec7.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Basis as Coordinate System</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -360,10 +355,6 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec1.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Dependency Analysis</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec2.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Containment in a Span</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="chp5sec3.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Concepts of Basis</span></a></div></li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="chp5sec4.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Basis as Coordinate System</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chp5sec4.html#chp5sec4-23" class="internal"><span class="codenumber">5.4</span> <span class="title">Problems</span></a></div></li></ul>
-</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -583,7 +574,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Item 2"><a href="#def-rank-nullity-terms-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Definition 5.3.9: Rank and Nullity"><a href="#def-rank-nullity-terms" title="Copy heading and permalink for Definition 5.3.9: Rank and Nullity" aria-label="Copy heading and permalink for Definition 5.3.9: Rank and Nullity">🔗</a></div></article><div class="para" id="chp5sec3-19">It follows from Interpretation <a href="chp5sec1.html#insight-dependence" class="xref" data-knowl="./knowl/xref/insight-dependence.html" data-reveal-label="Reveal" data-close-label="Close" title="Insight 5.1.3: Dependency Analysis">Insight 5.1.3</a> that <span class="process-math">\(\rank(A)\)</span> is equal to the number of columns of <span class="process-math">\(\rref(A)\)</span> with leading ones. Meanwhile, it follows from Interpretation <a href="chp4sec3b.html#interpretation-solution_sets" class="xref" data-knowl="./knowl/xref/interpretation-solution_sets.html" data-reveal-label="Reveal" data-close-label="Close" title="Insight 4.4.6: Solution Sets as k-Planes in Parametric Vector Form">Insight 4.4.6</a> that <span class="process-math">\(\nullity(A)\)</span> is equal to the number of columns of <span class="process-math">\(\rref(A)\)</span> without leading ones. We deduce the following result.<div class="autopermalink" data-description="Paragraph"><a href="#chp5sec3-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 5.3.9: Rank and Nullity"><a href="#def-rank-nullity-terms" title="Copy heading and permalink for Definition 5.3.9: Rank and Nullity" aria-label="Copy heading and permalink for Definition 5.3.9: Rank and Nullity">🔗</a></div></article><div class="para" id="chp5sec3-19">It follows from Dependency Analysis <a href="chp5sec1.html#insight-dependence" class="xref" data-knowl="./knowl/xref/insight-dependence.html" data-reveal-label="Reveal" data-close-label="Close" title="Insight 5.1.3: Dependency Analysis">Insight 5.1.3</a> that <span class="process-math">\(\rank(A)\)</span> is equal to the number of columns of <span class="process-math">\(\rref(A)\)</span> with leading ones. Meanwhile, it follows from  <a href="chp4sec3b.html#interpretation-solution_sets" class="xref" data-knowl="./knowl/xref/interpretation-solution_sets.html" data-reveal-label="Reveal" data-close-label="Close" title="Insight 4.4.6: Solution Sets as k-Planes in Parametric Vector Form">Insight 4.4.6</a> that <span class="process-math">\(\nullity(A)\)</span> is equal to the number of columns of <span class="process-math">\(\rref(A)\)</span> without leading ones. We deduce the following result.<div class="autopermalink" data-description="Paragraph"><a href="#chp5sec3-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="thm-rank-nullity"><h3 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Rank-Nullity.</span>
@@ -615,7 +606,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Algorithm 5.3.11: Computational Quick Check For Basis of \vect{R}^m"><a href="#cqc-basis" title="Copy heading and permalink for Algorithm 5.3.11: Computational Quick Check For Basis of \vect{R}^m" aria-label="Copy heading and permalink for Algorithm 5.3.11: Computational Quick Check For Basis of \vect{R}^m">🔗</a></div></article><div class="autopermalink" data-description="Lesson 5.3: Concepts of Basis"><a href="#chp5sec3" title="Copy heading and permalink for Lesson 5.3: Concepts of Basis" aria-label="Copy heading and permalink for Lesson 5.3: Concepts of Basis">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="chp5sec2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chp5sec4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="chp5sec2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chapter6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

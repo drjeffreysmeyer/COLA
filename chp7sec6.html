@@ -213,23 +213,17 @@ eBookConfig.enable_chatcodes =  false;
 
 \newcommand{\rowP}[2]{
   \hspace{0.5pc}  
-  \overset
-  {r_{#1} \leftrightarrow r_{#2}}
-  {\widesim}
+  \xrightarrow{r_{#1} \leftrightarrow r_{#2}}
   \hspace{0.5pc}
 }
 \newcommand{\rowS}[2]{
   \hspace{0.5pc}  
-  \overset
-  {r_{#1} \mapsto #2r_{#1}}
-  {\widesim}
+  \xrightarrow{r_{#1} \mapsto #2r_{#1}}
   \hspace{0.5pc}
 }
 \newcommand{\rowA}[3]{
   \hspace{0.5pc}  
-  \overset
-  {r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}}
-  {\widesim}
+  \xrightarrow{r_{#1} \mapsto r_{#1}+\left(#3\right)r_{#2}}
   \hspace{0.5pc}
 }
 \newcommand{\RowA}[3]{
@@ -315,6 +309,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="toc-title-box"><a href="chp2sec6.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Subsets That Contain Their Mixtures</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec6.html#lesson-linear_combination_subspace" class="internal"><span class="title">Subsets That Contain Their Mixtures</span></a></div></li></ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="chp2sec7.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Basis as Coordinate System</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -360,10 +355,6 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec1.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Dependency Analysis</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec2.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Containment in a Span</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="chp5sec3.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Concepts of Basis</span></a></div></li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="chp5sec4.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Basis as Coordinate System</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="chp5sec4.html#chp5sec4-23" class="internal"><span class="codenumber">5.4</span> <span class="title">Problems</span></a></div></li></ul>
-</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -683,7 +674,7 @@ c^2=a^2+b^2-2ab \cos(\theta).
 </div> <figure class="figure figure-like" id="chp7sec6-52-2-1-4"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/images_hw/hw13_law_of_cosines.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10.6.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><div class="autopermalink" data-description="Figure 10.6.7"><a href="#chp7sec6-52-2-1-4" title="Copy heading and permalink for Figure 10.6.7" aria-label="Copy heading and permalink for Figure 10.6.7">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Exercise 10.6.1"><a href="#chp7sec6-52-2" title="Copy heading and permalink for Exercise 10.6.1" aria-label="Copy heading and permalink for Exercise 10.6.1">🔗</a></div></article><article class="exercise exercise-like" id="chp7sec6-52-3"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="chp7sec6-52-3-1-1">Consider the triangle <span class="process-math">\(\triangle PQR\)</span> in the plane with vertices <span class="process-math">\(P=(4,1)\text{,}\)</span> <span class="process-math">\(Q=(-1,3)\text{,}\)</span> <span class="process-math">\(R=(0,0)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp7sec6-52-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <ol class="lower-alpha ol-marker-4" id="chp7sec6-52-3-1-2">
+</div> <ol class="lower-alpha ol-marker-5" id="chp7sec6-52-3-1-2">
 <li id="chp7sec6-52-3-1-2-1">
 <div class="para" id="p-derived-chp7sec6-52-3-1-2-1">Use GeoGebra to draw and label this triangle.</div>
 <div class="autopermalink" data-description="Item 10.6.2.a"><a href="#chp7sec6-52-3-1-2-1" title="Copy heading and permalink for Item 10.6.2.a" aria-label="Copy heading and permalink for Item 10.6.2.a">🔗</a></div>
@@ -744,7 +735,7 @@ c^2=a^2+b^2-2ab \cos(\theta).
 </div>
 <div class="autopermalink" data-description="Exercise 10.6.4"><a href="#chp7sec6-52-5" title="Copy heading and permalink for Exercise 10.6.4" aria-label="Copy heading and permalink for Exercise 10.6.4">🔗</a></div></article><article class="exercise exercise-like" id="chp7sec6-52-6"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
 <div class="para" id="chp7sec6-52-6-1-1">Let <span class="process-math">\(\vect{v} = \left[ \begin{array}{r}1\\1\\1 \end{array}\right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp7sec6-52-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <ol class="lower-alpha ol-marker-4" id="chp7sec6-52-6-1-2">
+</div> <ol class="lower-alpha ol-marker-5" id="chp7sec6-52-6-1-2">
 <li id="chp7sec6-52-6-1-2-1">
 <div class="para" id="p-derived-chp7sec6-52-6-1-2-1">Use matrix transpose and your knowledge of matrix equations to find the orthogonal plane <span class="process-math">\(W = \vect{v}^\perp\)</span> to <span class="process-math">\(\vect{v}\text{.}\)</span> Express this in parametric vector form. Set up and explain all steps, though you may use GeoGebra for row reduction.</div>
 <div class="autopermalink" data-description="Item 10.6.5.a"><a href="#chp7sec6-52-6-1-2-1" title="Copy heading and permalink for Item 10.6.5.a" aria-label="Copy heading and permalink for Item 10.6.5.a">🔗</a></div>
@@ -786,7 +777,7 @@ t\left[ \begin{array}{r} -1 \\ 0 \\ 1 \end{array} \right]
 \left[ \begin{array}{r}3\\4\\-1 \end{array} \right],
 \left[ \begin{array}{r}2\\3\\2\end{array} \right]
 \right\}\subset \R^3\)</span> and consider the plane <span class="process-math">\(W=\spn(S)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chp7sec6-52-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <ol class="lower-alpha ol-marker-4" id="chp7sec6-52-7-1-2">
+</div> <ol class="lower-alpha ol-marker-5" id="chp7sec6-52-7-1-2">
 <li id="chp7sec6-52-7-1-2-1">
 <div class="para" id="p-derived-chp7sec6-52-7-1-2-1">Use matrix transpose and your knowledge of matrix equations to find the orthogonal line <span class="process-math">\(L\)</span> to <span class="process-math">\(W\text{.}\)</span> Express <span class="process-math">\(L\)</span> in parametric vector form. Set up and explain all steps, though you may use GeoGebra for row reduction.</div>
 <div class="autopermalink" data-description="Item 10.6.6.a"><a href="#chp7sec6-52-7-1-2-1" title="Copy heading and permalink for Item 10.6.6.a" aria-label="Copy heading and permalink for Item 10.6.6.a">🔗</a></div>
